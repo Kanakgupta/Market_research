@@ -29,8 +29,15 @@ _SAVE_EVERY = 1000  # incremental save
 # ---------------------------------------------------------------- paths
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
+OUTPUT_ROOT = ROOT / "output"
 INDEX_FILE = DATA_DIR / "ai_index.json"
 PREFS_FILE = DATA_DIR / "ai_prefs.json"
+QA_CACHE_FILE = DATA_DIR / "ai_qa_cache.json"
+RECENT_FILE = DATA_DIR / "ai_recent.json"
+
+# Cache / recent tuning (override via env)
+_QA_CACHE_MAX = int(os.environ.get("AI_QA_CACHE_MAX", "500"))
+_RECENT_MAX = int(os.environ.get("AI_RECENT_MAX", "15"))
 
 # ---------------------------------------------------------------- preferences
 _DEFAULT_PREFS = {
@@ -76,15 +83,179 @@ def prefs_block(label: str = "USER PREFERENCES") -> str:
         f"- Must avoid: " + "; ".join(p.get("must_avoid", [])) + ".\n"
     )
 
+
+# ---------------------------------------------------------------- QA cache
+_QA_STOPWORDS = {
+    "the", "a", "an", "of", "for", "to", "and", "or", "is", "are", "was", "were",
+    "in", "on", "at", "by", "with", "me", "my", "our", "us", "you", "your",
+    "what", "whats", "how", "do", "does", "did", "can", "could", "should",
+    "please", "tell", "give", "show", "about", "vs",
+}
+
+
+def _qa_fingerprint(question: str) -> str:
+    """Normalized bag-of-words key so trivial rephrasings hit the same cache slot."""
+    toks = re.findall(r"[a-z0-9][a-z0-9\.\-]*", (question or "").lower())
+    toks = [t for t in toks if t not in _QA_STOPWORDS]
+    return " ".join(sorted(set(toks)))
+
+
+def _index_signature() -> str:
+    """Changes whenever the index is rebuilt — used to invalidate stale answers."""
+    try:
+        return str(int(INDEX_FILE.stat().st_mtime))
+    except OSError:
+        return "0"
+
+
+def qa_cache_get(question: str) -> dict | None:
+    fp = _qa_fingerprint(question)
+    if not fp or not QA_CACHE_FILE.exists():
+        return None
+    try:
+        cache = json.loads(QA_CACHE_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    entry = cache.get(fp)
+    if not entry:
+        return None
+    if entry.get("sig") != _index_signature():
+        return None  # index changed since answer was cached
+    return entry
+
+
+def qa_cache_put(question: str, answer: "Answer") -> None:
+    fp = _qa_fingerprint(question)
+    if not fp:
+        return
+    cache: dict = {}
+    if QA_CACHE_FILE.exists():
+        try:
+            cache = json.loads(QA_CACHE_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            cache = {}
+    cache[fp] = {
+        "question": question,
+        "reply": answer.reply,
+        "sources": answer.sources,
+        "backend": answer.backend,
+        "used_web": answer.used_web,
+        "sig": _index_signature(),
+        "ts": time.time(),
+    }
+    # LRU cap: drop oldest by timestamp.
+    if len(cache) > _QA_CACHE_MAX:
+        for k in sorted(cache, key=lambda k: cache[k].get("ts", 0))[: len(cache) - _QA_CACHE_MAX]:
+            cache.pop(k, None)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        QA_CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    except Exception as e:  # noqa: BLE001
+        log.warning("qa cache write failed: %s", e)
+
+
+# ---------------------------------------------------------------- recent questions
+def load_recent(limit: int = _RECENT_MAX) -> list[str]:
+    if not RECENT_FILE.exists():
+        return []
+    try:
+        data = json.loads(RECENT_FILE.read_text(encoding="utf-8"))
+        items = data.get("recent", []) if isinstance(data, dict) else list(data)
+        return [str(x) for x in items][:limit]
+    except Exception:
+        return []
+
+
+def push_recent(question: str, limit: int = _RECENT_MAX) -> list[str]:
+    q = (question or "").strip()
+    if not q:
+        return load_recent(limit)
+    items = load_recent(200)
+    # de-dupe case-insensitively, newest first
+    items = [x for x in items if x.strip().lower() != q.lower()]
+    items.insert(0, q)
+    items = items[:limit]
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        RECENT_FILE.write_text(json.dumps({"recent": items}, ensure_ascii=False),
+                               encoding="utf-8")
+    except Exception as e:  # noqa: BLE001
+        log.warning("recent write failed: %s", e)
+    return items
+
+
+def clear_recent() -> None:
+    try:
+        RECENT_FILE.write_text(json.dumps({"recent": []}), encoding="utf-8")
+    except Exception:
+        pass
+
+
+# ---------------------------------------------------------------- suggested questions
+_CURATED_SUGGESTIONS = [
+    "Teach me IEEE 802.15.4 — protocol stack, key features, and how it differs from Bluetooth LE.",
+    "Summarise Bluetooth 6.0 Channel Sounding and our positioning vs Nordic and Silicon Labs.",
+    "What are the latest news highlights across our tracked IoT-wireless topics?",
+    "Give me a Matter 1.4 + Thread 1.4 readiness overview for smart-home OEMs.",
+]
+
+
+def dynamic_suggestions(limit: int = 8) -> list[str]:
+    """Build starter questions from indexed data so they stay relevant, blended
+    with a curated base set."""
+    out: list[str] = list(_CURATED_SUGGESTIONS)
+    # From customers.json -> opportunity questions.
+    try:
+        cust_p = DATA_DIR / "customers.json"
+        if cust_p.exists():
+            cust = json.loads(cust_p.read_text(encoding="utf-8")).get("customers", [])
+            for c in cust[:4]:
+                name = c.get("name")
+                if name:
+                    out.append(f"Which wireless chip vendors does {name} use, and where could AIROC win?")
+    except Exception:
+        pass
+    # From competitors.json -> comparison questions.
+    try:
+        comp_p = DATA_DIR / "competitors.json"
+        if comp_p.exists():
+            comp = json.loads(comp_p.read_text(encoding="utf-8")).get("competitors", [])
+            for c in comp[:4]:
+                v = c.get("vendor")
+                if v:
+                    out.append(f"How does Infineon AIROC compare to {v}'s latest wireless SoCs?")
+    except Exception:
+        pass
+    # de-dupe preserving order
+    seen: set[str] = set()
+    uniq = [q for q in out if not (q in seen or seen.add(q))]
+    return uniq[:limit]
+
+
+# Always-scanned doc roots (in addition to AI_EXTRA_DOC_PATHS). These hold
+# Bluetooth SIG specifications & related technical material.
+_DEFAULT_DOC_ROOTS = [
+    Path(r"C:\guptakanak\SIG"),
+]
+
+
 # Allow user to add more roots via env var (semicolon-separated on Windows).
 def _extra_doc_roots() -> list[Path]:
+    out: list[Path] = list(_DEFAULT_DOC_ROOTS)
     raw = os.environ.get("AI_EXTRA_DOC_PATHS", "")
-    out = []
     for p in re.split(r"[;,\n]+", raw):
         p = p.strip().strip('"')
         if p:
             out.append(Path(p))
-    return out
+    # de-dupe (case-insensitive on Windows) while preserving order
+    seen: set[str] = set()
+    res: list[Path] = []
+    for p in out:
+        k = str(p).lower()
+        if k not in seen:
+            seen.add(k)
+            res.append(p)
+    return res
 
 
 # ---------------------------------------------------------------- chunking
@@ -174,16 +345,92 @@ def _read_text(path: Path) -> Iterable[tuple[int, str]]:
         log.warning("Text read failed %s: %s", path.name, e)
 
 
+def _read_pptx(path: Path) -> Iterable[tuple[int, str]]:
+    try:
+        from pptx import Presentation
+    except ImportError:
+        log.warning("python-pptx not installed; skipping %s", path.name)
+        return
+    try:
+        prs = Presentation(str(path))
+        for i, slide in enumerate(prs.slides, 1):
+            parts: list[str] = []
+            for shape in slide.shapes:
+                if getattr(shape, "has_text_frame", False):
+                    for para in shape.text_frame.paragraphs:
+                        t = "".join(run.text for run in para.runs)
+                        if t.strip():
+                            parts.append(t)
+                if getattr(shape, "has_table", False):
+                    for row in shape.table.rows:
+                        parts.append(" | ".join(c.text for c in row.cells))
+            txt = "\n".join(parts)
+            if txt.strip():
+                yield i, txt
+    except Exception as e:
+        log.warning("PPTX read failed %s: %s", path.name, e)
+
+
 _READERS = {
     ".pdf": _read_pdf,
     ".docx": _read_docx,
     ".doc": _read_doc_legacy,
+    ".pptx": _read_pptx,
     ".txt": _read_text,
     ".md": _read_text,
     ".markdown": _read_text,
     ".json": _read_text,
     ".csv": _read_text,
 }
+
+
+# ---------------------------------------------------------------- version-aware dedup
+_VER_RE = re.compile(r"v(\d+(?:\.\d+)+)", re.I)   # v5.4, v6.1, v1.0 ...
+_COPY_RE = re.compile(r"\s*\(\d+\)\s*$")           # trailing " (1)", " (002)"
+
+
+def _norm_words(s: str) -> str:
+    return re.sub(r"[ _\-]+", " ", s).strip(" _-.").lower()
+
+
+def _dedup_group_key(p: Path):
+    """Files that share this key are treated as versions/copies of the same doc.
+    Versioned files (Core_v5.4.pdf) group across folders; unversioned files only
+    collapse exact copies within the same folder."""
+    stem = _COPY_RE.sub("", p.stem)
+    m = _VER_RE.search(stem)
+    if m:
+        base = _norm_words(_VER_RE.sub("", stem))
+        return ("v", base, p.suffix.lower())
+    return ("p", str(p.parent).lower(), _norm_words(stem), p.suffix.lower())
+
+
+def _version_tuple(p: Path) -> tuple:
+    m = _VER_RE.search(p.stem)
+    return tuple(int(x) for x in m.group(1).split(".")) if m else ()
+
+
+def _dedup_score(p: Path) -> tuple:
+    is_copy = 1 if _COPY_RE.search(p.stem) else 0
+    try:
+        mtime = p.stat().st_mtime
+    except OSError:
+        mtime = 0.0
+    # highest version wins; prefer non-copy; then newest.
+    return (_version_tuple(p), -is_copy, mtime)
+
+
+def _dedup_versions(files: list[Path]) -> list[Path]:
+    best: dict = {}
+    for p in files:
+        k = _dedup_group_key(p)
+        if k not in best or _dedup_score(p) > _dedup_score(best[k]):
+            best[k] = p
+    dropped = len(files) - len(best)
+    if dropped:
+        log.info("version dedup: kept %d files, dropped %d older/duplicate versions",
+                 len(best), dropped)
+    return list(best.values())
 
 
 # ---------------------------------------------------------------- index build
@@ -215,7 +462,7 @@ def _collect_files(roots: list[Path]) -> list[Path]:
                 continue
             seen.add(rp)
             files.append(p)
-    return files
+    return _dedup_versions(files)
 
 
 def _read_one(p: Path) -> list[Chunk]:
@@ -247,6 +494,67 @@ def _ingest_project_json() -> Iterable[Chunk]:
         for chunk_text in _split(flat, max_words=500, overlap=50):
             yield Chunk(text=chunk_text, source=f"data:{fname}",
                         title=fname, kind="data")
+
+
+# ---------------------------------------------------------------- report HTML ingest
+def _latest_report_dir() -> Path | None:
+    """The report bundle the AI server actually serves (newest site_* dir),
+    falling back to output/latest."""
+    if not OUTPUT_ROOT.exists():
+        return None
+    sites = sorted(
+        (p for p in OUTPUT_ROOT.glob("site_*") if p.is_dir()),
+        key=lambda p: p.stat().st_mtime, reverse=True,
+    )
+    if sites:
+        return sites[0]
+    latest = OUTPUT_ROOT / "latest"
+    return latest if latest.is_dir() else None
+
+
+_HTML_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def _html_to_text(html_src: str) -> str:
+    """Strip a report HTML page down to readable text, preserving table structure."""
+    import html as _htmlmod
+    s = html_src
+    # Drop non-content blocks entirely.
+    s = re.sub(r"(?is)<script.*?</script>", " ", s)
+    s = re.sub(r"(?is)<style.*?</style>", " ", s)
+    s = re.sub(r"(?is)<head.*?</head>", " ", s)
+    s = re.sub(r"(?is)<nav.*?</nav>", " ", s)
+    s = re.sub(r"(?is)<svg.*?</svg>", " ", s)
+    # Keep table cell/row structure so figures stay associated with labels.
+    s = re.sub(r"(?is)</(td|th)>", " | ", s)
+    s = re.sub(r"(?is)</(tr|table|div|section|article|p|li|h[1-6])>", "\n", s)
+    s = _HTML_TAG_RE.sub(" ", s)
+    s = _htmlmod.unescape(s)
+    s = re.sub(r"[ \t]+", " ", s)
+    s = re.sub(r"\n\s*\n+", "\n", s)
+    return s.strip()
+
+
+def _ingest_report_html() -> Iterable[Chunk]:
+    """Index the rendered report pages (output/.../*.html) so the assistant sees
+    exactly what a human sees on the site — customers, competitors, news, roadmap, etc."""
+    d = _latest_report_dir()
+    if not d:
+        return
+    for p in sorted(d.glob("*.html")):
+        if p.name.lower() == "ai.html":  # skip the chat shim itself
+            continue
+        try:
+            raw = p.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        text = _html_to_text(raw)
+        if not text or len(text) < 40:
+            continue
+        title = p.stem.replace("_", " ").replace("-", " ").title()
+        for chunk_text in _split(text, max_words=450, overlap=60):
+            yield Chunk(text=chunk_text, source=f"report:{p.name}",
+                        title=title, kind="report")
 
 
 def _save(chunks: list[Chunk]) -> None:
@@ -288,6 +596,11 @@ def build_index(verbose: bool = True) -> dict:
         chunks.append(c)
     if verbose:
         print(f"[ai] data chunks: {len(chunks) - pre}")
+    pre_html = len(chunks)
+    for c in _ingest_report_html():
+        chunks.append(c)
+    if verbose:
+        print(f"[ai] report chunks: {len(chunks) - pre_html}")
     _save(chunks)
     if verbose:
         print(f"[ai] wrote {INDEX_FILE} ({len(chunks)} chunks)")
@@ -355,10 +668,13 @@ class Retriever:
 # ---------------------------------------------------------------- web search
 def web_search(query: str, max_results: int = 4) -> list[Chunk]:
     try:
-        from duckduckgo_search import DDGS
+        from ddgs import DDGS  # current package name
     except ImportError:
-        log.info("duckduckgo-search not installed; web disabled")
-        return []
+        try:
+            from duckduckgo_search import DDGS  # legacy fallback
+        except ImportError:
+            log.info("ddgs / duckduckgo-search not installed; web disabled")
+            return []
     results: list[Chunk] = []
     try:
         with DDGS() as ddgs:
@@ -1113,9 +1429,12 @@ def ask(question: str, history: list[dict] | None = None,
         def _boost(item):
             c, s = item
             src = (c.source or "").lower()
+            b = s
+            if c.kind == "report":  # curated, human-facing site content
+                b += 0.8
             if any(d in src for d in _AUTHORITATIVE_DOMAINS):
-                return (c, s + 1.0)
-            return (c, s)
+                b += 1.0
+            return (c, b)
         hits = sorted([_boost(h) for h in hits], key=lambda x: x[1], reverse=True)[:12]
 
     # When the question is about competitors generically, drop Infineon-sourced hits

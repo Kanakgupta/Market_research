@@ -90,20 +90,46 @@ _CHAT_HTML = r"""<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AIROC AI · IoT Wireless Intel</title>
 <style>
-:root{--bg:#f7f9fc;--card:#fff;--border:#e4e8ee;--text:#1a1f2c;--muted:#6b7280;--accent:#2563eb;--user:#eef2ff;--bot:#f8fafc;}
+:root{--bg:#f7f9fc;--card:#fff;--border:#e4e8ee;--text:#1a1f2c;--muted:#6b7280;--accent:#2563eb;--user:#eef2ff;--bot:#f8fafc;--side:#fbfcfe;}
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:14.5px;line-height:1.5;height:100vh;display:flex;flex-direction:column}
-header{background:var(--card);border-bottom:1px solid var(--border);padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-header .brand{font-weight:800;font-size:20px;background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-header .pill{background:#eef2ff;color:#3730a3;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:600}
-header .grow{flex:1}
-header button{border:1px solid var(--border);background:#fff;color:#0f172a;border-radius:8px;padding:7px 14px;font-weight:600;cursor:pointer;font-size:13px}
-header button:hover{border-color:var(--accent);color:var(--accent)}
-header a{color:var(--accent);text-decoration:none;font-weight:600;font-size:13px}
-.suggest{padding:10px 22px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--card)}
-.suggest button{background:#f1f5f9;border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:12.5px;cursor:pointer;color:#0f172a}
-.suggest button:hover{background:#eef2ff;color:var(--accent);border-color:var(--accent)}
-main{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:14px;max-width:1100px;width:100%;margin:0 auto}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:14.5px;line-height:1.5;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+a{color:var(--accent);text-decoration:none}
+.topnav{background:var(--card);border-bottom:1px solid var(--border);flex:none;padding:0}
+.topnav .wrap{display:flex;align-items:center;gap:18px;height:60px;max-width:1400px;margin:0 auto;padding:0 20px}
+.topnav .brand-name{font-size:22px;font-weight:800;letter-spacing:.3px;white-space:nowrap;background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-decoration:none}
+.topnav nav{display:flex;gap:6px;align-items:center;flex:1;flex-wrap:wrap}
+.topnav nav a{color:#334155;font-weight:600;font-size:14px;padding:7px 14px;border-radius:8px;background:#f1f5f9;text-decoration:none}
+.topnav nav a:hover{color:var(--accent);background:#eef2ff}
+.topnav nav a.active{color:#fff;background:var(--accent)}
+.topnav .meta-info{color:var(--muted);font-size:12px;white-space:nowrap}
+
+/* ---- two-pane shell ---- */
+.shell{flex:1;display:flex;min-height:0}
+.sidebar{width:288px;flex:none;background:var(--side);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.sidebar .side-top{padding:14px 14px 8px}
+.newchat{width:100%;border:1px solid var(--border);background:#fff;color:#0f172a;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer;font-size:13.5px;display:flex;align-items:center;gap:8px;justify-content:center}
+.newchat:hover{border-color:var(--accent);color:var(--accent)}
+.side-scroll{flex:1;overflow-y:auto;padding:4px 10px 16px}
+.side-sec{margin-top:12px}
+.side-sec .hd{display:flex;align-items:center;justify-content:space-between;padding:6px 6px 4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.side-sec .hd .clear{cursor:pointer;font-weight:600;text-transform:none;letter-spacing:0;font-size:11.5px;color:var(--muted)}
+.side-sec .hd .clear:hover{color:#b91c1c}
+.qitem{display:block;width:100%;text-align:left;border:1px solid transparent;background:transparent;color:#334155;border-radius:8px;padding:8px 10px;font-size:13px;cursor:pointer;line-height:1.35;margin-bottom:2px;white-space:normal;word-break:break-word}
+.qitem:hover{background:#eef2ff;border-color:#dbe4ff;color:#1e3a8a}
+.qitem.recent::before{content:"↺ ";color:var(--muted)}
+.qitem.suggest::before{content:"✦ ";color:#7c3aed}
+.side-empty{padding:8px 10px;color:var(--muted);font-size:12.5px}
+
+/* ---- chat column ---- */
+.chatcol{flex:1;display:flex;flex-direction:column;min-width:0}
+.chathead{background:var(--card);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.chathead .brand{font-weight:800;font-size:18px;background:linear-gradient(90deg,#2563eb,#7c3aed 50%,#db2777);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chathead .pill{background:#eef2ff;color:#3730a3;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:600}
+.chathead .grow{flex:1}
+.chathead button{border:1px solid var(--border);background:#fff;color:#0f172a;border-radius:8px;padding:7px 12px;font-weight:600;cursor:pointer;font-size:13px}
+.chathead button:hover{border-color:var(--accent);color:var(--accent)}
+.chathead a{color:var(--accent);font-weight:600;font-size:13px}
+main{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:14px;width:100%;max-width:1000px;margin:0 auto}
 .msg{display:flex;gap:12px}
 .msg .who{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff}
 .msg.user .who{background:#2563eb}
@@ -123,26 +149,29 @@ main{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:
 .cites .c{display:inline-block;background:#f1f5f9;border-radius:6px;padding:2px 8px;margin:2px 4px 2px 0}
 .cites .c.web{background:#dcfce7;color:#166534}
 .cites .c.data{background:#fef3c7;color:#92400e}
-footer{padding:14px 22px;background:var(--card);border-top:1px solid var(--border)}
-.input-row{max-width:1100px;margin:0 auto;display:flex;gap:10px}
+.cites .c.report{background:#e0f2fe;color:#075985}
+.ansbar{margin-top:8px;display:flex;align-items:center;gap:10px;font-size:11.5px;color:var(--muted)}
+.cachetag{background:#f1f5f9;border-radius:6px;padding:2px 8px;color:#475569}
+.regen{border:1px solid var(--border);background:#fff;border-radius:6px;padding:2px 9px;font-size:11.5px;cursor:pointer;color:#0f172a}
+.regen:hover{border-color:var(--accent);color:var(--accent)}
+footer{padding:14px 20px;background:var(--card);border-top:1px solid var(--border);flex:none}
+.input-row{max-width:1000px;margin:0 auto;display:flex;gap:10px}
 textarea{flex:1;border:1px solid var(--border);border-radius:10px;padding:12px 14px;font:inherit;resize:none;min-height:48px;max-height:160px}
 textarea:focus{outline:none;border-color:var(--accent)}
 .send{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:0 18px;font-weight:700;cursor:pointer;font-size:14px}
 .send:disabled{opacity:.5;cursor:not-allowed}
-.opts{max-width:1100px;margin:6px auto 0;font-size:11.5px;color:var(--muted);display:flex;gap:14px;align-items:center}
+.opts{max-width:1000px;margin:6px auto 0;font-size:11.5px;color:var(--muted);display:flex;gap:14px;align-items:center}
 .opts label{cursor:pointer}
 .spin{display:inline-block;width:14px;height:14px;border:2px solid #cbd5e1;border-top-color:var(--accent);border-radius:50%;animation:s 1s linear infinite;vertical-align:-3px;margin-right:6px}
 @keyframes s{to{transform:rotate(360deg)}}
 .toast{position:fixed;bottom:20px;right:20px;background:#0f172a;color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;z-index:99}
 .toast.show{opacity:.95}
-.topnav{background:var(--card);border-bottom:1px solid var(--border);flex:none;padding:0}
-.topnav .wrap{display:flex;align-items:center;gap:18px;height:60px;max-width:1280px;margin:0 auto;padding:0 20px}
-.topnav .brand-name{font-size:22px;font-weight:800;letter-spacing:.3px;white-space:nowrap;background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-decoration:none}
-.topnav nav{display:flex;gap:6px;align-items:center;flex:1;flex-wrap:wrap}
-.topnav nav a{color:#334155;font-weight:600;font-size:14px;padding:7px 14px;border-radius:8px;background:#f1f5f9;text-decoration:none}
-.topnav nav a:hover{color:var(--accent);background:#eef2ff}
-.topnav nav a.active{color:#fff;background:var(--accent)}
-.topnav .meta-info{color:var(--muted);font-size:12px;white-space:nowrap}
+.sidetoggle{display:none}
+@media(max-width:820px){
+  .sidebar{position:fixed;z-index:60;top:60px;bottom:0;left:0;transform:translateX(-100%);transition:transform .2s;box-shadow:0 0 40px rgba(0,0,0,.15)}
+  .sidebar.open{transform:translateX(0)}
+  .sidetoggle{display:inline-flex}
+}
 </style></head>
 <body>
 <header class="topnav"><div class="wrap">
@@ -158,37 +187,52 @@ textarea:focus{outline:none;border-color:var(--accent)}
   </nav>
   <div class="meta-info">AI Assistant</div>
 </div></header>
-<header>
-  <span class="brand">AIROC AI</span>
-  <span class="pill" id="status">loading…</span>
-  <span class="grow"></span>
-  <button id="reindex">⟳ Reindex docs</button>
-  <a href="/" onclick="resetChat();return false;">＋ New chat</a>
-  <a href="../output/" target="_blank">Reports ↗</a>
-</header>
-<div class="suggest">
-  <button data-q="Teach me IEEE 802.15.4 — protocol stack, key features, and how it differs from Bluetooth LE.">Teach me 15.4</button>
-  <button data-q="Compare Infineon AIROC CYW55513 vs NXP IW612 vs Qualcomm QCC74x for smart-home OEMs.">AIROC vs NXP vs QCA</button>
-  <button data-q="Which chip vendors does Arlo use across its camera lineup, and where could AIROC win?">Arlo opportunity</button>
-  <button data-q="Summarise Bluetooth 6.0 Channel Sounding and our positioning vs Nordic and Silicon Labs.">BT 6.0 Channel Sounding</button>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-top">
+      <button class="newchat" onclick="resetChat()">＋ New chat</button>
+    </div>
+    <div class="side-scroll">
+      <div class="side-sec">
+        <div class="hd"><span>Recent</span><span class="clear" id="clearRecent" title="Clear recent">clear</span></div>
+        <div id="recentList"><div class="side-empty">No questions yet.</div></div>
+      </div>
+      <div class="side-sec">
+        <div class="hd"><span>Suggested</span></div>
+        <div id="suggestList"><div class="side-empty"><span class="spin"></span>loading…</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="chatcol">
+    <div class="chathead">
+      <button class="sidetoggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+      <span class="brand">AIROC AI</span>
+      <span class="pill" id="status">loading…</span>
+      <span class="grow"></span>
+      <button id="reindex">⟳ Reindex</button>
+      <a href="/report/" target="_blank">Reports ↗</a>
+    </div>
+    <main id="chat">
+      <div class="msg bot"><div class="who">AI</div><div class="bub">
+        <p>Hi — I'm <b>AIROC AI</b>.</p>
+        <p style="color:var(--muted);font-size:12.5px">If I don't have the info locally I'll search the web and add it to the index.</p>
+      </div></div>
+    </main>
+    <footer>
+      <div class="input-row">
+        <textarea id="q" placeholder="Ask anything — e.g. 'Create a 1-page brief on AIROC for Stryker medical wearables'…"
+                  onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}"></textarea>
+        <button class="send" id="send" onclick="send()">Send ▸</button>
+      </div>
+      <div class="opts">
+        <label><input type="checkbox" id="useWeb" checked> Allow web search fallback</label>
+        <span id="meta"></span>
+      </div>
+    </footer>
+  </div>
 </div>
-<main id="chat">
-  <div class="msg bot"><div class="who">AI</div><div class="bub">
-    <p>Hi — I'm <b>AIROC AI</b>. I can teach you IoT-wireless topics, compare competitors, and answer questions about your indexed PDFs/DOCXs and project data. Try a chip on top, or ask anything.</p>
-    <p style="color:var(--muted);font-size:12.5px">If I don't have the info locally I'll search the web and add it to the index.</p>
-  </div></div>
-</main>
-<footer>
-  <div class="input-row">
-    <textarea id="q" placeholder="Ask anything — e.g. 'Create a 1-page brief on AIROC for Stryker medical wearables'…"
-              onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}"></textarea>
-    <button class="send" id="send" onclick="send()">Send ▸</button>
-  </div>
-  <div class="opts">
-    <label><input type="checkbox" id="useWeb" checked> Allow web search fallback</label>
-    <span id="meta"></span>
-  </div>
-</footer>
 <div id="toast" class="toast"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -199,74 +243,111 @@ const q=document.getElementById('q');
 const sendBtn=document.getElementById('send');
 const statusEl=document.getElementById('status');
 const metaEl=document.getElementById('meta');
+const recentList=document.getElementById('recentList');
+const suggestList=document.getElementById('suggestList');
 
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+function escapeHtml(s){return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
-function addMsg(role,html,cites){
+function citesHtml(cites){
+  return '<b>Sources:</b> '+cites.map(s=>{
+    const cls=s.kind==='web'?'web':(s.kind==='data'?'data':(s.kind==='report'?'report':''));
+    const url=s.kind==='web'?String(s.source||'').replace(/^web:/,''):'';
+    const label=`[#${s.id}] ${escapeHtml(s.title)}`+(s.page?` p.${s.page}`:'');
+    return url?`<a class="c ${cls}" href="${url}" target="_blank">${label} ↗</a>`:`<span class="c ${cls}">${label}</span>`;
+  }).join('');
+}
+
+function addMsg(role,html){
   const div=document.createElement('div');div.className='msg '+role;
   const who=document.createElement('div');who.className='who';who.textContent=role==='user'?'YOU':'AI';
   const bub=document.createElement('div');bub.className='bub';bub.innerHTML=html;
-  if(cites&&cites.length){
-    const c=document.createElement('div');c.className='cites';
-    c.innerHTML='<b>Sources:</b> '+cites.map(s=>{
-      const cls=s.kind==='web'?'web':(s.kind==='data'?'data':'');
-      const url=s.kind==='web'?s.source.replace(/^web:/,''):'';
-      const label=`[#${s.id}] ${escapeHtml(s.title)}`+(s.page?` p.${s.page}`:'');
-      return url?`<a class="c ${cls}" href="${url}" target="_blank">${label} ↗</a>`:`<span class="c ${cls}">${label}</span>`;
-    }).join('');
-    bub.appendChild(c);
-  }
   div.appendChild(who);div.appendChild(bub);chat.appendChild(div);
   div.scrollIntoView({behavior:'smooth',block:'end'});
   return bub;
 }
-function escapeHtml(s){return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
-async function send(){
-  const text=q.value.trim();if(!text)return;
-  q.value='';sendBtn.disabled=true;
+// Load a question into the input box for editing (does NOT auto-send).
+function pickQuestion(text){
+  q.value=text;q.focus();
+  q.style.height='auto';q.style.height=Math.min(q.scrollHeight,160)+'px';
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+async function send(forceText){
+  const text=(typeof forceText==='string'?forceText:q.value).trim();if(!text)return;
+  if(typeof forceText!=='string')q.value='';
+  q.style.height='auto';
+  sendBtn.disabled=true;
   addMsg('user',escapeHtml(text).replace(/\n/g,'<br>'));
-  history.push({role:'user',content:text});
+  const refresh=(typeof forceText==='string');
+  const histSnapshot=history.slice();
+  if(!refresh)history.push({role:'user',content:text});
   const pending=addMsg('bot','<span class="spin"></span>thinking…');
   try{
     const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({message:text,history:history.slice(0,-1),allow_web:document.getElementById('useWeb').checked})});
+      body:JSON.stringify({message:text,history:refresh?[]:histSnapshot,allow_web:document.getElementById('useWeb').checked,refresh})});
     const j=await r.json();
     pending.innerHTML=marked.parse(j.reply||'(no reply)');
     if(j.sources&&j.sources.length){
-      const c=document.createElement('div');c.className='cites';
-      c.innerHTML='<b>Sources:</b> '+j.sources.map(s=>{
-        const cls=s.kind==='web'?'web':(s.kind==='data'?'data':'');
-        const url=s.kind==='web'?s.source.replace(/^web:/,''):'';
-        const label=`[#${s.id}] ${escapeHtml(s.title)}`+(s.page?` p.${s.page}`:'');
-        return url?`<a class="c ${cls}" href="${url}" target="_blank">${label} ↗</a>`:`<span class="c ${cls}">${label}</span>`;
-      }).join('');
+      const c=document.createElement('div');c.className='cites';c.innerHTML=citesHtml(j.sources);
       pending.appendChild(c);
     }
-    metaEl.textContent=`backend: ${j.backend}${j.used_web?' · web used':''}`;
-    history.push({role:'assistant',content:j.reply||''});
+    const bar=document.createElement('div');bar.className='ansbar';
+    if(j.cached)bar.innerHTML='<span class="cachetag">⚡ cached</span>';
+    const rb=document.createElement('button');rb.className='regen';rb.textContent='↻ Regenerate';
+    rb.onclick=()=>send(text);
+    bar.appendChild(rb);pending.appendChild(bar);
+    metaEl.textContent=`backend: ${j.backend}${j.used_web?' · web used':''}${j.cached?' · cached':''}`;
+    if(!refresh)history.push({role:'assistant',content:j.reply||''});
+    loadRecent();
   }catch(e){
     pending.innerHTML='<span style="color:#b91c1c">Error: '+escapeHtml(String(e))+'</span>';
   }finally{sendBtn.disabled=false;q.focus()}
 }
 
-document.querySelectorAll('.suggest button').forEach(b=>b.addEventListener('click',()=>{q.value=b.dataset.q;send()}));
-
 document.getElementById('reindex').addEventListener('click',async()=>{
-  toast('Re-indexing local docs… this can take a minute');
+  toast('Re-indexing docs + report pages… this can take a minute');
   try{const r=await fetch('/api/reindex',{method:'POST'});const j=await r.json();
     toast('Indexed '+j.count+' chunks');refreshStatus()}
   catch(e){toast('Reindex failed: '+e)}
 });
 
-function resetChat(){history.length=0;chat.innerHTML='';location.reload()}
+document.getElementById('clearRecent').addEventListener('click',async()=>{
+  try{await fetch('/api/recent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({clear:true})});}catch(e){}
+  loadRecent();
+});
+
+function resetChat(){history.length=0;chat.innerHTML='';
+  addMsg('bot',"<p>Hi — I'm <b>AIROC AI</b>.</p><p style=\"color:var(--muted);font-size:12.5px\">If I don't have the info locally I'll search the web and add it to the index.</p>");
+  q.focus();
+}
+
+function renderList(el,items,cls){
+  if(!items||!items.length){el.innerHTML='<div class="side-empty">'+(cls==='recent'?'No questions yet.':'None available.')+'</div>';return;}
+  el.innerHTML='';
+  items.forEach(t=>{
+    const b=document.createElement('button');b.className='qitem '+cls;b.textContent=t;b.title=t;
+    b.addEventListener('click',()=>pickQuestion(t));
+    el.appendChild(b);
+  });
+}
+
+async function loadRecent(){
+  try{const r=await fetch('/api/recent');const j=await r.json();renderList(recentList,j.recent||[],'recent');}
+  catch(e){}
+}
+async function loadSuggestions(){
+  try{const r=await fetch('/api/suggestions');const j=await r.json();renderList(suggestList,j.suggestions||[],'suggest');}
+  catch(e){suggestList.innerHTML='<div class="side-empty">None available.</div>';}
+}
 
 async function refreshStatus(){
   try{const r=await fetch('/api/status');const j=await r.json();
     statusEl.textContent=`${j.chunks} chunks · ${j.backend}`;
   }catch(e){statusEl.textContent='offline'}
 }
-refreshStatus();
+refreshStatus();loadRecent();loadSuggestions();
 </script>
 </body></html>
 """
@@ -422,14 +503,52 @@ def chat() -> Response:
     msg = (body.get("message") or "").strip()
     history = body.get("history") or []
     allow_web = bool(body.get("allow_web", True))
+    refresh = bool(body.get("refresh"))
     if not msg:
         return jsonify({"reply": "Empty message", "sources": []}), 400
+
+    # Fast path: serve a cached answer unless the user forced a refresh or is
+    # mid-conversation (follow-ups depend on history, so skip cache then).
+    if not refresh and not history:
+        cached = A.qa_cache_get(msg)
+        if cached:
+            A.push_recent(msg)
+            return jsonify({"reply": cached["reply"], "sources": cached.get("sources", []),
+                            "used_web": cached.get("used_web", False),
+                            "backend": cached.get("backend", "cache"), "cached": True})
+
     ans = A.ask(msg, history=history, retriever=_r(), allow_web=allow_web)
     if ans.used_web:
         # ensure retriever sees newly-saved web chunks next time
         _refresh()
+    # Only cache clean, standalone answers (skip fallbacks and follow-ups).
+    if not history and ans.backend.startswith("gemini"):
+        A.qa_cache_put(msg, ans)
+    A.push_recent(msg)
     return jsonify({"reply": ans.reply, "sources": ans.sources,
-                    "used_web": ans.used_web, "backend": ans.backend})
+                    "used_web": ans.used_web, "backend": ans.backend, "cached": False})
+
+
+# ---------------------------------------------------------------- sidebar data
+@app.get("/api/suggestions")
+def suggestions() -> Response:
+    return jsonify({"suggestions": A.dynamic_suggestions()})
+
+
+@app.get("/api/recent")
+def get_recent() -> Response:
+    return jsonify({"recent": A.load_recent()})
+
+
+@app.post("/api/recent")
+def post_recent() -> Response:
+    body = request.get_json(force=True, silent=True) or {}
+    if body.get("clear"):
+        A.clear_recent()
+    elif body.get("question"):
+        A.push_recent(str(body["question"]))
+    return jsonify({"recent": A.load_recent()})
+
 
 
 # ---------------------------------------------------------------- preferences
