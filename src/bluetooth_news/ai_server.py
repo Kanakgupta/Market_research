@@ -25,17 +25,11 @@ _retriever: A.Retriever | None = None
 _retriever_index_mtime: float | None = None
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUT_ROOT = ROOT / "output"
+DOCS_ROOT = ROOT / "docs"
 
 
 def _latest_site() -> Path | None:
-    if not OUTPUT_ROOT.exists():
-        return None
-    sites = sorted(
-        (p for p in OUTPUT_ROOT.glob("site_*") if p.is_dir()),
-        key=lambda p: p.stat().st_mtime, reverse=True,
-    )
-    return sites[0] if sites else None
+    return DOCS_ROOT if DOCS_ROOT.is_dir() else None
 
 
 @app.after_request
@@ -346,6 +340,23 @@ async function refreshStatus(){
   try{const r=await fetch('/api/status');const j=await r.json();
     statusEl.textContent=`${j.chunks} chunks · ${j.backend}`;
   }catch(e){statusEl.textContent='offline'}
+}
+function shouldHideSources() {
+  try {
+    if (window.parent && window.parent !== window) {
+      if (window.parent.location.href.includes('github.io')) return true;
+    }
+  } catch (e) {
+    return true;
+  }
+  if (document.referrer && document.referrer.includes('github.io')) return true;
+  if (window.location.hostname.includes('github.io')) return true;
+  return false;
+}
+if (shouldHideSources()) {
+  const style = document.createElement('style');
+  style.textContent = '.cites { display: none !important; }';
+  document.head.appendChild(style);
 }
 refreshStatus();loadRecent();loadSuggestions();
 </script>

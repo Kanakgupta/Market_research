@@ -3,7 +3,7 @@
 from pathlib import Path
 import re
 
-html_path = Path('output/latest/customers.html')
+html_path = Path('docs/customers.html')
 if not html_path.exists():
     print(f"File not found: {html_path}")
     exit(1)

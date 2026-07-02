@@ -18,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
-OUTPUT_LATEST = ROOT / "output" / "latest"
+DOCS_ROOT = ROOT / "docs"
 
 sys.path.insert(0, str(SRC))
 
@@ -46,10 +46,10 @@ def _build_site(args: argparse.Namespace) -> Path:
     if exit_code != 0:
         raise SystemExit(exit_code)
 
-    index = OUTPUT_LATEST / "index.html"
+    index = DOCS_ROOT / "index.html"
     if not index.exists():
         raise FileNotFoundError(f"Expected generated site at {index}")
-    return OUTPUT_LATEST
+    return DOCS_ROOT
 
 
 def _serve(site_dir: Path, host: str, port: int) -> None:

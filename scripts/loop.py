@@ -25,7 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
-OUTPUT_LATEST = ROOT / "output" / "latest"
+DOCS_ROOT = ROOT / "docs"
 
 sys.path.insert(0, str(SRC))
 
@@ -61,17 +61,17 @@ def _build_site(max_age_days: int, limit: int, no_enrich: bool, no_external: boo
     if exit_code != 0:
         raise SystemExit(exit_code)
 
-    index = OUTPUT_LATEST / "index.html"
+    index = DOCS_ROOT / "index.html"
     if not index.exists():
         raise FileNotFoundError(f"Expected generated site at {index}")
 
 
 def _serve_once(host: str, port: int) -> None:
-    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(OUTPUT_LATEST))
+    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(DOCS_ROOT))
     with ReusableTCPServer((host, port), handler) as httpd:
         httpd.daemon_threads = True
         httpd.timeout = 1.0
-        print(f"[loop] serving {OUTPUT_LATEST} at http://{host}:{port}/index.html")
+        print(f"[loop] serving {DOCS_ROOT} at http://{host}:{port}/index.html")
         while not _server_stop.is_set():
             httpd.handle_request()
 
@@ -174,10 +174,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"[loop] startup build failed: {exc}")
             return 1
     else:
-        if not (OUTPUT_LATEST / "index.html").exists():
-            print(f"[loop] ERROR: no cached site at {OUTPUT_LATEST}, cannot start without building")
+        if not (DOCS_ROOT / "index.html").exists():
+            print(f"[loop] ERROR: no cached site at {DOCS_ROOT}, cannot start without building")
             return 1
-        print(f"[loop] serving cached site from {OUTPUT_LATEST}")
+        print(f"[loop] serving cached site from {DOCS_ROOT}")
 
     server_thread = threading.Thread(target=_server_worker, args=(args.host, args.port), daemon=True)
     refresh_thread = threading.Thread(target=_daily_refresh_loop, args=(args,), daemon=True)

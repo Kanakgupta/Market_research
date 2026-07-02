@@ -22,35 +22,7 @@ from .briefing import write_inputs, synthesize_outputs
 from .auto_update import auto_update_from_articles
 
 
-def _cleanup_old_dirs(output_root: Path, keep: Path) -> None:
-    """Remove sibling site_* directories older than the new one."""
-    if not output_root.exists():
-        return
-    for d in output_root.glob("site_*"):
-        if d.is_dir() and d.resolve() != keep.resolve():
-            for f in d.rglob("*"):
-                try:
-                    if f.is_file():
-                        f.unlink()
-                except OSError:
-                    pass
-            try:
-                d.rmdir()
-            except OSError:
-                pass
-
-
-def _publish_latest(site_dir: Path, output_root: Path) -> Path:
-    """Copy the newest generated site to a stable folder for browser refreshes and GitHub pages."""
-    latest_dir = output_root / "latest"
-    shutil.copytree(site_dir, latest_dir, dirs_exist_ok=True)
-    # Also publish to the docs/ directory for GitHub Pages hosting.
-    docs_dir = Path(__file__).resolve().parent.parent.parent / "docs"
-    try:
-        shutil.copytree(site_dir, docs_dir, dirs_exist_ok=True)
-    except Exception as e:
-        print(f"Warning: Failed to copy generated site to docs/ folder: {e}")
-    return latest_dir / "index.html"
+# Deleted old helper functions since we now write directly to docs/ without duplication.
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -63,7 +35,7 @@ def main(argv: list[str] | None = None) -> int:
         help="Max age for kept articles (default 7 days for recent coverage)",
     )
     parser.add_argument("--limit", type=int, default=1000)
-    parser.add_argument("--output-dir", type=Path, default=Path("output"))
+    parser.add_argument("--output-dir", type=Path, default=Path("docs"))
     parser.add_argument("--open", action="store_true")
     parser.add_argument("--keep-old", action="store_true")
     parser.add_argument("--no-enrich", action="store_true",
@@ -136,22 +108,11 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as e:
         print(f"  briefing inputs failed: {e}")
 
-    from datetime import datetime as _dt
-    site_dir = args.output_dir / f"site_{_dt.now().strftime('%Y%m%d-%H%M%S')}"
-    index = render(articles, site_dir, pulse=pulse, patents=patents, filings=filings)
-    latest_index = _publish_latest(site_dir, args.output_dir)
-    print(f"Site: {index}")
-    print(f"Latest: {latest_index}")
-
-    if not args.keep_old:
-        _cleanup_old_dirs(args.output_dir, site_dir)
-        # Also clean up old single-file reports from earlier versions.
-        for old in args.output_dir.glob("bluetooth-news-*.html"):
-            try: old.unlink()
-            except OSError: pass
+    index = render(articles, args.output_dir, pulse=pulse, patents=patents, filings=filings)
+    print(f"Site generated successfully in {args.output_dir}: {index}")
 
     if args.open:
-        webbrowser.open(latest_index.resolve().as_uri())
+        webbrowser.open(index.resolve().as_uri())
     return 0
 
 

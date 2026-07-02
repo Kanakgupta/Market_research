@@ -43,12 +43,6 @@ if ($LASTEXITCODE -ne 0) {
     throw "step 2 failed (exit $LASTEXITCODE): $pythonCmd run.py"
 }
 
-# Prune older site_* report folders, keep most recent 5
-Get-ChildItem (Join-Path $root 'output') -Directory -Filter 'site_*' |
-    Sort-Object LastWriteTime -Descending |
-    Select-Object -Skip 5 |
-    Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
-
 "=== Finished $(Get-Date -Format o) ===" | Tee-Object -FilePath $log -Append
 
 # Keep only the last 14 daily logs

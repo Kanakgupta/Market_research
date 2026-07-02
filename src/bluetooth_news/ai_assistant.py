@@ -29,7 +29,7 @@ _SAVE_EVERY = 1000  # incremental save
 # ---------------------------------------------------------------- paths
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
-OUTPUT_ROOT = ROOT / "output"
+DOCS_ROOT = ROOT / "docs"
 INDEX_FILE = DATA_DIR / "ai_index.json"
 PREFS_FILE = DATA_DIR / "ai_prefs.json"
 QA_CACHE_FILE = DATA_DIR / "ai_qa_cache.json"
@@ -498,18 +498,8 @@ def _ingest_project_json() -> Iterable[Chunk]:
 
 # ---------------------------------------------------------------- report HTML ingest
 def _latest_report_dir() -> Path | None:
-    """The report bundle the AI server actually serves (newest site_* dir),
-    falling back to output/latest."""
-    if not OUTPUT_ROOT.exists():
-        return None
-    sites = sorted(
-        (p for p in OUTPUT_ROOT.glob("site_*") if p.is_dir()),
-        key=lambda p: p.stat().st_mtime, reverse=True,
-    )
-    if sites:
-        return sites[0]
-    latest = OUTPUT_ROOT / "latest"
-    return latest if latest.is_dir() else None
+    """The report bundle from the docs directory."""
+    return DOCS_ROOT if DOCS_ROOT.is_dir() else None
 
 
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
