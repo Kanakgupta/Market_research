@@ -15,6 +15,7 @@ from pathlib import Path
 from flask import Flask, jsonify, request, Response, send_from_directory, redirect
 
 from . import ai_assistant as A
+from . import tech_news as TN
 
 log = logging.getLogger(__name__)
 
@@ -134,8 +135,29 @@ textarea:focus{outline:none;border-color:var(--accent)}
 @keyframes s{to{transform:rotate(360deg)}}
 .toast{position:fixed;bottom:20px;right:20px;background:#0f172a;color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;z-index:99}
 .toast.show{opacity:.95}
+.topnav{background:var(--card);border-bottom:1px solid var(--border);flex:none;padding:0}
+.topnav .wrap{display:flex;align-items:center;gap:18px;height:60px;max-width:1280px;margin:0 auto;padding:0 20px}
+.topnav .brand-name{font-size:22px;font-weight:800;letter-spacing:.3px;white-space:nowrap;background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-decoration:none}
+.topnav nav{display:flex;gap:6px;align-items:center;flex:1;flex-wrap:wrap}
+.topnav nav a{color:#334155;font-weight:600;font-size:14px;padding:7px 14px;border-radius:8px;background:#f1f5f9;text-decoration:none}
+.topnav nav a:hover{color:var(--accent);background:#eef2ff}
+.topnav nav a.active{color:#fff;background:var(--accent)}
+.topnav .meta-info{color:var(--muted);font-size:12px;white-space:nowrap}
 </style></head>
 <body>
+<header class="topnav"><div class="wrap">
+  <a class="brand-name" href="/report/index.html">IoT Wireless Intel</a>
+  <nav>
+    <a href="/report/index.html">Overview</a>
+    <a href="/report/news.html">News</a>
+    <a href="/report/customers.html">Customers</a>
+    <a href="/report/competitors.html">Competitors</a>
+    <a href="/report/relationships.html">Relationships</a>
+    <a href="/report/technology.html">Technology</a>
+    <a href="/ai" class="active" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">AI Assistant</div>
+</div></header>
 <header>
   <span class="brand">AIROC AI</span>
   <span class="pill" id="status">loading…</span>
@@ -250,16 +272,139 @@ refreshStatus();
 """
 
 
+# ---------------------------------------------------------------- dynamic news page
+_NEWS_HTML = r"""<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>News · IoT Wireless Intel</title>
+<style>
+:root{--bg:#f7f9fc;--card:#fff;--border:#e4e8ee;--text:#1a1f2c;--muted:#6b7280;--accent:#2563eb;--hover:#f1f5fb;}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:14.5px;line-height:1.5;}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+.topnav{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.topnav .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.topnav .brand-name{font-size:22px;font-weight:800;letter-spacing:.3px;white-space:nowrap;background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-decoration:none}
+.topnav nav{display:flex;gap:6px;align-items:center;flex:1;flex-wrap:wrap}
+.topnav nav a{color:#334155;font-weight:600;font-size:14px;padding:7px 14px;border-radius:8px;background:#f1f5f9}
+.topnav nav a:hover{color:var(--accent);background:#eef2ff;text-decoration:none}
+.topnav nav a.active{color:#fff;background:var(--accent)}
+.content{padding:24px 20px 60px}
+.hero h1{margin:0 0 6px;font-size:26px}
+.hero p{color:var(--muted);margin:0;max-width:900px}
+.controls{margin:16px 0 8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.controls button{border:1px solid var(--border);background:#fff;color:#0f172a;border-radius:8px;padding:7px 14px;font-weight:600;cursor:pointer;font-size:13px}
+.controls button:hover{border-color:var(--accent);color:var(--accent)}
+.controls .updated{color:var(--muted);font-size:12.5px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}
+.filters button{background:#f1f5f9;border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer;color:#0f172a}
+.filters button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.thumb{aspect-ratio:16/9;background:#eef2f8;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.body{padding:.85rem 1rem 1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.meta-row{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;font-size:.72rem;color:var(--muted)}
+.chip{padding:.15rem .55rem;border-radius:999px;font-weight:600;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;background:#eef2ff;color:#3730a3}
+.source{font-weight:600;opacity:.8}.dot{opacity:.5}
+.title{font-size:.98rem;font-weight:600;line-height:1.35;margin:0}
+.title a{color:var(--text)}.title a:hover{color:var(--accent)}
+.summary{color:var(--muted);font-size:.83rem;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:3rem;text-align:center;color:var(--muted)}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid #cbd5e1;border-top-color:var(--accent);border-radius:50%;animation:s 1s linear infinite;vertical-align:-3px;margin-right:6px}
+@keyframes s{to{transform:rotate(360deg)}}
+.footer{margin-top:2rem;text-align:center;color:var(--muted);font-size:.78rem;padding:20px 0;border-top:1px solid var(--border)}
+</style></head>
+<body>
+<header class="topnav"><div class="wrap">
+  <a class="brand-name" href="/report/index.html">IoT Wireless Intel</a>
+  <nav>
+    <a href="/report/index.html">Overview</a>
+    <a href="/report/news.html" class="active">News</a>
+    <a href="/report/customers.html">Customers</a>
+    <a href="/report/competitors.html">Competitors</a>
+    <a href="/report/relationships.html">Relationships</a>
+    <a href="/report/technology.html">Technology</a>
+    <a href="/ai" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+</div></header>
+
+<main class="wrap content">
+  <section class="hero">
+    <h1>Technology News</h1>
+    <p>Live technology headlines fetched from trusted tech sources. Cached and auto-refreshed &mdash; served instantly, re-fetched when stale.</p>
+  </section>
+  <div class="controls">
+    <button id="refresh">⟳ Refresh</button>
+    <span class="updated" id="updated">loading…</span>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div id="grid" class="grid"><div class="empty"><span class="spin"></span>Loading technology news…</div></div>
+  <div class="footer">IoT Wireless Intel · dynamic technology feed</div>
+</main>
+
+<script>
+let ALL=[], CAT='All';
+const grid=document.getElementById('grid');
+const updated=document.getElementById('updated');
+const filtersEl=document.getElementById('filters');
+
+function esc(s){return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function timeAgo(iso){ if(!iso) return ''; const t=new Date(iso).getTime(); if(!t) return '';
+  const m=Math.floor((Date.now()-t)/60000); if(m<1)return 'just now'; if(m<60)return m+(m===1?' min ago':' mins ago');
+  const h=Math.floor(m/60); if(h<24)return h+(h===1?' hour ago':' hours ago');
+  const d=Math.floor(h/24); if(d<30)return d+(d===1?' day ago':' days ago');
+  const mo=Math.floor(d/30); return mo+(mo===1?' month ago':' months ago'); }
+
+function render(){
+  const items = CAT==='All' ? ALL : ALL.filter(i=>i.cat===CAT);
+  if(!items.length){ grid.innerHTML='<div class="empty">No headlines right now. Try Refresh.</div>'; return; }
+  grid.innerHTML = items.map(i=>{
+    const thumb = i.image ? `<div class="thumb"><img src="${esc(i.image)}" loading="lazy" onerror="this.parentNode.style.display='none'"></div>` : '';
+    return `<article class="card">${thumb}<div class="body">
+      <div class="meta-row"><span class="chip">${esc(i.cat||'Tech')}</span><span class="source">${esc(i.source)}</span>${i.pub?`<span class="dot">·</span><span>${esc(timeAgo(i.pub))}</span>`:''}</div>
+      <h2 class="title"><a href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a></h2>
+      ${i.desc?`<p class="summary">${esc(i.desc)}</p>`:''}
+    </div></article>`;
+  }).join('');
+}
+
+function buildFilters(){
+  const cats=['All',...Array.from(new Set(ALL.map(i=>i.cat||'Tech')))];
+  filtersEl.innerHTML=cats.map(c=>`<button data-c="${esc(c)}" class="${c===CAT?'active':''}">${esc(c)}</button>`).join('');
+  filtersEl.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{CAT=b.dataset.c;buildFilters();render();}));
+}
+
+async function load(force){
+  updated.innerHTML='<span class="spin"></span>fetching…';
+  try{
+    const r=await fetch('/api/technews'+(force?'?force=1':''));
+    const j=await r.json();
+    ALL=j.items||[];
+    updated.textContent=`${j.count} headlines · updated ${j.updated_at?timeAgo(j.updated_at):'now'}${j.cached?' · cached':''}`;
+    buildFilters(); render();
+  }catch(e){ grid.innerHTML='<div class="empty">Could not load news: '+esc(String(e))+'</div>'; updated.textContent='offline'; }
+}
+
+document.getElementById('refresh').addEventListener('click',()=>load(true));
+load(false);
+</script>
+</body></html>
+"""
+
+
 # ---------------------------------------------------------------- routes
 @app.get("/")
 @app.get("/index.html")
 def index() -> Response:
-  # Backward compatibility: old report builds set AI iframe src to '/'.
-  # If the browser is loading this route as an iframe, send chat view.
-  if request.headers.get("Sec-Fetch-Dest", "").lower() == "iframe":
-    return redirect("/ai", code=302)
-  # Single-server mode: root URL serves the latest report HTML.
-  return redirect("/report/", code=302)
+    # Backward compatibility: old report builds set AI iframe src to '/'.
+    # If the browser is loading this route as an iframe, send chat view.
+    if request.headers.get("Sec-Fetch-Dest", "").lower() == "iframe":
+        return redirect("/ai", code=302)
+    # Single-server mode: root URL serves the latest report HTML.
+    return redirect("/report/", code=302)
 
 
 @app.get("/api/status")
@@ -392,6 +537,17 @@ def refresh_news_status() -> Response:
         return jsonify(dict(_refresh_state))
 
 
+@app.get("/api/technews")
+def api_technews() -> Response:
+    """Cache-then-fetch technology news feed (see tech_news.py)."""
+    force = request.args.get("force", "").lower() in ("1", "true", "yes")
+    try:
+        ttl = int(request.args.get("ttl", TN.DEFAULT_TTL_MINUTES))
+    except (TypeError, ValueError):
+        ttl = TN.DEFAULT_TTL_MINUTES
+    return jsonify(TN.get_tech_news(force=force, ttl_minutes=ttl))
+
+
 # ---------------------------------------------------------------- report passthrough
 @app.get("/report/")
 @app.get("/report")
@@ -403,12 +559,19 @@ def _report_root():
     return send_from_directory(str(site), "index.html")
 
 
+@app.get("/report/news.html")
+@app.get("/technews")
+def _news_page() -> Response:
+    """Dynamic, cache-then-fetch technology news tab."""
+    return Response(_NEWS_HTML, mimetype="text/html")
+
+
 @app.get("/report/<path:filename>")
 def _report_file(filename: str):
-  # Always serve AI chat from the live route, not from static built ai.html,
-  # so stale report bundles cannot recurse into /report/ again.
-  if filename.lower() == "ai.html":
-    return redirect("/ai", code=302)
+    # Always serve AI chat from the live route, not from static built ai.html,
+    # so stale report bundles cannot recurse into /report/ again.
+    if filename.lower() == "ai.html":
+        return redirect("/ai", code=302)
     site = _latest_site()
     if not site:
         return ("not found", 404)

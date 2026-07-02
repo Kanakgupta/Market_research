@@ -432,8 +432,6 @@ _CUSTOMERS_TEMPLATE = """<!doctype html>
 /* News card grid (mirrors main news tab) */
 .oc-news-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:16px; margin-top:12px; }
 .oc-news-grid .card { margin:0; }
-
-main.wrap.content { max-width:100%; padding-left:24px; padding-right:24px; }
 </style>
 </head><body>
 """ + _NAV_HTML + """
@@ -780,9 +778,6 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
 /* Secondary table */
 .ci-secondary { margin-top:32px; }
 .ci-secondary h2 { font-size:17px; margin-bottom:10px; color:#374151; }
-/* Full-width override for competitors page */
-main.wrap.content { max-width:100%; padding-left:24px; padding-right:24px; }
-.ci-layout { grid-template-columns:290px 1fr; }
 </style>
 </head><body>
 """ + _NAV_HTML + """

@@ -1,8 +1,12 @@
 @echo off
 REM ============================================================
 REM  BUILD_RUN.bat
-REM  Start one local server for report + AI on localhost:5005,
-REM  then trigger background refresh (non-blocking).
+REM  1) Start ONE local server (report + AI) on localhost:5005
+REM  2) Open the UI in the browser
+REM  3) Start a 6-hour loop that:
+REM        - fetches the latest data
+REM        - rebuilds the local site (localhost reflects updates)
+REM        - pushes the updates to GitHub
 REM
 REM  Usage:  double-click  OR  run from any directory:
 REM          "C:\guptakanak\AI_Agents\Marketing\Research\BUILD_RUN.bat"
@@ -20,29 +24,16 @@ cd /d "%ROOT%"
 
 echo.
 echo ============================================================
-echo  STEP 0/3  Ensure daily refresh schedule (4:45 AM Pacific)
-echo ============================================================
-"%POWERSHELL%" -NoProfile -ExecutionPolicy Bypass -File "%ROOT%\scripts\setup_daily_task.ps1" -StartTime 04:45
-IF ERRORLEVEL 1 (
-    echo [WARN] Could not ensure daily Task Scheduler job - continuing anyway...
-)
-
-echo.
-echo ============================================================
-echo  STEP 1/3  Start single local server on http://localhost:5005
+echo  STEP 1/3  Start local server on http://localhost:5005
 echo ============================================================
 start "AIROC Unified Server" cmd /k "%PYTHON% run.py ai --no-open"
 
-echo.
-echo ============================================================
-echo  STEP 2/3  Trigger background full refresh (non-blocking)
-echo ============================================================
-timeout /t 3 /nobreak >nul
-"%POWERSHELL%" -NoProfile -Command "try { Invoke-WebRequest -Uri 'http://localhost:5005/api/refresh-full' -Method POST -UseBasicParsing | Out-Null; Write-Host '[OK] Background refresh started.' } catch { Write-Host '[WARN] Could not trigger background refresh now.' }"
+echo Waiting a few seconds for the server to come up...
+timeout /t 4 /nobreak >nul
 
 echo.
 echo ============================================================
-echo  STEP 3/3  Open unified UI at http://localhost:5005
+echo  STEP 2/3  Open the UI at http://localhost:5005
 echo ============================================================
 IF EXIST "%CHROME%" (
     start "" "%CHROME%" "http://localhost:5005"
@@ -52,7 +43,16 @@ IF EXIST "%CHROME%" (
 )
 
 echo.
-echo Done. Use http://localhost:5005 for report and AI chat.
-echo The server keeps running in its own window.
+echo ============================================================
+echo  STEP 3/3  Start daily 4 AM Pacific update (fetch - build - push)
+echo ============================================================
+start "AIROC Update Loop" "%POWERSHELL%" -NoProfile -ExecutionPolicy Bypass -File "%ROOT%\scripts\update_loop.ps1" -RunHourPacific 4
+
+echo.
+echo Done.
+echo   - "AIROC Unified Server" window serves http://localhost:5005 (report + AI)
+echo   - "AIROC Update Loop" window rebuilds data and pushes to GitHub once a day
+echo     at 4:00 AM California time.
+echo Close those two windows to stop the server / updates.
 echo Press any key to exit this launcher.
 pause >nul
