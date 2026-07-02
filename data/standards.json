@@ -1,0 +1,62 @@
+{
+  "_comment": "Wireless standards landscape \u2014 watchlist for spec versions and upcoming features.",
+  "standards": [
+    {
+      "family": "Bluetooth",
+      "body": "Bluetooth SIG",
+      "current_version": "Bluetooth 6.1 (adopted)",
+      "next_version": "Bluetooth 6.2 (in progress)",
+      "in_flight_features": [
+        "Channel Sounding (BT 6.0) \u2014 secure ranging via PBR + RTT",
+        "Decision-based Advertising Filtering (BT 6.0)",
+        "Frame Space Update (BT 6.0)",
+        "Higher band 6 GHz operation (study)",
+        "LE Audio / Auracast adoption broadening to public venues",
+        "Encrypted Advertising Data v2"
+      ],
+      "infineon_position": "AIROC CYW20829 ships Channel Sounding; CYW55513 covers LE Audio. Watch for next-gen 6 GHz parts.",
+      "url": "https://www.bluetooth.com/specifications/"
+    },
+    {
+      "family": "Wi-Fi",
+      "body": "IEEE 802.11 / Wi-Fi Alliance",
+      "current_version": "Wi-Fi 7 (802.11be) certified Q1 2024",
+      "next_version": "Wi-Fi 8 (802.11bn) draft, target 2028",
+      "in_flight_features": [
+        "Wi-Fi 7 MLO mass deployment in routers/clients",
+        "Wi-Fi 8 UHR \u2014 Ultra-High Reliability (deterministic, mobility)",
+        "AFC (Automated Frequency Coordination) for 6 GHz standard power",
+        "Wi-Fi HaLow (802.11ah) growth in long-range IoT"
+      ],
+      "infineon_position": "AIROC CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet \u2014 gap vs Synaptics Veros/MediaTek Filogic 380.",
+      "url": "https://www.wi-fi.org/discover-wi-fi"
+    },
+    {
+      "family": "802.15.4 / Thread / Matter",
+      "body": "IEEE / Thread Group / CSA",
+      "current_version": "Thread 1.4 (Apr 2024) \u00b7 Matter 1.4 (Q4 2024) \u00b7 Matter 1.5 (in progress)",
+      "next_version": "Matter 1.5 (cameras, energy, water valves, robots)",
+      "in_flight_features": [
+        "Matter 1.5 \u2014 camera streaming, EV chargers, soil moisture, robot vacuums",
+        "Matter Casting v2 (multi-room audio video)",
+        "Thread 1.4 enhanced commissioning + offline mesh",
+        "Aliro (CSA) digital key v2 \u2014 NFC + UWB + BLE"
+      ],
+      "infineon_position": "AIROC has 802.15.4 in CYW55573; Matter SDK supported. Strong vs NXP IW612 / Silicon Labs MG24 in tri-radio stories.",
+      "url": "https://csa-iot.org/all-solutions/matter/"
+    },
+    {
+      "family": "UWB",
+      "body": "FiRa Consortium / Aliro",
+      "current_version": "FiRa 2.0 (2024)",
+      "next_version": "FiRa 3.0 \u2014 high-precision indoor positioning",
+      "in_flight_features": [
+        "Aliro digital key (NFC+UWB+BLE) gaining auto OEM commitments",
+        "UWB radar / sensing for presence detection",
+        "Phone-to-phone UWB ranging"
+      ],
+      "infineon_position": "AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung.",
+      "url": "https://www.firaconsortium.org/"
+    }
+  ]
+}

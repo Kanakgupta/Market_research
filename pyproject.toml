@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bluetooth-news"
+version = "0.1.0"
+description = "Aggregate Bluetooth-related news from across the internet into an HTML report."
+requires-python = ">=3.10"
+dependencies = [
+    "feedparser>=6.0.11",
+    "requests>=2.32.0",
+    "jinja2>=3.1.4",
+    "python-dotenv>=1.0.1",
+    "python-dateutil>=2.9.0",
+]
+
+[project.scripts]
+bluetooth-news = "bluetooth_news.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

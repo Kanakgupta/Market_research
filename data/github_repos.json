@@ -1,0 +1,14 @@
+{
+  "_comment": "Open-source wireless stacks to track for commit / issue activity.",
+  "repos": [
+    {"name": "Zephyr Bluetooth", "owner": "zephyrproject-rtos", "repo": "zephyr", "label": "BLE host + controller (RTOS)", "tech": ["bluetooth"]},
+    {"name": "BlueZ",            "owner": "bluez", "repo": "bluez", "label": "Linux BT stack", "tech": ["bluetooth"]},
+    {"name": "NimBLE",           "owner": "apache", "repo": "mynewt-nimble", "label": "Apache NimBLE BT host/ctlr", "tech": ["bluetooth"]},
+    {"name": "ESP-IDF",          "owner": "espressif", "repo": "esp-idf", "label": "Espressif Wi-Fi/BT/Thread SDK", "tech": ["wifi", "bluetooth", "ieee15_4"]},
+    {"name": "OpenThread",       "owner": "openthread", "repo": "openthread", "label": "Google Thread implementation", "tech": ["thread"]},
+    {"name": "Matter SDK",       "owner": "project-chip", "repo": "connectedhomeip", "label": "Matter (connectedhomeip)", "tech": ["matter"]},
+    {"name": "hostap",           "owner": "ihewitt", "repo": "hostap", "label": "wpa_supplicant / hostapd Wi-Fi", "tech": ["wifi"]},
+    {"name": "Linux mac80211",   "owner": "torvalds", "repo": "linux", "label": "Linux Wi-Fi (kernel)", "tech": ["wifi"]},
+    {"name": "Zigbee2MQTT",      "owner": "Koenkk", "repo": "zigbee2mqtt", "label": "Zigbee gateway", "tech": ["ieee15_4"]}
+  ]
+}
