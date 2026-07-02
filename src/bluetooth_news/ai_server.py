@@ -254,6 +254,10 @@ refreshStatus();
 @app.get("/")
 @app.get("/index.html")
 def index() -> Response:
+  # Backward compatibility: old report builds set AI iframe src to '/'.
+  # If the browser is loading this route as an iframe, send chat view.
+  if request.headers.get("Sec-Fetch-Dest", "").lower() == "iframe":
+    return redirect("/ai", code=302)
   # Single-server mode: root URL serves the latest report HTML.
   return redirect("/report/", code=302)
 
