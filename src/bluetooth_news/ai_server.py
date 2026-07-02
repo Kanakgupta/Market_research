@@ -252,8 +252,10 @@ refreshStatus();
 
 # ---------------------------------------------------------------- routes
 @app.get("/")
+@app.get("/index.html")
 def index() -> Response:
-    return Response(_CHAT_HTML, mimetype="text/html")
+  # Single-server mode: root URL serves the latest report HTML.
+  return redirect("/report/", code=302)
 
 
 @app.get("/api/status")
@@ -303,48 +305,79 @@ def reindex() -> Response:
 # ---------------------------------------------------------------- news refresh
 _refresh_lock = threading.Lock()
 _refresh_state: dict = {"running": False, "started": None, "finished": None,
-                        "ok": None, "error": None, "site": None}
+            "ok": None, "error": None, "site": None, "mode": None}
 
 
-def _do_news_refresh() -> None:
+def _do_refresh(full_refresh: bool) -> None:
     import subprocess, time, sys
     try:
-        log.info("news-refresh: starting subprocess 'python run.py'")
-        proc = subprocess.run(
-            [sys.executable, "run.py"],
-            cwd=str(ROOT), capture_output=True, text=True, timeout=60 * 30,
-        )
-        ok = proc.returncode == 0
+    timeout_sec = 60 * 90 if full_refresh else 60 * 30
+    if full_refresh:
+      log.info("refresh: full mode starting 'python run.py ai-nightly'")
+      p1 = subprocess.run(
+        [sys.executable, "run.py", "ai-nightly"],
+        cwd=str(ROOT), capture_output=True, text=True, timeout=timeout_sec,
+      )
+      if p1.returncode != 0:
+        raise RuntimeError((p1.stderr or p1.stdout or "ai-nightly failed")[-500:])
+
+    log.info("refresh: site mode starting 'python run.py'")
+    p2 = subprocess.run(
+      [sys.executable, "run.py"],
+      cwd=str(ROOT), capture_output=True, text=True, timeout=timeout_sec,
+    )
+    ok = p2.returncode == 0
         site = _latest_site()
         with _refresh_lock:
             _refresh_state.update({
                 "running": False,
                 "finished": time.time(),
                 "ok": ok,
-                "error": None if ok else (proc.stderr or proc.stdout)[-500:],
+        "error": None if ok else (p2.stderr or p2.stdout)[-500:],
                 "site": site.name if site else None,
+        "mode": "full" if full_refresh else "site",
             })
-        log.info("news-refresh: done ok=%s site=%s", ok, site.name if site else "?")
+    log.info("refresh: done mode=%s ok=%s site=%s",
+         "full" if full_refresh else "site", ok, site.name if site else "?")
     except Exception as e:  # noqa: BLE001
         with _refresh_lock:
             _refresh_state.update({
                 "running": False, "finished": time.time(),
-                "ok": False, "error": str(e)[:500],
+        "ok": False, "error": str(e)[:500],
+        "mode": "full" if full_refresh else "site",
             })
-        log.exception("news-refresh failed")
+    log.exception("refresh failed")
 
 
-@app.post("/api/refresh-news")
-def refresh_news() -> Response:
+def _start_refresh(full_refresh: bool) -> Response:
     import time
     with _refresh_lock:
         if _refresh_state["running"]:
             return jsonify({"started": False, "reason": "already running",
                             "since": _refresh_state["started"]})
         _refresh_state.update({"running": True, "started": time.time(),
-                               "finished": None, "ok": None, "error": None})
-    threading.Thread(target=_do_news_refresh, daemon=True, name="news-refresh").start()
-    return jsonify({"started": True, "started_at": _refresh_state["started"]})
+                 "finished": None, "ok": None, "error": None,
+                 "mode": "full" if full_refresh else "site"})
+  tname = "full-refresh" if full_refresh else "site-refresh"
+  threading.Thread(target=_do_refresh, args=(full_refresh,), daemon=True, name=tname).start()
+  return jsonify({"started": True, "started_at": _refresh_state["started"],
+          "mode": _refresh_state["mode"]})
+
+
+@app.post("/api/refresh-news")
+def refresh_news() -> Response:
+  # Backward-compatible alias: site refresh only.
+  return _start_refresh(full_refresh=False)
+
+
+@app.post("/api/refresh-site")
+def refresh_site() -> Response:
+  return _start_refresh(full_refresh=False)
+
+
+@app.post("/api/refresh-full")
+def refresh_full() -> Response:
+  return _start_refresh(full_refresh=True)
 
 
 @app.get("/api/refresh-news/status")

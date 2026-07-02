@@ -1814,10 +1814,10 @@ _AI_SHIM_TEMPLATE = """<!doctype html>
   // fall back to absolute http://localhost:5005/ URLs.
   var sameOrigin = (location.protocol === 'http:' || location.protocol === 'https:')
                    && location.port === '5005';
-  var chatUrl = sameOrigin ? '/' : 'http://localhost:5005/';
+  var chatUrl = sameOrigin ? '/ai' : 'http://localhost:5005/ai';
   var statusUrl = sameOrigin ? '/api/status' : 'http://localhost:5005/api/status';
   fr.src = chatUrl;
-  openNew.href = sameOrigin ? '/' : 'http://localhost:5005/';
+  openNew.href = sameOrigin ? '/ai' : 'http://localhost:5005/ai';
   function check(){
     fetch(statusUrl,{mode:'cors',cache:'no-store'})
       .then(function(r){return r.ok?r.json():Promise.reject()})

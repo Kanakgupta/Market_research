@@ -1,8 +1,8 @@
 @echo off
 REM ============================================================
 REM  BUILD_RUN.bat
-REM  Fetch latest data, build the HTML research site, start the
-REM  AI chat server, then open both in Chrome.
+REM  Start one local server for report + AI on localhost:5005,
+REM  then trigger background refresh (non-blocking).
 REM
 REM  Usage:  double-click  OR  run from any directory:
 REM          "C:\guptakanak\AI_Agents\Marketing\Research\BUILD_RUN.bat"
@@ -29,34 +29,25 @@ IF ERRORLEVEL 1 (
 
 echo.
 echo ============================================================
-echo  STEP 1/3  Rebuild AI index (local docs + web enrichment)
+echo  STEP 1/3  Start single local server on http://localhost:5005
 echo ============================================================
-"%PYTHON%" run.py ai-nightly
-IF ERRORLEVEL 1 (
-    echo [WARN] ai-nightly step had errors - continuing anyway...
-)
+start "AIROC Unified Server" cmd /k "%PYTHON% run.py ai --no-open"
 
 echo.
 echo ============================================================
-echo  STEP 2/3  Start AI chat server on http://localhost:5005
+echo  STEP 2/3  Trigger background full refresh (non-blocking)
 echo ============================================================
-start "AIROC AI Server" cmd /k "%PYTHON% run.py ai --no-open"
-
-REM Give the AI server a moment to bind its port
 timeout /t 3 /nobreak >nul
+"%POWERSHELL%" -NoProfile -Command "try { Invoke-WebRequest -Uri 'http://localhost:5005/api/refresh-full' -Method POST -UseBasicParsing | Out-Null; Write-Host '[OK] Background refresh started.' } catch { Write-Host '[WARN] Could not trigger background refresh now.' }"
 
 echo.
 echo ============================================================
-echo  STEP 3/3  Build HTML site and serve on http://127.0.0.1:8888/index.html
-echo            (Chrome will open automatically)
+echo  STEP 3/3  Open unified UI at http://localhost:5005
 echo ============================================================
-
-REM Open AI chat in Chrome now (site server starts next)
 start "" %CHROME% "http://localhost:5005"
 
-REM Build site + serve + open index.html in default browser
-"%PYTHON%" scripts\Build_open_site.py --host 127.0.0.1 --port 8888 --page index.html
-
 echo.
-echo Done. Press any key to exit.
+echo Done. Use http://localhost:5005 for report and AI chat.
+echo The server keeps running in its own window.
+echo Press any key to exit this launcher.
 pause >nul
