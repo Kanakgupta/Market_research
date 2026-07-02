@@ -311,42 +311,44 @@ _refresh_state: dict = {"running": False, "started": None, "finished": None,
 def _do_refresh(full_refresh: bool) -> None:
     import subprocess, time, sys
     try:
-    timeout_sec = 60 * 90 if full_refresh else 60 * 30
-    if full_refresh:
-      log.info("refresh: full mode starting 'python run.py ai-nightly'")
-      p1 = subprocess.run(
-        [sys.executable, "run.py", "ai-nightly"],
-        cwd=str(ROOT), capture_output=True, text=True, timeout=timeout_sec,
-      )
-      if p1.returncode != 0:
-        raise RuntimeError((p1.stderr or p1.stdout or "ai-nightly failed")[-500:])
+        timeout_sec = 60 * 90 if full_refresh else 60 * 30
+        if full_refresh:
+            log.info("refresh: full mode starting 'python run.py ai-nightly'")
+            p1 = subprocess.run(
+                [sys.executable, "run.py", "ai-nightly"],
+                cwd=str(ROOT), capture_output=True, text=True, timeout=timeout_sec,
+            )
+            if p1.returncode != 0:
+                raise RuntimeError((p1.stderr or p1.stdout or "ai-nightly failed")[-500:])
 
-    log.info("refresh: site mode starting 'python run.py'")
-    p2 = subprocess.run(
-      [sys.executable, "run.py"],
-      cwd=str(ROOT), capture_output=True, text=True, timeout=timeout_sec,
-    )
-    ok = p2.returncode == 0
+        log.info("refresh: site mode starting 'python run.py'")
+        p2 = subprocess.run(
+            [sys.executable, "run.py"],
+            cwd=str(ROOT), capture_output=True, text=True, timeout=timeout_sec,
+        )
+        ok = p2.returncode == 0
         site = _latest_site()
         with _refresh_lock:
             _refresh_state.update({
                 "running": False,
                 "finished": time.time(),
                 "ok": ok,
-        "error": None if ok else (p2.stderr or p2.stdout)[-500:],
+                "error": None if ok else (p2.stderr or p2.stdout)[-500:],
                 "site": site.name if site else None,
-        "mode": "full" if full_refresh else "site",
+                "mode": "full" if full_refresh else "site",
             })
-    log.info("refresh: done mode=%s ok=%s site=%s",
-         "full" if full_refresh else "site", ok, site.name if site else "?")
+        log.info("refresh: done mode=%s ok=%s site=%s",
+                 "full" if full_refresh else "site", ok, site.name if site else "?")
     except Exception as e:  # noqa: BLE001
         with _refresh_lock:
             _refresh_state.update({
-                "running": False, "finished": time.time(),
-        "ok": False, "error": str(e)[:500],
-        "mode": "full" if full_refresh else "site",
+                "running": False,
+                "finished": time.time(),
+                "ok": False,
+                "error": str(e)[:500],
+                "mode": "full" if full_refresh else "site",
             })
-    log.exception("refresh failed")
+        log.exception("refresh failed")
 
 
 def _start_refresh(full_refresh: bool) -> Response:
@@ -358,10 +360,10 @@ def _start_refresh(full_refresh: bool) -> Response:
         _refresh_state.update({"running": True, "started": time.time(),
                  "finished": None, "ok": None, "error": None,
                  "mode": "full" if full_refresh else "site"})
-  tname = "full-refresh" if full_refresh else "site-refresh"
-  threading.Thread(target=_do_refresh, args=(full_refresh,), daemon=True, name=tname).start()
-  return jsonify({"started": True, "started_at": _refresh_state["started"],
-          "mode": _refresh_state["mode"]})
+    tname = "full-refresh" if full_refresh else "site-refresh"
+    threading.Thread(target=_do_refresh, args=(full_refresh,), daemon=True, name=tname).start()
+    return jsonify({"started": True, "started_at": _refresh_state["started"],
+            "mode": _refresh_state["mode"]})
 
 
 @app.post("/api/refresh-news")
