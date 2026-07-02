@@ -305,7 +305,7 @@ def reindex() -> Response:
 # ---------------------------------------------------------------- news refresh
 _refresh_lock = threading.Lock()
 _refresh_state: dict = {"running": False, "started": None, "finished": None,
-            "ok": None, "error": None, "site": None, "mode": None}
+                        "ok": None, "error": None, "site": None, "mode": None}
 
 
 def _do_refresh(full_refresh: bool) -> None:
@@ -366,18 +366,18 @@ def _start_refresh(full_refresh: bool) -> Response:
 
 @app.post("/api/refresh-news")
 def refresh_news() -> Response:
-  # Backward-compatible alias: site refresh only.
-  return _start_refresh(full_refresh=False)
+    # Backward-compatible alias: site refresh only.
+    return _start_refresh(full_refresh=False)
 
 
 @app.post("/api/refresh-site")
 def refresh_site() -> Response:
-  return _start_refresh(full_refresh=False)
+    return _start_refresh(full_refresh=False)
 
 
 @app.post("/api/refresh-full")
 def refresh_full() -> Response:
-  return _start_refresh(full_refresh=True)
+    return _start_refresh(full_refresh=True)
 
 
 @app.get("/api/refresh-news/status")

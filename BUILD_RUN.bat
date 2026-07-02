@@ -10,7 +10,7 @@ REM ============================================================
 
 SET ROOT=C:\guptakanak\AI_Agents\Marketing\Research
 SET PYTHON=%ROOT%\.venv\Scripts\python.exe
-SET CHROME="C:\Program Files\Google\Chrome\Application\chrome.exe"
+SET CHROME=C:\Program Files\Google\Chrome\Application\chrome.exe
 SET POWERSHELL=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe
 
 REM -- fall back to system python if venv does not exist
@@ -44,7 +44,12 @@ echo.
 echo ============================================================
 echo  STEP 3/3  Open unified UI at http://localhost:5005
 echo ============================================================
-start "" %CHROME% "http://localhost:5005"
+IF EXIST "%CHROME%" (
+    start "" "%CHROME%" "http://localhost:5005"
+) ELSE (
+    echo [WARN] Chrome not found at "%CHROME%". Opening in default browser...
+    start "" "http://localhost:5005"
+)
 
 echo.
 echo Done. Use http://localhost:5005 for report and AI chat.
