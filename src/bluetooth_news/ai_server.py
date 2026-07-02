@@ -405,6 +405,10 @@ def _report_root():
 
 @app.get("/report/<path:filename>")
 def _report_file(filename: str):
+  # Always serve AI chat from the live route, not from static built ai.html,
+  # so stale report bundles cannot recurse into /report/ again.
+  if filename.lower() == "ai.html":
+    return redirect("/ai", code=302)
     site = _latest_site()
     if not site:
         return ("not found", 404)
