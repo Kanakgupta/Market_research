@@ -1,0 +1,245 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Events · IoT Wireless Intel</title><style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+
+.r-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+.r-card h3 { margin:0 0 6px; font-size:15px; color:#0f172a; }
+.r-card .src { color:var(--muted); font-size:12px; margin-top:4px; }
+.r-card ul { margin:6px 0 0; padding-left:18px; }
+.r-card .meta { color:var(--muted); font-size:12px; }
+.priority-high { background:#fee2e2; color:#991b1b; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:700; }
+.priority-med { background:#fef3c7; color:#92400e; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:700; }
+.priority-low { background:#e0e7ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:700; }
+.empty-llm { background:#f1f5f9; border:1px dashed #cbd5e1; border-radius:8px; padding:16px; color:#475569; font-size:13.5px; line-height:1.6; }
+.empty-llm code { background:#fff; padding:2px 6px; border-radius:4px; font-size:12.5px; }
+.timeline { border-left:3px solid var(--accent); padding-left:14px; margin:10px 0; }
+.timeline .item { margin-bottom:10px; }
+.timeline .when { font-weight:700; color:var(--accent); font-size:12.5px; }
+.repo-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; }
+</style></head><body>
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger " href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+<main class="wrap content">
+<section class="hero">
+  <h1>Events Radar</h1>
+  <p>Industry events to attend or monitor for competitor announcements and customer wins.</p>
+</section>
+
+<section class="section">
+<table class="tbl">
+<thead><tr><th>Date</th><th>Event</th><th>Location</th><th>Themes</th><th>Watch for</th></tr></thead>
+<tbody>
+
+  <tr>
+    <td><strong>2026-09-04</strong> <span class="muted">→ 2026-09-09</span></td>
+    <td><a href="https://b2b.ifa-berlin.com/" target="_blank" rel="noopener">IFA Berlin 2026</a></td>
+    <td>Berlin, Germany</td>
+    <td><span class="tag">Consumer electronics</span><span class="tag">Smart home</span></td>
+    <td>European OEM Matter device launches</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-09-11</strong> <span class="muted">→ 2026-09-14</span></td>
+    <td><a href="https://show.ibc.org/" target="_blank" rel="noopener">IBC 2026 (Broadcast/Streaming)</a></td>
+    <td>Amsterdam, Netherlands</td>
+    <td><span class="tag">Audio</span><span class="tag">Pro AV</span></td>
+    <td>LE Audio / Auracast in pro markets</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-09-23</strong> <span class="muted">→ 2026-09-24</span></td>
+    <td><a href="https://www.iottechexpo.com/europe/" target="_blank" rel="noopener">IoT Tech Expo Europe 2026</a></td>
+    <td>Amsterdam, Netherlands</td>
+    <td><span class="tag">Enterprise IoT</span><span class="tag">Industry 4.0</span></td>
+    <td>Industrial wireless deployments</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-10-01</strong> <span class="muted">→ 2026-12-15</span></td>
+    <td><a href="https://www.arm.com/" target="_blank" rel="noopener">ARM Tech Symposia 2026</a></td>
+    <td>Multiple</td>
+    <td><span class="tag">Cortex-M55/M85</span><span class="tag">Cortex-A IoT</span></td>
+    <td>MCU vendor adoption</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-10-07</strong> <span class="muted">→ 2026-10-10</span></td>
+    <td><a href="https://aesshow.com/" target="_blank" rel="noopener">AES Show 2026</a></td>
+    <td>New York, USA</td>
+    <td><span class="tag">Pro audio</span><span class="tag">Hearables</span></td>
+    <td>Auracast adoption, audio chip wins</td>
+  </tr>
+
+  <tr>
+    <td><strong>2027-01-05</strong> <span class="muted">→ 2027-01-08</span></td>
+    <td><a href="https://www.ces.tech/" target="_blank" rel="noopener">CES 2027</a></td>
+    <td>Las Vegas, USA</td>
+    <td><span class="tag">Smart home</span><span class="tag">Auto</span><span class="tag">AI hardware</span></td>
+    <td>Wi-Fi 8 chips, BT 6.x products</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-01-06</strong> <span class="muted">→ 2026-01-09</span></td>
+    <td><a href="https://www.ces.tech/" target="_blank" rel="noopener">CES 2026</a></td>
+    <td>Las Vegas, USA</td>
+    <td><span class="tag">Smart home</span><span class="tag">Auto</span><span class="tag">Wearables</span><span class="tag">AI hardware</span></td>
+    <td>Matter 1.5 demos, Wi-Fi 7 device launches, AIROC competitor announcements</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-03-02</strong> <span class="muted">→ 2026-03-05</span></td>
+    <td><a href="https://www.mwcbarcelona.com/" target="_blank" rel="noopener">MWC Barcelona 2026</a></td>
+    <td>Barcelona, Spain</td>
+    <td><span class="tag">Wi-Fi 7/8</span><span class="tag">Cellular IoT</span><span class="tag">5G FWA</span></td>
+    <td>Qualcomm/MediaTek next-gen modems &amp; combos</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-03-10</strong> <span class="muted">→ 2026-03-12</span></td>
+    <td><a href="https://www.embedded-world.de/en" target="_blank" rel="noopener">Embedded World 2026</a></td>
+    <td>Nuremberg, Germany</td>
+    <td><span class="tag">IoT chips</span><span class="tag">Industrial</span><span class="tag">Automotive MCUs</span></td>
+    <td>Nordic / NXP / STMicro / Renesas roadmap reveals</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-04-29</strong> <span class="muted">→ 2026-04-30</span></td>
+    <td><a href="https://www.bluetoothworld.com/" target="_blank" rel="noopener">Bluetooth World 2026</a></td>
+    <td>Santa Clara, USA</td>
+    <td><span class="tag">LE Audio</span><span class="tag">Auracast</span><span class="tag">Channel Sounding</span></td>
+    <td>BT 6.x feature demos, Auracast deployments</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-05-12</strong> <span class="muted">→ 2026-05-14</span></td>
+    <td><a href="https://csa-iot.org/" target="_blank" rel="noopener">Matter Summit 2026</a></td>
+    <td>Online + in-person</td>
+    <td><span class="tag">Matter spec</span><span class="tag">CSA Aliro</span></td>
+    <td>Matter 1.5 spec finalization, new device types</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-05-19</strong> <span class="muted">→ 2026-05-21</span></td>
+    <td><a href="https://wifinowevents.com/" target="_blank" rel="noopener">Wi-Fi NOW 2026</a></td>
+    <td>Las Vegas, USA</td>
+    <td><span class="tag">Wi-Fi 7</span><span class="tag">HaLow</span><span class="tag">FWA</span></td>
+    <td>Wi-Fi 8 IEEE 802.11bn pre-standard demos</td>
+  </tr>
+
+  <tr>
+    <td><strong>2026-06-23</strong> <span class="muted">→ 2026-06-25</span></td>
+    <td><a href="https://www.sensorsconverge.com/" target="_blank" rel="noopener">Sensors Converge 2026</a></td>
+    <td>Santa Clara, USA</td>
+    <td><span class="tag">Smart sensors</span><span class="tag">Wearables</span><span class="tag">Industrial</span></td>
+    <td>Energy-harvesting BLE, ambient computing</td>
+  </tr>
+
+</tbody>
+</table>
+</section>
+</main><footer class="footer"><div class="wrap">IoT Wireless Intel · 2026-07-01 19:59 PDT</div></footer></body></html>

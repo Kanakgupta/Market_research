@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Relationships · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+.sankey-wrap { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px; }
+.sankey-wrap svg { width:100%; height:auto; display:block; }
+.legend { font-size:12px; color:var(--muted); margin-top:10px; display:flex; gap:14px; flex-wrap:wrap; }
+.legend span { display:inline-flex; align-items:center; gap:5px; }
+.legend i { display:inline-block; width:12px; height:12px; border-radius:3px; }
+</style>
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger " href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="active">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="hero">
+  <h1>Vendor &harr; IoT Customer Relationships</h1>
+  <p>Verified IoT-only mappings. Each row requires at least one news article whose text contains an IoT context cue (Matter / Thread / smart home / wearable / automotive / industrial-IoT / Bluetooth LE Audio / Wi-Fi 6E/7 / etc.) and which is <em>not</em> about phones, laptops, datacenters, baseband modems, or financial commentary. Width of each ribbon &asymp; number of evidence articles.</p>
+</section>
+
+<div class="sankey-wrap">
+  <svg id="sankey" viewBox="0 0 1200 700" preserveAspectRatio="xMinYMin meet"></svg>
+  <div class="legend">
+    <span>Each chip vendor has its own color — ribbons inherit the vendor's hue</span>
+    <span>Hover a ribbon to highlight · thicker = stronger relationship</span>
+  </div>
+</div>
+
+<section class="section">
+  <h2>Top relationships (123 total)</h2>
+  <table class="tbl">
+    <thead><tr><th style="width:140px;">Vendor</th><th style="width:200px;">Customer</th><th style="width:80px;">Strength</th><th>Strength Breakdown</th><th>Sources (links)</th></tr></thead>
+    <tbody>
+    
+      <tr>
+        <td><strong>MediaTek</strong></td>
+        <td>Amazon</td>
+        <td>10</td>
+        <td>news x2 (8) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.rtings.com/router/learn/wifi-6-vs-wifi-7" target="_blank" rel="noopener">Wi-Fi 6 vs Wi-Fi 7</a> <span class="muted">(RTINGS.com 2026-06-23)</span></li>
+            
+              <li><a href="https://www.rtings.com/router/reviews/best/wi-fi-6" target="_blank" rel="noopener">The 4 Best Wi-Fi 6 Routers of 2026</a> <span class="muted">(RTINGS.com 2026-06-17)</span></li>
+            
+              <li><a href="https://www.rtings.com/router/reviews/best/wi-fi-7" target="_blank" rel="noopener">The 5 Best Wi-Fi 7 Routers of 2026</a> <span class="muted">(RTINGS.com 2026-06-11)</span></li>
+            
+              <li><a href="https://www.rtings.com/router/reviews/best/long-range" target="_blank" rel="noopener">The 5 Best Long-Range Wi-Fi Routers of 2026</a> <span class="muted">(RTINGS.com 2026-06-11)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>Amazon</td>
+        <td>9</td>
+        <td>news x2 (8) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/29/waveshare-esp32-c6-zero-b-a-tiny-esp32-c6-usb-c-board-with-5v-36v-wide-supply-voltage/" target="_blank" rel="noopener">Waveshare ESP32-C6-Zero-B – A tiny ESP32-C6 USB-C board with 5V-36V wide supply voltage</a> <span class="muted">(CNX Software 2026-06-29)</span></li>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/25/louder-esp32-mini-board-adds-wifi-and-bluetooth-to-old-speakers-for-squeezelite-snapclient-or-esphome-support/" target="_blank" rel="noopener">Louder ESP32 Mini board adds WiFi and Bluetooth to old speakers for SqueezeLite, Snapclient, or ESPHome support</a> <span class="muted">(CNX Software 2026-06-25)</span></li>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/13/espressif-esp32-e22-wifi-6e-module-gets-wi-fi-certified-certificate-an-open-source-wifi-and-bluetooth-linux-drivers/" target="_blank" rel="noopener">Espressif ESP32-E22 WiFi 6E module gets Wi-Fi CERTIFIED certificate, open-source WiFi and Bluetooth Linux drivers</a> <span class="muted">(CNX Software 2026-06-13)</span></li>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/12/7-99-seeed-studio-wio-s3-wifi-bluetooth-le-and-lora-iot-module-combines-esp32-s3-and-sx1262-rf-transceiver/" target="_blank" rel="noopener">$7.99 Seeed Studio Wio-S3 WiFi, Bluetooth LE, and LoRa IoT module combines ESP32-S3 and SX1262 RF transceiver</a> <span class="muted">(CNX Software 2026-06-12)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Apple</td>
+        <td>8</td>
+        <td>news x2 (8)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://appleinsider.com/articles/26/06/29/how-thread-is-fixing-smart-home-networks-on-smart-home-insider" target="_blank" rel="noopener">How Thread is fixing smart home networks on Smart Home Insider</a> <span class="muted">(AppleInsider 2026-06-29)</span></li>
+            
+              <li><a href="https://appleinsider.com/articles/26/06/22/jon-harros-from-the-csa-talks-matter-16-on-smart-home-insider" target="_blank" rel="noopener">Jon Harros from the CSA talks Matter 1.6 on Smart Home Insider</a> <span class="muted">(AppleInsider 2026-06-22)</span></li>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/19/matter-1-6-specification-adds-nfc-based-commissioning-thermostat-suggestions-various-core-enhancements/" target="_blank" rel="noopener">Matter 1.6 specification adds NFC-based commissioning, thermostat suggestions, various core enhancements</a> <span class="muted">(CNX Software 2026-06-19)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>NXP</strong></td>
+        <td>Amazon</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a> <span class="muted">(CNX Software 2026-06-29)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>Microsoft</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://techmymoney.com/2026/06/13/windows-11-shared-audio-two-devices/" target="_blank" rel="noopener">Windows 11 Shared Audio Streams to Two Headphones at Once</a> <span class="muted">(Tech My Money 2026-06-13)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Nordic</strong></td>
+        <td>Garmin</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Nordic%22+%22Garmin%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Nordic chosen by Garmin (partnership evidence)</a> <span class="muted">(web search Jan 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>NXP</strong></td>
+        <td>Tesla</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22NXP%22+%22Tesla%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">NXP chosen by Tesla (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>NXP</strong></td>
+        <td>BMW</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22NXP%22+%22BMW%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">NXP chosen by BMW (partnership evidence)</a> <span class="muted">(web search Mar 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>Samsung</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Qualcomm%22+%22Samsung%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Qualcomm chosen by Samsung (partnership evidence)</a> <span class="muted">(web search Jul 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>Sonos</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Qualcomm%22+%22Sonos%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Qualcomm chosen by Sonos (partnership evidence)</a> <span class="muted">(web search May 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>Bose</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Qualcomm%22+%22Bose%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Qualcomm chosen by Bose (partnership evidence)</a> <span class="muted">(web search Sep 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Amazon</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Silicon+Labs%22+%22Amazon%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Silicon Labs chosen by Amazon (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Murata</strong></td>
+        <td>Tesla</td>
+        <td>3</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Murata%22+%22Tesla%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Murata chosen by Tesla (partnership evidence)</a> <span class="muted">(web search )</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>Google</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.tomshardware.com/3d-printing/maker-kicks-off-oomwoo-an-open-source-robot-vacuum-you-can-3d-print-and-build-yourself" target="_blank" rel="noopener">Oomwoo is a new open-source robot vacuum you can 3D print yourself, sidesteps cloud security risks by running fully offline — project combines Raspberry Pi, 2D LiDAR, and a 3D-printed chassis</a> <span class="muted">(Tom&#39;s Hardware 2026-06-30)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Microchip</strong></td>
+        <td>Amazon</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a> <span class="muted">(CNX Software 2026-06-30)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Bouffalo Lab</strong></td>
+        <td>Amazon</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/" target="_blank" rel="noopener">Pine64 Pinevoice – A $50 RISC-V Smart Speaker for Home Assistant based on Bouffalo Lab BL606P MCU</a> <span class="muted">(CNX Software 2026-06-20)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Amazon</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/why-texas-instruments-leans-on-the-simplelink-cc2652r7-for-low-power-iot/69569139" target="_blank" rel="noopener">Why Texas Instruments leans on the SimpleLink CC2652R7 for low?power IoT</a> <span class="muted">(AD HOC NEWS 2026-06-18)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Infineon</strong> <span class="tag">AIROC</span></td>
+        <td>Apple</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://appleinsider.com/articles/26/06/17/home-automation-setup-will-be-even-easier-thanks-to-matter-16" target="_blank" rel="noopener">Home automation setup will be even easier thanks to Matter 1.6</a> <span class="muted">(AppleInsider 2026-06-17)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Apple</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/battery-life-and-bandwidth-why-texas-instruments-cc2652r7-stands-out/69545290" target="_blank" rel="noopener">Battery life and bandwidth: why Texas Instruments’ CC2652R7 stands out in IoT designs</a> <span class="muted">(AD HOC NEWS 2026-06-15)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Beken</strong></td>
+        <td>Apple</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/11/sonoff-basic-1gsp-matter-over-wifi-smart-switch-supports-din-rail-mounting-real-time-energy-monitoring/" target="_blank" rel="noopener">SONOFF BASIC-1GSP Matter over WiFi smart switch supports DIN rail mounting, real-time energy monitoring</a> <span class="muted">(CNX Software 2026-06-11)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Synaptics</strong></td>
+        <td>Amazon</td>
+        <td>2</td>
+        <td>news x2 (2)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.cnx-software.com/2026/06/10/synaptics-astra-srw1500-cortex-m52-edge-ai-mcu-features-ethos-u55-npu-wi-fi-6-7-bluetooth-6-0-802-15-4-connectivity/" target="_blank" rel="noopener">Synaptics Astra SRW1500 Cortex-M52 Edge AI MCU features Ethos-U55 NPU, Wi-Fi 6/7, Bluetooth 6.0, 802.15.4 connectivity</a> <span class="muted">(CNX Software 2026-06-10)</span></li>
+            
+            </ul>
+          
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Nordic</strong></td>
+        <td>Logitech</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.nordicsemi.com/News/2024/03/Logitech-selects-nRF54L-Series" target="_blank" rel="noopener">Nordic chosen by Logitech (partnership evidence)</a> <span class="muted">(vendor seed Mar 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Nordic</strong></td>
+        <td>Polar</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Nordic%22+%22Polar%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Nordic chosen by Polar (partnership evidence)</a> <span class="muted">(web search Sep 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Nordic</strong></td>
+        <td>Google</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Nordic%22+%22Google%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Nordic chosen by Google (partnership evidence)</a> <span class="muted">(web search Oct 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Nordic</strong></td>
+        <td>Jabra</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Nordic%22+%22Jabra%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Nordic chosen by Jabra (partnership evidence)</a> <span class="muted">(web search Nov 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Nordic</strong></td>
+        <td>Arlo</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Nordic%22+%22Arlo%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Nordic chosen by Arlo (partnership evidence)</a> <span class="muted">(web search Jun 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Nordic</strong></td>
+        <td>Tile / Life360</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Nordic%22+%22Tile+%2F+Life360%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Nordic chosen by Tile / Life360 (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>NXP</strong></td>
+        <td>Bosch</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22NXP%22+%22Bosch%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">NXP chosen by Bosch (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>NXP</strong></td>
+        <td>Carrier</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22NXP%22+%22Carrier%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">NXP chosen by Carrier (partnership evidence)</a> <span class="muted">(web search Oct 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>NXP</strong></td>
+        <td>Signify</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22NXP%22+%22Signify%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">NXP chosen by Signify (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>NXP</strong></td>
+        <td>NIO</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22NXP%22+%22NIO%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">NXP chosen by NIO (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>OnePlus / OPPO</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Qualcomm%22+%22OnePlus+%2F+OPPO%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Qualcomm chosen by OnePlus / OPPO (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>Jabra</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Qualcomm%22+%22Jabra%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Qualcomm chosen by Jabra (partnership evidence)</a> <span class="muted">(web search Nov 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>Bang &amp; Olufsen</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Qualcomm%22+%22Bang+%26+Olufsen%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Qualcomm chosen by Bang &amp; Olufsen (partnership evidence)</a> <span class="muted">(web search Jan 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Qualcomm</strong></td>
+        <td>Nothing</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Qualcomm%22+%22Nothing%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Qualcomm chosen by Nothing (partnership evidence)</a> <span class="muted">(web search Mar 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Samsung SmartThings</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Silicon+Labs%22+%22Samsung+SmartThings%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Silicon Labs chosen by Samsung SmartThings (partnership evidence)</a> <span class="muted">(web search Oct 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Aqara</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Silicon+Labs%22+%22Aqara%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Silicon Labs chosen by Aqara (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Schlage</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Silicon+Labs%22+%22Schlage%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Silicon Labs chosen by Schlage (partnership evidence)</a> <span class="muted">(web search Sep 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Legrand</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Silicon+Labs%22+%22Legrand%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Silicon Labs chosen by Legrand (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Yale Smart Locks</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Silicon+Labs%22+%22Yale+Smart+Locks%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Silicon Labs chosen by Yale Smart Locks (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Silicon Labs</strong></td>
+        <td>Comcast</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Silicon+Labs%22+%22Comcast%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Silicon Labs chosen by Comcast (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Schneider Electric</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22TI%22+%22Schneider+Electric%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">TI chosen by Schneider Electric (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>ABB</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22TI%22+%22ABB%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">TI chosen by ABB (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Emerson</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22TI%22+%22Emerson%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">TI chosen by Emerson (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Garmin</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22TI%22+%22Garmin%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">TI chosen by Garmin (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Whoop</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22TI%22+%22Whoop%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">TI chosen by Whoop (partnership evidence)</a> <span class="muted">(web search Apr 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Medtronic</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22TI%22+%22Medtronic%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">TI chosen by Medtronic (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>TI</strong></td>
+        <td>Siemens</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22TI%22+%22Siemens%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">TI chosen by Siemens (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>MediaTek</strong></td>
+        <td>ASUS</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22MediaTek%22+%22ASUS%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">MediaTek chosen by ASUS (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>MediaTek</strong></td>
+        <td>TP-Link</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22MediaTek%22+%22TP-Link%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">MediaTek chosen by TP-Link (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>MediaTek</strong></td>
+        <td>Xiaomi</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22MediaTek%22+%22Xiaomi%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">MediaTek chosen by Xiaomi (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>MediaTek</strong></td>
+        <td>TCL</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22MediaTek%22+%22TCL%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">MediaTek chosen by TCL (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>MediaTek</strong></td>
+        <td>Netgear</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22MediaTek%22+%22Netgear%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">MediaTek chosen by Netgear (partnership evidence)</a> <span class="muted">(web search Sep 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>Aqara</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Espressif%22+%22Aqara%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Espressif chosen by Aqara (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>SwitchBot</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Espressif%22+%22SwitchBot%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Espressif chosen by SwitchBot (partnership evidence)</a> <span class="muted">(web search Mar 2024)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>Tuya</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Espressif%22+%22Tuya%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Espressif chosen by Tuya (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>Ikea</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Espressif%22+%22Ikea%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Espressif chosen by Ikea (partnership evidence)</a> <span class="muted">(web search 2022)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>Shelly</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Espressif%22+%22Shelly%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Espressif chosen by Shelly (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>M5Stack</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Espressif%22+%22M5Stack%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Espressif chosen by M5Stack (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><strong>Espressif</strong></td>
+        <td>Eve Systems</td>
+        <td>2</td>
+        <td>news x2 (2) + seed x1 (1)</td>
+        <td>
+          
+            <ul>
+            
+              <li><a href="https://www.google.com/search?q=%22Espressif%22+%22Eve+Systems%22+%28partnership+OR+selects+OR+announces+OR+powered%29" target="_blank" rel="noopener">Espressif chosen by Eve Systems (partnership evidence)</a> <span class="muted">(web search 2023)</span></li>
+            
+            </ul>
+          
+          <span class="tag">seed mapping</span>
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
+</section>
+
+</main>
+<footer class="footer"><div class="wrap">Powered by d3-sankey · data co-derived from news + seeds</div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12"></script>
+<script>
+const links = [{"vendor": "MediaTek", "customer": "Amazon", "weight": 10, "news_count": 4, "seed_count": 1, "strength_explained": "news x2 (8) + seed x1 (1)", "sources": ["news", "seed"], "evidence": [{"title": "Wi-Fi 6 vs Wi-Fi 7", "url": "https://www.rtings.com/router/learn/wifi-6-vs-wifi-7", "source": "RTINGS.com", "date": "2026-06-23"}, {"title": "The 4 Best Wi-Fi 6 Routers of 2026", "url": "https://www.rtings.com/router/reviews/best/wi-fi-6", "source": "RTINGS.com", "date": "2026-06-17"}, {"title": "The 5 Best Wi-Fi 7 Routers of 2026", "url": "https://www.rtings.com/router/reviews/best/wi-fi-7", "source": "RTINGS.com", "date": "2026-06-11"}, {"title": "The 5 Best Long-Range Wi-Fi Routers of 2026", "url": "https://www.rtings.com/router/reviews/best/long-range", "source": "RTINGS.com", "date": "2026-06-11"}]}, {"vendor": "Espressif", "customer": "Amazon", "weight": 9, "news_count": 4, "seed_count": 1, "strength_explained": "news x2 (8) + seed x1 (1)", "sources": ["news", "seed"], "evidence": [{"title": "Waveshare ESP32-C6-Zero-B \u2013 A tiny ESP32-C6 USB-C board with 5V-36V wide supply voltage", "url": "https://www.cnx-software.com/2026/06/29/waveshare-esp32-c6-zero-b-a-tiny-esp32-c6-usb-c-board-with-5v-36v-wide-supply-voltage/", "source": "CNX Software", "date": "2026-06-29"}, {"title": "Louder ESP32 Mini board adds WiFi and Bluetooth to old speakers for SqueezeLite, Snapclient, or ESPHome support", "url": "https://www.cnx-software.com/2026/06/25/louder-esp32-mini-board-adds-wifi-and-bluetooth-to-old-speakers-for-squeezelite-snapclient-or-esphome-support/", "source": "CNX Software", "date": "2026-06-25"}, {"title": "Espressif ESP32-E22 WiFi 6E module gets Wi-Fi CERTIFIED certificate, open-source WiFi and Bluetooth Linux drivers", "url": "https://www.cnx-software.com/2026/06/13/espressif-esp32-e22-wifi-6e-module-gets-wi-fi-certified-certificate-an-open-source-wifi-and-bluetooth-linux-drivers/", "source": "CNX Software", "date": "2026-06-13"}, {"title": "$7.99 Seeed Studio Wio-S3 WiFi, Bluetooth LE, and LoRa IoT module combines ESP32-S3 and SX1262 RF transceiver", "url": "https://www.cnx-software.com/2026/06/12/7-99-seeed-studio-wio-s3-wifi-bluetooth-le-and-lora-iot-module-combines-esp32-s3-and-sx1262-rf-transceiver/", "source": "CNX Software", "date": "2026-06-12"}]}, {"vendor": "Silicon Labs", "customer": "Apple", "weight": 8, "news_count": 4, "seed_count": 0, "strength_explained": "news x2 (8)", "sources": ["news"], "evidence": [{"title": "How Thread is fixing smart home networks on Smart Home Insider", "url": "https://appleinsider.com/articles/26/06/29/how-thread-is-fixing-smart-home-networks-on-smart-home-insider", "source": "AppleInsider", "date": "2026-06-29"}, {"title": "Jon Harros from the CSA talks Matter 1.6 on Smart Home Insider", "url": "https://appleinsider.com/articles/26/06/22/jon-harros-from-the-csa-talks-matter-16-on-smart-home-insider", "source": "AppleInsider", "date": "2026-06-22"}, {"title": "Matter 1.6 specification adds NFC-based commissioning, thermostat suggestions, various core enhancements", "url": "https://www.cnx-software.com/2026/06/19/matter-1-6-specification-adds-nfc-based-commissioning-thermostat-suggestions-various-core-enhancements/", "source": "CNX Software", "date": "2026-06-19"}]}, {"vendor": "NXP", "customer": "Amazon", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["news", "seed"], "evidence": [{"title": "Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity", "url": "https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/", "source": "CNX Software", "date": "2026-06-29"}]}, {"vendor": "Qualcomm", "customer": "Microsoft", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["news", "seed"], "evidence": [{"title": "Windows 11 Shared Audio Streams to Two Headphones at Once", "url": "https://techmymoney.com/2026/06/13/windows-11-shared-audio-two-devices/", "source": "Tech My Money", "date": "2026-06-13"}]}, {"vendor": "Nordic", "customer": "Garmin", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Nordic chosen by Garmin (partnership evidence)", "url": "https://www.google.com/search?q=%22Nordic%22+%22Garmin%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Jan 2024"}]}, {"vendor": "NXP", "customer": "Tesla", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "NXP chosen by Tesla (partnership evidence)", "url": "https://www.google.com/search?q=%22NXP%22+%22Tesla%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "NXP", "customer": "BMW", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "NXP chosen by BMW (partnership evidence)", "url": "https://www.google.com/search?q=%22NXP%22+%22BMW%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Mar 2023"}]}, {"vendor": "Qualcomm", "customer": "Samsung", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Qualcomm chosen by Samsung (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Samsung%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Jul 2024"}]}, {"vendor": "Qualcomm", "customer": "Sonos", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Qualcomm chosen by Sonos (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Sonos%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "May 2024"}]}, {"vendor": "Qualcomm", "customer": "Bose", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Qualcomm chosen by Bose (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Bose%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Sep 2023"}]}, {"vendor": "Silicon Labs", "customer": "Amazon", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Silicon Labs chosen by Amazon (partnership evidence)", "url": "https://www.google.com/search?q=%22Silicon+Labs%22+%22Amazon%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Murata", "customer": "Tesla", "weight": 3, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Murata chosen by Tesla (partnership evidence)", "url": "https://www.google.com/search?q=%22Murata%22+%22Tesla%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Espressif", "customer": "Google", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "Oomwoo is a new open-source robot vacuum you can 3D print yourself, sidesteps cloud security risks by running fully offline \u2014 project combines Raspberry Pi, 2D LiDAR, and a 3D-printed chassis", "url": "https://www.tomshardware.com/3d-printing/maker-kicks-off-oomwoo-an-open-source-robot-vacuum-you-can-3d-print-and-build-yourself", "source": "Tom's Hardware", "date": "2026-06-30"}]}, {"vendor": "Microchip", "customer": "Amazon", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications", "url": "https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/", "source": "CNX Software", "date": "2026-06-30"}]}, {"vendor": "Bouffalo Lab", "customer": "Amazon", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "Pine64 Pinevoice \u2013 A $50 RISC-V Smart Speaker for Home Assistant based on Bouffalo Lab BL606P MCU", "url": "https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/", "source": "CNX Software", "date": "2026-06-20"}]}, {"vendor": "TI", "customer": "Amazon", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "Why Texas Instruments leans on the SimpleLink CC2652R7 for low?power IoT", "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/why-texas-instruments-leans-on-the-simplelink-cc2652r7-for-low-power-iot/69569139", "source": "AD HOC NEWS", "date": "2026-06-18"}]}, {"vendor": "Infineon", "customer": "Apple", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "Home automation setup will be even easier thanks to Matter 1.6", "url": "https://appleinsider.com/articles/26/06/17/home-automation-setup-will-be-even-easier-thanks-to-matter-16", "source": "AppleInsider", "date": "2026-06-17"}]}, {"vendor": "TI", "customer": "Apple", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "Battery life and bandwidth: why Texas Instruments\u2019 CC2652R7 stands out in IoT designs", "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/battery-life-and-bandwidth-why-texas-instruments-cc2652r7-stands-out/69545290", "source": "AD HOC NEWS", "date": "2026-06-15"}]}, {"vendor": "Beken", "customer": "Apple", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "SONOFF BASIC-1GSP Matter over WiFi smart switch supports DIN rail mounting, real-time energy monitoring", "url": "https://www.cnx-software.com/2026/06/11/sonoff-basic-1gsp-matter-over-wifi-smart-switch-supports-din-rail-mounting-real-time-energy-monitoring/", "source": "CNX Software", "date": "2026-06-11"}]}, {"vendor": "Synaptics", "customer": "Amazon", "weight": 2, "news_count": 1, "seed_count": 0, "strength_explained": "news x2 (2)", "sources": ["news"], "evidence": [{"title": "Synaptics Astra SRW1500 Cortex-M52 Edge AI MCU features Ethos-U55 NPU, Wi-Fi 6/7, Bluetooth 6.0, 802.15.4 connectivity", "url": "https://www.cnx-software.com/2026/06/10/synaptics-astra-srw1500-cortex-m52-edge-ai-mcu-features-ethos-u55-npu-wi-fi-6-7-bluetooth-6-0-802-15-4-connectivity/", "source": "CNX Software", "date": "2026-06-10"}]}, {"vendor": "Nordic", "customer": "Logitech", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Nordic chosen by Logitech (partnership evidence)", "url": "https://www.nordicsemi.com/News/2024/03/Logitech-selects-nRF54L-Series", "source": "vendor seed", "date": "Mar 2024"}]}, {"vendor": "Nordic", "customer": "Polar", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Nordic chosen by Polar (partnership evidence)", "url": "https://www.google.com/search?q=%22Nordic%22+%22Polar%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Sep 2023"}]}, {"vendor": "Nordic", "customer": "Google", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Nordic chosen by Google (partnership evidence)", "url": "https://www.google.com/search?q=%22Nordic%22+%22Google%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Oct 2022"}]}, {"vendor": "Nordic", "customer": "Jabra", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Nordic chosen by Jabra (partnership evidence)", "url": "https://www.google.com/search?q=%22Nordic%22+%22Jabra%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Nov 2023"}]}, {"vendor": "Nordic", "customer": "Arlo", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Nordic chosen by Arlo (partnership evidence)", "url": "https://www.google.com/search?q=%22Nordic%22+%22Arlo%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Jun 2023"}]}, {"vendor": "Nordic", "customer": "Tile / Life360", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Nordic chosen by Tile / Life360 (partnership evidence)", "url": "https://www.google.com/search?q=%22Nordic%22+%22Tile+%2F+Life360%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "NXP", "customer": "Bosch", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "NXP chosen by Bosch (partnership evidence)", "url": "https://www.google.com/search?q=%22NXP%22+%22Bosch%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "NXP", "customer": "Carrier", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "NXP chosen by Carrier (partnership evidence)", "url": "https://www.google.com/search?q=%22NXP%22+%22Carrier%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Oct 2023"}]}, {"vendor": "NXP", "customer": "Signify", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "NXP chosen by Signify (partnership evidence)", "url": "https://www.google.com/search?q=%22NXP%22+%22Signify%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "NXP", "customer": "NIO", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "NXP chosen by NIO (partnership evidence)", "url": "https://www.google.com/search?q=%22NXP%22+%22NIO%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Qualcomm", "customer": "OnePlus / OPPO", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Qualcomm chosen by OnePlus / OPPO (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22OnePlus+%2F+OPPO%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Qualcomm", "customer": "Jabra", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Qualcomm chosen by Jabra (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Jabra%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Nov 2023"}]}, {"vendor": "Qualcomm", "customer": "Bang & Olufsen", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Qualcomm chosen by Bang & Olufsen (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Bang+%26+Olufsen%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Jan 2024"}]}, {"vendor": "Qualcomm", "customer": "Nothing", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Qualcomm chosen by Nothing (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Nothing%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Mar 2024"}]}, {"vendor": "Silicon Labs", "customer": "Samsung SmartThings", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Silicon Labs chosen by Samsung SmartThings (partnership evidence)", "url": "https://www.google.com/search?q=%22Silicon+Labs%22+%22Samsung+SmartThings%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Oct 2023"}]}, {"vendor": "Silicon Labs", "customer": "Aqara", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Silicon Labs chosen by Aqara (partnership evidence)", "url": "https://www.google.com/search?q=%22Silicon+Labs%22+%22Aqara%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Silicon Labs", "customer": "Schlage", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Silicon Labs chosen by Schlage (partnership evidence)", "url": "https://www.google.com/search?q=%22Silicon+Labs%22+%22Schlage%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Sep 2023"}]}, {"vendor": "Silicon Labs", "customer": "Legrand", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Silicon Labs chosen by Legrand (partnership evidence)", "url": "https://www.google.com/search?q=%22Silicon+Labs%22+%22Legrand%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Silicon Labs", "customer": "Yale Smart Locks", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Silicon Labs chosen by Yale Smart Locks (partnership evidence)", "url": "https://www.google.com/search?q=%22Silicon+Labs%22+%22Yale+Smart+Locks%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Silicon Labs", "customer": "Comcast", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Silicon Labs chosen by Comcast (partnership evidence)", "url": "https://www.google.com/search?q=%22Silicon+Labs%22+%22Comcast%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "TI", "customer": "Schneider Electric", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "TI chosen by Schneider Electric (partnership evidence)", "url": "https://www.google.com/search?q=%22TI%22+%22Schneider+Electric%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "TI", "customer": "ABB", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "TI chosen by ABB (partnership evidence)", "url": "https://www.google.com/search?q=%22TI%22+%22ABB%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "TI", "customer": "Emerson", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "TI chosen by Emerson (partnership evidence)", "url": "https://www.google.com/search?q=%22TI%22+%22Emerson%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "TI", "customer": "Garmin", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "TI chosen by Garmin (partnership evidence)", "url": "https://www.google.com/search?q=%22TI%22+%22Garmin%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "TI", "customer": "Whoop", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "TI chosen by Whoop (partnership evidence)", "url": "https://www.google.com/search?q=%22TI%22+%22Whoop%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Apr 2024"}]}, {"vendor": "TI", "customer": "Medtronic", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "TI chosen by Medtronic (partnership evidence)", "url": "https://www.google.com/search?q=%22TI%22+%22Medtronic%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "TI", "customer": "Siemens", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "TI chosen by Siemens (partnership evidence)", "url": "https://www.google.com/search?q=%22TI%22+%22Siemens%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "MediaTek", "customer": "ASUS", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "MediaTek chosen by ASUS (partnership evidence)", "url": "https://www.google.com/search?q=%22MediaTek%22+%22ASUS%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "MediaTek", "customer": "TP-Link", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "MediaTek chosen by TP-Link (partnership evidence)", "url": "https://www.google.com/search?q=%22MediaTek%22+%22TP-Link%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "MediaTek", "customer": "Xiaomi", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "MediaTek chosen by Xiaomi (partnership evidence)", "url": "https://www.google.com/search?q=%22MediaTek%22+%22Xiaomi%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "MediaTek", "customer": "TCL", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "MediaTek chosen by TCL (partnership evidence)", "url": "https://www.google.com/search?q=%22MediaTek%22+%22TCL%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "MediaTek", "customer": "Netgear", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "MediaTek chosen by Netgear (partnership evidence)", "url": "https://www.google.com/search?q=%22MediaTek%22+%22Netgear%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Sep 2023"}]}, {"vendor": "Espressif", "customer": "Aqara", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Espressif chosen by Aqara (partnership evidence)", "url": "https://www.google.com/search?q=%22Espressif%22+%22Aqara%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Espressif", "customer": "SwitchBot", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Espressif chosen by SwitchBot (partnership evidence)", "url": "https://www.google.com/search?q=%22Espressif%22+%22SwitchBot%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Mar 2024"}]}, {"vendor": "Espressif", "customer": "Tuya", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Espressif chosen by Tuya (partnership evidence)", "url": "https://www.google.com/search?q=%22Espressif%22+%22Tuya%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Espressif", "customer": "Ikea", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Espressif chosen by Ikea (partnership evidence)", "url": "https://www.google.com/search?q=%22Espressif%22+%22Ikea%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Espressif", "customer": "Shelly", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Espressif chosen by Shelly (partnership evidence)", "url": "https://www.google.com/search?q=%22Espressif%22+%22Shelly%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Espressif", "customer": "M5Stack", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Espressif chosen by M5Stack (partnership evidence)", "url": "https://www.google.com/search?q=%22Espressif%22+%22M5Stack%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Espressif", "customer": "Eve Systems", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Espressif chosen by Eve Systems (partnership evidence)", "url": "https://www.google.com/search?q=%22Espressif%22+%22Eve+Systems%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "STMicro", "customer": "Bosch", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "STMicro chosen by Bosch (partnership evidence)", "url": "https://www.google.com/search?q=%22STMicro%22+%22Bosch%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "STMicro", "customer": "Schneider Electric", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "STMicro chosen by Schneider Electric (partnership evidence)", "url": "https://www.google.com/search?q=%22STMicro%22+%22Schneider+Electric%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "STMicro", "customer": "Legrand", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "STMicro chosen by Legrand (partnership evidence)", "url": "https://www.google.com/search?q=%22STMicro%22+%22Legrand%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "STMicro", "customer": "STMicro", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "STMicro chosen by STMicro (partnership evidence)", "url": "https://www.google.com/search?q=%22STMicro%22+%22STMicro%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Feb 2024"}]}, {"vendor": "STMicro", "customer": "Honeywell", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "STMicro chosen by Honeywell (partnership evidence)", "url": "https://www.google.com/search?q=%22STMicro%22+%22Honeywell%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "STMicro", "customer": "ABB", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "STMicro chosen by ABB (partnership evidence)", "url": "https://www.google.com/search?q=%22STMicro%22+%22ABB%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Renesas", "customer": "Panasonic", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Renesas chosen by Panasonic (partnership evidence)", "url": "https://www.google.com/search?q=%22Renesas%22+%22Panasonic%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Renesas", "customer": "Toyota", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Renesas chosen by Toyota (partnership evidence)", "url": "https://www.google.com/search?q=%22Renesas%22+%22Toyota%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Renesas", "customer": "Daikin", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Renesas chosen by Daikin (partnership evidence)", "url": "https://www.google.com/search?q=%22Renesas%22+%22Daikin%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Renesas", "customer": "Omron Healthcare", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Renesas chosen by Omron Healthcare (partnership evidence)", "url": "https://www.google.com/search?q=%22Renesas%22+%22Omron+Healthcare%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Feb 2024"}]}, {"vendor": "Renesas", "customer": "Nikon", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Renesas chosen by Nikon (partnership evidence)", "url": "https://www.google.com/search?q=%22Renesas%22+%22Nikon%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Synaptics", "customer": "Bose", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Synaptics chosen by Bose (partnership evidence)", "url": "https://www.google.com/search?q=%22Synaptics%22+%22Bose%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Sep 2023"}]}, {"vendor": "Synaptics", "customer": "Sonos", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Synaptics chosen by Sonos (partnership evidence)", "url": "https://www.google.com/search?q=%22Synaptics%22+%22Sonos%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Synaptics", "customer": "JVC Kenwood", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Synaptics chosen by JVC Kenwood (partnership evidence)", "url": "https://www.google.com/search?q=%22Synaptics%22+%22JVC+Kenwood%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Synaptics", "customer": "Dell", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Synaptics chosen by Dell (partnership evidence)", "url": "https://www.google.com/search?q=%22Synaptics%22+%22Dell%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "Jan 2024"}]}, {"vendor": "Synaptics", "customer": "HP", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Synaptics chosen by HP (partnership evidence)", "url": "https://www.google.com/search?q=%22Synaptics%22+%22HP%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2023"}]}, {"vendor": "Synaptics", "customer": "Lenovo", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Synaptics chosen by Lenovo (partnership evidence)", "url": "https://www.google.com/search?q=%22Synaptics%22+%22Lenovo%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": "2022"}]}, {"vendor": "Realtek", "customer": "Lenovo", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Realtek chosen by Lenovo (partnership evidence)", "url": "https://www.google.com/search?q=%22Realtek%22+%22Lenovo%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Realtek", "customer": "Acer", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Realtek chosen by Acer (partnership evidence)", "url": "https://www.google.com/search?q=%22Realtek%22+%22Acer%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Realtek", "customer": "MSI", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Realtek chosen by MSI (partnership evidence)", "url": "https://www.google.com/search?q=%22Realtek%22+%22MSI%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Realtek", "customer": "Tuya", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Realtek chosen by Tuya (partnership evidence)", "url": "https://www.google.com/search?q=%22Realtek%22+%22Tuya%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Broadcom", "customer": "Samsung", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Broadcom chosen by Samsung (partnership evidence)", "url": "https://www.google.com/search?q=%22Broadcom%22+%22Samsung%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Broadcom", "customer": "Cisco/Meraki", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Broadcom chosen by Cisco/Meraki (partnership evidence)", "url": "https://www.google.com/search?q=%22Broadcom%22+%22Cisco%2FMeraki%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "u-blox", "customer": "Logitech", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "u-blox chosen by Logitech (partnership evidence)", "url": "https://www.google.com/search?q=%22u-blox%22+%22Logitech%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "u-blox", "customer": "Husqvarna", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "u-blox chosen by Husqvarna (partnership evidence)", "url": "https://www.google.com/search?q=%22u-blox%22+%22Husqvarna%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "u-blox", "customer": "Schindler", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "u-blox chosen by Schindler (partnership evidence)", "url": "https://www.google.com/search?q=%22u-blox%22+%22Schindler%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "u-blox", "customer": "industrial OEMs", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "u-blox chosen by industrial OEMs (partnership evidence)", "url": "https://www.google.com/search?q=%22u-blox%22+%22industrial+OEMs%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Microchip", "customer": "industrial OEMs", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Microchip chosen by industrial OEMs (partnership evidence)", "url": "https://www.google.com/search?q=%22Microchip%22+%22industrial+OEMs%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Microchip", "customer": "appliance OEMs", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Microchip chosen by appliance OEMs (partnership evidence)", "url": "https://www.google.com/search?q=%22Microchip%22+%22appliance+OEMs%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Telink", "customer": "Aqara", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Telink chosen by Aqara (partnership evidence)", "url": "https://www.google.com/search?q=%22Telink%22+%22Aqara%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Telink", "customer": "Tuya", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Telink chosen by Tuya (partnership evidence)", "url": "https://www.google.com/search?q=%22Telink%22+%22Tuya%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Telink", "customer": "Xiaomi ecosystem", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Telink chosen by Xiaomi ecosystem (partnership evidence)", "url": "https://www.google.com/search?q=%22Telink%22+%22Xiaomi+ecosystem%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Bouffalo Lab", "customer": "Tuya", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Bouffalo Lab chosen by Tuya (partnership evidence)", "url": "https://www.google.com/search?q=%22Bouffalo+Lab%22+%22Tuya%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Bouffalo Lab", "customer": "Sonoff", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Bouffalo Lab chosen by Sonoff (partnership evidence)", "url": "https://www.google.com/search?q=%22Bouffalo+Lab%22+%22Sonoff%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Bouffalo Lab", "customer": "white-label OEMs", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Bouffalo Lab chosen by white-label OEMs (partnership evidence)", "url": "https://www.google.com/search?q=%22Bouffalo+Lab%22+%22white-label+OEMs%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Airoha", "customer": "Sennheiser", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Airoha chosen by Sennheiser (partnership evidence)", "url": "https://www.google.com/search?q=%22Airoha%22+%22Sennheiser%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Airoha", "customer": "Marshall", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Airoha chosen by Marshall (partnership evidence)", "url": "https://www.google.com/search?q=%22Airoha%22+%22Marshall%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Airoha", "customer": "Anker/Soundcore", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Airoha chosen by Anker/Soundcore (partnership evidence)", "url": "https://www.google.com/search?q=%22Airoha%22+%22Anker%2FSoundcore%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Airoha", "customer": "Edifier", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Airoha chosen by Edifier (partnership evidence)", "url": "https://www.google.com/search?q=%22Airoha%22+%22Edifier%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Murata", "customer": "Ford", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Murata chosen by Ford (partnership evidence)", "url": "https://www.google.com/search?q=%22Murata%22+%22Ford%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Murata", "customer": "many tier-1s", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Murata chosen by many tier-1s (partnership evidence)", "url": "https://www.google.com/search?q=%22Murata%22+%22many+tier-1s%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Atmosic", "customer": "smart-shelf / ESL OEMs", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Atmosic chosen by smart-shelf / ESL OEMs (partnership evidence)", "url": "https://www.google.com/search?q=%22Atmosic%22+%22smart-shelf+%2F+ESL+OEMs%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Atmosic", "customer": "wearable startups", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Atmosic chosen by wearable startups (partnership evidence)", "url": "https://www.google.com/search?q=%22Atmosic%22+%22wearable+startups%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Onsemi", "customer": "hearing-aid OEMs", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Onsemi chosen by hearing-aid OEMs (partnership evidence)", "url": "https://www.google.com/search?q=%22Onsemi%22+%22hearing-aid+OEMs%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Onsemi", "customer": "medical wearables", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Onsemi chosen by medical wearables (partnership evidence)", "url": "https://www.google.com/search?q=%22Onsemi%22+%22medical+wearables%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Toshiba", "customer": "Japanese tier-1s", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Toshiba chosen by Japanese tier-1s (partnership evidence)", "url": "https://www.google.com/search?q=%22Toshiba%22+%22Japanese+tier-1s%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Toshiba", "customer": "industrial OEMs", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Toshiba chosen by industrial OEMs (partnership evidence)", "url": "https://www.google.com/search?q=%22Toshiba%22+%22industrial+OEMs%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Qualcomm", "customer": "Google", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Google partners with Qualcomm (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Google%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Broadcom", "customer": "Google", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Google partners with Broadcom (partnership evidence)", "url": "https://www.google.com/search?q=%22Broadcom%22+%22Google%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Synaptics", "customer": "Google", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Google partners with Synaptics (partnership evidence)", "url": "https://www.google.com/search?q=%22Synaptics%22+%22Google%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Qualcomm", "customer": "Amazon", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Amazon partners with Qualcomm (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Amazon%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Qualcomm", "customer": "Meta", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Meta partners with Qualcomm (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Meta%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Broadcom", "customer": "Meta", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Meta partners with Broadcom (partnership evidence)", "url": "https://www.google.com/search?q=%22Broadcom%22+%22Meta%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Samsung LSI", "customer": "Samsung", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Samsung partners with Samsung LSI (partnership evidence)", "url": "https://www.google.com/search?q=%22Samsung+LSI%22+%22Samsung%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "MediaTek", "customer": "Samsung", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Samsung partners with MediaTek (partnership evidence)", "url": "https://www.google.com/search?q=%22MediaTek%22+%22Samsung%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "MediaTek", "customer": "Sonos", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Sonos partners with MediaTek (partnership evidence)", "url": "https://www.google.com/search?q=%22MediaTek%22+%22Sonos%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Qualcomm", "customer": "Arlo", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Arlo partners with Qualcomm (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Arlo%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Realtek", "customer": "Arlo", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Arlo partners with Realtek (partnership evidence)", "url": "https://www.google.com/search?q=%22Realtek%22+%22Arlo%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Qualcomm", "customer": "Garmin", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Garmin partners with Qualcomm (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Garmin%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Qualcomm", "customer": "Tesla", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "Tesla partners with Qualcomm (partnership evidence)", "url": "https://www.google.com/search?q=%22Qualcomm%22+%22Tesla%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Continental", "customer": "BMW", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "BMW partners with Continental (partnership evidence)", "url": "https://www.google.com/search?q=%22Continental%22+%22BMW%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Harman", "customer": "BMW", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "BMW partners with Harman (partnership evidence)", "url": "https://www.google.com/search?q=%22Harman%22+%22BMW%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}, {"vendor": "Murata", "customer": "BMW", "weight": 2, "news_count": 1, "seed_count": 1, "strength_explained": "news x2 (2) + seed x1 (1)", "sources": ["seed"], "evidence": [{"title": "BMW partners with Murata (partnership evidence)", "url": "https://www.google.com/search?q=%22Murata%22+%22BMW%22+%28partnership+OR+selects+OR+announces+OR+powered%29", "source": "web search", "date": ""}]}];
+if (links.length === 0) {
+  document.getElementById('sankey').innerHTML = '<text x="20" y="40" fill="#888">No relationships detected yet.</text>';
+} else {
+  const vendors = [...new Set(links.map(l => l.vendor))];
+  const customers = [...new Set(links.map(l => l.customer))];
+  const nodes = [
+    ...vendors.map(v => ({ name: v, kind: 'vendor' })),
+    ...customers.map(c => ({ name: c, kind: 'customer' }))
+  ];
+  const idx = name => nodes.findIndex(n => n.name === name);
+  const sankeyLinks = links.map(l => ({ source: idx(l.vendor), target: nodes.findIndex(n => n.name === l.customer && n.kind === 'customer'), value: l.weight }));
+
+  const width = 1200, height = Math.max(700, nodes.length * 22);
+  const svg = d3.select('#sankey').attr('viewBox', `0 0 ${width} ${height}`);
+  const sankey = d3.sankey().nodeWidth(18).nodePadding(12).extent([[140, 20], [width - 140, height - 20]]);
+  const graph = sankey({ nodes: nodes.map(d => ({...d})), links: sankeyLinks.map(d => ({...d})) });
+
+  // Distinct color per vendor (Tableau10 + Set3 = 22 hues)
+  const palette = d3.schemeTableau10.concat(d3.schemeSet3 || []);
+  const vendorColor = d3.scaleOrdinal().domain(vendors).range(palette);
+
+  // Gradient defs so each ribbon fades vendor color -> customer color
+  const defs = svg.append('defs');
+  graph.links.forEach((d, i) => {
+    d.gradId = 'lg' + i;
+    const g = defs.append('linearGradient')
+      .attr('id', d.gradId).attr('gradientUnits', 'userSpaceOnUse')
+      .attr('x1', d.source.x1).attr('x2', d.target.x0);
+    g.append('stop').attr('offset', '0%').attr('stop-color', vendorColor(d.source.name));
+    g.append('stop').attr('offset', '100%').attr('stop-color', d3.color(vendorColor(d.source.name)).brighter(0.6).formatHex());
+  });
+
+  svg.append('g').attr('fill', 'none').selectAll('path').data(graph.links).join('path')
+    .attr('d', d3.sankeyLinkHorizontal())
+    .attr('stroke', d => `url(#${d.gradId})`)
+    .attr('data-vendor-color', d => vendorColor(d.source.name))
+    .attr('stroke-opacity', 0.55)
+    .attr('stroke-width', d => Math.max(1.5, d.width))
+    .style('mix-blend-mode', 'multiply')
+    .style('cursor', 'pointer')
+    .on('mouseover', function(){
+        d3.select(this).attr('stroke', '#000').attr('stroke-opacity', 1).style('mix-blend-mode', 'normal');
+    })
+    .on('mouseout',  function(){
+        const c = d3.select(this);
+        c.attr('stroke', `url(#${c.datum().gradId})`).attr('stroke-opacity', 0.55).style('mix-blend-mode', 'multiply');
+    })
+    .append('title').text(d => `${d.source.name} → ${d.target.name}\nstrength: ${d.value}`);
+
+  const node = svg.append('g').selectAll('g').data(graph.nodes).join('g');
+  node.append('rect')
+    .attr('x', d => d.x0).attr('y', d => d.y0)
+    .attr('height', d => d.y1 - d.y0).attr('width', d => d.x1 - d.x0)
+    .attr('fill', d => d.kind === 'vendor' ? vendorColor(d.name) : '#475569')
+    .attr('stroke', '#fff').attr('stroke-width', 1)
+    .append('title').text(d => `${d.name}\ntotal: ${d.value}`);
+  node.append('text')
+    .attr('x', d => d.kind === 'vendor' ? d.x0 - 6 : d.x1 + 6)
+    .attr('y', d => (d.y0 + d.y1) / 2)
+    .attr('dy', '0.35em')
+    .attr('text-anchor', d => d.kind === 'vendor' ? 'end' : 'start')
+    .style('font-size', '12px').style('font-weight', '600')
+    .text(d => d.name);
+}
+</script>
+</body></html>

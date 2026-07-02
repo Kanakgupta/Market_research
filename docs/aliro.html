@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aliro News · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+</style>
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="hero">
+  <h1>Aliro News</h1>
+  <p>Aliro digital-key spec from CSA — NFC + UWB + Bluetooth LE access.</p>
+  <div class="stats">
+    <span class="pill">9 articles</span>
+    <span class="pill">2 vendors</span>
+    <span class="pill">33 customers</span>
+    <span class="pill">7 applications</span>
+    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
+    <span id="refreshStatus" class="pill" style="display:none;"></span>
+  </div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
+  if(!btn) return;
+  // Same origin if served via Flask /report/, else fall back to localhost.
+  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
+  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
+    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
+  function poll(){
+    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+      .then(function(r){return r.json()})
+      .then(function(s){
+        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
+                       setTimeout(poll, 2000); }
+        else if(s.ok){ show('Done — reloading…','#16a34a');
+                       setTimeout(function(){ location.reload(); }, 1200); }
+        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
+                               btn.disabled=false; }
+      })
+      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
+  }
+  btn.addEventListener('click', function(){
+    btn.disabled=true; show('Starting…','#2563eb');
+    fetch(apiBase+'/api/refresh-news',{method:'POST'})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
+        poll();
+      })
+      .catch(function(){
+        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
+        btn.disabled=false;
+      });
+  });
+  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
+  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+    .then(function(r){return r.json()})
+    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
+    .catch(function(){});
+})();
+</script>
+
+
+
+<div class="grid" id="grid">
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        <span class="chip chip-vendor">Nordic</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/newsroom/nordic-semiconductor-on-aliro/" target="_blank" rel="noopener">Nordic Semiconductor on Aliro</a></h2>
+      <p class="summary">“Aliro helps to create seamless digital keys. The infrastructure is already there, so you’re basically taking advantage of the technology already there and adding the part that can also use&amp;#8230;</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T18:39:08+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.manilatimes.net/2026/06/18/tmt-newswire/globenewswire/adt-joins-board-of-directors-of-the-connectivity-standards-alliance-reinforcing-its-role-in-shaping-the-future-of-the-connected-home/2367930" target="_blank" rel="noopener">ADT Joins Board of Directors of the Connectivity Standards Alliance, Reinforcing Its Role in Shaping the Future of the Connected Home</a></h2>
+      <p class="summary">BOCA RATON, Fla., June 17, 2026 (GLOBE NEWSWIRE) -- ADT Inc. (NYSE: ADT), the leader in smart home security solutions, today announced it has joined the Board of Directors of the Connectivity Standards Alliance (CSA), the global organizatio…</p>
+      <div class="meta-row">
+        <span class="source">The Manila Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T20:26:23+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        <span class="chip chip-vendor">NXP</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.globenewswire.com/news-release/2026/06/09/3309139/0/en/safetrust-and-universal-smart-cards-inc-partner-to-expand-enterprise-access-to-aliro-credentials.html" target="_blank" rel="noopener">Safetrust and Universal Smart Cards Inc. Partner to Expand Enterprise Access to Aliro Credentials</a></h2>
+      <p class="summary">DALLAS, June 09, 2026 (GLOBE NEWSWIRE) -- Safetrust Inc. today announced a partnership with Universal Smart Cards Inc. to manufacture and supply Aliro-certified credentials. Through this collaboration, enterprises gain a reliable, vendor-in…</p>
+      <div class="meta-row">
+        <span class="source">GlobeNewswire</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T07:00:00+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://ravepubs.com/ultraloq-achieves-aliro-certification-allowing-for-tap-to-unlock-digital-keys/" target="_blank" rel="noopener">ULTRALOQ Achieves Aliro Certification, Allowing for Tap-to-Unlock Digital Keys</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">rAVe [PUBS]</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-05T21:09:42+00:00">2026-05-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.prnewswire.com/news-releases/ultraloq-achieves-aliro-certification-enabling-tap-to-unlock-digital-keys-across-mobile-wallets-302761406.html" target="_blank" rel="noopener">ULTRALOQ Achieves Aliro Certification, Enabling Tap-to-Unlock Digital Keys Across Mobile Wallets</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">PR Newswire</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-04T07:00:00+00:00">2026-05-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://me.pcmag.com/en/old-smart-locks/36917/aliro-could-change-the-future-of-smart-locks-but-im-not-buying-in-just-yet" target="_blank" rel="noopener">Aliro Could Change the Future of Smart Locks, But I&#39;m Not Buying in Just Yet</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">PCMag Middle East</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-04T07:00:00+00:00">2026-05-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://gizmodo.com/dreames-next-smart-lock-packs-a-3k-doorbell-camera-and-aliro-support-2000751972" target="_blank" rel="noopener">Dreame’s Next Smart Lock Packs a 3K Doorbell Camera and Aliro Support</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Gizmodo</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-29T07:00:00+00:00">2026-04-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.renesas.com/en/blogs/addressing-technical-challenges-next-gen-smart-lock-design" target="_blank" rel="noopener">Addressing Technical Challenges in Next-Gen Smart Lock Design</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Renesas Electronics</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-14T07:00:00+00:00">2026-04-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.sammobile.com/news/samsung-wallets-aliro-digital-home-keys-support-comes-canada/" target="_blank" rel="noopener">Samsung Wallet&#39;s Aliro Digital Home Keys support comes to Canada</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">SamMobile</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-28T07:00:00+00:00">2026-03-28</span>
+      </div>
+    </div>
+  </article>
+  
+</div>
+</main>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · multi-source RSS · for informational use</div></footer>
+<script>
+function timeAgo(iso){
+  const d=new Date(iso); if(isNaN(d)) return '';
+  let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
+  if(s<45) return 'just now';
+  const m=Math.floor(s/60); if(m<60) return m+(m===1?' min ago':' mins ago');
+  const h=Math.floor(m/60); if(h<24){const r=m%60; if(h<6&&r) return h+'h '+r+'m ago'; return h+(h===1?' hour ago':' hours ago');}
+  const day=Math.floor(h/24); if(day<7) return day+(day===1?' day ago':' days ago');
+  if(day<30){const w=Math.floor(day/7); return w+(w===1?' week ago':' weeks ago');}
+  if(day<365){const mo=Math.floor(day/30); return mo+(mo===1?' month ago':' months ago');}
+  const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
+}
+document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+</script>
+</body></html>

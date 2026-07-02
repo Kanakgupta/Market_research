@@ -1,0 +1,2775 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thread News · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+</style>
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="hero">
+  <h1>Thread News</h1>
+  <p>Thread protocol, OpenThread, Thread 1.4, border routers.</p>
+  <div class="stats">
+    <span class="pill">123 articles</span>
+    <span class="pill">4 vendors</span>
+    <span class="pill">34 customers</span>
+    <span class="pill">8 applications</span>
+    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
+    <span id="refreshStatus" class="pill" style="display:none;"></span>
+  </div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
+  if(!btn) return;
+  // Same origin if served via Flask /report/, else fall back to localhost.
+  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
+  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
+    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
+  function poll(){
+    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+      .then(function(r){return r.json()})
+      .then(function(s){
+        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
+                       setTimeout(poll, 2000); }
+        else if(s.ok){ show('Done — reloading…','#16a34a');
+                       setTimeout(function(){ location.reload(); }, 1200); }
+        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
+                               btn.disabled=false; }
+      })
+      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
+  }
+  btn.addEventListener('click', function(){
+    btn.disabled=true; show('Starting…','#2563eb');
+    fetch(apiBase+'/api/refresh-news',{method:'POST'})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
+        poll();
+      })
+      .catch(function(){
+        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
+        btn.disabled=false;
+      });
+  });
+  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
+  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+    .then(function(r){return r.json()})
+    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
+    .catch(function(){});
+})();
+</script>
+
+
+
+<div class="grid" id="grid">
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/454473/open-thread-july-1-2026" target="_blank" rel="noopener">Open Thread, July 1, 2026</a></h2>
+      <p class="summary">Hey all, here’s your open thread for Wednesday.
+Open Thread, July 1, 2026
+Your daily source for off topic chatter with the MMA Mania faithful.
+Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania, Tim specializes…</p>
+      <div class="meta-row">
+        <span class="source">MMA Mania</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T13:05:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://sports.yahoo.com/articles/wednesday-open-thread-130200316.html" target="_blank" rel="noopener">Wednesday open thread</a></h2>
+      <p class="summary">Wednesday open thread
+Head to the comments section to share your thoughts and join the conversation. You can sign up for a commenting account below and we have full-time moderators to enforce the Community Guidelines.
+Join the conversation!…</p>
+      <div class="meta-row">
+        <span class="source">Yahoo Sports</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T13:02:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/7/1/800063348/community/morning-open-thread/" target="_blank" rel="noopener">Morning Open Thread: The Olivier Awards</a></h2>
+      <p class="summary">The Olivier Awards are given a few weeks before the Tony Awards, for plays and musicals in London’s West End. Here are some performances from that show.
+Rachel Zegler, “Don’t Cry for Me, Argentina” from Evita
+🍿🍿🍿
+Morning Open Thread is a da…</p>
+      <div class="meta-row">
+        <span class="source">Daily Kos</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T10:52:43+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.9news.com/article/news/local/colorado-department-of-corrections-group-text/73-98f48a9b-9db4-40c6-b2e0-e23c59200746" target="_blank" rel="noopener">Four Colorado corrections officials shared hundreds of &#39;inappropriate&#39; messages in group text thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">KUSA.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-30T23:43:00+00:00">2026-06-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span><span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.t3.com/home-living/smart-home/apple-and-google-update-streaming-devices-with-thread-1-4-support-heres-what-it-means-for-your-smart-home" target="_blank" rel="noopener">Apple and Google update streaming devices with Thread 1.4 support – here&#39;s what it means for your smart home</a></h2>
+      <p class="summary">Apple and Google update streaming devices with Thread 1.4 support – here&#39;s what it means for your smart home
+Building a Matter smart home is about to get a lot less complicated
+QUICK SUMMARY
+Apple and Google have both updated their latest s…</p>
+      <div class="meta-row">
+        <span class="source">t3.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-30T10:03:58+00:00">2026-06-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/96968/mets-blue-jays-lineups-broadcast-how-watch-open-thread-new-york-toronto" target="_blank" rel="noopener">Mets vs. Blue Jays: Lineups, broadcast info, and open thread, 6/29/26</a></h2>
+      <p class="summary">Mets vs. Blue Jays: Lineups, broadcast info, and open thread, 6/29/26
+The Mets head across the border to take on the Blue Jays.
+Carson Benge - RF
+Juan Soto - LF
+Bo Bichette - 3B
+Francisco Lindor - SS
+Jared Young - 1B
+A.J. Ewing - CF
+Mark Vi…</p>
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T22:07:00+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a></h2>
+      <p class="summary">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently
+Follow ZDNET: Add us as a preferred source on Google.
+If you&#39;re a smart home user or on the path to becoming one, you&#39;ve probably heard the buzzword…</p>
+      <div class="meta-row">
+        <span class="source">ZDNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T17:46:00+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://appleinsider.com/articles/26/06/29/how-thread-is-fixing-smart-home-networks-on-smart-home-insider" target="_blank" rel="noopener">How Thread is fixing smart home networks on Smart Home Insider</a></h2>
+      <p class="summary">This week on Smart Home Insider, Ann Olivo from the Thread Group joins to talk about the future of the wireless standard and how it&#39;s improving smart home networks.
+Joining as this week&#39;s guest host is Ann Olivo. Olivo serves as the Corpora…</p>
+      <div class="meta-row">
+        <span class="source">AppleInsider</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T15:12:00+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/454084/open-thread-june-29-2026" target="_blank" rel="noopener">Open Thread, June 29, 2026</a></h2>
+      <p class="summary">Hey all, here’s your open thread for Monday.
+Open Thread, June 29, 2026
+Your daily source for off topic chatter with the MMA Mania faithful.
+Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania, Tim specializes i…</p>
+      <div class="meta-row">
+        <span class="source">MMA Mania</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T13:05:00+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-6-29/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 6/29</a></h2>
+      <p class="summary">The NHL Draft has come and gone and the Buffalo Sabres have certainly been busy retooling the roster given there were some expiring contracts and players entering pivotal final seasons of their current deals.
+This week will see the opening …</p>
+      <div class="meta-row">
+        <span class="source">diebytheblade.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T12:00:00+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/ecoverde-from-coats-group-recycled-thread-that-feels-consistent-on-the/69649062" target="_blank" rel="noopener">EcoVerde from Coats Group - recycled thread that feels consistent on the line</a></h2>
+      <p class="summary">EcoVerde from Coats Group - recycled thread that feels consistent on the line
+29.06.2026 - 03:11:59 | ad-hoc-news.deReviewed: ad hoc news Classics &amp; Longseller desk. Edited and checked on 2026-06-29, 03:11. Details in the imprint.
+The EcoVe…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T01:11:59+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://sports.yahoo.com/articles/open-thread-spurs-summer-league-145104041.html" target="_blank" rel="noopener">Open Thread: Spurs Summer League schedules released</a></h2>
+      <p class="summary">Open Thread: Spurs Summer League schedules released
+The Spurs have four new draftees, three of whom are available to participate immediately in Summer League. The first stop for the Spurs is San Francisco where the Silver &amp; Black join Calif…</p>
+      <div class="meta-row">
+        <span class="source">Yahoo Sports</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-28T14:51:04+00:00">2026-06-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/453952/open-thread-june-28-2026" target="_blank" rel="noopener">Open Thread, June 28, 2026</a></h2>
+      <p class="summary">Hey all, here’s your open thread for Sunday.
+Open Thread, June 28, 2026
+Your daily source for off topic chatter with the MMA Mania faithful.
+MMA ADJACENT
+I’m not that interested in these rehashes, personally. I just hope these guys got paid…</p>
+      <div class="meta-row">
+        <span class="source">MMA Mania</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-28T13:05:00+00:00">2026-06-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://cartilagefreecaptain.sbnation.com/general/71668/world-cup-day-17-recap-and-round-of-32-day-1-open-thread" target="_blank" rel="noopener">World Cup: Day 17 recap and Round of 32 Day 1 open thread</a></h2>
+      <p class="summary">We did it, y’all. 48 teams, 72 matches, an expanded World Cup, constant non-stop football for 17 days, and we successfully made it through the group rounds. And today there’s only one match. One. Single. Match. Unfortunately it’s not even a…</p>
+      <div class="meta-row">
+        <span class="source">Cartilage Free Captain</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-28T12:42:16+00:00">2026-06-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/epic-thread-from-coats-group-polyester-core-that-keeps-machines-running/69643712" target="_blank" rel="noopener">Epic thread from Coats Group - polyester core that keeps machines running</a></h2>
+      <p class="summary">Epic thread from Coats Group - polyester core that keeps machines running
+28.06.2026 - 05:28:36 | ad-hoc-news.deReviewed: ad hoc news Classics &amp; Longseller desk. Edited and checked on 2026-06-28, 05:28. Details in the imprint.
+The Epic thre…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-28T03:28:36+00:00">2026-06-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.habseyesontheprize.com/2026-nhl-entry-draft-rounds-2-7-open-thread-how-to-watch-tv-listings-online-stream/" target="_blank" rel="noopener">2026 NHL Entry Draft: Rounds 2-7 open thread</a></h2>
+      <p class="summary">How to watch
+Rounds 2-7
+Date: Saturday, June 27
+Start time: 11:00 AM EDT / 8:00 AM PDT
+TV Channel: Sportsnet, TVA Sports (Canada), NHL Network (USA)
+Online stream: Sportsnet+
+As expected, there were a lot of trades on the opening day of the…</p>
+      <div class="meta-row">
+        <span class="source">Habs Eyes on the Prize</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-27T12:00:00+00:00">2026-06-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-epic-from-coats-group-everyday-sewing-thread-with-industrial-roots/69636313" target="_blank" rel="noopener">Coats Epic from Coats Group - everyday sewing thread with industrial roots</a></h2>
+      <p class="summary">Coats Epic from Coats Group - everyday sewing thread with industrial roots
+27.06.2026 - 01:36:51 | ad-hoc-news.deReviewed: ad hoc news Lifestyle &amp; Consumer desk. Edited and checked on 2026-06-27, 01:36. Details in the imprint.
+The Coats Epi…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T23:36:51+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.blueshirtbanter.com/2026-nhl-draft-first-round-open-thread/" target="_blank" rel="noopener">2026 NHL Draft: First Round Open Thread</a></h2>
+      <p class="summary">It’s been a long wait since the New York Rangers last played a hockey game, and while we still have a long offseason to get through, one of the most exciting days of the summer is finally here.
+The 2026 NHL entry draft is upon us, and there…</p>
+      <div class="meta-row">
+        <span class="source">Blueshirt Banter</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T23:08:01+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.habseyesontheprize.com/2026-nhl-entry-draft-first-round-open-thread-tv-listings-online-stream-draft-order-montreal-canadiens-trade-speculation-28th-overall/" target="_blank" rel="noopener">2026 NHL Entry Draft: First round open thread</a></h2>
+      <p class="summary">How to watch
+Round 1
+Date: Friday, June 26
+Start time: 7:00 PM EDT / 4:00 PM PDT
+TV Channel: Sportsnet, TVA Sports (Canada), ESPN (USA)
+Online stream: Sportsnet+
+After a busy day of trades early in the week, things have quieted down leading…</p>
+      <div class="meta-row">
+        <span class="source">Habs Eyes on the Prize</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T22:00:00+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://racketmn.com/lets-talk-about-pride-on-this-weeks-open-thread" target="_blank" rel="noopener">Let’s Talk About Pride on This Week’s Open Thread</a></h2>
+      <p class="summary">It&#39;s Pride weekend here in Minnesota, and that means parties, parades, celebrations, events, and lotsa rainbows.
+And it should! But it can also be a time for reflection on gender and sexuality, on the struggle for LGBTQ+ rights, and on othe…</p>
+      <div class="meta-row">
+        <span class="source">Racket MN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T16:50:00+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.milehighhockey.com/open-threads/64852/open-thread-2026-nhl-draft-500-p-m-mt" target="_blank" rel="noopener">Open Thread: 2026 NHL Draft (5:00 p.m. MT)</a></h2>
+      <p class="summary">While it isn’t expected to be a big night for the Colorado Avalanche on Friday night for the opening round of the 2026 NHL Entry Draft, Saturday might be a different story as the organization currently holds 10 picks on the second day of th…</p>
+      <div class="meta-row">
+        <span class="source">Mile High Hockey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T15:00:00+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://sports.yahoo.com/articles/chargers-daily-links-friday-open-135000989.html" target="_blank" rel="noopener">Chargers Daily Links: Friday Open Thread</a></h2>
+      <p class="summary">Chargers Daily Links: Friday Open Thread
+Good morning, Chargers fans!
+You know what to do!
+And now for today’s links.
+Chargers News:
+Could Joey Bosa really be done in the NFL? (Chargers Wire)
+Elijah Molden being healthy could spell another …</p>
+      <div class="meta-row">
+        <span class="source">Yahoo Sports</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T13:50:00+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/453033/open-thread-june-26-2026" target="_blank" rel="noopener">Open Thread, June 26, 2026</a></h2>
+      <p class="summary">Hey all, here’s your open thread for Friday.
+Open Thread, June 26, 2026
+Your daily source for off topic chatter with the MMA Mania faithful.
+MMA ADJACENT
+Live ONE Friday Fights 160.
+Strongman Champions League? Tell me more.
+TOTALLY OFF TOPI…</p>
+      <div class="meta-row">
+        <span class="source">MMA Mania</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T13:05:00+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://cartilagefreecaptain.sbnation.com/general/71614/world-cup-day-15-recap-and-day-16-open-thread" target="_blank" rel="noopener">World Cup: Day 15 recap and Day 16 open thread</a></h2>
+      <p class="summary">There are two days left in the Group Stage before the Round of 32 knockouts start. The matchups are starting to clarify -- USA will face Bosnia Herzegovina, while Canada will face off against South Africa -- but there’s still a lot of ambig…</p>
+      <div class="meta-row">
+        <span class="source">Cartilage Free Captain</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T11:29:20+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">NXP</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://iotbusinessnews.com/2026/06/26/quectel-adds-multi-protocol-nxp-based-module-for-wi-fi-6-thread-and-zigbee-iot-devices/" target="_blank" rel="noopener">Quectel Adds Multi-Protocol NXP-Based Module for Wi-Fi 6, Thread and Zigbee IoT Devices</a></h2>
+      <p class="summary">Quectel has introduced the FCM365X, a compact wireless module based on NXP’s RW612 MCU that combines dual-band Wi-Fi 6, Bluetooth LE 5.4, Zigbee and Thread support for smart home and industrial IoT designs.
+Short-range IoT design is becomin…</p>
+      <div class="meta-row">
+        <span class="source">IoT Business News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T08:49:21+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.newelectronics.co.uk/content/product-launches/quectel-launches-multi-protocol-wi-fi-6-module-for-iot-applications" target="_blank" rel="noopener">Quectel launches multi-protocol Wi-Fi 6 module for IoT applications</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">New Electronics</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T10:10:10+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-6-22/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 6/22</a></h2>
+      <p class="summary">It’s been a dramatic last few days with some big trades getting made, while rumors continue to fly around the futures of certain Buffalo Sabres players including Alex Tuch and Bowen Byram. Defenseman Michael Kesselring has been shipped out …</p>
+      <div class="meta-row">
+        <span class="source">diebytheblade.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T01:01:02+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.brightsideofthesun.com/suns-game-threads/106571/nba-draft-day-2-open-thread" target="_blank" rel="noopener">NBA Draft, Day 2: Open Thread</a></h2>
+      <p class="summary">Round 2. Ding! Ding!
+NBA Draft, Day 2: Open Thread
+Could someone find the next Jokic today?
+Could someone find the next Jokic today?
+The Suns may not have a pick, but that doesn’t mean excitement should be put on hold!
+Hopefully this is not…</p>
+      <div class="meta-row">
+        <span class="source">Bright Side Of The Sun</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T00:00:00+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="http://brooklynheightsblog.com/archives/103145" target="_blank" rel="noopener">Open Thread Wednesday</a></h2>
+      <p class="summary">What’s on your mind? Comment away! (Sorry; late posting this.)
+- Andrew Porter
+Just deleted my concerned-about-Claude post on last week&#39;s Open Thread. You had me worried, Claude!
+But I can still share this photo I took of him at the March B…</p>
+      <div class="meta-row">
+        <span class="source">Brooklyn Heights Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-24T19:13:56+00:00">2026-06-24</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://9to5google.com/2026/06/23/google-tv-streamer-home-speaker/" target="_blank" rel="noopener">Google TV Streamer update adds Google Home Speaker support, more</a></h2>
+      <p class="summary">Following the rollout two weeks ago, Google has shared what’s new in the latest Google TV Streamer update.
+The changelog is a bit more detailed than what appeared on the update screen.
+Besides the April 2026 security patch, UTTK.260317.003 …</p>
+      <div class="meta-row">
+        <span class="source">9to5Google</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-23T17:50:00+00:00">2026-06-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">HKMC</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://cyprusshippingnews.com/2026/06/22/thread-group-and-broadband-forum-establish-liaison-agreement-to-connect-iot-mesh-networks-with-broadband-infrastructure/" target="_blank" rel="noopener">- Cyprus Shipping News</a></h2>
+      <p class="summary">Thread Group and Broadband Forum Establish Liaison Agreement to Connect IoT Mesh Networks with Broadband Infrastructure
+Collaboration between standards bodies will make it easier for IoT devices and broadband networks to work together in sm…</p>
+      <div class="meta-row">
+        <span class="source">Cyprus Shipping News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-22T03:17:04+00:00">2026-06-22</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.celticsblog.com/boston-celtics-rumors/142094/trusting-brad-stevens-an-open-thread-on-celtics-trade-rumors" target="_blank" rel="noopener">Trusting Brad Stevens: (an open thread on Celtics trade rumors)</a></h2>
+      <p class="summary">I don’t know about you, but I’ve run the full spectrum of emotions this offseason. Everything from “run it back” to “trade everyone except Tatum and Hugo.“
+Trusting Brad Stevens: (an open thread on Celtics trade rumors)
+I don’t know what Br…</p>
+      <div class="meta-row">
+        <span class="source">CelticsBlog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-21T07:00:00+00:00">2026-06-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/96565/new-york-mets-philadelphia-phillies-lineups-broadcast-info-open-thread-mlb-peterson-wheeler" target="_blank" rel="noopener">Mets vs. Phillies: Lineups, broadcast info, and open thread, 6/21/26</a></h2>
+      <p class="summary">Mets vs. Phillies: Lineups, broadcast info, and open thread, 6/21/26
+It’s a Father’s Day rubber game at Citizens Bank Park as the Mets try to put last night’s nightmare behind them.
+- Carson Benge - RF
+- Bo Bichette - SS
+- Juan Soto - LF
+- …</p>
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-21T07:00:00+00:00">2026-06-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.behindthesteelcurtain.com/pittsburgh-steelers-discussion/171872/saturday-night-open-thread-together-we-go-father" target="_blank" rel="noopener">Saturday Night Open Thread: Together We Go Father</a></h2>
+      <p class="summary">Live from Delaware, it’s Saturday Night! I, NAS204PSU, am here at BTSC to bring you this Saturday Night Open Thread (aka SNOT).
+Saturday Night Open Thread: Together We Go Father
+Come and join this merry band of Steelers’ faithful for some l…</p>
+      <div class="meta-row">
+        <span class="source">Behind the Steel Curtain</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-20T07:00:00+00:00">2026-06-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/6/19/800056697/community/street-prophets-friday-pruhonice-dendrological-garden-part-ii-photo-diary-open-thread/" target="_blank" rel="noopener">Street Prophets Friday: Průhonice Dendrological Garden, Part II (photo diary/open thread)</a></h2>
+      <p class="summary">Greetings and welcome to another of my little, fuzzy-headed open threads posted via the realm of comforting cookie-scented community, the Street Prophets Group.
+This week I’m continuing my series of springtime photos taken during a special …</p>
+      <div class="meta-row">
+        <span class="source">Daily Kos</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-19T20:07:00+00:00">2026-06-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://racketmn.com/rackets-new-intern-introduces-this-weeks-open-thread" target="_blank" rel="noopener">Racket’s New Intern Introduces This Week’s Open Thread</a></h2>
+      <p class="summary">For my first week at Racket, I have been given the honor of introducing myself in the Friday Open Thread.
+So hello! I’m Clare.
+I’m interning at Racket this summer, so you&#39;ll be seeing my byline around here for the next few months. I grew up…</p>
+      <div class="meta-row">
+        <span class="source">Racket MN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-19T15:12:00+00:00">2026-06-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.the-ambient.com/news/thread-is-making-a-bigger-push-to-simplify-the-smart-home-experience/" target="_blank" rel="noopener">Thread is making a bigger push to simplify the smart home experience</a></h2>
+      <p class="summary">Thread has become one of the most important technologies in the modern smart home, quietly powering an increasing number of Matter devices behind the scenes.
+Now, the Thread Group is taking steps to make the protocol easier to understand, t…</p>
+      <div class="meta-row">
+        <span class="source">The Ambient</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-19T14:32:42+00:00">2026-06-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://defector.com/heres-a-world-cup-weekend-open-thread" target="_blank" rel="noopener">Here’s A World Cup Weekend Open Thread</a></h2>
+      <p class="summary">Hopefully you, like us, have the day off today. And hopefully you, like us, have plans to watch lots of World Cup soccer this weekend. While you do that, feel free to chat away in this open thread.
+Subscribe to skip adsAdvertisement
+Sign up…</p>
+      <div class="meta-row">
+        <span class="source">Defector</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-19T14:00:00+00:00">2026-06-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.einnews.com/pr_news/920344021/hoorii-tech-launches-hrr53-and-hrr54-modules-cost-effective-solutions-for-matter-over-thread-devices" target="_blank" rel="noopener">HooRii Tech Launches HRR53 and HRR54 Modules: Cost-Effective Solutions for Matter over Thread Devices</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">EIN News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-18T07:00:00+00:00">2026-06-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        <span class="chip chip-app">Healthcare</span>
+      </div>
+      <h2 class="title"><a href="https://www.connectcre.com/stories/california-people-and-company-news-week-of-june-19-2026/" target="_blank" rel="noopener">California People and Company News, Week of June 19, 2026</a></h2>
+      <p class="summary">California CRE News In Your Inbox.
+Sign up for Connect emails to stay informed with CRE stories that are 150 words or less.
+California People and Company News, Week of June 19, 2026
+- Suffolk, a national construction manager, announced Armo…</p>
+      <div class="meta-row">
+        <span class="source">Connect CRE</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-18T07:00:00+00:00">2026-06-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://iottechnews.com/news/silicon-labs-200-node-matter-over-thread-iot-network/" target="_blank" rel="noopener">Silicon Labs validates 200-node Matter-over-Thread IoT network</a></h2>
+      <p class="summary">Silicon Labs has executed a 200-node Matter-over-Thread validation network deployment to prove scalability in commercial IoT hardware.
+The semiconductor manufacturer announced the physical deployment at the Connectivity Standards Alliance (…</p>
+      <div class="meta-row">
+        <span class="source">IoT News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T09:13:26+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.testudotimes.com/threads/91745/open-thread-maryland-womens-basketball" target="_blank" rel="noopener">Open thread: Maryland women’s basketball</a></h2>
+      <p class="summary">Hey Testudo Times community! This is your open space to discuss all things Maryland women’s basketball. Keep things respectful as always.
+Open thread: Maryland women’s basketball
+Your open space to chat Terps women’s basketball.
+Be sure to …</p>
+      <div class="meta-row">
+        <span class="source">Testudo Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T07:00:00+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.theverge.com/tech/949001/thread-network-diagnostic-tools-app-troubleshooting-matter-smart-home" target="_blank" rel="noopener">Got Thread problems? There’s an app for that</a></h2>
+      <p class="summary">The new Thread networks diagnostics app from Thread Group, the standards body behind the wireless IoT protocol, officially launches in beta today. The Thread Tools app, available on iOS and Android, is the first dedicated tool to provide vi…</p>
+      <div class="meta-row">
+        <span class="source">The Verge</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T07:00:00+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.explosion.com/193959/google-releases-android-17-qpr1-beta-4-for-pixel/" target="_blank" rel="noopener">Google Releases Android 17 QPR1 Beta 4 for Pixel</a></h2>
+      <p class="summary">Google has released Android 17 QPR1 Beta 4 for Pixel devices, bringing the quarterly update closer to a stable public version. The beta was first noted by 9to5Google. This follows Beta 3, which launched in May and introduced a range of chan…</p>
+      <div class="meta-row">
+        <span class="source">explosion.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T07:00:00+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-ecoverde-premium-sewing-thread-targets-everyday-durability-and/69558906" target="_blank" rel="noopener">Coats Group EcoVerde Premium Sewing Thread targets everyday durability and sustainability</a></h2>
+      <p class="summary">Coats Group EcoVerde Premium Sewing Thread targets everyday durability and sustainability
+17.06.2026 - 06:27:01 | ad-hoc-news.deBy Jane Miller, ad-hoc-news, June 17, 2026
+Coats Group EcoVerde Premium Sewing Thread is positioning itself as t…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T04:27:01+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.thefastmode.com/technology-solutions/49097-silicon-labs-expands-matter-over-thread-network-for-commercial-iot-deployments" target="_blank" rel="noopener">Silicon Labs Expands Matter-over-Thread Network for Commercial IoT Deployments</a></h2>
+      <p class="summary">Silicon Labs, the leading innovator in low-power wireless connectivity, announced the successful deployment and operation of a 200-node Matter-over-Thread validation network, demonstrating the scalability, reliability and performance of Mat…</p>
+      <div class="meta-row">
+        <span class="source">The Fast Mode</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T04:25:25+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.newelectronics.co.uk/content/news/silicon-labs-demonstrates-large-scale-matter-over-thread-network-for-smart-building-applications" target="_blank" rel="noopener">Silicon Labs demonstrates large-scale Matter-over-Thread network for smart building applications</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">New Electronics</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T04:10:18+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://eu.36kr.com/en/p/3855735907063042" target="_blank" rel="noopener">Apple and Google Upgrade Thread 1.4: Matter Is No Longer an Empty Framework</a></h2>
+      <p class="summary">Apple and Google upgrade Thread 1.4, making Matter no longer an empty framework
+As the post - 90s and post - 00s start to get married and establish their careers, the intelligentization of the family scene has gradually become a rigid deman…</p>
+      <div class="meta-row">
+        <span class="source">36Kr</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-16T15:23:27+00:00">2026-06-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">TI</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.stocktitan.net/news/SLAB/silicon-labs-advances-large-scale-matter-deployments-with-200-node-477cfmwngys5.html" target="_blank" rel="noopener">Inside a 200-device smart building test pushing Matter to real-world scale</a></h2>
+      <p class="summary">Silicon Labs Advances Large-Scale Matter Deployments with 200-Node Matter-over-Thread Validation Network
+Rhea-AI Summary
+Silicon Labs (NASDAQ:SLAB) announced a 200-node Matter-over-Thread validation network, operated in its Boston lab and o…</p>
+      <div class="meta-row">
+        <span class="source">Stock Titan</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-16T07:00:00+00:00">2026-06-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.iotinsider.com/industries/smart-home/matter-moves-beyond-the-smart-home-as-silicon-labs-validates-200-node-thread-network/" target="_blank" rel="noopener">Matter moves beyond the smart home as Silicon Labs validates 200-node Thread network</a></h2>
+      <p class="summary">Matter, the connectivity standard designed to simplify interoperability across connected devices, is showing signs that it could support deployments far beyond the smart home after Silicon Labs unveiled a 200-node Matter-over-Thread validat…</p>
+      <div class="meta-row">
+        <span class="source">IOT Insider</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-16T07:00:00+00:00">2026-06-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span><span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.the-ambient.com/news/apple-and-google-have-added-thread-1-4-support/" target="_blank" rel="noopener">Apple and Google have added Thread 1.4 support</a></h2>
+      <p class="summary">Two of the smart home industry’s biggest ecosystem players have taken a meaningful step toward resolving one of Matter’s most persistent interoperability problems, with Apple and Google both rolling out Thread 1.4 support to their respectiv…</p>
+      <div class="meta-row">
+        <span class="source">The Ambient</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-16T07:00:00+00:00">2026-06-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-6-15/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 6/15</a></h2>
+      <p class="summary">The 2025-26 NHL season has come to an official end with the Carolina Hurricanes lifting Lord Stanley’s Cup after beating the Vegas Golden Knights 4-2 in the finals.
+This is going to be a mostly quiet week as the NHL gears up for the Entry D…</p>
+      <div class="meta-row">
+        <span class="source">diebytheblade.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-15T07:00:00+00:00">2026-06-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.geeky-gadgets.com/apple-home-vs-google-home-ios-27/" target="_blank" rel="noopener">Apple Home vs Google Home: How iOS 27 Changes the Ecosystem</a></h2>
+      <p class="summary">Apple’s announcements at WWDC 2026 introduced notable updates to the Home app with iOS 27, reflecting efforts to enhance its smart home ecosystem. A Smarter House highlights key changes, including 4K HomeKit Secure Video and AI-powered came…</p>
+      <div class="meta-row">
+        <span class="source">Geeky Gadgets</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-15T07:00:00+00:00">2026-06-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://russianmachineneverbreaks.com/2026/06/14/open-thread-game-6-stanley-cup-final-golden-knights-hurricanes/" target="_blank" rel="noopener">Open Thread: Hurricanes look to wrap up the Stanley Cup Final with a win over Golden Knights in huge Game 6 matchup</a></h2>
+      <p class="summary">The Stanley Cup will be in the building on Sunday night.
+The hosting Vegas Golden Knights need a win over the Carolina Hurricanes to force a Game 7 and keep their championship hopes alive. Head coach John Tortorella is so confident that his…</p>
+      <div class="meta-row">
+        <span class="source">RMNB</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-14T23:33:34+00:00">2026-06-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/6/14/800054106/community/sunday-morning-ope/" target="_blank" rel="noopener">Sunday Morning Open Thread with Music by the Foo Fighters</a></h2>
+      <p class="summary">Good morning, everyone. We’re in for a pleasant Sunday, that is, unless you like hot and muggy weather. We’re going to be lucky if we reach 70 degrees. I’m going to enjoy it while it lasts. For this agreeable day, how about a few selections…</p>
+      <div class="meta-row">
+        <span class="source">Daily Kos</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-14T10:25:32+00:00">2026-06-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/96240/mets-vs-braves-lineups-broadcast-info-and-open-thread-6-14-26" target="_blank" rel="noopener">Mets vs. Braves: Lineups, broadcast info, and open thread, 6/14/26</a></h2>
+      <p class="summary">Mets vs. Braves: Lineups, broadcast info, and open thread, 6/14/26
+The Mets look to take the weekend series from the Braves, as Freddy Peralta faces off against Bryce Elder
+- Carson Benge - RF
+- Bo Bichette - SS
+- Juan Soto - DH
+- Jared You…</p>
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-14T07:00:00+00:00">2026-06-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.milehighhockey.com/open-threads/64657/scf-open-thread-game-6-carolina-hurricanes-at-vegas-golden-knights-600-p-m" target="_blank" rel="noopener">SCF Open Thread: Game 6: Carolina Hurricanes at Vegas Golden Knights (6:00 p.m.)</a></h2>
+      <p class="summary">Will this be the final game of the 2025-26 NHL season with the Carolina Hurricanes closing out their championship run in Game 6 or will the Vegas Golden Knights force a Wednesday night Game 7?
+SCF Open Thread: Game 6: Carolina Hurricanes at…</p>
+      <div class="meta-row">
+        <span class="source">Mile High Hockey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-14T07:00:00+00:00">2026-06-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.canescountry.com/stanley-cup-finals/53955/stanley-cup-final-game-6-carolina-hurricmes-at-vegas-golden-nights-preview-and-thread" target="_blank" rel="noopener">Stanley Cup Final Game 6: Carolina at Vegas - Preview and Thread</a></h2>
+      <p class="summary">The Stanley Cup will be in the building Sunday night, and for the first time in 20 years, the Carolina Hurricanes can be the team to skate away with it.
+Stanley Cup Final Game 6: Carolina at Vegas - Preview and Thread
+Tonight, Carolina can …</p>
+      <div class="meta-row">
+        <span class="source">Canes Country</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-14T07:00:00+00:00">2026-06-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bluebirdbanter.com/general/62366/open-thread-canada-bosnia-and-herzegovina-world-cup-game" target="_blank" rel="noopener">Open Thread: Canada/Bosnia and Herzegovina World Cup Game</a></h2>
+      <p class="summary">I’ve been waiting for the official word that Alejandro Kirk has been added to the roster, with Tyler Heineman getting the DFA treatment. I feel bad for him (and, of course, there is a chance they will do something else).
+Open Thread: Canada…</p>
+      <div class="meta-row">
+        <span class="source">Bluebird Banter</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-12T07:00:00+00:00">2026-06-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.channelnews.com.au/google-tv-streamer-gains-thread-1-4-support-in-significant-smart-home-boost/" target="_blank" rel="noopener">Google TV Streamer Gains Updated</a></h2>
+      <p class="summary">Google TV Streamer Gains Updated
+Google has rolled out the first software update of the year for its Google TV Streamer, bringing support for Thread 1.4 and delivering a notable enhancement to the company’s smart home ecosystem.
+While the o…</p>
+      <div class="meta-row">
+        <span class="source">channelnews.com.au</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-12T00:38:17+00:00">2026-06-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.flatpanelshd.com/news.php?subaction=showfull&amp;id=1781182926" target="_blank" rel="noopener">Google TV Streamer update brings major Google Home upgrade</a></h2>
+      <p class="summary">The first update of the year for the Google TV Streamer has arrived with support for Thread 1.4, representing a major upgrade for Google&#39;s smart home platform.
+The update&#39;s changelog only lists bug fixes and improvements, but 9to5Google has…</p>
+      <div class="meta-row">
+        <span class="source">FlatpanelsHD</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-11T13:08:36+00:00">2026-06-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://russianmachineneverbreaks.com/2026/06/11/open-thread-game-5-stanley-cup-final-golden-knights-hurricanes/" target="_blank" rel="noopener">Open Thread: Hurricanes and Golden Knights square off in massive Game 5 of Stanley Cup Final</a></h2>
+      <p class="summary">The NBA Finals and Stanley Cup Finals are both wacky this year, as alluded to by Vegas Golden Knights head coach John Tortorella before Thursday’s Game 5.
+No lead has been safe, creating real drama at the end of games.
+The Carolina Hurrican…</p>
+      <div class="meta-row">
+        <span class="source">RMNB</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-11T07:00:00+00:00">2026-06-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span><span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.theverge.com/tech/947888/apple-google-add-support-for-thread-1-4" target="_blank" rel="noopener">Apple, Google add support for Thread 1.4</a></h2>
+      <p class="summary">Apple and Google are updating their smart home streaming devices to Thread 1.4. As first spotted by Matter Alpha and 9to5 Google, the latest spec has arrived on compatible Apple TVs in the tvOS 27 developer beta and the Google TV Streamer t…</p>
+      <div class="meta-row">
+        <span class="source">The Verge</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://9to5google.com/2026/06/10/google-tv-streamers-new-update-turns-it-into-a-better-smart-home-device/" target="_blank" rel="noopener">Google TV Streamer’s new update turns it into a better smart home device</a></h2>
+      <p class="summary">The first big Google TV Streamer of 2026 is here – yes, six months into the year. Timing aside, though, one of the bigger improvements here is support for Thread 1.4, which gives the Google TV Streamer more power as an anchor to your smart …</p>
+      <div class="meta-row">
+        <span class="source">9to5Google</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.androidauthority.com/google-tv-streamer-update-thread-1-4-3676252/" target="_blank" rel="noopener">Google TV Streamer update unlocks a major hidden upgrade for your smart home setup</a></h2>
+      <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
+Google TV Streamer update unlocks a major hidden upgrade for your smart home setup
+- Google has rolled out the UTTK.260317.003 build for the Google TV Streamer, mark…</p>
+      <div class="meta-row">
+        <span class="source">Android Authority</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.pocket-lint.com/long-awaited-google-tv-streamer-update-has-arrived/" target="_blank" rel="noopener">A long-awaited Google TV Streamer update has finally arrived - Pocket-lint</a></h2>
+      <p class="summary">The Google TV Streamer received one of its biggest updates ever last year when Google rolled out Gemini, replacing the old Google Assistant. The upgrade made the streamer much smarter, allowing for more natural, conversational interactions.…</p>
+      <div class="meta-row">
+        <span class="source">Pocket-lint</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cultofmac.com/news/ios-27-and-tvos-27-updates-make-your-home-smarter" target="_blank" rel="noopener">How iOS 27 and tvOS 27 updates make your home smarter</a></h2>
+      <p class="summary">WWDC26 drew plenty of attention for the rebuilt Siri and the relatively substantial iOS 27 overhaul. But buried beneath those headlines lies Apple’s biggest push yet to turn the Home app into a genuinely capable smart home platform. iOS 27 …</p>
+      <div class="meta-row">
+        <span class="source">Cult of Mac</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://cordcuttersnews.com/google-rolls-out-a-major-update-to-its-google-tv-streamer-4k/" target="_blank" rel="noopener">Google Rolls Out a Major Update to Its Google TV Streamer 4k</a></h2>
+      <p class="summary">Google has rolled out a notable software update to its Google TV Streamer this week, one that quietly expands the device’s usefulness well beyond streaming movies and TV shows. The update brings Thread 1.4 compatibility to the device, a mea…</p>
+      <div class="meta-row">
+        <span class="source">| Cord Cutters News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://russianmachineneverbreaks.com/2026/06/09/game-4-stanley-cup-final-open-thread/" target="_blank" rel="noopener">Open Thread: Golden Knights aim for 3-1 series lead in Game 4 after wild double overtime win over Hurricanes</a></h2>
+      <p class="summary">After a two-day break, the Stanley Cup Final continues in Sin City.
+The Vegas Golden Knights will look to take a dominant 3-1 lead in the series following a historic win on Saturday, which saw the fastest-ever hat trick in the Stanley Cup F…</p>
+      <div class="meta-row">
+        <span class="source">RMNB</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T07:00:00+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/6/8/800021752/community/music-open-thread-sixth-symphonies/" target="_blank" rel="noopener">Music open thread: Sixth Symphonies</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Daily Kos</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-08T07:00:00+00:00">2026-06-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.flatpanelshd.com/news.php?subaction=showfull&amp;id=1780936221" target="_blank" rel="noopener">Apple announces tvOS 27 with a focus on speed – updated</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">FlatpanelsHD</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-08T07:00:00+00:00">2026-06-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.behindthesteelcurtain.com/pittsburgh-steelers-discussion/171532/saturday-night-open-thread-lifes-a-beach" target="_blank" rel="noopener">Saturday Night Open Thread: Life’s a Beach</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Behind the Steel Curtain</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-06T07:00:00+00:00">2026-06-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.managingmadrid.com/general/108516/open-thread-june-4-2026" target="_blank" rel="noopener">Open Thread: June 4, 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Managing Madrid</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-04T07:00:00+00:00">2026-06-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://russianmachineneverbreaks.com/2026/06/02/2026-stanley-cup-final-open-thread-carolina-hurricanes-vegas-golden-knights/" target="_blank" rel="noopener">Open Thread: It’s Game 1 of the Stanley Cup Final between the Hurricanes and Golden Knights</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">RMNB</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-03T00:00:29+00:00">2026-06-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/95658/mets-mariners-lineups-broadcast-how-watch-open-thread-new-york-seattle" target="_blank" rel="noopener">Mets vs. Mariners: Lineups, broadcast info, and open thread, 6/1/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T07:00:00+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.behindthesteelcurtain.com/pittsburgh-steelers-discussion/171292/saturday-night-open-thread" target="_blank" rel="noopener">Saturday Night Open Thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Behind the Steel Curtain</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-30T07:00:00+00:00">2026-05-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/95482/mets-marlins-lineups-broadcast-how-watch-open-thread-new-york-miami" target="_blank" rel="noopener">Mets vs. Marlins: Lineups, broadcast info, and open thread, 5/29/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.testudotimes.com/threads/91474/open-thread-maryland-football" target="_blank" rel="noopener">Open thread: Maryland football (Archived: 5/27-6/17)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Testudo Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.jacketscannon.com/conference-finals-open-thread/" target="_blank" rel="noopener">Conference Finals Open Thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">jacketscannon.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-20T07:00:00+00:00">2026-05-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/94964/mets-nationals-lineups-broadcast-how-watch-open-thread-new-york-washington" target="_blank" rel="noopener">Mets vs. Nationals: Lineups, broadcast info, and open thread, 5/19/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-19T07:00:00+00:00">2026-05-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.testudotimes.com/threads/91325/open-thread-maryland-womens-lacrosse" target="_blank" rel="noopener">Open thread: Maryland women’s lacrosse (Archived: 5/17-6/17)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Testudo Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-17T07:00:00+00:00">2026-05-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.milehighhockey.com/open-threads/64086/open-thread-round-2-game-5-colorado-avalanche-at-minnesota-wild-600-p-m" target="_blank" rel="noopener">Open Thread: Round 2 Game 5, Colorado Avalanche at Minnesota Wild (6:00 p.m.)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Mile High Hockey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-13T07:00:00+00:00">2026-05-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.smokingmusket.com/the-shotgun-throwdown/41425/shotgun-throwdown-wvu-open-thread-wednesday-may-13-2026" target="_blank" rel="noopener">Come talk about what’s happening in WVU sports in today’s Shotgun Throwdown.</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">The Smoking Musket</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-13T07:00:00+00:00">2026-05-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/94421/mets-tigers-lineups-broadcast-how-watch-open-thread-new-york-detroit" target="_blank" rel="noopener">Mets vs. Tigers: Lineups, broadcast info, and open thread, 5/12/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-12T07:00:00+00:00">2026-05-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">IKEA</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.geeky-gadgets.com/is-ikea-dirigera-worth-it/" target="_blank" rel="noopener">IKEA Finally Fixed the Dirigera Hub’s Biggest Flaw</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Geeky Gadgets</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-11T07:00:00+00:00">2026-05-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.managingmadrid.com/general/107522/open-thread-may-10-2026" target="_blank" rel="noopener">OPEN THREAD | May 10, 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Managing Madrid</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-10T07:00:00+00:00">2026-05-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/94293/mets-diamondbacks-lineups-broadcast-info-how-watch-open-thread-baseball-arizona-new-york-mlb" target="_blank" rel="noopener">Mets vs. Diamondbacks: Lineups, broadcast info, and open thread, 5/9/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-09T07:00:00+00:00">2026-05-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bluebirdbanter.com/general/61868/off-day-openthread" target="_blank" rel="noopener">Off-Day OpenThread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Bluebird Banter</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-07T07:00:00+00:00">2026-05-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.milehighhockey.com/open-threads/63866/open-thread-game-2-colorado-avalanche-vs-minnesota-wild-600-p-m-mt" target="_blank" rel="noopener">Open Thread: Game 2, Colorado Avalanche vs. Minnesota Wild (6:00 p.m. MT)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Mile High Hockey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-05T07:00:00+00:00">2026-05-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.silverscreenandroll.com/lakers-game-previews/116188/lakers-vs-thunder-game-1-discussion-injury-report-how-to-watch-tv-stream-start-time-lebron-james-shai-gilgeous-alexander" target="_blank" rel="noopener">Lakers vs. Thunder Game 1 Preview: Does L.A. have a miracle in them?</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Silver Screen and Roll</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-04T07:00:00+00:00">2026-05-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Thread</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.androidpolice.com/moved-smart-home-off-wi-fi-onto-thread-router-finally-stopped-crashing/" target="_blank" rel="noopener">I moved my smart home off Wi-Fi and onto Thread, and my router finally stopped crashing</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Android Police</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-02T07:00:00+00:00">2026-05-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/93868/mets-angels-lineups-broadcast-how-watch-open-thread-new-york-los-angeles" target="_blank" rel="noopener">Mets vs. Angels: Lineups, broadcast info, and open thread, 5/1/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-02T00:41:05+00:00">2026-05-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://racketmn.com/lets-talk-bread-in-this-weeks-open-thread" target="_blank" rel="noopener">Let’s Talk Bread in This Week’s Open Thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Racket MN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-01T07:00:00+00:00">2026-05-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.howtogeek.com/esp32-mesh-network-projects-to-try-this-weekend-may-1-3/" target="_blank" rel="noopener">5 ESP32 mesh network projects to try this weekend (May 1 - 3) - How-To Geek</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">How-To Geek</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-01T07:00:00+00:00">2026-05-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/4/29/800027707/community/morning-open-thread-mo-yun/" target="_blank" rel="noopener">Morning Open Thread: Moyun</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Daily Kos</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-29T07:00:00+00:00">2026-04-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/93688/mets-nationals-lineups-april-28-clay-holmes" target="_blank" rel="noopener">Mets vs. Nationals: Lineups, broadcast info, and open thread, 4/28/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-28T07:00:00+00:00">2026-04-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.japersrink.com/weekend-open-thread-early-offseasons-stink/" target="_blank" rel="noopener">Weekend Open Thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Japers&#39; Rink</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-25T07:00:00+00:00">2026-04-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.managingmadrid.com/general/106880/open-thread-april-25-2026" target="_blank" rel="noopener">Open Thread: April 25, 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Managing Madrid</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-25T07:00:00+00:00">2026-04-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/93516/mets-vs-rockies-lineups-broadcast-info-and-open-thread-4-24-26" target="_blank" rel="noopener">Mets vs. Rockies: Lineups, broadcast info, and open thread, 4/24/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-24T07:00:00+00:00">2026-04-24</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.japersrink.com/thursday-open-thread/" target="_blank" rel="noopener">Thursday Open Thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Japers&#39; Rink</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-23T07:00:00+00:00">2026-04-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://brandspurng.com/2026/04/23/samsung-and-ikea-make-6-smart-home-a-reality-with-direct-matter-over-thread-integration/" target="_blank" rel="noopener">Samsung And IKEA Make $6 Smart Home A Reality With Direct Matter-Over-Thread Integration - Brand Spur</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Brand Spur</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-23T07:00:00+00:00">2026-04-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.business-standard.com/technology/tech-news/threads-brings-live-chats-for-real-time-group-discussions-how-it-works-126042300277_1.html" target="_blank" rel="noopener">Threads brings Live Chats for real-time group discussions: How it works</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Business Standard</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-23T07:00:00+00:00">2026-04-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/93376/mets-twins-lineups-how-watch-losing-streak-new-york" target="_blank" rel="noopener">Mets vs. Twins: Lineups, broadcast info, and open thread, 4/22/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-22T07:00:00+00:00">2026-04-22</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.testudotimes.com/threads/90660/open-thread-maryland-womens-lacrosse" target="_blank" rel="noopener">Open thread: Maryland women’s lacrosse (Archived: 4/21-5/17)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Testudo Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T07:00:00+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.sammyfans.com/2026/04/21/samsung-smartthings-ikea-smart-home-matter-devices/" target="_blank" rel="noopener">Samsung SmartThings can now connect 25 IKEA devices with Matter</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Sammy Fans</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T07:00:00+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.milehighhockey.com/open-threads/63452/open-thread-los-angeles-kings-colorado-avalanche-100-p-m" target="_blank" rel="noopener">Open Thread: Los Angeles Kings @ Colorado Avalanche (1:00 P.M.)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Mile High Hockey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-19T07:00:00+00:00">2026-04-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cagesideseats.com/wwe/434538/wrestlemania-42-live-results-open-thread-night-two" target="_blank" rel="noopener">Your WrestleMania 42 night two open thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Cageside Seats</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-19T07:00:00+00:00">2026-04-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.silverscreenandroll.com/lakers-game-previews/114373/lakers-vs-rockets-game-1-discussion-injury-report-how-to-watch-tv-stream-start-time-kevin-durant-lebron-james" target="_blank" rel="noopener">Lakers vs. Rockets Game 1 Preview: Can LA really do this?</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Silver Screen and Roll</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-17T07:00:00+00:00">2026-04-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://newjersey.news12.com/amid-long-autism-diagnosis-waits-one-new-jersey-group-offers-faster-path-to-care" target="_blank" rel="noopener">Amid Long Autism Diagnosis Waits One New Jersey Group Offers Faster Path To Care</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">News12 | New Jersey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-17T07:00:00+00:00">2026-04-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.batterypower.com/atlanta-braves-prospects/129638/off-day-open-thread" target="_blank" rel="noopener">Braves minor league open thread: April 16</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Battery Power</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-16T07:00:00+00:00">2026-04-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.testudotimes.com/threads/90475/open-thread-maryland-mens-basketball" target="_blank" rel="noopener">Open thread: Maryland men’s basketball(Archived: 4/15-4/24)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Testudo Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-15T07:00:00+00:00">2026-04-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.managingmadrid.com/general/106457/open-thread-anticipation-april-15-2026" target="_blank" rel="noopener">OPEN THREAD: ANTICIPATION | APRIL 15, 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Managing Madrid</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-15T07:00:00+00:00">2026-04-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.fibre2fashion.com/news/textile-news/amann-to-present-6-new-sewing-embroidery-threads-at-texprocess-2026-309693-newsdetails.htm" target="_blank" rel="noopener">AMANN to present 6 new sewing &amp; embroidery threads at Texprocess 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Fibre2Fashion</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-15T07:00:00+00:00">2026-04-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">IKEA</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.geeky-gadgets.com/ikea-smart-home-3-month-test/" target="_blank" rel="noopener">IKEA’s Smart Home Gear Tested for 3 Months : Here’s What to Buy &amp; Skip</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Geeky Gadgets</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-14T07:00:00+00:00">2026-04-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/92990/new-york-mets-los-angeles-dodgers-lineups-broadcast-info-open-thread-mlb-peterson-wrobleski" target="_blank" rel="noopener">Mets vs. Dodgers: Lineups, broadcast info, and open thread, 4/13/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-13T07:00:00+00:00">2026-04-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://russianmachineneverbreaks.com/2026/04/13/open-thread-capitals-playoff-hopes-on-the-line-in-flyers-game-against-hurricanes/" target="_blank" rel="noopener">Open Thread: Capitals playoff hopes on the line in Flyers game against Hurricanes</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">RMNB</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-13T07:00:00+00:00">2026-04-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/92916/mets-athletics-lineups-broadcast-info-how-watch-open-thread-sacramento-new-york-baseball-mlb" target="_blank" rel="noopener">Mets vs. Athletics: Lineups, broadcast info, and open thread, 4/12/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-12T07:00:00+00:00">2026-04-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-4-6/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 4/6</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">diebytheblade.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-11T07:00:00+00:00">2026-04-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.anchorofgold.com/anchor-drop/31381/anchor-drop-and-open-thread-friday-april-10-2026" target="_blank" rel="noopener">Anchor Drop and Open Thread: Friday, April 10, 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Anchor Of Gold</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-10T07:00:00+00:00">2026-04-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/92675/mets-vs-diamondbacks-lineups-broadcast-info-and-open-thread-4-7-26" target="_blank" rel="noopener">Mets vs. Diamondbacks: Lineups, broadcast info, and open thread, 4/7/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-07T07:00:00+00:00">2026-04-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/4/5/2375434/community/PWB-Peeps-Open-Thread-Bunnies-For-Easter/" target="_blank" rel="noopener">PWB Peeps Open Thread: Bunnies For Easter</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Daily Kos</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-05T07:00:00+00:00">2026-04-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.behindthesteelcurtain.com/pittsburgh-steelers-discussion/168940/saturday-night-open-thread-egging-on" target="_blank" rel="noopener">Saturday Night Open Thread: Egging on</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Behind the Steel Curtain</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-04T07:00:00+00:00">2026-04-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/92180/mets-pirates-lineups-broadcast-info-how-watch-open-thread-new-york-pittsburgh-baseball-mlb" target="_blank" rel="noopener">Mets vs. Pirates: Lineups, broadcast info, and open thread, 3/28/26</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Amazin&#39; Avenue</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-28T07:00:00+00:00">2026-03-28</span>
+      </div>
+    </div>
+  </article>
+  
+</div>
+</main>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · multi-source RSS · for informational use</div></footer>
+<script>
+function timeAgo(iso){
+  const d=new Date(iso); if(isNaN(d)) return '';
+  let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
+  if(s<45) return 'just now';
+  const m=Math.floor(s/60); if(m<60) return m+(m===1?' min ago':' mins ago');
+  const h=Math.floor(m/60); if(h<24){const r=m%60; if(h<6&&r) return h+'h '+r+'m ago'; return h+(h===1?' hour ago':' hours ago');}
+  const day=Math.floor(h/24); if(day<7) return day+(day===1?' day ago':' days ago');
+  if(day<30){const w=Math.floor(day/7); return w+(w===1?' week ago':' weeks ago');}
+  if(day<365){const mo=Math.floor(day/30); return mo+(mo===1?' month ago':' months ago');}
+  const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
+}
+document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+</script>
+</body></html>

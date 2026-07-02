@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technology Intel · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+.tech-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:14px; margin-top:16px; }
+.tech-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
+.tech-card h2 { margin:0 0 6px; font-size:18px; color:#0f172a; }
+.tech-meta { color:var(--muted); font-size:12.5px; margin:0 0 8px; }
+.tech-stats { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 10px; }
+.tech-list { margin:6px 0 0; padding-left:18px; }
+.tech-list li { margin:5px 0; }
+.tech-list a { color:var(--text); font-weight:600; }
+.tech-list a:hover { color:var(--accent); }
+.subhead { margin:10px 0 4px; font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+</style>
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger " href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="active">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="hero">
+  <h1>Technology Intelligence</h1>
+  <p>Details, latest updates, what's new today, and recent evidence across BT, 15.4, Wi-Fi, Matter, Zigbee, Aliro, and Thread.</p>
+</section>
+
+<div class="tech-grid">
+
+  <section class="tech-card">
+    <h2>BT</h2>
+    <p class="tech-meta">Bluetooth device/chip updates including LE Audio, Channel Sounding, and ecosystem announcements.</p>
+    
+      <p class="tech-meta"><strong>Current:</strong> Bluetooth 6.1 (adopted) · <strong>Next:</strong> Bluetooth 6.2 (in progress)</p>
+    
+    <div class="tech-stats">
+      <span class="pill">217 total updates</span>
+      <span class="pill">4 new today</span>
+      <a class="pill" href="bluetooth.html">Open full BT feed →</a>
+    </div>
+
+    <div class="subhead">What's New Today</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://freeyork.org/design/divoom-flowtoo-bluetooth-speaker/" target="_blank" rel="noopener">Divoom FlowToo: Bluetooth Speaker And White Noise Machine In One Compact Device</a> <span class="tech-meta">(freeyork)</span></li>
+        
+          <li><a href="https://www.digitaltrends.com/home-theater/sonys-wh-1000xm6-headphones-just-became-more-tempting-for-gamers-who-hate-gaming-headsets/" target="_blank" rel="noopener">Sony&#39;s WH-1000XM6 headphones just became more tempting for gamers who hate gaming headsets</a> <span class="tech-meta">(Digital Trends)</span></li>
+        
+          <li><a href="https://stuff.co.za/2026/07/01/sony-updates-wh-1000xm6-and-the-collexion-with-gaming-mode/" target="_blank" rel="noopener">Sony updates WH-1000XM6 and The Collexion with gaming mode</a> <span class="tech-meta">(Stuff South Africa)</span></li>
+        
+          <li><a href="https://www.androidauthority.com/sony-wh-1000xm6-firmware-update-gmap-profile-3683222/" target="_blank" rel="noopener">Sony&#39;s latest WH-1000XM6 update fixes one of Bluetooth gaming&#39;s biggest annoyances</a> <span class="tech-meta">(Android Authority)</span></li>
+        
+      </ul>
+    
+
+    <div class="subhead">Latest Updates</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://freeyork.org/design/divoom-flowtoo-bluetooth-speaker/" target="_blank" rel="noopener">Divoom FlowToo: Bluetooth Speaker And White Noise Machine In One Compact Device</a> <span class="tech-meta">(freeyork · Jul 01)</span></li>
+        
+          <li><a href="https://www.digitaltrends.com/home-theater/sonys-wh-1000xm6-headphones-just-became-more-tempting-for-gamers-who-hate-gaming-headsets/" target="_blank" rel="noopener">Sony&#39;s WH-1000XM6 headphones just became more tempting for gamers who hate gaming headsets</a> <span class="tech-meta">(Digital Trends · Jul 01)</span></li>
+        
+          <li><a href="https://stuff.co.za/2026/07/01/sony-updates-wh-1000xm6-and-the-collexion-with-gaming-mode/" target="_blank" rel="noopener">Sony updates WH-1000XM6 and The Collexion with gaming mode</a> <span class="tech-meta">(Stuff South Africa · Jul 01)</span></li>
+        
+          <li><a href="https://www.androidauthority.com/sony-wh-1000xm6-firmware-update-gmap-profile-3683222/" target="_blank" rel="noopener">Sony&#39;s latest WH-1000XM6 update fixes one of Bluetooth gaming&#39;s biggest annoyances</a> <span class="tech-meta">(Android Authority · Jul 01)</span></li>
+        
+          <li><a href="https://www.soundguys.com/sony-wh-1000xm6-gmap-update-159353/" target="_blank" rel="noopener">Sony&#39;s WH-1000XM6 update adds a feature gamers have been waiting for</a> <span class="tech-meta">(SoundGuys · Jul 01)</span></li>
+        
+          <li><a href="https://basic-tutorials.com/news/sony-wh-1000xm6-gets-gaming-mode-via-firmware-update-1000x-the-collexion-to-follow/" target="_blank" rel="noopener">Sony WH-1000XM6 Gets Gaming Mode via Firmware Update – 1000X The ColleXion to Follow</a> <span class="tech-meta">(Basic Tutorials · Jul 01)</span></li>
+        
+          <li><a href="https://www.notebookcheck.net/Sony-WH-1000XM6-and-1000X-The-ColleXion-receive-gaming-mode-via-update.1332025.0.html" target="_blank" rel="noopener">Sony WH-1000XM6 and 1000X The ColleXion receive gaming mode via update</a> <span class="tech-meta">(Notebookcheck · Jun 30)</span></li>
+        
+          <li><a href="https://www.howtogeek.com/moto-tag-2-android-airtag-alternative-price/" target="_blank" rel="noopener">Android&#39;s best AirTag rival is getting a sequel, and it&#39;s only $20 - How-To Geek</a> <span class="tech-meta">(How-To Geek · Jun 30)</span></li>
+        
+      </ul>
+    
+  </section>
+
+  <section class="tech-card">
+    <h2>15.4</h2>
+    <p class="tech-meta">IEEE 802.15.4 radio stack updates, multiprotocol SoCs, and integration signals.</p>
+    
+      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
+    
+    <div class="tech-stats">
+      <span class="pill">15 total updates</span>
+      <span class="pill">0 new today</span>
+      <a class="pill" href="ieee15_4.html">Open full 15.4 feed →</a>
+    </div>
+
+    <div class="subhead">What's New Today</div>
+    
+      <p class="tech-meta">No new items today.</p>
+    
+
+    <div class="subhead">Latest Updates</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a> <span class="tech-meta">(CNX Software · Jun 30)</span></li>
+        
+          <li><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a> <span class="tech-meta">(ZDNET · Jun 29)</span></li>
+        
+          <li><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a> <span class="tech-meta">(CNX Software · Jun 29)</span></li>
+        
+          <li><a href="https://csa-iot.org/newsroom/fortune-brands-innovations-on-zigbee-4-0/" target="_blank" rel="noopener">Fortune Brands Innovations on Zigbee 4.0</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jun 26)</span></li>
+        
+          <li><a href="https://iotbusinessnews.com/2026/06/26/quectel-adds-multi-protocol-nxp-based-module-for-wi-fi-6-thread-and-zigbee-iot-devices/" target="_blank" rel="noopener">Quectel Adds Multi-Protocol NXP-Based Module for Wi-Fi 6, Thread and Zigbee IoT Devices</a> <span class="tech-meta">(IoT Business News · Jun 26)</span></li>
+        
+          <li><a href="https://www.stocktitan.net/news/SLAB/signify-enhances-philips-hue-matter-support-through-collaboration-owihszbaxnbx.html" target="_blank" rel="noopener">Philips Hue bulbs will run Matter and Zigbee together</a> <span class="tech-meta">(Stock Titan · Jun 23)</span></li>
+        
+          <li><a href="https://www.msn.com/en-us/news/technology/your-smart-home-doesn-t-need-matter-a-local-zigbee-network-is-faster-and-lasts-longer/ar-AA26azg1" target="_blank" rel="noopener">Your smart home doesn&#39;t need Matter — a local Zigbee network is faster and lasts longer</a> <span class="tech-meta">(MSN · Jun 20)</span></li>
+        
+          <li><a href="https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/" target="_blank" rel="noopener">Pine64 Pinevoice – A $50 RISC-V Smart Speaker for Home Assistant based on Bouffalo Lab BL606P MCU</a> <span class="tech-meta">(CNX Software · Jun 20)</span></li>
+        
+      </ul>
+    
+  </section>
+
+  <section class="tech-card">
+    <h2>Wi-Fi</h2>
+    <p class="tech-meta">Wi-Fi chipset/platform launches and connectivity trends relevant to IoT and edge devices.</p>
+    
+      <p class="tech-meta"><strong>Current:</strong> Wi-Fi 7 (802.11be) certified Q1 2024 · <strong>Next:</strong> Wi-Fi 8 (802.11bn) draft, target 2028</p>
+    
+    <div class="tech-stats">
+      <span class="pill">216 total updates</span>
+      <span class="pill">2 new today</span>
+      <a class="pill" href="wifi.html">Open full Wi-Fi feed →</a>
+    </div>
+
+    <div class="subhead">What's New Today</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://www.androidauthority.com/pixel-phones-connectivity-issues-july-2026-3683409/" target="_blank" rel="noopener">Surprise: Pixel phones are once again having Wi-Fi problems</a> <span class="tech-meta">(Android Authority)</span></li>
+        
+          <li><a href="https://www.androidauthority.com/new-wireless-earbuds-wi-fi-not-qualcomm-xpan-3683275/" target="_blank" rel="noopener">These new wireless earbuds also work over Wi-Fi, but without Qualcomm&#39;s help</a> <span class="tech-meta">(Android Authority)</span></li>
+        
+      </ul>
+    
+
+    <div class="subhead">Latest Updates</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://www.androidauthority.com/pixel-phones-connectivity-issues-july-2026-3683409/" target="_blank" rel="noopener">Surprise: Pixel phones are once again having Wi-Fi problems</a> <span class="tech-meta">(Android Authority · Jul 01)</span></li>
+        
+          <li><a href="https://www.androidauthority.com/new-wireless-earbuds-wi-fi-not-qualcomm-xpan-3683275/" target="_blank" rel="noopener">These new wireless earbuds also work over Wi-Fi, but without Qualcomm&#39;s help</a> <span class="tech-meta">(Android Authority · Jul 01)</span></li>
+        
+          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/hpe-aruba-ap-635-from-hewlett-packard-enterprise-wi-fi-6e-access-point/69664347" target="_blank" rel="noopener">HPE Aruba AP-635 from Hewlett Packard Enterprise - Wi-Fi 6E access point built for dense US campuses</a> <span class="tech-meta">(AD HOC NEWS · Jul 01)</span></li>
+        
+          <li><a href="https://techinformed.com/the-tennessee-titans-implement-ai-powered-stadium-wi-fi/" target="_blank" rel="noopener">The Tennessee Titans implement AI-powered stadium Wi-FI</a> <span class="tech-meta">(TechInformed · Jun 29)</span></li>
+        
+          <li><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a> <span class="tech-meta">(CNX Software · Jun 29)</span></li>
+        
+          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/nighthawk-m6-pro-from-netgear-inc-wifi-6e-hotspot-with-5g-and-2-5g-lan/69641258" target="_blank" rel="noopener">Nighthawk M6 Pro from Netgear Inc. - WiFi 6E hotspot with 5G and 2.5G LAN</a> <span class="tech-meta">(AD HOC NEWS · Jun 27)</span></li>
+        
+          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/the-nighthawk-raxe300-from-netgear-inc-wi-fi-6e-router-brings-6-ghz-to/69635420" target="_blank" rel="noopener">The Nighthawk RAXE300 from Netgear Inc. - Wi-Fi 6E router brings 6 GHz to living rooms</a> <span class="tech-meta">(AD HOC NEWS · Jun 26)</span></li>
+        
+          <li><a href="https://www.techinsights.com/blog/disruptive-event-qualcomm-leading-wi-fi-wave-fastconnect-7800" target="_blank" rel="noopener">Disruptive Event- Qualcomm leading the Wi-Fi Wave with FastConnect 7800</a> <span class="tech-meta">(TechInsights · Jun 26)</span></li>
+        
+      </ul>
+    
+  </section>
+
+  <section class="tech-card">
+    <h2>Matter</h2>
+    <p class="tech-meta">Matter certification and device ecosystem changes across smart-home categories.</p>
+    
+      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
+    
+    <div class="tech-stats">
+      <span class="pill">98 total updates</span>
+      <span class="pill">3 new today</span>
+      <a class="pill" href="matter.html">Open full Matter feed →</a>
+    </div>
+
+    <div class="subhead">What's New Today</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://9to5toys.com/2026/07/01/govee-table-lamp-2-pro-with-jbl-speaker-matter-125/" target="_blank" rel="noopener">Govee&#39;s Table Lamp 2 Pro with a built-in JBL speaker + Matter retains Prime Day all-time low at $125</a> <span class="tech-meta">(9to5Toys)</span></li>
+        
+          <li><a href="https://homekitnews.com/2026/07/01/nanoleaf-launches-smart-multicolour-ceiling-light-with-matter/" target="_blank" rel="noopener">Nanoleaf launches Smart Multicolour Ceiling Light with Matter</a> <span class="tech-meta">(Homekit News and Reviews)</span></li>
+        
+          <li><a href="https://www.macobserver.com/news/nanoleaf-releases-an-80-smart-ceiling-light-with-matter-support/" target="_blank" rel="noopener">Nanoleaf Releases An $80 Smart Ceiling Light With Matter Support</a> <span class="tech-meta">(The Mac Observer)</span></li>
+        
+      </ul>
+    
+
+    <div class="subhead">Latest Updates</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://9to5toys.com/2026/07/01/govee-table-lamp-2-pro-with-jbl-speaker-matter-125/" target="_blank" rel="noopener">Govee&#39;s Table Lamp 2 Pro with a built-in JBL speaker + Matter retains Prime Day all-time low at $125</a> <span class="tech-meta">(9to5Toys · Jul 01)</span></li>
+        
+          <li><a href="https://homekitnews.com/2026/07/01/nanoleaf-launches-smart-multicolour-ceiling-light-with-matter/" target="_blank" rel="noopener">Nanoleaf launches Smart Multicolour Ceiling Light with Matter</a> <span class="tech-meta">(Homekit News and Reviews · Jul 01)</span></li>
+        
+          <li><a href="https://www.macobserver.com/news/nanoleaf-releases-an-80-smart-ceiling-light-with-matter-support/" target="_blank" rel="noopener">Nanoleaf Releases An $80 Smart Ceiling Light With Matter Support</a> <span class="tech-meta">(The Mac Observer · Jul 01)</span></li>
+        
+          <li><a href="https://csa-iot.org/newsroom/espressif-systems-on-matter/" target="_blank" rel="noopener">Espressif Systems on Matter</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jun 30)</span></li>
+        
+          <li><a href="https://www.techtimes.com/articles/319375/20260630/switchbot-matter-ceiling-light-skips-hubs-adds-shenzhen-data-question.htm" target="_blank" rel="noopener">SwitchBot Matter Ceiling Light Skips Hubs, Adds Shenzhen Data Question</a> <span class="tech-meta">(Tech Times · Jun 30)</span></li>
+        
+          <li><a href="https://gizmodo.com/nanoleaf-has-a-new-matter-compatible-ceiling-light-like-everyone-else-2000777963" target="_blank" rel="noopener">Nanoleaf Has a New Matter-Compatible Ceiling Light, Like Everyone Else</a> <span class="tech-meta">(Gizmodo · Jun 30)</span></li>
+        
+          <li><a href="https://www.t3.com/home-living/smart-home/apple-and-google-update-streaming-devices-with-thread-1-4-support-heres-what-it-means-for-your-smart-home" target="_blank" rel="noopener">Apple and Google update streaming devices with Thread 1.4 support – here&#39;s what it means for your smart home</a> <span class="tech-meta">(t3.com · Jun 30)</span></li>
+        
+          <li><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a> <span class="tech-meta">(CNX Software · Jun 30)</span></li>
+        
+      </ul>
+    
+  </section>
+
+  <section class="tech-card">
+    <h2>Zigbee</h2>
+    <p class="tech-meta">Zigbee-specific device and module updates tracked from 15.4 ecosystem coverage.</p>
+    
+      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
+    
+    <div class="tech-stats">
+      <span class="pill">8 total updates</span>
+      <span class="pill">0 new today</span>
+      <a class="pill" href="ieee15_4.html">Open full Zigbee feed →</a>
+    </div>
+
+    <div class="subhead">What's New Today</div>
+    
+      <p class="tech-meta">No new items today.</p>
+    
+
+    <div class="subhead">Latest Updates</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a> <span class="tech-meta">(CNX Software · Jun 30)</span></li>
+        
+          <li><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a> <span class="tech-meta">(ZDNET · Jun 29)</span></li>
+        
+          <li><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a> <span class="tech-meta">(CNX Software · Jun 29)</span></li>
+        
+          <li><a href="https://csa-iot.org/newsroom/fortune-brands-innovations-on-zigbee-4-0/" target="_blank" rel="noopener">Fortune Brands Innovations on Zigbee 4.0</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jun 26)</span></li>
+        
+          <li><a href="https://iotbusinessnews.com/2026/06/26/quectel-adds-multi-protocol-nxp-based-module-for-wi-fi-6-thread-and-zigbee-iot-devices/" target="_blank" rel="noopener">Quectel Adds Multi-Protocol NXP-Based Module for Wi-Fi 6, Thread and Zigbee IoT Devices</a> <span class="tech-meta">(IoT Business News · Jun 26)</span></li>
+        
+          <li><a href="https://www.stocktitan.net/news/SLAB/signify-enhances-philips-hue-matter-support-through-collaboration-owihszbaxnbx.html" target="_blank" rel="noopener">Philips Hue bulbs will run Matter and Zigbee together</a> <span class="tech-meta">(Stock Titan · Jun 23)</span></li>
+        
+          <li><a href="https://www.msn.com/en-us/news/technology/your-smart-home-doesn-t-need-matter-a-local-zigbee-network-is-faster-and-lasts-longer/ar-AA26azg1" target="_blank" rel="noopener">Your smart home doesn&#39;t need Matter — a local Zigbee network is faster and lasts longer</a> <span class="tech-meta">(MSN · Jun 20)</span></li>
+        
+          <li><a href="https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/" target="_blank" rel="noopener">Pine64 Pinevoice – A $50 RISC-V Smart Speaker for Home Assistant based on Bouffalo Lab BL606P MCU</a> <span class="tech-meta">(CNX Software · Jun 20)</span></li>
+        
+      </ul>
+    
+  </section>
+
+  <section class="tech-card">
+    <h2>Aliro</h2>
+    <p class="tech-meta">Aliro digital-key ecosystem developments, certification, and access-control rollouts.</p>
+    
+      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
+    
+    <div class="tech-stats">
+      <span class="pill">9 total updates</span>
+      <span class="pill">0 new today</span>
+      <a class="pill" href="aliro.html">Open full Aliro feed →</a>
+    </div>
+
+    <div class="subhead">What's New Today</div>
+    
+      <p class="tech-meta">No new items today.</p>
+    
+
+    <div class="subhead">Latest Updates</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://csa-iot.org/newsroom/nordic-semiconductor-on-aliro/" target="_blank" rel="noopener">Nordic Semiconductor on Aliro</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jun 29)</span></li>
+        
+          <li><a href="https://www.manilatimes.net/2026/06/18/tmt-newswire/globenewswire/adt-joins-board-of-directors-of-the-connectivity-standards-alliance-reinforcing-its-role-in-shaping-the-future-of-the-connected-home/2367930" target="_blank" rel="noopener">ADT Joins Board of Directors of the Connectivity Standards Alliance, Reinforcing Its Role in Shaping the Future of the Connected Home</a> <span class="tech-meta">(The Manila Times · Jun 17)</span></li>
+        
+          <li><a href="https://www.globenewswire.com/news-release/2026/06/09/3309139/0/en/safetrust-and-universal-smart-cards-inc-partner-to-expand-enterprise-access-to-aliro-credentials.html" target="_blank" rel="noopener">Safetrust and Universal Smart Cards Inc. Partner to Expand Enterprise Access to Aliro Credentials</a> <span class="tech-meta">(GlobeNewswire · Jun 09)</span></li>
+        
+          <li><a href="https://ravepubs.com/ultraloq-achieves-aliro-certification-allowing-for-tap-to-unlock-digital-keys/" target="_blank" rel="noopener">ULTRALOQ Achieves Aliro Certification, Allowing for Tap-to-Unlock Digital Keys</a> <span class="tech-meta">(rAVe [PUBS] · May 05)</span></li>
+        
+          <li><a href="https://www.prnewswire.com/news-releases/ultraloq-achieves-aliro-certification-enabling-tap-to-unlock-digital-keys-across-mobile-wallets-302761406.html" target="_blank" rel="noopener">ULTRALOQ Achieves Aliro Certification, Enabling Tap-to-Unlock Digital Keys Across Mobile Wallets</a> <span class="tech-meta">(PR Newswire · May 04)</span></li>
+        
+          <li><a href="https://me.pcmag.com/en/old-smart-locks/36917/aliro-could-change-the-future-of-smart-locks-but-im-not-buying-in-just-yet" target="_blank" rel="noopener">Aliro Could Change the Future of Smart Locks, But I&#39;m Not Buying in Just Yet</a> <span class="tech-meta">(PCMag Middle East · May 04)</span></li>
+        
+          <li><a href="https://gizmodo.com/dreames-next-smart-lock-packs-a-3k-doorbell-camera-and-aliro-support-2000751972" target="_blank" rel="noopener">Dreame’s Next Smart Lock Packs a 3K Doorbell Camera and Aliro Support</a> <span class="tech-meta">(Gizmodo · Apr 29)</span></li>
+        
+          <li><a href="https://www.renesas.com/en/blogs/addressing-technical-challenges-next-gen-smart-lock-design" target="_blank" rel="noopener">Addressing Technical Challenges in Next-Gen Smart Lock Design</a> <span class="tech-meta">(Renesas Electronics · Apr 14)</span></li>
+        
+      </ul>
+    
+  </section>
+
+  <section class="tech-card">
+    <h2>Thread</h2>
+    <p class="tech-meta">Thread stack releases, border-router ecosystem news, and deployment signals.</p>
+    
+      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
+    
+    <div class="tech-stats">
+      <span class="pill">123 total updates</span>
+      <span class="pill">3 new today</span>
+      <a class="pill" href="thread.html">Open full Thread feed →</a>
+    </div>
+
+    <div class="subhead">What's New Today</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://www.mmamania.com/daily_mania_ufc_mma/454473/open-thread-july-1-2026" target="_blank" rel="noopener">Open Thread, July 1, 2026</a> <span class="tech-meta">(MMA Mania)</span></li>
+        
+          <li><a href="https://sports.yahoo.com/articles/wednesday-open-thread-130200316.html" target="_blank" rel="noopener">Wednesday open thread</a> <span class="tech-meta">(Yahoo Sports)</span></li>
+        
+          <li><a href="https://www.dailykos.com/stories/2026/7/1/800063348/community/morning-open-thread/" target="_blank" rel="noopener">Morning Open Thread: The Olivier Awards</a> <span class="tech-meta">(Daily Kos)</span></li>
+        
+      </ul>
+    
+
+    <div class="subhead">Latest Updates</div>
+    
+      <ul class="tech-list">
+        
+          <li><a href="https://www.mmamania.com/daily_mania_ufc_mma/454473/open-thread-july-1-2026" target="_blank" rel="noopener">Open Thread, July 1, 2026</a> <span class="tech-meta">(MMA Mania · Jul 01)</span></li>
+        
+          <li><a href="https://sports.yahoo.com/articles/wednesday-open-thread-130200316.html" target="_blank" rel="noopener">Wednesday open thread</a> <span class="tech-meta">(Yahoo Sports · Jul 01)</span></li>
+        
+          <li><a href="https://www.dailykos.com/stories/2026/7/1/800063348/community/morning-open-thread/" target="_blank" rel="noopener">Morning Open Thread: The Olivier Awards</a> <span class="tech-meta">(Daily Kos · Jul 01)</span></li>
+        
+          <li><a href="https://www.9news.com/article/news/local/colorado-department-of-corrections-group-text/73-98f48a9b-9db4-40c6-b2e0-e23c59200746" target="_blank" rel="noopener">Four Colorado corrections officials shared hundreds of &#39;inappropriate&#39; messages in group text thread</a> <span class="tech-meta">(KUSA.com · Jun 30)</span></li>
+        
+          <li><a href="https://www.t3.com/home-living/smart-home/apple-and-google-update-streaming-devices-with-thread-1-4-support-heres-what-it-means-for-your-smart-home" target="_blank" rel="noopener">Apple and Google update streaming devices with Thread 1.4 support – here&#39;s what it means for your smart home</a> <span class="tech-meta">(t3.com · Jun 30)</span></li>
+        
+          <li><a href="https://www.amazinavenue.com/new-york-mets-discussion/96968/mets-blue-jays-lineups-broadcast-how-watch-open-thread-new-york-toronto" target="_blank" rel="noopener">Mets vs. Blue Jays: Lineups, broadcast info, and open thread, 6/29/26</a> <span class="tech-meta">(Amazin&#39; Avenue · Jun 29)</span></li>
+        
+          <li><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a> <span class="tech-meta">(ZDNET · Jun 29)</span></li>
+        
+          <li><a href="https://appleinsider.com/articles/26/06/29/how-thread-is-fixing-smart-home-networks-on-smart-home-insider" target="_blank" rel="noopener">How Thread is fixing smart home networks on Smart Home Insider</a> <span class="tech-meta">(AppleInsider · Jun 29)</span></li>
+        
+      </ul>
+    
+  </section>
+
+</div>
+</main>
+<footer class="footer"><div class="wrap">Technology snapshot generated 2026-07-01 19:59 PDT</div></footer>
+</body></html>

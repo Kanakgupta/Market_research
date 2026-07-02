@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>802.15.4 News · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+</style>
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="hero">
+  <h1>802.15.4 News</h1>
+  <p>IEEE 802.15.4 radios, Zigbee, multiprotocol SoCs.</p>
+  <div class="stats">
+    <span class="pill">15 articles</span>
+    <span class="pill">9 vendors</span>
+    <span class="pill">34 customers</span>
+    <span class="pill">7 applications</span>
+    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
+    <span id="refreshStatus" class="pill" style="display:none;"></span>
+  </div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
+  if(!btn) return;
+  // Same origin if served via Flask /report/, else fall back to localhost.
+  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
+  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
+    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
+  function poll(){
+    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+      .then(function(r){return r.json()})
+      .then(function(s){
+        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
+                       setTimeout(poll, 2000); }
+        else if(s.ok){ show('Done — reloading…','#16a34a');
+                       setTimeout(function(){ location.reload(); }, 1200); }
+        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
+                               btn.disabled=false; }
+      })
+      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
+  }
+  btn.addEventListener('click', function(){
+    btn.disabled=true; show('Starting…','#2563eb');
+    fetch(apiBase+'/api/refresh-news',{method:'POST'})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
+        poll();
+      })
+      .catch(function(){
+        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
+        btn.disabled=false;
+      });
+  });
+  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
+  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+    .then(function(r){return r.json()})
+    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
+    .catch(function(){});
+})();
+</script>
+
+
+
+<div class="grid" id="grid">
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-vendor">Microchip</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a></h2>
+      <p class="summary">Seeed Studio XIAO nRF54LM20A and XIAO nRF54LM20A Sense are tiny USB-C IoT boards based on Nordic Semiconductor’s nRF54LM20A wireless SoC offering Bluetooth 6.0, Matter, Thread, Zigbee, NFC, Amazon Sidewalk, and 2.4 GHz proprietary connectiv…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-30T04:00:44+00:00">2026-06-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a></h2>
+      <p class="summary">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently
+Follow ZDNET: Add us as a preferred source on Google.
+If you&#39;re a smart home user or on the path to becoming one, you&#39;ve probably heard the buzzword…</p>
+      <div class="meta-row">
+        <span class="source">ZDNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T17:46:00+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">NXP</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a></h2>
+      <p class="summary">Simplia CONNECT RW612 is a 6-in-1 M.2 2230 wireless module that offers dual-band WiFi 6, Bluetooth 5.4 LE, an 802.15.4 radio for Zigbee or Thread, LTE Cat-M, NB-IoT, and GNSS connectivity.
+It’s the first module I’ve seen that implements so …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T07:00:57+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/newsroom/fortune-brands-innovations-on-zigbee-4-0/" target="_blank" rel="noopener">Fortune Brands Innovations on Zigbee 4.0</a></h2>
+      <p class="summary">“In the world of IoT today, security is a never-ending arms race. And with Zigbee 4.0, the Alliance is proving that Zigbee is up to the challenge to stay on&amp;#8230;</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T17:19:42+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">NXP</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://iotbusinessnews.com/2026/06/26/quectel-adds-multi-protocol-nxp-based-module-for-wi-fi-6-thread-and-zigbee-iot-devices/" target="_blank" rel="noopener">Quectel Adds Multi-Protocol NXP-Based Module for Wi-Fi 6, Thread and Zigbee IoT Devices</a></h2>
+      <p class="summary">Quectel has introduced the FCM365X, a compact wireless module based on NXP’s RW612 MCU that combines dual-band Wi-Fi 6, Bluetooth LE 5.4, Zigbee and Thread support for smart home and industrial IoT designs.
+Short-range IoT design is becomin…</p>
+      <div class="meta-row">
+        <span class="source">IoT Business News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T08:49:21+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        <span class="chip chip-cust">Philips Hue</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.stocktitan.net/news/SLAB/signify-enhances-philips-hue-matter-support-through-collaboration-owihszbaxnbx.html" target="_blank" rel="noopener">Philips Hue bulbs will run Matter and Zigbee together</a></h2>
+      <p class="summary">Signify Enhances Philips Hue Matter Support Through Collaboration with Silicon Labs
+Rhea-AI Summary
+Silicon Labs (NASDAQ: SLAB) and Signify announced a collaboration to add concurrent multiprotocol (CMP) support to select Philips Hue bulbs,…</p>
+      <div class="meta-row">
+        <span class="source">Stock Titan</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-23T04:05:02+00:00">2026-06-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Matter</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/news/technology/your-smart-home-doesn-t-need-matter-a-local-zigbee-network-is-faster-and-lasts-longer/ar-AA26azg1" target="_blank" rel="noopener">Your smart home doesn&#39;t need Matter — a local Zigbee network is faster and lasts longer</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-20T14:00:23+00:00">2026-06-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span>
+        <span class="chip chip-vendor">Bouffalo Lab</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/" target="_blank" rel="noopener">Pine64 Pinevoice – A $50 RISC-V Smart Speaker for Home Assistant based on Bouffalo Lab BL606P MCU</a></h2>
+      <p class="summary">After over two years in the making, Pine64 has now launched the PineVoice (previously PineVox) smart speaker based on the Bouffalo Lab BL606P RISC-V wireless microcontroller with WiFi, Bluetooth, and Zigbee radio interfaces.
+The device also…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-20T04:00:16+00:00">2026-06-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Synaptics</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/10/synaptics-astra-srw1500-cortex-m52-edge-ai-mcu-features-ethos-u55-npu-wi-fi-6-7-bluetooth-6-0-802-15-4-connectivity/" target="_blank" rel="noopener">Synaptics Astra SRW1500 Cortex-M52 Edge AI MCU features Ethos-U55 NPU, Wi-Fi 6/7, Bluetooth 6.0, 802.15.4 connectivity</a></h2>
+      <p class="summary">Synaptics has introduced the Astra SRW1500 Series of AI-native Edge AI MCUs designed for smart IoT edge devices. The family features an Arm Cortex-M52 core, an optional Arm Ethos-U55 Neural Processing Unit (NPU), and tri-band Wi-Fi 7 or Wi-…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.kyoto-u.ac.jp/en/research-news/2026-06-02-1" target="_blank" rel="noopener">Successful demonstration of long-distance video transmission exceeding 30 km using a VHF-band narrowband IoT wireless system</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">京都大学</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-02T07:00:00+00:00">2026-06-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-vendor">u-blox</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/05/29/u-blox-alma-b2-bluetooth-6-0-and-802-15-4-module-features-nordic-nrf54lm20-edge-ai-wireless-mcu/" target="_blank" rel="noopener">u-blox ALMA-B2 Bluetooth 6.0 and 802.15.4 module features Nordic nRF54LM20 Edge AI wireless MCU</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/05/18/13-qualcomm-qcc74xm-evk-offers-wi-fi-6-bluetooth-5-4-and-802-15-4-connectivity-bouffalo-lab-bl618-inside/" target="_blank" rel="noopener">$13 Qualcomm QCC74xM EVK offers Wi-Fi 6, Bluetooth 5.4, and 802.15.4 connectivity (Bouffalo Lab BL618 inside)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-18T07:00:00+00:00">2026-05-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://blog.adafruit.com/2026/04/06/upcoming-esp32-s31-dual-core-risc-v-mcu-offers-gigabit-ethernet-wifi-bluetooth-and-802-15-4-connectivity/" target="_blank" rel="noopener">Upcoming ESP32-S31 dual-core RISC-V MCU offers Gigabit Ethernet, WiFi, Bluetooth, and 802.15.4 connectivity</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Adafruit</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-06T07:00:00+00:00">2026-04-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-vendor">Telink</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/04/01/telink-tl3228-low-power-low-latency-dual-core-risc-v-wireless-mcu-supports-bluetooth-6-0-802-15-4-and-2-4-ghz-proprietary/" target="_blank" rel="noopener">Telink TL3228 – Low-power, low-latency dual-core RISC-V wireless MCU supports Bluetooth 6.0, 802.15.4, and 2.4 GHz proprietary</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-01T07:00:00+00:00">2026-04-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/03/31/t-display-p4-smartphone-like-devkit-features-esp32-p4-mcu-esp32-c6-wireless-soc-and-sx1262-lr2021-lora-transceiver/" target="_blank" rel="noopener">T-Display-P4 smartphone-like devkit features ESP32-P4 MCU, ESP32-C6 wireless SoC, and SX1262/LR2021 LoRa transceiver</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-31T07:00:00+00:00">2026-03-31</span>
+      </div>
+    </div>
+  </article>
+  
+</div>
+</main>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · multi-source RSS · for informational use</div></footer>
+<script>
+function timeAgo(iso){
+  const d=new Date(iso); if(isNaN(d)) return '';
+  let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
+  if(s<45) return 'just now';
+  const m=Math.floor(s/60); if(m<60) return m+(m===1?' min ago':' mins ago');
+  const h=Math.floor(m/60); if(h<24){const r=m%60; if(h<6&&r) return h+'h '+r+'m ago'; return h+(h===1?' hour ago':' hours ago');}
+  const day=Math.floor(h/24); if(day<7) return day+(day===1?' day ago':' days ago');
+  if(day<30){const w=Math.floor(day/7); return w+(w===1?' week ago':' weeks ago');}
+  if(day<365){const mo=Math.floor(day/30); return mo+(mo===1?' month ago':' months ago');}
+  const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
+}
+document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+</script>
+</body></html>

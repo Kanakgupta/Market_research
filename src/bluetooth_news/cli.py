@@ -41,9 +41,15 @@ def _cleanup_old_dirs(output_root: Path, keep: Path) -> None:
 
 
 def _publish_latest(site_dir: Path, output_root: Path) -> Path:
-    """Copy the newest generated site to a stable folder for browser refreshes."""
+    """Copy the newest generated site to a stable folder for browser refreshes and GitHub pages."""
     latest_dir = output_root / "latest"
     shutil.copytree(site_dir, latest_dir, dirs_exist_ok=True)
+    # Also publish to the docs/ directory for GitHub Pages hosting.
+    docs_dir = Path(__file__).resolve().parent.parent.parent / "docs"
+    try:
+        shutil.copytree(site_dir, docs_dir, dirs_exist_ok=True)
+    except Exception as e:
+        print(f"Warning: Failed to copy generated site to docs/ folder: {e}")
     return latest_dir / "index.html"
 
 

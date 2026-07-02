@@ -1,0 +1,4651 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wi-Fi News · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+</style>
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="hero">
+  <h1>Wi-Fi News</h1>
+  <p>Wi-Fi 6E/7/8, MLO, HaLow — vendor chips and customer wins.</p>
+  <div class="stats">
+    <span class="pill">216 articles</span>
+    <span class="pill">12 vendors</span>
+    <span class="pill">33 customers</span>
+    <span class="pill">11 applications</span>
+    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
+    <span id="refreshStatus" class="pill" style="display:none;"></span>
+  </div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
+  if(!btn) return;
+  // Same origin if served via Flask /report/, else fall back to localhost.
+  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
+  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
+    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
+  function poll(){
+    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+      .then(function(r){return r.json()})
+      .then(function(s){
+        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
+                       setTimeout(poll, 2000); }
+        else if(s.ok){ show('Done — reloading…','#16a34a');
+                       setTimeout(function(){ location.reload(); }, 1200); }
+        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
+                               btn.disabled=false; }
+      })
+      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
+  }
+  btn.addEventListener('click', function(){
+    btn.disabled=true; show('Starting…','#2563eb');
+    fetch(apiBase+'/api/refresh-news',{method:'POST'})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
+        poll();
+      })
+      .catch(function(){
+        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
+        btn.disabled=false;
+      });
+  });
+  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
+  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
+    .then(function(r){return r.json()})
+    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
+    .catch(function(){});
+})();
+</script>
+
+
+
+<div class="grid" id="grid">
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.androidauthority.com/pixel-phones-connectivity-issues-july-2026-3683409/" target="_blank" rel="noopener">Surprise: Pixel phones are once again having Wi-Fi problems</a></h2>
+      <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
+Surprise: Pixel phones are once again having Wi-Fi problems
+6 hours ago
+- Over the past 24 hours, more user reports claiming connectivity issues on Pixel phones have…</p>
+      <div class="meta-row">
+        <span class="source">Android Authority</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T15:37:19+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Xiaomi</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.androidauthority.com/new-wireless-earbuds-wi-fi-not-qualcomm-xpan-3683275/" target="_blank" rel="noopener">These new wireless earbuds also work over Wi-Fi, but without Qualcomm&#39;s help</a></h2>
+      <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
+These new wireless earbuds also work over Wi-Fi, but without Qualcomm&#39;s help
+11 hours ago
+- Vivo has launched the TWS 5 Pro earbuds, offering Wi-Fi audio in addition…</p>
+      <div class="meta-row">
+        <span class="source">Android Authority</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T11:19:47+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Healthcare</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/hpe-aruba-ap-635-from-hewlett-packard-enterprise-wi-fi-6e-access-point/69664347" target="_blank" rel="noopener">HPE Aruba AP-635 from Hewlett Packard Enterprise - Wi-Fi 6E access point built for dense US campuses</a></h2>
+      <p class="summary">HPE Aruba AP-635 from Hewlett Packard Enterprise - Wi-Fi 6E access point built for dense US campuses
+01.07.2026 - 02:34:55 | ad-hoc-news.deBy Julian Reed, ad hoc news Accessories &amp; Components Desk. Reviewed July 01, 2026, 12:34 AM ET. Detai…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T00:34:55+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://techinformed.com/the-tennessee-titans-implement-ai-powered-stadium-wi-fi/" target="_blank" rel="noopener">The Tennessee Titans implement AI-powered stadium Wi-FI</a></h2>
+      <p class="summary">New Nissan Stadium claims to be the first venue to deploy Extreme Networks’ Multi-Beam Wireless, pairing a stadium-wide Wi-Fi 7 network with centralized management and analytics before Nashville hosts Super Bowl LXIV in 2030.
+The Tennessee …</p>
+      <div class="meta-row">
+        <span class="source">TechInformed</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T15:24:30+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">NXP</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a></h2>
+      <p class="summary">Simplia CONNECT RW612 is a 6-in-1 M.2 2230 wireless module that offers dual-band WiFi 6, Bluetooth 5.4 LE, an 802.15.4 radio for Zigbee or Thread, LTE Cat-M, NB-IoT, and GNSS connectivity.
+It’s the first module I’ve seen that implements so …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-29T07:00:57+00:00">2026-06-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/nighthawk-m6-pro-from-netgear-inc-wifi-6e-hotspot-with-5g-and-2-5g-lan/69641258" target="_blank" rel="noopener">Nighthawk M6 Pro from Netgear Inc. - WiFi 6E hotspot with 5G and 2.5G LAN</a></h2>
+      <p class="summary">Nighthawk M6 Pro from Netgear Inc. - WiFi 6E hotspot with 5G and 2.5G LAN
+27.06.2026 - 16:45:34 | ad-hoc-news.deReviewed: ad hoc news B2B &amp; Pro desk. Edited and checked on 2026-06-27, 16:45. Details in the imprint.
+Netgear Nighthawk M6 Pro …</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-27T14:45:34+00:00">2026-06-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/the-nighthawk-raxe300-from-netgear-inc-wi-fi-6e-router-brings-6-ghz-to/69635420" target="_blank" rel="noopener">The Nighthawk RAXE300 from Netgear Inc. - Wi-Fi 6E router brings 6 GHz to living rooms</a></h2>
+      <p class="summary">The Nighthawk RAXE300 from Netgear Inc. - Wi-Fi 6E router brings 6 GHz to living rooms
+26.06.2026 - 20:33:05 | ad-hoc-news.deReviewed: ad hoc news Lifestyle &amp; Consumer desk. Edited and checked on 2026-06-26, 20:32. Details in the imprint.
+T…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T18:33:05+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Xiaomi</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.techinsights.com/blog/disruptive-event-qualcomm-leading-wi-fi-wave-fastconnect-7800" target="_blank" rel="noopener">Disruptive Event- Qualcomm leading the Wi-Fi Wave with FastConnect 7800</a></h2>
+      <p class="summary">DISRUPTIVE EVENT
+Qualcomm leading the Wi-Fi
+Wave with FastConnect 7800
+April 13, 2023
+Share This Post
+TechInsights discovered Qualcomm’s first system-on-chip (SoC), the FastConnect 7800 WCN7851, ready for Wi-Fi 7 and compliant with Bluetoot…</p>
+      <div class="meta-row">
+        <span class="source">TechInsights</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T17:07:02+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Thread</span>
+        <span class="chip chip-vendor">NXP</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://iotbusinessnews.com/2026/06/26/quectel-adds-multi-protocol-nxp-based-module-for-wi-fi-6-thread-and-zigbee-iot-devices/" target="_blank" rel="noopener">Quectel Adds Multi-Protocol NXP-Based Module for Wi-Fi 6, Thread and Zigbee IoT Devices</a></h2>
+      <p class="summary">Quectel has introduced the FCM365X, a compact wireless module based on NXP’s RW612 MCU that combines dual-band Wi-Fi 6, Bluetooth LE 5.4, Zigbee and Thread support for smart home and industrial IoT designs.
+Short-range IoT design is becomin…</p>
+      <div class="meta-row">
+        <span class="source">IoT Business News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-26T08:49:21+00:00">2026-06-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/25/louder-esp32-mini-board-adds-wifi-and-bluetooth-to-old-speakers-for-squeezelite-snapclient-or-esphome-support/" target="_blank" rel="noopener">Louder ESP32 Mini board adds WiFi and Bluetooth to old speakers for SqueezeLite, Snapclient, or ESPHome support</a></h2>
+      <p class="summary">Sonocotta’s Louder-ESP32-Mini is a compact version of the Louder ESP32 board that converts old speakers into WiFi (and Bluetooth) connected speakers for your Smart Home.
+The board aims to replace the speaker terminals on your old speakers, …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T10:54:21+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.newelectronics.co.uk/content/product-launches/quectel-launches-multi-protocol-wi-fi-6-module-for-iot-applications" target="_blank" rel="noopener">Quectel launches multi-protocol Wi-Fi 6 module for IoT applications</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">New Electronics</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T10:10:10+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Realtek</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.tomshardware.com/networking/best-wifi-adapters" target="_blank" rel="noopener">Best Wi-Fi Cards for Desktops 2026: Wi-Fi 6, Wi-Fi 6E, and Wi-Fi 7</a></h2>
+      <p class="summary">Best Wi-Fi Cards for Desktops 2025: Wi-Fi 6, Wi-Fi 6E, and Wi-Fi 7
+From Wi-Fi 6 to Wi-Fi 7, we have you covered on wireless adapters for your desktop
+Wireless connectivity has become a given for mobile computing in today’s society, particul…</p>
+      <div class="meta-row">
+        <span class="source">Tom&#39;s Hardware</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T07:00:00+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.tomshardware.com/networking/routers/best-wi-fi-routers" target="_blank" rel="noopener">The Best Wi-Fi Routers We&#39;ve Benchmarked in 2026: the best of Wi-Fi 7 from budget to premium</a></h2>
+      <p class="summary">The Best Wi-Fi Routers We&#39;ve Benchmarked in 2026: the best of Wi-Fi 7 from budget to premium
+You can upgrade your wireless LAN for less than $80.
+Your Wi-Fi router is at the heart of your daily computing experience, so choosing the best Wi-…</p>
+      <div class="meta-row">
+        <span class="source">Tom&#39;s Hardware</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T07:00:00+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://gizmodo.com/google-nest-wifi-pro-wifi-6e-at-its-all-time-low-2x-faster-than-the-wifi-you-probably-have-2000777168" target="_blank" rel="noopener">Google Nest WiFi Pro WiFi 6E at Its All-Time Low, 2x Faster Than the WiFi You Probably Have</a></h2>
+      <p class="summary">Most people are still running WiFi 6 or older, and the Google Nest WiFi Pro just hit its lowest price ever at more than half off. Amazon has it at $89, slashed from its $199 standard price at 55% off and an all-time low for this tri-band Wi…</p>
+      <div class="meta-row">
+        <span class="source">Gizmodo</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-25T00:30:28+00:00">2026-06-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.notebookcheck.net/Wi-Fi-7-in-the-Schenker-Connect-15-3-500-Mbps-but-what-does-that-actually-bring-to-day-to-day-business-use.1327911.0.html" target="_blank" rel="noopener">Wi-Fi 7 in the Schenker Connect 15: 3,500 Mbps - but what does that actually bring to day-to-day business use?</a></h2>
+      <p class="summary">Wi-Fi 7 in the Schenker Connect 15: 3,500 Mbps - but what does that actually bring to day-to-day business use?
+The new Schenker Connect 15 business laptop (our review) comes with a range of enterprise-focused features, including a SmartCard…</p>
+      <div class="meta-row">
+        <span class="source">Notebookcheck</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-24T16:39:00+00:00">2026-06-24</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://gizmodo.com/amazon-offloads-tp-links-wifi-7-router-at-an-all-time-low-2000-sq-ft-of-dead-zone-free-coverage-2000776335" target="_blank" rel="noopener">Amazon Offloads TP-Link&#39;s WiFi 7 Router at an All-Time Low, 2,000 sq. ft. of Dead-Zone-Free Coverage</a></h2>
+      <p class="summary">WiFi 7 routers have been sitting at premium prices since the standard launched, and Prime Day is the moment that changes for the TP-Link Archer BE550. Amazon has it at $149, down from $249, an all-time low for this tri-band WiFi 7 router wi…</p>
+      <div class="meta-row">
+        <span class="source">Gizmodo</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-24T01:05:52+00:00">2026-06-24</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.techinsights.com/disruptive-event/broadcom-bcm59365-wireless-charging-pmic" target="_blank" rel="noopener">Disruptive Event - Broadcom BCM59365 Wireless Charging PMIC</a></h2>
+      <p class="summary">Broadcom BCM59365: Wireless Charging PMIC in iPhone 13 Pro and 14 Pro
+5 Min Read December 01, 2022
+Featuring the most advanced wireless charging PMIC TechInsights has observed to date.
+Broadcom, a global leader in semiconductor and infrastr…</p>
+      <div class="meta-row">
+        <span class="source">TechInsights</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-23T14:53:38+00:00">2026-06-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.rtings.com/router/learn/wifi-6-vs-wifi-7" target="_blank" rel="noopener">Wi-Fi 6 vs Wi-Fi 7</a></h2>
+      <p class="summary">Best
+Wi-Fi Routers
+Mesh Wi-Fi Systems
+Gaming
+Cable Modem-Router Combos
+Wi-Fi 7
+Spectrum
+Large Homes
+Xfinity
+Wi-Fi 6
+Long-Range
+Budget And Cheap
+Streaming
+Tools
+Compare
+Results Table Tool
+Review List
+Review Index
+Graph
+Review Pipeline
+Vote
+C…</p>
+      <div class="meta-row">
+        <span class="source">RTINGS.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-23T07:00:00+00:00">2026-06-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://kotaku.com/apple-quietly-drops-the-ipad-pro-m5-256gb-to-near-record-low-on-amazon-ultra-retina-xdr-and-wi-fi-7-2000708956" target="_blank" rel="noopener">Apple Quietly Drops the iPad Pro M5 256GB to Near Record Low on Amazon, Ultra Retina XDR and Wi-Fi 7</a></h2>
+      <p class="summary">Apple has been quietly discounting its hardware on Amazon this week, and the iPad Pro M5 is part of that wave. The 11-inch model with 256GB and Wi-Fi is down to $899, off its $999 list price and within a few dollars of its record low on Ama…</p>
+      <div class="meta-row">
+        <span class="source">Kotaku</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-22T14:52:30+00:00">2026-06-22</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Xiaomi</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://ximitime.com/mediatek-chip-price-hike-could-affect-future-xiaomi-devices-97938/" target="_blank" rel="noopener">MediaTek Chip Price Hike Could Affect Future Xiaomi Devices</a></h2>
+      <p class="summary">Reports from Taiwan’s semiconductor supply chain indicate that Realtek and MediaTek are preparing price adjustments for selected mature-process chip products, covering network communication chips, connectivity solutions, consumer ICs, and s…</p>
+      <div class="meta-row">
+        <span class="source">ximitime.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-22T12:36:01+00:00">2026-06-22</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Realtek</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/realtek-stock-sunday-background-on-the-taiwan-chipmaker/69596578" target="_blank" rel="noopener">Realtek Stock - Sunday background on the Taiwan chipmaker</a></h2>
+      <p class="summary">Realtek Stock - Sunday background on the Taiwan chipmaker
+21.06.2026 - 14:12:24 | ad-hoc-news.deEdited by ad hoc news Background &amp; Management Desk. Verified prior to publication on 06/21/2026, 14:10 CET. Details in the imprint.
+Realtek (TW0…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-21T12:12:24+00:00">2026-06-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        <span class="chip chip-app">Energy/Utility</span>
+      </div>
+      <h2 class="title"><a href="https://au.pcmag.com/wireless-routers/57231/the-best-gaming-routers" target="_blank" rel="noopener">The Best Gaming Routers for 2026</a></h2>
+      <p class="summary">Even a powerful gaming rig can struggle to let you play at your best if an overburdened or old-fashioned Wi-Fi router holds it back. If router performance is paramount, it&#39;s time to invest in one optimized for gaming. Your choices might see…</p>
+      <div class="meta-row">
+        <span class="source">PCMag Australia</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-19T07:00:00+00:00">2026-06-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.wired.com/story/best-mesh-wifi-routers/" target="_blank" rel="noopener">Want Perfect Wi-Fi? These Are the Mesh Routers I Recommend</a></h2>
+      <p class="summary">Most of us are stuck placing our router in a less-than-optimal spot, depending on where the internet connection comes into our home. Mesh routers promise to extend Wi-Fi coverage by enabling you to place a second or third node wherever you …</p>
+      <div class="meta-row">
+        <span class="source">WIRED</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-19T07:00:00+00:00">2026-06-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Huawei</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.sdxcentral.com/press-releases/huawei-announces-wi-fi-7-patent-licensing-rates-reaffirms-commitment-to-transparent-and-reasonable-licensing/" target="_blank" rel="noopener">Huawei Announces Wi-Fi 7 patent licensing rates, reaffirms commitment to transparent and reasonable licensing</a></h2>
+      <p class="summary">Huawei today announced that its patent licensing royalty rate for Wi-Fi 7 technologies would be set at US$0.5 per unit for Wi-Fi 7-compliant devices.
+This announcement underscores Huawei&#39;s dedication to fostering a healthy innovation ecosys…</p>
+      <div class="meta-row">
+        <span class="source">SDxCentral</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-18T09:26:48+00:00">2026-06-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qorvo</span>
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/wi-fi-routers-under-pressure-qorvo-s-qpf4730-front-end-module-keeps-6e/69569679" target="_blank" rel="noopener">Wi?Fi routers under pressure, Qorvo’s QPF4730 front-end module keeps 6E signals clean</a></h2>
+      <p class="summary">Wi?Fi routers under pressure, Qorvo’s QPF4730 front-end module keeps 6E signals clean
+18.06.2026 - 08:02:50 | ad-hoc-news.deReviewed: ad hoc news Software &amp; Services desk. Edited and checked on 2026-06-18, 08:00. Details in the imprint.
+Qor…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-18T06:02:50+00:00">2026-06-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.rtings.com/router/reviews/best/wi-fi-6" target="_blank" rel="noopener">The 4 Best Wi-Fi 6 Routers of 2026</a></h2>
+      <p class="summary">Best
+Wi-Fi Routers
+Mesh Wi-Fi Systems
+Gaming
+Cable Modem-Router Combos
+Wi-Fi 7
+Spectrum
+Large Homes
+Xfinity
+Wi-Fi 6
+Long-Range
+Budget And Cheap
+Streaming
+Tools
+Compare
+Results Table Tool
+Review List
+Review Index
+Graph
+Review Pipeline
+Vote
+C…</p>
+      <div class="meta-row">
+        <span class="source">RTINGS.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T07:00:00+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Energy/Utility</span>
+      </div>
+      <h2 class="title"><a href="https://www.eenewseurope.com/en/broadcom-pushes-50g-pon-and-wi-fi-8-for-ai-driven-home-networks/" target="_blank" rel="noopener">Broadcom pushes 50G PON and Wi-Fi 8 for AI-driven home networks ...</a></h2>
+      <p class="summary">Broadcom has expanded its broadband portfolio with a 50G passive optical network (PON) system-on-chip and additional Wi-Fi 8 products, targeting future residential networks designed to support AI-driven services. The company sees higher-cap…</p>
+      <div class="meta-row">
+        <span class="source">eeNews Europe</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T07:00:00+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.tomshardware.com/pc-components/motherboards/build-an-elite-amd-gaming-pc-around-gigabytes-x870-motherboard-for-usd70-off-gigabyte-x870-aorus-elite-wifi7-drops-to-usd249" target="_blank" rel="noopener">Build an elite AMD gaming PC around Gigabyte&#39;s X870 motherboard for $70 off — Gigabyte X870 Aorus Elite WiFi7 drops to $249</a></h2>
+      <p class="summary">Build an elite AMD gaming PC around Gigabyte&#39;s X870 motherboard for $70 off — Gigabyte X870 Aorus Elite WiFi7 drops to $249
+If you&#39;re in the market for an X870 motherboard with a rich feature set, the Gigabyte X870 Aorus Elite WiFi7 is one …</p>
+      <div class="meta-row">
+        <span class="source">Tom&#39;s Hardware</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-16T16:32:16+00:00">2026-06-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://wifinowglobal.com/news-blog/wi-fi-8-standard-on-track-for-completion-in-1h2028-with-certification-scheduled-for-january-2028/" target="_blank" rel="noopener">Wi-Fi 8 standard on track for completion in 1H2028 with certification scheduled for January 2028 - Wi-Fi NOW Global</a></h2>
+      <p class="summary">By Claus Hetting, WiFi NOW CEO &amp; Chairman
+While leading chipset vendors have already launched Wi-Fi 8 silicon – and with device manufacturers racing to announce their first products – the IEEE 802.11 working group is still adhering to its t…</p>
+      <div class="meta-row">
+        <span class="source">Wi-Fi NOW Global</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-16T07:00:00+00:00">2026-06-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.rswebsols.com/news/espressif-esp32-e22-wifi-6e-module-earns-wi-fi-certified-status-featuring-open-source-wifi-and-bluetooth-drivers-for-linux/" target="_blank" rel="noopener">Espressif ESP32-E22 WiFi 6E Module Gains Wi-Fi CERTIFIED Status</a></h2>
+      <p class="summary">Espressif’s ESP32-E22 Module Achieves Wi-Fi Certification
+The ESP32-E22 tri-band Wi-Fi 6E and Bluetooth 5.4 module has been awarded the Wi-Fi CERTIFIED certification by the Wi-Fi Alliance.
+In tandem with this notable accolade, Espressif has…</p>
+      <div class="meta-row">
+        <span class="source">RS Web Solutions</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-15T14:00:00+00:00">2026-06-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/espressif-prepares-for-esp32-e22-general-availability-with-wi-fi-6e-certification-open-linux-driver-5e175fe7d011" target="_blank" rel="noopener">Espressif Prepares for ESP32-E22 General Availability with Wi-Fi 6E Certification, Open Linux Driver</a></h2>
+      <p class="summary">Espressif Prepares for ESP32-E22 General Availability with Wi-Fi 6E Certification, Open Linux Driver
+Early-stage driver, lacking some key features, is available now under a permissive license — but you still can&#39;t buy the chip.
+Espressif ha…</p>
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-15T08:22:19+00:00">2026-06-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        <span class="chip chip-app">Healthcare</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/from-office-wi-fi-pain-to-stable-6-ghz-how-cisco-s-catalyst-9166-access/69547273" target="_blank" rel="noopener">From office Wi-Fi pain to stable 6 GHz: how Cisco’s Catalyst 9166 access point raises the bar</a></h2>
+      <p class="summary">From office Wi-Fi pain to stable 6 GHz: how Cisco’s Catalyst 9166 access point raises the bar
+15.06.2026 - 21:30:01 | ad-hoc-news.deEdited by ad hoc news Flagship &amp; Bestseller Desk. Reviewed before publication on 06/15/2026 at 3:29 PM ET. D…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-15T07:00:00+00:00">2026-06-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">u-blox</span>
+        <span class="chip chip-cust">Meta</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.tradingview.com/news/eqs:f89c867fd094b:0-u-blox-announces-maya-w5-and-nora-w5-its-new-reliable-wi-fi-6-modules-for-cost-conscious-application/" target="_blank" rel="noopener">u-blox announces MAYA-W5 and NORA-W5, its new reliable Wi-Fi 6 modules for cost-conscious application</a></h2>
+      <p class="summary">u-blox announces MAYA-W5 and NORA-W5, its new reliable Wi-Fi 6 modules for cost-conscious application
+u-blox AG/ Key word(s): Product Launch
+u-blox announces MAYA-W5 and NORA-W5, its new reliable Wi-Fi 6 modules for cost-conscious applicati…</p>
+      <div class="meta-row">
+        <span class="source">TradingView</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-15T07:00:00+00:00">2026-06-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.slashgear.com/2191379/wi-fi-8-internet-standard-benefits-explained/" target="_blank" rel="noopener">Wi-Fi 8 Is More Than Just Another Internet Speed Boost</a></h2>
+      <p class="summary">Wi-Fi 8 Is More Than Just Another Internet Speed Boost
+Over the years, Wi-Fi standards have increasingly become about dialing up the peak throughput ceiling, and in most cases, represents an upper limit that devices and users will never ach…</p>
+      <div class="meta-row">
+        <span class="source">SlashGear</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-14T07:00:00+00:00">2026-06-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/13/espressif-esp32-e22-wifi-6e-module-gets-wi-fi-certified-certificate-an-open-source-wifi-and-bluetooth-linux-drivers/" target="_blank" rel="noopener">Espressif ESP32-E22 WiFi 6E module gets Wi-Fi CERTIFIED certificate, open-source WiFi and Bluetooth Linux drivers</a></h2>
+      <p class="summary">The ESP32-E22 tri-band Wi-Fi 6E and Bluetooth 5.4 module has received a Wi-Fi CERTIFIED certificate from the Wi-Fi Alliance, and Espressif has also released WiFi and Bluetooth Linux drivers for the chip.
+The ESP32-E22 was first unveiled at …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-13T03:52:19+00:00">2026-06-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qorvo</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Retail</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/qorvo-qpq3504-saw-filter-wi-fi-6-front-end-under-the-spotlight/69529710" target="_blank" rel="noopener">Qorvo QPQ3504 SAW Filter: Wi-Fi 6 front-end under the spotlight</a></h2>
+      <p class="summary">Qorvo QPQ3504 SAW Filter: Wi-Fi 6 front-end under the spotlight
+12.06.2026 - 20:28:44 | ad-hoc-news.deResponsible: ad hoc news Lifestyle &amp; Consumer Desk. Reviewed prior to publication on June 12, 2026 at 8:27 PM ET. Details in the imprint.
+…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-12T18:28:44+00:00">2026-06-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://asiatechdaily.com/why-singapore-became-the-worlds-wi-fi-7-leader-and-why-few-others-can-follow-yet/" target="_blank" rel="noopener">Why Singapore Became the World’s Wi-Fi 7 Leader — and Why Few Others Can Follow Yet</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">AsiaTechDaily</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-12T07:00:00+00:00">2026-06-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/12/7-99-seeed-studio-wio-s3-wifi-bluetooth-le-and-lora-iot-module-combines-esp32-s3-and-sx1262-rf-transceiver/" target="_blank" rel="noopener">$7.99 Seeed Studio Wio-S3 WiFi, Bluetooth LE, and LoRa IoT module combines ESP32-S3 and SX1262 RF transceiver</a></h2>
+      <p class="summary">Seeed Studio Wio-S3 is a compact (21.6 x 16.5 x 3.3 mm) wireless module that combines an ESP32-S3R8 dual-core WiFi 4 and Bluetooth LE MCU and a Semtech SX1262 LoRa transceiver.
+The module includes 16MB Flash and 8MB PSRAM, and supports LoRa…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-12T07:00:00+00:00">2026-06-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Murata</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://timestech.in/murata-type-2ll-module-enables-wi-fi-6-bluetooth-iot-connectivity/" target="_blank" rel="noopener">Murata Type 2LL Module Enables Wi-Fi 6, Bluetooth &amp; IoT Connectivity</a></h2>
+      <p class="summary">Mouser Electronics, the authorized global distributor with the newest electronic components and industrial automation products, is now shipping the new ultra-compact Type 2LL Wi-Fi 6/Bluetooth/802.15.4 module from Murata. The Type 2LL modul…</p>
+      <div class="meta-row">
+        <span class="source">TimesTech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-11T07:23:55+00:00">2026-06-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.rtings.com/router/reviews/best/wi-fi-7" target="_blank" rel="noopener">The 5 Best Wi-Fi 7 Routers of 2026</a></h2>
+      <p class="summary">Best
+Wi-Fi Routers
+Mesh Wi-Fi Systems
+Gaming
+Cable Modem-Router Combos
+Wi-Fi 7
+Spectrum
+Large Homes
+Xfinity
+Wi-Fi 6
+Long-Range
+Budget And Cheap
+Streaming
+Tools
+Compare
+Results Table Tool
+Review List
+Review Index
+Graph
+Review Pipeline
+Vote
+C…</p>
+      <div class="meta-row">
+        <span class="source">RTINGS.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-11T07:00:00+00:00">2026-06-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.rtings.com/router/reviews/best/long-range" target="_blank" rel="noopener">The 5 Best Long-Range Wi-Fi Routers of 2026</a></h2>
+      <p class="summary">Best
+Wi-Fi Routers
+Mesh Wi-Fi Systems
+Gaming
+Cable Modem-Router Combos
+Wi-Fi 7
+Spectrum
+Large Homes
+Xfinity
+Wi-Fi 6
+Long-Range
+Budget And Cheap
+Streaming
+Tools
+Compare
+Results Table Tool
+Review List
+Review Index
+Graph
+Review Pipeline
+Vote
+C…</p>
+      <div class="meta-row">
+        <span class="source">RTINGS.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-11T07:00:00+00:00">2026-06-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Beken</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/11/sonoff-basic-1gsp-matter-over-wifi-smart-switch-supports-din-rail-mounting-real-time-energy-monitoring/" target="_blank" rel="noopener">SONOFF BASIC-1GSP Matter over WiFi smart switch supports DIN rail mounting, real-time energy monitoring</a></h2>
+      <p class="summary">SONOFF “Basic DIN Rail”, codenamed BASIC-1GSP, is a Matter Over WiFi smart switch designed to be installed in electrical distribution boxes with a DIN rail, and it also supports real-time energy monitoring to track voltage, current, power, …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-11T07:00:00+00:00">2026-06-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://techafricanews.com/2026/06/10/africas-delayed-6-ghz-rollout-underscores-widening-digital-infrastructure-gap-in-global-wi-fi-generation-shift/" target="_blank" rel="noopener">Africa’s Delayed 6 GHz Rollout Underscores Widening Digital Infrastructure Gap in Global Wi-Fi Generation Shift</a></h2>
+      <p class="summary">Africa’s Delayed 6 GHz Rollout Underscores Widening Digital Infrastructure Gap in Global Wi-Fi Generation Shift
+Overall, the region’s trajectory reflects a structural lag rather than a lack of demand.
+Across Africa, the transition to next-g…</p>
+      <div class="meta-row">
+        <span class="source">TechAfrica News</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Synaptics</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/10/synaptics-astra-srw1500-cortex-m52-edge-ai-mcu-features-ethos-u55-npu-wi-fi-6-7-bluetooth-6-0-802-15-4-connectivity/" target="_blank" rel="noopener">Synaptics Astra SRW1500 Cortex-M52 Edge AI MCU features Ethos-U55 NPU, Wi-Fi 6/7, Bluetooth 6.0, 802.15.4 connectivity</a></h2>
+      <p class="summary">Synaptics has introduced the Astra SRW1500 Series of AI-native Edge AI MCUs designed for smart IoT edge devices. The family features an Arm Cortex-M52 core, an optional Arm Ethos-U55 Neural Processing Unit (NPU), and tri-band Wi-Fi 7 or Wi-…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-10T07:00:00+00:00">2026-06-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.howtogeek.com/why-most-wi-fi-7-routers-are-missing-wi-fi-7s-best-feature/" target="_blank" rel="noopener">Your new Wi-Fi 7 router is missing Wi-Fi 7&#39;s best feature - How-To Geek</a></h2>
+      <p class="summary">Your new Wi-Fi 7 router is missing Wi-Fi 7&#39;s best feature&amp;nbsp;&amp;nbsp;How-To Geek</p>
+      <div class="meta-row">
+        <span class="source">How-To Geek</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T07:00:00+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Synaptics</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/" target="_blank" rel="noopener">Synaptics strengthens the case for AI at the edge with new single-chip Wi-Fi 7-connected Astra™ AI microcontroller - Wi-Fi NOW Global</a></h2>
+      <p class="summary">By Claus Hetting, WiFi NOW CEO &amp; Chairman
+At COMPUTEX 2026 in Taiwan last week, silicon vendor Synaptics showcased what it describes as one of the industry’s first single-chip AI microcontrollers (MCUs) with integrated Wi-Fi 7 connectivity.…</p>
+      <div class="meta-row">
+        <span class="source">Wi-Fi NOW Global</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T07:00:00+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://gagadget.com/en/714244-honor-x80-pro-max-leak-11000mah-battery-and-wi-fi-7-for-around-300/" target="_blank" rel="noopener">Honor X80 Pro Max leak: 11,000mAh battery and Wi-Fi 7 for around $300</a></h2>
+      <p class="summary">Honor X80 Pro Max leak: 11,000mAh battery and Wi-Fi 7 for around $300
+Honor is preparing a budget phone with an 11,000mAh battery — the largest ever confirmed for a mainstream handset — priced at around $300. Leaked specs, first reported by…</p>
+      <div class="meta-row">
+        <span class="source">Gagadget.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T07:00:00+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        <span class="chip chip-app">Retail</span>
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/best-wi-fi-7-routers/" target="_blank" rel="noopener">Best Wi-Fi 7 Routers: 2026&#39;s Top Five</a></h2>
+      <p class="summary">This post lists the five best Wi-Fi 7 routers — specifically, the best tri-band Wi-Fi 7 routers — and their alternatives.
+Tri-band routers support all three frequency bands: 2.4GHz, 5GHz, and 6GHz. For dual-band options, those without the 6…</p>
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T07:00:00+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        <span class="chip chip-app">Smart City</span>
+      </div>
+      <h2 class="title"><a href="https://www.itweb.co.za/article/africa-stuck-on-wifi-4-while-world-adopts-wifi-6-wifi-7/VgZey7JlgOzqdjX9" target="_blank" rel="noopener">Africa stuck on WiFi 4 while world adopts WiFi 6, WiFi 7</a></h2>
+      <p class="summary">Africa is falling “dangerously” behind the rest of the world in the adoption of WiFi technologies, with nearly half of the continent&#39;s internet users still relying on the ageing WiFi 4 standard, while developed markets increasingly transiti…</p>
+      <div class="meta-row">
+        <span class="source">ITWeb</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T07:00:00+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation" target="_blank" rel="noopener">MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation</a></h2>
+      <p class="summary">MediaTek has been recognized with two prestigious COMPUTEX Best Choice Awards, highlighting our leadership in advancing wireless connectivity for homes, businesses, and other connected spaces.
+The MediaTek Filogic 8000 series earned the COM…</p>
+      <div class="meta-row">
+        <span class="source">MediaTek</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-08T07:00:00+00:00">2026-06-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://telecomlead.com/broadband/wi-fi-7-investments-accelerate-as-wi-fi-6-gains-market-share-and-6-ghz-adoption-expands-globally-126168" target="_blank" rel="noopener">Wi-Fi 7 Investments Accelerate as Wi-Fi 6 Gains Market Share and 6 GHz Adoption Expands Globally</a></h2>
+      <p class="summary">Singapore has emerged as the global leader in Wi-Fi 7 adoption, according to Ookla’s Global State of Wi-Fi 2026 report. The country recorded the highest share of Wi-Fi 7 users worldwide at 25.1 percent, significantly ahead of other markets.…</p>
+      <div class="meta-row">
+        <span class="source">TelecomLead</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-08T07:00:00+00:00">2026-06-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.ispreview.co.uk/index.php/2026/06/uk-shows-strong-adoption-of-latest-wi-fi-6-and-7-standards-vs-europe.html" target="_blank" rel="noopener">UK Shows Strong Adoption of Latest Wi-Fi 6 and 7 Standards vs Europe</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">ISPreview UK</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-08T07:00:00+00:00">2026-06-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.ookla.com/articles/global-state-of-wi-fi-2026" target="_blank" rel="noopener">The Global State of Wi-Fi</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">ookla.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-07T07:00:00+00:00">2026-06-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://wccftech.com/gmktec-oculink-wi-fi-7-dual-pcie-4-0-into-evo-x3-192gb-ryzen-ai-max-495-monster-later-this-year/" target="_blank" rel="noopener">GMKtec Crams OCuLink, Wi-Fi 7 and Dual PCIe 4.0 Into the EVO-X3, With a 192GB Ryzen AI MAX+ 495 Monster Following Later This Year</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Wccftech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-07T07:00:00+00:00">2026-06-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.tomshardware.com/pc-components/motherboards/gigabyte-z890-aorus-elite-wifi7-plus-motherboard-review" target="_blank" rel="noopener">Gigabyte Z890 Aorus Elite Wifi7 Plus Motherboard Review: Cost-conscious refresh board delivers (almost) all the fixens</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Tom&#39;s Hardware</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-06T07:00:00+00:00">2026-06-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/morse-micro-tailors-its-second-gen-wi-fi-halow-modules-for-the-american-market-meet-the-mm8108-m20-cebab04e60fa" target="_blank" rel="noopener">Morse Micro Tailors Its Second-Gen Wi-Fi HaLow Modules for the American Market: Meet the MM8108-M20</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-05T12:10:46+00:00">2026-06-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/05/54-thinknode-g4-wi-fi-halow-gateway-extends-the-range-of-ethernet-or-2-4-ghz-wifi-4-devices/" target="_blank" rel="noopener">$54 ThinkNode G4 Wi-Fi HaLow gateway extends the range of Ethernet or 2.4 GHz WiFi 4 devices</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-05T07:00:00+00:00">2026-06-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://hi-tech.ua/en/broadcom-introduced-a-soc-with-support-for-wi-fi-8-and-a-hybrid-5g-platform-of-the-new-generation/" target="_blank" rel="noopener">Broadcom introduced a SoC with support for Wi-Fi 8 and a hybrid 5G platform of the new generation - hi-Tech.ua</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">hi-Tech.ua</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-04T07:00:00+00:00">2026-06-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.noypigeeks.com/internet/asus-rog-rapture-gt-bn98-pro/" target="_blank" rel="noopener">ASUS ROG Rapture GT-BN98 Pro is the world’s first WiFi 8 router</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">NoypiGeeks</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-03T07:00:00+00:00">2026-06-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://finance.yahoo.com/markets/stocks/articles/broadcom-avgo-launches-wi-fi-082004359.html" target="_blank" rel="noopener">Broadcom (AVGO) Launches New Wi-Fi 8 and Broadband Chips to Strengthen Networking Portfolio</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Yahoo Finance</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-03T07:00:00+00:00">2026-06-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnbc.com/2026/06/03/broadcom-avgo-earnings-report-q2-2026.html" target="_blank" rel="noopener">Broadcom stock plunges on weak software sales, unchanged AI chip forecast for the year</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNBC</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-03T07:00:00+00:00">2026-06-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.techradar.com/pro/huaweis-fiercest-competitor-just-launched-the-worlds-first-wi-fi-8-access-point-and-it-uses-a-cutting-edge-us-chip" target="_blank" rel="noopener">H3C introduces Wi-Fi 8 access point powered by Broadcom silicon</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TechRadar</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-03T07:00:00+00:00">2026-06-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/best-wi-fi-7-mesh-systems/" target="_blank" rel="noopener">Best Wi-Fi 7 Mesh Systems: 2026&#39;s Battle-Tested Top Five</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-03T07:00:00+00:00">2026-06-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/03/morse-micro-mm8108-m20-high-power-wi-fi-halow-module-delivers-up-to-28-5-dbm-tx-output-power/" target="_blank" rel="noopener">Morse Micro MM8108-M20 high-power Wi-Fi HaLow module delivers up to 28.5 dBm Tx output power</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-03T07:00:00+00:00">2026-06-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.notebookcheck.net/Asus-reveals-world-s-first-Wi-Fi-8-router-30Gbps-dual-10G-ports-active-cooling.1313462.0.html" target="_blank" rel="noopener">Asus reveals world’s first Wi-Fi 8 router: 30Gbps, dual 10G ports, active cooling</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Notebookcheck</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-02T07:00:00+00:00">2026-06-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.digitimes.com/news/a20260602PD209/broadcom-samsung-5g-fwa-wi-fi.html" target="_blank" rel="noopener">Broadcom, Samsung launch Wi-Fi 8, 5G platform to bring fiber-grade FWA to mass market</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">digitimes</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-02T07:00:00+00:00">2026-06-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.pcguide.com/deals/tp-link-wifi-6e-mesh-router-with-5500-sq-ft-coverage-gets-insane-32-discount-on-amazon-for-a-limited-time/" target="_blank" rel="noopener">TP-Link WiFi 6E mesh router with 5,500 sq. ft. coverage gets insane 32% discount on Amazon for a limited time</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">PC Guide</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-02T07:00:00+00:00">2026-06-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://uk.pcmag.com/wireless-routers/127734/the-best-wi-fi-6-routers" target="_blank" rel="noopener">The Best Wi-Fi 6 Routers for 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">PCMag UK</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-02T07:00:00+00:00">2026-06-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.tomshardware.com/networking/routers/msi-unveils-latest-set-of-wifi-7-gaming-routers-touting-ultra-fast-speeds-flagship-radix-be19000-model-comes-with-a-built-in-ssd-slot-for-nas-lite-experience-and-wireless-speeds-up-to-19-gbps" target="_blank" rel="noopener">MSI unveils latest set of WiFi 7 gaming routers touting ultra-fast speeds — flagship RadiX BE19000 model comes with a built-in SSD slot for &#39;NAS Lite&#39; experience and wireless speeds up to 19 Gbps</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Tom&#39;s Hardware</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-02T07:00:00+00:00">2026-06-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Huawei</span>
+        
+      </div>
+      <h2 class="title"><a href="https://dailybeirut.com/en/technology-and-science/huawei-introduces-wi-fi-7-router-11-internal-antennas/" target="_blank" rel="noopener">Huawei Router X1 Pro Wi-Fi 7 Launches in China Only</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Daily Beirut</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T07:00:00+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.phoronix.com/news/Intel-IWL-WiFi-UHR-Linux-7.2" target="_blank" rel="noopener">Intel Preparing WiFi 8 &#34;UHR&#34; Support For Their IWLWIFI Linux Driver</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Phoronix</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T07:00:00+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://sammyguru.com/samsung-modem-integrated-5g-wi-fi-8-fwa-platform/" target="_blank" rel="noopener">Samsung’s Modem Powers Integrated 5G and Wi-Fi 8 FWA Platform</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">SammyGuru</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T07:00:00+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.networkworld.com/article/4179519/broadcom-samsung-team-for-wireless-soc.html" target="_blank" rel="noopener">Broadcom, Samsung team for wireless SoC</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Network World</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T07:00:00+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.investing.com/news/company-news/broadcom-unveils-broadband-edge-ai-portfolio-with-wifi-8-93CH-4720216" target="_blank" rel="noopener">Broadcom unveils broadband Edge AI portfolio with Wi-Fi 8</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Investing.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T07:00:00+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.globenewswire.com/news-release/2026/06/01/3304701/0/en/broadcom-connects-the-ai-edge-with-comprehensive-multi-gig-broadband-and-wi-fi-8-innovations.html" target="_blank" rel="noopener">Broadcom Connects the AI Edge with Comprehensive Multi-Gig Broadband and Wi-Fi 8 Innovations</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">GlobeNewswire</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T07:00:00+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://hi-tech.ua/en/asus-rog-rapture-gt-bn98-pro-is-the-first-wi-fi-8-router-for-gamers-and-a-smart-home/" target="_blank" rel="noopener">ASUS ROG Rapture GT-BN98 Pro is the first Wi-Fi 8 router for gamers and a smart home - hi-Tech.ua</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">hi-Tech.ua</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-31T07:00:00+00:00">2026-05-31</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://finance.yahoo.com/markets/stocks/articles/broadcom-ties-wi-fi-8-050534319.html" target="_blank" rel="noopener">Broadcom Ties Wi-Fi 8 And 5G To Future Broadband Growth Potential</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Yahoo Finance</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-31T07:00:00+00:00">2026-05-31</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://finance.yahoo.com/sectors/technology/articles/broadcom-inc-avgo-launches-broadband-230756753.html" target="_blank" rel="noopener">Broadcom Inc (AVGO) Launches Broadband Chip With AI Capabilities</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Yahoo Finance</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-31T07:00:00+00:00">2026-05-31</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.gizguide.com/2026/05/tp-link-archer-8-wifi-8-coming-soon.html" target="_blank" rel="noopener">TP-Link Archer 8 teased as the first WiFi 8 router, coming soon on October</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">GIZGUIDE</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-30T07:00:00+00:00">2026-05-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.tikr.com/blog/broadcom-rose-7-this-week-heres-how-much-the-stock-could-rise-in-2026" target="_blank" rel="noopener">Broadcom Rose 7% This Week. Here’s How Much the Stock Could Rise in 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TIKR.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-30T07:00:00+00:00">2026-05-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.telecompaper.com/news/tp-link-pencils-in-october-release-for-archer-wi-fi-8-router-wider-line-up-to-follow-in-2027--1572573" target="_blank" rel="noopener">TP-Link pencils in October release for Archer Wi-Fi 8 router, wider line-up to follow in 2027</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Telecompaper</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T10:12:51+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://eftm.com/2026/05/tp-link-announces-wifi-8-compatible-archer-8-platform-to-end-in-home-dead-zones-and-latency-276307" target="_blank" rel="noopener">TP-Link announces WiFi 8 compatible Archer 8 platform to End In-Home Dead Zones and Latency</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">EFTM</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.pickr.com.au/news/2026/tp-link-readies-wifi-8-routers-before-wifi-8-is-a-standard/" target="_blank" rel="noopener">TP-Link readies WiFi 8 routers before WiFi 8 is a standard</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">pickr.com.au</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.gadgetguy.com.au/tp-link-archer-wi-fi-8-router-reveal/" target="_blank" rel="noopener">Better multi-storey Wi-Fi performance promised with Archer 8 router</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">GadgetGuy</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://telconews.com.au/story/tp-link-unveils-archer-8-in-push-for-wi-fi-8-stability" target="_blank" rel="noopener">TP-Link unveils Archer 8 in push for Wi-Fi 8 stability</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TelcoNews Australia</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://techau.com.au/wi-fi-8-is-coming-with-the-tp-links-archer-8-peak-speeds-no-longer-matter/" target="_blank" rel="noopener">Wi-Fi 8 is coming with the TP-Link’s Archer 8, peak speeds no longer matter.</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">techAU</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://techgenyz.com/asus-rog-rapture-gt-bn98-pro-wifi-8-gaming-router/" target="_blank" rel="noopener">ASUS ROG Rapture GT-BN98 Pro Launches as World’s First WiFi 8 Gaming Router</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Techgenyz</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://telecomtalk.info/asus-brings-new-wifi-8-router-first/1008026/" target="_blank" rel="noopener">ASUS Brings New Wi-Fi 8 Router, First in the World</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TelecomTalk</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://jamonline.ph/gadgets/tp-link-archer-8-wi-fi-8-router-platform-announced/" target="_blank" rel="noopener">TP-Link Archer 8 Wi-Fi 8 Router Platform Announced</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">jamonline.ph</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.channelnews.com.au/tp-link-jumps-gun-with-wi-fi-8-router-ahead-of-final-standard/" target="_blank" rel="noopener">TP-Link Jumps Gun With Wi-Fi 8 Router Ahead Of Final Standard</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">channelnews.com.au</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.gizmochina.com/2026/05/29/asus-launches-worlds-first-wifi-8-router-rog-rapture-gt-bn98-pro/" target="_blank" rel="noopener">Asus launches world’s first WiFi 8 router, ROG Rapture GT-BN98 Pro</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Gizmochina</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.lionheartv.net/2026/05/tp-link-announces-archer-8-its-first-wi-fi-8-router-platform-designed-for-real-world-reliability/" target="_blank" rel="noopener">TP-Link Announces Archer 8, Its First Wi-Fi 8 Router Platform Designed for Real-World Reliability</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">LionhearTV</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.telecompaper.com/news/mediatek-set-for-computex-showcase-starring-wi-fi-8-6g-and-edge-computing--1572551" target="_blank" rel="noopener">Mediatek set for Computex showcase starring Wi-Fi 8, 6G and edge computing</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Telecompaper</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.thelec.net/news/articleView.html?idxno=10817" target="_blank" rel="noopener">Broadcom Unveils 50Gbps Home Gateway Chip for Next-Generation Broadband</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">thelec.net</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-29T07:00:00+00:00">2026-05-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.thetechoutlook.com/current-affairs/business/tp-link-becomes-among-the-first-global-networking-brands-to-announce-local-manufacturing-of-wi-fi-7-products-in-india/" target="_blank" rel="noopener">TP-Link Becomes Among the First Global Networking Brands to Announce Local Manufacturing of Wi-Fi 7 Products in India</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">The Tech Outlook</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T08:49:28+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.gearbrain.com/tp-link-archer-wifi-8-router-2676969401.html" target="_blank" rel="noopener">TP-Link Archer 8: Everything You Need to Know About the First Wi-Fi 8 Router</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Gearbrain</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.techpowerup.com/349443/tp-link-introduces-archer-8-its-first-wi-fi-8-router-platform" target="_blank" rel="noopener">TP-Link Introduces Archer 8, Its First Wi-Fi 8 Router Platform</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TechPowerUp</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://wifihifi.com/tp-link-archer-8-wi-fi-8-router-launching-in-canada/" target="_blank" rel="noopener">TP-Link Archer 8 Wi-Fi 8 Router Launching in Canada</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Wifi Hifi Magazine</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.telecoms.com/wifi/broadcom-unveils-some-new-wi-fi-8-products" target="_blank" rel="noopener">Broadcom unveils some new Wi-Fi 8 products</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Telecoms</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.gadgetpilipinas.net/2026/05/tp-link-archer-8/" target="_blank" rel="noopener">TP-Link Unveils the Archer 8 as its First Wi-Fi 8 Router Platform</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Gadget Pilipinas</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.mediatek.com/press-room/mediatek-to-empower-the-agentic-ai-era-with-edge-to-cloud-tech-at-computex-2026" target="_blank" rel="noopener">MediaTek to Empower the Agentic AI Era with Edge-to-Cloud Tech at Computex 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MediaTek</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/05/28/broadcom-bcm68850-and-bcm55050-socs-target-wi-fi-8-and-50g-pon-fiber-gateways/" target="_blank" rel="noopener">Broadcom BCM68850 and BCM55050 SoCs target Wi-Fi 8 and 50G PON fiber gateways</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.telecompaper.com/news/broadcom-joins-samsung-to-launch-wi-fi-8-fwa-silicon-archetype--1572446" target="_blank" rel="noopener">Broadcom joins Samsung to launch Wi-Fi 8 FWA silicon archetype</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Telecompaper</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.ispreview.co.uk/index.php/2026/05/broadcom-and-tp-link-unveil-first-wi-fi-8-chipsets-and-broadband-routers.html" target="_blank" rel="noopener">Broadcom and TP-Link Unveil First Wi-Fi 8 Chipsets and Broadband Routers</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">ISPreview UK</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://techgenyz.com/broadcom-wi-fi-8-chips-power-ai-home-router/" target="_blank" rel="noopener">Broadcom Wi-Fi 8 SoCs Unveiled for the Promising Future of AI-Driven Home Networking</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Techgenyz</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-28T07:00:00+00:00">2026-05-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/roboticworx-s-polycast5-promises-to-be-the-everything-remote-for-bluetooth-wi-fi-lora-and-ir-35aa7ddef9ea" target="_blank" rel="noopener">RoboticWorx&#39;s PolyCast5 Promises to Be the &#34;Everything Remote&#34; for Bluetooth, Wi-Fi, LoRa, and IR</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T19:54:32+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://telecomlead.com/telecom-chips/broadcom-and-samsung-intro-broadband-optimized-reference-platform-for-fwa-market-126050" target="_blank" rel="noopener">Broadcom and Samsung intro broadband-optimized reference platform for FWA market</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TelecomLead</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T13:50:06+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.telecompaper.com/news/broadcom-extends-50g-pon-architecture-into-wi-fi-8-gateways-with-new-soc-product--1572302" target="_blank" rel="noopener">Broadcom extends 50G PON architecture into Wi-Fi 8 gateways with new SoC product</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Telecompaper</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T10:02:41+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://korben.info/en/honeywell-thermostat-security-flaws.html" target="_blank" rel="noopener">A Honeywell thermostat riddled with security flaws</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Korben</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.mobileworldlive.com/samsung/broadcom-samsung-launch-5g-wi-fi-8-fwa-platform/" target="_blank" rel="noopener">Broadcom, Samsung launch 5G, Wi-Fi 8 FWA platform</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Mobile World Live</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.telecompetitor.com/broadcom-announces-wi-fi-8-ai-fwa-integration-and-networking-enhancements/" target="_blank" rel="noopener">Broadcom announces Wi-Fi 8, AI, FWA integration, and networking enhancements</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Telecompetitor</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.globenewswire.com/news-release/2026/05/27/3302058/19933/en/broadcom-unveils-world-s-first-integrated-5g-and-wi-fi-8-fwa-platform-in-collaboration-with-samsung-electronics.html" target="_blank" rel="noopener">Broadcom Unveils World’s First Integrated 5G and Wi-Fi 8 FWA Platform in Collaboration with Samsung Electronics</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">GlobeNewswire</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.broadcom.com/company/news/product-releases/64346" target="_blank" rel="noopener">Broadcom Delivers Industry’s First Integrated Wi-Fi 8 SoCs to Power Next-Gen Mesh and Multi-Gigabit Routers</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Broadcom</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://siliconangle.com/2026/05/27/broadcom-debuts-new-wi-fi-8-chips-optical-network-processor/" target="_blank" rel="noopener">Broadcom debuts new Wi-Fi 8 chips, optical network processor</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">SiliconANGLE</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/broadcom-unveils-integrated-wi-fi-8-and-50g-pon-gateway-ics-for-the-ai-era/" target="_blank" rel="noopener">Broadcom Unveils Integrated Wi-Fi 8- and 50G PON Gateway-ICs for the AI Era - News</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">All About Circuits</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/broadcom-unveils-bcm6776-wi-fi-8-soc-with-5g-modem/" target="_blank" rel="noopener">Broadcom Releases Trio BCM677x Wi-Fi 8 SoCs Including One with 5G Novelty</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.theregister.com/networks/2026/05/27/broadcom-gets-early-start-on-wifi-8-with-new-routing-kit/5246623" target="_blank" rel="noopener">Broadcom gets early start on WiFi 8 with next-gen wireless routing kit</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">The Register</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.stocktitan.net/news/AVGO/broadcom-delivers-industry-s-first-integrated-wi-fi-8-so-cs-to-power-hz5znvi3o5x9.html" target="_blank" rel="noopener">New Broadcom Wi‑Fi 8 chips power faster home mesh, multi‑gig routers</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Stock Titan</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://finance.yahoo.com/sectors/technology/articles/broadcom-extends-ai-broadband-reach-151223535.html" target="_blank" rel="noopener">Broadcom Extends AI And Broadband Reach With New 50G Home Gateway SoC</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Yahoo Finance</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.benzinga.com/markets/large-cap/26/05/52822633/whats-going-on-with-broadcom-stock-wednesday-5" target="_blank" rel="noopener">What&#39;s Going On With Broadcom Stock Wednesday?</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Benzinga</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://in.investing.com/news/stock-market-news/broadcom-expands-wifi-8-lineup-with-three-new-router-chips-93CH-5428095" target="_blank" rel="noopener">Broadcom expands Wi-Fi 8 lineup with three new router chips</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Investing.com India</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/home/internet/best-wifi-7-routers/" target="_blank" rel="noopener">Best Wi-Fi 7 Routers for 2026: Future-Proof Your Home Network With These Top Models</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">cnet.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-27T07:00:00+00:00">2026-05-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/turn-an-espressif-esp32-c3-dev-board-into-a-slick-environmental-monitor-flashed-from-your-browser-5a85dd06e181" target="_blank" rel="noopener">Turn an Espressif ESP32-C3 Dev Board Into a Slick Environmental Monitor — Flashed From Your Browser</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T11:12:56+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://hackaday.com/2026/05/26/honeywell-x2s-smart-thermostat-firmware-reverse-engineering/" target="_blank" rel="noopener">Honeywell X2S Smart Thermostat Firmware Reverse-Engineering</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackaday</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T07:00:00+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://hothardware.com/news/asus-rog-rapture-gt-bn98-pro-wi-fi-8-gaming-router-computex" target="_blank" rel="noopener">ASUS Teases ROG Rapture GT-BN98 Pro Wi-Fi 8 Gaming Router At Computex</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">HotHardware</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T07:00:00+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/broadcom-unveils-bcm68850-chip-for-50g-pon-gateway/" target="_blank" rel="noopener">Broadcom BCM68850: The Cool 50Gbps Internet is Near</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T07:00:00+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.streetinsider.com/Corporate+News/Broadcom+launches+industrys+first+50G+PON+gateway+chip+with+AI+processing/26546834.html" target="_blank" rel="noopener">Broadcom launches industry&#39;s first 50G PON gateway chip with AI processing</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">StreetInsider</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T07:00:00+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://wifinowglobal.com/news-blog/innovation-productivity-and-common-sense-contrasting-uk-and-eu-proposals-for-for-upper-6-ghz-wi-fi-regulation/" target="_blank" rel="noopener">Innovation, productivity - and common sense: Contrasting UK and EU proposals for upper 6 GHz Wi-Fi regulation - Wi-Fi NOW Global</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Wi-Fi NOW Global</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T07:00:00+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/05/26/polycast5-an-esp32-c5-multi-tool-remote-with-dual-band-wifi-6-ble-esp-now-lora-and-infrared-tx-rx/" target="_blank" rel="noopener">PolyCast5 – An ESP32-C5 multi-tool remote with dual-band WiFi 6, BLE, ESP-NOW, LoRa, and Infrared Tx/Rx (Crowdfunding)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T07:00:00+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://wccftech.com/asus-prepares-rog-rapture-gt-bn98-pro-as-the-first-wifi-8-router/" target="_blank" rel="noopener">ASUS Prepares ROG Rapture GT-BN98 Pro As The First WiFi 8 Router</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Wccftech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-26T07:00:00+00:00">2026-05-26</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bgr.com/2176816/wi-fi-7-router-disadvantages-should-know/" target="_blank" rel="noopener">4 Disadvantages Of Wi-Fi 7 Routers You Should Know About</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">bgr.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-25T07:00:00+00:00">2026-05-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://timesofindia.indiatimes.com/technology/tech-news/tp-link-starts-local-wi-fi-7-manufacturing-eyes-export-markets/articleshow/131307185.cms" target="_blank" rel="noopener">TP-Link starts local Wi-Fi 7 manufacturing, eyes export markets</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">The Times of India</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-25T07:00:00+00:00">2026-05-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bisinfotech.com/morse-micro-digikey-partner-to-accelerate-global-wi-fi-halow-adoption/" target="_blank" rel="noopener">Morse Micro, DigiKey Partner to Accelerate Global Wi-Fi HaLow Adoption</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Bisinfotech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-25T07:00:00+00:00">2026-05-25</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://linuxgizmos.com/esp32-s31-development-boards-bring-wi-fi-6-audio-camera-and-hmi-features/" target="_blank" rel="noopener">ESP32-S31 development boards bring Wi-Fi 6, audio, camera, and HMI features</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">LinuxGizmos.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-24T07:00:00+00:00">2026-05-24</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://padailypost.com/2026/05/24/difficult-woman-sues-after-broadcom-fires-her/" target="_blank" rel="noopener">‘Difficult’ woman sues after Broadcom fires her</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Palo Alto Daily Post</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-24T07:00:00+00:00">2026-05-24</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/m5stack-s-stopwatch-dev-kit-delivers-an-espressif-esp32-s3r8-in-a-multi-function-watch-form-factor-df2a4b7d2f34" target="_blank" rel="noopener">M5Stack&#39;s StopWatch Dev Kit Delivers an Espressif ESP32-S3R8 in a Multi-Function Watch Form Factor</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-23T17:22:50+00:00">2026-05-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/espressif-unveils-the-coreboard-and-the-korvo-two-new-dev-boards-for-its-dual-core-esp32-s31-ebe3358f826c" target="_blank" rel="noopener">Espressif Unveils the CoreBoard and the Korvo, Two New Dev Boards for Its Dual-Core ESP32-S31</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-23T17:22:49+00:00">2026-05-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://letsdatascience.com/news/espressif-releases-coreboard-and-korvo-dev-kits-5fff0255" target="_blank" rel="noopener">Espressif Releases CoreBoard and Korvo Dev Kits</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Let&#39;s Data Science</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-23T07:00:00+00:00">2026-05-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">NXP</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.newelectronics.co.uk/content/news/variscite-smarc-family-incorporates-nxp-imx-95-based-som-with-security-and-edge-ai" target="_blank" rel="noopener">Variscite SMARC family incorporates NXP i.MX 95-based SoM with security and edge AI</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">New Electronics</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-19T07:00:00+00:00">2026-05-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.pcguide.com/router/guide/best-travel-routers/" target="_blank" rel="noopener">Best travel router in 2026 (top picks for travelers and frequent flyers)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">PC Guide</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-19T07:00:00+00:00">2026-05-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qorvo</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.telecompaper.com/news/qorvo-teams-with-wi-fi-oems-to-bring-uwb-to-enterprise-access-points--1571506" target="_blank" rel="noopener">Qorvo teams with Wi-Fi OEMs to bring UWB to enterprise access points</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Telecompaper</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-19T07:00:00+00:00">2026-05-19</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/05/18/13-qualcomm-qcc74xm-evk-offers-wi-fi-6-bluetooth-5-4-and-802-15-4-connectivity-bouffalo-lab-bl618-inside/" target="_blank" rel="noopener">$13 Qualcomm QCC74xM EVK offers Wi-Fi 6, Bluetooth 5.4, and 802.15.4 connectivity (Bouffalo Lab BL618 inside)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-18T07:00:00+00:00">2026-05-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://hackaday.com/2026/05/17/qualcomms-new-qcc74x-appears-to-target-the-esp32-mcus/" target="_blank" rel="noopener">Qualcomm’s New QCC74x Appears To Target The ESP32 MCUs</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackaday</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-17T07:00:00+00:00">2026-05-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.ibtimes.com/what-broadcom-unknown-company-building-ai-chips-powering-google-anthropic-openai-meta-3802922" target="_blank" rel="noopener">What Is Broadcom? The Unknown Company Building the AI Chips Powering Google, Anthropic, OpenAI and Meta</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">International Business Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-16T07:00:00+00:00">2026-05-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/05/13/broadcom-bcm67142-bcm67192-and-bcm68565-chips-target-low-cost-wifi-8-10-gbps-fiber-access-points/" target="_blank" rel="noopener">Broadcom BCM67142, BCM67192, and BCM68565 chips target low-cost WiFi 8 10 Gbps fiber access points</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-13T07:00:00+00:00">2026-05-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bgr.com/2166346/reasons-should-shouldnt-upgrade-router-wifi-7/" target="_blank" rel="noopener">8 Reasons You Should (And Shouldn&#39;t) Upgrade Your Router To Wi-Fi 7</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">bgr.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-12T07:00:00+00:00">2026-05-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.pocket-lint.com/before-you-put-wi-fi-7-in-your-home/" target="_blank" rel="noopener">Do these 3 things before you put Wi-Fi 7 in your home - Pocket-lint</a></h2>
+      <p class="summary">Do these 3 things before you put Wi-Fi 7 in your home&amp;nbsp;&amp;nbsp;Pocket-lint</p>
+      <div class="meta-row">
+        <span class="source">Pocket-lint</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-12T07:00:00+00:00">2026-05-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/broadcom-targets-mass-market-broadband-with-10g-pon-and-wi-fi-8-socs/" target="_blank" rel="noopener">Broadcom Targets Mass-Market Broadband With 10G PON and Wi-Fi 8 SoCs</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">All About Circuits</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-12T07:00:00+00:00">2026-05-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://spectrum.ieee.org/wi-fi-enterprise-networks" target="_blank" rel="noopener">Why AI Workloads Are Racing Ahead Of Enterprise Wi-Fi Upgrades</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">IEEE Spectrum</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-11T07:00:00+00:00">2026-05-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.makeuseof.com/i-enabled-one-security-setting-hit-gigabit-speeds/" target="_blank" rel="noopener">I enabled one security setting on my Wi-Fi 6E router and finally hit Gigabit speeds</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MakeUseOf</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-11T07:00:00+00:00">2026-05-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.newelectronics.co.uk/content/news/morse-micro-partners-with-digikey-to-widen-access-to-wi-fi-halow-technology" target="_blank" rel="noopener">Morse Micro partners with DigiKey to widen access to Wi‑Fi HaLow technology</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">New Electronics</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-11T07:00:00+00:00">2026-05-11</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://techeconomy.ng/zte-mediatek-launch-faster-wi-fi-7-solutions-for-homes-small-businesses/" target="_blank" rel="noopener">ZTE, MediaTek Launch Faster Wi-Fi 7 Solutions for Homes, Small Businesses</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Techeconomy</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-09T07:00:00+00:00">2026-05-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.xda-developers.com/qualcomms-snapdragon-6-gen-5-brings-wi-fi-7-and-bluetooth-60-to-mid-range-phones/" target="_blank" rel="noopener">Qualcomm&#39;s Snapdragon 6 Gen 5 brings Wi-Fi 7 and Bluetooth 6.0 to mid-range phones</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">XDA</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-07T07:00:00+00:00">2026-05-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.sdxcentral.com/news/arista-warns-of-long-term-chip-challenge-broadcom-linked-by-analysts/" target="_blank" rel="noopener">Arista warns of long-term chip challenge, Broadcom linked by analysts</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">SDxCentral</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-07T07:00:00+00:00">2026-05-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://gagadget.com/en/708888-qualcomms-new-budget-chips-bring-90fps-gaming-and-wi-fi-7-to-cheaper-phones/" target="_blank" rel="noopener">Qualcomm&#39;s new budget chips bring 90fps gaming and Wi-Fi 7 to cheaper phones</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Gagadget.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-07T07:00:00+00:00">2026-05-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.notebookcheck.net/Downgrades-or-upgrades-New-Snapdragon-6-Gen-5-and-4-Gen-5-trade-LPDDR5-USB-3-1-for-Wi-Fi-7-4K-video-77-GPU-boost.1291441.0.html" target="_blank" rel="noopener">Downgrades or upgrades: New Snapdragon 6 Gen 5 and 4 Gen 5 trade LPDDR5, USB 3.1 for Wi-Fi 7, 4K video, 77% GPU boost</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Notebookcheck</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-07T07:00:00+00:00">2026-05-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.gizmochina.com/2026/05/07/qualcomm-snapdragon-6-gen-5-snapdragon-4-gen-5/" target="_blank" rel="noopener">Qualcomm Snapdragon 6 Gen 5 and 4 Gen 5 Announced With Wi-Fi 7, 90FPS Gaming</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Gizmochina</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-07T07:00:00+00:00">2026-05-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.computerweekly.com/news/366642758/Extreme-Connect-26-Wi-Fi-7-line-aims-to-address-needs-of-6GHz-era" target="_blank" rel="noopener">Extreme Connect 26: Wi-Fi 7 line aims to address needs of 6GHz era</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Computer Weekly</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-07T07:00:00+00:00">2026-05-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/qualcomms-new-midrange-chips-add-wi-fi-7-improve-gaming-for-lower-cost-phones/" target="_blank" rel="noopener">Qualcomm&#39;s New Midrange Chips Add Wi-Fi 7, Improve Gaming for Lower-Cost Phones</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">cnet.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-06T07:00:00+00:00">2026-05-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://finance.yahoo.com/markets/stocks/articles/broadcom-wi-fi-8-push-130842249.html" target="_blank" rel="noopener">Broadcom’s New Wi-Fi 8 Push Adds Another Leg To Growth Story</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Yahoo Finance</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-03T07:00:00+00:00">2026-05-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Thread</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.androidpolice.com/moved-smart-home-off-wi-fi-onto-thread-router-finally-stopped-crashing/" target="_blank" rel="noopener">I moved my smart home off Wi-Fi and onto Thread, and my router finally stopped crashing</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Android Police</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-02T07:00:00+00:00">2026-05-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Xiaomi</span>
+        
+      </div>
+      <h2 class="title"><a href="https://hi-tech.ua/en/xiaomi-mesh-system-be3600-pro-is-an-affordable-entry-to-the-era-of-wi-fi-7/" target="_blank" rel="noopener">Xiaomi Mesh System BE3600 Pro is an affordable entry to the era of Wi-Fi 7 - hi-Tech.ua</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">hi-Tech.ua</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-01T07:00:00+00:00">2026-05-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bisinfotech.com/broadcom-accelerates-fiber-transition-with-new-wi-fi-8-and-10g-pon-silicon/" target="_blank" rel="noopener">Broadcom Accelerates Fiber Transition with New Wi-Fi 8 and 10G PON Silicon</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Bisinfotech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-01T07:00:00+00:00">2026-05-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.sdxcentral.com/news/broadcom-doubles-down-on-wi-fi-8-with-pon-chip-to-boot/" target="_blank" rel="noopener">Broadcom doubles down on Wi-Fi 8, with PON chip to boot</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">SDxCentral</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-01T07:00:00+00:00">2026-05-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.globenewswire.com/news-release/2026/04/30/3284907/19933/en/broadcom-accelerates-multi-gig-broadband-with-optimized-10g-pon-and-wi-fi-8-solutions-for-mass-market.html" target="_blank" rel="noopener">Broadcom Accelerates Multi-Gig Broadband with Optimized 10G PON and Wi-Fi 8 Solutions for Mass Market</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">GlobeNewswire</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-30T07:00:00+00:00">2026-04-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.investing.com/news/company-news/broadcom-launches-wifi-8-chips-for-mass-market-gateways-93CH-4649534" target="_blank" rel="noopener">Broadcom launches Wi-Fi 8 chips for mass market gateways</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Investing.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-30T07:00:00+00:00">2026-04-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://embeddedcomputing.com/technology/iot/wireless-sensor-networks/wireless-broadband-alliance-proves-wi-fi-halow-readiness-with-real-world-iot-field-trials" target="_blank" rel="noopener">Wireless Broadband Alliance Proves Wi-Fi HaLow Readiness with Real-World IoT Field Trials</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Embedded Computing Design</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-29T14:37:32+00:00">2026-04-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.makeuseof.com/i-changed-one-windows-setting-wi-fi-6e-speeds/" target="_blank" rel="noopener">I changed one Windows setting and my PC finally started getting Wi-Fi 6E speeds</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MakeUseOf</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-27T07:00:00+00:00">2026-04-27</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/get-a-wi-fi-6-router-today-and-be-happy/" target="_blank" rel="noopener">Wi-Fi 6 in 2026: Still As Solid and Relevant as Ever</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-24T07:00:00+00:00">2026-04-24</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.geeky-gadgets.com/wifi-7-speed-test-results-2026/" target="_blank" rel="noopener">How WiFi 7 Eliminates Network Congestion for Faster, Smoother Streaming</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Geeky Gadgets</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-23T07:00:00+00:00">2026-04-23</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/04/22/leafkvm-open-source-hardware-ip-kvm-offers-wifi-5-poe-usb-c-serial-console-and-2-4-inch-touchscreen-display/" target="_blank" rel="noopener">LeafKVM open-source hardware IP KVM offers WiFi 5, PoE, USB-C serial console, and 2.4-inch touchscreen display (Crowdfunding)</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-22T07:00:00+00:00">2026-04-22</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/tinygo-0-41-0-brings-wireless-support-on-espressif-s-esp32-chips-and-arduino-uno-q-compatibility-355336eb9f86" target="_blank" rel="noopener">TinyGo 0.41.0 Brings Wireless Support on Espressif&#39;s ESP32 Chips and Arduino UNO Q Compatibility</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T12:44:41+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://cybernews.com/best-wifi-routers/7-mesh/" target="_blank" rel="noopener">Best Wi-Fi 7 Mesh Router in 2026 – Reviews &amp; Tips</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Cybernews</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T07:00:00+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">LG Innotek</span>
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.thelec.net/news/articleView.html?idxno=6671" target="_blank" rel="noopener">LG Innotek Secures 100 Billion Won Order for Automotive Wi-Fi 7 Modules, Mass Production Set for 2027</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">thelec.net</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T07:00:00+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://cybernews.com/best-wifi-routers/xfinity/" target="_blank" rel="noopener">Best Wi-Fi Router for Xfinity in 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Cybernews</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T07:00:00+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">LG Innotek</span>
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.lgcorp.com/media/release/30068" target="_blank" rel="noopener">LG Innotek to Supply Cutting-Edge Automotive Wi-Fi 7 Communication Module to a leading European automotive parts company</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">LG Corp</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T07:00:00+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/04/21/ezurio-tungsten-510-700-smarc-som-features-mediatek-genio-510-700-aiot-soc-dual-gbe-wifi-6/" target="_blank" rel="noopener">Ezurio Tungsten 510/700 SMARC SoM features MediaTek Genio 510/700 AIoT SoC, dual GbE, WiFi 6</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-21T07:00:00+00:00">2026-04-21</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/espressif-bundles-wi-fi-6-bluetooth-5.4-and-hmi-into-risc-v-soc/" target="_blank" rel="noopener">Espressif Bundles Wi-Fi 6, Bluetooth 5.4, and HMI Into RISC-V SoC - News</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">All About Circuits</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-20T07:00:00+00:00">2026-04-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.pcworld.com/msi-guide-how-fix-wifi-dead-zones-upgrade-wifi-7-at-home" target="_blank" rel="noopener">How to Fix Wireless Dead Zones and Upgrade to Wi-Fi 7 at Home</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">PCWorld</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-20T07:00:00+00:00">2026-04-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">LG Innotek</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dbr.donga.com/kfocus/view/en/article_no/2530" target="_blank" rel="noopener">LG Innotek Signs Wi-Fi 7 Deal With European Supplier</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">동아비즈니스리뷰 | DBR</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-20T07:00:00+00:00">2026-04-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.aboutchromebooks.com/chromebook-wi-fi-performance-statistics/" target="_blank" rel="noopener">Chromebook Wi-Fi Performance Statistics 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">About Chromebooks</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-18T07:00:00+00:00">2026-04-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.howtogeek.com/why-you-should-skip-that-wi-fi-7-router-and-wait-for-wi-fi-8/" target="_blank" rel="noopener">3 reasons you need to skip that Wi-Fi 7 router and wait for Wi-Fi 8 - How-To Geek</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">How-To Geek</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-17T07:00:00+00:00">2026-04-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/automated-frequency-coordination-afc-explained/" target="_blank" rel="noopener">Automated Frequency Coordination (AFC), Explained: Understanding Wi-Fi 7&#39;s Cool Range-Extending Feature</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-17T07:00:00+00:00">2026-04-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.rtings.com/router/reviews/arris/surfboard-g54-wifi-7" target="_blank" rel="noopener">ARRIS SURFboard G54 Review</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">RTINGS.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-16T07:00:00+00:00">2026-04-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.rtings.com/router/tests/changelogs/0-8-2" target="_blank" rel="noopener">Test Bench 0.8.2: Changelog</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">RTINGS.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-15T07:00:00+00:00">2026-04-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.wired.com/gallery/best-wifi-routers/" target="_blank" rel="noopener">I&#39;ve Tested Dozens of Wi-Fi Routers. These Are the Best for Your Home</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">WIRED</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-15T07:00:00+00:00">2026-04-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/best-wi-fi-7-adapters/" target="_blank" rel="noopener">Five Best Wi-Fi 7 Adapters: 2026’s Current Top Options to Add Latest Wi-Fi to Your Aging Computer</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-14T07:00:00+00:00">2026-04-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.thefastmode.com/technology-solutions/48054-ruckus-networks-nokia-launch-early-access-wi-fi-7-and-optical-lan-integrated-solution" target="_blank" rel="noopener">RUCKUS Networks, Nokia Launch Early Access Wi-Fi 7 and Optical LAN Integrated Solution</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">The Fast Mode</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-14T02:07:54+00:00">2026-04-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.hackster.io/news/cydintosh-turns-your-cheap-yellow-display-into-a-macintosh-plus-and-connects-it-to-home-assistant-f18c65fb215f" target="_blank" rel="noopener">Cydintosh Turns Your Cheap Yellow Display Into a Macintosh Plus — And Connects It to Home Assistant</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackster.io</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-13T11:18:57+00:00">2026-04-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://wiot-group.com/think/en/news/espressif-esp32-s31-new-soc-converged-wireless-iot/" target="_blank" rel="noopener">ESP32-S31: A New SoC for Converged Wireless IoT Architectures</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">WIoT Group</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-13T07:00:00+00:00">2026-04-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.businesswire.com/news/home/20260413313863/en/RUCKUS-Networks-and-Nokia-Announce-Early-Access-Availability-for-their-Combined-Solutionan-Integrated-Wi-Fi-7-and-Fiber-Optical-LAN-Solution" target="_blank" rel="noopener">RUCKUS Networks and Nokia Announce Early Access Availability for their Combined Solution—an Integrated Wi Fi 7 and Fiber Optical LAN Solution</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Business Wire</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-13T07:00:00+00:00">2026-04-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span><span class="chip chip-tech">Bluetooth</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.nytimes.com/wirecutter/reviews/best-usb-wi-fi-adapters/" target="_blank" rel="noopener">If Your Old Laptop’s Internet Is Slow, You Need a USB Wi-Fi Adapter</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">The New York Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-13T07:00:00+00:00">2026-04-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.digitimes.com/news/a20260410PD210/mediatek-qualcomm-wi-fi-growth-market.html" target="_blank" rel="noopener">MediaTek builds an end-to-end challenge to Qualcomm and Broadcom</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">digitimes</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-10T07:00:00+00:00">2026-04-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.makeuseof.com/wi-fi-7-sounds-like-the-obvious-upgrade-until-you-learn-what-wi-fi-6e-already-does/" target="_blank" rel="noopener">Wi-Fi 7 sounds like the obvious upgrade until you learn what Wi-Fi 6E already does</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MakeUseOf</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-10T07:00:00+00:00">2026-04-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.techspot.com/article/3103-wifi-8/" target="_blank" rel="noopener">After Wi-Fi 7&#39;s Speed Push, Wi-Fi 8 Is Turning to Reliability</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TechSpot</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-09T07:00:00+00:00">2026-04-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.i-programmer.info/news/91-hardware/18785-new-esp32-s31-super-dual-risc-v-with-wifi-6.html" target="_blank" rel="noopener">New ESP32-S31 Super Dual RISC V With WiFi 6 - i-programmer.info</a></h2>
+      <p class="summary">New ESP32-S31 Super Dual RISC V With WiFi 6&amp;nbsp;&amp;nbsp;i-programmer.info</p>
+      <div class="meta-row">
+        <span class="source">i-programmer.info</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-08T07:00:00+00:00">2026-04-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://hackaday.com/2026/04/08/espressifs-new-esp32-s31-dual-core-risc-v-with-wifi-6-and-gbit-ethernet/" target="_blank" rel="noopener">Espressif’s New ESP32-S31: Dual-Core RISC-V With WiFi 6 And GBit Ethernet</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Hackaday</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-08T07:00:00+00:00">2026-04-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.techradar.com/pro/has-the-wi-fi-industry-been-solving-the-wrong-problem-a-team-of-former-bell-labs-and-nokia-engineers-wants-to-make-your-router-10x-better-thanks-to-a-unique-chip" target="_blank" rel="noopener">Your Wi-Fi signal looks strong, but nothing loads — here’s why</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TechRadar</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-08T07:00:00+00:00">2026-04-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://blog.adafruit.com/2026/04/07/espressif-unveils-the-esp32-s31-a-dual-core-risc-v-soc-with-wi-fi-6-bluetooth-5-4/" target="_blank" rel="noopener">Espressif unveils the ESP32-S31, a dual-core RISC-V SoC with Wi-Fi 6, Bluetooth 5.4</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Adafruit</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-07T07:00:00+00:00">2026-04-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://blog.adafruit.com/2026/04/06/upcoming-esp32-s31-dual-core-risc-v-mcu-offers-gigabit-ethernet-wifi-bluetooth-and-802-15-4-connectivity/" target="_blank" rel="noopener">Upcoming ESP32-S31 dual-core RISC-V MCU offers Gigabit Ethernet, WiFi, Bluetooth, and 802.15.4 connectivity</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Adafruit</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-06T07:00:00+00:00">2026-04-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/wi-fi-7-mlo-multi-link-operation-explained/" target="_blank" rel="noopener">Wi-Fi 7 Multi-Link Operation 101: eMLRS MLO vs. STR MLO and the Bandwidth Truth</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-06T07:00:00+00:00">2026-04-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">u-blox</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/u-bloxs-new-wifi6e-module-steps-up-when-airwaves-get-crowded/" target="_blank" rel="noopener">U-blox’s New Wi-Fi 6E Module Steps Up When the Airwaves Get Crowded</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">All About Circuits</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-06T07:00:00+00:00">2026-04-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.phoronix.com/news/Linux-7.0-rc7-Released" target="_blank" rel="noopener">Linux 7.0-rc7 Released With Improved Docs For AI Agents, WiFi Driver Performance Fix</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Phoronix</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-05T07:00:00+00:00">2026-04-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.electronicsmedia.info/2026/04/04/esp32-s31-risc-v-soc/" target="_blank" rel="noopener">Espressif Unveils ESP32-S31: A Dual-Core RISC-V SoC with Wi-Fi 6, Bluetooth 5.4, and Advanced HMI Capabilities</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Electronics Media</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-04T07:00:00+00:00">2026-04-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.tomshardware.com/networking/routers/researchers-build-wi-fi-chip-that-can-operate-inside-a-nuclear-reactor-receiver-uses-special-materials-and-design-to-withstand-high-doses-of-radiation-for-at-least-six-months" target="_blank" rel="noopener">Researchers build Wi-Fi chip that can operate inside a nuclear reactor — receiver uses special materials and design to withstand high doses of radiation for at least six months</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Tom&#39;s Hardware</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-03T07:00:00+00:00">2026-04-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.techpowerup.com/347978/msi-intros-herald-be9400-pcie-wi-fi-7-adapter" target="_blank" rel="noopener">MSI Intros Herald BE9400 PCIe Wi-Fi 7 Adapter</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TechPowerUp</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-03T07:00:00+00:00">2026-04-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.sciencefocus.com/future-technology/your-wi-fi-is-lying-to-you" target="_blank" rel="noopener">The hidden reason new &#39;superfast&#39; Wi-Fi still feels anything but</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">BBC Science Focus Magazine</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-03T07:00:00+00:00">2026-04-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://dongknows.com/ubiquiti-unifi-network-gets-wi-fi-7-str-mlo/" target="_blank" rel="noopener">STR MLO Turns Wi-Fi 7 Solid In Ubiquiti UniFi Network</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Dong Knows Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-02T07:00:00+00:00">2026-04-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://blogs.cisco.com/?p=489033" target="_blank" rel="noopener">Unlocking the Future: Why 6 GHz Wi-Fi is the Foundation for the AI Era</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Cisco Blogs</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-02T07:00:00+00:00">2026-04-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://kotaku.com/wifi-7-router-doesnt-have-to-be-expensive-as-tp-link-be6500-stays-at-an-all-time-low-after-amazons-spring-sale-2000683699" target="_blank" rel="noopener">WiFi 7 Router Doesn’t Have to Be Expensive as TP-Link BE6500 Stays at an All-Time Low After Amazon’s Spring Sale</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Kotaku</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-04-01T07:00:00+00:00">2026-04-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.phoronix.com/news/MediaTek-MT7927-WiFi-Linux" target="_blank" rel="noopener">MediaTek MT7927 &#34;Filogic 380&#34; WiFi Support Coming Together For Linux</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Phoronix</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-31T07:00:00+00:00">2026-03-31</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.mobileeurope.co.uk/4-iot-botnets-generated-attack-traffic-exceeding-30tbps/" target="_blank" rel="noopener">4 IoT botnets generated attack traffic exceeding 30Tbps</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Mobile Europe</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-30T07:00:00+00:00">2026-03-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.thefastmode.com/technology-solutions/47854-wba-confirms-wi-fi-7-multi-link-operation-for-enterprise-grade-reliability" target="_blank" rel="noopener">WBA Confirms Wi-Fi 7 Multi-Link Operation for Enterprise-Grade Reliability</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">The Fast Mode</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-30T01:39:21+00:00">2026-03-30</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.pcguide.com/deals/popular-tp-link-deco-xe75-mesh-system-gets-a-big-price-cut-on-amazon-for-spring-sale/" target="_blank" rel="noopener">Popular TP-Link Deco XE75 mesh system gets a big price cut on Amazon for Spring Sale</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">PC Guide</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-29T07:00:00+00:00">2026-03-29</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Synaptics</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://wifinowglobal.com/news-blog/guest-paper-by-synaptics-architecting-secure-edge-iot-systems-with-wi-fi-7/" target="_blank" rel="noopener">Guest paper by Synaptics: Architecting secure edge IoT systems with Wi-Fi 7 - Wi-Fi NOW Global</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Wi-Fi NOW Global</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-28T07:00:00+00:00">2026-03-28</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/03/27/sparkfun-thing-plus-esp32-c5-board-offers-dual-band-wifi-6-adafruit-feather-pinout-lipo-battery-support/" target="_blank" rel="noopener">SparkFun Thing Plus – ESP32-C5 board offers dual-band WiFi 6, Adafruit Feather pinout, LiPo battery support</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-03-27T07:00:00+00:00">2026-03-27</span>
+      </div>
+    </div>
+  </article>
+  
+</div>
+</main>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · multi-source RSS · for informational use</div></footer>
+<script>
+function timeAgo(iso){
+  const d=new Date(iso); if(isNaN(d)) return '';
+  let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
+  if(s<45) return 'just now';
+  const m=Math.floor(s/60); if(m<60) return m+(m===1?' min ago':' mins ago');
+  const h=Math.floor(m/60); if(h<24){const r=m%60; if(h<6&&r) return h+'h '+r+'m ago'; return h+(h===1?' hour ago':' hours ago');}
+  const day=Math.floor(h/24); if(day<7) return day+(day===1?' day ago':' days ago');
+  if(day<30){const w=Math.floor(day/7); return w+(w===1?' week ago':' weeks ago');}
+  if(day<365){const mo=Math.floor(day/30); return mo+(mo===1?' month ago':' months ago');}
+  const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
+}
+document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+</script>
+</body></html>

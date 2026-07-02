@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+.kpi-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin:18px 0; }
+.kpi { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
+.kpi h3 { margin:0 0 6px; font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
+.kpi .v { font-size:30px; font-weight:800; color:var(--accent); line-height:1; }
+.kpi .delta { font-size:12px; margin-top:4px; font-weight:600; }
+.kpi .delta.up { color:#15803d; }
+.kpi .delta.down { color:#b91c1c; }
+.kpi .delta.flat { color:var(--muted); }
+
+.two-col { display:grid; grid-template-columns:1.4fr 1fr; gap:18px; margin:18px 0; }
+@media (max-width: 900px) { .two-col { grid-template-columns:1fr; } }
+
+.headline-list { list-style:none; padding:0; margin:0; }
+.headline-list li { padding:11px 0; border-bottom:1px solid var(--border); }
+.headline-list li:last-child { border-bottom:none; }
+.headline-list a { font-weight:600; color:var(--text); font-size:14.5px; line-height:1.4; }
+.headline-list a:hover { color:var(--accent); }
+.headline-list .meta { font-size:11.5px; color:var(--muted); margin-top:3px; display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+
+.heatmap { width:100%; border-collapse:collapse; font-size:12.5px; }
+.heatmap th, .heatmap td { padding:6px 8px; text-align:center; border:1px solid var(--border); }
+.heatmap th { background:#f9fafc; font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; }
+.heatmap th.row-h, .heatmap td.row-h { text-align:left; font-weight:600; background:#f9fafc; }
+.heatmap td.cell { font-variant-numeric:tabular-nums; color:#1a1f2c; font-weight:600; }
+.heatmap td.c0 { color:#cbd5e1; font-weight:400; }
+
+.movers { list-style:none; padding:0; margin:0; }
+.movers li { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px dashed var(--border); }
+.movers li:last-child { border-bottom:none; }
+.movers .name { font-weight:600; }
+.movers .bar { flex:1; margin:0 12px; height:6px; background:#e2e8f0; border-radius:3px; overflow:hidden; }
+.movers .bar i { display:block; height:100%; background:linear-gradient(90deg,#7c3aed,#db2777); }
+.movers .n { font-variant-numeric:tabular-nums; color:var(--muted); font-size:12.5px; min-width:30px; text-align:right; }
+
+.radar { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:10px; margin-top:8px; }
+.radar .item { background:#fafbfd; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:6px; padding:10px 12px; font-size:13px; }
+.radar .item .src { display:block; font-size:11px; color:var(--muted); font-weight:600; margin-bottom:3px; text-transform:uppercase; letter-spacing:.04em; }
+
+.jump-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-top:14px; }
+.jump-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px; transition:all .15s; display:block; color:inherit; }
+.jump-card:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.06); text-decoration:none; }
+.jump-card h3 { margin:0 0 4px; font-size:15px; color:var(--accent); }
+.jump-card p { margin:0; font-size:12.5px; color:var(--muted); line-height:1.45; }
+</style>
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="active">Overview</a>
+    <div class="nav-dd">
+      <a class="nav-dd-trigger " href="news.html">News <span class="dd-caret">&#9662;</span></a>
+      <div class="nav-dd-menu">
+        <a href="news.html">All News</a>
+        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
+      </div>
+    </div>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-01 19:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="hero">
+  <h1>IoT Wireless Intelligence</h1>
+  <p>Competitive radar for Infineon AIROC across IoT wireless — Wi-Fi, Bluetooth, 802.15.4, Aliro, Thread, Matter. What changed, who's moving, where to look next.</p>
+</section>
+
+<div class="kpi-row">
+  <div class="kpi"><h3>News (last 7d)</h3><div class="v">148</div>
+    <div class="delta up">▲ 33% vs prior 7d</div></div>
+  <div class="kpi"><h3>Competitors tracked</h3><div class="v">21</div>
+    <div class="delta flat">vs Infineon AIROC</div></div>
+  <div class="kpi"><h3>Customers tracked</h3><div class="v">13</div>
+    <div class="delta flat">OEM profiles</div></div>
+  <div class="kpi"><h3>Relationship links</h3><div class="v">123</div>
+    <div class="delta flat">vendor &harr; customer</div></div>
+</div>
+
+<div class="two-col">
+  <section class="section">
+    <h2>What's new this week</h2>
+    <p class="muted">Top headlines from the last 7 days, ranked by recency &times; signal.</p>
+    
+    <ul class="headline-list">
+      
+      <li>
+        <a href="https://www.androidauthority.com/new-wireless-earbuds-wi-fi-not-qualcomm-xpan-3683275/" target="_blank" rel="noopener">These new wireless earbuds also work over Wi-Fi, but without Qualcomm&#39;s help</a>
+        <div class="meta">
+          <span class="source">Android Authority</span>
+          <span>· Jul 01</span>
+          <span class="chip chip-tech">Wi-Fi</span>
+          <span class="chip chip-vendor">Qualcomm</span>
+          <span class="chip chip-cust">Xiaomi</span>
+        </div>
+      </li>
+      
+      <li>
+        <a href="https://www.tomshardware.com/3d-printing/maker-kicks-off-oomwoo-an-open-source-robot-vacuum-you-can-3d-print-and-build-yourself" target="_blank" rel="noopener">Oomwoo is a new open-source robot vacuum you can 3D print yourself, sidesteps cloud security risks by running fully offline — project combines Raspberry Pi, 2D LiDAR, and a 3D-printed chassis</a>
+        <div class="meta">
+          <span class="source">Tom&#39;s Hardware</span>
+          <span>· Jun 30</span>
+          
+          <span class="chip chip-vendor">Espressif</span>
+          <span class="chip chip-cust">Google</span>
+        </div>
+      </li>
+      
+      <li>
+        <a href="https://appleinsider.com/articles/26/06/29/how-thread-is-fixing-smart-home-networks-on-smart-home-insider" target="_blank" rel="noopener">How Thread is fixing smart home networks on Smart Home Insider</a>
+        <div class="meta">
+          <span class="source">AppleInsider</span>
+          <span>· Jun 29</span>
+          <span class="chip chip-tech">Thread</span>
+          <span class="chip chip-vendor">Silicon Labs</span>
+          <span class="chip chip-cust">Apple</span>
+        </div>
+      </li>
+      
+      <li>
+        <a href="https://www.cnet.com/tech/computing/microsoft-surface-laptop-for-business-8th-edition-review/" target="_blank" rel="noopener">Microsoft Surface Laptop for Business (8th Edition) Review: Effective Privacy Screen, Expensive Pricing Scheme</a>
+        <div class="meta">
+          <span class="source">cnet.com</span>
+          <span>· Jul 01</span>
+          
+          <span class="chip chip-vendor">Qualcomm</span>
+          <span class="chip chip-cust">Microsoft</span>
+        </div>
+      </li>
+      
+      <li>
+        <a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a>
+        <div class="meta">
+          <span class="source">CNX Software</span>
+          <span>· Jun 30</span>
+          <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
+          <span class="chip chip-vendor">Microchip</span>
+          <span class="chip chip-cust">Amazon</span>
+        </div>
+      </li>
+      
+      <li>
+        <a href="https://www.cnet.com/deals/july-4-early-deals-under-50-2026-07-01/" target="_blank" rel="noopener">Best Fourth of July Deals Under $50 on Ninja, Anker and Samsung</a>
+        <div class="meta">
+          <span class="source">cnet.com</span>
+          <span>· Jul 02</span>
+          
+          
+          <span class="chip chip-cust">Samsung</span>
+        </div>
+      </li>
+      
+    </ul>
+    
+    <p style="margin-top:12px;"><a href="news.html">Browse all 1000 articles →</a></p>
+  </section>
+
+  <section class="section">
+    <h2>Top moving customers (7d)</h2>
+    <p class="muted">OEMs with the most news activity right now.</p>
+    
+    <ul class="movers">
+      
+      <li>
+        <span class="name">Amazon</span>
+        <span class="bar"><i style="width:34%"></i></span>
+        <span class="n">16</span>
+      </li>
+      
+      <li>
+        <span class="name">Google</span>
+        <span class="bar"><i style="width:21%"></i></span>
+        <span class="n">10</span>
+      </li>
+      
+      <li>
+        <span class="name">Meta</span>
+        <span class="bar"><i style="width:0%"></i></span>
+        <span class="n">0</span>
+      </li>
+      
+      <li>
+        <span class="name">Arlo</span>
+        <span class="bar"><i style="width:0%"></i></span>
+        <span class="n">0</span>
+      </li>
+      
+      <li>
+        <span class="name">Motorola</span>
+        <span class="bar"><i style="width:4%"></i></span>
+        <span class="n">2</span>
+      </li>
+      
+      <li>
+        <span class="name">BMW</span>
+        <span class="bar"><i style="width:0%"></i></span>
+        <span class="n">0</span>
+      </li>
+      
+      <li>
+        <span class="name">HKMC</span>
+        <span class="bar"><i style="width:0%"></i></span>
+        <span class="n">0</span>
+      </li>
+      
+      <li>
+        <span class="name">Apple</span>
+        <span class="bar"><i style="width:100%"></i></span>
+        <span class="n">47</span>
+      </li>
+      
+    </ul>
+    
+    <p style="margin-top:12px;"><a href="customers.html">All customer profiles →</a></p>
+  </section>
+</div>
+
+<section class="section">
+  <h2>Where do you want to go?</h2>
+  <div class="jump-row">
+    <a class="jump-card" href="news.html"><h3>News →</h3><p>All recent articles by technology, vendor, customer and application.</p></a>
+    <a class="jump-card" href="customers.html"><h3>Customers →</h3><p>OEM profiles — recent products and forward roadmap signals.</p></a>
+    <a class="jump-card" href="competitors.html"><h3>Competitors →</h3><p>Side-by-side comparison vs Infineon AIROC — SKUs, strengths, weaknesses.</p></a>
+    <a class="jump-card" href="relationships.html"><h3>Relationships →</h3><p>Sankey map of which vendor sells to which customer.</p></a>
+  </div>
+</section>
+
+</main>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-01 19:59 PDT</div></footer>
+</body></html>
