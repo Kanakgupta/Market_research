@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T21:33:09Z",
+  "generated_at": "2026-07-03T11:35:41Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -143,6 +143,11 @@
           "url": "https://www.newelectronics.co.uk/content/product-launches/nordic-launches-nrf54l15-tag-to-support-bluetooth-channel-sounding-development"
         },
         {
+          "title": "Nordic Semiconductor on Aliro",
+          "date": "Jun 2026",
+          "url": "https://csa-iot.org/newsroom/nordic-semiconductor-on-aliro/"
+        },
+        {
           "title": "Bluetooth SIG Blog: Shorter Connection Intervals for Next-Gen Wireless Innovations",
           "date": "May 2026",
           "url": "https://www.bluetooth.com/blog/how-bluetooth-shorter-connection-intervals-will-impact-the-next-generation-of-wireless-innovations/"
@@ -171,11 +176,6 @@
           "title": "Nordic Semiconductor Appoints Jo Uthus as EVP of Marketing and Developer Experience",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Nordic+Semiconductor+Appoints+Jo+Uthus+as+EVP+of+Marketing+and+Developer+Experience+Nordic"
-        },
-        {
-          "title": "Nordic Semiconductor expands nRF54L series with entry-level Bluetooth LE SoCs",
-          "date": "Mar 2026",
-          "url": "https://www.google.com/search?q=Nordic+Semiconductor+expands+nRF54L+series+with+entry-level+Bluetooth+LE+SoCs+Nordic"
         }
       ],
       "events": [
@@ -680,6 +680,21 @@
       ],
       "press_releases": [
         {
+          "title": "iQOO Z11i debuts with a 6,500mAh battery, Snapdragon 4 Gen 2 SoC",
+          "date": "Jul 2026",
+          "url": "https://www.gsmarena.com/iqoo_z11i_debuts_with_a_6500mah_battery_snapdragon_4_gen_2_soc-news-73557.php"
+        },
+        {
+          "title": "Vivo launches mid-range tablet with Snapdragon 8-series chipset and 144Hz display",
+          "date": "Jul 2026",
+          "url": "https://www.notebookcheck.net/Vivo-launches-mid-range-tablet-with-Snapdragon-8-series-chipset-and-144Hz-display.1332535.0.html"
+        },
+        {
+          "title": "Motorola Moto Pad 70 Pro unveiled: Snapdragon 8s Gen 4 SoC, 144Hz screen, and 10,200 mAh battery",
+          "date": "Jul 2026",
+          "url": "https://www.gsmarena.com/motorola_moto_pad_70_pro_features_price_sale_date-news-73478.php"
+        },
+        {
           "title": "Qualcomm Takes Spatial Computing into the AI Era with Snapdragon Reality Elite",
           "date": "Jun 2026",
           "url": "https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon"
@@ -713,21 +728,6 @@
           "title": "Qualcomm Unveils Data Center Roadmap with New Qualcomm Dragonfly Portfolio",
           "date": "Jun 2026",
           "url": "https://www.qualcomm.com/news/releases/2026/06/qualcomm-unveils-comprehensive-data-center-roadmap-for-the-agent"
-        },
-        {
-          "title": "Qualcomm and Meta Announce Strategic Multi-Generation Agreement on Data Center CPUs",
-          "date": "Jun 2026",
-          "url": "https://www.qualcomm.com/news/releases/2026/06/qualcomm-and-meta-announce-strategic-multi-generation-agreement-"
-        },
-        {
-          "title": "Qualcomm to Acquire Modular",
-          "date": "Jun 2026",
-          "url": "https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-to-Acquire-Modular/default.aspx"
-        },
-        {
-          "title": "Qualcomm Takes Spatial Computing into AI Era with Snapdragon Reality Elite",
-          "date": "Jun 2026",
-          "url": "https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon"
         }
       ],
       "events": [
@@ -1798,6 +1798,11 @@
           "url": "https://www.i-programmer.info/news/91-hardware/18909-coreboard-1-makes-the-new-esp32-s31-top-of-the-s-family.html"
         },
         {
+          "title": "Espressif Systems Affirms Commitment to Matter Smart Home Standard",
+          "date": "Jun 2026",
+          "url": "https://csa-iot.org/newsroom/espressif-systems-on-matter/"
+        },
+        {
           "title": "Espressif Unveils CoreBoard and Korvo Development Kits for ESP32-S31",
           "date": "May 2026",
           "url": "https://www.hackster.io/news/espressif-unveils-the-coreboard-and-the-korvo-two-new-dev-boards-for-its-dual-core-esp32-s31-ebe3358f826c"
@@ -1809,11 +1814,6 @@
         },
         {
           "title": "Espressif Releases ESP-Claw Framework for Local AI Agents, Showcases Integration with Anthropic's Claude",
-          "date": "May 2026",
-          "url": "https://www.espressif.com/en/news/Claude_ESP32_Code"
-        },
-        {
-          "title": "Anthropic showcases Espressif's ESP32-S3-based Hardware for Claude Desktop Integration",
           "date": "May 2026",
           "url": "https://www.espressif.com/en/news/Claude_ESP32_Code"
         }
@@ -2594,6 +2594,11 @@
           "url": "https://www.cnx-software.com/2026/06/10/synaptics-astra-srw1500-cortex-m52-edge-ai-mcu-features-ethos-u55-npu-wi-fi-6-7-bluetooth-6-0-802-15-4-connectivity/"
         },
         {
+          "title": "Onsemi to Acquire Synaptics in $7 Billion All-Stock Deal",
+          "date": "Jun 2026",
+          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
+        },
+        {
           "title": "Synaptics to Showcase Real-World Edge AI Use Cases at COMPUTEX 2026",
           "date": "May 2026",
           "url": "https://www.synaptics.com/company/news/synaptics-showcase-real-world-edge-ai-use-cases-at-computex-2026"
@@ -2617,11 +2622,6 @@
           "title": "Coralboard Features Synaptics Astra SL2619 Edge AI SoC",
           "date": "May 2026",
           "url": "https://www.cnx-software.com/2026/05/20/coralboard-features-synaptics-astra-sl2619-edge-ai-soc-supports-google-gemma-3-inference/"
-        },
-        {
-          "title": "Synaptics to Showcase Edge AI Use Cases at COMPUTEX 2026",
-          "date": "May 2026",
-          "url": "https://www.synaptics.com/company/news/synaptics-showcase-real-world-edge-ai-use-cases-at-computex-2026"
         }
       ],
       "events": [
@@ -3664,16 +3664,21 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 7,
-    "Espressif": 5,
-    "Synaptics": 4,
-    "NXP": 2,
+    "Qualcomm": 19,
+    "Espressif": 4,
+    "Synaptics": 3,
+    "Silicon Labs": 3,
+    "Infineon": 2,
+    "Broadcom": 2,
+    "u-blox": 2,
+    "STMicro": 1,
     "Skyworks": 1,
+    "Apple": 1,
     "Marvell": 1,
-    "u-blox": 1,
+    "Microchip": 1,
     "Murata": 1,
     "Nordic": 1,
-    "Infineon": 1,
+    "NXP": 1,
     "MediaTek": 1
   },
   "standards_in_flight": [
@@ -3735,6 +3740,256 @@
       "url": "https://www.firaconsortium.org/"
     }
   ],
-  "github_stack_activity": [],
+  "github_stack_activity": [
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3732,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15798,
+      "pushed_at": "2026-07-03T10:36:14Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1609,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        },
+        {
+          "tag": "v5.2.7",
+          "name": "ESP-IDF Release v5.2.7",
+          "published_at": "2026-05-19T11:17:54Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
+        }
+      ],
+      "stars": 18467,
+      "pushed_at": "2026-07-03T06:17:21Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 238180,
+      "pushed_at": "2026-07-03T07:34:53Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2691,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        },
+        {
+          "tag": "v1.5.0.0",
+          "name": "v1.5.0.0 Release",
+          "published_at": "2025-11-17T22:07:57Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+        }
+      ],
+      "stars": 8812,
+      "pushed_at": "2026-07-03T08:29:05Z"
+    },
+    {
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 57,
+      "issues_open": 102,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "5.86",
+          "name": "5.86",
+          "published_at": "2026-02-09T21:27:33Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
+        },
+        {
+          "tag": "5.85",
+          "name": "5.85",
+          "published_at": "2025-11-26T16:00:07Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
+        },
+        {
+          "tag": "5.84",
+          "name": "5.84",
+          "published_at": "2025-11-20T15:58:53Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.84"
+        }
+      ],
+      "stars": 1088,
+      "pushed_at": "2026-07-03T07:53:24Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 55,
+      "issues_open": 171,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.07.0",
+          "name": "OpenThread v2026.07.0",
+          "published_at": "2026-07-01T00:58:53Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+        },
+        {
+          "tag": "v2026.06.0",
+          "name": "OpenThread v2026.06.0",
+          "published_at": "2026-06-01T01:01:04Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+        },
+        {
+          "tag": "thread-reference-20250612",
+          "name": "Thread Reference 2025-06-12",
+          "published_at": "2025-09-16T18:13:38Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
+        }
+      ],
+      "stars": 3975,
+      "pushed_at": "2026-07-01T00:58:52Z"
+    },
+    {
+      "name": "Zigbee2MQTT",
+      "owner": "Koenkk",
+      "repo": "zigbee2mqtt",
+      "label": "Zigbee gateway",
+      "tech": [
+        "ieee15_4"
+      ],
+      "commits_30d": 49,
+      "issues_open": 473,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "2.12.1",
+          "name": "2.12.1",
+          "published_at": "2026-07-01T06:04:12Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
+        },
+        {
+          "tag": "2.12.0",
+          "name": "2.12.0",
+          "published_at": "2026-06-09T19:08:29Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
+        },
+        {
+          "tag": "2.11.0",
+          "name": "2.11.0",
+          "published_at": "2026-06-01T18:41:53Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
+        }
+      ],
+      "stars": 15268,
+      "pushed_at": "2026-07-03T05:32:24Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 14,
+      "issues_open": 260,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 875,
+      "pushed_at": "2026-06-26T07:55:53Z"
+    },
+    {
+      "name": "hostap",
+      "owner": "ihewitt",
+      "repo": "hostap",
+      "label": "wpa_supplicant / hostapd Wi-Fi",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    }
+  ],
   "recent_competitor_patents": []
 }
