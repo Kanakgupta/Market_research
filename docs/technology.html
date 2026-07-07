@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Technology Intel · IoT Wireless Intel</title>
+<title>Wireless Technology · IoT Wireless Intel</title>
 <style>
 :root { color-scheme: light;
   --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
@@ -85,16 +85,100 @@ a:hover { text-decoration:underline; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
 
-.tech-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:14px; margin-top:16px; }
-.tech-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
-.tech-card h2 { margin:0 0 6px; font-size:18px; color:#0f172a; }
-.tech-meta { color:var(--muted); font-size:12.5px; margin:0 0 8px; }
-.tech-stats { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 10px; }
-.tech-list { margin:6px 0 0; padding-left:18px; }
-.tech-list li { margin:5px 0; }
-.tech-list a { color:var(--text); font-weight:600; }
-.tech-list a:hover { color:var(--accent); }
-.subhead { margin:10px 0 4px; font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; margin:16px 0 0; border-bottom:1px solid var(--border); padding-bottom:0; }
+.tech-tab { cursor:pointer; border:1px solid var(--border); border-bottom:none; background:#f1f5f9; color:#334155; font-weight:700; font-size:13.5px; padding:9px 18px; border-radius:10px 10px 0 0; }
+.tech-tab:hover { background:#e2e8f0; }
+.tech-tab.active { background:var(--card); color:var(--accent); border-color:var(--border); position:relative; top:1px; }
+.tech-panel { display:none; background:var(--card); border:1px solid var(--border); border-radius:0 10px 10px 10px; padding:22px 24px; margin-top:-1px; }
+.tech-panel.active { display:block; }
+.tech-panel .tagline { color:var(--muted); font-size:14px; margin:2px 0 14px; }
+.spec-snapshot { display:flex; gap:10px; flex-wrap:wrap; align-items:center; background:#f9fafc; border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin-bottom:18px; font-size:12.5px; }
+.spec-snapshot b { color:#0f172a; }
+.tech-h2 { font-size:16.5px; margin:26px 0 4px; padding-top:14px; border-top:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.tech-h2:first-of-type { border-top:none; padding-top:0; margin-top:6px; }
+.tech-overview { font-size:14px; line-height:1.65; color:#1f2937; margin:6px 0 0; }
+
+/* Architecture stack diagram */
+.stack { display:flex; flex-direction:column; gap:3px; margin-top:12px; }
+.stack-layer { display:flex; gap:12px; align-items:flex-start; background:#fafbfd; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:10px 14px; text-decoration:none; transition:transform .12s ease, box-shadow .12s ease; }
+.stack-layer:hover { transform:translateY(-1px); box-shadow:0 8px 20px rgba(15,23,42,.08); }
+.stack-layer .tag { flex:none; width:56px; text-align:center; font-size:10.5px; font-weight:800; color:#fff; border-radius:5px; padding:4px 2px; letter-spacing:.03em; }
+.stack-layer .body strong { display:block; font-size:13.5px; color:#0f172a; margin-bottom:2px; }
+.stack-layer .body span { font-size:12.5px; color:#4b5563; line-height:1.5; }
+.stack-arrow { text-align:center; color:var(--muted); font-size:11px; margin:-1px 0; }
+.stack-layer:nth-child(4n+1) { background:linear-gradient(90deg,#e0f2fe,#f8fafc); border-left-color:#0284c7; }
+.stack-layer:nth-child(4n+1) .tag { background:#0284c7; }
+.stack-layer:nth-child(4n+2) { background:linear-gradient(90deg,#ecfccb,#f8fafc); border-left-color:#65a30d; }
+.stack-layer:nth-child(4n+2) .tag { background:#65a30d; }
+.stack-layer:nth-child(4n+3) { background:linear-gradient(90deg,#ffe4e6,#f8fafc); border-left-color:#e11d48; }
+.stack-layer:nth-child(4n+3) .tag { background:#e11d48; }
+.stack-layer:nth-child(4n+4) { background:linear-gradient(90deg,#ede9fe,#f8fafc); border-left-color:#7c3aed; }
+.stack-layer:nth-child(4n+4) .tag { background:#7c3aed; }
+
+.layer-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:10px; margin-top:12px; }
+.layer-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px; scroll-margin-top:84px; }
+.layer-card h3 { margin:0 0 6px; font-size:13.5px; color:#0f172a; }
+.layer-card p { margin:0; font-size:12.5px; color:#4b5563; line-height:1.6; }
+.layer-card .chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.layer-card .chips span { font-size:11px; font-weight:700; color:#334155; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:999px; padding:2px 8px; }
+
+.deep-grid { display:grid; grid-template-columns:1fr; gap:10px; margin-top:12px; }
+.deep-card { background:#fffdf5; border:1px solid #f4e7c4; border-radius:10px; padding:12px 14px; }
+.deep-card h3 { margin:0 0 5px; font-size:13.5px; color:#7c2d12; }
+.deep-card p { margin:0; font-size:12.5px; color:#4b5563; line-height:1.6; }
+
+/* Core concepts glossary */
+.concept-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:10px; margin-top:12px; }
+.concept-card { background:#fafbfd; border:1px solid var(--border); border-radius:8px; padding:10px 12px; }
+.concept-card .term { font-weight:700; font-size:13px; color:#0f172a; margin-bottom:3px; }
+.concept-card .def { font-size:12.5px; color:#4b5563; line-height:1.5; }
+
+/* How it works steps */
+.steps { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.step { display:flex; gap:12px; background:#fafbfd; border:1px solid var(--border); border-radius:8px; padding:10px 14px; }
+.step .num { flex:none; width:26px; height:26px; border-radius:50%; background:#eef2ff; color:#3730a3; font-weight:800; font-size:12px; display:flex; align-items:center; justify-content:center; }
+.step .st-body strong { display:block; font-size:13px; color:#0f172a; }
+.step .st-body span { font-size:12.5px; color:#4b5563; line-height:1.5; }
+
+/* Developer view cards */
+.dev-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(270px, 1fr)); gap:10px; margin-top:12px; }
+.dev-card { background:#fdf4ff; border:1px solid #f3e8ff; border-radius:8px; padding:10px 12px; }
+.dev-card .dt { font-weight:700; font-size:13px; color:#6b21a8; margin-bottom:3px; }
+.dev-card .dd { font-size:12.5px; color:#4b5563; line-height:1.5; }
+
+.usecase-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.usecase-chips span { background:#dcfce7; color:#166534; font-size:12px; font-weight:600; padding:5px 12px; border-radius:999px; }
+
+.resource-list { margin:12px 0 0; padding:0; list-style:none; }
+.resource-list li { padding:6px 0; border-bottom:1px dashed var(--border); font-size:13px; }
+.resource-list li:last-child { border-bottom:none; }
+
+/* Vibrant hero + tabs */
+.tech-hero { background:linear-gradient(120deg,#4f46e5,#0ea5e9 55%,#06b6d4); color:#fff; border-radius:16px; padding:26px 28px; margin:14px 0 6px; box-shadow:0 18px 40px rgba(2,132,199,.18); }
+.tech-hero h1 { margin:0 0 6px; font-size:27px; letter-spacing:-.01em; color:#fff; }
+.tech-hero p { margin:0; font-size:14px; line-height:1.6; color:#eaf2ff; max-width:840px; }
+.tech-tab.active { background:linear-gradient(180deg,#ffffff,#eef2ff); color:var(--accent); }
+
+/* Architecture block diagram (SAP / interface style) */
+.arch { margin-top:12px; }
+.arch-planes { display:flex; justify-content:space-between; font-size:11px; font-weight:800; letter-spacing:.03em; margin:2px 2px 8px; }
+.arch-planes .pl.mgmt { color:#b45309; }
+.arch-planes .pl.data { color:#1d4ed8; }
+.arch-block { border-radius:12px; padding:14px 16px; color:#fff; box-shadow:0 10px 24px rgba(15,23,42,.14); position:relative; overflow:hidden; }
+.arch-block .ab-name { font-size:15px; font-weight:800; letter-spacing:.01em; }
+.arch-block .ab-sub { font-size:12px; margin-top:3px; opacity:.96; line-height:1.5; }
+.arch-block.k-upper  { background:linear-gradient(120deg,#6d28d9,#8b5cf6); }
+.arch-block.k-nwk    { background:linear-gradient(120deg,#0f766e,#14b8a6); }
+.arch-block.k-mac    { background:linear-gradient(120deg,#1d4ed8,#3b82f6); }
+.arch-block.k-phy    { background:linear-gradient(120deg,#047857,#10b981); }
+.arch-block.k-medium { background:linear-gradient(120deg,#334155,#64748b); }
+.arch-conn { display:flex; align-items:center; justify-content:center; gap:34px; padding:9px 0; position:relative; }
+.arch-conn::before { content:""; position:absolute; top:0; bottom:0; left:50%; width:2px; transform:translateX(-50%); background:repeating-linear-gradient(#cbd5e1 0 5px, transparent 5px 10px); }
+.sap { position:relative; z-index:1; font-size:11px; font-weight:800; padding:4px 11px; border-radius:999px; border:1px solid transparent; background:#fff; box-shadow:0 2px 7px rgba(15,23,42,.12); }
+.sap.mgmt { color:#b45309; border-color:#fde68a; background:#fffbeb; }
+.sap.data { color:#1d4ed8; border-color:#bfdbfe; background:#eff6ff; }
+.sap.iface { color:#0f172a; border-color:#e2e8f0; background:#f8fafc; }
+.arch-cap { font-size:12px; color:#475569; line-height:1.6; margin:14px 2px 0; padding:10px 13px; background:#f8fafc; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; }
 </style>
 </head><body>
 
@@ -113,9 +197,8 @@ a:hover { text-decoration:underline; }
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="active">Technology</a>
-    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-04 04:38 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 14:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -127,279 +210,1211 @@ a:hover { text-decoration:underline; }
 </script>
 
 <main class="wrap content">
-<section class="hero">
-  <h1>Technology Intelligence</h1>
-  <p>Details, latest updates, what's new today, and recent evidence across BT, 15.4, Wi-Fi, Matter, Zigbee, Aliro, and Thread.</p>
+<section class="tech-hero">
+  <h1>Wireless Technology — Learn the Stacks</h1>
+  <p>A hands-on tutorial for each protocol we track: a colorful architecture block diagram with the real layer interfaces, clickable layers that jump to deep-dive explanations, core concepts, how the protocol actually works step by step, and what an application developer builds against. Pick a technology below.</p>
 </section>
 
-<div class="tech-grid">
-
-  <section class="tech-card">
-    <h2>BT</h2>
-    <p class="tech-meta">Bluetooth device/chip updates including LE Audio, Channel Sounding, and ecosystem announcements.</p>
-    
-      <p class="tech-meta"><strong>Current:</strong> Bluetooth 6.1 (adopted) · <strong>Next:</strong> Bluetooth 6.2 (in progress)</p>
-    
-    <div class="tech-stats">
-      <span class="pill">27 total updates</span>
-      <span class="pill">1 new today</span>
-      <a class="pill" href="bluetooth.html">Open full BT feed →</a>
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://www.zdnet.com/article/apple-airtag-2-july-4-deal-2026/" target="_blank" rel="noopener">You can get 4 of the newest AirTags for just $89 right now - here&#39;s why I recommend them</a> <span class="tech-meta">(ZDNET)</span></li>
-        
-      </ul>
-    
-
-    <div class="subhead">Latest Updates</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://www.zdnet.com/article/apple-airtag-2-july-4-deal-2026/" target="_blank" rel="noopener">You can get 4 of the newest AirTags for just $89 right now - here&#39;s why I recommend them</a> <span class="tech-meta">(ZDNET · Jul 04)</span></li>
-        
-          <li><a href="https://www.trustedreviews.com/news/sonys-headphones-just-got-a-surprise-update-thatll-delight-gamers" target="_blank" rel="noopener">Sony’s best headphones just got a surprise update that’ll delight gamers</a> <span class="tech-meta">(Trusted Reviews · Jul 03)</span></li>
-        
-          <li><a href="https://www.theverge.com/tech/961366/sony-anc-headphones-wh-1000xm6-the-collextion-update-bluetooth-low-latency" target="_blank" rel="noopener">Sony’s flagship ANC headphones now support low-latency Bluetooth with a free update.</a> <span class="tech-meta">(The Verge · Jul 03)</span></li>
-        
-          <li><a href="https://korben.info/en/sony-wh-1000xm6-game-mode-low-latency.html" target="_blank" rel="noopener">Sony WH-1000XM6 - A game mode to kill latency</a> <span class="tech-meta">(Korben · Jul 03)</span></li>
-        
-          <li><a href="https://www.whathifi.com/headphones/wireless-headphones/sonys-award-winning-headphones-just-got-a-surprise-new-feature" target="_blank" rel="noopener">Sony’s Award-winning headphones just got a surprise new feature - What Hi-Fi?</a> <span class="tech-meta">(What Hi-Fi? · Jul 03)</span></li>
-        
-          <li><a href="https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/" target="_blank" rel="noopener">ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD</a> <span class="tech-meta">(CNX Software · Jul 03)</span></li>
-        
-          <li><a href="https://www.soundguys.com/sony-1000x-the-collexion-gmap-support-update-159438/" target="_blank" rel="noopener">Sony&#39;s 1000X The Collexion update follows the WH-1000XM6 with a gaming boost</a> <span class="tech-meta">(SoundGuys · Jul 03)</span></li>
-        
-          <li><a href="https://techmymoney.com/2026/07/02/moto-tag-2-android-tracker-600-day-battery/" target="_blank" rel="noopener">Moto Tag 2 Gives Android a 600-Day AirTag Rival</a> <span class="tech-meta">(Tech My Money · Jul 02)</span></li>
-        
-      </ul>
-    
-  </section>
-
-  <section class="tech-card">
-    <h2>15.4</h2>
-    <p class="tech-meta">IEEE 802.15.4 radio stack updates, multiprotocol SoCs, and integration signals.</p>
-    
-      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
-    
-    <div class="tech-stats">
-      <span class="pill">4 total updates</span>
-      <span class="pill">0 new today</span>
-      <a class="pill" href="ieee15_4.html">Open full 15.4 feed →</a>
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    
-      <p class="tech-meta">No new items today.</p>
-    
-
-    <div class="subhead">Latest Updates</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://csa-iot.org/newsroom/legrand-on-zigbee-4-0/" target="_blank" rel="noopener">Legrand on Zigbee 4.0</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jul 02)</span></li>
-        
-          <li><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a> <span class="tech-meta">(CNX Software · Jun 30)</span></li>
-        
-          <li><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a> <span class="tech-meta">(ZDNET · Jun 29)</span></li>
-        
-          <li><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a> <span class="tech-meta">(CNX Software · Jun 29)</span></li>
-        
-      </ul>
-    
-  </section>
-
-  <section class="tech-card">
-    <h2>Wi-Fi</h2>
-    <p class="tech-meta">Wi-Fi chipset/platform launches and connectivity trends relevant to IoT and edge devices.</p>
-    
-      <p class="tech-meta"><strong>Current:</strong> Wi-Fi 7 (802.11be) certified Q1 2024 · <strong>Next:</strong> Wi-Fi 8 (802.11bn) draft, target 2028</p>
-    
-    <div class="tech-stats">
-      <span class="pill">13 total updates</span>
-      <span class="pill">1 new today</span>
-      <a class="pill" href="wifi.html">Open full Wi-Fi feed →</a>
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-inc-focuses-on-diversified-chip-demand-as-investors-weigh/69686917" target="_blank" rel="noopener">Broadcom Inc. focuses on diversified chip demand as investors weigh long-term growth - Ad-hoc-news.de</a> <span class="tech-meta">(Ad-hoc-news.de)</span></li>
-        
-      </ul>
-    
-
-    <div class="subhead">Latest Updates</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-inc-focuses-on-diversified-chip-demand-as-investors-weigh/69686917" target="_blank" rel="noopener">Broadcom Inc. focuses on diversified chip demand as investors weigh long-term growth - Ad-hoc-news.de</a> <span class="tech-meta">(Ad-hoc-news.de · Jul 04)</span></li>
-        
-          <li><a href="https://mshale.com/0af5b652/f05bf756-TI2-v-83Ig" target="_blank" rel="noopener">Apple TV 4K 2025: A17 Chip, Wi‑Fi 7 &amp; Liquid Glass! Julio Iglesias (4eFnLTeEhL)</a> <span class="tech-meta">(Mshale · Jul 03)</span></li>
-        
-          <li><a href="https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/" target="_blank" rel="noopener">ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD</a> <span class="tech-meta">(CNX Software · Jul 03)</span></li>
-        
-          <li><a href="https://www.dagangnews.com/article/english/huawei-announces-wi-fi-7-patent-licensing-rates-reaffirms-commitment-transparent-and-reasonable-licensing-71094" target="_blank" rel="noopener">Huawei Announces Wi-Fi 7 Patent Licensing Rates, Reaffirms Commitment to Transparent and Reasonable Licensing</a> <span class="tech-meta">(DagangNews · Jul 03)</span></li>
-        
-          <li><a href="https://www.androidauthority.com/pixel-phones-connectivity-issues-july-2026-3683409/" target="_blank" rel="noopener">Surprise: Pixel phones are once again having Wi-Fi problems</a> <span class="tech-meta">(Android Authority · Jul 01)</span></li>
-        
-          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/hpe-aruba-ap-635-from-hewlett-packard-enterprise-wi-fi-6e-access-point/69664347" target="_blank" rel="noopener">HPE Aruba AP-635 from Hewlett Packard Enterprise - Wi-Fi 6E access point built for dense US campuses - Ad-hoc-news.de</a> <span class="tech-meta">(Ad-hoc-news.de · Jul 01)</span></li>
-        
-          <li><a href="https://zamin.uz/en/technology/209960-asus-introduces-new-rog-octopus-7-router-with-wi-fi-7-standard.html" target="_blank" rel="noopener">Asus Introduces New ROG Octopus 7 Router with Wi-Fi 7 Standard</a> <span class="tech-meta">(Zamin.uz · Jun 30)</span></li>
-        
-          <li><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a48effd81cb421e9b15f6cd56b81c17&amp;url=https%3a%2f%2fwww.elektormagazine.com%2fnews%2fespressif-esp32-s3-wi-fi-ble-socs&amp;c=3559273176736802043&amp;mkt=en-us" target="_blank" rel="noopener">Espressif ESP32-S3 Wi‑Fi + BLE SoCs</a> <span class="tech-meta">(Bing: Espressif ESP32 Wi-Fi · Jun 30)</span></li>
-        
-      </ul>
-    
-  </section>
-
-  <section class="tech-card">
-    <h2>Matter</h2>
-    <p class="tech-meta">Matter certification and device ecosystem changes across smart-home categories.</p>
-    
-      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
-    
-    <div class="tech-stats">
-      <span class="pill">22 total updates</span>
-      <span class="pill">0 new today</span>
-      <a class="pill" href="matter.html">Open full Matter feed →</a>
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    
-      <p class="tech-meta">No new items today.</p>
-    
-
-    <div class="subhead">Latest Updates</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://essentialinstall.com/features/matter-of-opportunity-why-integrators-should-be-paying-attention/" target="_blank" rel="noopener">Matter of Opportunity: Why Integrators Should Be Paying Attention</a> <span class="tech-meta">(Essential Install · Jul 04)</span></li>
-        
-          <li><a href="https://www.inkl.com/news/zemismart-rolls-out-budget-smart-home-gadgets-for-old-appliances-but-cloud-dependency-and-data-rules-shape-what-buyers-really-get" target="_blank" rel="noopener">ZemiSmart Rolls Out Budget Smart Home Gadgets For Old…</a> <span class="tech-meta">(inkl · Jul 03)</span></li>
-        
-          <li><a href="https://www.techtimes.com/articles/319628/20260703/zemismart-releases-matter-ir-blaster-ac-controller-legacy-appliances.htm" target="_blank" rel="noopener">ZemiSmart Releases Matter IR Blaster and AC Controller for Legacy Appliances</a> <span class="tech-meta">(Tech Times · Jul 03)</span></li>
-        
-          <li><a href="https://homekitnews.com/2026/07/03/zemismart-launches-an-ir-blaster-and-ac-controller-both-with-matter-support/" target="_blank" rel="noopener">ZemiSmart Launches an IR Blaster and AC Controller, Both with Matter Support</a> <span class="tech-meta">(Homekit News and Reviews · Jul 03)</span></li>
-        
-          <li><a href="https://9to5toys.com/2026/07/02/anker-eufy-familock-s3-max-matter-smart-lock-280-low/" target="_blank" rel="noopener">Upgrade your door to Anker&#39;s eufy FamiLock S3 Max Matter smart lock for five entry methods + 2K video at its $280 low</a> <span class="tech-meta">(9to5Toys · Jul 02)</span></li>
-        
-          <li><a href="https://csa-iot.org/newsroom/legrand-on-zigbee-4-0/" target="_blank" rel="noopener">Legrand on Zigbee 4.0</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jul 02)</span></li>
-        
-          <li><a href="https://the-gadgeteer.com/2026/07/02/smart-plugs-everyday-problems/" target="_blank" rel="noopener">8 Smart Plugs That Solve Everyday Problems in 2026</a> <span class="tech-meta">(The Gadgeteer · Jul 02)</span></li>
-        
-          <li><a href="https://9to5google.com/2026/07/02/google-stops-selling-nest-x-yale-lock/" target="_blank" rel="noopener">Google has stopped selling the Nest x Yale Lock as it goes all-in on its replacement</a> <span class="tech-meta">(9to5Google · Jul 02)</span></li>
-        
-      </ul>
-    
-  </section>
-
-  <section class="tech-card">
-    <h2>Zigbee</h2>
-    <p class="tech-meta">Zigbee-specific device and module updates tracked from 15.4 ecosystem coverage.</p>
-    
-      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
-    
-    <div class="tech-stats">
-      <span class="pill">4 total updates</span>
-      <span class="pill">0 new today</span>
-      <a class="pill" href="ieee15_4.html">Open full Zigbee feed →</a>
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    
-      <p class="tech-meta">No new items today.</p>
-    
-
-    <div class="subhead">Latest Updates</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://csa-iot.org/newsroom/legrand-on-zigbee-4-0/" target="_blank" rel="noopener">Legrand on Zigbee 4.0</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jul 02)</span></li>
-        
-          <li><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a> <span class="tech-meta">(CNX Software · Jun 30)</span></li>
-        
-          <li><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a> <span class="tech-meta">(ZDNET · Jun 29)</span></li>
-        
-          <li><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a> <span class="tech-meta">(CNX Software · Jun 29)</span></li>
-        
-      </ul>
-    
-  </section>
-
-  <section class="tech-card">
-    <h2>Aliro</h2>
-    <p class="tech-meta">Aliro digital-key ecosystem developments, certification, and access-control rollouts.</p>
-    
-      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
-    
-    <div class="tech-stats">
-      <span class="pill">1 total updates</span>
-      <span class="pill">0 new today</span>
-      <a class="pill" href="aliro.html">Open full Aliro feed →</a>
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    
-      <p class="tech-meta">No new items today.</p>
-    
-
-    <div class="subhead">Latest Updates</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://csa-iot.org/newsroom/nordic-semiconductor-on-aliro/" target="_blank" rel="noopener">Nordic Semiconductor on Aliro</a> <span class="tech-meta">(CSA / Matter (Zigbee) · Jun 29)</span></li>
-        
-      </ul>
-    
-  </section>
-
-  <section class="tech-card">
-    <h2>Thread</h2>
-    <p class="tech-meta">Thread stack releases, border-router ecosystem news, and deployment signals.</p>
-    
-      <p class="tech-meta"><strong>Current:</strong> Thread 1.4 (Apr 2024) · Matter 1.4 (Q4 2024) · Matter 1.5 (in progress) · <strong>Next:</strong> Matter 1.5 (cameras, energy, water valves, robots)</p>
-    
-    <div class="tech-stats">
-      <span class="pill">20 total updates</span>
-      <span class="pill">0 new today</span>
-      <a class="pill" href="thread.html">Open full Thread feed →</a>
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    
-      <p class="tech-meta">No new items today.</p>
-    
-
-    <div class="subhead">Latest Updates</div>
-    
-      <ul class="tech-list">
-        
-          <li><a href="https://www.trendhunter.com/trends/Managed-smart-home-networks" target="_blank" rel="noopener">Managed Smart Home Networks</a> <span class="tech-meta">(Trend Hunter · Jul 04)</span></li>
-        
-          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-strengthens-its-global-threads-business-as-investors-watch/69682488" target="_blank" rel="noopener">Coats Group plc strengthens its global threads business as investors watch long-term demand - Ad-hoc-news.de</a> <span class="tech-meta">(Ad-hoc-news.de · Jul 03)</span></li>
-        
-          <li><a href="https://sports.yahoo.com/articles/chargers-daily-links-friday-open-135000325.html" target="_blank" rel="noopener">Chargers Daily Links: Friday Open Thread</a> <span class="tech-meta">(Yahoo Sports · Jul 03)</span></li>
-        
-          <li><a href="https://cartilagefreecaptain.sbnation.com/general/71853/world-cup-day-22-recap-and-round-of-32-day-6-open-thread" target="_blank" rel="noopener">World Cup: Day 22 recap and Round of 32 Day 6 open thread</a> <span class="tech-meta">(Cartilage Free Captain · Jul 03)</span></li>
-        
-          <li><a href="https://www.urdupoint.com/en/middle-east/alef-group-launches-threads-of-connection-p-2213879.html" target="_blank" rel="noopener">Alef Group Launches &#39;Threads Of Connection&#39; Public Art Initiative</a> <span class="tech-meta">(UrduPoint · Jul 03)</span></li>
-        
-          <li><a href="https://emptywheel.net/2026/07/02/open-thread-how-do-we-hold-a-trillionaire-accountable/" target="_blank" rel="noopener">Open Thread: How Do We Hold a Trillionaire Accountable?</a> <span class="tech-meta">(emptywheel.net · Jul 03)</span></li>
-        
-          <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-highlights-its-global-thread-business-as-investors-assess/69675630" target="_blank" rel="noopener">Coats Group plc highlights its global thread business as investors assess long-term prospects - Ad-hoc-news.de</a> <span class="tech-meta">(Ad-hoc-news.de · Jul 02)</span></li>
-        
-          <li><a href="https://www.bluebirdbanter.com/general/62639/off-day-open-thread" target="_blank" rel="noopener">Off-Day Open Thread</a> <span class="tech-meta">(Bluebird Banter · Jul 02)</span></li>
-        
-      </ul>
-    
-  </section>
-
+<div class="tech-tabs" id="techTabs">
+  
+  <div class="tech-tab active" data-slug="bluetooth">Bluetooth</div>
+  
+  <div class="tech-tab " data-slug="ieee15_4">802.15.4</div>
+  
+  <div class="tech-tab " data-slug="zigbee">Zigbee</div>
+  
+  <div class="tech-tab " data-slug="thread">Thread</div>
+  
+  <div class="tech-tab " data-slug="wifi">Wi-Fi</div>
+  
+  <div class="tech-tab " data-slug="matter">Matter</div>
+  
+  <div class="tech-tab " data-slug="aliro">Aliro</div>
+  
 </div>
+
+
+<div class="tech-panel active" id="panel-bluetooth">
+  <p class="tagline">Short-range wireless for control, sensor data, and audio -- the default radio for wearables and accessories.</p>
+
+  
+  <div class="spec-snapshot">
+    <span><b>Current:</b> Bluetooth Core Specification 6.3 (adopted)</span>
+    <span><b>Next:</b> Not yet announced (6.3 is the latest adopted release)</span>
+    <a href="https://www.bluetooth.com/specifications/specs/core-specification/" target="_blank" rel="noopener">Official spec &rarr;</a>
+  </div>
+  
+
+  <h2 class="tech-h2">📖 Overview</h2>
+  <p class="tech-overview">Bluetooth is a 2.4 GHz short-range wireless standard governed by the Bluetooth SIG. Classic Bluetooth (BR/EDR) still carries streaming audio (A2DP) and legacy peripherals, but almost all new IoT designs use Bluetooth Low Energy (LE) -- a lightweight variant built for battery-powered devices that spend most of their life asleep. LE Audio and Auracast extend Bluetooth into broadcast audio, and Channel Sounding (introduced in Bluetooth 6.0) adds secure distance-ranging for the first time.</p>
+
+  
+  <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
+  <div class="arch">
+    
+    
+    <div class="arch-block k-upper">
+      <div class="ab-name">Application &amp; Profiles</div>
+      <div class="ab-sub">GAP roles | GATT-based profiles (LE Audio BAP / CAP / TMAP, HID, custom services)</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">GATT / GAP API</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-mac">
+      <div class="ab-name">Host</div>
+      <div class="ab-sub">GATT | ATT | SMP (security) | L2CAP | GAP</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">HCI (Host Controller Interface)</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-phy">
+      <div class="ab-name">Controller</div>
+      <div class="ab-sub">Link Layer | scheduling | channel hopping | Channel Sounding</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">baseband / radio interface</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-medium">
+      <div class="ab-name">Physical Radio</div>
+      <div class="ab-sub">2.4 GHz ISM | LE 1M / 2M / Coded PHY</div>
+    </div>
+    
+    
+    <p class="arch-cap">Bluetooth is split into a Host and a Controller joined by the HCI. Applications sit on top of the Host&#39;s GATT-based profile stack; the Controller owns the Link Layer and the radio. This Host/Controller split is the defining feature of the Bluetooth architecture.</p>
+  </div>
+  
+
+  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    
+    <a class="stack-layer" href="#bluetooth-layer-1" title="Jump to Application / Profiles details">
+      <span class="tag">APP</span>
+      <div class="body"><strong>Application / Profiles</strong><span>The behavior your product implements -- either a standard Bluetooth profile (A2DP for audio, HID for input, LE Audio&#39;s BAP/TMAP/HAP) or a custom GATT-based service you define yourself.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#bluetooth-layer-2" title="Jump to Generic Access Profile (GAP) details">
+      <span class="tag">GAP</span>
+      <div class="body"><strong>Generic Access Profile (GAP)</strong><span>Defines device roles (Broadcaster, Observer, Peripheral, Central) and how devices become discoverable, advertise, and form connections.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#bluetooth-layer-3" title="Jump to Generic Attribute Profile (GATT) details">
+      <span class="tag">GATT</span>
+      <div class="body"><strong>Generic Attribute Profile (GATT)</strong><span>The data model almost every BLE app is built on: a Server exposes Services, each containing Characteristics (a value + read/write/notify/indicate properties) that a Client reads or subscribes to.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#bluetooth-layer-4" title="Jump to Attribute Protocol (ATT) details">
+      <span class="tag">ATT</span>
+      <div class="body"><strong>Attribute Protocol (ATT)</strong><span>The simple client/server wire protocol underneath GATT -- every GATT operation (read, write, notify) is an ATT request/response carrying attribute handles and UUIDs.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#bluetooth-layer-5" title="Jump to Security Manager Protocol (SMP) details">
+      <span class="tag">SMP</span>
+      <div class="body"><strong>Security Manager Protocol (SMP)</strong><span>Handles pairing (authentication), key generation/exchange, and bonding (persisting keys) so future reconnections are encrypted without repeating the pairing dialog.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#bluetooth-layer-6" title="Jump to Logical Link Control &amp; Adaptation (L2CAP) details">
+      <span class="tag">L2CAP</span>
+      <div class="body"><strong>Logical Link Control &amp; Adaptation (L2CAP)</strong><span>Segments and reassembles packets and multiplexes multiple protocols (ATT, SMP, custom L2CAP channels) over the single underlying Link Layer connection.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#bluetooth-layer-7" title="Jump to Link Layer (LL) details">
+      <span class="tag">LL</span>
+      <div class="body"><strong>Link Layer (LL)</strong><span>Owns advertising, scanning, connection establishment and maintenance, channel-hopping across the 37 data channels, and (as of BT 6.x) Channel Sounding ranging exchanges.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#bluetooth-layer-8" title="Jump to Physical Layer (PHY) details">
+      <span class="tag">PHY</span>
+      <div class="body"><strong>Physical Layer (PHY)</strong><span>Radio modulation in the 2.4 GHz ISM band: LE 1M (default), LE 2M (higher throughput), and LE Coded S=2/S=8 (long range, lower rate).</span></div>
+    </a>
+    
+    
+  </div>
+
+  
+
+  <h2 class="tech-h2">📚 Core Concepts</h2>
+  <div class="concept-grid">
+    
+    <div class="concept-card"><div class="term">Central vs. Peripheral</div><div class="def">The Central initiates connections and typically consumes data (e.g. a phone); the Peripheral advertises and is connected to (e.g. a sensor).</div></div>
+    
+    <div class="concept-card"><div class="term">GATT Service / Characteristic</div><div class="def">A Service groups related Characteristics (e.g. Heart Rate Service -&gt; Heart Rate Measurement characteristic). Characteristics are identified by 16-bit (standard) or 128-bit (custom) UUIDs.</div></div>
+    
+    <div class="concept-card"><div class="term">Advertising vs. Scanning</div><div class="def">A Peripheral broadcasts advertising packets on 3 primary channels; a Central scans passively (just listens) or actively (sends a scan request for more data).</div></div>
+    
+    <div class="concept-card"><div class="term">Pairing vs. Bonding</div><div class="def">Pairing is the one-time authentication/key-exchange handshake (SMP); bonding is storing those keys so the next connection reconnects securely without re-pairing.</div></div>
+    
+    <div class="concept-card"><div class="term">MTU &amp; Connection Parameters</div><div class="def">ATT MTU sets the max packet size per exchange; Connection Interval/Latency/Supervision Timeout control how often devices wake to talk versus sleep to save power.</div></div>
+    
+    <div class="concept-card"><div class="term">LE Audio &amp; Auracast</div><div class="def">LE Audio replaces Classic A2DP with lower-power, multi-stream audio; Auracast lets any number of listeners tune into a public broadcast audio stream (transmit-only, no pairing).</div></div>
+    
+    <div class="concept-card"><div class="term">Channel Sounding</div><div class="def">Introduced in Bluetooth 6.0 and refined in 6.3: a Phase-Based Ranging (PBR) and Round-Trip-Time (RTT) exchange between an Initiator and Reflector to securely estimate distance -- used for keyless entry and asset finding without GPS/UWB.</div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">⚙️ How It Works</h2>
+  <div class="steps">
+    
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Advertising</strong><span>The Peripheral broadcasts small advertising packets (device name, service UUIDs, flags) on the 3 primary advertising channels so nearby Centrals can find it.</span></div></div>
+    
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Scanning &amp; discovery</strong><span>A Central listens (passive scan) or sends scan requests (active scan) to collect advertising data and decide which device to connect to.</span></div></div>
+    
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Connection establishment</strong><span>The Central sends a connection request; both radios then hop together across the 37 data channels on a shared, encrypted schedule known only to the two devices.</span></div></div>
+    
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Pairing &amp; bonding (optional)</strong><span>SMP negotiates authentication and derives a Long-Term Key, either via Legacy pairing or LE Secure Connections (ECDH-based, resistant to passive eavesdropping); bonded keys are stored for future reconnects.</span></div></div>
+    
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Service discovery</strong><span>The Client (usually the Central) queries GATT to enumerate the Server&#39;s Services, Characteristics, and Descriptors -- or reuses a cached database if already bonded (Database Hash).</span></div></div>
+    
+    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Data exchange</strong><span>The app reads/writes Characteristic values, or subscribes to Notifications/Indications for streaming updates -- this is the interface almost every BLE app developer actually codes against.</span></div></div>
+    
+    <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Ranging (Channel Sounding, optional)</strong><span>An Initiator and Reflector exchange PBR tones and/or RTT timing across multiple channels; the Host computes a secure distance estimate resistant to relay attacks.</span></div></div>
+    
+    <div class="step"><span class="num">8</span><div class="st-body"><strong>8. Maintenance &amp; teardown</strong><span>Connection parameters can be renegotiated for power/throughput trade-offs; a Supervision Timeout detects a lost link, and either side can cleanly disconnect.</span></div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
+  <div class="dev-grid">
+    
+    <div class="dev-card"><div class="dt">GATT Server vs. Client</div><div class="dd">Most sensors/wearables implement a GATT Server (they expose data); most phone apps implement a GATT Client (they read/subscribe). Decide your role first -- it determines which platform APIs you use.</div></div>
+    
+    <div class="dev-card"><div class="dt">Standard profiles &amp; services</div><div class="dd">Reuse existing UUIDs where possible: Battery Service, Device Information Service, Heart Rate Service, HID-over-GATT, and the LE Audio profile family (BAP, CAP, TMAP, GMAP, HAP) -- this gets you interoperability for free.</div></div>
+    
+    <div class="dev-card"><div class="dt">Platform APIs</div><div class="dd">Android: BluetoothGatt / BluetoothLeScanner. iOS: CoreBluetooth (CBCentralManager / CBPeripheralManager). Linux: BlueZ over D-Bus. Embedded: Zephyr Bluetooth stack, Apache NimBLE, or the silicon vendor&#39;s SoftDevice/stack (Nordic, Silicon Labs, Infineon AIROC, Espressif).</div></div>
+    
+    <div class="dev-card"><div class="dt">Custom services</div><div class="dd">Define your own 128-bit UUIDs for proprietary data; use Notifications for best-effort streaming and Indications when you need acknowledged delivery.</div></div>
+    
+    <div class="dev-card"><div class="dt">Debugging tools</div><div class="dd">Nordic&#39;s nRF Connect app (mobile GATT browser), Wireshark with a BLE sniffer dongle for over-the-air captures, and vendor SDKs (nRF Connect SDK, ESP-IDF, ModusToolbox) all include BLE-aware logging.</div></div>
+    
+  </div>
+
+  
+
+  
+
+  <h2 class="tech-h2">💡 Common Use Cases</h2>
+  <div class="usecase-chips">
+    <span>Wearables &amp; fitness trackers</span><span>Smart locks &amp; digital keys</span><span>LE Audio earbuds / hearing aids</span><span>Auracast public broadcast audio</span><span>HID peripherals (keyboards, mice, remotes)</span><span>Asset tags with Channel Sounding ranging</span><span>Medical &amp; health monitoring devices</span>
+  </div>
+
+  <h2 class="tech-h2">🔗 Learn More</h2>
+  <ul class="resource-list">
+    <li><a href="https://www.bluetooth.com/specifications/specs/core-specification/" target="_blank" rel="noopener">Bluetooth Core Specification (SIG)</a></li><li><a href="https://www.bluetooth.com/specifications/gatt/" target="_blank" rel="noopener">GATT Specification Supplement</a></li><li><a href="https://www.bluetooth.com/learn-about-bluetooth/recent-enhancements/le-audio/" target="_blank" rel="noopener">LE Audio overview</a></li><li><a href="https://www.bluetooth.com/channel-sounding-tech-overview/" target="_blank" rel="noopener">Channel Sounding technical overview</a></li>
+  </ul>
+</div>
+
+<div class="tech-panel " id="panel-ieee15_4">
+  <p class="tagline">The low-rate PHY+MAC foundation for Zigbee and Thread; understand this first, then upper layers become much easier.</p>
+
+  
+  <div class="spec-snapshot">
+    <span><b>Current:</b> Thread 1.4 (last publicly verified) · Matter 1.6 (Jun 2026)</span>
+    <span><b>Next:</b> Matter 1.7 (scope not yet public); Thread next version unverified</span>
+    <a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Official spec &rarr;</a>
+  </div>
+  
+
+  <h2 class="tech-h2">📖 Overview</h2>
+  <p class="tech-overview">IEEE 802.15.4 is the LR-WPAN base standard that defines only two layers: PHY and MAC. PHY defines channels/modulation/data rates; MAC defines framing, channel access, reliability, and optional link-layer security. It intentionally does not define end-to-end routing or app semantics. Zigbee and Thread both reuse the same 802.15.4 radio but build different network and application ecosystems on top. If you are new: learn MAC behavior first (beacons, CSMA-CA, ack/retry, association, and security fields), then map how Zigbee and Thread consume those services.</p>
+
+  
+  <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
+  <div class="arch">
+    
+    <div class="arch-planes"><span class="pl mgmt">&#9664; Management plane (LME SAPs)</span><span class="pl data">Data plane (data SAPs) &#9654;</span></div>
+    
+    
+    <div class="arch-block k-upper">
+      <div class="ab-name">Upper Layers (Network + Application)</div>
+      <div class="ab-sub">Zigbee NWK/APS/ZCL  OR  Thread 6LoWPAN / IPv6 -- not part of 802.15.4</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap mgmt">MLME-SAP</span><span class="sap data">MCPS-SAP</span>
+    </div>
+    
+    
+    <div class="arch-block k-mac">
+      <div class="ab-name">MAC Sublayer</div>
+      <div class="ab-sub">MLME (management entity)  |  MCPS (common part / data service)</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap mgmt">PLME-SAP</span><span class="sap data">PD-SAP</span>
+    </div>
+    
+    
+    <div class="arch-block k-phy">
+      <div class="ab-name">PHY Layer</div>
+      <div class="ab-sub">PLME (management entity)  |  PD (data service)</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap mgmt"></span><span class="sap data">RF signals</span>
+    </div>
+    
+    
+    <div class="arch-block k-medium">
+      <div class="ab-name">Physical Radio Medium</div>
+      <div class="ab-sub">2.4 GHz O-QPSK DSSS (ch 11-26) | sub-GHz PHYs (868 / 915 MHz) | SUN PHYs</div>
+    </div>
+    
+    
+    <p class="arch-cap">IEEE 802.15.4 defines the two bottom layers and exposes them to upper stacks through Service Access Points (SAPs). The management plane crosses the *-LME-SAP interfaces (MLME, PLME); the data plane crosses the data SAPs (MCPS-SAP data, PD-SAP data). This is the same block-and-interface style used by protocol standards -- learn the SAPs and the layer boundaries become clear.</p>
+  </div>
+  
+
+  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    
+    <a class="stack-layer" href="#ieee15_4-layer-1" title="Jump to Application behavior (not in 802.15.4) details">
+      <span class="tag">APP</span>
+      <div class="body"><strong>Application behavior (not in 802.15.4)</strong><span>Zigbee apps use ZCL clusters/commands; Thread apps are IP apps (often CoAP, Matter over IPv6). 802.15.4 does not define app payload meaning.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#ieee15_4-layer-2" title="Jump to Network/routing (not in 802.15.4) details">
+      <span class="tag">NWK</span>
+      <div class="body"><strong>Network/routing (not in 802.15.4)</strong><span>Zigbee adds its own NWK+APS stack. Thread uses 6LoWPAN+IPv6+MLE. Both consume the same MAC primitives and frame transport below.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#ieee15_4-layer-3" title="Jump to 802.15.4 MAC (this is the key layer) details">
+      <span class="tag">MAC</span>
+      <div class="body"><strong>802.15.4 MAC (this is the key layer)</strong><span>Creates and parses MAC frames, controls channel access (CSMA-CA), supports association/disassociation, acknowledgment/retry, beacon/superframe timing, addressing, and optional AES-CCM* frame protection.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#ieee15_4-layer-4" title="Jump to 802.15.4 PHY details">
+      <span class="tag">PHY</span>
+      <div class="body"><strong>802.15.4 PHY</strong><span>Transmits symbols on selected channels and reports clear-channel energy/CCA to MAC. Common profile: 2.4 GHz O-QPSK DSSS at 250 kbps with 16 channels (11-26).</span></div>
+    </a>
+    
+    
+  </div>
+
+  
+  <h2 class="tech-h2">🔎 Layer Deep Dive (clickable from stack)</h2>
+  <div class="layer-grid">
+    
+    <article class="layer-card" id="ieee15_4-layer-1">
+      <h3>APP: Payload semantics live above 802.15.4</h3>
+      <p>An 802.15.4 Data frame only carries bytes. Meaning is provided by upper stacks: Zigbee APS/ZCL messages, Thread 6LoWPAN-compressed IPv6 packets, or Matter interaction-model traffic running over Thread/Wi-Fi.</p>
+      
+      <div class="chips"><span>No app model in base spec</span><span>Protocol-independent payload</span><span>Interoperability defined above MAC</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="ieee15_4-layer-2">
+      <h3>NWK: Routing and topology are stack-defined</h3>
+      <p>802.15.4 can deliver a frame one hop. Multi-hop routing, address assignment policy, route repair, and service discovery are solved by Zigbee or Thread. This separation is why one radio can host multiple upper protocols.</p>
+      
+      <div class="chips"><span>One-hop MAC transport</span><span>Mesh behavior above MAC</span><span>Zigbee NWK vs Thread IPv6 mesh</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="ieee15_4-layer-3">
+      <h3>MAC Deep Dive: framing, reliability, and medium access</h3>
+      <p>MAC defines frame types (Beacon, Data, ACK, MAC Command), frame-control bits (ack request, security enabled, PAN-ID compression, frame pending), sequence numbers, address fields, and FCS. For access, devices run slotted or unslotted CSMA-CA based on mode. Reliability is built with immediate ACKs and retry limits. Management commands cover association, disassociation, orphan notification, and data request for sleepy children.</p>
+      
+      <div class="chips"><span>Frame control and addressing</span><span>ACK + retry behavior</span><span>Association/disassociation</span><span>CSMA-CA</span><span>Beacon/superframe</span><span>MAC command set</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="ieee15_4-layer-4">
+      <h3>PHY Deep Dive: channels and CCA feedback</h3>
+      <p>PHY handles modulation/spreading, symbol timing, and channel selection. It offers key primitives to MAC: transmit, receive, energy detect, and clear-channel assessment. MAC uses CCA results during CSMA-CA backoff loops before transmission.</p>
+      
+      <div class="chips"><span>2.4 GHz channels 11-26</span><span>O-QPSK DSSS (common)</span><span>ED/CCA primitives</span><span>Sub-GHz variants</span></div>
+      
+    </article>
+    
+  </div>
+  
+
+  <h2 class="tech-h2">📚 Core Concepts</h2>
+  <div class="concept-grid">
+    
+    <div class="concept-card"><div class="term">PAN &amp; PAN Coordinator</div><div class="def">A Personal Area Network is identified by a PAN ID; the PAN Coordinator is the device that starts the network and picks the operating channel.</div></div>
+    
+    <div class="concept-card"><div class="term">FFD vs. RFD</div><div class="def">A Full Function Device can route and act as a coordinator; a Reduced Function Device is a simple end node (e.g. a battery sensor) that only talks to its parent.</div></div>
+    
+    <div class="concept-card"><div class="term">Beacon-enabled vs. non-beacon</div><div class="def">Beacon-enabled PANs use superframes timed by periodic beacons. Non-beacon mode is asynchronous and typically used by Thread; devices contend with unslotted CSMA-CA when data exists.</div></div>
+    
+    <div class="concept-card"><div class="term">Superframe (BO/SO)</div><div class="def">Beacon mode organizes time into Beacon Interval and active Superframe Duration. The active period contains CAP (contention access) and optional CFP with GTS allocations (up to 7 in classic mode).</div></div>
+    
+    <div class="concept-card"><div class="term">CSMA-CA</div><div class="def">Before transmit, a node waits random backoff slots, performs CCA, and transmits only when channel is idle. On busy channel it increases backoff state and retries according to configured limits.</div></div>
+    
+    <div class="concept-card"><div class="term">MAC frame anatomy</div><div class="def">Typical MPDU fields: Frame Control, Sequence Number, Address fields (PAN ID + short/extended addresses), Auxiliary Security Header (if enabled), payload, then FCS.</div></div>
+    
+    <div class="concept-card"><div class="term">Acknowledgment and retransmission</div><div class="def">A sender can request ACK. If ACK is not received in time, MAC retries transmission up to configured limits. This provides link reliability without requiring upper-layer retries for every hop.</div></div>
+    
+    <div class="concept-card"><div class="term">Addressing</div><div class="def">Devices can use a globally-unique 64-bit extended address (like a MAC address) or a short 16-bit address assigned after joining a PAN, to keep frame headers small.</div></div>
+    
+    <div class="concept-card"><div class="term">MAC security</div><div class="def">802.15.4 supports AES-CCM* with frame counters and security control fields to provide integrity, replay protection, and optional confidentiality at link layer.</div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">⚙️ How It Works</h2>
+  <div class="steps">
+    
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. PAN formation</strong><span>A coordinator scans for a quiet channel, picks a PAN ID, and starts the network -- it becomes the root that other devices join.</span></div></div>
+    
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Beacon timing or asynchronous mode</strong><span>Beacon-enabled networks advertise superframe timing; non-beacon networks skip periodic beacons and rely on contention access plus parent/child polling patterns for sleepy nodes.</span></div></div>
+    
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Discovery and association</strong><span>A new node scans channels, evaluates beacons/energy, chooses a parent/coordinator, then exchanges MAC command frames to associate and optionally receive a short address.</span></div></div>
+    
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Channel access with CSMA-CA</strong><span>The sender enters backoff, runs CCA, and transmits only on idle medium. In beacon mode this is slotted CSMA-CA aligned to superframe slots; otherwise unslotted.</span></div></div>
+    
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Per-hop reliability</strong><span>Data frame may request ACK. Receiver sends ACK quickly after successful FCS/sequence validation. Missing ACK triggers retry and potential channel-contention repeat.</span></div></div>
+    
+    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Sleepy-device exchange</strong><span>Battery end devices can poll parent for pending data using MAC command frames. Parent indicates pending status and delivers queued frames when child wakes.</span></div></div>
+    
+    <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Security processing</strong><span>If security is enabled, transmitter adds auxiliary security header and frame counter; receiver validates counter/freshness and integrity before accepting payload.</span></div></div>
+    
+    <div class="step"><span class="num">8</span><div class="st-body"><strong>8. Handoff to upper protocol</strong><span>After MAC accepts payload, bytes are passed to Zigbee NWK/APS or Thread 6LoWPAN/IPv6. At that point routing, sessions, and app semantics are owned above 802.15.4.</span></div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
+  <div class="dev-grid">
+    
+    <div class="dev-card"><div class="dt">What app developers touch vs. stack developers</div><div class="dd">Raw MAC APIs are MLME/MCPS primitives used by stack implementers. Product teams usually consume Zigbee SDK APIs or OpenThread APIs because those expose discoverable network/app abstractions.</div></div>
+    
+    <div class="dev-card"><div class="dt">When raw MAC knowledge still matters</div><div class="dd">Even if you use Zigbee/Thread APIs, MAC behavior affects your product: channel plan, parent-child polling cadence, ACK/retry tuning, and coexistence with Wi-Fi/BLE strongly influence battery life and reliability.</div></div>
+    
+    <div class="dev-card"><div class="dt">Debugging strategy</div><div class="dd">Start at MAC: verify channel occupancy/CCA failures, retry counters, and ACK success. Then move up to NWK/IPv6 routing. This layered approach prevents app-level blame for radio-level loss.</div></div>
+    
+    <div class="dev-card"><div class="dt">Portable implementation mindset</div><div class="dd">Keep app logic above protocol-specific abstractions (ZCL clusters or CoAP resources). Avoid chipset-specific assumptions in payload formats or security policy so migration across silicon families is easier.</div></div>
+    
+  </div>
+
+  
+
+  
+
+  <h2 class="tech-h2">💡 Common Use Cases</h2>
+  <div class="usecase-chips">
+    <span>Zigbee smart bulbs, switches, meters, and sensors</span><span>Thread and Matter-over-Thread smart-home endpoints</span><span>Battery-operated mesh sensors with parent-child polling</span><span>Industrial and building automation low-rate control meshes</span><span>Sub-GHz long-range telemetry in applicable regional profiles</span>
+  </div>
+
+  <h2 class="tech-h2">🔗 Learn More</h2>
+  <ul class="resource-list">
+    <li><a href="https://standards.ieee.org/ieee/802.15.4/7029/" target="_blank" rel="noopener">IEEE 802.15.4 standard (IEEE-SA)</a></li><li><a href="https://www.ieee802.org/15/" target="_blank" rel="noopener">IEEE 802.15 Working Group (public documents)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4944" target="_blank" rel="noopener">6LoWPAN over IEEE 802.15.4 -- RFC 4944</a></li><li><a href="#" target="_blank" rel="noopener">See the Zigbee and Thread tabs for the stacks built on top</a></li>
+  </ul>
+</div>
+
+<div class="tech-panel " id="panel-zigbee">
+  <p class="tagline">A full mesh network + application framework on top of 802.15.4 -- standardized clusters let multi-vendor devices interoperate out of the box.</p>
+
+  
+
+  <h2 class="tech-h2">📖 Overview</h2>
+  <p class="tech-overview">Zigbee is a complete low-power mesh networking and application standard (governed by the Connectivity Standards Alliance) that runs on the IEEE 802.15.4 radio. Where 802.15.4 stops at PHY and MAC, Zigbee adds everything above: a Network (NWK) layer for mesh routing, an Application Support Sublayer (APS) for endpoint addressing and binding, the Zigbee Device Object (ZDO) for device and service management, and the Zigbee Cluster Library (ZCL) that defines standardized application behavior. That ZCL layer is the key idea -- because clusters like On/Off, Level Control, and Color Control are standardized, a bulb from one vendor and a switch from another interoperate. Zigbee is a mature, widely deployed ecosystem for lighting, sensors, and building automation, and it now interworks with Matter through bridges.</p>
+
+  
+  <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
+  <div class="arch">
+    
+    
+    <div class="arch-block k-upper">
+      <div class="ab-name">Application (ZCL + App Objects + ZDO)</div>
+      <div class="ab-sub">Endpoints | Clusters (On/Off, Level, Color) | Attributes | Commands</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">APSDE / APSME</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-nwk">
+      <div class="ab-name">APS -- Application Support Sublayer</div>
+      <div class="ab-sub">Endpoint addressing | binding table | APS security | fragmentation</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">NLDE / NLME</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-mac">
+      <div class="ab-name">NWK -- Network Layer</div>
+      <div class="ab-sub">Mesh routing | 16-bit address assignment | network-key security | route discovery</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">MCPS / MLME (SAPs)</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-phy">
+      <div class="ab-name">IEEE 802.15.4 MAC</div>
+      <div class="ab-sub">CSMA-CA | ACK / retry | beacons | AES-CCM*</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">PD / PLME</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-medium">
+      <div class="ab-name">IEEE 802.15.4 PHY + Radio</div>
+      <div class="ab-sub">2.4 GHz O-QPSK DSSS | channels 11-26 (+ sub-GHz)</div>
+    </div>
+    
+    
+    <p class="arch-cap">Zigbee builds a full mesh + application framework on top of the 802.15.4 MAC/PHY. Each layer talks to the one below through defined service primitives (APS uses NLDE/NLME; NWK uses the 802.15.4 MCPS/MLME SAPs). ZDO sits beside APS as the management brain of the device.</p>
+  </div>
+  
+
+  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    
+    <a class="stack-layer" href="#zigbee-layer-1" title="Jump to Application layer (ZCL + application objects) details">
+      <span class="tag">ZCL</span>
+      <div class="body"><strong>Application layer (ZCL + application objects)</strong><span>Standardized Clusters (On/Off, Level Control, Color Control, Thermostat, etc.) exposed on Endpoints. Each cluster defines Attributes (state) and Commands (actions) -- the interoperable behavior contract between devices from different vendors.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#zigbee-layer-2" title="Jump to Application Support Sublayer (APS) details">
+      <span class="tag">APS</span>
+      <div class="body"><strong>Application Support Sublayer (APS)</strong><span>Endpoint addressing, the binding table (linking, e.g., a switch endpoint to a light endpoint), APS-level security, and fragmentation/reassembly of large application messages.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#zigbee-layer-3" title="Jump to Zigbee Device Object (ZDO) details">
+      <span class="tag">ZDO</span>
+      <div class="body"><strong>Zigbee Device Object (ZDO)</strong><span>Device and service discovery, network join/leave management, binding management, and definition of the device roles (Coordinator, Router, End Device).</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#zigbee-layer-4" title="Jump to Network layer (NWK) details">
+      <span class="tag">NWK</span>
+      <div class="body"><strong>Network layer (NWK)</strong><span>Mesh route discovery and forwarding, 16-bit network address assignment, network-key security, and neighbor/route table maintenance across routers.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#zigbee-layer-5" title="Jump to IEEE 802.15.4 MAC details">
+      <span class="tag">MAC</span>
+      <div class="body"><strong>IEEE 802.15.4 MAC</strong><span>Reused unchanged: CSMA-CA channel access, acknowledgment/retry, addressing, and optional AES-CCM* link security (see the 802.15.4 tab).</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#zigbee-layer-6" title="Jump to IEEE 802.15.4 PHY details">
+      <span class="tag">PHY</span>
+      <div class="body"><strong>IEEE 802.15.4 PHY</strong><span>Reused unchanged: 2.4 GHz O-QPSK DSSS at 250 kbps (channels 11-26), plus sub-GHz options in some regional profiles.</span></div>
+    </a>
+    
+    
+  </div>
+
+  
+  <h2 class="tech-h2">🔎 Layer Deep Dive (clickable from stack)</h2>
+  <div class="layer-grid">
+    
+    <article class="layer-card" id="zigbee-layer-1">
+      <h3>ZCL: the interoperability contract</h3>
+      <p>The Zigbee Cluster Library standardizes application behavior into Clusters. A cluster (e.g. On/Off) defines a fixed set of Attributes (like the current on/off state) and Commands (like Toggle). Because these are standardized, any certified controller can operate any certified device -- this is Zigbee&#39;s equivalent of BLE&#39;s GATT services.</p>
+      
+      <div class="chips"><span>Clusters</span><span>Attributes</span><span>Commands</span><span>Vendor interoperability</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="zigbee-layer-2">
+      <h3>APS: endpoints, binding, and fragmentation</h3>
+      <p>The Application Support Sublayer routes messages to the correct Endpoint on a node, maintains the binding table (which links a source endpoint/cluster to a destination so a switch &#39;knows&#39; which light it controls), applies APS-level link-key security, and fragments large payloads.</p>
+      
+      <div class="chips"><span>Endpoints</span><span>Binding table</span><span>APS security</span><span>Fragmentation</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="zigbee-layer-3">
+      <h3>ZDO: device and service management</h3>
+      <p>The Zigbee Device Object handles discovery (what endpoints/clusters a node exposes), network management (join/leave), and binding management. It also defines the three logical device roles that determine routing capability.</p>
+      
+      <div class="chips"><span>Service discovery</span><span>Join / leave</span><span>Roles</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="zigbee-layer-4">
+      <h3>NWK: the mesh brain</h3>
+      <p>The Network layer does mesh route discovery and forwarding, assigns 16-bit network addresses, enforces network-key security, and maintains neighbor and routing tables so packets traverse multiple hops reliably.</p>
+      
+      <div class="chips"><span>Mesh routing</span><span>Address assignment</span><span>Network key</span><span>Route repair</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="zigbee-layer-5">
+      <h3>MAC + PHY: reused 802.15.4 radio</h3>
+      <p>Zigbee does not change the radio -- it uses the same 802.15.4 MAC (CSMA-CA, ACK/retry, AES-CCM* link security) and PHY (2.4 GHz O-QPSK) covered on the 802.15.4 tab. All of Zigbee&#39;s differentiation is above the MAC.</p>
+      
+      <div class="chips"><span>802.15.4 MAC</span><span>802.15.4 PHY</span><span>CSMA-CA</span></div>
+      
+    </article>
+    
+  </div>
+  
+
+  <h2 class="tech-h2">📚 Core Concepts</h2>
+  <div class="concept-grid">
+    
+    <div class="concept-card"><div class="term">Coordinator / Router / End Device</div><div class="def">Exactly one Coordinator forms the network and holds the Trust Center role. Routers relay mesh traffic and can host children. End Devices are simple (often battery) leaves that talk only to a parent Router.</div></div>
+    
+    <div class="concept-card"><div class="term">Endpoint &amp; Cluster</div><div class="def">A node exposes up to 240 application Endpoints; each Endpoint implements one or more Clusters. Endpoint+Cluster is how you address a specific function on a device (e.g. endpoint 1, On/Off cluster).</div></div>
+    
+    <div class="concept-card"><div class="term">Attribute vs. Command</div><div class="def">An Attribute is a readable/reportable value (state); a Command is an action you invoke. Controllers read/report attributes and send commands -- directly parallel to BLE GATT characteristics and writes.</div></div>
+    
+    <div class="concept-card"><div class="term">Binding</div><div class="def">A stored link (source endpoint/cluster -&gt; destination) that lets a device send directly to another without a controller in the loop -- e.g. a physical switch bound to a group of lights.</div></div>
+    
+    <div class="concept-card"><div class="term">Trust Center</div><div class="def">The security authority (usually the Coordinator) that authorizes joins and distributes the network key and optional link keys.</div></div>
+    
+    <div class="concept-card"><div class="term">Network key vs. Link key</div><div class="def">The network key encrypts NWK-layer traffic shared by the whole mesh; link keys secure APS-layer communication between specific device pairs for stronger isolation.</div></div>
+    
+    <div class="concept-card"><div class="term">Groups &amp; Scenes</div><div class="def">Groups let one command address many devices at once (all kitchen lights); Scenes store and recall preset attribute combinations (a &#39;movie&#39; lighting scene).</div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">⚙️ How It Works</h2>
+  <div class="steps">
+    
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Network formation</strong><span>The Coordinator scans for a quiet channel, picks a PAN ID, forms the network, and takes on the Trust Center role.</span></div></div>
+    
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Permit-join window</strong><span>The Coordinator (or a Router) opens a time-limited permit-join window during which new devices are allowed to associate -- limiting exposure of the join process.</span></div></div>
+    
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Association &amp; authentication</strong><span>A joining device associates at the 802.15.4 MAC, then the Trust Center authenticates it and delivers the network key (protected by a well-known or install-code-derived key).</span></div></div>
+    
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Address assignment</strong><span>The device receives a 16-bit network address; it also retains its globally-unique 64-bit IEEE address for stable identity.</span></div></div>
+    
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Service discovery</strong><span>ZDO queries reveal which Endpoints and Clusters the new device exposes, so a controller knows how to operate it.</span></div></div>
+    
+    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Binding (optional)</strong><span>Bindings are created so devices can talk peer-to-peer (a switch bound directly to lights) without routing every action through a hub.</span></div></div>
+    
+    <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Application messaging</strong><span>Controllers read/report Attributes and send Commands on ZCL Clusters; the APS and NWK layers handle secure delivery and multi-hop routing beneath.</span></div></div>
+    
+    <div class="step"><span class="num">8</span><div class="st-body"><strong>8. Mesh routing &amp; self-heal</strong><span>NWK discovers and repairs routes as devices move or drop; the 802.15.4 MAC handles per-hop contention, ACKs, and retries.</span></div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
+  <div class="dev-grid">
+    
+    <div class="dev-card"><div class="dt">You program against ZCL clusters</div><div class="dd">Application development is mostly implementing or consuming standard ZCL clusters on endpoints. Reuse standard clusters for interoperability instead of inventing proprietary ones wherever possible.</div></div>
+    
+    <div class="dev-card"><div class="dt">Model your device with endpoints</div><div class="dd">Map each independent function to an endpoint (e.g. a 3-gang switch = 3 endpoints, each with an On/Off cluster). Controllers then treat each endpoint independently.</div></div>
+    
+    <div class="dev-card"><div class="dt">Security &amp; commissioning choices</div><div class="dd">Decide between well-known default join keys (convenient) and install-code-based joining (stronger). Plan Trust Center policy early -- it affects how easily devices onboard and how secure the network is.</div></div>
+    
+    <div class="dev-card"><div class="dt">Debugging strategy</div><div class="dd">Use a Zigbee sniffer to watch ZCL frames and NWK routing, and read Coordinator/Trust Center logs for join and key-distribution problems. As with 802.15.4, isolate radio/MAC issues (retries, channel) before blaming application logic.</div></div>
+    
+  </div>
+
+  
+  <h2 class="tech-h2">🧩 Zigbee In Depth</h2>
+  <div class="deep-grid">
+    
+    <article class="deep-card"><h3>Full stack above 802.15.4</h3><p>Zigbee layers NWK + APS + ZDO + ZCL on the 802.15.4 MAC/PHY. NWK provides mesh routing and network management; APS manages endpoint addressing, binding, and security to application objects; ZDO handles device/service discovery and management; ZCL defines interoperable application behavior (clusters, attributes, commands).</p></article>
+    
+    <article class="deep-card"><h3>Addressing and endpoints</h3><p>A node is referenced by its 16-bit NWK address (assigned at join) and its stable 64-bit IEEE address. Application functions live on Endpoints (1-240), each implementing clusters. Example: endpoint 1 hosts On/Off and Level Control clusters for a dimmable bulb.</p></article>
+    
+    <article class="deep-card"><h3>Trust Center security model</h3><p>The Trust Center controls admission and key distribution. Devices join through permit-join windows, receive the network key, and may establish APS link keys for pairwise security depending on the profile and policy (default keys vs. install codes).</p></article>
+    
+    <article class="deep-card"><h3>Mesh routing behavior</h3><p>Routing runs in the NWK layer among the Coordinator and Routers; End Devices reach the mesh through their parent Router. Routes are discovered and repaired dynamically, while the 802.15.4 MAC still handles per-link contention, ACK, and retries on every hop.</p></article>
+    
+    <article class="deep-card"><h3>Interworking with Matter</h3><p>Zigbee remains its own ecosystem rather than native IPv6, so cloud/service integration is typically done at a hub. Zigbee devices can be exposed to Matter ecosystems through a bridge, letting existing Zigbee deployments participate in Matter controllers.</p></article>
+    
+  </div>
+  
+
+  
+
+  <h2 class="tech-h2">💡 Common Use Cases</h2>
+  <div class="usecase-chips">
+    <span>Smart lighting (bulbs, dimmers, switches)</span><span>Home &amp; building sensors (motion, contact, temperature)</span><span>Energy metering and load control</span><span>Commercial lighting and building automation</span><span>Existing Zigbee fleets bridged into Matter ecosystems</span>
+  </div>
+
+  <h2 class="tech-h2">🔗 Learn More</h2>
+  <ul class="resource-list">
+    <li><a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Connectivity Standards Alliance -- Zigbee</a></li><li><a href="https://csa-iot.org/developer-resource/specifications-download-request/" target="_blank" rel="noopener">CSA specifications &amp; downloads</a></li><li><a href="https://standards.ieee.org/ieee/802.15.4/7029/" target="_blank" rel="noopener">IEEE 802.15.4 (radio layer Zigbee runs on)</a></li>
+  </ul>
+</div>
+
+<div class="tech-panel " id="panel-thread">
+  <p class="tagline">An IPv6 mesh network built on 802.15.4 radios -- the low-power backbone most Matter smart-home devices run on.</p>
+
+  
+  <div class="spec-snapshot">
+    <span><b>Current:</b> Thread 1.4 (last publicly verified) · Matter 1.6 (Jun 2026)</span>
+    <span><b>Next:</b> Matter 1.7 (scope not yet public); Thread next version unverified</span>
+    <a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Official spec &rarr;</a>
+  </div>
+  
+
+  <h2 class="tech-h2">📖 Overview</h2>
+  <p class="tech-overview">Thread is a mesh networking protocol -- standardized by the Thread Group -- that gives every device on the mesh a real, routable IPv6 address, unlike Zigbee&#39;s proprietary networking layer. It reuses the IEEE 802.15.4 radio (2.4 GHz) but replaces Zigbee&#39;s NWK layer with 6LoWPAN + IPv6 mesh routing, so any standard IP or CoAP application can run over it. Thread is the low-power mesh transport most Matter devices use under the hood.</p>
+
+  
+  <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
+  <div class="arch">
+    
+    
+    <div class="arch-block k-upper">
+      <div class="ab-name">Application</div>
+      <div class="ab-sub">CoAP / UDP apps | Matter data model over IPv6</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">UDP sockets / CoAP</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-nwk">
+      <div class="ab-name">IPv6 + Transport</div>
+      <div class="ab-sub">IPv6 | ICMPv6 | UDP | DTLS (commissioning security)</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">IPv6 datagrams</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-mac">
+      <div class="ab-name">Mesh routing + Adaptation</div>
+      <div class="ab-sub">MLE mesh link establishment | Network Data | 6LoWPAN header compression &amp; fragmentation</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">MCPS / MLME (SAPs)</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-phy">
+      <div class="ab-name">IEEE 802.15.4 MAC</div>
+      <div class="ab-sub">CSMA-CA | ACK / retry | AES-CCM* link security</div>
+    </div>
+    
+    <div class="arch-conn">
+      <span class="sap iface">PD / PLME</span>
+      
+    </div>
+    
+    
+    <div class="arch-block k-medium">
+      <div class="ab-name">IEEE 802.15.4 PHY + Radio</div>
+      <div class="ab-sub">2.4 GHz O-QPSK DSSS | channels 11-26</div>
+    </div>
+    
+    
+    <p class="arch-cap">Thread keeps the 802.15.4 MAC/PHY but replaces proprietary networking with a standards-based IPv6 stack: 6LoWPAN adapts IPv6 to the small 802.15.4 frame, MLE builds and heals the mesh, and applications talk plain UDP/CoAP (or Matter) on top. Because every node has a real IPv6 address, ordinary IP tooling works end-to-end.</p>
+  </div>
+  
+
+  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    
+    <a class="stack-layer" href="#thread-layer-1" title="Jump to Application layer details">
+      <span class="tag">APP</span>
+      <div class="body"><strong>Application layer</strong><span>Any IP application protocol -- most commonly CoAP for device control, or Matter&#39;s data model layered directly on top of Thread&#39;s IPv6 transport (see the Matter tab).</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#thread-layer-2" title="Jump to Thread networking layer details">
+      <span class="tag">NWK</span>
+      <div class="body"><strong>Thread networking layer</strong><span>6LoWPAN header compression/fragmentation of IPv6 over 802.15.4, Mesh Link Establishment (MLE) for topology/routing, Network Data distribution (prefixes, DNS/services), and the Border Router function that bridges the mesh to Wi-Fi/Ethernet and the internet.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#thread-layer-3" title="Jump to IEEE 802.15.4 MAC/PHY details">
+      <span class="tag">MAC/PHY</span>
+      <div class="body"><strong>IEEE 802.15.4 MAC/PHY</strong><span>The same radio layer used by Zigbee (2.4 GHz, CSMA-CA channel access) -- Thread&#39;s innovation is entirely in the networking layer above it, not the radio itself.</span></div>
+    </a>
+    
+    
+  </div>
+
+  
+  <h2 class="tech-h2">🔎 Layer Deep Dive (clickable from stack)</h2>
+  <div class="layer-grid">
+    
+    <article class="layer-card" id="thread-layer-1">
+      <h3>APP: standard IP applications</h3>
+      <p>Because a Thread node is a full IPv6 host, application code is ordinary networking code -- CoAP or UDP sockets, or a Matter session. No proprietary application framework is imposed by Thread itself.</p>
+      
+      <div class="chips"><span>CoAP / UDP</span><span>Matter over Thread</span><span>Standard IP tooling</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="thread-layer-2">
+      <h3>NWK: 6LoWPAN + IPv6 + MLE</h3>
+      <p>6LoWPAN compresses and fragments IPv6 to fit 802.15.4 frames. IPv6/ICMPv6/UDP provide addressing and transport. Mesh Link Establishment (MLE) discovers neighbors, builds routing tables, and keeps the mesh self-healing. Network Data distributes prefixes and services.</p>
+      
+      <div class="chips"><span>6LoWPAN adaptation</span><span>IPv6 / UDP</span><span>MLE mesh routing</span><span>Network Data</span></div>
+      
+    </article>
+    
+    <article class="layer-card" id="thread-layer-3">
+      <h3>MAC/PHY: reused 802.15.4 radio</h3>
+      <p>Thread does not modify the radio -- it consumes the same 802.15.4 MAC (CSMA-CA, ACK/retry, AES-CCM* link security) and PHY (2.4 GHz O-QPSK) described on the 802.15.4 tab.</p>
+      
+      <div class="chips"><span>802.15.4 MAC</span><span>802.15.4 PHY</span><span>Battery-friendly radio</span></div>
+      
+    </article>
+    
+  </div>
+  
+
+  <h2 class="tech-h2">📚 Core Concepts</h2>
+  <div class="concept-grid">
+    
+    <div class="concept-card"><div class="term">Leader</div><div class="def">An elected router responsible for network-wide configuration (like assigning router IDs); if it goes offline, another eligible router is elected automatically.</div></div>
+    
+    <div class="concept-card"><div class="term">Router / REED / End Device</div><div class="def">Routers forward mesh traffic and can have children; a Router-Eligible End Device (REED) can be promoted to a Router if the mesh needs more routing capacity; simple End Devices only talk to their parent.</div></div>
+    
+    <div class="concept-card"><div class="term">Border Router</div><div class="def">Bridges the Thread mesh to the home&#39;s IP network (Wi-Fi/Ethernet) and the internet, advertises the mesh&#39;s routable IPv6 prefix, and proxies mDNS/DNS-SD so devices are discoverable from outside the mesh.</div></div>
+    
+    <div class="concept-card"><div class="term">Commissioning</div><div class="def">The secure process of adding a new device to the mesh -- a Commissioner (often a phone app) and a Joiner exchange credentials (via DTLS) so the Joiner can obtain the network key.</div></div>
+    
+    <div class="concept-card"><div class="term">Mesh Link Establishment (MLE)</div><div class="def">The protocol routers use to discover neighbors, build routing tables, and keep the mesh self-healing if a router drops out.</div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">⚙️ How It Works</h2>
+  <div class="steps">
+    
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Network formation</strong><span>A Leader is elected among capable routers; the network&#39;s channel, PAN ID, and network key are established for the mesh.</span></div></div>
+    
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Commissioning</strong><span>A new device (Joiner) is securely admitted using a DTLS-based exchange with a Commissioner -- typically brokered through the Border Router -- and receives the network key.</span></div></div>
+    
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Attaching</strong><span>The joined device attaches to a suitable parent Router, becoming a Router, REED, or End Device, and is assigned a 16-bit Routing Locator (RLOC) plus a full IPv6 address.</span></div></div>
+    
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Routing</strong><span>Devices route IPv6 packets hop-by-hop using MLE-derived routing tables; if a router fails, the mesh recalculates routes and self-heals without manual intervention.</span></div></div>
+    
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Border routing &amp; discovery</strong><span>The Border Router advertises an Off-Mesh Routable (OMR) prefix to the home network and relays traffic between Thread and Wi-Fi/Ethernet/the internet, including proxying mDNS service discovery.</span></div></div>
+    
+    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Application data</strong><span>CoAP/UDP messages -- or a Matter application session -- ride over the IPv6 transport exactly like they would on any other IP network.</span></div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
+  <div class="dev-grid">
+    
+    <div class="dev-card"><div class="dt">OpenThread</div><div class="dd">The open-source Thread stack (originally from Google/Nest) implements the full networking layer and exposes a C API for network management; it&#39;s used inside the Nordic, Silicon Labs, NXP, and TI SDKs rather than being reimplemented per vendor.</div></div>
+    
+    <div class="dev-card"><div class="dt">Plain IP APIs above OpenThread</div><div class="dd">Because a Thread device is just an IPv6 host, you can use standard CoAP client/server libraries directly for custom device control instead of building a Zigbee-style proprietary protocol.</div></div>
+    
+    <div class="dev-card"><div class="dt">Matter as the common application layer</div><div class="dd">Most product teams don&#39;t write raw CoAP against Thread directly -- they build on Matter&#39;s data model (Clusters/Attributes/Commands), which already runs over Thread&#39;s IPv6 transport. See the Matter tab.</div></div>
+    
+    <div class="dev-card"><div class="dt">Border Router reference implementation</div><div class="dd">OpenThread Border Router (OTBR) is the standard reference implementation, commonly run on a Raspberry Pi or embedded into smart speakers/hubs (Apple TV, Google Nest Hub, Amazon Echo, etc.).</div></div>
+    
+  </div>
+
+  
+
+  
+  <h2 class="tech-h2">🧵 OpenThread / Thread In Depth</h2>
+  <div class="deep-grid">
+    
+    <article class="deep-card"><h3>Why Thread uses IPv6 instead of a proprietary mesh</h3><p>Giving every node a routable IPv6 address means Thread reuses decades of proven IP protocols (UDP, CoAP, DTLS, mDNS) instead of reinventing them. A phone or cloud service can address a Thread device the same way it addresses any internet host, through the Border Router -- this is the core reason modern smart-home standards chose Thread.</p></article>
+    
+    <article class="deep-card"><h3>Device roles and mesh resilience</h3><p>Routers form the always-on mesh backbone and forward traffic. A Router-Eligible End Device (REED) can be promoted to Router when the mesh needs more capacity. Minimal/Sleepy End Devices (MED/SED) only talk to a parent Router and sleep to save battery. One Leader coordinates network-wide configuration; if it drops, another Router is elected automatically -- there is no single point of failure.</p></article>
+    
+    <article class="deep-card"><h3>Addressing model (RLOC, ML-EID, GUA)</h3><p>Each node has a Routing Locator (RLOC) that reflects its position in the mesh and changes as topology changes, plus a stable Mesh-Local EID (ML-EID) for identity within the mesh. When a Border Router advertises an Off-Mesh-Routable prefix, nodes also gain a Global Unicast Address reachable from outside the mesh.</p></article>
+    
+    <article class="deep-card"><h3>Commissioning (secure joining)</h3><p>A new device (Joiner) is admitted through a DTLS-secured handshake with a Commissioner -- typically a phone app brokered via the Border Router. The Joiner proves knowledge of a pre-shared commissioning credential, then receives the network credentials so it can attach to a parent and route traffic.</p></article>
+    
+    <article class="deep-card"><h3>Border Router: bridging to the internet</h3><p>The Thread Border Router connects the low-power mesh to Wi-Fi/Ethernet, advertises routable prefixes, and proxies mDNS/DNS-SD so mesh devices are discoverable from the home network. Matter-over-Thread depends on this bridge for controllers (phones, hubs) to reach devices.</p></article>
+    
+    <article class="deep-card"><h3>OpenThread as the reference stack</h3><p>OpenThread is the open-source implementation of the full Thread networking layer and role/state machines. It is integrated into the SDKs of most silicon vendors rather than reimplemented per chip, so behavior is consistent across hardware and certification is simpler.</p></article>
+    
+  </div>
+  
+
+  <h2 class="tech-h2">💡 Common Use Cases</h2>
+  <div class="usecase-chips">
+    <span>Matter-over-Thread smart home devices (locks, sensors, bulbs)</span><span>Always-on low-power mesh sensor networks</span><span>Devices needing IP-routability without a Wi-Fi radio&#39;s power cost</span>
+  </div>
+
+  <h2 class="tech-h2">🔗 Learn More</h2>
+  <ul class="resource-list">
+    <li><a href="https://www.threadgroup.org/" target="_blank" rel="noopener">Thread Group</a></li><li><a href="https://openthread.io/" target="_blank" rel="noopener">OpenThread (open-source stack)</a></li>
+  </ul>
+</div>
+
+<div class="tech-panel " id="panel-wifi">
+  <p class="tagline">Full IP-networking wireless LAN -- higher power and throughput than BLE/802.15.4, used when a device needs real internet bandwidth.</p>
+
+  
+  <div class="spec-snapshot">
+    <span><b>Current:</b> Wi-Fi 7 (802.11be) certified Q1 2024</span>
+    <span><b>Next:</b> Wi-Fi 8 (802.11bn) draft, target 2028</span>
+    <a href="https://www.wi-fi.org/discover-wi-fi" target="_blank" rel="noopener">Official spec &rarr;</a>
+  </div>
+  
+
+  <h2 class="tech-h2">📖 Overview</h2>
+  <p class="tech-overview">Wi-Fi (the IEEE 802.11 family, certified by the Wi-Fi Alliance) is a wireless LAN technology that -- unlike Bluetooth LE or 802.15.4 -- carries a full, standard IP stack. A Wi-Fi radio is effectively the link layer under ordinary TCP/IP networking, which is why Wi-Fi devices can run any internet protocol (HTTP, MQTT, CoAP) without a technology-specific application model. The tradeoff versus BLE/802.15.4 is power: Wi-Fi radios are far more capable but consume much more energy, which is why battery-IoT designs often pair Wi-Fi with Bluetooth for provisioning and use features like Target Wake Time to save power.</p>
+
+  
+
+  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    
+    <a class="stack-layer" href="#wifi-layer-1" title="Jump to Application layer details">
+      <span class="tag">APP</span>
+      <div class="body"><strong>Application layer</strong><span>Ordinary IP applications -- HTTP, MQTT, CoAP, or any custom protocol. Wi-Fi does not define its own application model; it just delivers IP packets.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#wifi-layer-2" title="Jump to Network / Transport (TCP/IP stack) details">
+      <span class="tag">TCP/IP</span>
+      <div class="body"><strong>Network / Transport (TCP/IP stack)</strong><span>Standard IPv4/IPv6 addressing and routing, with TCP or UDP transport -- the same stack used on Ethernet, just carried over a radio link.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#wifi-layer-3" title="Jump to MAC layer (802.11) details">
+      <span class="tag">MAC</span>
+      <div class="body"><strong>MAC layer (802.11)</strong><span>CSMA/CA channel access, management/control/data frame types, the authentication &amp; association state machine, WPA2/WPA3 security handshakes, QoS (WMM), power-save modes, and -- new in Wi-Fi 7 -- Multi-Link Operation (MLO) letting one device use several bands/links at once.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#wifi-layer-4" title="Jump to Physical layer (802.11a/b/g/n/ac/ax/be) details">
+      <span class="tag">PHY</span>
+      <div class="body"><strong>Physical layer (802.11a/b/g/n/ac/ax/be)</strong><span>OFDM/OFDMA modulation across 2.4/5/6 GHz bands with channel widths from 20 MHz up to 320 MHz (Wi-Fi 7), MIMO/MU-MIMO spatial streams, plus Wi-Fi HaLow (802.11ah) -- a sub-1 GHz, long-range, low-power PHY variant built for IoT rather than high throughput.</span></div>
+    </a>
+    
+    
+  </div>
+
+  
+
+  <h2 class="tech-h2">📚 Core Concepts</h2>
+  <div class="concept-grid">
+    
+    <div class="concept-card"><div class="term">SSID / BSSID / AP vs. Station</div><div class="def">The SSID is the human-readable network name; the BSSID is the AP radio&#39;s MAC address. An Access Point (AP) serves multiple client Stations (STAs).</div></div>
+    
+    <div class="concept-card"><div class="term">WPA2/WPA3 &amp; SAE</div><div class="def">WPA2 uses a Pre-Shared Key with a 4-Way Handshake; WPA3 replaces the PSK exchange with SAE (Simultaneous Authentication of Equals), which resists offline dictionary attacks.</div></div>
+    
+    <div class="concept-card"><div class="term">OFDMA / MU-MIMO</div><div class="def">Techniques (from Wi-Fi 6 onward) that let an AP serve multiple clients&#39; data in the same time-frequency resource, dramatically improving efficiency in dense environments.</div></div>
+    
+    <div class="concept-card"><div class="term">MLO (Multi-Link Operation)</div><div class="def">New in Wi-Fi 7: a single device can transmit/receive across multiple bands (e.g. 5 GHz + 6 GHz) simultaneously for higher throughput and lower latency.</div></div>
+    
+    <div class="concept-card"><div class="term">Target Wake Time (TWT)</div><div class="def">Lets a battery-powered Wi-Fi device negotiate a schedule with the AP so it can sleep between agreed wake windows -- the key power-saving feature for Wi-Fi IoT devices.</div></div>
+    
+    <div class="concept-card"><div class="term">Roaming (802.11k/v/r)</div><div class="def">Assist protocols that help a station moving between APs (e.g. in a mesh) hand off quickly with minimal reassociation delay.</div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">⚙️ How It Works</h2>
+  <div class="steps">
+    
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Scanning</strong><span>A station passively listens for Beacon frames or actively sends Probe Requests to discover nearby APs and their capabilities.</span></div></div>
+    
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Authentication</strong><span>Open System authentication (essentially a formality) or WPA3&#39;s SAE handshake establishes initial cryptographic trust before association.</span></div></div>
+    
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Association</strong><span>The station formally joins the AP&#39;s Basic Service Set (BSS), negotiating supported data rates and capabilities -- including setting up multiple simultaneous links if using Wi-Fi 7 MLO.</span></div></div>
+    
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. 4-Way Handshake (WPA2/3)</strong><span>Derives a per-session Pairwise Transient Key from the Pairwise Master Key to encrypt unicast traffic, plus a Group Temporal Key for broadcast/multicast traffic.</span></div></div>
+    
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Data transfer</strong><span>The MAC layer contends for the channel via CSMA/CA (or uses scheduled OFDMA/MU-MIMO access in modern Wi-Fi) while IP packets are encapsulated into 802.11 data frames.</span></div></div>
+    
+    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Power management</strong><span>IoT-class devices negotiate Target Wake Time windows (or use legacy PS-Poll) so the radio can sleep between scheduled transmissions instead of staying fully powered.</span></div></div>
+    
+    <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Roaming</strong><span>802.11k/v/r let a moving station discover and hand off to a better AP quickly, minimizing the reassociation gap.</span></div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
+  <div class="dev-grid">
+    
+    <div class="dev-card"><div class="dt">You mostly use normal networking APIs</div><div class="dd">Because Wi-Fi presents a standard IP link, application code uses ordinary BSD sockets or protocol client libraries (MQTT, HTTP, CoAP) -- the Wi-Fi-specific work (scanning, association, security) is handled by the OS or driver beneath you.</div></div>
+    
+    <div class="dev-card"><div class="dt">Platform / driver layer</div><div class="dd">Linux uses wpa_supplicant; Android/iOS have native Wi-Fi stacks; embedded designs use a vendor Wi-Fi Host Driver (e.g. Espressif ESP-IDF&#39;s Wi-Fi driver, Infineon AIROC WHD) that exposes scan/connect/provision APIs to your firmware.</div></div>
+    
+    <div class="dev-card"><div class="dt">Provisioning headless devices</div><div class="dd">Since a Wi-Fi IoT device has no keyboard, typical flows are SoftAP + captive portal (device becomes a temporary AP for setup) or BLE-assisted provisioning (as used by Matter) to hand over Wi-Fi credentials securely.</div></div>
+    
+    <div class="dev-card"><div class="dt">Power-aware design</div><div class="dd">If you&#39;re building a battery Wi-Fi product, design around Target Wake Time and minimize how often the radio has to wake and re-associate -- this is usually the single biggest power lever available.</div></div>
+    
+  </div>
+
+  
+
+  
+
+  <h2 class="tech-h2">💡 Common Use Cases</h2>
+  <div class="usecase-chips">
+    <span>Home &amp; mesh routers</span><span>Smart cameras &amp; video doorbells</span><span>Matter-over-Wi-Fi smart home devices</span><span>Industrial wireless backhaul</span><span>Wi-Fi HaLow long-range sensor &amp; agriculture IoT</span>
+  </div>
+
+  <h2 class="tech-h2">🔗 Learn More</h2>
+  <ul class="resource-list">
+    <li><a href="https://www.wi-fi.org/discover-wi-fi/wi-fi-certified-7" target="_blank" rel="noopener">Wi-Fi Alliance -- Wi-Fi CERTIFIED 7</a></li><li><a href="https://www.ieee802.org/11/" target="_blank" rel="noopener">IEEE 802.11 standards family</a></li>
+  </ul>
+</div>
+
+<div class="tech-panel " id="panel-matter">
+  <p class="tagline">The application-layer smart-home standard -- runs over Thread, Wi-Fi, or Ethernet, using BLE only to get a device onto the network.</p>
+
+  
+  <div class="spec-snapshot">
+    <span><b>Current:</b> Thread 1.4 (last publicly verified) · Matter 1.6 (Jun 2026)</span>
+    <span><b>Next:</b> Matter 1.7 (scope not yet public); Thread next version unverified</span>
+    <a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Official spec &rarr;</a>
+  </div>
+  
+
+  <h2 class="tech-h2">📖 Overview</h2>
+  <p class="tech-overview">Matter (from the Connectivity Standards Alliance) is not a radio technology -- it&#39;s an application-layer standard that defines a common data model so smart-home devices from different manufacturers interoperate regardless of which network they run on (Thread, Wi-Fi, or Ethernet). Bluetooth LE is used only during the initial commissioning handshake; after that, all operational traffic runs over IP. This is the single most important thing to understand about Matter&#39;s architecture -- it deliberately reuses Thread and Wi-Fi rather than inventing a new radio layer.</p>
+
+  
+
+  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    
+    <a class="stack-layer" href="#matter-layer-1" title="Jump to Application / Data Model details">
+      <span class="tag">DM</span>
+      <div class="body"><strong>Application / Data Model</strong><span>Devices are modeled as Device Types (e.g. On/Off Light, Door Lock, Thermostat) composed of Clusters (e.g. On/Off, Level Control, Door Lock), each exposing Attributes (state), Commands (actions), and Events -- conceptually the IP-native equivalent of BLE&#39;s GATT Services/Characteristics.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#matter-layer-2" title="Jump to Interaction Model details">
+      <span class="tag">IM</span>
+      <div class="body"><strong>Interaction Model</strong><span>Defines how a Controller Reads/Writes Attributes, Invokes Commands, and Subscribes to Attribute/Event reports over an established session -- this is the API surface every Matter controller and device implementation uses.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#matter-layer-3" title="Jump to Security / Fabric layer details">
+      <span class="tag">SEC</span>
+      <div class="body"><strong>Security / Fabric layer</strong><span>A Fabric is a set of mutually-trusted nodes with a shared root of trust. Commissioning uses PASE (password-based) for the initial secure session, then issues each device a Node Operational Certificate for ongoing CASE (certificate-based) sessions.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#matter-layer-4" title="Jump to Transport details">
+      <span class="tag">TRANS</span>
+      <div class="body"><strong>Transport</strong><span>Matter messages travel over UDP via a lightweight message-framing layer across whatever IP network is available -- Bluetooth LE is used ONLY for commissioning, never for normal operation.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#matter-layer-5" title="Jump to Network layer details">
+      <span class="tag">NET</span>
+      <div class="body"><strong>Network layer</strong><span>Matter does not define its own radio or mesh -- it rides on Thread&#39;s IPv6 mesh or on Wi-Fi/Ethernet IP connectivity, reusing whichever transport the device already has.</span></div>
+    </a>
+    
+    
+  </div>
+
+  
+
+  <h2 class="tech-h2">📚 Core Concepts</h2>
+  <div class="concept-grid">
+    
+    <div class="concept-card"><div class="term">Fabric</div><div class="def">A logical smart-home network of mutually-trusted Nodes sharing a root Certificate Authority; a device can belong to multiple Fabrics at once (Multi-Admin) so it works simultaneously with, e.g., Apple Home and Google Home.</div></div>
+    
+    <div class="concept-card"><div class="term">Node / Endpoint / Cluster</div><div class="def">A physical device is a Node; a Node exposes one or more Endpoints (e.g. a power strip might expose 4 outlet endpoints); each Endpoint implements Clusters that define its actual behavior.</div></div>
+    
+    <div class="concept-card"><div class="term">Commissioner / Commissionee</div><div class="def">The Commissioner is the controller app doing the onboarding (e.g. a phone); the Commissionee is the new, uncommissioned device being set up.</div></div>
+    
+    <div class="concept-card"><div class="term">PASE vs. CASE</div><div class="def">PASE (Password Authenticated Session Establishment, via SPAKE2+) is used once, over BLE, purely to bootstrap the device onto the network; CASE (Certificate Authenticated Session Establishment) secures all subsequent normal operation over IP.</div></div>
+    
+    <div class="concept-card"><div class="term">Multi-Admin / Joint Fabric</div><div class="def">Multi-Admin lets several ecosystems control one device on one Fabric; Joint Fabric (introduced in Matter 1.6) extends this to formally share devices and structure across multiple independent Fabrics.</div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">⚙️ How It Works</h2>
+  <div class="steps">
+    
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Discovery</strong><span>The Commissioner (a phone app) discovers the uncommissioned device via Bluetooth LE advertising (or a Wi-Fi SoftAP fallback) after scanning its setup QR code / manual pairing code.</span></div></div>
+    
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. PASE over BLE</strong><span>A temporary secure session is established over Bluetooth LE using the device&#39;s setup passcode via a SPAKE2+ key exchange -- this session exists purely to bootstrap the device, and is never used again afterward.</span></div></div>
+    
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Network provisioning</strong><span>Over that secure PASE session, the Commissioner sends the device its Wi-Fi credentials, or a Thread network dataset, letting the device join the real IP network.</span></div></div>
+    
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Operational credentials</strong><span>The Commissioner issues the device a Node Operational Certificate (NOC) signed by the Fabric&#39;s root CA, formally admitting it to the Fabric.</span></div></div>
+    
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. CASE sessions take over</strong><span>From this point forward, the device and any other Fabric member (hubs, controllers) establish CASE sessions -- mutual certificate-based authentication over IP. Bluetooth is not used again.</span></div></div>
+    
+    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Interaction</strong><span>Controllers Read or Subscribe to Cluster Attributes (e.g. current on/off state) and Invoke Commands (e.g. &#34;Toggle&#34;) to operate the device; subscriptions let multiple ecosystems stay in sync in real time (Multi-Admin).</span></div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
+  <div class="dev-grid">
+    
+    <div class="dev-card"><div class="dt">connectedhomeip SDK</div><div class="dd">The open-source Matter SDK provides the data model, standard Cluster implementations, and the full commissioning flow; silicon vendors (NXP, Silicon Labs, Espressif, Nordic, Infineon) ship SDKs built directly on top of it.</div></div>
+    
+    <div class="dev-card"><div class="dt">Building a device</div><div class="dd">Device developers implement standard Device Types/Clusters from the Matter Device Library so any certified controller works out of the box -- the real engineering effort is usually the sensor/actuator driver underneath, not the network protocol.</div></div>
+    
+    <div class="dev-card"><div class="dt">Building a controller/app</div><div class="dd">Controller developers use a Matter controller SDK (or CHIP Tool for testing) to commission and operate devices purely through the standardized Cluster model -- no device-specific integration code needed, unlike pre-Matter smart-home APIs.</div></div>
+    
+    <div class="dev-card"><div class="dt">Testing tools</div><div class="dd">CHIP Tool (command-line controller) and the Matter Test Harness are the standard ways to commission and exercise a device during development before certification.</div></div>
+    
+  </div>
+
+  
+
+  
+
+  <h2 class="tech-h2">💡 Common Use Cases</h2>
+  <div class="usecase-chips">
+    <span>Smart lights, plugs, locks &amp; thermostats</span><span>Sensors that must work across Apple Home, Google Home, Alexa &amp; SmartThings simultaneously</span><span>Multi-vendor smart-home ecosystems requiring true interoperability</span>
+  </div>
+
+  <h2 class="tech-h2">🔗 Learn More</h2>
+  <ul class="resource-list">
+    <li><a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">CSA -- Matter specification hub</a></li><li><a href="https://github.com/project-chip/connectedhomeip" target="_blank" rel="noopener">connectedhomeip (Matter SDK, open source)</a></li><li><a href="https://handbook.buildwithmatter.com/" target="_blank" rel="noopener">Matter developer handbook</a></li>
+  </ul>
+</div>
+
+<div class="tech-panel " id="panel-aliro">
+  <p class="tagline">A CSA standard for interoperable digital keys -- so one phone credential unlocks doors from many different lock brands.</p>
+
+  
+  <div class="spec-snapshot">
+    <span><b>Current:</b> FiRa Core 4.0 (announced Dec 2025, with certification program)</span>
+    <span><b>Next:</b> Not yet numbered — FiRa Plugfest #2 interoperability validation scheduled Sep 2026</span>
+    <a href="https://www.firaconsortium.org/" target="_blank" rel="noopener">Official spec &rarr;</a>
+  </div>
+  
+
+  <h2 class="tech-h2">📖 Overview</h2>
+  <p class="tech-overview">Aliro (from the Connectivity Standards Alliance) standardizes digital-key access control -- letting a phone or wearable act as a key for doors (hotels, residences, offices, cars) using a common credential format across NFC, Bluetooth LE, and optionally UWB. Before Aliro, each lock brand needed its own proprietary app; Aliro&#39;s goal is that any certified wallet works with any certified reader, the same way EMV made contactless payment cards interoperable across banks and terminals.</p>
+
+  
+
+  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    
+    <a class="stack-layer" href="#aliro-layer-1" title="Jump to Application layer details">
+      <span class="tag">APP</span>
+      <div class="body"><strong>Application layer</strong><span>The use-case logic -- hotel check-in, residential lock management, or car access -- implemented by the wallet app or device manufacturer&#39;s software.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#aliro-layer-2" title="Jump to Credential layer details">
+      <span class="tag">CRED</span>
+      <div class="body"><strong>Credential layer</strong><span>A standardized Access Control Credential format and endpoint model defining how a digital key is provisioned and securely stored (typically in a phone&#39;s Secure Element), so any Aliro-certified reader can validate it.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#aliro-layer-3" title="Jump to Secure transaction layer details">
+      <span class="tag">SEC</span>
+      <div class="body"><strong>Secure transaction layer</strong><span>A mutual-authentication and encrypted-transaction protocol between the endpoint (phone) and the reader (lock), designed so neither a cloned credential nor a spoofed reader can succeed.</span></div>
+    </a>
+    <div class="stack-arrow">&#8595;</div>
+    
+    <a class="stack-layer" href="#aliro-layer-4" title="Jump to Radio / transport layer details">
+      <span class="tag">RADIO</span>
+      <div class="body"><strong>Radio / transport layer</strong><span>NFC for instant tap-to-unlock with no pairing step, and BLE (optionally combined with UWB) for hands-free, walk-up proximity unlock -- UWB adds precise ranging to prevent relay attacks that plain BLE proximity is vulnerable to.</span></div>
+    </a>
+    
+    
+  </div>
+
+  
+
+  <h2 class="tech-h2">📚 Core Concepts</h2>
+  <div class="concept-grid">
+    
+    <div class="concept-card"><div class="term">Digital Key credential</div><div class="def">The cryptographic access token issued to a user&#39;s device, functionally equivalent to a physical key or card, but revocable and shareable digitally.</div></div>
+    
+    <div class="concept-card"><div class="term">Reader vs. Endpoint</div><div class="def">The Reader is the lock&#39;s radio + validation hardware; the Endpoint is the phone or wearable holding the credential that presents itself to the Reader.</div></div>
+    
+    <div class="concept-card"><div class="term">NFC tap vs. BLE/UWB proximity</div><div class="def">NFC requires a deliberate tap (very fast, no pairing); BLE/UWB proximity unlock is hands-free as the user simply walks up, with UWB providing precise distance/angle for security.</div></div>
+    
+    <div class="concept-card"><div class="term">Relay-attack resistance</div><div class="def">Plain Bluetooth &#39;in range&#39; checks can be tricked by relaying signals over the internet between a thief&#39;s phone and the real key; UWB ranging measures true physical distance/angle, closing that hole.</div></div>
+    
+    <div class="concept-card"><div class="term">Interoperability certification</div><div class="def">The core promise of Aliro: a credential issued by any certified wallet app must work with any certified reader, regardless of manufacturer.</div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">⚙️ How It Works</h2>
+  <div class="steps">
+    
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Provisioning</strong><span>A digital key is issued to the user&#39;s device (e.g. via a hotel or residential app) and stored securely, typically in the phone&#39;s Secure Element or equivalent protected storage.</span></div></div>
+    
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Discovery</strong><span>As the user approaches or taps, the Reader and Endpoint discover each other via NFC field detection or BLE advertising.</span></div></div>
+    
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Mutual authentication</strong><span>The Reader and Endpoint perform a cryptographic handshake confirming both are genuine and that the credential is valid and has not been revoked.</span></div></div>
+    
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Ranging (optional, UWB)</strong><span>For walk-up-and-unlock scenarios, UWB measures precise distance and angle to confirm the phone is physically at the door -- protecting against relay attacks that a simple &#39;is it in Bluetooth range&#39; check cannot.</span></div></div>
+    
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Unlock</strong><span>Once authenticated (and, where used, ranging-confirmed), the Reader actuates the physical lock mechanism and can log the access event.</span></div></div>
+    
+  </div>
+
+  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
+  <div class="dev-grid">
+    
+    <div class="dev-card"><div class="dt">Wallet/app integration</div><div class="dd">App developers integrate against the CSA-published Aliro Digital Key API to provision credentials into secure storage and present them to readers -- the app doesn&#39;t need to know the internal lock brand&#39;s protocol.</div></div>
+    
+    <div class="dev-card"><div class="dt">Reader/lock integration</div><div class="dd">Lock manufacturers implement Aliro&#39;s reader-side validation stack so their hardware accepts credentials from any certified wallet, rather than shipping a proprietary companion app per lock line.</div></div>
+    
+    <div class="dev-card"><div class="dt">Radio hardware choices</div><div class="dd">Chip vendors offer combined NFC + BLE (+ optional UWB) modules and reference designs specifically targeting Aliro Reader and Endpoint roles -- this is a key design decision when picking silicon for a lock or wearable product.</div></div>
+    
+  </div>
+
+  
+
+  
+
+  <h2 class="tech-h2">💡 Common Use Cases</h2>
+  <div class="usecase-chips">
+    <span>Residential smart locks</span><span>Hotel room access</span><span>Corporate badge / building access replacement</span><span>Connected-car digital key</span>
+  </div>
+
+  <h2 class="tech-h2">🔗 Learn More</h2>
+  <ul class="resource-list">
+    <li><a href="https://csa-iot.org/all-solutions/aliro/" target="_blank" rel="noopener">CSA -- Aliro overview</a></li><li><a href="https://www.firaconsortium.org/" target="_blank" rel="noopener">FiRa Consortium (UWB ranging used by Aliro)</a></li>
+  </ul>
+</div>
+
+
 </main>
-<footer class="footer"><div class="wrap">Technology snapshot generated 2026-07-04 04:38 PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-07-07 14:01 PDT</div></footer>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.tech-tab');
+  var panels = document.querySelectorAll('.tech-panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var slug = this.dataset.slug;
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      this.classList.add('active');
+      var panel = document.getElementById('panel-' + slug);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
 </body></html>

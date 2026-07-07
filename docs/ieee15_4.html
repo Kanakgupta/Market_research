@@ -102,9 +102,8 @@ a:hover { text-decoration:underline; }
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
-    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-04 04:38 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 14:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -120,55 +119,12 @@ a:hover { text-decoration:underline; }
   <h1>802.15.4 News</h1>
   <p>IEEE 802.15.4 radios, Zigbee, multiprotocol SoCs.</p>
   <div class="stats">
-    <span class="pill">4 articles</span>
-    <span class="pill">2 vendors</span>
+    <span class="pill">1 articles</span>
+    <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
-    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
-    <span id="refreshStatus" class="pill" style="display:none;"></span>
   </div>
 </section>
-<script>
-(function(){
-  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
-  if(!btn) return;
-  // Same origin if served via Flask /report/, else fall back to localhost.
-  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
-  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
-    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
-  function poll(){
-    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-      .then(function(r){return r.json()})
-      .then(function(s){
-        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
-                       setTimeout(poll, 2000); }
-        else if(s.ok){ show('Done — reloading…','#16a34a');
-                       setTimeout(function(){ location.reload(); }, 1200); }
-        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
-                               btn.disabled=false; }
-      })
-      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
-  }
-  btn.addEventListener('click', function(){
-    btn.disabled=true; show('Starting…','#2563eb');
-    fetch(apiBase+'/api/refresh-news',{method:'POST'})
-      .then(function(r){return r.json()})
-      .then(function(j){
-        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
-        poll();
-      })
-      .catch(function(){
-        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
-        btn.disabled=false;
-      });
-  });
-  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
-  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
-    .catch(function(){});
-})();
-</script>
 
 
 
@@ -190,69 +146,6 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="source">CSA / Matter (Zigbee)</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-02T18:02:22+00:00">2026-07-02</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
-        <span class="chip chip-vendor">Microchip</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a></h2>
-      <p class="summary">Seeed Studio XIAO nRF54LM20A and XIAO nRF54LM20A Sense are tiny USB-C IoT boards based on Nordic Semiconductor’s nRF54LM20A wireless SoC offering Bluetooth 6.0, Matter, Thread, Zigbee, NFC, Amazon Sidewalk, and 2.4 GHz proprietary connectiv…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T04:00:44+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently</a></h2>
-      <p class="summary">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently
-Follow ZDNET: Add us as a preferred source on Google.
-If you&#39;re a smart home user or on the path to becoming one, you&#39;ve probably heard the buzzword…</p>
-      <div class="meta-row">
-        <span class="source">ZDNET</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T17:46:00+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">NXP</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a></h2>
-      <p class="summary">Simplia CONNECT RW612 is a 6-in-1 M.2 2230 wireless module that offers dual-band WiFi 6, Bluetooth 5.4 LE, an 802.15.4 radio for Zigbee or Thread, LTE Cat-M, NB-IoT, and GNSS connectivity.
-It’s the first module I’ve seen that implements so …</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T07:00:57+00:00">2026-06-29</span>
       </div>
     </div>
   </article>

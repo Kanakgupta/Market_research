@@ -102,9 +102,8 @@ a:hover { text-decoration:underline; }
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
-    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-04 04:38 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 14:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -120,79 +119,16 @@ a:hover { text-decoration:underline; }
   <h1>Aliro News</h1>
   <p>Aliro digital-key spec from CSA — NFC + UWB + Bluetooth LE access.</p>
   <div class="stats">
-    <span class="pill">1 articles</span>
-    <span class="pill">1 vendors</span>
+    <span class="pill">0 articles</span>
+    <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
-    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
-    <span id="refreshStatus" class="pill" style="display:none;"></span>
   </div>
 </section>
-<script>
-(function(){
-  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
-  if(!btn) return;
-  // Same origin if served via Flask /report/, else fall back to localhost.
-  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
-  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
-    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
-  function poll(){
-    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-      .then(function(r){return r.json()})
-      .then(function(s){
-        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
-                       setTimeout(poll, 2000); }
-        else if(s.ok){ show('Done — reloading…','#16a34a');
-                       setTimeout(function(){ location.reload(); }, 1200); }
-        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
-                               btn.disabled=false; }
-      })
-      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
-  }
-  btn.addEventListener('click', function(){
-    btn.disabled=true; show('Starting…','#2563eb');
-    fetch(apiBase+'/api/refresh-news',{method:'POST'})
-      .then(function(r){return r.json()})
-      .then(function(j){
-        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
-        poll();
-      })
-      .catch(function(){
-        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
-        btn.disabled=false;
-      });
-  });
-  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
-  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
-    .catch(function(){});
-})();
-</script>
 
-
+<div class="empty">No articles. Try widening <code>--max-age-days</code>.</div>
 
 <div class="grid" id="grid">
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Aliro</span>
-        <span class="chip chip-vendor">Nordic</span>
-        
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://csa-iot.org/newsroom/nordic-semiconductor-on-aliro/" target="_blank" rel="noopener">Nordic Semiconductor on Aliro</a></h2>
-      <p class="summary">“Aliro helps to create seamless digital keys. The infrastructure is already there, so you’re basically taking advantage of the technology already there and adding the part that can also use&amp;#8230;</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T18:39:08+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
   
 </div>
 </main>

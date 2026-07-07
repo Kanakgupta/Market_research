@@ -102,9 +102,8 @@ a:hover { text-decoration:underline; }
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
-    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-04 04:38 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 14:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -120,55 +119,12 @@ a:hover { text-decoration:underline; }
   <h1>Wi-Fi News</h1>
   <p>Wi-Fi 6E/7/8, MLO, HaLow — vendor chips and customer wins.</p>
   <div class="stats">
-    <span class="pill">13 articles</span>
-    <span class="pill">5 vendors</span>
+    <span class="pill">44 articles</span>
+    <span class="pill">4 vendors</span>
     <span class="pill">33 customers</span>
-    <span class="pill">8 applications</span>
-    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
-    <span id="refreshStatus" class="pill" style="display:none;"></span>
+    <span class="pill">7 applications</span>
   </div>
 </section>
-<script>
-(function(){
-  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
-  if(!btn) return;
-  // Same origin if served via Flask /report/, else fall back to localhost.
-  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
-  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
-    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
-  function poll(){
-    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-      .then(function(r){return r.json()})
-      .then(function(s){
-        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
-                       setTimeout(poll, 2000); }
-        else if(s.ok){ show('Done — reloading…','#16a34a');
-                       setTimeout(function(){ location.reload(); }, 1200); }
-        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
-                               btn.disabled=false; }
-      })
-      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
-  }
-  btn.addEventListener('click', function(){
-    btn.disabled=true; show('Starting…','#2563eb');
-    fetch(apiBase+'/api/refresh-news',{method:'POST'})
-      .then(function(r){return r.json()})
-      .then(function(j){
-        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
-        poll();
-      })
-      .catch(function(){
-        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
-        btn.disabled=false;
-      });
-  });
-  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
-  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
-    .catch(function(){});
-})();
-</script>
 
 
 
@@ -182,15 +138,831 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="chip chip-tech">Wi-Fi</span>
         <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://marketscale.com/industries/software-and-technology/broadcom-apple-chip-deal-2031-supply-chain" target="_blank" rel="noopener">Apple Spent Years Insourcing Chips. It Just Locked Broadcom In Through 2031.</a></h2>
+      <p class="summary">Apple Spent Years Insourcing Chips. It Just Locked Broadcom In Through 2031.
+Apple extended its supplier agreement with Broadcom through 2031 for custom wireless and networking chips, choosing to lock in a critical supplier rather than inso…</p>
+      <div class="meta-row">
+        <span class="source">MarketScale</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T20:15:56+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVEFTMkJCeEhMVU5MQ2xxTXJqUzhxb1F3bzI1ZWFpenhxSkNSQmUxMnBjeVBzNjU2UEo2b0ZDVnFocVlXbWRySHV0LUdCMkhtV3lDTHVXQkhXUl9VZDlDelRPY2stb3NpSWszQmRPdC1RRHZLajVmR3ZYMXo4OFVwMTVoWHdJVzRlVmJCRF9Gd0xPMkk2ZnV1VFdRMlgzMktvLVRSTFBReW8?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Apple and Broadcom renew chip deal, which will run to 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Silicon Republic</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T14:28:28+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cultofmac.com/news/apple-broadcom-chip-partnership" target="_blank" rel="noopener">Apple extends Broadcom partnership despite in-house chip push</a></h2>
+      <p class="summary">Apple locked in one of its most important chip suppliers for years to come.
+Broadcom revealed in a securities filing that it has extended its longstanding technology partnership with Apple through 2031. The companies signed new multi-year a…</p>
+      <div class="meta-row">
+        <span class="source">Cult of Mac</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:47:08+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://tynmagazine.com/broadcom-apple-extend-custom-chip-partnership/" target="_blank" rel="noopener">Broadcom, Apple extend custom chip partnership</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">TyN Magazine</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T12:35:49+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.fonearena.com/blog/486937/broadcom-apple-custom-chip-deal-2031.html" target="_blank" rel="noopener">Broadcom extends custom chip deal with Apple through 2031</a></h2>
+      <p class="summary">Broadcom has expanded its partnership with Apple through a new multi-year agreement that will run until 2031, according to a report by Mark Gurman for Bloomberg. Under the agreement, Broadcom will develop custom application-specific integra…</p>
+      <div class="meta-row">
+        <span class="source">FoneArena.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T08:37:51+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.electronicsforyou.biz/industry-buzz/broadcom-extends-apple-chip-partnership-through-2031-strengthening-long-term-supply-ties/" target="_blank" rel="noopener">Broadcom extends Apple chip partnership through 2031, strengthening long-term supply ties</a></h2>
+      <p class="summary">The five-year extension reinforces Broadcom’s role as a key supplier of custom chips for Apple, easing concerns over potential in-house replacement of critical components.
+Broadcom has extended its partnership with Apple through 2031 to dev…</p>
+      <div class="meta-row">
+        <span class="source">Electronics For You BUSINESS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T08:20:34+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">u-blox</span>
         
         
       </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-inc-focuses-on-diversified-chip-demand-as-investors-weigh/69686917" target="_blank" rel="noopener">Broadcom Inc. focuses on diversified chip demand as investors weigh long-term growth - Ad-hoc-news.de</a></h2>
-      <p class="summary">Broadcom Inc. focuses on diversified chip demand as investors weigh long-term growth
-04.07.2026 - 12:05:42 | ad-hoc-news.deBroadcom Inc. (ISIN US11135F1012) is one of the largest global semiconductor and infrastructure software companies, w…</p>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/" target="_blank" rel="noopener">U-blox Unwraps Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs</a></h2>
+      
       <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-04T10:05:42+00:00">2026-07-04</span>
+        <span class="source">All About Circuits</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T07:00:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://biz.chosun.com/en/en-it/2026/07/07/4W7CSMLTURHJPMIFGMV6PC4AN4/" target="_blank" rel="noopener">Apple extends Broadcom chip pact through 2031, calming investors - CHOSUNBIZ</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Chosunbiz</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T04:50:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">AR / VR / XR</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016" target="_blank" rel="noopener">The Filogic 860. MediaTek leans into Wi-Fi 7 for US home routers</a></h2>
+      <p class="summary">The Filogic 860. MediaTek leans into Wi-Fi 7 for US home routers
+Veröffentlicht: 07.07.2026 um 05:33 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Julian Reed, ad hoc news New Launch Desk. Reviewed…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T03:33:18+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://timesofindia.indiatimes.com/technology/tech-news/apple-broadcom-lock-in-custom-chip-deal-through-2031/articleshow/132228781.cms" target="_blank" rel="noopener">Apple, broadcom lock in custom chip deal through 2031</a></h2>
+      <p class="summary">Chipmaker Broadcom has announced that it has secured a massive partnership expansion with Apple to develop and supply custom chips through 2031. The extended agreement guarantees Broadcom&#39;s role as a primary supplier for the iPhone maker, e…</p>
+      <div class="meta-row">
+        <span class="source">The Times of India</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T02:38:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.phonearena.com/news/apple-signs-deal-with-broadcom-good-through-2031_id181661" target="_blank" rel="noopener">Apple locks up supply of important iPhone components through 2031</a></h2>
+      <p class="summary">Apple locks up supply of important iPhone components through 2031
+With some components hard to find thanks to AI demand, Apple locks up supply from Broadcom through 2031.
+Apple inks new supply deal with Broadcom through 2031 | Image by Phon…</p>
+      <div class="meta-row">
+        <span class="source">PhoneArena</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T02:06:45+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://finance.biggo.com/news/57073133-0645-45e2-9207-f289e7f3f2b8" target="_blank" rel="noopener">Broadcom and Apple Extend Custom Chip Alliance Through 2031, Targeting AI Servers</a></h2>
+      <p class="summary">Broadcom and Apple Extend Custom Chip Alliance Through 2031, Targeting AI Servers
+Broadcom (AVGO) and Apple (AAPL) have agreed to extend their strategic semiconductor partnership through 2031, a deal that deepens their collaboration on cust…</p>
+      <div class="meta-row">
+        <span class="source">finance.biggo.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T22:35:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.mactrast.com/2026/07/apple-and-broadcom-extend-chip-supply-partnership-through-2031/" target="_blank" rel="noopener">Apple and Broadcom Extend Chip Supply Partnership Through 2031</a></h2>
+      <p class="summary">Broadcom and Apple have agreed to extend their wireless chip supply partnership through 2031. The deal covers the development and supply of a wide range of custom chips, according to Reuters.
+Apple is one of Broadcom’s largest customers, an…</p>
+      <div class="meta-row">
+        <span class="source">MacTrast</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T21:06:21+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-to-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-0" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal to 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T20:58:54+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.crnasia.com/news/2026/components-and-peripherals/broadcom-locks-in-apple-chip-supply-for-another-five-years" target="_blank" rel="noopener">Broadcom locks in Apple chip supply for another five years</a></h2>
+      <p class="summary">Broadcom locks in Apple chip supply for another five years
+The expanded custom chip agreement signals Apple&#39;s shift to fully in-house connectivity silicon still has years to run.
+Apple&#39;s long campaign to design the silicon inside its own de…</p>
+      <div class="meta-row">
+        <span class="source">CRN Asia</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T20:40:35+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/" target="_blank" rel="noopener">Broadcom secures role as key Apple supplier with chip deal through 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Reuters</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:59:35+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.macobserver.com/news/apple-signs-broadcom-deal-until-2031-full-switch-to-in-house-chips-delayed/" target="_blank" rel="noopener">Apple Signs Broadcom Deal Until 2031, Full Switch to In-House Chips Delayed</a></h2>
+      <p class="summary">Apple’s plan to move more wireless technology in-house now looks like a longer shift, as Broadcom has extended its custom chip partnership with the company through 2031. The deal suggests Apple will still depend on Broadcom for key radio an…</p>
+      <div class="meta-row">
+        <span class="source">The Mac Observer</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:46:31+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://techbit.pt/en/wi-fi-7-routers-misleading-what-need-know-before-buying/" target="_blank" rel="noopener">Wi-Fi 7 routers may be misleading you. Here is what you need to know before buying</a></h2>
+      <p class="summary">The Wi-Fi 7 label is everywhere — on routers that cost €80 and on others that cost as much as a laptop.
+Brands promise faster speeds, lower latency, and a future-proof network, but reality does not always match what is written on the box.
+M…</p>
+      <div class="meta-row">
+        <span class="source">techbit.pt</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:25:29+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://cryptobriefing.com/broadcom-apple-chip-deal-2031/" target="_blank" rel="noopener">Broadcom and Apple extend chip supply deal through 2031, signaling long-term semiconductor strategy</a></h2>
+      <p class="summary">Broadcom and Apple extend chip supply deal through 2031, signaling long-term semiconductor strategy
+The renewed partnership locks in custom silicon development for another half-decade and sent Broadcom shares up nearly 4% in premarket tradi…</p>
+      <div class="meta-row">
+        <span class="source">Crypto Briefing</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:19:39+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://wccftech.com/broadcom-inks-multi-year-chip-supply-deal-with-apple/" target="_blank" rel="noopener">Broadcom Avoids Qualcomm’s Fate; Enters Into New Agreement With Apple, One That Ensures A Steady Chip Supply And Revenue For Several Years</a></h2>
+      <p class="summary">A new agreement between Broadcom and Apple meant that both firms could accomplish their individual goals without being adversely affected by external forces. With the latest partnership, Apple will be receiving chip supply until 2031.
+The d…</p>
+      <div class="meta-row">
+        <span class="source">Wccftech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:35:44+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://appleinsider.com/articles/26/07/06/apple-broadcom-renew-partnership-through-2031" target="_blank" rel="noopener">Apple &amp; Broadcom renew partnership through 2031</a></h2>
+      <p class="summary">Apple has extended its long-time supplier agreement with Broadcom, ensuring Apple gets a steady flow of custom chips until 2031.
+Apple has used Broadcom as a supplier for its iPhone and other hardware for quite some time. However, as threat…</p>
+      <div class="meta-row">
+        <span class="source">AppleInsider</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:15:01+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.thenews.com.pk/latest/1408264-broadcom-apple-chip-deal-extended-through-2031" target="_blank" rel="noopener">Broadcom, Apple chip deal extended through 2031</a></h2>
+      <p class="summary">Broadcom, Apple chip deal extended through 2031
+According to analysts, revenue generated from sales to Apple amounts to about 20% of Broadcom&#39;s total annual income
+Broadcom said Monday it has agreed to expand its partnership with Apple thro…</p>
+      <div class="meta-row">
+        <span class="source">The News International</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:13:09+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://startupfortune.com/broadcom-locks-in-apple-as-a-chip-customer-through-2031/" target="_blank" rel="noopener">Broadcom Locks In Apple as a Chip Customer Through 2031</a></h2>
+      <p class="summary">Broadcom just extended its grip on Apple&#39;s chip supply chain for five more years, and investors pushed the stock up nearly 4% before the market even opened.
+If your iPhone has ever connected to 5G, Wi-Fi or Bluetooth without a hiccup, thank…</p>
+      <div class="meta-row">
+        <span class="source">Startup Fortune</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:05:56+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://invezz.com/news/2026/07/06/broadcom-extends-apple-chip-partnership-through-2031-stock-climbs-5/" target="_blank" rel="noopener">Broadcom extends Apple chip partnership through 2031, stock climbs 5%</a></h2>
+      <p class="summary">Broadcom extends Apple chip partnership through 2031, stock climbs 5%
+AI Sentiment: 78/100 Bullish
+This score is generated through AI-driven analysis of the article&#39;s content.
+powered by
+Buy AVGO. The Apple custom-chip partnership is extend…</p>
+      <div class="meta-row">
+        <span class="source">Invezz</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:58:55+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://qz.com/apple-broadcom-custom-chip-partnership-2031-070626" target="_blank" rel="noopener">Apple and Broadcom extend custom chip supply deal through 2031</a></h2>
+      <p class="summary">Broadcom $AVGO and Apple $AAPL agreed to expand their chip supply partnership through 2031, with Broadcom developing and supplying a range of custom ASIC silicon products for use across multiple generations of Apple products, the company sa…</p>
+      <div class="meta-row">
+        <span class="source">qz.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:56:34+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.straitstimes.com/business/broadcom-and-apple-expand-partnership-to-2031-with-custom-chips?ref=latest" target="_blank" rel="noopener">Broadcom and Apple expand partnership to 2031 with custom chips</a></h2>
+      <p class="summary">Broadcom and Apple expand partnership to 2031 with custom chips
+- Broadcom and Apple have extended their partnership until 2031, with Broadcom providing custom ASIC chips for multiple generations of Apple products.
+- Broadcom has supplied A…</p>
+      <div class="meta-row">
+        <span class="source">The Straits Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:52:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://9to5mac.com/2026/07/06/apple-radio-chips-switch-likely-to-take-five-more-years-suggests-broadcom-deal/" target="_blank" rel="noopener">Apple radio chips switch likely to take five more years, suggests Broadcom deal</a></h2>
+      <p class="summary">The next generation of Apple radio chips is expected to debut in the iPhone 18 Pro and iPhone Ultra, but a new deal suggests the company doesn’t expect to complete a switch to its own cellular modems before 2031.
+The company has committed t…</p>
+      <div class="meta-row">
+        <span class="source">9to5Mac</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:25:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.firstpost.com/tech/apple-extends-broadcom-partnership-to-strengthen-long-term-chip-supply-14029323.html" target="_blank" rel="noopener">Apple extends Broadcom partnership to strengthen long-term chip supply</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Firstpost</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:13:57+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262013221-broadcom-avgo-apple-aapl-tradingkey" target="_blank" rel="noopener">Broadcom Extends Chip Supply Agreement With Apple to 2031, Rising Over 4% Premarket</a></h2>
+      <p class="summary">Broadcom Extends Chip Supply Agreement With Apple to 2031, Rising Over 4% Premarket
+On July 6, Eastern Time, Broadcom disclosed a multi-year agreement to supply Apple with custom ASIC chips, including RF and connectivity components, through…</p>
+      <div class="meta-row">
+        <span class="source">TradingKey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:10:51+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.macrumors.com/2026/07/06/apple-and-broadcom-extend-deal/" target="_blank" rel="noopener">Apple and Broadcom Extend Chip Supply Deal to 2031</a></h2>
+      <p class="summary">Apple and Broadcom Extend Chip Supply Deal to 2031
+Broadcom has agreed to extend its chip partnership with Apple through 2031, expanding a deal that covers the development and supply of a wide range of custom chips, Reuters reports.
+Today&#39;s…</p>
+      <div class="meta-row">
+        <span class="source">MacRumors</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:04:17+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://macdailynews.com/2026/07/06/broadcom-and-apple-extend-strategic-partnership-custom-chip-collaboration-locked-in-through-2031/" target="_blank" rel="noopener">Broadcom and Apple extend strategic partnership: custom chip collaboration locked in through 2031</a></h2>
+      <p class="summary">In a move that underscores the enduring strength of one of tech’s most important supplier relationships, Broadcom and Apple have agreed to extend their technology collaboration through 2031. The companies entered into new multi-year, long-t…</p>
+      <div class="meta-row">
+        <span class="source">MacDailyNews</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:00:06+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-through-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-1&amp;uxmode=ruby" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal through 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:46:56+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.benzinga.com/trading-ideas/movers/26/07/60276440/broadcom-stock-climbs-on-report-of-apple-chip-deal-extension-to-2031" target="_blank" rel="noopener">Broadcom Stock Climbs on Report of Apple Chip Deal Extension to 2031 - Rivian Automotive (NASDAQ:RIVN)</a></h2>
+      <p class="summary">The Deal
+According to Reuters, Broadcom and Apple have agreed to expand their partnership through 2031, covering the development and supply of a range of custom chips. Broadcom has been a long-standing supplier to Apple, providing key compo…</p>
+      <div class="meta-row">
+        <span class="source">Benzinga</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:38:28+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://wixx.com/2026/07/06/broadcom-apple-extend-chip-partnership-through-2031/" target="_blank" rel="noopener">Broadcom, Apple extend chip supply deal through 2031</a></h2>
+      <p class="summary">By Akash Sriram and Anhata Rooprai
+July 6 (Reuters) – Broadcom said on Monday it will expand its partnership with Apple through 2031 to develop and supply custom chips, cementing the chipmaker’s role as a critical supplier to the iPhone mak…</p>
+      <div class="meta-row">
+        <span class="source">101 WIXX</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:36:45+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.mactech.com/2026/07/06/broadcom-and-apple-agree-to-expand-their-partnership-through-2031/" target="_blank" rel="noopener">Broadcom and Apple agree to expand their partnership through 2031</a></h2>
+      <p class="summary">Broadcom, a semiconductor company, says it and Apple have agreed to expand their partnership through 2031 to develop and supply a range of custom chips, reports Reuters.
+Broadcom has been a long-standing supplier to Apple, providing key com…</p>
+      <div class="meta-row">
+        <span class="source">MacTech.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T11:07:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.proactiveinvestors.com/companies/news/1094988/broadcom-extends-apple-chip-supply-deal-through-2031-1094988.html" target="_blank" rel="noopener">Broadcom extends Apple chip supply deal through 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Proactive financial news</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:51:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-bcm47765-from-broadcom-inc-gps-chip-quietly-powers-premium/69701881" target="_blank" rel="noopener">Broadcom BCM47765 from Broadcom Inc. - GPS chip quietly powers premium wearables</a></h2>
+      <p class="summary">Broadcom BCM47765 from Broadcom Inc. - GPS chip quietly powers premium wearables
+Veröffentlicht: 06.07.2026 um 07:49 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Julian Reed, ad hoc news Bestselle…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T05:49:46+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.notebookcheck.net/This-Raspberry-Pi-alternative-features-Wi-Fi-dual-Gigabit-LAN-and-two-real-time-cores.1335250.0.html" target="_blank" rel="noopener">This Raspberry Pi alternative features Wi-Fi, dual Gigabit LAN, and two real-time cores</a></h2>
+      <p class="summary">This Raspberry Pi alternative features Wi-Fi, dual Gigabit LAN, and two real-time cores
+At first glance, the Debix T62P-01 resembles a Raspberry Pi (on Amazon) and can broadly serve as an alternative. However, its architecture differs signi…</p>
+      <div class="meta-row">
+        <span class="source">Notebookcheck</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T14:00:00+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.wired.com/gallery/best-wifi-routers/" target="_blank" rel="noopener">I’ve Tested Over 40 Wi-Fi Routers. These Are the Best for Your Home</a></h2>
+      <p class="summary">The Best Wi-Fi Routers to Reach Every Corner of Your Home
+Featured in this article
+The humble router is an essential fixture in every home. Benefits extend to everything from streaming movies and online gaming to video calls. Most people ca…</p>
+      <div class="meta-row">
+        <span class="source">WIRED</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T11:00:00+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.engadget.com/2206012/router-brands-could-be-misleading-you-with-that-wi-fi-7-label/" target="_blank" rel="noopener">Router Brands Could Be Misleading You With That Wi-Fi 7 Label</a></h2>
+      <p class="summary">Router brands could be misleading you with that Wi-Fi 7 label
+Wi-Fi standards remain as confusing as ever.
+If you&#39;ve thought at all about your home internet setup lately, you&#39;ve surely come across Wi-Fi 7 in your research. The label is slap…</p>
+      <div class="meta-row">
+        <span class="source">Engadget</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T13:30:00+00:00">2026-07-04</span>
       </div>
     </div>
   </article>
@@ -221,17 +993,16 @@ a:hover { text-decoration:underline; }
     </div>
     <div class="body">
       <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Espressif</span>
-        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Huawei</span>
         
       </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/" target="_blank" rel="noopener">ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD</a></h2>
-      <p class="summary">We’ve covered plenty of connected displays based on ESP32 chips over the years, but the Waveshare ESP32-C5-LCD-1.47 is a little different, since it’s the first to feature an ESP32-C5 chip for dual-band WiFi 6 connectivity.
-It’s basically ba…</p>
+      <h2 class="title"><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a4d66caffe246159f48ea6ee4915045&amp;url=https%3a%2f%2fwww.usatoday.com%2fpress-release%2fstory%2f36439%2fhuawei-announces-wi-fi-7-patent-licensing-rates-reaffirms-commitment-to-transparent-and-reasonable-licensing%2f&amp;c=948733965827534687&amp;mkt=en-us" target="_blank" rel="noopener">Huawei Announces Wi-Fi 7 Patent Licensing Rates, Reaffirms Commitment to Transparent and Reasonable Licensing</a></h2>
+      <p class="summary">SHENZHEN, CHINA - Media OutReach Newswire - 3 July 2026 - Huawei today announced that its patent licensing royalty rate ...</p>
       <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T09:19:45+00:00">2026-07-03</span>
+        <span class="source">Bing: Wi-Fi 7 release announcement</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-03T07:40:00+00:00">2026-07-03</span>
       </div>
     </div>
   </article>
@@ -244,16 +1015,14 @@ It’s basically ba…</p>
       <div class="meta-row">
         <span class="chip chip-tech">Wi-Fi</span>
         
-        <span class="chip chip-cust">Huawei</span>
-        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
       </div>
-      <h2 class="title"><a href="https://www.dagangnews.com/article/english/huawei-announces-wi-fi-7-patent-licensing-rates-reaffirms-commitment-transparent-and-reasonable-licensing-71094" target="_blank" rel="noopener">Huawei Announces Wi-Fi 7 Patent Licensing Rates, Reaffirms Commitment to Transparent and Reasonable Licensing</a></h2>
-      <p class="summary">By Huawei
-SHENZHEN, CHINA - Media OutReach Newswire - 3 July 2026 - Huawei today announced that its patent licensing royalty rate for Wi‑Fi 7 technologies would be set at US$0.5 per unit for Wi Fi 7 compliant devices.
-This announcement unde…</p>
+      <h2 class="title"><a href="https://applemagazine.com/apple-tv-ai/" target="_blank" rel="noopener">Apple TV AI Upgrade Faces a Tougher Hardware Clock - AppleMagazine</a></h2>
+      <p class="summary">Apple TV AI upgrades may be harder to time than a normal streaming-box refresh. A new Apple TV console with more local intelligence has been expected for some time, but the hardware decision now sits between two pressures: rising memory cos…</p>
       <div class="meta-row">
-        <span class="source">DagangNews</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T08:40:18+00:00">2026-07-03</span>
+        <span class="source">AppleMagazine</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T20:51:04+00:00">2026-07-02</span>
       </div>
     </div>
   </article>
@@ -277,176 +1046,6 @@ Surprise: Pixel phones are once again having Wi-Fi problems
       <div class="meta-row">
         <span class="source">Android Authority</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-01T15:57:37+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Healthcare</span>
-      </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/hpe-aruba-ap-635-from-hewlett-packard-enterprise-wi-fi-6e-access-point/69664347" target="_blank" rel="noopener">HPE Aruba AP-635 from Hewlett Packard Enterprise - Wi-Fi 6E access point built for dense US campuses - Ad-hoc-news.de</a></h2>
-      <p class="summary">HPE Aruba AP-635 from Hewlett Packard Enterprise - Wi-Fi 6E access point built for dense US campuses
-01.07.2026 - 02:34:55 | ad-hoc-news.deBy Julian Reed, ad hoc news Accessories &amp; Components Desk. Reviewed July 01, 2026, 12:34 AM ET. Detai…</p>
-      <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-01T00:34:55+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://zamin.uz/en/technology/209960-asus-introduces-new-rog-octopus-7-router-with-wi-fi-7-standard.html" target="_blank" rel="noopener">Asus Introduces New ROG Octopus 7 Router with Wi-Fi 7 Standard</a></h2>
-      <p class="summary">Asus Introduces New ROG Octopus 7 Router with Wi-Fi 7 Standard
-To celebrate the 20th anniversary of its ROG (Republic of Gamers) brand, Asus has unveiled the limited-edition ROG Octopus 7 router. This device attracts attention not only with…</p>
-      <div class="meta-row">
-        <span class="source">Zamin.uz</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T15:55:38+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Espressif</span>
-        
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a48effd81cb421e9b15f6cd56b81c17&amp;url=https%3a%2f%2fwww.elektormagazine.com%2fnews%2fespressif-esp32-s3-wi-fi-ble-socs&amp;c=3559273176736802043&amp;mkt=en-us" target="_blank" rel="noopener">Espressif ESP32-S3 Wi‑Fi + BLE SoCs</a></h2>
-      <p class="summary">Espressif’s ESP32-S3 integrates wireless connectivity, compute, and peripherals to reduce board-level complexity in IoT products.</p>
-      <div class="meta-row">
-        <span class="source">Bing: Espressif ESP32 Wi-Fi</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T15:07:00+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Qualcomm</span>
-        <span class="chip chip-cust">Samsung</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.techinsights.com/blog/samsung-s6575-wi-fi-6ebt-54-soc-floorplan-analysis" target="_blank" rel="noopener">Samsung S6575 Wi-Fi 6E/BT 5.4 SoC Floorplan Analysis</a></h2>
-      <p class="summary">Samsung S6575 Wi-Fi 6E/BT 5.4 SoC Floorplan Analysis
-2 Min Read February 20, 2026
-Samsung returns to 6 GHz Wi‑Fi with the SA56375‑1E Wi‑Fi 6E/BT 5.4 module, after earlier S6566 and S6565 chips topped out at Wi‑Fi 6.
-Following a long hiatus,…</p>
-      <div class="meta-row">
-        <span class="source">TechInsights</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T12:24:39+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Silicon Labs</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.thetechoutlook.com/new-release/gadgets-release/laptop/acer-travellite-tl24-54m-with-intel-core-series-3-processor-wi-fi-7-mil-std-810h-durability-announced-in-india/" target="_blank" rel="noopener">Acer TravelLite TL24-54M With Intel Core Series 3 Processor, Wi-Fi 7, MIL-STD 810H Durability Announced in India</a></h2>
-      <p class="summary">Acer TravelLite TL24-54M With Intel Core Series 3 Processor, Wi-Fi 7, MIL-STD 810H Durability Announced in India
-Acer – the global technology brand has now announced its new TravelLite Business Laptop in the Indian market. The newly-unveile…</p>
-      <div class="meta-row">
-        <span class="source">The Tech Outlook</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T08:54:39+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://techinformed.com/the-tennessee-titans-implement-ai-powered-stadium-wi-fi/" target="_blank" rel="noopener">The Tennessee Titans implement AI-powered stadium Wi-FI</a></h2>
-      <p class="summary">New Nissan Stadium claims to be the first venue to deploy Extreme Networks’ Multi-Beam Wireless, pairing a stadium-wide Wi-Fi 7 network with centralized management and analytics before Nashville hosts Super Bowl LXIV in 2030.
-The Tennessee …</p>
-      <div class="meta-row">
-        <span class="source">TechInformed</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T15:24:30+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">NXP</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a></h2>
-      <p class="summary">Simplia CONNECT RW612 is a 6-in-1 M.2 2230 wireless module that offers dual-band WiFi 6, Bluetooth 5.4 LE, an 802.15.4 radio for Zigbee or Thread, LTE Cat-M, NB-IoT, and GNSS connectivity.
-It’s the first module I’ve seen that implements so …</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T07:00:57+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Qualcomm</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/nighthawk-m6-pro-from-netgear-inc-wifi-6e-hotspot-with-5g-and-2-5g-lan/69641258" target="_blank" rel="noopener">Nighthawk M6 Pro from Netgear Inc. - WiFi 6E hotspot with 5G and 2.5G LAN - Ad-hoc-news.de</a></h2>
-      <p class="summary">Nighthawk M6 Pro from Netgear Inc. - WiFi 6E hotspot with 5G and 2.5G LAN
-27.06.2026 - 16:45:34 | ad-hoc-news.deReviewed: ad hoc news B2B &amp; Pro desk. Edited and checked on 2026-06-27, 16:45. Details in the imprint.
-Netgear Nighthawk M6 Pro …</p>
-      <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-27T14:45:34+00:00">2026-06-27</span>
       </div>
     </div>
   </article>

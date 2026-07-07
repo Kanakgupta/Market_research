@@ -1,10 +1,9 @@
-"""Run the local report server AND AIROC AI server continuously with daily 4 PM refresh.
+"""Run the local report server continuously with daily 4 PM refresh.
 
 This script:
 1. Serves output/latest on http://127.0.0.1:8888/index.html (report server)
-2. Starts the AIROC AI server on http://127.0.0.1:5005 (AI chat)
-3. Rebuilds the site every day at 4:00 PM local time.
-4. Restarts servers if they exit unexpectedly.
+2. Rebuilds the site every day at 4:00 PM local time.
+3. Restarts the report server if it exits unexpectedly.
 
 Run manually with:
   python scripts/loop.py
@@ -126,29 +125,12 @@ def _daily_refresh_loop(args: argparse.Namespace) -> None:
         next_run += timedelta(days=1)
 
 
-def _ai_server_worker(ai_host: str, ai_port: int) -> None:
-    from bluetooth_news.ai_server import serve
-
-    while not _server_stop.is_set():
-        try:
-            print(f"[loop] starting AIROC AI server on {ai_host}:{ai_port}...")
-            serve(ai_host, ai_port, open_browser=False)
-        except Exception as exc:
-            if _server_stop.is_set():
-                break
-            print(f"[loop] AI server error: {exc}; restarting in 5 seconds")
-            time.sleep(5)
-
-
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Run the local report server AND AIROC AI server continuously with daily 4 PM refresh.")
+    parser = argparse.ArgumentParser(description="Run the local report server continuously with daily 4 PM refresh.")
     parser.add_argument("--host", default="127.0.0.1", help="Report server host")
     parser.add_argument("--port", type=int, default=8888, help="Report server port")
-    parser.add_argument("--ai-host", default="127.0.0.1", help="AI server host")
-    parser.add_argument("--ai-port", type=int, default=5005, help="AI server port")
     parser.add_argument("--page", default="index.html", help="Page to open in the browser")
     parser.add_argument("--no-browser", action="store_true")
-    parser.add_argument("--skip-ai", action="store_true", help="Skip starting the AI server")
     parser.add_argument("--build-at-start", action="store_true", 
                         help="Rebuild the site at startup (default: skip and serve cached site)")
     parser.add_argument("--max-age-days", type=int, default=7)
@@ -183,11 +165,6 @@ def main(argv: list[str] | None = None) -> int:
     refresh_thread = threading.Thread(target=_daily_refresh_loop, args=(args,), daemon=True)
     server_thread.start()
     refresh_thread.start()
-
-    ai_thread = None
-    if not args.skip_ai:
-        ai_thread = threading.Thread(target=_ai_server_worker, args=(args.ai_host, args.ai_port), daemon=True)
-        ai_thread.start()
 
     if not args.no_browser:
         url = f"http://{args.host}:{args.port}/{args.page.lstrip('/')}"

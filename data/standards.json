@@ -4,18 +4,19 @@
     {
       "family": "Bluetooth",
       "body": "Bluetooth SIG",
-      "current_version": "Bluetooth 6.1 (adopted)",
-      "next_version": "Bluetooth 6.2 (in progress)",
+      "current_version": "Bluetooth Core Specification 6.3 (adopted)",
+      "next_version": "Not yet announced (6.3 is the latest adopted release)",
       "in_flight_features": [
-        "Channel Sounding (BT 6.0) \u2014 secure ranging via PBR + RTT",
-        "Decision-based Advertising Filtering (BT 6.0)",
-        "Frame Space Update (BT 6.0)",
-        "Higher band 6 GHz operation (study)",
-        "LE Audio / Auracast adoption broadening to public venues",
-        "Encrypted Advertising Data v2"
+        "Channel Sounding Inline PCT Transfer (BT 6.3) \u2014 analog phase pre-compensation for faster, lower-overhead ranging",
+        "Channel Sounding PHY-specific RTT Accuracy (BT 6.3) \u2014 per-PHY ranging precision (LE 1M/2M)",
+        "Running Out of Bits (BT 6.3) \u2014 expanded HCI command/event bitmask for future feature growth",
+        "BR/EDR ACP & C/I limit relaxation (BT 6.3) \u2014 harmonizes Classic RF limits with LE for simpler dual-mode radios",
+        "LE Audio / Auracast adoption continuing to broaden to public venues (ecosystem trend, not a new core feature)"
       ],
-      "infineon_position": "AIROC CYW20829 ships Channel Sounding; CYW55513 covers LE Audio. Watch for next-gen 6 GHz parts.",
-      "url": "https://www.bluetooth.com/specifications/"
+      "infineon_position": "AIROC CYW20829 ships Channel Sounding (PBR/RTT baseline from BT 6.0); CYW55513 covers LE Audio. Track BT 6.3 Channel Sounding refinements (Inline PCT Transfer, per-PHY RTT) for next silicon revs.",
+      "url": "https://www.bluetooth.com/specifications/specs/core-specification/",
+      "last_verified": "2026-07-07",
+      "source_verified": "https://www.bluetooth.com/specifications/specs/core-specification/ and https://www.bluetooth.com/bluetooth-core-6-3-technical-overview/"
     },
     {
       "family": "Wi-Fi",
@@ -29,34 +30,43 @@
         "Wi-Fi HaLow (802.11ah) growth in long-range IoT"
       ],
       "infineon_position": "AIROC CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet \u2014 gap vs Synaptics Veros/MediaTek Filogic 380.",
-      "url": "https://www.wi-fi.org/discover-wi-fi"
+      "url": "https://www.wi-fi.org/discover-wi-fi",
+      "last_verified": "2026-07-07",
+      "source_verified": "https://www.wi-fi.org/discover-wi-fi/wi-fi-certified-7 (Wi-Fi 7 shipped 2024, 1.1B units shipped in 2026; Wi-Fi 8/802.11bn still pre-certification, target ~2028 per industry commentary)"
     },
     {
       "family": "802.15.4 / Thread / Matter",
       "body": "IEEE / Thread Group / CSA",
-      "current_version": "Thread 1.4 (Apr 2024) \u00b7 Matter 1.4 (Q4 2024) \u00b7 Matter 1.5 (in progress)",
-      "next_version": "Matter 1.5 (cameras, energy, water valves, robots)",
+      "current_version": "Thread 1.4 (last publicly verified) \u00b7 Matter 1.6 (Jun 2026)",
+      "next_version": "Matter 1.7 (scope not yet public); Thread next version unverified",
       "in_flight_features": [
-        "Matter 1.5 \u2014 camera streaming, EV chargers, soil moisture, robot vacuums",
-        "Matter Casting v2 (multi-room audio video)",
-        "Thread 1.4 enhanced commissioning + offline mesh",
-        "Aliro (CSA) digital key v2 \u2014 NFC + UWB + BLE"
+        "Matter 1.6 \u2014 Joint Fabric for cross-ecosystem device sharing (per CSA Unify 2026)",
+        "Matter 1.6 \u2014 NFC-based commissioning to simplify device setup",
+        "Matter 1.6 theme is reliability/interoperability polish, not new device types (per CSA messaging)",
+        "Zigbee 4.0 relaunch under CSA \u2014 new member testimonials (Legrand, Fortune Brands, Jun-Jul 2026)",
+        "Aliro (CSA) digital key \u2014 NFC + UWB + BLE, ongoing member adoption (e.g. Nordic testimonial Jun 2026)"
       ],
-      "infineon_position": "AIROC has 802.15.4 in CYW55573; Matter SDK supported. Strong vs NXP IW612 / Silicon Labs MG24 in tri-radio stories.",
-      "url": "https://csa-iot.org/all-solutions/matter/"
+      "infineon_position": "AIROC has 802.15.4 in CYW55573; Matter SDK supported. Strong vs NXP IW612 / Silicon Labs MG24 in tri-radio stories. Needs to confirm Matter 1.6 (Joint Fabric, NFC commissioning) and Zigbee 4.0 support on roadmap.",
+      "url": "https://csa-iot.org/all-solutions/matter/",
+      "last_verified": "2026-07-07",
+      "source_verified": "https://csa-iot.org/newsroom/ (Matter 1.6 / Zigbee 4.0 items dated Jun-Jul 2026); Thread version NOT independently confirmed \u2014 threadgroup.org has no version number published"
     },
     {
       "family": "UWB",
       "body": "FiRa Consortium / Aliro",
-      "current_version": "FiRa 2.0 (2024)",
-      "next_version": "FiRa 3.0 \u2014 high-precision indoor positioning",
+      "current_version": "FiRa Core 4.0 (announced Dec 2025, with certification program)",
+      "next_version": "Not yet numbered \u2014 FiRa Plugfest #2 interoperability validation scheduled Sep 2026",
       "in_flight_features": [
+        "FiRa Core 4.0 specification + certification program rollout",
+        "FiRa Plugfest #2 (Sep 2026, France) \u2014 multi-vendor interoperability testing",
         "Aliro digital key (NFC+UWB+BLE) gaining auto OEM commitments",
         "UWB radar / sensing for presence detection",
         "Phone-to-phone UWB ranging"
       ],
-      "infineon_position": "AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung.",
-      "url": "https://www.firaconsortium.org/"
+      "infineon_position": "AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung. Confirm FiRa Core 4.0 alignment before next combo announcement.",
+      "url": "https://www.firaconsortium.org/",
+      "last_verified": "2026-07-07",
+      "source_verified": "https://www.firaconsortium.org/ (Core 4.0 announcement Dec 2025; Plugfest #2 Sep 2026 banner)"
     }
   ]
 }

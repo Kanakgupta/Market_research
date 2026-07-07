@@ -102,9 +102,8 @@ a:hover { text-decoration:underline; }
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
-    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-04 04:38 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 14:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -120,59 +119,179 @@ a:hover { text-decoration:underline; }
   <h1>Thread News</h1>
   <p>Thread protocol, OpenThread, Thread 1.4, border routers.</p>
   <div class="stats">
-    <span class="pill">20 articles</span>
+    <span class="pill">17 articles</span>
     <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
-    <span class="pill">8 applications</span>
-    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
-    <span id="refreshStatus" class="pill" style="display:none;"></span>
+    <span class="pill">7 applications</span>
   </div>
 </section>
-<script>
-(function(){
-  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
-  if(!btn) return;
-  // Same origin if served via Flask /report/, else fall back to localhost.
-  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
-  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
-    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
-  function poll(){
-    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-      .then(function(r){return r.json()})
-      .then(function(s){
-        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
-                       setTimeout(poll, 2000); }
-        else if(s.ok){ show('Done — reloading…','#16a34a');
-                       setTimeout(function(){ location.reload(); }, 1200); }
-        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
-                               btn.disabled=false; }
-      })
-      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
-  }
-  btn.addEventListener('click', function(){
-    btn.disabled=true; show('Starting…','#2563eb');
-    fetch(apiBase+'/api/refresh-news',{method:'POST'})
-      .then(function(r){return r.json()})
-      .then(function(j){
-        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
-        poll();
-      })
-      .catch(function(){
-        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
-        btn.disabled=false;
-      });
-  });
-  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
-  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
-    .catch(function(){});
-})();
-</script>
 
 
 
 <div class="grid" id="grid">
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNZHI1ME5UVDJqWkJfV0hpd2g2a1ZOV3NDMm5jOXdUUDhoN1N0cWRnT2JGRE5OUzJlWWVmMzhyX3JDc1EwR2NRMTg3c0hraThSTmhadGRGYXd3TzVydXplSVItT0xqVXlYYmRwN2M0NERBU2ZlSUdGeTUxaGF1a28xNkRqbGlCaFhqWUE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Chargers Daily Links: Tuesday Open Thread</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Yahoo Sports</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:50:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-looks-to-long-term-growth-as-a-global-thread-specialist/69711102" target="_blank" rel="noopener">Coats Group plc looks to long-term growth as a global thread specialist</a></h2>
+      <p class="summary">Coats Group plc looks to long-term growth as a global thread specialist
+Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)Coats Group plc is a long-established global m…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T06:32:45+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-7-6/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 7/6</a></h2>
+      <p class="summary">We’re about a week into NHL Free Agency, and it has been relatively quiet for the Buffalo Sabres with a number of depth signings and no major additions from an already-shallow free agent pool. All eyes remain on Sabres GM Jarmo Kekäläinen t…</p>
+      <div class="meta-row">
+        <span class="source">diebytheblade.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:00:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-epic-thread-from-coats-group-everyday-apparel-workhorse/69704264" target="_blank" rel="noopener">Coats Epic thread from Coats Group - everyday apparel workhorse</a></h2>
+      <p class="summary">Coats Epic thread from Coats Group - everyday apparel workhorse
+Veröffentlicht: 06.07.2026 um 12:08 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Nora Whitfield, ad hoc news Bestsellers &amp; Flagships…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:08:08+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/sports/mma_ufc/open-thread-july-5-2026/ar-AA27fI7n" target="_blank" rel="noopener">Open thread, July 5, 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T15:21:31+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-epic-thread-from-coats-group-a-classic-polyester-workhorse-for/69692896" target="_blank" rel="noopener">Coats Epic thread from Coats Group - a classic polyester workhorse for apparel makers</a></h2>
+      <p class="summary">Coats Epic thread from Coats Group - a classic polyester workhorse for apparel makers
+Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Nora Whitfield, ad hoc news C…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T04:26:16+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/news/other/apple-and-google-update-streaming-devices-with-thread-14-support/ar-AA26T9ZE" target="_blank" rel="noopener">Apple and Google update streaming devices with Thread 1.4 support</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T20:30:22+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/sports/mma_ufc/daily-open-thread-july-4-2026/ar-AA27coAv" target="_blank" rel="noopener">Daily open thread: July 4, 2026</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T12:39:44+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
   
   <article class="card">
     <div class="thumb">
@@ -190,53 +309,6 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="source">Trend Hunter</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-04T00:51:03+00:00">2026-07-04</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        <span class="chip chip-app">Industrial</span>
-      </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-strengthens-its-global-threads-business-as-investors-watch/69682488" target="_blank" rel="noopener">Coats Group plc strengthens its global threads business as investors watch long-term demand - Ad-hoc-news.de</a></h2>
-      <p class="summary">Coats Group plc strengthens its global threads business as investors watch long-term demand
-03.07.2026 - 20:45:34 | ad-hoc-news.deCoats Group plc (ISIN GB0002335270) is a long-established global manufacturer of industrial threads and yarns …</p>
-      <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T18:45:34+00:00">2026-07-03</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/chargers-daily-links-friday-open-135000325.html" target="_blank" rel="noopener">Chargers Daily Links: Friday Open Thread</a></h2>
-      <p class="summary">Chargers Daily Links: Friday Open Thread
-Good morning, Chargers fans!
-You know what to do!
-And now for today’s links.
-Chargers News:
-A former Chargers first-round pick is “likely” hanging it up this season (Chargers Wire)
-Two trades the Cha…</p>
-      <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T13:50:00+00:00">2026-07-03</span>
       </div>
     </div>
   </article>
@@ -269,28 +341,6 @@ Two trades the Cha…</p>
       <div class="meta-row">
         <span class="chip chip-tech">Thread</span>
         
-        
-        <span class="chip chip-app">Retail</span>
-      </div>
-      <h2 class="title"><a href="https://www.urdupoint.com/en/middle-east/alef-group-launches-threads-of-connection-p-2213879.html" target="_blank" rel="noopener">Alef Group Launches &#39;Threads Of Connection&#39; Public Art Initiative</a></h2>
-      <p class="summary">Alef Group Launches &#39;Threads Of Connection&#39; Public Art Initiative
-Fahad Shabbir (@FahadShabbir) Published July 03, 2026 | 04:45 PM
-SHARJAH, (UrduPoint / Pakistan Point News / WAM - 03rd Jul, 2026) Alef Group, a premier real estate developer…</p>
-      <div class="meta-row">
-        <span class="source">UrduPoint</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T11:45:19+00:00">2026-07-03</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
         <span class="chip chip-cust">Meta</span>
         
       </div>
@@ -300,7 +350,7 @@ This question has been bugging me for some time, long before Elon Musk figured o
 It began to bother me…</p>
       <div class="meta-row">
         <span class="source">emptywheel.net</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T02:27:56+00:00">2026-07-03</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T18:36:07+00:00">2026-07-02</span>
       </div>
     </div>
   </article>
@@ -316,11 +366,11 @@ It began to bother me…</p>
         
         <span class="chip chip-app">Industrial</span>
       </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-highlights-its-global-thread-business-as-investors-assess/69675630" target="_blank" rel="noopener">Coats Group plc highlights its global thread business as investors assess long-term prospects - Ad-hoc-news.de</a></h2>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-highlights-its-global-thread-business-as-investors-assess/69675630" target="_blank" rel="noopener">Coats Group plc highlights its global thread business as investors assess long-term prospects</a></h2>
       <p class="summary">Coats Group plc highlights its global thread business as investors assess long-term prospects
 02.07.2026 - 20:02:03 | ad-hoc-news.deCoats Group plc (ISIN GB0002335270) is a long-established manufacturer of industrial threads and related pro…</p>
       <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
+        <span class="source">AD HOC NEWS</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-02T18:02:03+00:00">2026-07-02</span>
       </div>
     </div>
@@ -337,33 +387,14 @@ It began to bother me…</p>
         
         
       </div>
-      <h2 class="title"><a href="https://www.bluebirdbanter.com/general/62639/off-day-open-thread" target="_blank" rel="noopener">Off-Day Open Thread</a></h2>
-      <p class="summary">The Jays have an off-day today, so we are going to have an Open Thread. And they are unlikely to give us any news today because they have a long plane ride to Seattle.
-Off-Day Open Thread
-I have enjoyed going to Seattle for games in the pas…</p>
+      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/454605/open-thread-july-2-2026" target="_blank" rel="noopener">Open Thread, July 2, 2026</a></h2>
+      <p class="summary">Hey all, here’s your open thread for Thursday.
+Open Thread, July 2, 2026
+Your daily source for off topic chatter with the MMA Mania faithful.
+Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania, Tim specializes …</p>
       <div class="meta-row">
-        <span class="source">Bluebird Banter</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-02T15:47:07+00:00">2026-07-02</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-gb/lifestyle/shopping/apple-and-google-update-streaming-devices-with-thread-1-4-support/ar-AA26SO3a?uxmode=ruby" target="_blank" rel="noopener">Apple and Google update streaming devices with Thread 1.4 support</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MSN</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-02T04:35:10+00:00">2026-07-02</span>
+        <span class="source">MMA Mania</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T13:05:00+00:00">2026-07-02</span>
       </div>
     </div>
   </article>
@@ -399,11 +430,11 @@ I have enjoyed going to Seattle for games in the pas…</p>
         
         
       </div>
-      <h2 class="title"><a href="https://www.defendingbigd.com/dallas-stars-2026-nhl-free-agency-open-thread/" target="_blank" rel="noopener">2026 NHL Free Agency Open Thread</a></h2>
-      <p class="summary">Today marks the beginning of NHL Free Agency, as well as being “Shea Weber’s Contract Has Expired” Day for all who celebrate. Although it is viewed as a weak UFA class, today nevertheless has the makings to potentially be one of the most tu…</p>
+      <h2 class="title"><a href="https://www.secondcityhockey.com/2026-nhl-free-agency-open-thread/" target="_blank" rel="noopener">2026 NHL Free Agency Open Thread</a></h2>
+      <p class="summary">The free-agent market officially opens at 11 a.m. CT on Wednesday morning. Head down to the comments to talk about all the moves!</p>
       <div class="meta-row">
-        <span class="source">Defending Big D</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-01T14:47:18+00:00">2026-07-01</span>
+        <span class="source">Second City Hockey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T15:30:00+00:00">2026-07-01</span>
       </div>
     </div>
   </article>
@@ -442,171 +473,11 @@ Morning Open Thread is a da…</p>
         
         
       </div>
-      <h2 class="title"><a href="https://atthehive.com/charlotte-hornets-free-agency-primer-and-open-thread/" target="_blank" rel="noopener">Charlotte Hornets free agency primer and open thread</a></h2>
-      <p class="summary">So today is technically the start of free agency, but stuff has already happened en masse, both for the Charlotte Hornets and the league as a whole. Let’s hit the highlights:
-Charlotte Hornets
-- Traded LaMelo Ball to the Minnesota Timberwol…</p>
-      <div class="meta-row">
-        <span class="source">At The Hive</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-01T09:00:56+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
       <h2 class="title"><a href="https://www.9news.com/article/news/local/colorado-department-of-corrections-group-text/73-98f48a9b-9db4-40c6-b2e0-e23c59200746" target="_blank" rel="noopener">Four Colorado corrections officials shared hundreds of &#39;inappropriate&#39; messages in group text thread</a></h2>
       
       <div class="meta-row">
         <span class="source">9News</span>
         <span class="dot">·</span><span class="time" data-ts="2026-06-30T23:43:00+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.t3.com/home-living/smart-home/apple-and-google-update-streaming-devices-with-thread-1-4-support-heres-what-it-means-for-your-smart-home" target="_blank" rel="noopener">Apple and Google update streaming devices with Thread 1.4 support – here&#39;s what it means for your smart home - T3</a></h2>
-      <p class="summary">Apple and Google update streaming devices with Thread 1.4 support – here&#39;s what it means for your smart home
-Building a Matter smart home is about to get a lot less complicated
-QUICK SUMMARY
-Apple and Google have both updated their latest s…</p>
-      <div class="meta-row">
-        <span class="source">T3</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T10:03:58+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/96968/mets-blue-jays-lineups-broadcast-how-watch-open-thread-new-york-toronto" target="_blank" rel="noopener">Mets vs. Blue Jays: Lineups, broadcast info, and open thread, 6/29/26</a></h2>
-      <p class="summary">Mets vs. Blue Jays: Lineups, broadcast info, and open thread, 6/29/26
-The Mets head across the border to take on the Blue Jays.
-Carson Benge - RF
-Juan Soto - LF
-Bo Bichette - 3B
-Francisco Lindor - SS
-Jared Young - 1B
-A.J. Ewing - CF
-Mark Vi…</p>
-      <div class="meta-row">
-        <span class="source">Amazin&#39; Avenue</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T22:07:00+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Amazon</span>
-        <span class="chip chip-app">Industrial</span>
-      </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/ecoverde-from-coats-group-recycled-thread-that-feels-consistent-on-the/69649062" target="_blank" rel="noopener">EcoVerde from Coats Group - recycled thread that feels consistent on the line - Ad-hoc-news.de</a></h2>
-      <p class="summary">EcoVerde from Coats Group - recycled thread that feels consistent on the line
-29.06.2026 - 03:11:59 | ad-hoc-news.deReviewed: ad hoc news Classics &amp; Longseller desk. Edited and checked on 2026-06-29, 03:11. Details in the imprint.
-The EcoVe…</p>
-      <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T01:11:59+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/open-thread-spurs-summer-league-145104041.html" target="_blank" rel="noopener">Open Thread: Spurs Summer League schedules released</a></h2>
-      <p class="summary">Open Thread: Spurs Summer League schedules released
-The Spurs have four new draftees, three of whom are available to participate immediately in Summer League. The first stop for the Spurs is San Francisco where the Silver &amp; Black join Calif…</p>
-      <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-28T14:51:04+00:00">2026-06-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Microsoft</span>
-        <span class="chip chip-app">Industrial</span>
-      </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/epic-thread-from-coats-group-polyester-core-that-keeps-machines-running/69643712" target="_blank" rel="noopener">Epic thread from Coats Group - polyester core that keeps machines running - Ad-hoc-news.de</a></h2>
-      <p class="summary">Epic thread from Coats Group - polyester core that keeps machines running
-28.06.2026 - 05:28:36 | ad-hoc-news.deReviewed: ad hoc news Classics &amp; Longseller desk. Edited and checked on 2026-06-28, 05:28. Details in the imprint.
-The Epic thre…</p>
-      <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-28T03:28:36+00:00">2026-06-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.defendingbigd.com/dallas-stars-2026-nhl-draft-open-thread/" target="_blank" rel="noopener">2026 NHL Draft Open Thread</a></h2>
-      <p class="summary">The first round is over, and the Dallas Stars finally get their turn at the NHL Draft table today. What is Jim Nill cooking?
-Discuss the moves here, and check DBD for reports on what happens throughout the week to come.
-The Dallas Stars’ dr…</p>
-      <div class="meta-row">
-        <span class="source">Defending Big D</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-27T14:46:19+00:00">2026-06-27</span>
       </div>
     </div>
   </article>

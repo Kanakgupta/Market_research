@@ -102,9 +102,8 @@ a:hover { text-decoration:underline; }
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
-    <a href="ai.html" class="" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-04 04:38 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 14:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -120,55 +119,12 @@ a:hover { text-decoration:underline; }
   <h1>Bluetooth News</h1>
   <p>Bluetooth 6.0, LE Audio, Auracast, Channel Sounding, Coded PHY, profiles &amp; open-source stacks.</p>
   <div class="stats">
-    <span class="pill">27 articles</span>
-    <span class="pill">4 vendors</span>
+    <span class="pill">30 articles</span>
+    <span class="pill">2 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">9 applications</span>
-    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">↻ Refresh news</button>
-    <span id="refreshStatus" class="pill" style="display:none;"></span>
   </div>
 </section>
-<script>
-(function(){
-  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
-  if(!btn) return;
-  // Same origin if served via Flask /report/, else fall back to localhost.
-  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
-  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
-    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
-  function poll(){
-    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-      .then(function(r){return r.json()})
-      .then(function(s){
-        if(s.running){ show('Fetching… ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
-                       setTimeout(poll, 2000); }
-        else if(s.ok){ show('Done — reloading…','#16a34a');
-                       setTimeout(function(){ location.reload(); }, 1200); }
-        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
-                               btn.disabled=false; }
-      })
-      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
-  }
-  btn.addEventListener('click', function(){
-    btn.disabled=true; show('Starting…','#2563eb');
-    fetch(apiBase+'/api/refresh-news',{method:'POST'})
-      .then(function(r){return r.json()})
-      .then(function(j){
-        if(!j.started && j.reason){ show('Already running…','#f59e0b'); }
-        poll();
-      })
-      .catch(function(){
-        show('AI server not running — start it: python run.py ai --no-open','#dc2626');
-        btn.disabled=false;
-      });
-  });
-  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
-  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
-    .catch(function(){});
-})();
-</script>
 
 
 
@@ -183,14 +139,349 @@ a:hover { text-decoration:underline; }
         <span class="chip chip-tech">Bluetooth</span>
         
         <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.analyticsinsight.net/smartwatch/dont-have-an-apple-watch-these-affordable-health-tracking-alternatives-work-too" target="_blank" rel="noopener">Don&#39;t Have an Apple Watch? These Affordable Health Tracking Alternatives Work Too</a></h2>
+      <p class="summary">Affordable smartwatches now offer health tracking features that were once available only on premium devices.
+Heart rate monitoring, sleep tracking, SpO₂ sensors, and Bluetooth calling have become common across budget models.
+The best smartw…</p>
+      <div class="meta-row">
+        <span class="source">Analytics Insight</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T18:45:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Sony</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.channelnews.com.au/sony-wh-1000xm6-headphones-tipped-for-new-colour-as-gaming-update-rolls-out/" target="_blank" rel="noopener">Sony WH-1000XM6 Headphones Tipped For New Colour As Gaming Update Rolls Out</a></h2>
+      <p class="summary">Sony WH-1000XM6 Headphones Tipped For New Colour As Gaming Update Rolls Out
+Sony looks set to expand its WH-1000XM6 headphone range again – shortly after adding low-latency GMAP gaming support – with new import filings suggesting a sixth co…</p>
+      <div class="meta-row">
+        <span class="source">channelnews.com.au</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T02:20:48+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Asset Tracking</span>
+      </div>
+      <h2 class="title"><a href="https://www.trustedreviews.com/deals/the-airtag-2-is-down-to-its-best-price-since-launch" target="_blank" rel="noopener">The AirTag 2 is down to its best price since launch</a></h2>
+      <p class="summary">Amazon is still selling the multipack of four AirTag 2 trackers for a great price.
+The handy trackers are down to $89 from their usual $99, a generous saving of 10% and the lowest price we’ve seen these drop to.
+The AirTag 2 is down to its …</p>
+      <div class="meta-row">
+        <span class="source">Trusted Reviews</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T23:23:48+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Apple</span>
         <span class="chip chip-app">Automotive</span>
       </div>
-      <h2 class="title"><a href="https://www.zdnet.com/article/apple-airtag-2-july-4-deal-2026/" target="_blank" rel="noopener">You can get 4 of the newest AirTags for just $89 right now - here&#39;s why I recommend them</a></h2>
+      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/apple-airtags-vs-rival-bluetooth-trackers-including-2-one/" target="_blank" rel="noopener">I compared Apple AirTags to competing Bluetooth trackers - including this $2 one</a></h2>
       <p class="summary">&#39;ZDNET Recommends&#39;: What exactly does it mean?
 ZDNET&#39;s recommendations are based on many hours of testing, research, and comparison shopping. We gather data from the best available sources, including vendor and retailer listings as well as …</p>
       <div class="meta-row">
         <span class="source">ZDNET</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-04T11:00:00+00:00">2026-07-04</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T19:55:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.ithinkdiff.com/apple-releases-ios-27-beta-3-features-bug-fixes/" target="_blank" rel="noopener">Apple Releases iOS 27 Beta 3 With New Features and Bug Fixes</a></h2>
+      <p class="summary">Apple has released iOS 27 Beta 3 and iPadOS 27 Beta 3 to developers, bringing another round of refinements ahead of the public beta. While this update focuses primarily on stability, it also introduces improvements for Apple Intelligence, D…</p>
+      <div class="meta-row">
+        <span class="source">iThinkDifferent</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T19:17:52+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.rtings.com/speaker/reviews/best/by-feature/bluetooth" target="_blank" rel="noopener">The 6 Best Bluetooth Speakers of 2026</a></h2>
+      <p class="summary">Best
+Bluetooth
+Portable
+Outdoor
+Loud
+Home
+Bluetooth For Sound
+Brands
+Small
+JBL
+Budget And Cheap
+Bluetooth For Bass
+Parties
+Waterproof Bluetooth
+Shower
+Golf
+Smart
+Alexa
+Bluetooth Under $100
+Bose
+Sonos
+Tools
+Compare
+Results Table Tool
+Review …</p>
+      <div class="meta-row">
+        <span class="source">RTINGS.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T19:09:35+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/" target="_blank" rel="noopener">Nordic’s Prototyping Tag to Streamline ‘Find My’ and Asset Tag Designs</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">All About Circuits</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T07:00:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.pcguide.com/deals/apple-watch-series-11-deal-chops-70-off-the-price-of-this-46mm-smartwatch/" target="_blank" rel="noopener">Apple Watch Series 11 deal chops $70 off the price of this 46mm smartwatch</a></h2>
+      <p class="summary">Apple Watch Series 11 deal chops $70 off the price of this 46mm smartwatch
+Table of Contents
+The Apple Watch Series 11 46mm is a truly impressive smartwatch for iPhone users who want the larger display size, improved battery life, health mo…</p>
+      <div class="meta-row">
+        <span class="source">PC Guide</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T00:35:12+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.notebookcheck.net/This-self-charging-battery-free-Bluetooth-keyboard-drops-to-61-35-28-off.1335385.0.html" target="_blank" rel="noopener">This self-charging battery-free Bluetooth keyboard drops to $61.35 (28% off)</a></h2>
+      <p class="summary">Deal | Lenovo&#39;s battery-free Bluetooth keyboard gets a 28% discount
+At CES 2025, Lenovo unveiled the Self-Charging Bluetooth Keyboard, which has a fast-charging supercapacitor that stores energy instead of a battery, and photovoltaic cells …</p>
+      <div class="meta-row">
+        <span class="source">Notebookcheck</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T23:25:00+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Sony</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.soundguys.com/sony-wh-1000xm6-gaming-update-hands-on-159471/" target="_blank" rel="noopener">I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it works</a></h2>
+      <p class="summary">All products featured are independently chosen by us. However, SoundGuys may receive a commission on orders placed through its retail links. See our ethics statement.
+I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…</p>
+      <div class="meta-row">
+        <span class="source">SoundGuys</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T09:03:47+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Sony</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://techmymoney.com/2026/07/05/sony-wh-1000xm6-gmap-update-makes-its-gaming-pitch-stronger/" target="_blank" rel="noopener">Sony WH-1000XM6 GMAP Update Makes Its Gaming Pitch Stronger</a></h2>
+      <p class="summary">Sony WH-1000XM6 GMAP update is quiet firmware news that could matter if you game on Bluetooth gear. Sony’s firmware update to version 3.1.5 adds GMAP support to the WH-1000XM6 headphones. GMAP means Gaming Audio Profile. Sony says it is a l…</p>
+      <div class="meta-row">
+        <span class="source">Tech My Money</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T07:45:32+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Sony</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/sony-wh-1000xm6-update-adds-low-latency-gaming-mode/gm-GM61150133?gemSnapshotKey=GM61150133-snapshot-1&amp;uxmode=ruby" target="_blank" rel="noopener">Sony WH-1000XM6 update adds low-latency gaming mode</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T12:37:53+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Sony</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://tech.yahoo.com/audio/articles/sony-wh-1000xm6-headphones-just-123010326.html" target="_blank" rel="noopener">Sony’s WH-1000XM6 headphones just became more tempting for gamers who hate gaming headsets</a></h2>
+      <p class="summary">Sony&#39;s WH-1000XM6 gaming mode is rolling out through firmware version 3.1.5, adding support for Bluetooth LE Audio&#39;s Gaming Audio Profile, or GMAP. The same update also includes general performance improvements, so WH-1000XM6 owners have a …</p>
+      <div class="meta-row">
+        <span class="source">Yahoo Tech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T12:30:10+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/bluetooth-gadget-deals-july-4-2026/" target="_blank" rel="noopener">I found 4 Bluetooth gadgets that are highly functional - and cheap</a></h2>
+      <p class="summary">&#39;ZDNET Recommends&#39;: What exactly does it mean?
+ZDNET&#39;s recommendations are based on many hours of testing, research, and comparison shopping. We gather data from the best available sources, including vendor and retailer listings as well as …</p>
+      <div class="meta-row">
+        <span class="source">ZDNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T11:01:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.consumerthai.org/?i=8706598041620" target="_blank" rel="noopener">Bluetooth Devices Can Apple Watch Connect With Airpods Bluetooth Airpods E Apple Watch Apple Watch 11 – How To Connect AirPods And Bluetooth Headphones</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">consumerthai</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T07:43:15+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.notebookcheck.net/MediaTek-Dimensity-9500-Processor-Benchmarks-and-Specs.957550.0.html" target="_blank" rel="noopener">MediaTek Dimensity 9500 Processor - Benchmarks and Specs</a></h2>
+      <p class="summary">MediaTek Dimensity 9500
+The MediaTek Dimensity 9500 is a flagship processor (SoC) with 8 CPU cores (octa-core) for expensive Android phones and tablets, which was launched in the third quarter of 2025. It uses three CPU clusters based on a …</p>
+      <div class="meta-row">
+        <span class="source">Notebookcheck</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T03:30:22+00:00">2026-07-04</span>
       </div>
     </div>
   </article>
@@ -287,17 +578,17 @@ Fancy something for the weekend? Well Sony has just the thing. Its Award-winning
     </div>
     <div class="body">
       <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Espressif</span>
-        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Sony</span>
         
       </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/" target="_blank" rel="noopener">ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD</a></h2>
-      <p class="summary">We’ve covered plenty of connected displays based on ESP32 chips over the years, but the Waveshare ESP32-C5-LCD-1.47 is a little different, since it’s the first to feature an ESP32-C5 chip for dual-band WiFi 6 connectivity.
-It’s basically ba…</p>
+      <h2 class="title"><a href="https://www.inkl.com/news/sonys-award-winning-headphones-just-got-a-surprise-new-feature" target="_blank" rel="noopener">Sony’s Award-winning headphones just got a surprise new feature</a></h2>
+      <p class="summary">Fancy something for the weekend? Well Sony has just the thing. Its Award-winning WH-1000XM6 headphones have just gained a new firmware update that enables an ultra-low-latency mode.
+The update is also available for Sony’s 1000X The Collexio…</p>
       <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T09:19:45+00:00">2026-07-03</span>
+        <span class="source">inkl</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-03T09:45:44+00:00">2026-07-03</span>
       </div>
     </div>
   </article>
@@ -319,6 +610,27 @@ Sony&#39;s 1000X The Collexion update follows the WH-1000XM6 with a gaming bo…
       <div class="meta-row">
         <span class="source">SoundGuys</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-03T09:03:39+00:00">2026-07-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.nytimes.com/wirecutter/reviews/best-bluetooth-tracker/" target="_blank" rel="noopener">The 2 Best Bluetooth Trackers for 2026 | Reviews by Wirecutter</a></h2>
+      <p class="summary">By Ivy Liscomb and Brenda Stolyar
+If you’re lucky, the money you spend on a Bluetooth tracker will be wasted. These tags are helpful only when you need to find your stuff — if you never lose things, they’re just ornamental. But if you’re we…</p>
+      <div class="meta-row">
+        <span class="source">The New York Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T17:57:54+00:00">2026-07-02</span>
       </div>
     </div>
   </article>
@@ -360,26 +672,6 @@ The battery claim is the hook. Moto…</p>
       <div class="meta-row">
         <span class="source">freeyork</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-01T18:44:31+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Sony</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://www.digitaltrends.com/home-theater/sonys-wh-1000xm6-headphones-just-became-more-tempting-for-gamers-who-hate-gaming-headsets/" target="_blank" rel="noopener">Sony&#39;s WH-1000XM6 headphones just became more tempting for gamers who hate gaming headsets</a></h2>
-      <p class="summary">Sony’s WH-1000XM6 gaming mode is rolling out through firmware version 3.1.5, adding support for Bluetooth LE Audio‘s Gaming Audio Profile, or GMAP. The same update also includes general performance improvements, so WH-1000XM6 owners have a …</p>
-      <div class="meta-row">
-        <span class="source">Digital Trends</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-01T12:30:10+00:00">2026-07-01</span>
       </div>
     </div>
   </article>
@@ -466,250 +758,6 @@ July…</p>
       <div class="meta-row">
         <span class="source">Basic Tutorials</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-01T02:47:35+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Sony</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://www.notebookcheck.net/Sony-WH-1000XM6-and-1000X-The-ColleXion-receive-gaming-mode-via-update.1332025.0.html" target="_blank" rel="noopener">Sony WH-1000XM6 and 1000X The ColleXion receive gaming mode via update</a></h2>
-      <p class="summary">Sony WH-1000XM6 and 1000X The ColleXion receive gaming mode via update
-On June 30, Sony released the firmware update to version 3.1.5 for the Sony WH-1000XM6, as well as firmware version 1.3.0 for the WH-1000X The ColleXion ($648 on Amazon)…</p>
-      <div class="meta-row">
-        <span class="source">Notebookcheck</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T19:36:00+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Asset Tracking</span>
-      </div>
-      <h2 class="title"><a href="https://www.howtogeek.com/moto-tag-2-android-airtag-alternative-price/" target="_blank" rel="noopener">Android&#39;s best AirTag rival is getting a sequel, and it&#39;s only $20 - How-To Geek</a></h2>
-      <p class="summary">You now have a major, powerful Android alternative to Apple&#39;s AirTag for finding your lost items. Motorola has released the much-improved Moto Tag 2 in the U.S. after teasing it at CES 2026, and it&#39;s launching at a low price for a limited t…</p>
-      <div class="meta-row">
-        <span class="source">How-To Geek</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T16:13:04+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Espressif</span>
-        
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a48effd81cb421e9b15f6cd56b81c17&amp;url=https%3a%2f%2fwww.elektormagazine.com%2fnews%2fespressif-esp32-s3-wi-fi-ble-socs&amp;c=3559273176736802043&amp;mkt=en-us" target="_blank" rel="noopener">Espressif ESP32-S3 Wi‑Fi + BLE SoCs</a></h2>
-      <p class="summary">Espressif’s ESP32-S3 integrates wireless connectivity, compute, and peripherals to reduce board-level complexity in IoT products.</p>
-      <div class="meta-row">
-        <span class="source">Bing: Espressif ESP32 Wi-Fi</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T15:07:00+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.cnet.com/home/kitchen-and-household/best-smart-lights/" target="_blank" rel="noopener">Best Smart Lights for 2026: Major Upgrades for Any Home</a></h2>
-      <p class="summary">Smart lighting can start with a single bulb or a whole home makeover, giving you excellent new features to control light schedules, brightness, color and even music syncing. Today&#39;s advanced LED bulbs , when compared to older options, can e…</p>
-      <div class="meta-row">
-        <span class="source">CNET</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T13:00:00+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Asset Tracking</span>
-      </div>
-      <h2 class="title"><a href="https://gizmodo.com/apple-airtag-2-bundle-stays-at-its-prime-day-low-in-amazons-clearance-push-each-tracker-now-cheaper-than-the-previous-generation-2000779304" target="_blank" rel="noopener">Apple AirTag 2 Bundle Stays at Its Prime Day Low for Fourth of July, Each Tracker Now Cheaper Than the Previous Generation</a></h2>
-      <p class="summary">Dig a little deeper on the deal that Amazon’s currently offering on a 4-pack of 2nd-gen Apple AirTags and it looks even better. The first glance at the discount — $10 off the normal price — might not get you diving for your wallet. But when…</p>
-      <div class="meta-row">
-        <span class="source">Gizmodo</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T11:10:40+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
-        <span class="chip chip-vendor">Microchip</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/" target="_blank" rel="noopener">XIAO nRF54LM20A (Sense) board enables ultra-low-power Bluetooth 6.0, Matter, Thread, Zigbee, or 2.4 GHz proprietary applications</a></h2>
-      <p class="summary">Seeed Studio XIAO nRF54LM20A and XIAO nRF54LM20A Sense are tiny USB-C IoT boards based on Nordic Semiconductor’s nRF54LM20A wireless SoC offering Bluetooth 6.0, Matter, Thread, Zigbee, NFC, Amazon Sidewalk, and 2.4 GHz proprietary connectiv…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T04:00:44+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Asset Tracking</span>
-      </div>
-      <h2 class="title"><a href="https://gizmodo.com/without-the-airtag-price-tag-ugreen-bluetooth-tracker-supports-ios-and-android-for-just-9-each-2000778622" target="_blank" rel="noopener">Without the AirTag Price Tag, UGREEN Bluetooth Tracker Supports iOS and Android for Just $9 Each</a></h2>
-      <p class="summary">The UGREEN Finder Duo Air Tracker is a Bluetooth tracker that works with both Apple Find My and Google Find Hub, so the same tag can connect to either an iPhone household or an Android one. The 4-pack ships with four trackers, each USB-C re…</p>
-      <div class="meta-row">
-        <span class="source">Gizmodo</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T11:40:16+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">NXP</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/" target="_blank" rel="noopener">Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity</a></h2>
-      <p class="summary">Simplia CONNECT RW612 is a 6-in-1 M.2 2230 wireless module that offers dual-band WiFi 6, Bluetooth 5.4 LE, an 802.15.4 radio for Zigbee or Thread, LTE Cat-M, NB-IoT, and GNSS connectivity.
-It’s the first module I’ve seen that implements so …</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-29T07:00:57+00:00">2026-06-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Automotive</span>
-      </div>
-      <h2 class="title"><a href="https://www.cultofmac.com/?p=934015" target="_blank" rel="noopener">Your iPhone could soon be spotted by license plate cameras</a></h2>
-      <p class="summary">The camera mounted on the streetlight has done one job for years: photograph your license plate. That could soon change. A new sensor upgrade is reportedly underway to detect Bluetooth signals coming from your iPhone, Apple Watch, and AirPo…</p>
-      <div class="meta-row">
-        <span class="source">Cult of Mac</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-28T15:25:13+00:00">2026-06-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        <span class="chip chip-vendor">MediaTek</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.notebookcheck.net/MediaTek-Dimensity-9500-Processor-Benchmarks-and-Specs.957550.0.html" target="_blank" rel="noopener">MediaTek Dimensity 9500 Processor - Benchmarks and Specs</a></h2>
-      <p class="summary">MediaTek Dimensity 9500
-The MediaTek Dimensity 9500 is a flagship processor (SoC) with 8 CPU cores (octa-core) for expensive Android phones and tablets, which was launched in the third quarter of 2025. It uses three CPU clusters based on a …</p>
-      <div class="meta-row">
-        <span class="source">Notebookcheck</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-28T03:27:26+00:00">2026-06-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Samsung</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://consumerthai.org/productSearch/pictureSearch?id=39715561050620" target="_blank" rel="noopener">Bluetooth Jbl Pool Jbl Charge Water Test JBL Grip (Blue) Waterproof Portable Bluetooth® Speaker With Ambient Light (Blue) At Crutchfield</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">consumerthai</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-28T01:50:54+00:00">2026-06-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.bgr.com/2200168/apple-watch-features-cyclists-use-everyday/" target="_blank" rel="noopener">5 Apple Watch Features Cyclists Will Use Everyday</a></h2>
-      <p class="summary">5 Apple Watch Features Cyclists Will Use Everyday
-The Apple Watch is a powerful tool for runners, for those who want to keep their notifications at a glance at every moment, and also for cyclists. As the year passes, it seems Apple has two …</p>
-      <div class="meta-row">
-        <span class="source">bgr.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-27T19:47:00+00:00">2026-06-27</span>
       </div>
     </div>
   </article>

@@ -1,0 +1,548 @@
+"""Hand-crafted technical tutorials for the Wireless Technology learning page.
+
+This content is intentionally static and editorial (not news-driven). It exists
+to teach anyone new to a wireless technology -- including application developers --
+how each stack is layered, what each layer does, how the core procedures work,
+and what an app/device developer actually programs against.
+
+Version/spec numbers shown on the page are merged in at render time from
+data/standards.json (single source of truth, kept verified there). This file
+covers the timeless architecture/concepts that don't change release to release.
+"""
+from __future__ import annotations
+
+TECH_TUTORIALS: list[dict] = [
+    {
+        "slug": "bluetooth",
+        "label": "Bluetooth",
+        "spec_family": "bluetooth",
+        "tagline": "Short-range wireless for control, sensor data, and audio -- the default radio for wearables and accessories.",
+        "overview": (
+            "Bluetooth is a 2.4 GHz short-range wireless standard governed by the Bluetooth SIG. "
+            "Classic Bluetooth (BR/EDR) still carries streaming audio (A2DP) and legacy peripherals, "
+            "but almost all new IoT designs use Bluetooth Low Energy (LE) -- a lightweight variant "
+            "built for battery-powered devices that spend most of their life asleep. LE Audio and "
+            "Auracast extend Bluetooth into broadcast audio, and Channel Sounding (introduced in "
+            "Bluetooth 6.0) adds secure distance-ranging for the first time."
+        ),
+        "architecture": [
+            {"tag": "APP", "name": "Application / Profiles", "function": "The behavior your product implements -- either a standard Bluetooth profile (A2DP for audio, HID for input, LE Audio's BAP/TMAP/HAP) or a custom GATT-based service you define yourself."},
+            {"tag": "GAP", "name": "Generic Access Profile (GAP)", "function": "Defines device roles (Broadcaster, Observer, Peripheral, Central) and how devices become discoverable, advertise, and form connections."},
+            {"tag": "GATT", "name": "Generic Attribute Profile (GATT)", "function": "The data model almost every BLE app is built on: a Server exposes Services, each containing Characteristics (a value + read/write/notify/indicate properties) that a Client reads or subscribes to."},
+            {"tag": "ATT", "name": "Attribute Protocol (ATT)", "function": "The simple client/server wire protocol underneath GATT -- every GATT operation (read, write, notify) is an ATT request/response carrying attribute handles and UUIDs."},
+            {"tag": "SMP", "name": "Security Manager Protocol (SMP)", "function": "Handles pairing (authentication), key generation/exchange, and bonding (persisting keys) so future reconnections are encrypted without repeating the pairing dialog."},
+            {"tag": "L2CAP", "name": "Logical Link Control & Adaptation (L2CAP)", "function": "Segments and reassembles packets and multiplexes multiple protocols (ATT, SMP, custom L2CAP channels) over the single underlying Link Layer connection."},
+            {"tag": "LL", "name": "Link Layer (LL)", "function": "Owns advertising, scanning, connection establishment and maintenance, channel-hopping across the 37 data channels, and (as of BT 6.x) Channel Sounding ranging exchanges."},
+            {"tag": "PHY", "name": "Physical Layer (PHY)", "function": "Radio modulation in the 2.4 GHz ISM band: LE 1M (default), LE 2M (higher throughput), and LE Coded S=2/S=8 (long range, lower rate)."},
+        ],
+        "block_diagram": {
+            "caption": "Bluetooth is split into a Host and a Controller joined by the HCI. Applications sit on top of the Host's GATT-based profile stack; the Controller owns the Link Layer and the radio. This Host/Controller split is the defining feature of the Bluetooth architecture.",
+            "blocks": [
+                {"name": "Application & Profiles", "sub": "GAP roles | GATT-based profiles (LE Audio BAP / CAP / TMAP, HID, custom services)", "kind": "upper", "iface": "GATT / GAP API"},
+                {"name": "Host", "sub": "GATT | ATT | SMP (security) | L2CAP | GAP", "kind": "mac", "iface": "HCI (Host Controller Interface)"},
+                {"name": "Controller", "sub": "Link Layer | scheduling | channel hopping | Channel Sounding", "kind": "phy", "iface": "baseband / radio interface"},
+                {"name": "Physical Radio", "sub": "2.4 GHz ISM | LE 1M / 2M / Coded PHY", "kind": "medium"},
+            ],
+        },
+        "core_concepts": [
+            {"term": "Central vs. Peripheral", "definition": "The Central initiates connections and typically consumes data (e.g. a phone); the Peripheral advertises and is connected to (e.g. a sensor)."},
+            {"term": "GATT Service / Characteristic", "definition": "A Service groups related Characteristics (e.g. Heart Rate Service -> Heart Rate Measurement characteristic). Characteristics are identified by 16-bit (standard) or 128-bit (custom) UUIDs."},
+            {"term": "Advertising vs. Scanning", "definition": "A Peripheral broadcasts advertising packets on 3 primary channels; a Central scans passively (just listens) or actively (sends a scan request for more data)."},
+            {"term": "Pairing vs. Bonding", "definition": "Pairing is the one-time authentication/key-exchange handshake (SMP); bonding is storing those keys so the next connection reconnects securely without re-pairing."},
+            {"term": "MTU & Connection Parameters", "definition": "ATT MTU sets the max packet size per exchange; Connection Interval/Latency/Supervision Timeout control how often devices wake to talk versus sleep to save power."},
+            {"term": "LE Audio & Auracast", "definition": "LE Audio replaces Classic A2DP with lower-power, multi-stream audio; Auracast lets any number of listeners tune into a public broadcast audio stream (transmit-only, no pairing)."},
+            {"term": "Channel Sounding", "definition": "Introduced in Bluetooth 6.0 and refined in 6.3: a Phase-Based Ranging (PBR) and Round-Trip-Time (RTT) exchange between an Initiator and Reflector to securely estimate distance -- used for keyless entry and asset finding without GPS/UWB."},
+        ],
+        "how_it_works": [
+            {"title": "1. Advertising", "detail": "The Peripheral broadcasts small advertising packets (device name, service UUIDs, flags) on the 3 primary advertising channels so nearby Centrals can find it."},
+            {"title": "2. Scanning & discovery", "detail": "A Central listens (passive scan) or sends scan requests (active scan) to collect advertising data and decide which device to connect to."},
+            {"title": "3. Connection establishment", "detail": "The Central sends a connection request; both radios then hop together across the 37 data channels on a shared, encrypted schedule known only to the two devices."},
+            {"title": "4. Pairing & bonding (optional)", "detail": "SMP negotiates authentication and derives a Long-Term Key, either via Legacy pairing or LE Secure Connections (ECDH-based, resistant to passive eavesdropping); bonded keys are stored for future reconnects."},
+            {"title": "5. Service discovery", "detail": "The Client (usually the Central) queries GATT to enumerate the Server's Services, Characteristics, and Descriptors -- or reuses a cached database if already bonded (Database Hash)."},
+            {"title": "6. Data exchange", "detail": "The app reads/writes Characteristic values, or subscribes to Notifications/Indications for streaming updates -- this is the interface almost every BLE app developer actually codes against."},
+            {"title": "7. Ranging (Channel Sounding, optional)", "detail": "An Initiator and Reflector exchange PBR tones and/or RTT timing across multiple channels; the Host computes a secure distance estimate resistant to relay attacks."},
+            {"title": "8. Maintenance & teardown", "detail": "Connection parameters can be renegotiated for power/throughput trade-offs; a Supervision Timeout detects a lost link, and either side can cleanly disconnect."},
+        ],
+        "developer_view": [
+            {"title": "GATT Server vs. Client", "detail": "Most sensors/wearables implement a GATT Server (they expose data); most phone apps implement a GATT Client (they read/subscribe). Decide your role first -- it determines which platform APIs you use."},
+            {"title": "Standard profiles & services", "detail": "Reuse existing UUIDs where possible: Battery Service, Device Information Service, Heart Rate Service, HID-over-GATT, and the LE Audio profile family (BAP, CAP, TMAP, GMAP, HAP) -- this gets you interoperability for free."},
+            {"title": "Platform APIs", "detail": "Android: BluetoothGatt / BluetoothLeScanner. iOS: CoreBluetooth (CBCentralManager / CBPeripheralManager). Linux: BlueZ over D-Bus. Embedded: Zephyr Bluetooth stack, Apache NimBLE, or the silicon vendor's SoftDevice/stack (Nordic, Silicon Labs, Infineon AIROC, Espressif)."},
+            {"title": "Custom services", "detail": "Define your own 128-bit UUIDs for proprietary data; use Notifications for best-effort streaming and Indications when you need acknowledged delivery."},
+            {"title": "Debugging tools", "detail": "Nordic's nRF Connect app (mobile GATT browser), Wireshark with a BLE sniffer dongle for over-the-air captures, and vendor SDKs (nRF Connect SDK, ESP-IDF, ModusToolbox) all include BLE-aware logging."},
+        ],
+        "use_cases": [
+            "Wearables & fitness trackers", "Smart locks & digital keys", "LE Audio earbuds / hearing aids", "Auracast public broadcast audio",
+            "HID peripherals (keyboards, mice, remotes)", "Asset tags with Channel Sounding ranging", "Medical & health monitoring devices",
+        ],
+        "resources": [
+            {"label": "Bluetooth Core Specification (SIG)", "url": "https://www.bluetooth.com/specifications/specs/core-specification/"},
+            {"label": "GATT Specification Supplement", "url": "https://www.bluetooth.com/specifications/gatt/"},
+            {"label": "LE Audio overview", "url": "https://www.bluetooth.com/learn-about-bluetooth/recent-enhancements/le-audio/"},
+            {"label": "Channel Sounding technical overview", "url": "https://www.bluetooth.com/channel-sounding-tech-overview/"},
+        ],
+    },
+    {
+        "slug": "ieee15_4",
+        "label": "802.15.4",
+        "spec_family": "802.15.4 / thread / matter",
+        "tagline": "The low-rate PHY+MAC foundation for Zigbee and Thread; understand this first, then upper layers become much easier.",
+        "overview": (
+            "IEEE 802.15.4 is the LR-WPAN base standard that defines only two layers: PHY and MAC. "
+            "PHY defines channels/modulation/data rates; MAC defines framing, channel access, reliability, "
+            "and optional link-layer security. It intentionally does not define end-to-end routing or app "
+            "semantics. Zigbee and Thread both reuse the same 802.15.4 radio but build different network "
+            "and application ecosystems on top. If you are new: learn MAC behavior first (beacons, CSMA-CA, "
+            "ack/retry, association, and security fields), then map how Zigbee and Thread consume those services."
+        ),
+        "architecture": [
+            {"tag": "APP", "name": "Application behavior (not in 802.15.4)", "function": "Zigbee apps use ZCL clusters/commands; Thread apps are IP apps (often CoAP, Matter over IPv6). 802.15.4 does not define app payload meaning."},
+            {"tag": "NWK", "name": "Network/routing (not in 802.15.4)", "function": "Zigbee adds its own NWK+APS stack. Thread uses 6LoWPAN+IPv6+MLE. Both consume the same MAC primitives and frame transport below."},
+            {"tag": "MAC", "name": "802.15.4 MAC (this is the key layer)", "function": "Creates and parses MAC frames, controls channel access (CSMA-CA), supports association/disassociation, acknowledgment/retry, beacon/superframe timing, addressing, and optional AES-CCM* frame protection."},
+            {"tag": "PHY", "name": "802.15.4 PHY", "function": "Transmits symbols on selected channels and reports clear-channel energy/CCA to MAC. Common profile: 2.4 GHz O-QPSK DSSS at 250 kbps with 16 channels (11-26)."},
+        ],
+        "block_diagram": {
+            "caption": "IEEE 802.15.4 defines the two bottom layers and exposes them to upper stacks through Service Access Points (SAPs). The management plane crosses the *-LME-SAP interfaces (MLME, PLME); the data plane crosses the data SAPs (MCPS-SAP data, PD-SAP data). This is the same block-and-interface style used by protocol standards -- learn the SAPs and the layer boundaries become clear.",
+            "blocks": [
+                {"name": "Upper Layers (Network + Application)", "sub": "Zigbee NWK/APS/ZCL  OR  Thread 6LoWPAN / IPv6 -- not part of 802.15.4", "kind": "upper", "mgmt": "MLME-SAP", "data": "MCPS-SAP"},
+                {"name": "MAC Sublayer", "sub": "MLME (management entity)  |  MCPS (common part / data service)", "kind": "mac", "mgmt": "PLME-SAP", "data": "PD-SAP"},
+                {"name": "PHY Layer", "sub": "PLME (management entity)  |  PD (data service)", "kind": "phy", "data": "RF signals"},
+                {"name": "Physical Radio Medium", "sub": "2.4 GHz O-QPSK DSSS (ch 11-26) | sub-GHz PHYs (868 / 915 MHz) | SUN PHYs", "kind": "medium"},
+            ],
+        },
+        "layer_details": [
+            {
+                "title": "APP: Payload semantics live above 802.15.4",
+                "detail": "An 802.15.4 Data frame only carries bytes. Meaning is provided by upper stacks: Zigbee APS/ZCL messages, Thread 6LoWPAN-compressed IPv6 packets, or Matter interaction-model traffic running over Thread/Wi-Fi.",
+                "points": ["No app model in base spec", "Protocol-independent payload", "Interoperability defined above MAC"],
+            },
+            {
+                "title": "NWK: Routing and topology are stack-defined",
+                "detail": "802.15.4 can deliver a frame one hop. Multi-hop routing, address assignment policy, route repair, and service discovery are solved by Zigbee or Thread. This separation is why one radio can host multiple upper protocols.",
+                "points": ["One-hop MAC transport", "Mesh behavior above MAC", "Zigbee NWK vs Thread IPv6 mesh"],
+            },
+            {
+                "title": "MAC Deep Dive: framing, reliability, and medium access",
+                "detail": "MAC defines frame types (Beacon, Data, ACK, MAC Command), frame-control bits (ack request, security enabled, PAN-ID compression, frame pending), sequence numbers, address fields, and FCS. For access, devices run slotted or unslotted CSMA-CA based on mode. Reliability is built with immediate ACKs and retry limits. Management commands cover association, disassociation, orphan notification, and data request for sleepy children.",
+                "points": ["Frame control and addressing", "ACK + retry behavior", "Association/disassociation", "CSMA-CA", "Beacon/superframe", "MAC command set"],
+            },
+            {
+                "title": "PHY Deep Dive: channels and CCA feedback",
+                "detail": "PHY handles modulation/spreading, symbol timing, and channel selection. It offers key primitives to MAC: transmit, receive, energy detect, and clear-channel assessment. MAC uses CCA results during CSMA-CA backoff loops before transmission.",
+                "points": ["2.4 GHz channels 11-26", "O-QPSK DSSS (common)", "ED/CCA primitives", "Sub-GHz variants"],
+            },
+        ],
+        "core_concepts": [
+            {"term": "PAN & PAN Coordinator", "definition": "A Personal Area Network is identified by a PAN ID; the PAN Coordinator is the device that starts the network and picks the operating channel."},
+            {"term": "FFD vs. RFD", "definition": "A Full Function Device can route and act as a coordinator; a Reduced Function Device is a simple end node (e.g. a battery sensor) that only talks to its parent."},
+            {"term": "Beacon-enabled vs. non-beacon", "definition": "Beacon-enabled PANs use superframes timed by periodic beacons. Non-beacon mode is asynchronous and typically used by Thread; devices contend with unslotted CSMA-CA when data exists."},
+            {"term": "Superframe (BO/SO)", "definition": "Beacon mode organizes time into Beacon Interval and active Superframe Duration. The active period contains CAP (contention access) and optional CFP with GTS allocations (up to 7 in classic mode)."},
+            {"term": "CSMA-CA", "definition": "Before transmit, a node waits random backoff slots, performs CCA, and transmits only when channel is idle. On busy channel it increases backoff state and retries according to configured limits."},
+            {"term": "MAC frame anatomy", "definition": "Typical MPDU fields: Frame Control, Sequence Number, Address fields (PAN ID + short/extended addresses), Auxiliary Security Header (if enabled), payload, then FCS."},
+            {"term": "Acknowledgment and retransmission", "definition": "A sender can request ACK. If ACK is not received in time, MAC retries transmission up to configured limits. This provides link reliability without requiring upper-layer retries for every hop."},
+            {"term": "Addressing", "definition": "Devices can use a globally-unique 64-bit extended address (like a MAC address) or a short 16-bit address assigned after joining a PAN, to keep frame headers small."},
+            {"term": "MAC security", "definition": "802.15.4 supports AES-CCM* with frame counters and security control fields to provide integrity, replay protection, and optional confidentiality at link layer."},
+        ],
+        "how_it_works": [
+            {"title": "1. PAN formation", "detail": "A coordinator scans for a quiet channel, picks a PAN ID, and starts the network -- it becomes the root that other devices join."},
+            {"title": "2. Beacon timing or asynchronous mode", "detail": "Beacon-enabled networks advertise superframe timing; non-beacon networks skip periodic beacons and rely on contention access plus parent/child polling patterns for sleepy nodes."},
+            {"title": "3. Discovery and association", "detail": "A new node scans channels, evaluates beacons/energy, chooses a parent/coordinator, then exchanges MAC command frames to associate and optionally receive a short address."},
+            {"title": "4. Channel access with CSMA-CA", "detail": "The sender enters backoff, runs CCA, and transmits only on idle medium. In beacon mode this is slotted CSMA-CA aligned to superframe slots; otherwise unslotted."},
+            {"title": "5. Per-hop reliability", "detail": "Data frame may request ACK. Receiver sends ACK quickly after successful FCS/sequence validation. Missing ACK triggers retry and potential channel-contention repeat."},
+            {"title": "6. Sleepy-device exchange", "detail": "Battery end devices can poll parent for pending data using MAC command frames. Parent indicates pending status and delivers queued frames when child wakes."},
+            {"title": "7. Security processing", "detail": "If security is enabled, transmitter adds auxiliary security header and frame counter; receiver validates counter/freshness and integrity before accepting payload."},
+            {"title": "8. Handoff to upper protocol", "detail": "After MAC accepts payload, bytes are passed to Zigbee NWK/APS or Thread 6LoWPAN/IPv6. At that point routing, sessions, and app semantics are owned above 802.15.4."},
+        ],
+        "developer_view": [
+            {"title": "What app developers touch vs. stack developers", "detail": "Raw MAC APIs are MLME/MCPS primitives used by stack implementers. Product teams usually consume Zigbee SDK APIs or OpenThread APIs because those expose discoverable network/app abstractions."},
+            {"title": "When raw MAC knowledge still matters", "detail": "Even if you use Zigbee/Thread APIs, MAC behavior affects your product: channel plan, parent-child polling cadence, ACK/retry tuning, and coexistence with Wi-Fi/BLE strongly influence battery life and reliability."},
+            {"title": "Debugging strategy", "detail": "Start at MAC: verify channel occupancy/CCA failures, retry counters, and ACK success. Then move up to NWK/IPv6 routing. This layered approach prevents app-level blame for radio-level loss.",},
+            {"title": "Portable implementation mindset", "detail": "Keep app logic above protocol-specific abstractions (ZCL clusters or CoAP resources). Avoid chipset-specific assumptions in payload formats or security policy so migration across silicon families is easier."},
+        ],
+        "use_cases": [
+            "Zigbee smart bulbs, switches, meters, and sensors",
+            "Thread and Matter-over-Thread smart-home endpoints",
+            "Battery-operated mesh sensors with parent-child polling",
+            "Industrial and building automation low-rate control meshes",
+            "Sub-GHz long-range telemetry in applicable regional profiles",
+        ],
+        "resources": [
+            {"label": "IEEE 802.15.4 standard (IEEE-SA)", "url": "https://standards.ieee.org/ieee/802.15.4/7029/"},
+            {"label": "IEEE 802.15 Working Group (public documents)", "url": "https://www.ieee802.org/15/"},
+            {"label": "6LoWPAN over IEEE 802.15.4 -- RFC 4944", "url": "https://www.rfc-editor.org/rfc/rfc4944"},
+            {"label": "See the Zigbee and Thread tabs for the stacks built on top", "url": "#"},
+        ],
+    },
+    {
+        "slug": "wifi",
+        "label": "Wi-Fi",
+        "spec_family": "wi-fi",
+        "tagline": "Full IP-networking wireless LAN -- higher power and throughput than BLE/802.15.4, used when a device needs real internet bandwidth.",
+        "overview": (
+            "Wi-Fi (the IEEE 802.11 family, certified by the Wi-Fi Alliance) is a wireless LAN "
+            "technology that -- unlike Bluetooth LE or 802.15.4 -- carries a full, standard IP stack. "
+            "A Wi-Fi radio is effectively the link layer under ordinary TCP/IP networking, which is why "
+            "Wi-Fi devices can run any internet protocol (HTTP, MQTT, CoAP) without a technology-specific "
+            "application model. The tradeoff versus BLE/802.15.4 is power: Wi-Fi radios are far more "
+            "capable but consume much more energy, which is why battery-IoT designs often pair Wi-Fi "
+            "with Bluetooth for provisioning and use features like Target Wake Time to save power."
+        ),
+        "architecture": [
+            {"tag": "APP", "name": "Application layer", "function": "Ordinary IP applications -- HTTP, MQTT, CoAP, or any custom protocol. Wi-Fi does not define its own application model; it just delivers IP packets."},
+            {"tag": "TCP/IP", "name": "Network / Transport (TCP/IP stack)", "function": "Standard IPv4/IPv6 addressing and routing, with TCP or UDP transport -- the same stack used on Ethernet, just carried over a radio link."},
+            {"tag": "MAC", "name": "MAC layer (802.11)", "function": "CSMA/CA channel access, management/control/data frame types, the authentication & association state machine, WPA2/WPA3 security handshakes, QoS (WMM), power-save modes, and -- new in Wi-Fi 7 -- Multi-Link Operation (MLO) letting one device use several bands/links at once."},
+            {"tag": "PHY", "name": "Physical layer (802.11a/b/g/n/ac/ax/be)", "function": "OFDM/OFDMA modulation across 2.4/5/6 GHz bands with channel widths from 20 MHz up to 320 MHz (Wi-Fi 7), MIMO/MU-MIMO spatial streams, plus Wi-Fi HaLow (802.11ah) -- a sub-1 GHz, long-range, low-power PHY variant built for IoT rather than high throughput."},
+        ],
+        "core_concepts": [
+            {"term": "SSID / BSSID / AP vs. Station", "definition": "The SSID is the human-readable network name; the BSSID is the AP radio's MAC address. An Access Point (AP) serves multiple client Stations (STAs)."},
+            {"term": "WPA2/WPA3 & SAE", "definition": "WPA2 uses a Pre-Shared Key with a 4-Way Handshake; WPA3 replaces the PSK exchange with SAE (Simultaneous Authentication of Equals), which resists offline dictionary attacks."},
+            {"term": "OFDMA / MU-MIMO", "definition": "Techniques (from Wi-Fi 6 onward) that let an AP serve multiple clients' data in the same time-frequency resource, dramatically improving efficiency in dense environments."},
+            {"term": "MLO (Multi-Link Operation)", "definition": "New in Wi-Fi 7: a single device can transmit/receive across multiple bands (e.g. 5 GHz + 6 GHz) simultaneously for higher throughput and lower latency."},
+            {"term": "Target Wake Time (TWT)", "definition": "Lets a battery-powered Wi-Fi device negotiate a schedule with the AP so it can sleep between agreed wake windows -- the key power-saving feature for Wi-Fi IoT devices."},
+            {"term": "Roaming (802.11k/v/r)", "definition": "Assist protocols that help a station moving between APs (e.g. in a mesh) hand off quickly with minimal reassociation delay."},
+        ],
+        "how_it_works": [
+            {"title": "1. Scanning", "detail": "A station passively listens for Beacon frames or actively sends Probe Requests to discover nearby APs and their capabilities."},
+            {"title": "2. Authentication", "detail": "Open System authentication (essentially a formality) or WPA3's SAE handshake establishes initial cryptographic trust before association."},
+            {"title": "3. Association", "detail": "The station formally joins the AP's Basic Service Set (BSS), negotiating supported data rates and capabilities -- including setting up multiple simultaneous links if using Wi-Fi 7 MLO."},
+            {"title": "4. 4-Way Handshake (WPA2/3)", "detail": "Derives a per-session Pairwise Transient Key from the Pairwise Master Key to encrypt unicast traffic, plus a Group Temporal Key for broadcast/multicast traffic."},
+            {"title": "5. Data transfer", "detail": "The MAC layer contends for the channel via CSMA/CA (or uses scheduled OFDMA/MU-MIMO access in modern Wi-Fi) while IP packets are encapsulated into 802.11 data frames."},
+            {"title": "6. Power management", "detail": "IoT-class devices negotiate Target Wake Time windows (or use legacy PS-Poll) so the radio can sleep between scheduled transmissions instead of staying fully powered."},
+            {"title": "7. Roaming", "detail": "802.11k/v/r let a moving station discover and hand off to a better AP quickly, minimizing the reassociation gap."},
+        ],
+        "developer_view": [
+            {"title": "You mostly use normal networking APIs", "detail": "Because Wi-Fi presents a standard IP link, application code uses ordinary BSD sockets or protocol client libraries (MQTT, HTTP, CoAP) -- the Wi-Fi-specific work (scanning, association, security) is handled by the OS or driver beneath you."},
+            {"title": "Platform / driver layer", "detail": "Linux uses wpa_supplicant; Android/iOS have native Wi-Fi stacks; embedded designs use a vendor Wi-Fi Host Driver (e.g. Espressif ESP-IDF's Wi-Fi driver, Infineon AIROC WHD) that exposes scan/connect/provision APIs to your firmware."},
+            {"title": "Provisioning headless devices", "detail": "Since a Wi-Fi IoT device has no keyboard, typical flows are SoftAP + captive portal (device becomes a temporary AP for setup) or BLE-assisted provisioning (as used by Matter) to hand over Wi-Fi credentials securely."},
+            {"title": "Power-aware design", "detail": "If you're building a battery Wi-Fi product, design around Target Wake Time and minimize how often the radio has to wake and re-associate -- this is usually the single biggest power lever available."},
+        ],
+        "use_cases": [
+            "Home & mesh routers", "Smart cameras & video doorbells", "Matter-over-Wi-Fi smart home devices",
+            "Industrial wireless backhaul", "Wi-Fi HaLow long-range sensor & agriculture IoT",
+        ],
+        "resources": [
+            {"label": "Wi-Fi Alliance -- Wi-Fi CERTIFIED 7", "url": "https://www.wi-fi.org/discover-wi-fi/wi-fi-certified-7"},
+            {"label": "IEEE 802.11 standards family", "url": "https://www.ieee802.org/11/"},
+        ],
+    },
+    {
+        "slug": "thread",
+        "label": "Thread",
+        "spec_family": "802.15.4 / thread / matter",
+        "tagline": "An IPv6 mesh network built on 802.15.4 radios -- the low-power backbone most Matter smart-home devices run on.",
+        "overview": (
+            "Thread is a mesh networking protocol -- standardized by the Thread Group -- that gives every "
+            "device on the mesh a real, routable IPv6 address, unlike Zigbee's proprietary networking "
+            "layer. It reuses the IEEE 802.15.4 radio (2.4 GHz) but replaces Zigbee's NWK layer with "
+            "6LoWPAN + IPv6 mesh routing, so any standard IP or CoAP application can run over it. Thread "
+            "is the low-power mesh transport most Matter devices use under the hood."
+        ),
+        "architecture": [
+            {"tag": "APP", "name": "Application layer", "function": "Any IP application protocol -- most commonly CoAP for device control, or Matter's data model layered directly on top of Thread's IPv6 transport (see the Matter tab)."},
+            {"tag": "NWK", "name": "Thread networking layer", "function": "6LoWPAN header compression/fragmentation of IPv6 over 802.15.4, Mesh Link Establishment (MLE) for topology/routing, Network Data distribution (prefixes, DNS/services), and the Border Router function that bridges the mesh to Wi-Fi/Ethernet and the internet."},
+            {"tag": "MAC/PHY", "name": "IEEE 802.15.4 MAC/PHY", "function": "The same radio layer used by Zigbee (2.4 GHz, CSMA-CA channel access) -- Thread's innovation is entirely in the networking layer above it, not the radio itself."},
+        ],
+        "block_diagram": {
+            "caption": "Thread keeps the 802.15.4 MAC/PHY but replaces proprietary networking with a standards-based IPv6 stack: 6LoWPAN adapts IPv6 to the small 802.15.4 frame, MLE builds and heals the mesh, and applications talk plain UDP/CoAP (or Matter) on top. Because every node has a real IPv6 address, ordinary IP tooling works end-to-end.",
+            "blocks": [
+                {"name": "Application", "sub": "CoAP / UDP apps | Matter data model over IPv6", "kind": "upper", "iface": "UDP sockets / CoAP"},
+                {"name": "IPv6 + Transport", "sub": "IPv6 | ICMPv6 | UDP | DTLS (commissioning security)", "kind": "nwk", "iface": "IPv6 datagrams"},
+                {"name": "Mesh routing + Adaptation", "sub": "MLE mesh link establishment | Network Data | 6LoWPAN header compression & fragmentation", "kind": "mac", "iface": "MCPS / MLME (SAPs)"},
+                {"name": "IEEE 802.15.4 MAC", "sub": "CSMA-CA | ACK / retry | AES-CCM* link security", "kind": "phy", "iface": "PD / PLME"},
+                {"name": "IEEE 802.15.4 PHY + Radio", "sub": "2.4 GHz O-QPSK DSSS | channels 11-26", "kind": "medium"},
+            ],
+        },
+        "layer_details": [
+            {
+                "title": "APP: standard IP applications",
+                "detail": "Because a Thread node is a full IPv6 host, application code is ordinary networking code -- CoAP or UDP sockets, or a Matter session. No proprietary application framework is imposed by Thread itself.",
+                "points": ["CoAP / UDP", "Matter over Thread", "Standard IP tooling"],
+            },
+            {
+                "title": "NWK: 6LoWPAN + IPv6 + MLE",
+                "detail": "6LoWPAN compresses and fragments IPv6 to fit 802.15.4 frames. IPv6/ICMPv6/UDP provide addressing and transport. Mesh Link Establishment (MLE) discovers neighbors, builds routing tables, and keeps the mesh self-healing. Network Data distributes prefixes and services.",
+                "points": ["6LoWPAN adaptation", "IPv6 / UDP", "MLE mesh routing", "Network Data"],
+            },
+            {
+                "title": "MAC/PHY: reused 802.15.4 radio",
+                "detail": "Thread does not modify the radio -- it consumes the same 802.15.4 MAC (CSMA-CA, ACK/retry, AES-CCM* link security) and PHY (2.4 GHz O-QPSK) described on the 802.15.4 tab.",
+                "points": ["802.15.4 MAC", "802.15.4 PHY", "Battery-friendly radio"],
+            },
+        ],
+        "core_concepts": [
+            {"term": "Leader", "definition": "An elected router responsible for network-wide configuration (like assigning router IDs); if it goes offline, another eligible router is elected automatically."},
+            {"term": "Router / REED / End Device", "definition": "Routers forward mesh traffic and can have children; a Router-Eligible End Device (REED) can be promoted to a Router if the mesh needs more routing capacity; simple End Devices only talk to their parent."},
+            {"term": "Border Router", "definition": "Bridges the Thread mesh to the home's IP network (Wi-Fi/Ethernet) and the internet, advertises the mesh's routable IPv6 prefix, and proxies mDNS/DNS-SD so devices are discoverable from outside the mesh."},
+            {"term": "Commissioning", "definition": "The secure process of adding a new device to the mesh -- a Commissioner (often a phone app) and a Joiner exchange credentials (via DTLS) so the Joiner can obtain the network key."},
+            {"term": "Mesh Link Establishment (MLE)", "definition": "The protocol routers use to discover neighbors, build routing tables, and keep the mesh self-healing if a router drops out."},
+        ],
+        "how_it_works": [
+            {"title": "1. Network formation", "detail": "A Leader is elected among capable routers; the network's channel, PAN ID, and network key are established for the mesh."},
+            {"title": "2. Commissioning", "detail": "A new device (Joiner) is securely admitted using a DTLS-based exchange with a Commissioner -- typically brokered through the Border Router -- and receives the network key."},
+            {"title": "3. Attaching", "detail": "The joined device attaches to a suitable parent Router, becoming a Router, REED, or End Device, and is assigned a 16-bit Routing Locator (RLOC) plus a full IPv6 address."},
+            {"title": "4. Routing", "detail": "Devices route IPv6 packets hop-by-hop using MLE-derived routing tables; if a router fails, the mesh recalculates routes and self-heals without manual intervention."},
+            {"title": "5. Border routing & discovery", "detail": "The Border Router advertises an Off-Mesh Routable (OMR) prefix to the home network and relays traffic between Thread and Wi-Fi/Ethernet/the internet, including proxying mDNS service discovery."},
+            {"title": "6. Application data", "detail": "CoAP/UDP messages -- or a Matter application session -- ride over the IPv6 transport exactly like they would on any other IP network."},
+        ],
+        "developer_view": [
+            {"title": "OpenThread", "detail": "The open-source Thread stack (originally from Google/Nest) implements the full networking layer and exposes a C API for network management; it's used inside the Nordic, Silicon Labs, NXP, and TI SDKs rather than being reimplemented per vendor."},
+            {"title": "Plain IP APIs above OpenThread", "detail": "Because a Thread device is just an IPv6 host, you can use standard CoAP client/server libraries directly for custom device control instead of building a Zigbee-style proprietary protocol."},
+            {"title": "Matter as the common application layer", "detail": "Most product teams don't write raw CoAP against Thread directly -- they build on Matter's data model (Clusters/Attributes/Commands), which already runs over Thread's IPv6 transport. See the Matter tab."},
+            {"title": "Border Router reference implementation", "detail": "OpenThread Border Router (OTBR) is the standard reference implementation, commonly run on a Raspberry Pi or embedded into smart speakers/hubs (Apple TV, Google Nest Hub, Amazon Echo, etc.)."},
+        ],
+        "thread_in_depth": [
+            {
+                "title": "Why Thread uses IPv6 instead of a proprietary mesh",
+                "detail": "Giving every node a routable IPv6 address means Thread reuses decades of proven IP protocols (UDP, CoAP, DTLS, mDNS) instead of reinventing them. A phone or cloud service can address a Thread device the same way it addresses any internet host, through the Border Router -- this is the core reason modern smart-home standards chose Thread.",
+            },
+            {
+                "title": "Device roles and mesh resilience",
+                "detail": "Routers form the always-on mesh backbone and forward traffic. A Router-Eligible End Device (REED) can be promoted to Router when the mesh needs more capacity. Minimal/Sleepy End Devices (MED/SED) only talk to a parent Router and sleep to save battery. One Leader coordinates network-wide configuration; if it drops, another Router is elected automatically -- there is no single point of failure.",
+            },
+            {
+                "title": "Addressing model (RLOC, ML-EID, GUA)",
+                "detail": "Each node has a Routing Locator (RLOC) that reflects its position in the mesh and changes as topology changes, plus a stable Mesh-Local EID (ML-EID) for identity within the mesh. When a Border Router advertises an Off-Mesh-Routable prefix, nodes also gain a Global Unicast Address reachable from outside the mesh.",
+            },
+            {
+                "title": "Commissioning (secure joining)",
+                "detail": "A new device (Joiner) is admitted through a DTLS-secured handshake with a Commissioner -- typically a phone app brokered via the Border Router. The Joiner proves knowledge of a pre-shared commissioning credential, then receives the network credentials so it can attach to a parent and route traffic.",
+            },
+            {
+                "title": "Border Router: bridging to the internet",
+                "detail": "The Thread Border Router connects the low-power mesh to Wi-Fi/Ethernet, advertises routable prefixes, and proxies mDNS/DNS-SD so mesh devices are discoverable from the home network. Matter-over-Thread depends on this bridge for controllers (phones, hubs) to reach devices.",
+            },
+            {
+                "title": "OpenThread as the reference stack",
+                "detail": "OpenThread is the open-source implementation of the full Thread networking layer and role/state machines. It is integrated into the SDKs of most silicon vendors rather than reimplemented per chip, so behavior is consistent across hardware and certification is simpler.",
+            },
+        ],
+        "use_cases": [
+            "Matter-over-Thread smart home devices (locks, sensors, bulbs)", "Always-on low-power mesh sensor networks",
+            "Devices needing IP-routability without a Wi-Fi radio's power cost",
+        ],
+        "resources": [
+            {"label": "Thread Group", "url": "https://www.threadgroup.org/"},
+            {"label": "OpenThread (open-source stack)", "url": "https://openthread.io/"},
+        ],
+    },
+    {
+        "slug": "matter",
+        "label": "Matter",
+        "spec_family": "802.15.4 / thread / matter",
+        "tagline": "The application-layer smart-home standard -- runs over Thread, Wi-Fi, or Ethernet, using BLE only to get a device onto the network.",
+        "overview": (
+            "Matter (from the Connectivity Standards Alliance) is not a radio technology -- it's an "
+            "application-layer standard that defines a common data model so smart-home devices from "
+            "different manufacturers interoperate regardless of which network they run on (Thread, "
+            "Wi-Fi, or Ethernet). Bluetooth LE is used only during the initial commissioning handshake; "
+            "after that, all operational traffic runs over IP. This is the single most important thing "
+            "to understand about Matter's architecture -- it deliberately reuses Thread and Wi-Fi rather "
+            "than inventing a new radio layer."
+        ),
+        "architecture": [
+            {"tag": "DM", "name": "Application / Data Model", "function": "Devices are modeled as Device Types (e.g. On/Off Light, Door Lock, Thermostat) composed of Clusters (e.g. On/Off, Level Control, Door Lock), each exposing Attributes (state), Commands (actions), and Events -- conceptually the IP-native equivalent of BLE's GATT Services/Characteristics."},
+            {"tag": "IM", "name": "Interaction Model", "function": "Defines how a Controller Reads/Writes Attributes, Invokes Commands, and Subscribes to Attribute/Event reports over an established session -- this is the API surface every Matter controller and device implementation uses."},
+            {"tag": "SEC", "name": "Security / Fabric layer", "function": "A Fabric is a set of mutually-trusted nodes with a shared root of trust. Commissioning uses PASE (password-based) for the initial secure session, then issues each device a Node Operational Certificate for ongoing CASE (certificate-based) sessions."},
+            {"tag": "TRANS", "name": "Transport", "function": "Matter messages travel over UDP via a lightweight message-framing layer across whatever IP network is available -- Bluetooth LE is used ONLY for commissioning, never for normal operation."},
+            {"tag": "NET", "name": "Network layer", "function": "Matter does not define its own radio or mesh -- it rides on Thread's IPv6 mesh or on Wi-Fi/Ethernet IP connectivity, reusing whichever transport the device already has."},
+        ],
+        "core_concepts": [
+            {"term": "Fabric", "definition": "A logical smart-home network of mutually-trusted Nodes sharing a root Certificate Authority; a device can belong to multiple Fabrics at once (Multi-Admin) so it works simultaneously with, e.g., Apple Home and Google Home."},
+            {"term": "Node / Endpoint / Cluster", "definition": "A physical device is a Node; a Node exposes one or more Endpoints (e.g. a power strip might expose 4 outlet endpoints); each Endpoint implements Clusters that define its actual behavior."},
+            {"term": "Commissioner / Commissionee", "definition": "The Commissioner is the controller app doing the onboarding (e.g. a phone); the Commissionee is the new, uncommissioned device being set up."},
+            {"term": "PASE vs. CASE", "definition": "PASE (Password Authenticated Session Establishment, via SPAKE2+) is used once, over BLE, purely to bootstrap the device onto the network; CASE (Certificate Authenticated Session Establishment) secures all subsequent normal operation over IP."},
+            {"term": "Multi-Admin / Joint Fabric", "definition": "Multi-Admin lets several ecosystems control one device on one Fabric; Joint Fabric (introduced in Matter 1.6) extends this to formally share devices and structure across multiple independent Fabrics."},
+        ],
+        "how_it_works": [
+            {"title": "1. Discovery", "detail": "The Commissioner (a phone app) discovers the uncommissioned device via Bluetooth LE advertising (or a Wi-Fi SoftAP fallback) after scanning its setup QR code / manual pairing code."},
+            {"title": "2. PASE over BLE", "detail": "A temporary secure session is established over Bluetooth LE using the device's setup passcode via a SPAKE2+ key exchange -- this session exists purely to bootstrap the device, and is never used again afterward."},
+            {"title": "3. Network provisioning", "detail": "Over that secure PASE session, the Commissioner sends the device its Wi-Fi credentials, or a Thread network dataset, letting the device join the real IP network."},
+            {"title": "4. Operational credentials", "detail": "The Commissioner issues the device a Node Operational Certificate (NOC) signed by the Fabric's root CA, formally admitting it to the Fabric."},
+            {"title": "5. CASE sessions take over", "detail": "From this point forward, the device and any other Fabric member (hubs, controllers) establish CASE sessions -- mutual certificate-based authentication over IP. Bluetooth is not used again."},
+            {"title": "6. Interaction", "detail": "Controllers Read or Subscribe to Cluster Attributes (e.g. current on/off state) and Invoke Commands (e.g. \"Toggle\") to operate the device; subscriptions let multiple ecosystems stay in sync in real time (Multi-Admin)."},
+        ],
+        "developer_view": [
+            {"title": "connectedhomeip SDK", "detail": "The open-source Matter SDK provides the data model, standard Cluster implementations, and the full commissioning flow; silicon vendors (NXP, Silicon Labs, Espressif, Nordic, Infineon) ship SDKs built directly on top of it."},
+            {"title": "Building a device", "detail": "Device developers implement standard Device Types/Clusters from the Matter Device Library so any certified controller works out of the box -- the real engineering effort is usually the sensor/actuator driver underneath, not the network protocol."},
+            {"title": "Building a controller/app", "detail": "Controller developers use a Matter controller SDK (or CHIP Tool for testing) to commission and operate devices purely through the standardized Cluster model -- no device-specific integration code needed, unlike pre-Matter smart-home APIs."},
+            {"title": "Testing tools", "detail": "CHIP Tool (command-line controller) and the Matter Test Harness are the standard ways to commission and exercise a device during development before certification."},
+        ],
+        "use_cases": [
+            "Smart lights, plugs, locks & thermostats", "Sensors that must work across Apple Home, Google Home, Alexa & SmartThings simultaneously",
+            "Multi-vendor smart-home ecosystems requiring true interoperability",
+        ],
+        "resources": [
+            {"label": "CSA -- Matter specification hub", "url": "https://csa-iot.org/all-solutions/matter/"},
+            {"label": "connectedhomeip (Matter SDK, open source)", "url": "https://github.com/project-chip/connectedhomeip"},
+            {"label": "Matter developer handbook", "url": "https://handbook.buildwithmatter.com/"},
+        ],
+    },
+    {
+        "slug": "aliro",
+        "label": "Aliro",
+        "spec_family": "uwb",
+        "tagline": "A CSA standard for interoperable digital keys -- so one phone credential unlocks doors from many different lock brands.",
+        "overview": (
+            "Aliro (from the Connectivity Standards Alliance) standardizes digital-key access control -- "
+            "letting a phone or wearable act as a key for doors (hotels, residences, offices, cars) using "
+            "a common credential format across NFC, Bluetooth LE, and optionally UWB. Before Aliro, each "
+            "lock brand needed its own proprietary app; Aliro's goal is that any certified wallet works "
+            "with any certified reader, the same way EMV made contactless payment cards interoperable "
+            "across banks and terminals."
+        ),
+        "architecture": [
+            {"tag": "APP", "name": "Application layer", "function": "The use-case logic -- hotel check-in, residential lock management, or car access -- implemented by the wallet app or device manufacturer's software."},
+            {"tag": "CRED", "name": "Credential layer", "function": "A standardized Access Control Credential format and endpoint model defining how a digital key is provisioned and securely stored (typically in a phone's Secure Element), so any Aliro-certified reader can validate it."},
+            {"tag": "SEC", "name": "Secure transaction layer", "function": "A mutual-authentication and encrypted-transaction protocol between the endpoint (phone) and the reader (lock), designed so neither a cloned credential nor a spoofed reader can succeed."},
+            {"tag": "RADIO", "name": "Radio / transport layer", "function": "NFC for instant tap-to-unlock with no pairing step, and BLE (optionally combined with UWB) for hands-free, walk-up proximity unlock -- UWB adds precise ranging to prevent relay attacks that plain BLE proximity is vulnerable to."},
+        ],
+        "core_concepts": [
+            {"term": "Digital Key credential", "definition": "The cryptographic access token issued to a user's device, functionally equivalent to a physical key or card, but revocable and shareable digitally."},
+            {"term": "Reader vs. Endpoint", "definition": "The Reader is the lock's radio + validation hardware; the Endpoint is the phone or wearable holding the credential that presents itself to the Reader."},
+            {"term": "NFC tap vs. BLE/UWB proximity", "definition": "NFC requires a deliberate tap (very fast, no pairing); BLE/UWB proximity unlock is hands-free as the user simply walks up, with UWB providing precise distance/angle for security."},
+            {"term": "Relay-attack resistance", "definition": "Plain Bluetooth 'in range' checks can be tricked by relaying signals over the internet between a thief's phone and the real key; UWB ranging measures true physical distance/angle, closing that hole."},
+            {"term": "Interoperability certification", "definition": "The core promise of Aliro: a credential issued by any certified wallet app must work with any certified reader, regardless of manufacturer."},
+        ],
+        "how_it_works": [
+            {"title": "1. Provisioning", "detail": "A digital key is issued to the user's device (e.g. via a hotel or residential app) and stored securely, typically in the phone's Secure Element or equivalent protected storage."},
+            {"title": "2. Discovery", "detail": "As the user approaches or taps, the Reader and Endpoint discover each other via NFC field detection or BLE advertising."},
+            {"title": "3. Mutual authentication", "detail": "The Reader and Endpoint perform a cryptographic handshake confirming both are genuine and that the credential is valid and has not been revoked."},
+            {"title": "4. Ranging (optional, UWB)", "detail": "For walk-up-and-unlock scenarios, UWB measures precise distance and angle to confirm the phone is physically at the door -- protecting against relay attacks that a simple 'is it in Bluetooth range' check cannot."},
+            {"title": "5. Unlock", "detail": "Once authenticated (and, where used, ranging-confirmed), the Reader actuates the physical lock mechanism and can log the access event."},
+        ],
+        "developer_view": [
+            {"title": "Wallet/app integration", "detail": "App developers integrate against the CSA-published Aliro Digital Key API to provision credentials into secure storage and present them to readers -- the app doesn't need to know the internal lock brand's protocol."},
+            {"title": "Reader/lock integration", "detail": "Lock manufacturers implement Aliro's reader-side validation stack so their hardware accepts credentials from any certified wallet, rather than shipping a proprietary companion app per lock line."},
+            {"title": "Radio hardware choices", "detail": "Chip vendors offer combined NFC + BLE (+ optional UWB) modules and reference designs specifically targeting Aliro Reader and Endpoint roles -- this is a key design decision when picking silicon for a lock or wearable product."},
+        ],
+        "use_cases": [
+            "Residential smart locks", "Hotel room access", "Corporate badge / building access replacement", "Connected-car digital key",
+        ],
+        "resources": [
+            {"label": "CSA -- Aliro overview", "url": "https://csa-iot.org/all-solutions/aliro/"},
+            {"label": "FiRa Consortium (UWB ranging used by Aliro)", "url": "https://www.firaconsortium.org/"},
+        ],
+    },
+    {
+        "slug": "zigbee",
+        "label": "Zigbee",
+        "spec_family": "zigbee",
+        "tagline": "A full mesh network + application framework on top of 802.15.4 -- standardized clusters let multi-vendor devices interoperate out of the box.",
+        "overview": (
+            "Zigbee is a complete low-power mesh networking and application standard (governed by the "
+            "Connectivity Standards Alliance) that runs on the IEEE 802.15.4 radio. Where 802.15.4 stops "
+            "at PHY and MAC, Zigbee adds everything above: a Network (NWK) layer for mesh routing, an "
+            "Application Support Sublayer (APS) for endpoint addressing and binding, the Zigbee Device "
+            "Object (ZDO) for device and service management, and the Zigbee Cluster Library (ZCL) that "
+            "defines standardized application behavior. That ZCL layer is the key idea -- because clusters "
+            "like On/Off, Level Control, and Color Control are standardized, a bulb from one vendor and a "
+            "switch from another interoperate. Zigbee is a mature, widely deployed ecosystem for lighting, "
+            "sensors, and building automation, and it now interworks with Matter through bridges."
+        ),
+        "architecture": [
+            {"tag": "ZCL", "name": "Application layer (ZCL + application objects)", "function": "Standardized Clusters (On/Off, Level Control, Color Control, Thermostat, etc.) exposed on Endpoints. Each cluster defines Attributes (state) and Commands (actions) -- the interoperable behavior contract between devices from different vendors."},
+            {"tag": "APS", "name": "Application Support Sublayer (APS)", "function": "Endpoint addressing, the binding table (linking, e.g., a switch endpoint to a light endpoint), APS-level security, and fragmentation/reassembly of large application messages."},
+            {"tag": "ZDO", "name": "Zigbee Device Object (ZDO)", "function": "Device and service discovery, network join/leave management, binding management, and definition of the device roles (Coordinator, Router, End Device)."},
+            {"tag": "NWK", "name": "Network layer (NWK)", "function": "Mesh route discovery and forwarding, 16-bit network address assignment, network-key security, and neighbor/route table maintenance across routers."},
+            {"tag": "MAC", "name": "IEEE 802.15.4 MAC", "function": "Reused unchanged: CSMA-CA channel access, acknowledgment/retry, addressing, and optional AES-CCM* link security (see the 802.15.4 tab)."},
+            {"tag": "PHY", "name": "IEEE 802.15.4 PHY", "function": "Reused unchanged: 2.4 GHz O-QPSK DSSS at 250 kbps (channels 11-26), plus sub-GHz options in some regional profiles."},
+        ],
+        "block_diagram": {
+            "caption": "Zigbee builds a full mesh + application framework on top of the 802.15.4 MAC/PHY. Each layer talks to the one below through defined service primitives (APS uses NLDE/NLME; NWK uses the 802.15.4 MCPS/MLME SAPs). ZDO sits beside APS as the management brain of the device.",
+            "blocks": [
+                {"name": "Application (ZCL + App Objects + ZDO)", "sub": "Endpoints | Clusters (On/Off, Level, Color) | Attributes | Commands", "kind": "upper", "iface": "APSDE / APSME"},
+                {"name": "APS -- Application Support Sublayer", "sub": "Endpoint addressing | binding table | APS security | fragmentation", "kind": "nwk", "iface": "NLDE / NLME"},
+                {"name": "NWK -- Network Layer", "sub": "Mesh routing | 16-bit address assignment | network-key security | route discovery", "kind": "mac", "iface": "MCPS / MLME (SAPs)"},
+                {"name": "IEEE 802.15.4 MAC", "sub": "CSMA-CA | ACK / retry | beacons | AES-CCM*", "kind": "phy", "iface": "PD / PLME"},
+                {"name": "IEEE 802.15.4 PHY + Radio", "sub": "2.4 GHz O-QPSK DSSS | channels 11-26 (+ sub-GHz)", "kind": "medium"},
+            ],
+        },
+        "layer_details": [
+            {
+                "title": "ZCL: the interoperability contract",
+                "detail": "The Zigbee Cluster Library standardizes application behavior into Clusters. A cluster (e.g. On/Off) defines a fixed set of Attributes (like the current on/off state) and Commands (like Toggle). Because these are standardized, any certified controller can operate any certified device -- this is Zigbee's equivalent of BLE's GATT services.",
+                "points": ["Clusters", "Attributes", "Commands", "Vendor interoperability"],
+            },
+            {
+                "title": "APS: endpoints, binding, and fragmentation",
+                "detail": "The Application Support Sublayer routes messages to the correct Endpoint on a node, maintains the binding table (which links a source endpoint/cluster to a destination so a switch 'knows' which light it controls), applies APS-level link-key security, and fragments large payloads.",
+                "points": ["Endpoints", "Binding table", "APS security", "Fragmentation"],
+            },
+            {
+                "title": "ZDO: device and service management",
+                "detail": "The Zigbee Device Object handles discovery (what endpoints/clusters a node exposes), network management (join/leave), and binding management. It also defines the three logical device roles that determine routing capability.",
+                "points": ["Service discovery", "Join / leave", "Roles"],
+            },
+            {
+                "title": "NWK: the mesh brain",
+                "detail": "The Network layer does mesh route discovery and forwarding, assigns 16-bit network addresses, enforces network-key security, and maintains neighbor and routing tables so packets traverse multiple hops reliably.",
+                "points": ["Mesh routing", "Address assignment", "Network key", "Route repair"],
+            },
+            {
+                "title": "MAC + PHY: reused 802.15.4 radio",
+                "detail": "Zigbee does not change the radio -- it uses the same 802.15.4 MAC (CSMA-CA, ACK/retry, AES-CCM* link security) and PHY (2.4 GHz O-QPSK) covered on the 802.15.4 tab. All of Zigbee's differentiation is above the MAC.",
+                "points": ["802.15.4 MAC", "802.15.4 PHY", "CSMA-CA"],
+            },
+        ],
+        "core_concepts": [
+            {"term": "Coordinator / Router / End Device", "definition": "Exactly one Coordinator forms the network and holds the Trust Center role. Routers relay mesh traffic and can host children. End Devices are simple (often battery) leaves that talk only to a parent Router."},
+            {"term": "Endpoint & Cluster", "definition": "A node exposes up to 240 application Endpoints; each Endpoint implements one or more Clusters. Endpoint+Cluster is how you address a specific function on a device (e.g. endpoint 1, On/Off cluster)."},
+            {"term": "Attribute vs. Command", "definition": "An Attribute is a readable/reportable value (state); a Command is an action you invoke. Controllers read/report attributes and send commands -- directly parallel to BLE GATT characteristics and writes."},
+            {"term": "Binding", "definition": "A stored link (source endpoint/cluster -> destination) that lets a device send directly to another without a controller in the loop -- e.g. a physical switch bound to a group of lights."},
+            {"term": "Trust Center", "definition": "The security authority (usually the Coordinator) that authorizes joins and distributes the network key and optional link keys."},
+            {"term": "Network key vs. Link key", "definition": "The network key encrypts NWK-layer traffic shared by the whole mesh; link keys secure APS-layer communication between specific device pairs for stronger isolation."},
+            {"term": "Groups & Scenes", "definition": "Groups let one command address many devices at once (all kitchen lights); Scenes store and recall preset attribute combinations (a 'movie' lighting scene)."},
+        ],
+        "how_it_works": [
+            {"title": "1. Network formation", "detail": "The Coordinator scans for a quiet channel, picks a PAN ID, forms the network, and takes on the Trust Center role."},
+            {"title": "2. Permit-join window", "detail": "The Coordinator (or a Router) opens a time-limited permit-join window during which new devices are allowed to associate -- limiting exposure of the join process."},
+            {"title": "3. Association & authentication", "detail": "A joining device associates at the 802.15.4 MAC, then the Trust Center authenticates it and delivers the network key (protected by a well-known or install-code-derived key)."},
+            {"title": "4. Address assignment", "detail": "The device receives a 16-bit network address; it also retains its globally-unique 64-bit IEEE address for stable identity."},
+            {"title": "5. Service discovery", "detail": "ZDO queries reveal which Endpoints and Clusters the new device exposes, so a controller knows how to operate it."},
+            {"title": "6. Binding (optional)", "detail": "Bindings are created so devices can talk peer-to-peer (a switch bound directly to lights) without routing every action through a hub."},
+            {"title": "7. Application messaging", "detail": "Controllers read/report Attributes and send Commands on ZCL Clusters; the APS and NWK layers handle secure delivery and multi-hop routing beneath."},
+            {"title": "8. Mesh routing & self-heal", "detail": "NWK discovers and repairs routes as devices move or drop; the 802.15.4 MAC handles per-hop contention, ACKs, and retries."},
+        ],
+        "developer_view": [
+            {"title": "You program against ZCL clusters", "detail": "Application development is mostly implementing or consuming standard ZCL clusters on endpoints. Reuse standard clusters for interoperability instead of inventing proprietary ones wherever possible."},
+            {"title": "Model your device with endpoints", "detail": "Map each independent function to an endpoint (e.g. a 3-gang switch = 3 endpoints, each with an On/Off cluster). Controllers then treat each endpoint independently."},
+            {"title": "Security & commissioning choices", "detail": "Decide between well-known default join keys (convenient) and install-code-based joining (stronger). Plan Trust Center policy early -- it affects how easily devices onboard and how secure the network is."},
+            {"title": "Debugging strategy", "detail": "Use a Zigbee sniffer to watch ZCL frames and NWK routing, and read Coordinator/Trust Center logs for join and key-distribution problems. As with 802.15.4, isolate radio/MAC issues (retries, channel) before blaming application logic."},
+        ],
+        "zigbee_in_depth": [
+            {
+                "title": "Full stack above 802.15.4",
+                "detail": "Zigbee layers NWK + APS + ZDO + ZCL on the 802.15.4 MAC/PHY. NWK provides mesh routing and network management; APS manages endpoint addressing, binding, and security to application objects; ZDO handles device/service discovery and management; ZCL defines interoperable application behavior (clusters, attributes, commands).",
+            },
+            {
+                "title": "Addressing and endpoints",
+                "detail": "A node is referenced by its 16-bit NWK address (assigned at join) and its stable 64-bit IEEE address. Application functions live on Endpoints (1-240), each implementing clusters. Example: endpoint 1 hosts On/Off and Level Control clusters for a dimmable bulb.",
+            },
+            {
+                "title": "Trust Center security model",
+                "detail": "The Trust Center controls admission and key distribution. Devices join through permit-join windows, receive the network key, and may establish APS link keys for pairwise security depending on the profile and policy (default keys vs. install codes).",
+            },
+            {
+                "title": "Mesh routing behavior",
+                "detail": "Routing runs in the NWK layer among the Coordinator and Routers; End Devices reach the mesh through their parent Router. Routes are discovered and repaired dynamically, while the 802.15.4 MAC still handles per-link contention, ACK, and retries on every hop.",
+            },
+            {
+                "title": "Interworking with Matter",
+                "detail": "Zigbee remains its own ecosystem rather than native IPv6, so cloud/service integration is typically done at a hub. Zigbee devices can be exposed to Matter ecosystems through a bridge, letting existing Zigbee deployments participate in Matter controllers.",
+            },
+        ],
+        "use_cases": [
+            "Smart lighting (bulbs, dimmers, switches)",
+            "Home & building sensors (motion, contact, temperature)",
+            "Energy metering and load control",
+            "Commercial lighting and building automation",
+            "Existing Zigbee fleets bridged into Matter ecosystems",
+        ],
+        "resources": [
+            {"label": "Connectivity Standards Alliance -- Zigbee", "url": "https://csa-iot.org/all-solutions/zigbee/"},
+            {"label": "CSA specifications & downloads", "url": "https://csa-iot.org/developer-resource/specifications-download-request/"},
+            {"label": "IEEE 802.15.4 (radio layer Zigbee runs on)", "url": "https://standards.ieee.org/ieee/802.15.4/7029/"},
+        ],
+    },
+]
+
+TECH_TUTORIALS_BY_SLUG: dict[str, dict] = {t["slug"]: t for t in TECH_TUTORIALS}

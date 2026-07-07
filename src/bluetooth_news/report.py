@@ -16,6 +16,7 @@ from .sources import BUCKETS
 from .data_loader import load_customers, load_competitors
 from .relationships import build_links
 from .predictive_model import predict_customer_releases
+from .tech_tutorials import TECH_TUTORIALS
 
 PDT = timezone(timedelta(hours=-7), name="PDT")
 
@@ -212,7 +213,6 @@ _NAV_HTML = """
     <a href="competitors.html" class="{{ 'active' if active=='competitors' else '' }}">Competitors</a>
     <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
     <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
-    <a href="ai.html" class="{{ 'active' if active=='ai' else '' }}" style="background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;">✨ AI</a>
   </nav>
   <div class="meta-info">Updated {{ generated_at }} PDT</div>
 </div></header>
@@ -243,51 +243,8 @@ _NEWS_TEMPLATE = """<!doctype html>
     {% if vendor_groups %}<span class="pill">{{ vendor_total }} vendors</span>{% endif %}
     {% if customer_tabs %}<span class="pill">{{ customer_tabs|length }} customers</span>{% endif %}
     {% if app_tabs %}<span class="pill">{{ app_tabs|length }} applications</span>{% endif %}
-    <button id="refreshBtn" class="pill" style="cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:#eef2ff;font-weight:700;" title="Pull a fresh batch of news from the web (uses the AI server)">\u21bb Refresh news</button>
-    <span id="refreshStatus" class="pill" style="display:none;"></span>
   </div>
 </section>
-<script>
-(function(){
-  var btn=document.getElementById('refreshBtn'), st=document.getElementById('refreshStatus');
-  if(!btn) return;
-  // Same origin if served via Flask /report/, else fall back to localhost.
-  var apiBase = (location.protocol==='http:'||location.protocol==='https:') ? '' : 'http://localhost:5005';
-  function show(msg, color){ st.style.display='inline-block'; st.textContent=msg;
-    if(color){ st.style.background=color; st.style.color='#fff'; st.style.borderColor=color; } }
-  function poll(){
-    fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-      .then(function(r){return r.json()})
-      .then(function(s){
-        if(s.running){ show('Fetching\u2026 ('+Math.round((Date.now()/1000-s.started))+'s)','#f59e0b');
-                       setTimeout(poll, 2000); }
-        else if(s.ok){ show('Done \u2014 reloading\u2026','#16a34a');
-                       setTimeout(function(){ location.reload(); }, 1200); }
-        else if(s.ok===false){ show('Refresh failed: '+(s.error||'see server log'),'#dc2626');
-                               btn.disabled=false; }
-      })
-      .catch(function(){ show('AI server unreachable','#dc2626'); btn.disabled=false; });
-  }
-  btn.addEventListener('click', function(){
-    btn.disabled=true; show('Starting\u2026','#2563eb');
-    fetch(apiBase+'/api/refresh-news',{method:'POST'})
-      .then(function(r){return r.json()})
-      .then(function(j){
-        if(!j.started && j.reason){ show('Already running\u2026','#f59e0b'); }
-        poll();
-      })
-      .catch(function(){
-        show('AI server not running \u2014 start it: python run.py ai --no-open','#dc2626');
-        btn.disabled=false;
-      });
-  });
-  // If a refresh is in-flight (e.g. user navigated away and back), resume polling.
-  fetch(apiBase+'/api/refresh-news/status',{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(s){ if(s.running){ btn.disabled=true; poll(); } })
-    .catch(function(){});
-})();
-</script>
 
 {% if not articles %}<div class="empty">No articles. Try widening <code>--max-age-days</code>.</div>{% endif %}
 
@@ -1304,6 +1261,7 @@ PAGE_DESCS = {
     "wifi":      "Wi-Fi 6E/7/8, MLO, HaLow \u2014 vendor chips and customer wins.",
     "bluetooth": "Bluetooth 6.0, LE Audio, Auracast, Channel Sounding, Coded PHY, profiles & open-source stacks.",
     "ieee15_4":  "IEEE 802.15.4 radios, Zigbee, multiprotocol SoCs.",
+    "zigbee":    "Zigbee mesh + ZCL clusters on 802.15.4 \u2014 lighting, sensors, building automation.",
     "aliro":     "Aliro digital-key spec from CSA \u2014 NFC + UWB + Bluetooth LE access.",
     "thread":    "Thread protocol, OpenThread, Thread 1.4, border routers.",
     "matter":    "Matter spec, certified devices, Matter Casting, ecosystem moves.",
@@ -1312,69 +1270,253 @@ PAGE_DESCS = {
 _TECHNOLOGY_TEMPLATE = """<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Technology Intel · IoT Wireless Intel</title>
+<title>Wireless Technology \u00b7 IoT Wireless Intel</title>
 <style>{{ css }}
-.tech-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:14px; margin-top:16px; }
-.tech-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
-.tech-card h2 { margin:0 0 6px; font-size:18px; color:#0f172a; }
-.tech-meta { color:var(--muted); font-size:12.5px; margin:0 0 8px; }
-.tech-stats { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 10px; }
-.tech-list { margin:6px 0 0; padding-left:18px; }
-.tech-list li { margin:5px 0; }
-.tech-list a { color:var(--text); font-weight:600; }
-.tech-list a:hover { color:var(--accent); }
-.subhead { margin:10px 0 4px; font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; margin:16px 0 0; border-bottom:1px solid var(--border); padding-bottom:0; }
+.tech-tab { cursor:pointer; border:1px solid var(--border); border-bottom:none; background:#f1f5f9; color:#334155; font-weight:700; font-size:13.5px; padding:9px 18px; border-radius:10px 10px 0 0; }
+.tech-tab:hover { background:#e2e8f0; }
+.tech-tab.active { background:var(--card); color:var(--accent); border-color:var(--border); position:relative; top:1px; }
+.tech-panel { display:none; background:var(--card); border:1px solid var(--border); border-radius:0 10px 10px 10px; padding:22px 24px; margin-top:-1px; }
+.tech-panel.active { display:block; }
+.tech-panel .tagline { color:var(--muted); font-size:14px; margin:2px 0 14px; }
+.spec-snapshot { display:flex; gap:10px; flex-wrap:wrap; align-items:center; background:#f9fafc; border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin-bottom:18px; font-size:12.5px; }
+.spec-snapshot b { color:#0f172a; }
+.tech-h2 { font-size:16.5px; margin:26px 0 4px; padding-top:14px; border-top:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.tech-h2:first-of-type { border-top:none; padding-top:0; margin-top:6px; }
+.tech-overview { font-size:14px; line-height:1.65; color:#1f2937; margin:6px 0 0; }
+
+/* Architecture stack diagram */
+.stack { display:flex; flex-direction:column; gap:3px; margin-top:12px; }
+.stack-layer { display:flex; gap:12px; align-items:flex-start; background:#fafbfd; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:10px 14px; text-decoration:none; transition:transform .12s ease, box-shadow .12s ease; }
+.stack-layer:hover { transform:translateY(-1px); box-shadow:0 8px 20px rgba(15,23,42,.08); }
+.stack-layer .tag { flex:none; width:56px; text-align:center; font-size:10.5px; font-weight:800; color:#fff; border-radius:5px; padding:4px 2px; letter-spacing:.03em; }
+.stack-layer .body strong { display:block; font-size:13.5px; color:#0f172a; margin-bottom:2px; }
+.stack-layer .body span { font-size:12.5px; color:#4b5563; line-height:1.5; }
+.stack-arrow { text-align:center; color:var(--muted); font-size:11px; margin:-1px 0; }
+.stack-layer:nth-child(4n+1) { background:linear-gradient(90deg,#e0f2fe,#f8fafc); border-left-color:#0284c7; }
+.stack-layer:nth-child(4n+1) .tag { background:#0284c7; }
+.stack-layer:nth-child(4n+2) { background:linear-gradient(90deg,#ecfccb,#f8fafc); border-left-color:#65a30d; }
+.stack-layer:nth-child(4n+2) .tag { background:#65a30d; }
+.stack-layer:nth-child(4n+3) { background:linear-gradient(90deg,#ffe4e6,#f8fafc); border-left-color:#e11d48; }
+.stack-layer:nth-child(4n+3) .tag { background:#e11d48; }
+.stack-layer:nth-child(4n+4) { background:linear-gradient(90deg,#ede9fe,#f8fafc); border-left-color:#7c3aed; }
+.stack-layer:nth-child(4n+4) .tag { background:#7c3aed; }
+
+.layer-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:10px; margin-top:12px; }
+.layer-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px; scroll-margin-top:84px; }
+.layer-card h3 { margin:0 0 6px; font-size:13.5px; color:#0f172a; }
+.layer-card p { margin:0; font-size:12.5px; color:#4b5563; line-height:1.6; }
+.layer-card .chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.layer-card .chips span { font-size:11px; font-weight:700; color:#334155; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:999px; padding:2px 8px; }
+
+.deep-grid { display:grid; grid-template-columns:1fr; gap:10px; margin-top:12px; }
+.deep-card { background:#fffdf5; border:1px solid #f4e7c4; border-radius:10px; padding:12px 14px; }
+.deep-card h3 { margin:0 0 5px; font-size:13.5px; color:#7c2d12; }
+.deep-card p { margin:0; font-size:12.5px; color:#4b5563; line-height:1.6; }
+
+/* Core concepts glossary */
+.concept-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:10px; margin-top:12px; }
+.concept-card { background:#fafbfd; border:1px solid var(--border); border-radius:8px; padding:10px 12px; }
+.concept-card .term { font-weight:700; font-size:13px; color:#0f172a; margin-bottom:3px; }
+.concept-card .def { font-size:12.5px; color:#4b5563; line-height:1.5; }
+
+/* How it works steps */
+.steps { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.step { display:flex; gap:12px; background:#fafbfd; border:1px solid var(--border); border-radius:8px; padding:10px 14px; }
+.step .num { flex:none; width:26px; height:26px; border-radius:50%; background:#eef2ff; color:#3730a3; font-weight:800; font-size:12px; display:flex; align-items:center; justify-content:center; }
+.step .st-body strong { display:block; font-size:13px; color:#0f172a; }
+.step .st-body span { font-size:12.5px; color:#4b5563; line-height:1.5; }
+
+/* Developer view cards */
+.dev-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(270px, 1fr)); gap:10px; margin-top:12px; }
+.dev-card { background:#fdf4ff; border:1px solid #f3e8ff; border-radius:8px; padding:10px 12px; }
+.dev-card .dt { font-weight:700; font-size:13px; color:#6b21a8; margin-bottom:3px; }
+.dev-card .dd { font-size:12.5px; color:#4b5563; line-height:1.5; }
+
+.usecase-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.usecase-chips span { background:#dcfce7; color:#166534; font-size:12px; font-weight:600; padding:5px 12px; border-radius:999px; }
+
+.resource-list { margin:12px 0 0; padding:0; list-style:none; }
+.resource-list li { padding:6px 0; border-bottom:1px dashed var(--border); font-size:13px; }
+.resource-list li:last-child { border-bottom:none; }
+
+/* Vibrant hero + tabs */
+.tech-hero { background:linear-gradient(120deg,#4f46e5,#0ea5e9 55%,#06b6d4); color:#fff; border-radius:16px; padding:26px 28px; margin:14px 0 6px; box-shadow:0 18px 40px rgba(2,132,199,.18); }
+.tech-hero h1 { margin:0 0 6px; font-size:27px; letter-spacing:-.01em; color:#fff; }
+.tech-hero p { margin:0; font-size:14px; line-height:1.6; color:#eaf2ff; max-width:840px; }
+.tech-tab.active { background:linear-gradient(180deg,#ffffff,#eef2ff); color:var(--accent); }
+
+/* Architecture block diagram (SAP / interface style) */
+.arch { margin-top:12px; }
+.arch-planes { display:flex; justify-content:space-between; font-size:11px; font-weight:800; letter-spacing:.03em; margin:2px 2px 8px; }
+.arch-planes .pl.mgmt { color:#b45309; }
+.arch-planes .pl.data { color:#1d4ed8; }
+.arch-block { border-radius:12px; padding:14px 16px; color:#fff; box-shadow:0 10px 24px rgba(15,23,42,.14); position:relative; overflow:hidden; }
+.arch-block .ab-name { font-size:15px; font-weight:800; letter-spacing:.01em; }
+.arch-block .ab-sub { font-size:12px; margin-top:3px; opacity:.96; line-height:1.5; }
+.arch-block.k-upper  { background:linear-gradient(120deg,#6d28d9,#8b5cf6); }
+.arch-block.k-nwk    { background:linear-gradient(120deg,#0f766e,#14b8a6); }
+.arch-block.k-mac    { background:linear-gradient(120deg,#1d4ed8,#3b82f6); }
+.arch-block.k-phy    { background:linear-gradient(120deg,#047857,#10b981); }
+.arch-block.k-medium { background:linear-gradient(120deg,#334155,#64748b); }
+.arch-conn { display:flex; align-items:center; justify-content:center; gap:34px; padding:9px 0; position:relative; }
+.arch-conn::before { content:""; position:absolute; top:0; bottom:0; left:50%; width:2px; transform:translateX(-50%); background:repeating-linear-gradient(#cbd5e1 0 5px, transparent 5px 10px); }
+.sap { position:relative; z-index:1; font-size:11px; font-weight:800; padding:4px 11px; border-radius:999px; border:1px solid transparent; background:#fff; box-shadow:0 2px 7px rgba(15,23,42,.12); }
+.sap.mgmt { color:#b45309; border-color:#fde68a; background:#fffbeb; }
+.sap.data { color:#1d4ed8; border-color:#bfdbfe; background:#eff6ff; }
+.sap.iface { color:#0f172a; border-color:#e2e8f0; background:#f8fafc; }
+.arch-cap { font-size:12px; color:#475569; line-height:1.6; margin:14px 2px 0; padding:10px 13px; background:#f8fafc; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; }
 </style>
 </head><body>
 """ + _NAV_HTML + """
 <main class="wrap content">
-<section class="hero">
-  <h1>Technology Intelligence</h1>
-  <p>Details, latest updates, what's new today, and recent evidence across BT, 15.4, Wi-Fi, Matter, Zigbee, Aliro, and Thread.</p>
+<section class="tech-hero">
+  <h1>Wireless Technology \u2014 Learn the Stacks</h1>
+  <p>A hands-on tutorial for each protocol we track: a colorful architecture block diagram with the real layer interfaces, clickable layers that jump to deep-dive explanations, core concepts, how the protocol actually works step by step, and what an application developer builds against. Pick a technology below.</p>
 </section>
 
-<div class="tech-grid">
-{% for s in tech_sections %}
-  <section class="tech-card">
-    <h2>{{ s.label }}</h2>
-    <p class="tech-meta">{{ s.detail }}</p>
-    {% if s.current or s.next %}
-      <p class="tech-meta"><strong>Current:</strong> {{ s.current or '—' }} · <strong>Next:</strong> {{ s.next or '—' }}</p>
-    {% endif %}
-    <div class="tech-stats">
-      <span class="pill">{{ s.total_count }} total updates</span>
-      <span class="pill">{{ s.today_count }} new today</span>
-      {% if s.page %}<a class="pill" href="{{ s.page }}">Open full {{ s.label }} feed →</a>{% endif %}
-    </div>
-
-    <div class="subhead">What's New Today</div>
-    {% if s.today_items %}
-      <ul class="tech-list">
-        {% for a in s.today_items %}
-          <li><a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a> <span class="tech-meta">({{ a.source }})</span></li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p class="tech-meta">No new items today.</p>
-    {% endif %}
-
-    <div class="subhead">Latest Updates</div>
-    {% if s.latest_items %}
-      <ul class="tech-list">
-        {% for a in s.latest_items %}
-          <li><a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a> <span class="tech-meta">({{ a.source }}{% if a.published %} · {{ a.published.strftime('%b %d') }}{% endif %})</span></li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p class="tech-meta">No updates available yet.</p>
-    {% endif %}
-  </section>
-{% endfor %}
+<div class="tech-tabs" id="techTabs">
+  {% for t in tech_tutorials %}
+  <div class="tech-tab {{ 'active' if loop.first else '' }}" data-slug="{{ t.slug }}">{{ t.label }}</div>
+  {% endfor %}
 </div>
+
+{% for t in tech_tutorials %}
+<div class="tech-panel {{ 'active' if loop.first else '' }}" id="panel-{{ t.slug }}">
+  <p class="tagline">{{ t.tagline }}</p>
+
+  {% if t.current_version or t.next_version %}
+  <div class="spec-snapshot">
+    <span><b>Current:</b> {{ t.current_version or '\u2014' }}</span>
+    <span><b>Next:</b> {{ t.next_version or '\u2014' }}</span>
+    {% if t.spec_url %}<a href="{{ t.spec_url }}" target="_blank" rel="noopener">Official spec &rarr;</a>{% endif %}
+  </div>
+  {% endif %}
+
+  <h2 class="tech-h2">\U0001F4D6 Overview</h2>
+  <p class="tech-overview">{{ t.overview }}</p>
+
+  {% if t.block_diagram %}
+  <h2 class="tech-h2">\U0001F9F1 Architecture Block Diagram</h2>
+  <div class="arch">
+    {% if t.block_diagram.blocks[0].mgmt %}
+    <div class="arch-planes"><span class="pl mgmt">&#9664; Management plane (LME SAPs)</span><span class="pl data">Data plane (data SAPs) &#9654;</span></div>
+    {% endif %}
+    {% for b in t.block_diagram.blocks %}
+    <div class="arch-block k-{{ b.kind }}">
+      <div class="ab-name">{{ b.name }}</div>
+      {% if b.sub %}<div class="ab-sub">{{ b.sub }}</div>{% endif %}
+    </div>
+    {% if not loop.last %}
+    <div class="arch-conn">
+      {% if b.iface %}<span class="sap iface">{{ b.iface }}</span>
+      {% else %}<span class="sap mgmt">{{ b.mgmt or '' }}</span><span class="sap data">{{ b.data or '' }}</span>{% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% if t.block_diagram.caption %}<p class="arch-cap">{{ t.block_diagram.caption }}</p>{% endif %}
+  </div>
+  {% endif %}
+
+  <h2 class="tech-h2">\U0001F3D7\uFE0F Layer-by-layer Responsibilities</h2>
+  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
+  <div class="stack">
+    {% for layer in t.architecture %}
+    <a class="stack-layer" href="#{{ t.slug }}-layer-{{ loop.index }}" title="Jump to {{ layer.name }} details">
+      <span class="tag">{{ layer.tag }}</span>
+      <div class="body"><strong>{{ layer.name }}</strong><span>{{ layer.function }}</span></div>
+    </a>
+    {% if not loop.last %}<div class="stack-arrow">&#8595;</div>{% endif %}
+    {% endfor %}
+  </div>
+
+  {% if t.layer_details %}
+  <h2 class="tech-h2">\U0001F50E Layer Deep Dive (clickable from stack)</h2>
+  <div class="layer-grid">
+    {% for ld in t.layer_details %}
+    <article class="layer-card" id="{{ t.slug }}-layer-{{ loop.index }}">
+      <h3>{{ ld.title }}</h3>
+      <p>{{ ld.detail }}</p>
+      {% if ld.points %}
+      <div class="chips">{% for p in ld.points %}<span>{{ p }}</span>{% endfor %}</div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <h2 class="tech-h2">\U0001F4DA Core Concepts</h2>
+  <div class="concept-grid">
+    {% for c in t.core_concepts %}
+    <div class="concept-card"><div class="term">{{ c.term }}</div><div class="def">{{ c.definition }}</div></div>
+    {% endfor %}
+  </div>
+
+  <h2 class="tech-h2">\u2699\uFE0F How It Works</h2>
+  <div class="steps">
+    {% for s in t.how_it_works %}
+    <div class="step"><span class="num">{{ loop.index }}</span><div class="st-body"><strong>{{ s.title }}</strong><span>{{ s.detail }}</span></div></div>
+    {% endfor %}
+  </div>
+
+  <h2 class="tech-h2">\U0001F468\u200D\U0001F4BB For Application Developers</h2>
+  <div class="dev-grid">
+    {% for d in t.developer_view %}
+    <div class="dev-card"><div class="dt">{{ d.title }}</div><div class="dd">{{ d.detail }}</div></div>
+    {% endfor %}
+  </div>
+
+  {% if t.zigbee_in_depth %}
+  <h2 class="tech-h2">\U0001F9E9 Zigbee In Depth</h2>
+  <div class="deep-grid">
+    {% for z in t.zigbee_in_depth %}
+    <article class="deep-card"><h3>{{ z.title }}</h3><p>{{ z.detail }}</p></article>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if t.thread_in_depth %}
+  <h2 class="tech-h2">\U0001F9F5 OpenThread / Thread In Depth</h2>
+  <div class="deep-grid">
+    {% for th in t.thread_in_depth %}
+    <article class="deep-card"><h3>{{ th.title }}</h3><p>{{ th.detail }}</p></article>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <h2 class="tech-h2">\U0001F4A1 Common Use Cases</h2>
+  <div class="usecase-chips">
+    {% for u in t.use_cases %}<span>{{ u }}</span>{% endfor %}
+  </div>
+
+  <h2 class="tech-h2">\U0001F517 Learn More</h2>
+  <ul class="resource-list">
+    {% for r in t.resources %}<li><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a></li>{% endfor %}
+  </ul>
+</div>
+{% endfor %}
+
 </main>
-<footer class="footer"><div class="wrap">Technology snapshot generated {{ generated_at }} PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial \u00b7 hand-curated, not news-driven \u00b7 spec versions verified {{ generated_at }} PDT</div></footer>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.tech-tab');
+  var panels = document.querySelectorAll('.tech-panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var slug = this.dataset.slug;
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      this.classList.add('active');
+      var panel = document.getElementById('panel-' + slug);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
 </body></html>
 """
+
 
 PINNED_CUSTOMERS = ["Google", "Amazon", "Apple", "Microsoft", "Meta", "Samsung",
                     "Sony", "LG", "Motorola", "Bose", "Sonos", "Sennheiser", "Bang & Olufsen",
@@ -1450,7 +1592,7 @@ def render(articles: list[dict], output_dir: Path,
             vendor_groups=vg, vendor_total=vt, customer_tabs=ct, app_tabs=at, **common_ctx,
         ), encoding="utf-8")
 
-    # --- Technology page ---
+    # --- Technology page (hand-crafted tutorials, versions merged from standards.json) ---
     standards_path = Path(__file__).resolve().parents[2] / "data" / "standards.json"
     standards_map: dict[str, dict] = {}
     if standards_path.exists():
@@ -1461,120 +1603,21 @@ def render(articles: list[dict], output_dir: Path,
       except (OSError, json.JSONDecodeError):
         standards_map = {}
 
-    today_local = now_pdt.date()
-
-    def _published(a: dict):
-      p = a.get("published")
-      if p and p.tzinfo is None:
-        p = p.replace(tzinfo=timezone.utc)
-      return p
-
-    def _match_articles(bucket: str | None = None, keywords: list[str] | None = None) -> list[dict]:
-      keys = [k.lower() for k in (keywords or [])]
-      matched: list[dict] = []
-      for a in articles:
-        if bucket and bucket not in (a.get("buckets") or []):
-          continue
-        if keys:
-          blob = " ".join([
-            str(a.get("title") or ""),
-            str(a.get("summary") or ""),
-            str(a.get("url") or ""),
-          ]).lower()
-          if not any(k in blob for k in keys):
-            continue
-        matched.append(a)
-      matched.sort(key=lambda x: _published(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
-      return matched
-
-    _std_bt = standards_map.get("bluetooth", {})
-    _std_wifi = standards_map.get("wi-fi", {})
-    _std_154 = standards_map.get("802.15.4 / thread / matter", {})
-
-    tech_specs = [
-      {
-        "label": "BT",
-        "detail": "Bluetooth device/chip updates including LE Audio, Channel Sounding, and ecosystem announcements.",
-        "bucket": "bluetooth",
-        "keywords": [],
-        "current": _std_bt.get("current_version", ""),
-        "next": _std_bt.get("next_version", ""),
-        "page": "bluetooth.html",
-      },
-      {
-        "label": "15.4",
-        "detail": "IEEE 802.15.4 radio stack updates, multiprotocol SoCs, and integration signals.",
-        "bucket": "ieee15_4",
-        "keywords": [],
-        "current": _std_154.get("current_version", ""),
-        "next": _std_154.get("next_version", ""),
-        "page": "ieee15_4.html",
-      },
-      {
-        "label": "Wi-Fi",
-        "detail": "Wi-Fi chipset/platform launches and connectivity trends relevant to IoT and edge devices.",
-        "bucket": "wifi",
-        "keywords": [],
-        "current": _std_wifi.get("current_version", ""),
-        "next": _std_wifi.get("next_version", ""),
-        "page": "wifi.html",
-      },
-      {
-        "label": "Matter",
-        "detail": "Matter certification and device ecosystem changes across smart-home categories.",
-        "bucket": "matter",
-        "keywords": [],
-        "current": _std_154.get("current_version", ""),
-        "next": _std_154.get("next_version", ""),
-        "page": "matter.html",
-      },
-      {
-        "label": "Zigbee",
-        "detail": "Zigbee-specific device and module updates tracked from 15.4 ecosystem coverage.",
-        "bucket": "ieee15_4",
-        "keywords": ["zigbee"],
-        "current": _std_154.get("current_version", ""),
-        "next": _std_154.get("next_version", ""),
-        "page": "ieee15_4.html",
-      },
-      {
-        "label": "Aliro",
-        "detail": "Aliro digital-key ecosystem developments, certification, and access-control rollouts.",
-        "bucket": "aliro",
-        "keywords": [],
-        "current": _std_154.get("current_version", ""),
-        "next": _std_154.get("next_version", ""),
-        "page": "aliro.html",
-      },
-      {
-        "label": "Thread",
-        "detail": "Thread stack releases, border-router ecosystem news, and deployment signals.",
-        "bucket": "thread",
-        "keywords": [],
-        "current": _std_154.get("current_version", ""),
-        "next": _std_154.get("next_version", ""),
-        "page": "thread.html",
-      },
-    ]
-
-    tech_sections = []
-    for spec in tech_specs:
-      items = _match_articles(bucket=spec["bucket"], keywords=spec["keywords"])
-      today_items = []
-      for a in items:
-        p = _published(a)
-        if p and p.astimezone(PDT).date() == today_local:
-          today_items.append(a)
-      tech_sections.append({
-        **spec,
-        "total_count": len(items),
-        "today_count": len(today_items),
-        "today_items": today_items[:4],
-        "latest_items": items[:8],
+    tech_tutorials = []
+    for t in TECH_TUTORIALS:
+      std = standards_map.get(t.get("spec_family", ""), {})
+      tech_tutorials.append({
+        **t,
+        "current_version": std.get("current_version", ""),
+        "next_version": std.get("next_version", ""),
+        "spec_url": std.get("url", ""),
       })
 
+    _tab_order = ["bluetooth", "ieee15_4", "zigbee", "thread", "wifi", "matter", "aliro"]
+    tech_tutorials.sort(key=lambda x: _tab_order.index(x["slug"]) if x["slug"] in _tab_order else 99)
+
     (output_dir / "technology.html").write_text(env.from_string(_TECHNOLOGY_TEMPLATE).render(
-      tech_sections=tech_sections, active="technology", **common_ctx
+      tech_tutorials=tech_tutorials, active="technology", **common_ctx
     ), encoding="utf-8")
 
     # --- Customers page ---
@@ -1710,11 +1753,6 @@ def render(articles: list[dict], output_dir: Path,
     _render_research_pages(env, output_dir, common_ctx, articles, comp,
                            pulse, patents, filings)
 
-    # --- AI tab (shim that opens the local Flask chat) ---
-    (output_dir / "ai.html").write_text(env.from_string(_AI_SHIM_TEMPLATE).render(
-        active="ai", **common_ctx,
-    ), encoding="utf-8")
-
     # --- Index = Overview ---
     (output_dir / "index.html").write_text(_render_index(env, common_ctx, articles, customers, comp, links), encoding="utf-8")
 
@@ -1755,84 +1793,6 @@ def _rewrite_broken_links(output_dir: Path) -> None:
         if new != src:
             html.write_text(new, encoding="utf-8")
 
-
-_AI_SHIM_TEMPLATE = """<!doctype html>
-<html lang=\"en\"><head>
-<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>AIROC AI \u00b7 IoT Wireless Intel</title>
-<style>{{ css }}
-.ai-frame-wrap{position:relative;height:calc(100vh - 100px);margin:8px 0 0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;}
-.ai-frame{width:100%;height:100%;border:0;display:block;}
-.ai-offline{display:none;padding:40px 30px;text-align:center;color:var(--muted);}
-.ai-offline.show{display:block;}
-.ai-offline h2{color:var(--text);margin:0 0 10px;font-size:22px;}
-.ai-offline code{background:#f1f5f9;padding:3px 8px;border-radius:4px;color:#0f172a;font-size:13px;}
-.ai-offline .cmd{display:inline-block;background:#0f172a;color:#e2e8f0;padding:10px 16px;border-radius:8px;margin:14px 0;font-family:Consolas,monospace;font-size:13px;}
-.ai-offline ol{display:inline-block;text-align:left;margin:14px auto;}
-.ai-toolbar{display:flex;align-items:center;gap:10px;padding:8px 14px;background:#f8fafc;border-bottom:1px solid var(--border);font-size:12.5px;color:var(--muted);}
-.ai-toolbar .dot{width:8px;height:8px;border-radius:50%;background:#94a3b8;display:inline-block;}
-.ai-toolbar .dot.live{background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.18);}
-.ai-toolbar .dot.down{background:#ef4444;}
-.ai-toolbar a{margin-left:auto;}
-</style></head><body>
-""" + _NAV_HTML + """
-<main class=\"wrap content\" style=\"padding-top:8px;\">
-<div class=\"ai-frame-wrap\">
-  <div class=\"ai-toolbar\">
-    <span class=\"dot\" id=\"aiDot\"></span>
-    <span id=\"aiStatus\">checking AI server\u2026</span>
-    <a href=\"#\" id=\"aiOpenNew\" target=\"_blank\">Open in new window \u2197</a>
-  </div>
-  <iframe id=\"aiFrame\" class=\"ai-frame\" title=\"AIROC AI\"></iframe>
-  <div class=\"ai-offline\" id=\"aiOffline\">
-    <h2>\u2728 AIROC AI server is not running</h2>
-    <p>Start the local AI service so this tab can chat with your indexed documents and the web.</p>
-    <div class=\"cmd\">python run.py ai --no-open</div>
-    <p style=\"margin-top:18px;\">Then refresh this tab. (Or, if Chrome blocks the iframe due to file:// origin, open the report from the AI server itself: <a href=\"http://localhost:5005/report/\" target=\"_blank\">http://localhost:5005/report/</a>)</p>
-    <p style=\"margin-top:18px;\">First-time setup:</p>
-    <ol>
-      <li><code>pip install -r requirements.txt</code></li>
-      <li>Set Gemini key: <code>$env:GEMINI_API_KEY = \"your-key\"</code> &mdash; <a href=\"https://aistudio.google.com/apikey\" target=\"_blank\">get one free</a></li>
-      <li>(Optional) extra docs: <code>$env:AI_EXTRA_DOC_PATHS = \"C:\\guptakanak\\ResearchDocs;C:\\guptakanak\\SIG\"</code></li>
-      <li>Run <code>python run.py ai --no-open</code> then refresh this tab.</li>
-    </ol>
-  </div>
-</div>
-</main>
-<script>
-(function(){
-  var dot=document.getElementById('aiDot'), st=document.getElementById('aiStatus'),
-      fr=document.getElementById('aiFrame'), off=document.getElementById('aiOffline'),
-      openNew=document.getElementById('aiOpenNew');
-  // Only treat as same-origin when actually served by the Flask AI server (port 5005).
-  // When served by a static server (e.g. python -m http.server 8000) or file://,
-  // fall back to absolute http://localhost:5005/ URLs.
-  var sameOrigin = (location.protocol === 'http:' || location.protocol === 'https:')
-                   && location.port === '5005';
-  var chatUrl = sameOrigin ? '/ai' : 'http://localhost:5005/ai';
-  var statusUrl = sameOrigin ? '/api/status' : 'http://localhost:5005/api/status';
-  fr.src = chatUrl;
-  openNew.href = sameOrigin ? '/ai' : 'http://localhost:5005/ai';
-  function check(){
-    fetch(statusUrl,{mode:'cors',cache:'no-store'})
-      .then(function(r){return r.ok?r.json():Promise.reject()})
-      .then(function(j){
-        dot.className='dot live';
-        st.textContent='AI server live \u2014 '+(j.chunks||0)+' chunks indexed \u00b7 model '+(j.model||'gemini');
-        off.classList.remove('show'); fr.style.display='block';
-      })
-      .catch(function(){
-        dot.className='dot down';
-        var hint = sameOrigin ? '' : ' \u2014 if iframe is blank, open via http://localhost:5005/report/';
-        st.textContent='AI server offline'+hint;
-        fr.style.display='none'; off.classList.add('show');
-      });
-  }
-  check(); setInterval(check, 5000);
-})();
-</script>
-</body></html>
-"""
 
 _INDEX_TEMPLATE = """<!doctype html>
 <html lang="en"><head>
@@ -1882,13 +1842,91 @@ _INDEX_TEMPLATE = """<!doctype html>
 .jump-card:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.06); text-decoration:none; }
 .jump-card h3 { margin:0 0 4px; font-size:15px; color:var(--accent); }
 .jump-card p { margin:0; font-size:12.5px; color:var(--muted); line-height:1.45; }
+.section-head { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.section-head h2 { margin:0; }
+.section-sub { color:var(--muted); font-size:13px; margin:2px 0 0; }
+
+/* Competitive battlecard */
+.battle-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:14px; margin-top:12px; }
+.battle-card { background:var(--card); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding:14px 16px; display:flex; flex-direction:column; }
+.battle-card h3 { margin:0 0 2px; font-size:15.5px; display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.battle-card .region-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); background:#f1f5f9; padding:2px 8px; border-radius:999px; }
+.battle-list { list-style:none; margin:8px 0; padding:0; }
+.battle-list li { font-size:12.5px; padding:4px 0 4px 20px; position:relative; line-height:1.4; color:#1f2937; }
+.battle-list li.win::before { content:"\u2713"; position:absolute; left:0; color:#16a34a; font-weight:800; }
+.battle-list li.watch::before { content:"\u26a0"; position:absolute; left:0; color:#d97706; font-weight:800; font-size:11px; }
+.battle-press { font-size:11.5px; color:var(--muted); border-top:1px dashed var(--border); margin-top:auto; padding-top:8px; }
+.battle-press a { color:var(--text); font-weight:600; }
+.battle-press a:hover { color:var(--accent); }
+.battle-link { font-size:12px; margin-top:10px; display:inline-block; font-weight:600; }
+
+/* Opportunity radar (win vs respond) */
+.opp-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:12px; }
+@media (max-width: 800px) { .opp-grid { grid-template-columns:1fr; } }
+.opp-col { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
+.opp-col.win { border-left:4px solid #16a34a; }
+.opp-col.watch { border-left:4px solid #d97706; }
+.opp-col h3 { margin:0 0 4px; font-size:14.5px; }
+.opp-col .section-sub { margin-bottom:8px; }
+.opp-item { font-size:13px; padding:7px 0; border-bottom:1px dashed var(--border); }
+.opp-item:last-child { border-bottom:none; }
+.opp-item b { color:var(--text); }
+
+/* Customer opportunity radar */
+.cust-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; margin-top:12px; }
+.cust-card { background:var(--card); border:1px solid var(--border); border-top:3px solid #db2777; border-radius:10px; padding:14px 16px; }
+.cust-card .hd { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.cust-card h3 { margin:0; font-size:15px; }
+.conf-badge { font-size:10px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap; }
+.conf-high { background:#dcfce7; color:#166534; }
+.conf-medium { background:#fef3c7; color:#92400e; }
+.conf-low { background:#f1f5f9; color:#475569; }
+.cust-app { font-size:11.5px; color:var(--muted); margin:4px 0 8px; text-transform:uppercase; letter-spacing:.04em; font-weight:700; }
+.cust-product { font-size:13px; font-weight:600; margin:0 0 6px; }
+.feat-chip { display:inline-block; background:#eef2ff; color:#3730a3; font-size:10.5px; padding:2px 8px; border-radius:999px; margin:2px 4px 2px 0; }
+.cust-basis { font-size:11px; color:var(--muted); margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; }
+
+/* Technology & standards radar */
+.std-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px; margin-top:12px; }
+.std-card { background:var(--card); border:1px solid var(--border); border-top:3px solid #7c3aed; border-radius:10px; padding:14px 16px; }
+.std-card h3 { margin:0 0 8px; font-size:15px; }
+.std-version-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.std-pill { font-size:10.5px; padding:3px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; font-weight:700; }
+.std-pill.next { background:#fce7f3; color:#9d174d; }
+.std-feat-list { margin:0 0 8px; padding:0; list-style:none; }
+.std-feat-list li { font-size:12px; margin:3px 0; padding-left:14px; position:relative; color:#374151; }
+.std-feat-list li::before { content:"\u2022"; position:absolute; left:0; color:var(--accent); font-weight:800; }
+.std-position { font-size:11.5px; color:var(--muted); font-style:italic; margin:8px 0 0; border-top:1px dashed var(--border); padding-top:8px; }
+.std-activity { font-size:11px; color:var(--muted); margin-top:6px; }
+
+/* Compact market signal feed */
+.signal-feed { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; margin-top:10px; }
+@media (max-width: 800px) { .signal-feed { grid-template-columns:1fr; } }
+.signal-col h3 { font-size:13px; margin:0 0 4px; }
+.signal-row { display:flex; gap:9px; padding:7px 0; border-bottom:1px solid var(--border); align-items:flex-start; }
+.signal-row:last-child { border-bottom:none; }
+.signal-dot { width:7px; height:7px; border-radius:50%; margin-top:6px; flex:none; }
+.signal-dot.vendor { background:#d97706; }
+.signal-dot.customer { background:#db2777; }
+.signal-body { flex:1; min-width:0; }
+.signal-title { font-size:12.5px; font-weight:600; color:var(--text); display:block; }
+.signal-title:hover { color:var(--accent); }
+.signal-meta { font-size:10.5px; color:var(--muted); }
+
+.mini-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-top:10px; }
+.mini-card { background:#fafbfd; border:1px solid var(--border); border-radius:10px; padding:12px; }
+.mini-card h3 { margin:0 0 4px; font-size:14px; }
+.mini-card p { margin:0 0 8px; font-size:12px; color:var(--muted); }
+.mini-list { margin:0; padding-left:16px; }
+.mini-list li { margin:5px 0; font-size:13px; }
+.mini-meta { font-size:11.5px; color:var(--muted); }
 </style>
 </head><body>
 """ + _NAV_HTML + """
 <main class="wrap content">
 <section class="hero">
   <h1>IoT Wireless Intelligence</h1>
-  <p>Competitive radar for Infineon AIROC across IoT wireless \u2014 Wi-Fi, Bluetooth, 802.15.4, Aliro, Thread, Matter. What changed, who's moving, where to look next.</p>
+  <p>Product-marketing command center for Infineon AIROC \u2014 competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
 </section>
 
 <div class="kpi-row">
@@ -1902,45 +1940,145 @@ _INDEX_TEMPLATE = """<!doctype html>
     <div class="delta flat">vendor &harr; customer</div></div>
 </div>
 
-<div class="two-col">
-  <section class="section">
-    <h2>What's new this week</h2>
-    <p class="muted">Top headlines from the last 7 days, ranked by recency &times; signal.</p>
-    {% if recent_headlines %}
-    <ul class="headline-list">
-      {% for a in recent_headlines %}
-      <li>
-        <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
-        <div class="meta">
-          <span class="source">{{ a.source }}</span>
-          {% if a.published %}<span>\u00b7 {{ a.published.strftime('%b %d') }}</span>{% endif %}
-          {% for b in a.buckets %}<span class="chip chip-tech">{{ bucket_labels[b] }}</span>{% endfor %}
-          {% if a.vendor %}<span class="chip chip-vendor">{{ a.vendor }}</span>{% endif %}
-          {% if a.customer %}<span class="chip chip-cust">{{ a.customer }}</span>{% endif %}
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}<p class="muted">No headlines yet \u2014 try widening <code>--max-age-days</code>.</p>{% endif %}
-    <p style="margin-top:12px;"><a href="news.html">Browse all {{ articles|length }} articles \u2192</a></p>
-  </section>
+<div class="section">
+  <div class="section-head">
+    <h2>Competitive Battlecard</h2>
+    <span class="pill">vs Infineon AIROC</span>
+  </div>
+  <p class="section-sub">Where AIROC wins today and where each rival leads &mdash; use this to sharpen messaging and spot feature gaps.</p>
+  <div class="battle-grid">
+    {% for c in battlecard %}
+    <article class="battle-card">
+      <h3>{{ c.vendor }}<span class="region-tag">{{ c.region }}</span></h3>
+      {% if c.strengths %}
+      <ul class="battle-list">
+        {% for s in c.strengths %}<li class="win">{{ s }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if c.weaknesses %}
+      <ul class="battle-list">
+        {% for w in c.weaknesses %}<li class="watch">{{ w }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if c.press %}
+      <div class="battle-press">
+        {% for pr in c.press %}
+          <div>{% if pr.url %}<a href="{{ pr.url }}" target="_blank" rel="noopener">{{ pr.title }}</a>{% else %}{{ pr.title }}{% endif %} &middot; {{ pr.date }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</div>
 
-  <section class="section">
-    <h2>Top moving customers (7d)</h2>
-    <p class="muted">OEMs with the most news activity right now.</p>
-    {% if top_movers %}
-    <ul class="movers">
-      {% for name, n, pct in top_movers %}
-      <li>
-        <span class="name">{{ name }}</span>
-        <span class="bar"><i style="width:{{ pct }}%"></i></span>
-        <span class="n">{{ n }}</span>
-      </li>
+<div class="section">
+  <div class="section-head">
+    <h2>Opportunity Radar</h2>
+  </div>
+  <p class="section-sub">Aggregated across tracked competitors &mdash; where to lean into messaging, and where to close the gap.</p>
+  <div class="opp-grid">
+    <div class="opp-col win">
+      <h3>\u2713 Where AIROC Wins</h3>
+      <p class="section-sub">Lead with these in positioning &amp; sales collateral.</p>
+      {% for o in opportunity_wins %}
+      <div class="opp-item"><b>{{ o.vendor }}:</b> {{ o.text }}</div>
       {% endfor %}
-    </ul>
-    {% else %}<p class="muted">No customer activity in the last 7 days.</p>{% endif %}
-    <p style="margin-top:12px;"><a href="customers.html">All customer profiles \u2192</a></p>
-  </section>
+    </div>
+    <div class="opp-col watch">
+      <h3>\u26a0 Where We Must Respond</h3>
+      <p class="section-sub">Feature gaps competitors use against us &mdash; candidates for the roadmap.</p>
+      {% for o in opportunity_watch %}
+      <div class="opp-item"><b>{{ o.vendor }}:</b> {{ o.text }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head">
+    <h2>Customer Opportunity Radar</h2>
+  </div>
+  <p class="section-sub">Model-predicted next launches per OEM, with expected features &mdash; a window into what customers will need next.</p>
+  <div class="cust-grid">
+    {% for r in customer_radar %}
+    <article class="cust-card">
+      <div class="hd">
+        <h3>{{ r.customer }}</h3>
+        <span class="conf-badge conf-{{ r.confidence_label|lower }}">{{ r.confidence_label }} &middot; {{ r.confidence }}%</span>
+      </div>
+      <div class="cust-app">{{ r.application }}</div>
+      <p class="cust-product">{{ r.probable_product }}</p>
+      <div>
+        {% for f in r.expected_features %}<span class="feat-chip">{{ f }}</span>{% endfor %}
+      </div>
+      {% if r.based_on %}<div class="cust-basis">{{ r.based_on[0] }}</div>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+  {% if not customer_radar %}<p class="muted">Not enough signal yet to project next launches &mdash; check back after the next data refresh.</p>{% endif %}
+  <p style="margin-top:12px;"><a href="customers.html">All customer profiles &amp; full roadmap table &rarr;</a></p>
+</div>
+
+<div class="section">
+  <div class="section-head">
+    <h2>Technology &amp; Standards Radar</h2>
+  </div>
+  <p class="section-sub">Current vs. next spec version and in-flight features per domain &mdash; direct input for roadmap planning.</p>
+  <div class="std-grid">
+    {% for s in standards_radar %}
+    <article class="std-card">
+      <h3>{{ s.family }}</h3>
+      <div class="std-version-row">
+        {% if s.current_version %}<span class="std-pill">Now: {{ s.current_version }}</span>{% endif %}
+        {% if s.next_version %}<span class="std-pill next">Next: {{ s.next_version }}</span>{% endif %}
+      </div>
+      {% if s.features %}
+      <ul class="std-feat-list">
+        {% for f in s.features %}<li>{{ f }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if s.position %}<p class="std-position">{{ s.position }}</p>{% endif %}
+      <div class="std-activity">{{ s.count }} related articles &middot; {{ s.window_label }}{% if s.page %} &middot; <a href="{{ s.page }}">Open feed &rarr;</a>{% endif %}</div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head">
+    <h2>Market Signal Feed</h2>
+    <span class="pill">{{ competitor_window_label }}</span>
+  </div>
+  <p class="section-sub">Latest competitor and customer headlines &mdash; supporting evidence for the sections above.</p>
+  <div class="signal-feed">
+    <div class="signal-col">
+      <h3>Competitor signals</h3>
+      {% for a in competitor_headlines[:8] %}
+      <div class="signal-row">
+        <span class="signal-dot vendor"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
+          <div class="signal-meta">{{ a.vendor }} &middot; {{ a.source }}{% if a.published %} &middot; {{ a.published.strftime('%b %d') }}{% endif %}</div>
+        </div>
+      </div>
+      {% else %}<p class="muted">No competitor headlines yet.</p>{% endfor %}
+    </div>
+    <div class="signal-col">
+      <h3>Customer signals</h3>
+      {% for a in customer_headlines[:8] %}
+      <div class="signal-row">
+        <span class="signal-dot customer"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
+          <div class="signal-meta">{{ a.customer }} &middot; {{ a.source }}{% if a.published %} &middot; {{ a.published.strftime('%b %d') }}{% endif %}</div>
+        </div>
+      </div>
+      {% else %}<p class="muted">No customer headlines yet.</p>{% endfor %}
+    </div>
+  </div>
+  <p style="margin-top:12px;"><a href="news.html">Browse all news &rarr;</a></p>
 </div>
 
 <section class="section">
@@ -1970,6 +2108,10 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
             p = p.replace(tzinfo=timezone.utc)
         return p
 
+    def _recent(items: list[dict], days: int) -> list[dict]:
+        cutoff = now - timedelta(days=days)
+        return [a for a in items if _pub(a) and _pub(a) >= cutoff]
+
     arts_7d = [a for a in articles if _pub(a) and _pub(a) >= cutoff_7d]
     arts_prev_7d = [a for a in articles if _pub(a) and cutoff_14d <= _pub(a) < cutoff_7d]
 
@@ -1983,20 +2125,111 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         delta_class = "up" if pct > 5 else ("down" if pct < -5 else "flat")
         delta_arrow = "\u25b2" if pct > 5 else ("\u25bc" if pct < -5 else "\u25ac")
 
-    # Recent headlines: prefer those with vendor or customer tagged
-    def _score(a):
-        s = 0
-        if a.get("vendor"): s += 2
-        if a.get("customer"): s += 2
-        if a.get("application"): s += 1
-        p = _pub(a)
-        if p:
-            hours_old = (now - p).total_seconds() / 3600
-            s -= hours_old / 48
-        return s
-    recent_headlines = sorted(arts_7d, key=_score, reverse=True)[:6]
+    def _unique_by_url(items: list[dict]) -> list[dict]:
+        seen = set()
+        out = []
+        for a in items:
+            u = a.get("url")
+            if not u or u in seen:
+                continue
+            seen.add(u)
+            out.append(a)
+        return out
 
-    # Top moving customers (7d) \u2014 priority list pinned, then any extras by activity
+    bucket_info = {slug: label for slug, label in BUCKETS}
+
+    # --- Competitive battlecard: strengths/weaknesses + latest press per priority competitor
+    competitors_list = comp.get("competitors", []) or []
+    priority_comps = [c for c in competitors_list if c.get("priority")]
+    if not priority_comps:
+        priority_comps = competitors_list
+    battlecard = []
+    for c in priority_comps[:6]:
+        battlecard.append({
+            "vendor": c.get("vendor", "Unknown"),
+            "region": REGION_LABELS.get(c.get("region", ""), c.get("region", "") or ""),
+            "strengths": (c.get("vs_airoc_strengths") or [])[:2],
+            "weaknesses": (c.get("vs_airoc_weaknesses") or [])[:2],
+            "press": (c.get("press_releases") or [])[:2],
+        })
+
+    # --- Opportunity radar: aggregate first strength/weakness across ALL competitors
+    opportunity_wins = []
+    opportunity_watch = []
+    for c in competitors_list:
+        vendor = c.get("vendor", "Unknown")
+        strengths = c.get("vs_airoc_strengths") or []
+        weaknesses = c.get("vs_airoc_weaknesses") or []
+        if strengths:
+            opportunity_wins.append({"vendor": vendor, "text": strengths[0]})
+        if weaknesses:
+            opportunity_watch.append({"vendor": vendor, "text": weaknesses[0]})
+    opportunity_wins = opportunity_wins[:8]
+    opportunity_watch = opportunity_watch[:8]
+
+    # --- Customer opportunity radar: model-predicted next launches
+    try:
+        customer_radar = predict_customer_releases(customers, articles, mode="balanced")[:6]
+    except Exception:
+        customer_radar = []
+
+    # --- Technology & standards radar: current/next version + in-flight features + activity
+    standards_path = Path(__file__).resolve().parents[2] / "data" / "standards.json"
+    standards_by_family: dict[str, dict] = {}
+    if standards_path.exists():
+        try:
+            standards_raw = json.loads(standards_path.read_text(encoding="utf-8"))
+            for row in (standards_raw.get("standards") or []):
+                standards_by_family[(row.get("family") or "").lower()] = row
+        except (OSError, json.JSONDecodeError):
+            standards_by_family = {}
+
+    STANDARDS_DOMAINS = [
+        ("bluetooth", ["bluetooth"], "bluetooth.html"),
+        ("wi-fi", ["wifi"], "wifi.html"),
+        ("802.15.4 / thread / matter", ["ieee15_4", "thread", "matter"], "ieee15_4.html"),
+        ("uwb", ["aliro"], "aliro.html"),
+    ]
+    standards_radar = []
+    for family_key, bucket_slugs, page in STANDARDS_DOMAINS:
+        std = standards_by_family.get(family_key)
+        if not std:
+            continue
+        b7 = [a for a in arts_7d if any(slug in (a.get("buckets") or []) for slug in bucket_slugs)]
+        b_window = "7d"
+        if len(b7) < 2:
+            b7 = [a for a in _recent(articles, 14) if any(slug in (a.get("buckets") or []) for slug in bucket_slugs)]
+            b_window = "14d fallback"
+        standards_radar.append({
+            "family": std.get("family", family_key.title()),
+            "current_version": std.get("current_version", ""),
+            "next_version": std.get("next_version", ""),
+            "features": (std.get("in_flight_features") or [])[:3],
+            "position": std.get("infineon_position", ""),
+            "count": len(b7),
+            "window_label": b_window,
+            "page": page,
+        })
+
+    # --- Recent headline pools (still used for the compact Market Signal Feed)
+    comp_7d = [a for a in arts_7d if a.get("vendor")]
+    cust_7d = [a for a in arts_7d if a.get("customer")]
+    comp_window = "7d"
+    cust_window = "7d"
+    if len(comp_7d) < 4:
+        comp_7d = [a for a in _recent(articles, 14) if a.get("vendor")]
+        comp_window = "14d fallback"
+    if len(cust_7d) < 4:
+        cust_7d = [a for a in _recent(articles, 14) if a.get("customer")]
+        cust_window = "14d fallback"
+
+    competitor_headlines = _unique_by_url(
+        sorted(comp_7d, key=lambda x: _pub(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
+    )[:12]
+    customer_headlines = _unique_by_url(
+        sorted(cust_7d, key=lambda x: _pub(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
+    )[:12]
+
     cust_counts_7d = Counter(a["customer"] for a in arts_7d if a.get("customer"))
     priority = ["Amazon", "Google", "Meta", "Arlo", "Motorola", "BMW", "HKMC"]
     ordered: list[tuple[str, int]] = [(p, cust_counts_7d.get(p, 0)) for p in priority]
@@ -2022,7 +2255,15 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         articles=articles, customers=customers,
         competitors=comp.get("competitors", []), links=links,
         articles_7d=n_now, delta_pct=delta_pct, delta_class=delta_class, delta_arrow=delta_arrow,
-        recent_headlines=recent_headlines,
+        competitor_headlines=competitor_headlines,
+        customer_headlines=customer_headlines,
+        competitor_window_label=comp_window,
+        customer_window_label=cust_window,
+        battlecard=battlecard,
+        opportunity_wins=opportunity_wins,
+        opportunity_watch=opportunity_watch,
+        customer_radar=customer_radar,
+        standards_radar=standards_radar,
         top_movers=top_movers,
         heatmap=heatmap_rows, heatmap_max=heatmap_max,
         active="index", **ctx,
