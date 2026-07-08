@@ -84,6 +84,24 @@ a:hover { text-decoration:underline; }
 .tag-region-asia { background:#fef3c7; color:#92400e; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
 </style>
 </head><body>
 
@@ -91,20 +109,23 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <div class="nav-dd">
-      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
-      <div class="nav-dd-menu">
-        <a href="news.html">All News</a>
-        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
-      </div>
-    </div>
+    <a href="news.html" class="active">News</a>
     <a href="customers.html" class="">Customers</a>
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-07 14:02 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 17:07 PDT</div>
 </div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
 <script>
 (function(){
   if(location.protocol !== 'file:') return;
@@ -119,7 +140,7 @@ a:hover { text-decoration:underline; }
   <h1>Thread News</h1>
   <p>Thread protocol, OpenThread, Thread 1.4, border routers.</p>
   <div class="stats">
-    <span class="pill">17 articles</span>
+    <span class="pill">16 articles</span>
     <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
@@ -128,9 +149,11 @@ a:hover { text-decoration:underline; }
 
 
 
+
+
 <div class="grid" id="grid">
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -138,25 +161,20 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="chip chip-tech">Thread</span>
         
-        
-        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Industrial</span>
       </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/chargers-daily-links-tuesday-open-135000392.html" target="_blank" rel="noopener">Chargers Daily Links: Tuesday Open Thread</a></h2>
-      <p class="summary">Chargers Daily Links: Tuesday Open Thread
-Good morning, Chargers fans!
-You know what to do!
-And now for today’s links.
-Chargers News:
-Here’s why the Chargers can capture the 2026 AFC West crown this year (Chargers.com)
-Ladd McConkey is carr…</p>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-signal-lucence-from-coats-group-high-visibility-sewing-thread/69718109" target="_blank" rel="noopener">Coats Signal Lucence from Coats Group - High-visibility sewing thread targets workwear safety</a></h2>
+      <p class="summary">Coats Signal Lucence from Coats Group - High-visibility sewing thread targets workwear safety
+Veröffentlicht: 08.07.2026 um 01:06 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Thomas Riley, ad hoc …</p>
       <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:50:00+00:00">2026-07-07</span>
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T23:06:16+00:00">2026-07-07</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -177,7 +195,7 @@ Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -197,7 +215,7 @@ Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -205,11 +223,12 @@ Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
       <div class="meta-row">
         <span class="chip chip-tech">Thread</span>
         
-        
-        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Industrial</span>
       </div>
-      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQTDFMaU5jUjYtTFdLRmlIeEg3Y3NPaGlLa2ctVlFCc1pFTVdjcUZUSHhWTGs0UHBOWURsamJIeFpLNC1kc3BDRlZNaU1aNUwyQjF6V09RM3R5cl9UR1lSQjM1WENIVUFMTDVqdGU5bHB6THFVMm9BOXdZSUNuVDZ3MHpqVXI1dU41VTRVNDdfd05XRlBXWENjV0k1NkZMWXN1M0c5dXhtVmM2S2pRc2p1cjYybTI0Unh0c2VTaQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Coats Epic thread from Coats Group - everyday apparel workhorse</a></h2>
-      
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-epic-thread-from-coats-group-everyday-apparel-workhorse/69704264" target="_blank" rel="noopener">Coats Epic thread from Coats Group - everyday apparel workhorse</a></h2>
+      <p class="summary">Coats Epic thread from Coats Group - everyday apparel workhorse
+Veröffentlicht: 06.07.2026 um 12:08 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Nora Whitfield, ad hoc news Bestsellers &amp; Flagships…</p>
       <div class="meta-row">
         <span class="source">AD HOC NEWS</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:08:08+00:00">2026-07-06</span>
@@ -217,7 +236,7 @@ Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -237,7 +256,7 @@ Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -258,7 +277,7 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -278,7 +297,7 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -298,7 +317,29 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://sports.yahoo.com/articles/open-thread-spurs-sign-2026-110000719.html" target="_blank" rel="noopener">Open Thread: The Spurs sign 2026 draftees</a></h2>
+      <p class="summary">Open Thread: The Spurs sign 2026 draftees
+Per a Spurs press release:
+“The San Antonio Spurs announced that they have signed first round selections Jayden Quaintance (20th overall) and Tarris Reed Jr. (26th overall), along with San Antonio’s…</p>
+      <div class="meta-row">
+        <span class="source">Yahoo Sports</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T11:00:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -318,7 +359,7 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -338,7 +379,7 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -360,7 +401,7 @@ It began to bother me…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -381,7 +422,7 @@ It began to bother me…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -404,7 +445,7 @@ Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -424,7 +465,7 @@ Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -440,49 +481,6 @@ Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania
       <div class="meta-row">
         <span class="source">Second City Hockey</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-01T15:30:00+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/7/1/800063348/community/morning-open-thread/" target="_blank" rel="noopener">Morning Open Thread: The Olivier Awards</a></h2>
-      <p class="summary">The Olivier Awards are given a few weeks before the Tony Awards, for plays and musicals in London’s West End. Here are some performances from that show.
-Rachel Zegler, “Don’t Cry for Me, Argentina” from Evita
-🍿🍿🍿
-Morning Open Thread is a da…</p>
-      <div class="meta-row">
-        <span class="source">Daily Kos</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-01T10:52:43+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.9news.com/article/news/local/colorado-department-of-corrections-group-text/73-98f48a9b-9db4-40c6-b2e0-e23c59200746" target="_blank" rel="noopener">Four Colorado corrections officials shared hundreds of &#39;inappropriate&#39; messages in group text thread</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">9News</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T23:43:00+00:00">2026-06-30</span>
       </div>
     </div>
   </article>
@@ -503,5 +501,69 @@ function timeAgo(iso){
   const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+
+function filterByTech(bucket) {
+  const tabs = document.querySelectorAll('.tech-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const cards = document.querySelectorAll('#grid .card');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    if (bucket === 'all') {
+      card.style.display = '';
+      visibleCount++;
+    } else {
+      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
+      if (buckets.includes(bucket)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+  
+  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+}
+
+async function refreshNews(event) {
+  event.preventDefault();
+  const btn = document.getElementById('refreshBtn');
+  const icon = document.getElementById('refreshIcon');
+  
+  if (btn.disabled) return;
+  
+  btn.disabled = true;
+  icon.classList.add('spinning');
+  btn.textContent = '↻ Refreshing…';
+  
+  try {
+    const response = await fetch('/api/refresh', { method: 'POST' });
+    const data = await response.json();
+    
+    if (data.ok) {
+      btn.textContent = '✓ Done';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      btn.textContent = '✗ Error';
+      setTimeout(() => {
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 3000);
+    }
+  } catch (err) {
+    btn.textContent = '✗ Error';
+    setTimeout(() => {
+      btn.textContent = '↻ Refresh';
+      btn.disabled = false;
+      icon.classList.remove('spinning');
+    }, 3000);
+  }
+}
 </script>
 </body></html>

@@ -194,6 +194,24 @@ a:hover { text-decoration:underline; }
 .tag-region-asia { background:#fef3c7; color:#92400e; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
 """
 
 # ---------------------------------------------------------------- nav
@@ -202,13 +220,7 @@ _NAV_HTML = """
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="{{ 'active' if active=='index' else '' }}">Overview</a>
-    <div class="nav-dd">
-      <a class="nav-dd-trigger {{ 'active' if active in news_slugs else '' }}" href="news.html">News <span class="dd-caret">&#9662;</span></a>
-      <div class="nav-dd-menu">
-        <a href="news.html">All News</a>
-        {% for slug, label in buckets %}<a href="{{ slug }}.html">{{ label }}</a>{% endfor %}
-      </div>
-    </div>
+    <a href="news.html" class="{{ 'active' if active in news_slugs else '' }}">News</a>
     <a href="customers.html" class="{{ 'active' if active=='customers' else '' }}">Customers</a>
     <a href="competitors.html" class="{{ 'active' if active=='competitors' else '' }}">Competitors</a>
     <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
@@ -234,6 +246,15 @@ _NEWS_TEMPLATE = """<!doctype html>
 <style>{{ css }}</style>
 </head><body>
 """ + _NAV_HTML + """
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
 <main class="wrap content">
 <section class="hero">
   <h1>{{ page_title }}</h1>
@@ -246,11 +267,24 @@ _NEWS_TEMPLATE = """<!doctype html>
   </div>
 </section>
 
+{% if page_title == 'All News' %}
+<section class="tech-toolbar">
+  <div class="tech-tabs" id="techTabs">
+    <button class="tech-tab active" data-filter="all" onclick="filterByTech('all')">All News</button>
+    {% for bucket, label in bucket_labels.items() %}<button class="tech-tab" data-filter="{{ bucket }}" onclick="filterByTech('{{ bucket }}')">{{ label }}</button>{% endfor %}
+  </div>
+  <div class="tech-actions">
+    <span class="tech-count" id="articleCount">{{ articles|length }} articles</span>
+    <button class="btn-refresh" id="refreshBtn" onclick="refreshNews(event)"><span class="refresh-icon" id="refreshIcon">&#x21bb;</span> Refresh</button>
+  </div>
+</section>
+{% endif %}
+
 {% if not articles %}<div class="empty">No articles. Try widening <code>--max-age-days</code>.</div>{% endif %}
 
 <div class="grid" id="grid">
   {% for a in articles %}
-  <article class="card">
+  <article class="card" data-buckets="{{ a.buckets|join(',') }}">
     <div class="thumb">
       {% if a.thumb %}<img src="{{ a.thumb }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">{% endif %}
     </div>
@@ -286,6 +320,70 @@ function timeAgo(iso){
   const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+
+function filterByTech(bucket) {
+  const tabs = document.querySelectorAll('.tech-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const cards = document.querySelectorAll('#grid .card');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    if (bucket === 'all') {
+      card.style.display = '';
+      visibleCount++;
+    } else {
+      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
+      if (buckets.includes(bucket)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+  
+  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+}
+
+async function refreshNews(event) {
+  event.preventDefault();
+  const btn = document.getElementById('refreshBtn');
+  const icon = document.getElementById('refreshIcon');
+  
+  if (btn.disabled) return;
+  
+  btn.disabled = true;
+  icon.classList.add('spinning');
+  btn.textContent = '↻ Refreshing…';
+  
+  try {
+    const response = await fetch('/api/refresh', { method: 'POST' });
+    const data = await response.json();
+    
+    if (data.ok) {
+      btn.textContent = '✓ Done';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      btn.textContent = '✗ Error';
+      setTimeout(() => {
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 3000);
+    }
+  } catch (err) {
+    btn.textContent = '✗ Error';
+    setTimeout(() => {
+      btn.textContent = '↻ Refresh';
+      btn.disabled = false;
+      icon.classList.remove('spinning');
+    }, 3000);
+  }
+}
 </script>
 </body></html>
 """

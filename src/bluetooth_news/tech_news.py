@@ -131,13 +131,60 @@ def _fetch_all(max_workers: int = 8) -> dict:
             except Exception as exc:  # noqa: BLE001
                 log.info("tech_news: feed error: %s", exc)
 
-    # De-dupe by link, keep the newest pub.
-    seen: dict[str, dict] = {}
+    # Advanced de-dupe: by link (exact) + title similarity + content hash
+    import hashlib
+    from difflib import SequenceMatcher
+    
+    def _title_sim(t1: str, t2: str) -> float:
+        """Fuzzy title match (0-1)."""
+        if not t1 or not t2:
+            return 0.0
+        t1_norm = t1.lower().replace("&amp;", "&").replace("-", " ")
+        t2_norm = t2.lower().replace("&amp;", "&").replace("-", " ")
+        return SequenceMatcher(None, t1_norm, t2_norm).ratio()
+    
+    def _content_hash(title: str, desc: str) -> str:
+        """Quick content fingerprint."""
+        combined = (title + " " + (desc or "")).lower()
+        # Keep only first 50 chars-worth of meaningful text
+        words = combined.split()[:15]
+        return hashlib.md5(" ".join(words).encode()).hexdigest()
+    
+    seen_links = set()
+    seen_hashes = set()
+    deduped: list[dict] = []
+    
     for it in all_items:
-        key = it["link"]
-        if key not in seen or (it.get("pub") or "") > (seen[key].get("pub") or ""):
-            seen[key] = it
-    items = sorted(seen.values(), key=lambda x: x.get("pub") or "", reverse=True)
+        link = it.get("link", "")
+        title = it.get("title", "")
+        desc = it.get("desc", "")
+        
+        # Exact link match = skip
+        if link in seen_links:
+            continue
+        
+        # Content hash match = skip (catches rewrites)
+        ch = _content_hash(title, desc)
+        if ch in seen_hashes:
+            continue
+        
+        # Fuzzy title match with higher similarity + recent timestamp = skip
+        dup_by_title = False
+        for existing in deduped:
+            sim = _title_sim(title, existing.get("title", ""))
+            if sim > 0.75:  # 75% similarity threshold for news syndication
+                # Prefer if this one is newer or from better source
+                if (it.get("pub", "") <= existing.get("pub", "")):
+                    dup_by_title = True
+                    break
+        
+        if not dup_by_title:
+            seen_links.add(link)
+            seen_hashes.add(ch)
+            deduped.append(it)
+    
+    # Sort by recency
+    items = sorted(deduped, key=lambda x: x.get("pub") or "", reverse=True)
 
     return {
         "updated_at": datetime.now(timezone.utc).isoformat(),

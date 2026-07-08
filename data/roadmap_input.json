@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T21:02:41Z",
+  "generated_at": "2026-07-08T00:07:59Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -133,6 +133,11 @@
           "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
         },
         {
+          "title": "Nordic Launches Prototyping Tag for 'Find My' and Asset Tag Designs",
+          "date": "Jul 2026",
+          "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
+        },
+        {
           "title": "nRF54L15 Tag Prototyping Platform Launched",
           "date": "Jun 2026",
           "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag"
@@ -171,11 +176,6 @@
           "title": "U-blox Launches ALMA-B2 Edge ML Bluetooth Modules Featuring Nordic Semiconductor Technology",
           "date": "May 2026",
           "url": "https://www.theglobeandmail.com/investing/markets/stocks/UBLXF/pressreleases/2193540/u-blox-launches-alma-b2-edge-ml-bluetooth-modules-with-nordic-semiconductor/"
-        },
-        {
-          "title": "Nordic Semiconductor Introduces AI-Assisted Development Across Product Lifecycle",
-          "date": "May 2026",
-          "url": "https://www.prnewswire.com/pl/komunikat-prasowy/nordic-semiconductor-brings-ai-assisted-development-to-the-entire-product-lifecycle-302783435.html"
         }
       ],
       "events": [
@@ -720,14 +720,14 @@
           "url": "https://www.macrumors.com/2026/07/02/iphone-18-pro-could-use-qualcomm-modem-in_the_us/"
         },
         {
-          "title": "Qualcomm Takes Spatial Computing into the AI Era with Snapdragon Reality Elite",
-          "date": "Jun 2026",
-          "url": "https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon"
+          "title": "Microsoft Surface Pro OLED 2026 Features Qualcomm Snapdragon X2 Elite Processor",
+          "date": "Jul 2026",
+          "url": "https://www.notebookcheck.net/Flagship-convertible-with-Snapdragon-X2-Elite-Microsoft-Surface-Pro-OLED-2026-Review.1335724.0.html"
         },
         {
-          "title": "Microsoft Launches Surface Laptop 8 and Surface Pro 12 with Qualcomm Snapdragon X2 Chips",
-          "date": "Jun 2026",
-          "url": "https://www.theverge.com/tech/950146/microsoft-surface-laptop-8-surface-pro-12-snapdragon-x2-specs-price"
+          "title": "Nothing Phone (4b) Launches Featuring Qualcomm Snapdragon 6 Gen 4 Chip",
+          "date": "Jul 2026",
+          "url": "https://www.gsmarena.com/the_nothing_phone_4b_has_a_longlasting_battery_snapdragon_6_gen_4_chip_and_a_glyph_bar-news-73609.php"
         }
       ],
       "events": [
@@ -3664,15 +3664,18 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 35,
-    "Qualcomm": 6,
+    "Broadcom": 36,
+    "Qualcomm": 17,
     "Skyworks": 6,
     "Marvell": 4,
+    "NXP": 3,
     "STMicro": 3,
     "u-blox": 2,
     "MediaTek": 2,
+    "Infineon": 2,
+    "Microchip": 1,
     "Espressif": 1,
-    "NXP": 1
+    "Apple": 1
   },
   "standards_in_flight": [
     {
@@ -3753,7 +3756,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3728,
+      "issues_open": 3718,
       "prs_open": 0,
       "releases": [
         {
@@ -3775,8 +3778,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15834,
-      "pushed_at": "2026-07-07T19:53:49Z"
+      "stars": 15836,
+      "pushed_at": "2026-07-07T21:52:57Z"
     },
     {
       "name": "ESP-IDF",
@@ -3812,7 +3815,22 @@
         }
       ],
       "stars": 18496,
-      "pushed_at": "2026-07-07T20:24:43Z"
+      "pushed_at": "2026-07-07T23:27:46Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 238695,
+      "pushed_at": "2026-07-07T02:08:57Z"
     },
     {
       "name": "Matter SDK",
@@ -3823,7 +3841,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2712,
+      "issues_open": 2714,
       "prs_open": 0,
       "releases": [
         {
@@ -3846,22 +3864,7 @@
         }
       ],
       "stars": 8813,
-      "pushed_at": "2026-07-07T20:35:33Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 238723,
-      "pushed_at": "2026-07-07T02:08:57Z"
+      "pushed_at": "2026-07-07T23:39:29Z"
     },
     {
       "name": "OpenThread",
@@ -3871,8 +3874,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 62,
-      "issues_open": 159,
+      "commits_30d": 63,
+      "issues_open": 158,
       "prs_open": 0,
       "releases": [
         {
@@ -3895,7 +3898,7 @@
         }
       ],
       "stars": 3978,
-      "pushed_at": "2026-07-07T18:24:13Z"
+      "pushed_at": "2026-07-07T21:30:55Z"
     },
     {
       "name": "BlueZ",
@@ -3940,7 +3943,7 @@
         "ieee15_4"
       ],
       "commits_30d": 44,
-      "issues_open": 485,
+      "issues_open": 484,
       "prs_open": 0,
       "releases": [
         {

@@ -84,6 +84,24 @@ a:hover { text-decoration:underline; }
 .tag-region-asia { background:#fef3c7; color:#92400e; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
 </style>
 </head><body>
 
@@ -91,20 +109,23 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <div class="nav-dd">
-      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
-      <div class="nav-dd-menu">
-        <a href="news.html">All News</a>
-        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
-      </div>
-    </div>
+    <a href="news.html" class="active">News</a>
     <a href="customers.html" class="">Customers</a>
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-07 14:02 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 17:07 PDT</div>
 </div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
 <script>
 (function(){
   if(location.protocol !== 'file:') return;
@@ -119,7 +140,7 @@ a:hover { text-decoration:underline; }
   <h1>Wi-Fi News</h1>
   <p>Wi-Fi 6E/7/8, MLO, HaLow — vendor chips and customer wins.</p>
   <div class="stats">
-    <span class="pill">43 articles</span>
+    <span class="pill">44 articles</span>
     <span class="pill">4 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
@@ -128,9 +149,11 @@ a:hover { text-decoration:underline; }
 
 
 
+
+
 <div class="grid" id="grid">
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -151,7 +174,27 @@ Apple extended its supplier agreement with Broadcom through 2031 for custom wire
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-through-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-1&amp;uxmode=ruby" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal through 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T14:56:16+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -172,7 +215,7 @@ Semiconductor and infrastructure manufacturer Broadcom has extended its partners
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -193,7 +236,27 @@ Broadcom revealed in a securities filing that it has extended its longstanding t
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-gb/money/technology/broadcom-agrees-new-deal-to-make-custom-chips-for-apple-to-2031/ar-AA27pwzB" target="_blank" rel="noopener">Broadcom agrees new deal to make custom chips for Apple to 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:05:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -213,7 +276,7 @@ Broadcom revealed in a securities filing that it has extended its longstanding t
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -233,7 +296,7 @@ Broadcom revealed in a securities filing that it has extended its longstanding t
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -254,7 +317,7 @@ Broadcom has extended its partnership with Apple through 2031 to dev…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -274,7 +337,7 @@ Broadcom has extended its partnership with Apple through 2031 to dev…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -294,7 +357,7 @@ Broadcom has extended its partnership with Apple through 2031 to dev…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -315,7 +378,7 @@ Veröffentlicht: 07.07.2026 um 05:33 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -335,7 +398,7 @@ Veröffentlicht: 07.07.2026 um 05:33 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -357,7 +420,7 @@ Apple inks new supply deal with Broadcom through 2031 | Image by Phon…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -378,7 +441,7 @@ Broadcom (AVGO) and Apple (AAPL) have agreed to extend their strategic semicondu
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -399,27 +462,7 @@ Apple is one of Broadcom’s largest customers, an…</p>
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-to-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-0" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal to 2031</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MSN</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T20:58:54+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -441,7 +484,7 @@ Apple&#39;s long campaign to design the silicon inside its own de…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -461,7 +504,7 @@ Apple&#39;s long campaign to design the silicon inside its own de…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -481,7 +524,7 @@ Apple&#39;s long campaign to design the silicon inside its own de…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -503,7 +546,7 @@ M…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -524,7 +567,7 @@ The renewed partnership locks in custom silicon development for another half-dec
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -545,7 +588,7 @@ The d…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -566,7 +609,7 @@ Apple has used Broadcom as a supplier for its iPhone and other hardware for quit
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -588,7 +631,7 @@ Broadcom said Monday it has agreed to expand its partnership with Apple thro…<
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -609,7 +652,7 @@ If your iPhone has ever connected to 5G, Wi-Fi or Bluetooth without a hiccup, th
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -633,7 +676,7 @@ Buy AVGO. The Apple custom-chip partnership is extend…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -653,7 +696,7 @@ Buy AVGO. The Apple custom-chip partnership is extend…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -675,7 +718,7 @@ Buy AVGO. The Apple custom-chip partnership is extend…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -696,7 +739,7 @@ The company has committed t…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -716,7 +759,7 @@ The company has committed t…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -737,7 +780,7 @@ On July 6, Eastern Time, Broadcom disclosed a multi-year agreement to supply App
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -759,7 +802,7 @@ Today&#39;s…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -779,27 +822,7 @@ Today&#39;s…</p>
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-through-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-1&amp;uxmode=ruby" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal through 2031</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MSN</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:46:56+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -820,7 +843,7 @@ According to Reuters, Broadcom and Apple have agreed to expand their partnership
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -831,17 +854,18 @@ According to Reuters, Broadcom and Apple have agreed to expand their partnership
         <span class="chip chip-cust">Apple</span>
         
       </div>
-      <h2 class="title"><a href="https://wixx.com/2026/07/06/broadcom-apple-extend-chip-partnership-through-2031/" target="_blank" rel="noopener">Broadcom, Apple extend chip supply deal through 2031</a></h2>
-      <p class="summary">By Akash Sriram and Anhata Rooprai
-July 6 (Reuters) – Broadcom said on Monday it will expand its partnership with Apple through 2031 to develop and supply custom chips, cementing the chipmaker’s role as a critical supplier to the iPhone mak…</p>
+      <h2 class="title"><a href="https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/broadcom-apple-extend-chip-partnership-through-2031" target="_blank" rel="noopener">Broadcom, Apple extend chip partnership through 2031</a></h2>
+      <p class="summary">Broadcom, Apple extend chip partnership through 2031
+The extended partnership reinforces Apple’s strategy of locking in long-term supply agreements with key chipmakers
+[BENGALURU] Broadcom said on Monday (Jul 6) it has agreed to expand its …</p>
       <div class="meta-row">
-        <span class="source">101 WIXX</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:36:45+00:00">2026-07-06</span>
+        <span class="source">The Business Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:27:00+00:00">2026-07-06</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -862,7 +886,7 @@ Broadcom has been a long-standing supplier to Apple, providing key com…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -882,7 +906,7 @@ Broadcom has been a long-standing supplier to Apple, providing key com…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -903,7 +927,7 @@ Veröffentlicht: 06.07.2026 um 07:49 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -924,7 +948,7 @@ At first glance, the Debix T62P-01 resembles a Raspberry Pi (on Amazon) and can 
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -946,7 +970,7 @@ The humble router is an essential fixture in every home. Benefits extend to ever
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -954,19 +978,21 @@ The humble router is an essential fixture in every home. Benefits extend to ever
       <div class="meta-row">
         <span class="chip chip-tech">Wi-Fi</span>
         
-        
+        <span class="chip chip-cust">Apple</span>
         
       </div>
-      <h2 class="title"><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a4d6828f80b4d658fb3e0ced13be5cf&amp;url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2frouter-brands-could-be-misleading-you-with-that-wi-fi-7-label%2far-AA27cHcz&amp;c=333254714267765289&amp;mkt=en-us" target="_blank" rel="noopener">Router Brands Could Be Misleading You With That Wi-Fi 7 Label</a></h2>
-      <p class="summary">Wi-Fi standards remain as confusing as ever.</p>
+      <h2 class="title"><a href="https://www.engadget.com/2206012/router-brands-could-be-misleading-you-with-that-wi-fi-7-label/" target="_blank" rel="noopener">Router Brands Could Be Misleading You With That Wi-Fi 7 Label</a></h2>
+      <p class="summary">Router brands could be misleading you with that Wi-Fi 7 label
+Wi-Fi standards remain as confusing as ever.
+If you&#39;ve thought at all about your home internet setup lately, you&#39;ve surely come across Wi-Fi 7 in your research. The label is slap…</p>
       <div class="meta-row">
-        <span class="source">Bing: Wi-Fi 7 chip</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-04T06:33:00+00:00">2026-07-04</span>
+        <span class="source">Engadget</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T13:30:00+00:00">2026-07-04</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -986,7 +1012,7 @@ The humble router is an essential fixture in every home. Benefits extend to ever
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -1008,7 +1034,7 @@ This announcement unde…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -1024,6 +1050,29 @@ This announcement unde…</p>
       <div class="meta-row">
         <span class="source">AppleMagazine</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-02T20:51:04+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.androidauthority.com/pixel-phones-connectivity-issues-july-2026-3683409/" target="_blank" rel="noopener">Surprise: Pixel phones are once again having Wi-Fi problems</a></h2>
+      <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
+Surprise: Pixel phones are once again having Wi-Fi problems
+6 hours ago
+- Over the past 24 hours, more user reports claiming connectivity issues on Pixel phones have…</p>
+      <div class="meta-row">
+        <span class="source">Android Authority</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T15:57:37+00:00">2026-07-01</span>
       </div>
     </div>
   </article>
@@ -1044,5 +1093,69 @@ function timeAgo(iso){
   const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+
+function filterByTech(bucket) {
+  const tabs = document.querySelectorAll('.tech-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const cards = document.querySelectorAll('#grid .card');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    if (bucket === 'all') {
+      card.style.display = '';
+      visibleCount++;
+    } else {
+      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
+      if (buckets.includes(bucket)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+  
+  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+}
+
+async function refreshNews(event) {
+  event.preventDefault();
+  const btn = document.getElementById('refreshBtn');
+  const icon = document.getElementById('refreshIcon');
+  
+  if (btn.disabled) return;
+  
+  btn.disabled = true;
+  icon.classList.add('spinning');
+  btn.textContent = '↻ Refreshing…';
+  
+  try {
+    const response = await fetch('/api/refresh', { method: 'POST' });
+    const data = await response.json();
+    
+    if (data.ok) {
+      btn.textContent = '✓ Done';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      btn.textContent = '✗ Error';
+      setTimeout(() => {
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 3000);
+    }
+  } catch (err) {
+    btn.textContent = '✗ Error';
+    setTimeout(() => {
+      btn.textContent = '↻ Refresh';
+      btn.disabled = false;
+      icon.classList.remove('spinning');
+    }, 3000);
+  }
+}
 </script>
 </body></html>

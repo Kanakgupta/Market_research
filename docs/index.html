@@ -85,6 +85,24 @@ a:hover { text-decoration:underline; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
 
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
+
 .kpi-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin:18px 0; }
 .kpi { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
 .kpi h3 { margin:0 0 6px; font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
@@ -213,19 +231,13 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="active">Overview</a>
-    <div class="nav-dd">
-      <a class="nav-dd-trigger " href="news.html">News <span class="dd-caret">&#9662;</span></a>
-      <div class="nav-dd-menu">
-        <a href="news.html">All News</a>
-        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
-      </div>
-    </div>
+    <a href="news.html" class="">News</a>
     <a href="customers.html" class="">Customers</a>
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-07 14:02 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 17:07 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -243,13 +255,13 @@ a:hover { text-decoration:underline; }
 </section>
 
 <div class="kpi-row">
-  <div class="kpi"><h3>News (last 7d)</h3><div class="v">141</div>
+  <div class="kpi"><h3>News (last 7d)</h3><div class="v">196</div>
     <div class="delta flat"> new vs prior 7d</div></div>
   <div class="kpi"><h3>Competitors tracked</h3><div class="v">21</div>
     <div class="delta flat">vs Infineon AIROC</div></div>
   <div class="kpi"><h3>Customers tracked</h3><div class="v">13</div>
     <div class="delta flat">OEM profiles</div></div>
-  <div class="kpi"><h3>Relationship links</h3><div class="v">116</div>
+  <div class="kpi"><h3>Relationship links</h3><div class="v">117</div>
     <div class="delta flat">vendor &harr; customer</div></div>
 </div>
 
@@ -278,7 +290,7 @@ a:hover { text-decoration:underline; }
         
           <div><a href="https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/" target="_blank" rel="noopener">Nordic Semiconductor Introduces Prototyping Tag to Simplify &#39;Find My&#39; and Asset Tag Development</a> &middot; Jul 2026</div>
         
-          <div><a href="https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag" target="_blank" rel="noopener">nRF54L15 Tag Prototyping Platform Launched</a> &middot; Jun 2026</div>
+          <div><a href="https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/" target="_blank" rel="noopener">Nordic Launches Prototyping Tag for &#39;Find My&#39; and Asset Tag Designs</a> &middot; Jul 2026</div>
         
       </div>
       
@@ -481,8 +493,21 @@ a:hover { text-decoration:underline; }
     
     <article class="cust-card">
       <div class="hd">
+        <h3>Amazon</h3>
+        <span class="conf-badge conf-high">High &middot; 87%</span>
+      </div>
+      <div class="cust-app">Smart Home</div>
+      <p class="cust-product">Amazon Matter hub refresh</p>
+      <div>
+        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+      </div>
+      <div class="cust-basis">app signal=Smart Home (score 12.0)</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
         <h3>Apple</h3>
-        <span class="conf-badge conf-high">High &middot; 85%</span>
+        <span class="conf-badge conf-high">High &middot; 86%</span>
       </div>
       <div class="cust-app">Smart Home</div>
       <p class="cust-product">Apple Matter hub refresh</p>
@@ -494,15 +519,28 @@ a:hover { text-decoration:underline; }
     
     <article class="cust-card">
       <div class="hd">
-        <h3>Amazon</h3>
-        <span class="conf-badge conf-high">High &middot; 81%</span>
+        <h3>Bose</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 74%</span>
       </div>
-      <div class="cust-app">Smart Home</div>
-      <p class="cust-product">Amazon Matter hub refresh</p>
+      <div class="cust-app">Audio / Speaker</div>
+      <p class="cust-product">Bose LE Audio earbuds refresh</p>
       <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span><span class="feat-chip">Auracast support</span><span class="feat-chip">low-latency audio path</span><span class="feat-chip">public broadcast receive</span>
       </div>
-      <div class="cust-basis">app signal=Smart Home (score 11.0)</div>
+      <div class="cust-basis">app signal=Audio / Speaker (score 13.0)</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Microsoft</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 72%</span>
+      </div>
+      <div class="cust-app">Audio / Speaker</div>
+      <p class="cust-product">Microsoft LE Audio earbuds refresh</p>
+      <div>
+        <span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span><span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span>
+      </div>
+      <div class="cust-basis">app signal=Audio / Speaker (score 7.0)</div>
     </article>
     
     <article class="cust-card">
@@ -516,19 +554,6 @@ a:hover { text-decoration:underline; }
         <span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span><span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">all-day battery profile</span>
       </div>
       <div class="cust-basis">app signal=Smart Glasses (score 11.0)</div>
-    </article>
-    
-    <article class="cust-card">
-      <div class="hd">
-        <h3>Bose</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 68%</span>
-      </div>
-      <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Bose LE Audio earbuds refresh</p>
-      <div>
-        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span><span class="feat-chip">Auracast support</span><span class="feat-chip">low-latency audio path</span><span class="feat-chip">public broadcast receive</span>
-      </div>
-      <div class="cust-basis">app signal=Audio / Speaker (score 12.0)</div>
     </article>
     
   </div>
@@ -555,7 +580,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC CYW20829 ships Channel Sounding (PBR/RTT baseline from BT 6.0); CYW55513 covers LE Audio. Track BT 6.3 Channel Sounding refinements (Inline PCT Transfer, per-PHY RTT) for next silicon revs.</p>
-      <div class="std-activity">28 related articles &middot; 7d &middot; <a href="bluetooth.html">Open feed &rarr;</a></div>
+      <div class="std-activity">29 related articles &middot; 7d &middot; <a href="bluetooth.html">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -570,7 +595,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet — gap vs Synaptics Veros/MediaTek Filogic 380.</p>
-      <div class="std-activity">43 related articles &middot; 7d &middot; <a href="wifi.html">Open feed &rarr;</a></div>
+      <div class="std-activity">44 related articles &middot; 7d &middot; <a href="wifi.html">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -585,7 +610,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC has 802.15.4 in CYW55573; Matter SDK supported. Strong vs NXP IW612 / Silicon Labs MG24 in tri-radio stories. Needs to confirm Matter 1.6 (Joint Fabric, NFC commissioning) and Zigbee 4.0 support on roadmap.</p>
-      <div class="std-activity">24 related articles &middot; 7d &middot; <a href="ieee15_4.html">Open feed &rarr;</a></div>
+      <div class="std-activity">23 related articles &middot; 7d &middot; <a href="ieee15_4.html">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -600,7 +625,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung. Confirm FiRa Core 4.0 alignment before next combo announcement.</p>
-      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="aliro.html">Open feed &rarr;</a></div>
+      <div class="std-activity">1 related articles &middot; 14d fallback &middot; <a href="aliro.html">Open feed &rarr;</a></div>
     </article>
     
   </div>
@@ -619,8 +644,40 @@ a:hover { text-decoration:underline; }
       <div class="signal-row">
         <span class="signal-dot vendor"></span>
         <div class="signal-body">
+          <a class="signal-title" href="https://csa-iot.org/newsroom/nxp-semiconductor-on-aliro/" target="_blank" rel="noopener">NXP Semiconductor on Aliro</a>
+          <div class="signal-meta">NXP &middot; CSA / Matter (Zigbee) &middot; Jul 07</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot vendor"></span>
+        <div class="signal-body">
           <a class="signal-title" href="https://marketscale.com/industries/software-and-technology/broadcom-apple-chip-deal-2031-supply-chain" target="_blank" rel="noopener">Apple Spent Years Insourcing Chips. It Just Locked Broadcom In Through 2031.</a>
           <div class="signal-meta">Broadcom &middot; MarketScale &middot; Jul 07</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot vendor"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.tradingview.com/news/zacks:976b59670094b:0-microchip-gains-from-rising-mixed-signal-mcu-demand-what-s-ahead/" target="_blank" rel="noopener">Microchip Gains From Rising Mixed-Signal MCU Demand: What&#39;s Ahead?</a>
+          <div class="signal-meta">Microchip &middot; TradingView &middot; Jul 07</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot vendor"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.notebookcheck.net/Flagship-convertible-with-Snapdragon-X2-Elite-Microsoft-Surface-Pro-OLED-2026-Review.1335724.0.html" target="_blank" rel="noopener">Flagship convertible with Snapdragon X2 Elite - Microsoft Surface Pro OLED 2026 Review</a>
+          <div class="signal-meta">Qualcomm &middot; Notebookcheck &middot; Jul 07</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot vendor"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-through-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-1&amp;uxmode=ruby" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal through 2031</a>
+          <div class="signal-meta">Broadcom &middot; MSN &middot; Jul 07</div>
         </div>
       </div>
       
@@ -643,46 +700,38 @@ a:hover { text-decoration:underline; }
       <div class="signal-row">
         <span class="signal-dot vendor"></span>
         <div class="signal-body">
-          <a class="signal-title" href="https://tynmagazine.com/broadcom-apple-extend-custom-chip-partnership/" target="_blank" rel="noopener">Broadcom, Apple extend custom chip partnership</a>
-          <div class="signal-meta">Broadcom &middot; TyN Magazine &middot; Jul 07</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.notebookcheck.net/Nothing-Phone-4b-launches-with-a-120Hz-AMOLED-display-Snapdragon-processor-and-up-to-a-6-000mAh-battery.1336537.0.html" target="_blank" rel="noopener">Nothing Phone (4b) launches with a 120Hz AMOLED display, Snapdragon processor, and up to a 6,000mAh battery</a>
-          <div class="signal-meta">Qualcomm &middot; Notebookcheck &middot; Jul 07</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.fonearena.com/blog/486937/broadcom-apple-custom-chip-deal-2031.html" target="_blank" rel="noopener">Broadcom extends custom chip deal with Apple through 2031</a>
-          <div class="signal-meta">Broadcom &middot; FoneArena.com &middot; Jul 07</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.electronicsforyou.biz/industry-buzz/broadcom-extends-apple-chip-partnership-through-2031-strengthening-long-term-supply-ties/" target="_blank" rel="noopener">Broadcom extends Apple chip partnership through 2031, strengthening long-term supply ties</a>
-          <div class="signal-meta">Broadcom &middot; Electronics For You BUSINESS &middot; Jul 07</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.theregister.com/personal-tech/2026/07/07/broadcom-and-apple-extend-custom-silicon-pact-to-2031/5267491" target="_blank" rel="noopener">Broadcom and Apple extend custom silicon pact to 2031</a>
-          <div class="signal-meta">Broadcom &middot; The Register &middot; Jul 07</div>
+          <a class="signal-title" href="https://www.msn.com/en-gb/money/technology/broadcom-agrees-new-deal-to-make-custom-chips-for-apple-to-2031/ar-AA27pwzB" target="_blank" rel="noopener">Broadcom agrees new deal to make custom chips for Apple to 2031</a>
+          <div class="signal-meta">Broadcom &middot; MSN &middot; Jul 07</div>
         </div>
       </div>
       
     </div>
     <div class="signal-col">
       <h3>Customer signals</h3>
+      
+      <div class="signal-row">
+        <span class="signal-dot customer"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-signal-lucence-from-coats-group-high-visibility-sewing-thread/69718109" target="_blank" rel="noopener">Coats Signal Lucence from Coats Group - High-visibility sewing thread targets workwear safety</a>
+          <div class="signal-meta">Microsoft &middot; AD HOC NEWS &middot; Jul 07</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot customer"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.cnet.com/home/electric-vehicles/tesla-model-y-l-premium-third-row-suv-long-wheelbase/" target="_blank" rel="noopener">Tesla Stretches Its Model Y for a Roomier Third Row, Extending the Price Even More</a>
+          <div class="signal-meta">Tesla &middot; CNET &middot; Jul 07</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot customer"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.cnet.com/tech/mobile/google-pixel-11-leak-hints-at-higher-prices-new-colors-and-more-storage/" target="_blank" rel="noopener">Google Pixel 11 Leak Hints at Higher Prices, New Colors and More Storage</a>
+          <div class="signal-meta">Google &middot; CNET &middot; Jul 07</div>
+        </div>
+      </div>
       
       <div class="signal-row">
         <span class="signal-dot customer"></span>
@@ -695,7 +744,7 @@ a:hover { text-decoration:underline; }
       <div class="signal-row">
         <span class="signal-dot customer"></span>
         <div class="signal-body">
-          <a class="signal-title" href="https://www.analyticsinsight.net/smartwatch/dont-have-an-apple-watch-these-affordable-health-tracking-alternatives-work-too" target="_blank" rel="noopener">Don&#39;t Have an Apple Watch? These Affordable Health Tracking Alternatives Work Too</a>
+          <a class="signal-title" href="https://www.analyticsinsight.net/amp/story/smartwatch/dont-have-an-apple-watch-these-affordable-health-tracking-alternatives-work-too" target="_blank" rel="noopener">Don&#39;t Have an Apple Watch? These Affordable Health Tracking Alternatives Work Too</a>
           <div class="signal-meta">Apple &middot; Analytics Insight &middot; Jul 07</div>
         </div>
       </div>
@@ -703,48 +752,24 @@ a:hover { text-decoration:underline; }
       <div class="signal-row">
         <span class="signal-dot customer"></span>
         <div class="signal-body">
-          <a class="signal-title" href="https://www.globenewswire.com/news-release/2026/07/07/3323466/0/en/Channel-Master-Enters-the-Smart-Home-Market-with-Pro-Floodlight-the-First-Smart-Outdoor-Floodlight-Powered-Over-Coaxial-Cable-That-Works-with-Apple-Home.html" target="_blank" rel="noopener">Channel Master Enters the Smart Home Market with</a>
-          <div class="signal-meta">Apple &middot; GlobeNewswire &middot; Jul 07</div>
+          <a class="signal-title" href="https://www.cnet.com/tech/mobile/made-by-google-aug-12-event-invites/" target="_blank" rel="noopener">Made by Google Event Aug. 12: Invites Go Out to Press</a>
+          <div class="signal-meta">Google &middot; CNET &middot; Jul 07</div>
         </div>
       </div>
       
       <div class="signal-row">
         <span class="signal-dot customer"></span>
         <div class="signal-body">
-          <a class="signal-title" href="https://finance.yahoo.com/news/channel-master-enters-smart-home-152300438.html" target="_blank" rel="noopener">Channel Master Enters the Smart Home Market with Pro-Floodlight, the First Smart Outdoor Floodlight Powered Over Coaxial Cable That Works with Apple Home</a>
-          <div class="signal-meta">Apple &middot; Yahoo Finance &middot; Jul 07</div>
+          <a class="signal-title" href="https://wccftech.com/io-interactive-project-fantasy-funding-alone-xbox-bails-istanbul-office/" target="_blank" rel="noopener">IO Interactive Doubles Down on Project Fantasy Funding Alone After Xbox Bails, Shuttering Its Istanbul Office to Survive</a>
+          <div class="signal-meta">Microsoft &middot; Wccftech &middot; Jul 07</div>
         </div>
       </div>
       
       <div class="signal-row">
         <span class="signal-dot customer"></span>
         <div class="signal-body">
-          <a class="signal-title" href="https://www.theverge.com/gadgets/961962/anker-soundcore-sleep-a20-jbl-go-5-deal-sale" target="_blank" rel="noopener">Anker’s noise-blocking earbuds for sleeping are nearly half off</a>
-          <div class="signal-meta">Eufy/Anker &middot; The Verge &middot; Jul 07</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.siliconrepublic.com/machines/apple-broadcom-renew-chip-deal-2031-semiconductor-ai-development" target="_blank" rel="noopener">Apple and Broadcom renew chip deal, which will run to 2031</a>
-          <div class="signal-meta">Apple &middot; Silicon Republic &middot; Jul 07</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.cultofmac.com/news/apple-broadcom-chip-partnership" target="_blank" rel="noopener">Apple extends Broadcom partnership despite in-house chip push</a>
-          <div class="signal-meta">Apple &middot; Cult of Mac &middot; Jul 07</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.stuff.tv/features/apple-smart-home-camera-release-date-price-features-and-all-the-latest-rumours/" target="_blank" rel="noopener">Is Apple really making a smart doorbell or security camera to rival Ring and Nest? Here&#39;s everything we know</a>
-          <div class="signal-meta">Apple &middot; stuff.tv &middot; Jul 07</div>
+          <a class="signal-title" href="https://www.notebookcheck.net/Flagship-convertible-with-Snapdragon-X2-Elite-Microsoft-Surface-Pro-OLED-2026-Review.1335724.0.html" target="_blank" rel="noopener">Flagship convertible with Snapdragon X2 Elite - Microsoft Surface Pro OLED 2026 Review</a>
+          <div class="signal-meta">Microsoft &middot; Notebookcheck &middot; Jul 07</div>
         </div>
       </div>
       
@@ -764,5 +789,5 @@ a:hover { text-decoration:underline; }
 </section>
 
 </main>
-<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-07 14:02 PDT</div></footer>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-07 17:07 PDT</div></footer>
 </body></html>

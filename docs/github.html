@@ -81,6 +81,24 @@ a:hover { text-decoration:underline; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
 
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
+
 
 .r-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
 .r-card h3 { margin:0 0 6px; font-size:15px; color:#0f172a; }
@@ -101,19 +119,13 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <div class="nav-dd">
-      <a class="nav-dd-trigger " href="news.html">News <span class="dd-caret">&#9662;</span></a>
-      <div class="nav-dd-menu">
-        <a href="news.html">All News</a>
-        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
-      </div>
-    </div>
+    <a href="news.html" class="">News</a>
     <a href="customers.html" class="">Customers</a>
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-07 14:02 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 17:07 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -137,8 +149,8 @@ a:hover { text-decoration:underline; }
   <div class="meta">BLE host + controller (RTOS)</div>
   <p style="margin:8px 0;">
     <strong>100</strong> commits 30d ·
-    <strong>3728</strong> open issues
-    · <strong>15834</strong> ★
+    <strong>3718</strong> open issues
+    · <strong>15836</strong> ★
   </p>
   
   <div class="src">Recent releases:</div>
@@ -177,11 +189,22 @@ a:hover { text-decoration:underline; }
 </div>
 
 <div class="r-card">
+  <h3><a href="https://github.com/torvalds/linux" target="_blank" rel="noopener">Linux mac80211</a></h3>
+  <div class="meta">Linux Wi-Fi (kernel)</div>
+  <p style="margin:8px 0;">
+    <strong>100</strong> commits 30d ·
+    <strong>3</strong> open issues
+    · <strong>238695</strong> ★
+  </p>
+  
+</div>
+
+<div class="r-card">
   <h3><a href="https://github.com/project-chip/connectedhomeip" target="_blank" rel="noopener">Matter SDK</a></h3>
   <div class="meta">Matter (connectedhomeip)</div>
   <p style="margin:8px 0;">
     <strong>100</strong> commits 30d ·
-    <strong>2712</strong> open issues
+    <strong>2714</strong> open issues
     · <strong>8813</strong> ★
   </p>
   
@@ -199,22 +222,11 @@ a:hover { text-decoration:underline; }
 </div>
 
 <div class="r-card">
-  <h3><a href="https://github.com/torvalds/linux" target="_blank" rel="noopener">Linux mac80211</a></h3>
-  <div class="meta">Linux Wi-Fi (kernel)</div>
-  <p style="margin:8px 0;">
-    <strong>100</strong> commits 30d ·
-    <strong>3</strong> open issues
-    · <strong>238723</strong> ★
-  </p>
-  
-</div>
-
-<div class="r-card">
   <h3><a href="https://github.com/openthread/openthread" target="_blank" rel="noopener">OpenThread</a></h3>
   <div class="meta">Google Thread implementation</div>
   <p style="margin:8px 0;">
-    <strong>62</strong> commits 30d ·
-    <strong>159</strong> open issues
+    <strong>63</strong> commits 30d ·
+    <strong>158</strong> open issues
     · <strong>3978</strong> ★
   </p>
   
@@ -258,7 +270,7 @@ a:hover { text-decoration:underline; }
   <div class="meta">Zigbee gateway</div>
   <p style="margin:8px 0;">
     <strong>44</strong> commits 30d ·
-    <strong>485</strong> open issues
+    <strong>484</strong> open issues
     · <strong>15281</strong> ★
   </p>
   
@@ -301,4 +313,4 @@ a:hover { text-decoration:underline; }
 </section>
 
 
-</main><footer class="footer"><div class="wrap">IoT Wireless Intel · 2026-07-07 14:02 PDT</div></footer></body></html>
+</main><footer class="footer"><div class="wrap">IoT Wireless Intel · 2026-07-07 17:07 PDT</div></footer></body></html>

@@ -84,6 +84,24 @@ a:hover { text-decoration:underline; }
 .tag-region-asia { background:#fef3c7; color:#92400e; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
 </style>
 </head><body>
 
@@ -91,20 +109,23 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <div class="nav-dd">
-      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
-      <div class="nav-dd-menu">
-        <a href="news.html">All News</a>
-        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
-      </div>
-    </div>
+    <a href="news.html" class="active">News</a>
     <a href="customers.html" class="">Customers</a>
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-07 14:02 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 17:07 PDT</div>
 </div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
 <script>
 (function(){
   if(location.protocol !== 'file:') return;
@@ -119,18 +140,113 @@ a:hover { text-decoration:underline; }
   <h1>All News</h1>
   <p>Latest IoT wireless news across all chip vendors, OEMs, customers and applications.</p>
   <div class="stats">
-    <span class="pill">142 articles</span>
-    <span class="pill">9 vendors</span>
+    <span class="pill">197 articles</span>
+    <span class="pill">12 vendors</span>
     <span class="pill">34 customers</span>
-    <span class="pill">10 applications</span>
+    <span class="pill">11 applications</span>
+  </div>
+</section>
+
+
+<section class="tech-toolbar">
+  <div class="tech-tabs" id="techTabs">
+    <button class="tech-tab active" data-filter="all" onclick="filterByTech('all')">All News</button>
+    <button class="tech-tab" data-filter="wifi" onclick="filterByTech('wifi')">Wi-Fi</button><button class="tech-tab" data-filter="bluetooth" onclick="filterByTech('bluetooth')">Bluetooth</button><button class="tech-tab" data-filter="ieee15_4" onclick="filterByTech('ieee15_4')">802.15.4</button><button class="tech-tab" data-filter="aliro" onclick="filterByTech('aliro')">Aliro</button><button class="tech-tab" data-filter="thread" onclick="filterByTech('thread')">Thread</button><button class="tech-tab" data-filter="matter" onclick="filterByTech('matter')">Matter</button>
+  </div>
+  <div class="tech-actions">
+    <span class="tech-count" id="articleCount">197 articles</span>
+    <button class="btn-refresh" id="refreshBtn" onclick="refreshNews(event)"><span class="refresh-icon" id="refreshIcon">&#x21bb;</span> Refresh</button>
   </div>
 </section>
 
 
 
+
 <div class="grid" id="grid">
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-signal-lucence-from-coats-group-high-visibility-sewing-thread/69718109" target="_blank" rel="noopener">Coats Signal Lucence from Coats Group - High-visibility sewing thread targets workwear safety</a></h2>
+      <p class="summary">Coats Signal Lucence from Coats Group - High-visibility sewing thread targets workwear safety
+Veröffentlicht: 08.07.2026 um 01:06 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Thomas Riley, ad hoc …</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T23:06:16+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Tesla</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/home/electric-vehicles/tesla-model-y-l-premium-third-row-suv-long-wheelbase/" target="_blank" rel="noopener">Tesla Stretches Its Model Y for a Roomier Third Row, Extending the Price Even More</a></h2>
+      <p class="summary">Tesla has added an actual, reasonable third row of seats to its Tesla Model Y. The automaker brought a long-wheelbase variant of the Model Y electric SUV to its US lineup, shoring up a gap in its fleet and bracing the brand against new elec…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T21:48:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="aliro">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Aliro</span>
+        <span class="chip chip-vendor">NXP</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/newsroom/nxp-semiconductor-on-aliro/" target="_blank" rel="noopener">NXP Semiconductor on Aliro</a></h2>
+      <p class="summary">“Regardless of which wallet you have and regardless of which lock you have, they will just simply work together. So there is no need for further integration or doing extra&amp;#8230;</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T21:04:55+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/google-pixel-11-leak-hints-at-higher-prices-new-colors-and-more-storage/" target="_blank" rel="noopener">Google Pixel 11 Leak Hints at Higher Prices, New Colors and More Storage</a></h2>
+      <p class="summary">Google on Tuesday announced that its next Pixel phone line will be unveiled on Aug. 12, but a number of key features for the Pixel 11 leaked on the same day.
+According to the French site Deallabs Magazine, we&#39;ll see price and storage change…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T20:39:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -151,7 +267,7 @@ Apple extended its supplier agreement with Broadcom through 2031 for custom wire
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -162,18 +278,122 @@ Apple extended its supplier agreement with Broadcom through 2031 for custom wire
         <span class="chip chip-cust">Apple</span>
         <span class="chip chip-app">Wearable</span>
       </div>
-      <h2 class="title"><a href="https://www.analyticsinsight.net/smartwatch/dont-have-an-apple-watch-these-affordable-health-tracking-alternatives-work-too" target="_blank" rel="noopener">Don&#39;t Have an Apple Watch? These Affordable Health Tracking Alternatives Work Too</a></h2>
+      <h2 class="title"><a href="https://www.analyticsinsight.net/amp/story/smartwatch/dont-have-an-apple-watch-these-affordable-health-tracking-alternatives-work-too" target="_blank" rel="noopener">Don&#39;t Have an Apple Watch? These Affordable Health Tracking Alternatives Work Too</a></h2>
       <p class="summary">Affordable smartwatches now offer health tracking features that were once available only on premium devices.
 Heart rate monitoring, sleep tracking, SpO₂ sensors, and Bluetooth calling have become common across budget models.
 The best smartw…</p>
       <div class="meta-row">
         <span class="source">Analytics Insight</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-07T18:45:00+00:00">2026-07-07</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T18:55:22+00:00">2026-07-07</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/made-by-google-aug-12-event-invites/" target="_blank" rel="noopener">Made by Google Event Aug. 12: Invites Go Out to Press</a></h2>
+      <p class="summary">The next generation of Google&#39;s Pixel smartphone is on the way, and invitations for a Made By Google event have been sent out to the press. The reveal will take place on Aug. 12 in New York at 6PM ET. A leak suggesting an August launch and …</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T18:12:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Microsoft</span>
+        
+      </div>
+      <h2 class="title"><a href="https://wccftech.com/io-interactive-project-fantasy-funding-alone-xbox-bails-istanbul-office/" target="_blank" rel="noopener">IO Interactive Doubles Down on Project Fantasy Funding Alone After Xbox Bails, Shuttering Its Istanbul Office to Survive</a></h2>
+      <p class="summary">Last week, IO Interactive announced that it was forced to cut some of its staff after Xbox abandoned funding for the Project Fantasy IP, first revealed over three years ago.
+Today, the developer has confirmed that it regained complete contr…</p>
+      <div class="meta-row">
+        <span class="source">Wccftech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T17:30:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Microchip</span>
+        
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.tradingview.com/news/zacks:976b59670094b:0-microchip-gains-from-rising-mixed-signal-mcu-demand-what-s-ahead/" target="_blank" rel="noopener">Microchip Gains From Rising Mixed-Signal MCU Demand: What&#39;s Ahead?</a></h2>
+      <p class="summary">Microchip Gains From Rising Mixed-Signal MCU Demand: What&#39;s Ahead?
+Microchip Technology MCHP is well positioned to benefit from the growing demand for mixed-signal microcontrollers (MCUs), leveraging its expanding footprint in industrial em…</p>
+      <div class="meta-row">
+        <span class="source">TradingView</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T17:08:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Microsoft</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.notebookcheck.net/Flagship-convertible-with-Snapdragon-X2-Elite-Microsoft-Surface-Pro-OLED-2026-Review.1335724.0.html" target="_blank" rel="noopener">Flagship convertible with Snapdragon X2 Elite - Microsoft Surface Pro OLED 2026 Review</a></h2>
+      <p class="summary">Verdict - Surface Pro OLED 2026 offers a faster iGPU
+Microsoft updates its Surface Pro OLED convertible with the latest Snapdragon processors from Qualcomm, but Microsoft only uses the slowest Snapdragon X Elite processor from Qualcomm with…</p>
+      <div class="meta-row">
+        <span class="source">Notebookcheck</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T16:08:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/big-guessing-game-apple-edition-round-2/" target="_blank" rel="noopener">Win a New Apple Watch as CNET Guessing Game: Apple Edition Returns for Round Two</a></h2>
+      <p class="summary">You lovely readers had such a great time during the initial round of our CNET Big Guessing Game: Apple Edition, including nailing some unlikely predictions around WWDC 2026. Now we&#39;re whipping up round two.
+Test your oracular skills and mak…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T16:01:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -193,7 +413,7 @@ The best smartw…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -214,7 +434,27 @@ Channel Master Enters the Smart Home Market with Pro-Floodlight, the First Smart
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-through-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-1&amp;uxmode=ruby" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal through 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T14:56:16+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -234,7 +474,7 @@ Channel Master Enters the Smart Home Market with Pro-Floodlight, the First Smart
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -255,33 +495,7 @@ Semiconductor and infrastructure manufacturer Broadcom has extended its partners
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/chargers-daily-links-tuesday-open-135000392.html" target="_blank" rel="noopener">Chargers Daily Links: Tuesday Open Thread</a></h2>
-      <p class="summary">Chargers Daily Links: Tuesday Open Thread
-Good morning, Chargers fans!
-You know what to do!
-And now for today’s links.
-Chargers News:
-Here’s why the Chargers can capture the 2026 AFC West crown this year (Chargers.com)
-Ladd McConkey is carr…</p>
-      <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:50:00+00:00">2026-07-07</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -302,7 +516,7 @@ Broadcom revealed in a securities filing that it has extended its longstanding t
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -324,7 +538,7 @@ If you’re an Apple fan after one of the best smart home cameras or video doorb
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -347,7 +561,90 @@ Apple has confirmed that its upcoming AI-powered HomeKit Secure Video features w
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://blog.son-video.com/en/2026/07/focal-bathys-midnight-blue-an-elegant-new-finish/" target="_blank" rel="noopener">Focal Bathys Midnight Blue: an elegant new finish - Son-vidéo.com</a></h2>
+      <p class="summary">Four years after shaking up the high-end Bluetooth headphones market, the French audiophile brand continues to expand its color palette. Following the success of the Black and Dune versions, the Saint-Étienne-based brand is now unveiling a …</p>
+      <div class="meta-row">
+        <span class="source">Son-vidéo.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:32:27+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Huawei</span>
+        
+      </div>
+      <h2 class="title"><a href="https://wccftech.com/deepseek-developing-custom-ai-chip-to-reduce-dependency-on-huawei-and-nvidia/" target="_blank" rel="noopener">DeepSeek Looks To Sidestep Huawei As It Begins In-House AI Chip Journey While Dodging Development Complications, Trade Sanctions, Delays &amp; More</a></h2>
+      <p class="summary">AI chips from Huawei and NVIDIA are currently being leveraged to train and run DeepSeek’s popular models, but the days of this arrangement could be numbered as the Chinese startup has plans in motion to launch its in-house inference silicon…</p>
+      <div class="meta-row">
+        <span class="source">Wccftech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:28:20+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Sony</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.phonearena.com/news/sony-wh-1000xm5-152-usd-discount_id181691" target="_blank" rel="noopener">Sony&#39;s WH-1000XM5 are back in the spotlight with a $152 discount</a></h2>
+      <p class="summary">Sony&#39;s WH-1000XM5 are back in the spotlight with a $152 discount
+These Sony headphones are way more tempting right now.
+We may earn a commission if you make a purchase from the links on this page.
+Elevate your listening experience (and save…</p>
+      <div class="meta-row">
+        <span class="source">PhoneArena</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:20:31+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.msn.com/en-gb/money/technology/broadcom-agrees-new-deal-to-make-custom-chips-for-apple-to-2031/ar-AA27pwzB" target="_blank" rel="noopener">Broadcom agrees new deal to make custom chips for Apple to 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">MSN</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:05:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -367,7 +664,28 @@ Apple has confirmed that its upcoming AI-powered HomeKit Secure Video features w
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.gsmarena.com/the_nothing_phone_4b_has_a_longlasting_battery_snapdragon_6_gen_4_chip_and_a_glyph_bar-news-73609.php" target="_blank" rel="noopener">The Nothing Phone (4b) has a long-lasting battery, Snapdragon 6 Gen 4 chip and a Glyph Bar - GSMArena.com news</a></h2>
+      <p class="summary">The Nothing Phone (4b) is here – the company says that this is the Nothing phone with the longest-lasting battery yet. That said, (b) is not an upgrade over (a) – this goes somewhere between the (4a) and the (3a) Lite.
+The (4b) features a 5…</p>
+      <div class="meta-row">
+        <span class="source">GSMArena.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T11:54:03+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -388,27 +706,7 @@ Nothing&#39;s CMF sub-brand announced last month that it has cancelled the phone
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        <span class="chip chip-cust">Sony</span>
-        
-      </div>
-      <h2 class="title"><a href="https://wccftech.com/playstation-ditch-discs-publishers-kept-dark/" target="_blank" rel="noopener">PlayStation Decided To Ditch Discs in 2028 Without Warning, As Publishers And Regional Offices Were Kept In The Dark</a></h2>
-      <p class="summary">PlayStation&#39;s decision to ditch production of game discs in 2028 last week came as a shock to the gaming community, as, while digital sales have grown over the past few years, no one expected that it would be Sony Interactive Entertainment …</p>
-      <div class="meta-row">
-        <span class="source">Wccftech</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-07T09:57:27+00:00">2026-07-07</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -429,7 +727,7 @@ Apple&#39;s macOS 27 Beta 3 release notes say Apple Intelligence for Home requir
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -449,7 +747,7 @@ Apple&#39;s macOS 27 Beta 3 release notes say Apple Intelligence for Home requir
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -469,7 +767,7 @@ Apple&#39;s macOS 27 Beta 3 release notes say Apple Intelligence for Home requir
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -490,7 +788,7 @@ Broadcom has extended its partnership with Apple through 2031 to dev…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -519,7 +817,7 @@ Departm…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -539,7 +837,7 @@ Departm…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -560,7 +858,52 @@ Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        
+        <span class="chip chip-app">Robotics</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/computing/boston-dynamics-atlas-humanoid-robot-world-cup-soccer-skills/" target="_blank" rel="noopener">How Boston Dynamics Got Its Atlas Humanoid Robot Fit for the World Cup</a></h2>
+      <p class="summary">Before Atlas the humanoid robot strode onto the pitch to hand the ball to the referee during Norway and Brazil&#39;s World Cup match on Sunday, it hinted at its own soccer skills on the sidelines.
+At the end of halftime, Atlas emerged from the …</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T05:51:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Motorola</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.gsmarena.com/motorola_moto_g77_power_5g-14772.php" target="_blank" rel="noopener">Motorola Moto G77 Power - Full phone specifications</a></h2>
+      <p class="summary">Login
+Unofficial preliminary specifications
+Disclaimer. We can not guarantee that the information on this page is 100% correct. Read more
+I did with Galaxy S4 in ye olde days. Never looked at OLED after that.
+LCDs will consume the same amou…</p>
+      <div class="meta-row">
+        <span class="source">GSMArena.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T05:26:37+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -580,7 +923,7 @@ Veröffentlicht: 07.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -601,7 +944,7 @@ Veröffentlicht: 07.07.2026 um 05:33 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -621,7 +964,7 @@ Veröffentlicht: 07.07.2026 um 05:33 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -642,7 +985,7 @@ Sony looks set to expand its WH-1000XM6 headphone range again – shortly after 
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -664,7 +1007,7 @@ Apple inks new supply deal with Broadcom through 2031 | Image by Phon…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -684,7 +1027,27 @@ Apple inks new supply deal with Broadcom through 2031 | Image by Phon…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/apple-iphone-time-capsule-america-250-years-wont-work/" target="_blank" rel="noopener">Apple iPhone Buried for 250 Years Probably Won&#39;t Work, Report Says</a></h2>
+      <p class="summary">An Apple iPhone 17 Pro Max that&#39;s been buried as part of an America250 time capsule is unlikely to work when it&#39;s time to unearth it. America&#39;s Time Capsule, due to be dug up in 2276, includes an iPhone with a Notes app featuring &#34;digital a…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T23:39:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -706,7 +1069,28 @@ The AirTag 2 is down to its …</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Microsoft</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/gaming/xbox-laying-off-3200-dropping-4-studios-reset-microsofts-games-strategy/" target="_blank" rel="noopener">Xbox Laying Off 3,200 and Dropping 4 Studios in &#39;Reset&#39; of Microsoft&#39;s Games Strategy</a></h2>
+      <p class="summary">Xbox is doing a &#34;reset,&#34; but can it reboot the business?
+Microsoft&#39;s gaming brand cut 1,600 employees on Monday, with an additional round of layoffs expected before June 2027, according to an employee memo from Xbox CEO Asha Sharma. The lay…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T23:08:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -727,7 +1111,7 @@ Broadcom (AVGO) and Apple (AAPL) have agreed to extend their strategic semicondu
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -748,7 +1132,7 @@ In iOS 27, iPadOS …</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -769,27 +1153,7 @@ Apple is one of Broadcom’s largest customers, an…</p>
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-to-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-0" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal to 2031</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MSN</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T20:58:54+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -810,7 +1174,7 @@ Liam K. Griffin is a veteran semiconductor executive, best known as the former C
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -832,7 +1196,7 @@ Apple&#39;s long campaign to design the silicon inside its own de…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -853,7 +1217,7 @@ ZDNET&#39;s recommendations are based on many hours of testing, research, and co
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -873,7 +1237,739 @@ ZDNET&#39;s recommendations are based on many hours of testing, research, and co
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://9to5google.com/2026/07/06/google-maps-poland-location-rename/" target="_blank" rel="noopener">Google Maps is restoring the names of locations in Poland that were changed to offensive alternatives</a></h2>
+      <p class="summary">Google Maps is the default way that millions around the world get around and do research on locations, but an apparent attack on the names of Google Maps locations in Poland has left offensive and vulgar names in place.
+Over the past few we…</p>
+      <div class="meta-row">
+        <span class="source">9to5Google</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T18:00:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://wccftech.com/galaxy-s26-ultra-two-storage-models-available-for-200-off-on-amazon/" target="_blank" rel="noopener">Galaxy S26 Ultra Has Yet To Succumb To Any Price Hike, Giving You A Chance To Grab Samsung’s Flagship At $200 Off On Amazon For Both Storage Models</a></h2>
+      <p class="summary">With Android smartphone makers increasing prices left, right, and center, analysts have warned that budget devices will cease to exist in 2027, while flagships will be out of reach for the majority of buyers. Thankfully, if you’re looking f…</p>
+      <div class="meta-row">
+        <span class="source">Wccftech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T16:29:10+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/" target="_blank" rel="noopener">Broadcom secures role as key Apple supplier with chip deal through 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Reuters</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:59:35+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.macobserver.com/news/apple-signs-broadcom-deal-until-2031-full-switch-to-in-house-chips-delayed/" target="_blank" rel="noopener">Apple Signs Broadcom Deal Until 2031, Full Switch to In-House Chips Delayed</a></h2>
+      <p class="summary">Apple’s plan to move more wireless technology in-house now looks like a longer shift, as Broadcom has extended its custom chip partnership with the company through 2031. The deal suggests Apple will still depend on Broadcom for key radio an…</p>
+      <div class="meta-row">
+        <span class="source">The Mac Observer</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:46:31+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://9to5google.com/2026/07/06/deals-galaxy-fold-tcl-nxtpaper-70-280-anker-charger/" target="_blank" rel="noopener">Deals: Galaxy Fold 7, NXTPAPER 70 $280, Anker charger, more</a></h2>
+      <p class="summary">Today’s 9to5Toys Lunch Break is headlined by Amazon offering Galaxy Z Fold 7 at $500 off alongside Best Buy open-box units at up to $750 off, and these Galaxy Watch 8 deals from $200. We also have the latest unlocked TCL NXTPAPER 70 Pro And…</p>
+      <div class="meta-row">
+        <span class="source">9to5Google</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:43:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://9to5google.com/2026/07/06/galaxy-watch-9-ultra-reportedly-gets-price-increase/" target="_blank" rel="noopener">Galaxy Watch 9 and Watch Ultra 2 will follow foldables in price increase, leak says</a></h2>
+      <p class="summary">Samsung’s foldables aren’t the only devices we expect to get a price increase. Reports say the Galaxy Watch 9 series and Watch Ultra 2 prices will go up by around 10%.
+The report comes from WinFuture, stating that Samsung plans to increase …</p>
+      <div class="meta-row">
+        <span class="source">9to5Google</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:34:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Asset Tracking</span>
+      </div>
+      <h2 class="title"><a href="https://9to5mac.com/2026/07/06/deals-m5-ipad-pro-airtag-2-apple-watch-ultra-3/" target="_blank" rel="noopener">Deals: M5 iPad Pro $420 off, AirTag 2 from $22 each, Apple Watch Ultra 3, Anker 25W MagSafe chargers, more</a></h2>
+      <p class="summary">Alongside the ongoing deal on AirPods 4 at nearly 25% off and the best price ever on Apple’s new AirTag 2, today’s 9to5Toys Lunch Break is headlined by the last remaining chances to land pre-price hike deals on M5 iPad Pro – this 1TB 13-inc…</p>
+      <div class="meta-row">
+        <span class="source">9to5Mac</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:26:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://techbit.pt/en/wi-fi-7-routers-misleading-what-need-know-before-buying/" target="_blank" rel="noopener">Wi-Fi 7 routers may be misleading you. Here is what you need to know before buying</a></h2>
+      <p class="summary">The Wi-Fi 7 label is everywhere — on routers that cost €80 and on others that cost as much as a laptop.
+Brands promise faster speeds, lower latency, and a future-proof network, but reality does not always match what is written on the box.
+M…</p>
+      <div class="meta-row">
+        <span class="source">techbit.pt</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:25:29+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://cryptobriefing.com/broadcom-apple-chip-deal-2031/" target="_blank" rel="noopener">Broadcom and Apple extend chip supply deal through 2031, signaling long-term semiconductor strategy</a></h2>
+      <p class="summary">Broadcom and Apple extend chip supply deal through 2031, signaling long-term semiconductor strategy
+The renewed partnership locks in custom silicon development for another half-decade and sent Broadcom shares up nearly 4% in premarket tradi…</p>
+      <div class="meta-row">
+        <span class="source">Crypto Briefing</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:19:39+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://wccftech.com/broadcom-inks-multi-year-chip-supply-deal-with-apple/" target="_blank" rel="noopener">Broadcom Avoids Qualcomm’s Fate; Enters Into New Agreement With Apple, One That Ensures A Steady Chip Supply And Revenue For Several Years</a></h2>
+      <p class="summary">A new agreement between Broadcom and Apple meant that both firms could accomplish their individual goals without being adversely affected by external forces. With the latest partnership, Apple will be receiving chip supply until 2031.
+The d…</p>
+      <div class="meta-row">
+        <span class="source">Wccftech</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:35:44+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://appleinsider.com/articles/26/07/06/apple-broadcom-renew-partnership-through-2031" target="_blank" rel="noopener">Apple &amp; Broadcom renew partnership through 2031</a></h2>
+      <p class="summary">Apple has extended its long-time supplier agreement with Broadcom, ensuring Apple gets a steady flow of custom chips until 2031.
+Apple has used Broadcom as a supplier for its iPhone and other hardware for quite some time. However, as threat…</p>
+      <div class="meta-row">
+        <span class="source">AppleInsider</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:15:01+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.thenews.com.pk/latest/1408264-broadcom-apple-chip-deal-extended-through-2031" target="_blank" rel="noopener">Broadcom, Apple chip deal extended through 2031</a></h2>
+      <p class="summary">Broadcom, Apple chip deal extended through 2031
+According to analysts, revenue generated from sales to Apple amounts to about 20% of Broadcom&#39;s total annual income
+Broadcom said Monday it has agreed to expand its partnership with Apple thro…</p>
+      <div class="meta-row">
+        <span class="source">The News International</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:13:09+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://startupfortune.com/broadcom-locks-in-apple-as-a-chip-customer-through-2031/" target="_blank" rel="noopener">Broadcom Locks In Apple as a Chip Customer Through 2031</a></h2>
+      <p class="summary">Broadcom just extended its grip on Apple&#39;s chip supply chain for five more years, and investors pushed the stock up nearly 4% before the market even opened.
+If your iPhone has ever connected to 5G, Wi-Fi or Bluetooth without a hiccup, thank…</p>
+      <div class="meta-row">
+        <span class="source">Startup Fortune</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:05:56+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://invezz.com/news/2026/07/06/broadcom-extends-apple-chip-partnership-through-2031-stock-climbs-5/" target="_blank" rel="noopener">Broadcom extends Apple chip partnership through 2031, stock climbs 5%</a></h2>
+      <p class="summary">Broadcom extends Apple chip partnership through 2031, stock climbs 5%
+AI Sentiment: 78/100 Bullish
+This score is generated through AI-driven analysis of the article&#39;s content.
+powered by
+Buy AVGO. The Apple custom-chip partnership is extend…</p>
+      <div class="meta-row">
+        <span class="source">Invezz</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:58:55+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://qz.com/apple-broadcom-custom-chip-partnership-2031-070626" target="_blank" rel="noopener">Apple and Broadcom extend custom chip supply deal through 2031</a></h2>
+      <p class="summary">Broadcom $AVGO and Apple $AAPL agreed to expand their chip supply partnership through 2031, with Broadcom developing and supplying a range of custom ASIC silicon products for use across multiple generations of Apple products, the company sa…</p>
+      <div class="meta-row">
+        <span class="source">qz.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:56:34+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.straitstimes.com/business/broadcom-and-apple-expand-partnership-to-2031-with-custom-chips?ref=latest" target="_blank" rel="noopener">Broadcom and Apple expand partnership to 2031 with custom chips</a></h2>
+      <p class="summary">Broadcom and Apple expand partnership to 2031 with custom chips
+- Broadcom and Apple have extended their partnership until 2031, with Broadcom providing custom ASIC chips for multiple generations of Apple products.
+- Broadcom has supplied A…</p>
+      <div class="meta-row">
+        <span class="source">The Straits Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:52:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://9to5mac.com/2026/07/06/apple-radio-chips-switch-likely-to-take-five-more-years-suggests-broadcom-deal/" target="_blank" rel="noopener">Apple radio chips switch likely to take five more years, suggests Broadcom deal</a></h2>
+      <p class="summary">The next generation of Apple radio chips is expected to debut in the iPhone 18 Pro and iPhone Ultra, but a new deal suggests the company doesn’t expect to complete a switch to its own cellular modems before 2031.
+The company has committed t…</p>
+      <div class="meta-row">
+        <span class="source">9to5Mac</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:25:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.republicworld.com/tech/apple-extends-broadcom-partnership-till-2031-as-ai-chip-race-reshapes-supply-chains-2026-07-06-131434" target="_blank" rel="noopener">Apple Extends Broadcom Partnership Till 2031 as AI Chip Race Reshapes Supply Chains</a></h2>
+      <p class="summary">Apple Extends Broadcom Partnership Till 2031 as AI Chip Race Reshapes Supply Chains
+The announcement also eases concerns over Apple&#39;s dependence on Broadcom, even as the iPhone maker continues designing more of its own silicon in-house.
+App…</p>
+      <div class="meta-row">
+        <span class="source">Republic World</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:14:51+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.firstpost.com/tech/apple-extends-broadcom-partnership-to-strengthen-long-term-chip-supply-14029323.html" target="_blank" rel="noopener">Apple extends Broadcom partnership to strengthen long-term chip supply</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Firstpost</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:13:57+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262013221-broadcom-avgo-apple-aapl-tradingkey" target="_blank" rel="noopener">Broadcom Extends Chip Supply Agreement With Apple to 2031, Rising Over 4% Premarket</a></h2>
+      <p class="summary">Broadcom Extends Chip Supply Agreement With Apple to 2031, Rising Over 4% Premarket
+On July 6, Eastern Time, Broadcom disclosed a multi-year agreement to supply Apple with custom ASIC chips, including RF and connectivity components, through…</p>
+      <div class="meta-row">
+        <span class="source">TradingKey</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:10:51+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.macrumors.com/2026/07/06/apple-and-broadcom-extend-deal/" target="_blank" rel="noopener">Apple and Broadcom Extend Chip Supply Deal to 2031</a></h2>
+      <p class="summary">Apple and Broadcom Extend Chip Supply Deal to 2031
+Broadcom has agreed to extend its chip partnership with Apple through 2031, expanding a deal that covers the development and supply of a wide range of custom chips, Reuters reports.
+Today&#39;s…</p>
+      <div class="meta-row">
+        <span class="source">MacRumors</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:04:17+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://macdailynews.com/2026/07/06/broadcom-and-apple-extend-strategic-partnership-custom-chip-collaboration-locked-in-through-2031/" target="_blank" rel="noopener">Broadcom and Apple extend strategic partnership: custom chip collaboration locked in through 2031</a></h2>
+      <p class="summary">In a move that underscores the enduring strength of one of tech’s most important supplier relationships, Broadcom and Apple have agreed to extend their technology collaboration through 2031. The companies entered into new multi-year, long-t…</p>
+      <div class="meta-row">
+        <span class="source">MacDailyNews</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:00:06+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.benzinga.com/trading-ideas/movers/26/07/60276440/broadcom-stock-climbs-on-report-of-apple-chip-deal-extension-to-2031" target="_blank" rel="noopener">Broadcom Stock Climbs on Report of Apple Chip Deal Extension to 2031 - Rivian Automotive (NASDAQ:RIVN)</a></h2>
+      <p class="summary">The Deal
+According to Reuters, Broadcom and Apple have agreed to expand their partnership through 2031, covering the development and supply of a range of custom chips. Broadcom has been a long-standing supplier to Apple, providing key compo…</p>
+      <div class="meta-row">
+        <span class="source">Benzinga</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:38:28+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Robotics</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/health/fitness/robot-legs-helped-me-hike-12000-steps-grand-canyon-without-my-cane/" target="_blank" rel="noopener">These Robot Legs Helped Me Hike 12,000 Steps in the Grand Canyon, Without My Cane</a></h2>
+      <p class="summary">I&#39;m in Arizona, traversing a narrow path in the Grand Canyon, with outdoor exoskeleton maker Hypershell’s new $1,999 Hypershell X Ultra S strapped to my waist and legs. I&#39;m waiting to become a superhero, but I can barely haul my 50-year-old…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:37:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/broadcom-apple-extend-chip-partnership-through-2031" target="_blank" rel="noopener">Broadcom, Apple extend chip partnership through 2031</a></h2>
+      <p class="summary">Broadcom, Apple extend chip partnership through 2031
+The extended partnership reinforces Apple’s strategy of locking in long-term supply agreements with key chipmakers
+[BENGALURU] Broadcom said on Monday (Jul 6) it has agreed to expand its …</p>
+      <div class="meta-row">
+        <span class="source">The Business Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:27:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/samsungs-galaxy-z-fold-8-ultra-needs-these-upgrades-to-win-me-over/" target="_blank" rel="noopener">Samsung&#39;s Galaxy Z Fold 8 Ultra Needs These Upgrades to Win Me Over</a></h2>
+      <p class="summary">The Galaxy Z Fold 7 was one of my favorite phones of 2025. It was spectacularly thin and light, and unlike other Samsung foldables of the past, it felt like a regular phone in everyday use. The Korean phone-maker also added a few crucial up…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:01:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-7-6/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 7/6</a></h2>
+      <p class="summary">We’re about a week into NHL Free Agency, and it has been relatively quiet for the Buffalo Sabres with a number of depth signings and no major additions from an already-shallow free agent pool. All eyes remain on Sabres GM Jarmo Kekäläinen t…</p>
+      <div class="meta-row">
+        <span class="source">diebytheblade.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:00:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">STMicro</span>
+        
+        <span class="chip chip-app">Energy/Utility</span>
+      </div>
+      <h2 class="title"><a href="https://www.globenewswire.com/news-release/2026/07/06/3322388/0/en/STMicroelectronics-announces-status-of-common-share-repurchase-program.html" target="_blank" rel="noopener">STMicroelectronics announces status of common share repurchase program</a></h2>
+      <p class="summary">STMicroelectronics announces status of
+common share repurchase program
+Disclosure of Transactions in Own Shares – Period from June 29, 2026 to July 03, 2026
+AMSTERDAM – July 06, 2026 -- STMicroelectronics N.V. (the “Company” or “STMicroelec…</p>
+      <div class="meta-row">
+        <span class="source">GlobeNewswire</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:00:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/qualcomm-stock-leans-on-wireless-demand-nasdaq-context-holds-steady/69705110" target="_blank" rel="noopener">Qualcomm stock leans on wireless demand. Nasdaq context holds steady.</a></h2>
+      <p class="summary">Qualcomm stock leans on wireless demand. Nasdaq context holds steady.
+Veröffentlicht: 06.07.2026 um 13:46 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Mark Berger, Earnings &amp; Calendar desk. Review…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T11:46:08+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.mactech.com/2026/07/06/broadcom-and-apple-agree-to-expand-their-partnership-through-2031/" target="_blank" rel="noopener">Broadcom and Apple agree to expand their partnership through 2031</a></h2>
+      <p class="summary">Broadcom, a semiconductor company, says it and Apple have agreed to expand their partnership through 2031 to develop and supply a range of custom chips, reports Reuters.
+Broadcom has been a long-standing supplier to Apple, providing key com…</p>
+      <div class="meta-row">
+        <span class="source">MacTech.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T11:07:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Broadcom</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.proactiveinvestors.com/companies/news/1094988/broadcom-extends-apple-chip-supply-deal-through-2031-1094988.html" target="_blank" rel="noopener">Broadcom extends Apple chip supply deal through 2031</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">Proactive financial news</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:51:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-epic-thread-from-coats-group-everyday-apparel-workhorse/69704264" target="_blank" rel="noopener">Coats Epic thread from Coats Group - everyday apparel workhorse</a></h2>
+      <p class="summary">Coats Epic thread from Coats Group - everyday apparel workhorse
+Veröffentlicht: 06.07.2026 um 12:08 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Nora Whitfield, ad hoc news Bestsellers &amp; Flagships…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:08:08+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/home/smart-home/the-best-smart-home-devices-for-a-desk-or-office-in-2026/" target="_blank" rel="noopener">My Best Smart Home Device Picks for a Desk or Office in 2026</a></h2>
+      <p class="summary">Smart home products aren&#39;t just useful in your kitchen and living room or for guarding your front door. They also pair really well with a home desk, whether you have a dedicated office or a free-for-all space where you keep the family compu…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:00:00+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Aqara</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.the-ambient.com/reviews/aqara-camera-hub-g350-review/" target="_blank" rel="noopener">Aqara Camera Hub G350 review</a></h2>
+      <p class="summary">Verdict
+The Aqara Camera Hub G350 is textbook Aqara in that it tries to wear a lot of hats at once, and pretty much suceeds. As an indoor camera, it’s seriously impressive. The dual-lens setup delivers crisp, detailed footage in pretty much…</p>
+      <div class="meta-row">
+        <span class="source">The Ambient</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T09:30:03+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">STMicro</span>
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://newsroom.st.com/media-center/press-item.html/imaging-sensing-ai-f0023.html" target="_blank" rel="noopener">Turning light into trusted data: how STMicroelectronics is reinventing Imaging for the AI era</a></h2>
+      <p class="summary">As artificial intelligence moves from the cloud to the edge, sensing is becoming central to how machines perceive and act in the real world. STMicroelectronics’ Imaging subgroup (IMG) is at the heart of this shift, with a strategy built aro…</p>
+      <div class="meta-row">
+        <span class="source">STMicroelectronics</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T07:45:01+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -912,659 +2008,12 @@ Results Table Tool
 Review …</p>
       <div class="meta-row">
         <span class="source">RTINGS.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T19:09:35+00:00">2026-07-06</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T07:00:00+00:00">2026-07-06</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        <span class="chip chip-cust">Google</span>
-        <span class="chip chip-app">Automotive</span>
-      </div>
-      <h2 class="title"><a href="https://9to5google.com/2026/07/06/google-maps-poland-location-rename/" target="_blank" rel="noopener">Google Maps is restoring the names of locations in Poland that were changed to offensive alternatives</a></h2>
-      <p class="summary">Google Maps is the default way that millions around the world get around and do research on locations, but an apparent attack on the names of Google Maps locations in Poland has left offensive and vulgar names in place.
-Over the past few we…</p>
-      <div class="meta-row">
-        <span class="source">9to5Google</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T18:00:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-vendor">Qualcomm</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://wccftech.com/galaxy-s26-ultra-two-storage-models-available-for-200-off-on-amazon/" target="_blank" rel="noopener">Galaxy S26 Ultra Has Yet To Succumb To Any Price Hike, Giving You A Chance To Grab Samsung’s Flagship At $200 Off On Amazon For Both Storage Models</a></h2>
-      <p class="summary">With Android smartphone makers increasing prices left, right, and center, analysts have warned that budget devices will cease to exist in 2027, while flagships will be out of reach for the majority of buyers. Thankfully, if you’re looking f…</p>
-      <div class="meta-row">
-        <span class="source">Wccftech</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T16:29:10+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/" target="_blank" rel="noopener">Broadcom secures role as key Apple supplier with chip deal through 2031</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Reuters</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:59:35+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.macobserver.com/news/apple-signs-broadcom-deal-until-2031-full-switch-to-in-house-chips-delayed/" target="_blank" rel="noopener">Apple Signs Broadcom Deal Until 2031, Full Switch to In-House Chips Delayed</a></h2>
-      <p class="summary">Apple’s plan to move more wireless technology in-house now looks like a longer shift, as Broadcom has extended its custom chip partnership with the company through 2031. The deal suggests Apple will still depend on Broadcom for key radio an…</p>
-      <div class="meta-row">
-        <span class="source">The Mac Observer</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:46:31+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        <span class="chip chip-cust">Samsung</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://9to5google.com/2026/07/06/deals-galaxy-fold-tcl-nxtpaper-70-280-anker-charger/" target="_blank" rel="noopener">Deals: Galaxy Fold 7, NXTPAPER 70 $280, Anker charger, more</a></h2>
-      <p class="summary">Today’s 9to5Toys Lunch Break is headlined by Amazon offering Galaxy Z Fold 7 at $500 off alongside Best Buy open-box units at up to $750 off, and these Galaxy Watch 8 deals from $200. We also have the latest unlocked TCL NXTPAPER 70 Pro And…</p>
-      <div class="meta-row">
-        <span class="source">9to5Google</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:43:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        <span class="chip chip-cust">Samsung</span>
-        <span class="chip chip-app">Automotive</span>
-      </div>
-      <h2 class="title"><a href="https://9to5google.com/2026/07/06/galaxy-watch-9-ultra-reportedly-gets-price-increase/" target="_blank" rel="noopener">Galaxy Watch 9 and Watch Ultra 2 will follow foldables in price increase, leak says</a></h2>
-      <p class="summary">Samsung’s foldables aren’t the only devices we expect to get a price increase. Reports say the Galaxy Watch 9 series and Watch Ultra 2 prices will go up by around 10%.
-The report comes from WinFuture, stating that Samsung plans to increase …</p>
-      <div class="meta-row">
-        <span class="source">9to5Google</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:34:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://techbit.pt/en/wi-fi-7-routers-misleading-what-need-know-before-buying/" target="_blank" rel="noopener">Wi-Fi 7 routers may be misleading you. Here is what you need to know before buying</a></h2>
-      <p class="summary">The Wi-Fi 7 label is everywhere — on routers that cost €80 and on others that cost as much as a laptop.
-Brands promise faster speeds, lower latency, and a future-proof network, but reality does not always match what is written on the box.
-M…</p>
-      <div class="meta-row">
-        <span class="source">techbit.pt</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:25:29+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://cryptobriefing.com/broadcom-apple-chip-deal-2031/" target="_blank" rel="noopener">Broadcom and Apple extend chip supply deal through 2031, signaling long-term semiconductor strategy</a></h2>
-      <p class="summary">Broadcom and Apple extend chip supply deal through 2031, signaling long-term semiconductor strategy
-The renewed partnership locks in custom silicon development for another half-decade and sent Broadcom shares up nearly 4% in premarket tradi…</p>
-      <div class="meta-row">
-        <span class="source">Crypto Briefing</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T15:19:39+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Qualcomm</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://wccftech.com/broadcom-inks-multi-year-chip-supply-deal-with-apple/" target="_blank" rel="noopener">Broadcom Avoids Qualcomm’s Fate; Enters Into New Agreement With Apple, One That Ensures A Steady Chip Supply And Revenue For Several Years</a></h2>
-      <p class="summary">A new agreement between Broadcom and Apple meant that both firms could accomplish their individual goals without being adversely affected by external forces. With the latest partnership, Apple will be receiving chip supply until 2031.
-The d…</p>
-      <div class="meta-row">
-        <span class="source">Wccftech</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:35:44+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://appleinsider.com/articles/26/07/06/apple-broadcom-renew-partnership-through-2031" target="_blank" rel="noopener">Apple &amp; Broadcom renew partnership through 2031</a></h2>
-      <p class="summary">Apple has extended its long-time supplier agreement with Broadcom, ensuring Apple gets a steady flow of custom chips until 2031.
-Apple has used Broadcom as a supplier for its iPhone and other hardware for quite some time. However, as threat…</p>
-      <div class="meta-row">
-        <span class="source">AppleInsider</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:15:01+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.thenews.com.pk/latest/1408264-broadcom-apple-chip-deal-extended-through-2031" target="_blank" rel="noopener">Broadcom, Apple chip deal extended through 2031</a></h2>
-      <p class="summary">Broadcom, Apple chip deal extended through 2031
-According to analysts, revenue generated from sales to Apple amounts to about 20% of Broadcom&#39;s total annual income
-Broadcom said Monday it has agreed to expand its partnership with Apple thro…</p>
-      <div class="meta-row">
-        <span class="source">The News International</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:13:09+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://startupfortune.com/broadcom-locks-in-apple-as-a-chip-customer-through-2031/" target="_blank" rel="noopener">Broadcom Locks In Apple as a Chip Customer Through 2031</a></h2>
-      <p class="summary">Broadcom just extended its grip on Apple&#39;s chip supply chain for five more years, and investors pushed the stock up nearly 4% before the market even opened.
-If your iPhone has ever connected to 5G, Wi-Fi or Bluetooth without a hiccup, thank…</p>
-      <div class="meta-row">
-        <span class="source">Startup Fortune</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T14:05:56+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://invezz.com/news/2026/07/06/broadcom-extends-apple-chip-partnership-through-2031-stock-climbs-5/" target="_blank" rel="noopener">Broadcom extends Apple chip partnership through 2031, stock climbs 5%</a></h2>
-      <p class="summary">Broadcom extends Apple chip partnership through 2031, stock climbs 5%
-AI Sentiment: 78/100 Bullish
-This score is generated through AI-driven analysis of the article&#39;s content.
-powered by
-Buy AVGO. The Apple custom-chip partnership is extend…</p>
-      <div class="meta-row">
-        <span class="source">Invezz</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:58:55+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://qz.com/apple-broadcom-custom-chip-partnership-2031-070626" target="_blank" rel="noopener">Apple and Broadcom extend custom chip supply deal through 2031</a></h2>
-      <p class="summary">Broadcom $AVGO and Apple $AAPL agreed to expand their chip supply partnership through 2031, with Broadcom developing and supplying a range of custom ASIC silicon products for use across multiple generations of Apple products, the company sa…</p>
-      <div class="meta-row">
-        <span class="source">qz.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:56:34+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.straitstimes.com/business/broadcom-and-apple-expand-partnership-to-2031-with-custom-chips?ref=latest" target="_blank" rel="noopener">Broadcom and Apple expand partnership to 2031 with custom chips</a></h2>
-      <p class="summary">Broadcom and Apple expand partnership to 2031 with custom chips
-- Broadcom and Apple have extended their partnership until 2031, with Broadcom providing custom ASIC chips for multiple generations of Apple products.
-- Broadcom has supplied A…</p>
-      <div class="meta-row">
-        <span class="source">The Straits Times</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:52:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Automotive</span>
-      </div>
-      <h2 class="title"><a href="https://9to5mac.com/2026/07/06/apple-radio-chips-switch-likely-to-take-five-more-years-suggests-broadcom-deal/" target="_blank" rel="noopener">Apple radio chips switch likely to take five more years, suggests Broadcom deal</a></h2>
-      <p class="summary">The next generation of Apple radio chips is expected to debut in the iPhone 18 Pro and iPhone Ultra, but a new deal suggests the company doesn’t expect to complete a switch to its own cellular modems before 2031.
-The company has committed t…</p>
-      <div class="meta-row">
-        <span class="source">9to5Mac</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:25:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.firstpost.com/tech/apple-extends-broadcom-partnership-to-strengthen-long-term-chip-supply-14029323.html" target="_blank" rel="noopener">Apple extends Broadcom partnership to strengthen long-term chip supply</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Firstpost</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:13:57+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262013221-broadcom-avgo-apple-aapl-tradingkey" target="_blank" rel="noopener">Broadcom Extends Chip Supply Agreement With Apple to 2031, Rising Over 4% Premarket</a></h2>
-      <p class="summary">Broadcom Extends Chip Supply Agreement With Apple to 2031, Rising Over 4% Premarket
-On July 6, Eastern Time, Broadcom disclosed a multi-year agreement to supply Apple with custom ASIC chips, including RF and connectivity components, through…</p>
-      <div class="meta-row">
-        <span class="source">TradingKey</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:10:51+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.macrumors.com/2026/07/06/apple-and-broadcom-extend-deal/" target="_blank" rel="noopener">Apple and Broadcom Extend Chip Supply Deal to 2031</a></h2>
-      <p class="summary">Apple and Broadcom Extend Chip Supply Deal to 2031
-Broadcom has agreed to extend its chip partnership with Apple through 2031, expanding a deal that covers the development and supply of a wide range of custom chips, Reuters reports.
-Today&#39;s…</p>
-      <div class="meta-row">
-        <span class="source">MacRumors</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:04:17+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://macdailynews.com/2026/07/06/broadcom-and-apple-extend-strategic-partnership-custom-chip-collaboration-locked-in-through-2031/" target="_blank" rel="noopener">Broadcom and Apple extend strategic partnership: custom chip collaboration locked in through 2031</a></h2>
-      <p class="summary">In a move that underscores the enduring strength of one of tech’s most important supplier relationships, Broadcom and Apple have agreed to extend their technology collaboration through 2031. The companies entered into new multi-year, long-t…</p>
-      <div class="meta-row">
-        <span class="source">MacDailyNews</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T13:00:06+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-us/news/insight/broadcom-apple-lock-in-chip-supply-deal-through-2031/gm-GM8C2C8B00?gemSnapshotKey=GM8C2C8B00-snapshot-1&amp;uxmode=ruby" target="_blank" rel="noopener">Broadcom, Apple lock in chip supply deal through 2031</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MSN</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:46:56+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Automotive</span>
-      </div>
-      <h2 class="title"><a href="https://www.benzinga.com/trading-ideas/movers/26/07/60276440/broadcom-stock-climbs-on-report-of-apple-chip-deal-extension-to-2031" target="_blank" rel="noopener">Broadcom Stock Climbs on Report of Apple Chip Deal Extension to 2031 - Rivian Automotive (NASDAQ:RIVN)</a></h2>
-      <p class="summary">The Deal
-According to Reuters, Broadcom and Apple have agreed to expand their partnership through 2031, covering the development and supply of a range of custom chips. Broadcom has been a long-standing supplier to Apple, providing key compo…</p>
-      <div class="meta-row">
-        <span class="source">Benzinga</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:38:28+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://wixx.com/2026/07/06/broadcom-apple-extend-chip-partnership-through-2031/" target="_blank" rel="noopener">Broadcom, Apple extend chip supply deal through 2031</a></h2>
-      <p class="summary">By Akash Sriram and Anhata Rooprai
-July 6 (Reuters) – Broadcom said on Monday it will expand its partnership with Apple through 2031 to develop and supply custom chips, cementing the chipmaker’s role as a critical supplier to the iPhone mak…</p>
-      <div class="meta-row">
-        <span class="source">101 WIXX</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:36:45+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-7-6/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 7/6</a></h2>
-      <p class="summary">We’re about a week into NHL Free Agency, and it has been relatively quiet for the Buffalo Sabres with a number of depth signings and no major additions from an already-shallow free agent pool. All eyes remain on Sabres GM Jarmo Kekäläinen t…</p>
-      <div class="meta-row">
-        <span class="source">diebytheblade.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:00:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-vendor">STMicro</span>
-        
-        <span class="chip chip-app">Energy/Utility</span>
-      </div>
-      <h2 class="title"><a href="https://www.globenewswire.com/news-release/2026/07/06/3322388/0/en/STMicroelectronics-announces-status-of-common-share-repurchase-program.html" target="_blank" rel="noopener">STMicroelectronics announces status of common share repurchase program</a></h2>
-      <p class="summary">STMicroelectronics announces status of
-common share repurchase program
-Disclosure of Transactions in Own Shares – Period from June 29, 2026 to July 03, 2026
-AMSTERDAM – July 06, 2026 -- STMicroelectronics N.V. (the “Company” or “STMicroelec…</p>
-      <div class="meta-row">
-        <span class="source">GlobeNewswire</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T12:00:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.mactech.com/2026/07/06/broadcom-and-apple-agree-to-expand-their-partnership-through-2031/" target="_blank" rel="noopener">Broadcom and Apple agree to expand their partnership through 2031</a></h2>
-      <p class="summary">Broadcom, a semiconductor company, says it and Apple have agreed to expand their partnership through 2031 to develop and supply a range of custom chips, reports Reuters.
-Broadcom has been a long-standing supplier to Apple, providing key com…</p>
-      <div class="meta-row">
-        <span class="source">MacTech.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T11:07:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span>
-        
-        <span class="chip chip-cust">Aqara</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.howtogeek.com/i-thought-these-smart-home-devices-were-stupid/" target="_blank" rel="noopener">I thought these 4 smart home devices were stupid until I actually used them - How-To Geek</a></h2>
-      <p class="summary">I live in a fully decked out smart home, but I didn&#39;t start out interested in smart home tech. In fact, I long considered smart home features to be a negative that I actively avoided. Now that I&#39;ve incorporated them into my life, here are s…</p>
-      <div class="meta-row">
-        <span class="source">How-To Geek</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T11:00:17+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Broadcom</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.proactiveinvestors.com/companies/news/1094988/broadcom-extends-apple-chip-supply-deal-through-2031-1094988.html" target="_blank" rel="noopener">Broadcom extends Apple chip supply deal through 2031</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Proactive financial news</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:51:00+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQTDFMaU5jUjYtTFdLRmlIeEg3Y3NPaGlLa2ctVlFCc1pFTVdjcUZUSHhWTGs0UHBOWURsamJIeFpLNC1kc3BDRlZNaU1aNUwyQjF6V09RM3R5cl9UR1lSQjM1WENIVUFMTDVqdGU5bHB6THFVMm9BOXdZSUNuVDZ3MHpqVXI1dU41VTRVNDdfd05XRlBXWENjV0k1NkZMWXN1M0c5dXhtVmM2S2pRc2p1cjYybTI0Unh0c2VTaQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Coats Epic thread from Coats Group - everyday apparel workhorse</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">AD HOC NEWS</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T10:08:08+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span>
-        
-        <span class="chip chip-cust">Aqara</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.the-ambient.com/reviews/aqara-camera-hub-g350-review/" target="_blank" rel="noopener">Aqara Camera Hub G350 review</a></h2>
-      <p class="summary">Verdict
-The Aqara Camera Hub G350 is textbook Aqara in that it tries to wear a lot of hats at once, and pretty much suceeds. As an indoor camera, it’s seriously impressive. The dual-lens setup delivers crisp, detailed footage in pretty much…</p>
-      <div class="meta-row">
-        <span class="source">The Ambient</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T09:30:03+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-vendor">STMicro</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNU0tqWTJESWJRclpOUWZTeWRiSzdEXzB4cm9aNnZ0cks0bmlTYWlwNGNTdDIyZ2RPVjQtd0RjTVVlVHoxckxiWFRsRkJNUEs1V05PYi1PQlN0THRlTW1vRHFxX0tvQ3l1dXBmR0lFSm9mOTNsQTBjVDljNzFIOGlyWjhhczBkRGJDWGc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Turning light into trusted data: how STMicroelectronics is reinventing Imaging for the AI era</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">STMicroelectronics</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T07:45:01+00:00">2026-07-06</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -1575,7 +2024,7 @@ The Aqara Camera Hub G350 is textbook Aqara in that it tries to wear a lot of ha
         
         
       </div>
-      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNNVNDdk1tMkdEQUZidzdjS2k0T08wV3RIOFVlMjNSRjZpcldfMVUtRko4R09NMkVGeHJRZmdZUUQwWlp6UW90b1NNd2pjUmhQZkVuanZqNHo0SWUzNFdsWEFoVzlKTHNIRENTTERZT0Y3T091Uk5NS3dFOXJlQmhyV1E1Y1ZkY08zZkxRTnJvVXhNMklFUzJJUEwtWnY3X0lLT1hESnRPa2twZw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Nordic’s Prototyping Tag to Streamline ‘Find My’ and Asset Tag Designs</a></h2>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/" target="_blank" rel="noopener">Nordic’s Prototyping Tag to Streamline ‘Find My’ and Asset Tag Designs</a></h2>
       
       <div class="meta-row">
         <span class="source">All About Circuits</span>
@@ -1584,7 +2033,7 @@ The Aqara Camera Hub G350 is textbook Aqara in that it tries to wear a lot of ha
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -1605,7 +2054,7 @@ Veröffentlicht: 06.07.2026 um 08:13 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -1614,10 +2063,11 @@ Veröffentlicht: 06.07.2026 um 08:13 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
         
         <span class="chip chip-vendor">Skyworks</span>
         
-        
+        <span class="chip chip-app">Automotive</span>
       </div>
-      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNMm1OZFlfdFNyRTljemFlWFdpOXcySGlRelV2TjAxZDZOZy0tdlU2LXFsUjdCWVFoV2VGZVhFeGQ4QnE5Ty1XMGVaTnVld3NRSGZoYlUweVZBWTl2M0FfT0dwYnZyZG15VkkzVVU2T2lxM3dEdnVCVXNVOVRidm9sVC1sTTYxdk1EaXFfUlM4dzNLQWY0bDFGLXU2LTZ0dG5BZG5NLTkwWjVsTWdKTVlnRUgwYUdFam5LeWFER1RSdFNadkJtVG53?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Skyworks Solutions outlook and business context as chip demand shifts</a></h2>
-      
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/skyworks-solutions-outlook-and-business-context-as-chip-demand-shifts/69701992" target="_blank" rel="noopener">Skyworks Solutions outlook and business context as chip demand shifts</a></h2>
+      <p class="summary">Skyworks Solutions outlook and business context as chip demand shifts
+Veröffentlicht: 06.07.2026 um 08:07 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)Skyworks Solutions (ISIN US83088M1027) is a US-b…</p>
       <div class="meta-row">
         <span class="source">AD HOC NEWS</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-06T06:07:38+00:00">2026-07-06</span>
@@ -1625,7 +2075,7 @@ Veröffentlicht: 06.07.2026 um 08:13 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="matter">
     <div class="thumb">
       
     </div>
@@ -1646,7 +2096,7 @@ Aqara has released a new version of its S100 Touchscreen Switch, designed specif
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -1667,7 +2117,7 @@ Veröffentlicht: 06.07.2026 um 07:49 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -1687,7 +2137,7 @@ Veröffentlicht: 06.07.2026 um 07:49 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -1709,7 +2159,7 @@ The Apple Watch Series 11 46mm is a truly impressive smartwatch for iPhone users
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -1730,7 +2180,30 @@ At CES 2025, Lenovo unveiled the Self-Charging Bluetooth Keyboard, which has a f
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.phonearena.com/news/apple-is-making-iphone-pro-truly-pro-no-idea-what-samsung-is-doing_id181628" target="_blank" rel="noopener">Apple is making the iPhone Pro models truly pro, but I have no idea what Samsung is doing</a></h2>
+      <p class="summary">Editorials · Insider Reaction
+Apple is making the iPhone Pro models truly pro, but I have no idea what Samsung is doing
+The iPhone keeps getting better and the Galaxy phones...do not.
+This article may contain personal views and opinion from…</p>
+      <div class="meta-row">
+        <span class="source">PhoneArena</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T22:35:29+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -1750,7 +2223,28 @@ At CES 2025, Lenovo unveiled the Self-Charging Bluetooth Keyboard, which has a f
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/qualcomm-balances-mobile-chips-and-5g-licensing-as-investors-weigh-long/69699666" target="_blank" rel="noopener">Qualcomm balances mobile chips and 5G licensing as investors weigh long term growth</a></h2>
+      <p class="summary">Qualcomm balances mobile chips and 5G licensing as investors weigh long term growth
+Veröffentlicht: 05.07.2026 um 20:41 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)By Thomas Clarke, Operations &amp; Str…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T18:41:17+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -1770,7 +2264,7 @@ At CES 2025, Lenovo unveiled the Self-Charging Bluetooth Keyboard, which has a f
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -1790,7 +2284,33 @@ At CES 2025, Lenovo unveiled the Self-Charging Bluetooth Keyboard, which has a f
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/topic/iphone/" target="_blank" rel="noopener">iPhone</a></h2>
+      <p class="summary">iPhone
+Apple&#39;s smartphone remains the mobile hub of the company&#39;s ubiquitous and wildly successful ecosystem of devices and services.
+Product Research
+How-to Guides
+Analysis &amp; Opinion
+More
+After a week with iOS 27, I&#39;ve found 5 hidden featu…</p>
+      <div class="meta-row">
+        <span class="source">ZDNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T14:18:16+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -1811,7 +2331,7 @@ At first glance, the Debix T62P-01 resembles a Raspberry Pi (on Amazon) and can 
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -1832,7 +2352,7 @@ The Lenovo ThinkPad X1 Carbon Gen 14 is a highly capable flagship that excels in
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="matter">
     <div class="thumb">
       
     </div>
@@ -1852,7 +2372,28 @@ The Lenovo ThinkPad X1 Carbon Gen 14 is a highly capable flagship that excels in
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        
+        <span class="chip chip-app">Robotics</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/computing/new-dental-robot-attaches-to-patients-teeth-for-drilling/" target="_blank" rel="noopener">New Dental Robot Attaches to Patient&#39;s Teeth for Drilling</a></h2>
+      <p class="summary">A new dental robot is in development at the University of Basel in Switzerland to help with tooth drilling. It&#39;s called the MIR, or Miniature Intraoral Robot, and its bite-sized design allows it to fit inside a patient&#39;s mouth.
+The aim is t…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T12:00:00+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -1874,7 +2415,7 @@ The humble router is an essential fixture in every home. Benefits extend to ever
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -1895,7 +2436,7 @@ I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -1915,7 +2456,27 @@ I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/deals/july-4-deals-under-50-2026-07-05/" target="_blank" rel="noopener">Best Fourth of July Deals Under $50 on Ninja, Anker and Samsung</a></h2>
+      <p class="summary">We hope you spent your Fourth of July with burgers, beer and fireworks. With all that activity, you may not have had a chance to comb through the big weekend sales. While many of the offers have begun to dry up, I spent some time this morni…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-05T07:00:00+00:00">2026-07-05</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -1936,7 +2497,7 @@ Veröffentlicht: 05.07.2026 um 08:52 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -1957,7 +2518,7 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -1977,7 +2538,49 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/googles-learn-about-ai-experiment-feels-like-a-slimmed-down-notebooklm/" target="_blank" rel="noopener">Google&#39;s Learn About AI Experiment Feels Like a Slimmed-Down NotebookLM</a></h2>
+      <p class="summary">Google offers up a ton of AI tools, and if you&#39;re trying to learn more about something or study, NotebookLM might be your first thought. It&#39;s powerful, it&#39;s more grounded in truth since it only uses the sources you provide it, and it can tr…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T14:00:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.engadget.com/2206012/router-brands-could-be-misleading-you-with-that-wi-fi-7-label/" target="_blank" rel="noopener">Router Brands Could Be Misleading You With That Wi-Fi 7 Label</a></h2>
+      <p class="summary">Router brands could be misleading you with that Wi-Fi 7 label
+Wi-Fi standards remain as confusing as ever.
+If you&#39;ve thought at all about your home internet setup lately, you&#39;ve surely come across Wi-Fi 7 in your research. The label is slap…</p>
+      <div class="meta-row">
+        <span class="source">Engadget</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T13:30:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -1997,7 +2600,7 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2017,7 +2620,7 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2037,7 +2640,111 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/bluetooth-gadget-deals-july-4-2026/" target="_blank" rel="noopener">I found 4 Bluetooth gadgets that are highly functional - and cheap</a></h2>
+      <p class="summary">&#39;ZDNET Recommends&#39;: What exactly does it mean?
+ZDNET&#39;s recommendations are based on many hours of testing, research, and comparison shopping. We gather data from the best available sources, including vendor and retailer listings as well as …</p>
+      <div class="meta-row">
+        <span class="source">ZDNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T11:01:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://sports.yahoo.com/articles/open-thread-spurs-sign-2026-110000719.html" target="_blank" rel="noopener">Open Thread: The Spurs sign 2026 draftees</a></h2>
+      <p class="summary">Open Thread: The Spurs sign 2026 draftees
+Per a Spurs press release:
+“The San Antonio Spurs announced that they have signed first round selections Jayden Quaintance (20th overall) and Tarris Reed Jr. (26th overall), along with San Antonio’s…</p>
+      <div class="meta-row">
+        <span class="source">Yahoo Sports</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T11:00:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Infineon</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.eetimes.com/inside-infineon-e5b-dresden-fab-virtual-fab-cloning-fast-tracked-the-launch/" target="_blank" rel="noopener">Inside Infineon’s €5B Dresden Fab: Virtual Fab Cloning Fast-Tracked the Launch</a></h2>
+      
+      <div class="meta-row">
+        <span class="source">EE Times</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T10:41:10+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Sony</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/health/personal-care/i-got-first-look-sony-cooling-neck-device-in-time-heat-wave/" target="_blank" rel="noopener">I Got a First Look at Sony’s Cooling Neck Device, Just in Time for the Heat Wave</a></h2>
+      <p class="summary">This Fourth of July could be the hottest on record in certain parts of the US, CBS News reports, as a heat wave continues to impact half the country. Just in time for these potentially dangerous temperatures, Sony Electronics will start shi…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T09:21:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/qualcomm-inc-highlights-its-chip-role-as-a-key-player-in-mobile-and-5g/69686256" target="_blank" rel="noopener">Qualcomm Inc. highlights its chip role as a key player in mobile and 5G</a></h2>
+      <p class="summary">Qualcomm Inc. highlights its chip role as a key player in mobile and 5G
+04.07.2026 - 10:48:01 | ad-hoc-news.deQualcomm Inc. (ISIN US7475251036) is a major designer of semiconductor solutions and wireless technologies that power smartphones,…</p>
+      <div class="meta-row">
+        <span class="source">AD HOC NEWS</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T08:48:01+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2057,27 +2764,49 @@ Veröffentlicht: 05.07.2026 um 06:26 Uhr, Redaktion AD HOC NEWS, Redaktionelle V
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
     <div class="body">
       <div class="meta-row">
-        <span class="chip chip-tech">Wi-Fi</span>
         
         
-        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Audio / Speaker</span>
       </div>
-      <h2 class="title"><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a4d6828f80b4d658fb3e0ced13be5cf&amp;url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2frouter-brands-could-be-misleading-you-with-that-wi-fi-7-label%2far-AA27cHcz&amp;c=333254714267765289&amp;mkt=en-us" target="_blank" rel="noopener">Router Brands Could Be Misleading You With That Wi-Fi 7 Label</a></h2>
-      <p class="summary">Wi-Fi standards remain as confusing as ever.</p>
+      <h2 class="title"><a href="https://www.cnet.com/deals/best-july-4-apple-deals-2026-07-05/" target="_blank" rel="noopener">These Lingering Fourth of July Apple Deals May Be Your Last Chance to Save Before Big Price Hikes</a></h2>
+      <p class="summary">The Fourth of July deals have come and gone, but if you missed out on shopping them the last couple of days that&#39;s okay. We&#39;ve found a number of deals still live, including the Apple deals below. Now is the time to take advantage of these b…</p>
       <div class="meta-row">
-        <span class="source">Bing: Wi-Fi 7 chip</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-04T06:33:00+00:00">2026-07-04</span>
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T07:00:00+00:00">2026-07-04</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.phonearena.com/news/pricing-leaks-2026-galaxy-foldable-phones-galaxy-watch-9-models_id181614" target="_blank" rel="noopener">Prices leak for Samsung&#39;s 2026 foldable and smartwatch lines</a></h2>
+      <p class="summary">Prices leak for Samsung&#39;s 2026 foldable and smartwatch lines
+If you plan on buying a 2026 Galaxy Z foldable, this leak will tell you how much change you need to find inside your couch.
+Samsung 2026 foldables leaked pricing | Image by PhoneA…</p>
+      <div class="meta-row">
+        <span class="source">PhoneArena</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T03:42:39+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2098,7 +2827,7 @@ The MediaTek Dimensity 9500 is a flagship processor (SoC) with 8 CPU cores (octa
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -2118,7 +2847,7 @@ The MediaTek Dimensity 9500 is a flagship processor (SoC) with 8 CPU cores (octa
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2139,7 +2868,7 @@ A new firmware update for both the Sony WH-1000XM6 and WH-1000X The ColleXion ad
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2160,7 +2889,7 @@ A new firmware update for both the Sony WH-1000XM6 and WH-1000X The ColleXion ad
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="matter">
     <div class="thumb">
       
     </div>
@@ -2180,7 +2909,49 @@ A new firmware update for both the Sony WH-1000XM6 and WH-1000X The ColleXion ad
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/amazon-leo-ready-to-begin-satellite-internet-service/" target="_blank" rel="noopener">Amazon Leo Is Ready to Begin Limited Internet Service Later This Year</a></h2>
+      <p class="summary">Amazon Leo is ready to begin limited internet service later this year, but it&#39;s far behind Starlink -- several thousand satellites behind.
+Amazon launched 29 more satellites into low-Earth orbit on Thursday, bringing its total to 396 and po…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-03T17:18:00+00:00">2026-07-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Xiaomi</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.gsmarena.com/redmi_17_5g_certifications_reveal_its_ram_storage_options_and_battery_capacity-news-73572.php" target="_blank" rel="noopener">Redmi 17 5G certifications reveal its RAM/storage options and battery capacity - GSMArena.com news</a></h2>
+      <p class="summary">The global Redmi 17 5G will be the successor to the Redmi 15 5G, as Redmi is skipping the number 16 just like Xiaomi did last year. Now, the Redmi 17 5G has been certified for sale in Malaysia by SIRIM and Taiwan by NCC.
+These certification…</p>
+      <div class="meta-row">
+        <span class="source">GSMArena.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-03T16:43:02+00:00">2026-07-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -2200,7 +2971,7 @@ A new firmware update for both the Sony WH-1000XM6 and WH-1000X The ColleXion ad
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2222,7 +2993,27 @@ A new firmware update for the Sony WH-1000XM6 and 1000X The Collexion headphones
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Bose</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/deals/bose-quietcomfort-earbuds-deal-2026-07-03/" target="_blank" rel="noopener">Grab Some Budget-Friendly Bose Buds at an All-Time Low Price This Fourth of July</a></h2>
+      <p class="summary">Save $50: Bose makes some of the absolute best earbuds on the market, and you&#39;ve got a rare chance to snag a pair for less with this Fourth of July deal. Amazon just knocked the original QuietComfort earbuds down to $129, which saves you $5…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-03T14:00:00+00:00">2026-07-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2243,7 +3034,7 @@ A new firmware update for the Sony WH-1000XM6 and 1000X The Collexion headphones
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2264,7 +3055,28 @@ If you&#39;ve splashed out on the Sony WH-1000XM6 (affiliate link), the manufact
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">NXP</span>
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.inkl.com/news/what-to-expect-from-nxp-semiconductors-q2-2026-earnings-report" target="_blank" rel="noopener">What to Expect From NXP Semiconductors’ Q2 2026 Earnings Report</a></h2>
+      <p class="summary">Headquartered in Eindhoven, the Netherlands, NXP Semiconductors N.V. (NXPI) designs and manufactures semiconductor products for automotive, industrial, mobile, and connected devices.
+With a market cap of nearly $69 billion, NXP has built a …</p>
+      <div class="meta-row">
+        <span class="source">inkl</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-03T12:54:13+00:00">2026-07-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -2284,7 +3096,7 @@ If you&#39;ve splashed out on the Sony WH-1000XM6 (affiliate link), the manufact
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2305,7 +3117,7 @@ If you&#39;ve splashed out on the Sony WH-1000XM6 (affiliate link), the manufact
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2326,7 +3138,7 @@ If you&#39;ve splashed out on the Sony WH-1000XM6 (affiliate link), the manufact
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2334,19 +3146,19 @@ If you&#39;ve splashed out on the Sony WH-1000XM6 (affiliate link), the manufact
       <div class="meta-row">
         
         
-        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-cust">Apple</span>
         <span class="chip chip-app">Smart Home</span>
       </div>
-      <h2 class="title"><a href="https://9to5google.com/2026/07/03/all-best-4th-july-deals/" target="_blank" rel="noopener">All of the best 4th of July deals on Samsung Galaxy gear, Google, LG OLED TVs, Copilot+ PCs, e-bikes, more</a></h2>
-      <p class="summary">The 4th of July long weekend has arrived and we are tracking a giant selection of notable deals. This includes everything from official Google and Samsung Galaxy gear right through to home essentials, up to $1,000 off LG TVs, e-bikes, power…</p>
+      <h2 class="title"><a href="https://9to5mac.com/2026/07/03/all-best-4th-of-july-deals-apple/" target="_blank" rel="noopener">All of the best 4th of July deals on Apple gear, accessories, OLED TVs, and much more</a></h2>
+      <p class="summary">The 2026 4th of July weekend is upon us and there are loads of notable deals up for grabs. Coming fresh of the Prime Day festivities and major price hikes, the Apple deals aren’t quite as extensive as usual but you can still land up to $350…</p>
       <div class="meta-row">
-        <span class="source">9to5Google</span>
+        <span class="source">9to5Mac</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-03T11:19:00+00:00">2026-07-03</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2368,28 +3180,7 @@ Fancy something for the weekend? Well Sony has just the thing. Its Award-winning
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Sony</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.inkl.com/news/sonys-award-winning-headphones-just-got-a-surprise-new-feature" target="_blank" rel="noopener">Sony’s Award-winning headphones just got a surprise new feature</a></h2>
-      <p class="summary">Fancy something for the weekend? Well Sony has just the thing. Its Award-winning WH-1000XM6 headphones have just gained a new firmware update that enables an ultra-low-latency mode.
-The update is also available for Sony’s 1000X The Collexio…</p>
-      <div class="meta-row">
-        <span class="source">inkl</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T09:45:44+00:00">2026-07-03</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2410,7 +3201,7 @@ Sony&#39;s 1000X The Collexion update follows the WH-1000XM6 with a gaming bo…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -2432,7 +3223,7 @@ This announcement unde…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2452,7 +3243,28 @@ This announcement unde…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.gsmarena.com/iqoo_z11i_debuts_with_a_6500mah_battery_snapdragon_4_gen_2_soc-news-73557.php" target="_blank" rel="noopener">iQOO Z11i debuts with a 6,500mAh battery, Snapdragon 4 Gen 2 SoC - GSMArena.com news</a></h2>
+      <p class="summary">iQOO has quietly expanded its Z11 series in China with the launch of the new iQOO Z11i. The smartphone is powered by a Snapdragon chipset and packs a 6,500mAh battery.
+It features a 6.74-inch LCD display that offers a refresh rate of 120Hz …</p>
+      <div class="meta-row">
+        <span class="source">GSMArena.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-03T07:19:02+00:00">2026-07-03</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2474,7 +3286,47 @@ Geneva – July 3, 2026 – STMicroelectronics (NYSE: STM), a global semiconduct
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/home/smart-home/amazon-reveals-silicon-chip-design-plans-alexa-plus-on-the-go-devices/" target="_blank" rel="noopener">Amazon Has New AI Chips for Home Tech Devices and Future Mobile Gadgets</a></h2>
+      <p class="summary">On Thursday, Amazon&#39;s head of devices and services, Panos Panay, discussed the future of Amazon&#39;s smart devices with CNBC, which includes the company&#39;s own end-to-end silicon chips. In the interview, Panoy also revealed plans for future AI …</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T23:33:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Glasses</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/apple-revamping-ipad-pro-lineup-building-more-foldables/" target="_blank" rel="noopener">Apple Reportedly Revamping iPad Pro Lineup and Building More Foldables</a></h2>
+      <p class="summary">Apparently, there are no hazy, lazy days of summer at Apple. The company is testing several new iPad Pro models, redesigning an entry-level MacBook Pro and developing a new M7 processing chip, according to Mark Gurman at Bloomberg. In anoth…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T21:22:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
     <div class="thumb">
       
     </div>
@@ -2494,7 +3346,7 @@ Geneva – July 3, 2026 – STMicroelectronics (NYSE: STM), a global semiconduct
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="matter">
     <div class="thumb">
       
     </div>
@@ -2514,7 +3366,7 @@ Geneva – July 3, 2026 – STMicroelectronics (NYSE: STM), a global semiconduct
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -2536,7 +3388,7 @@ It began to bother me…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2557,7 +3409,68 @@ It began to bother me…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.gsmarena.com/samsung_galaxy_glasses_emerge_in_new_leaked_video-news-73545.php" target="_blank" rel="noopener">Samsung Galaxy Glasses emerge in new leaked video - GSMArena.com news</a></h2>
+      <p class="summary">We’ve already seen leaked renders and additional details about Samsung’s Galaxy Glasses. We now have our best look yet thanks to an official-looking video shared by the folks over at SamMobile.
+The 27-second clip goes over the key design el…</p>
+      <div class="meta-row">
+        <span class="source">GSMArena.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T18:21:02+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/google-android-fine-upheld-by-top-europe-court/" target="_blank" rel="noopener">Google Has Been Fighting a Gargantuan Fine in Court. The Final Verdict? It Must Pay Up</a></h2>
+      <p class="summary">When the EU hit Google with a massive fine back in 2018, the tech company was really hoping it would never have to pay up. Eight years of appeals later, and it turns out the company is out of luck and will have to cough up the fine to the t…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T18:15:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter,ieee15_4">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/newsroom/legrand-on-zigbee-4-0/" target="_blank" rel="noopener">Legrand on Zigbee 4.0</a></h2>
+      <p class="summary">“We have to make sure devices using Zigbee technology can talk with Matter devices coming to the market. This is our way to make the transition with this new technology,&amp;#8230;</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T18:02:22+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -2578,7 +3491,7 @@ It began to bother me…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2599,7 +3512,7 @@ The first few years I’ve spent in my cu…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2620,7 +3533,7 @@ If you’re lucky, the money you spend on a Bluetooth tracker will be wasted. Th
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2640,7 +3553,7 @@ If you’re lucky, the money you spend on a Bluetooth tracker will be wasted. Th
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2660,7 +3573,27 @@ If you’re lucky, the money you spend on a Bluetooth tracker will be wasted. Th
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Apple</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://9to5mac.com/2026/07/02/deals-airpods-4-m5-ipad-pro-m4-ipad-air-airtag-2/" target="_blank" rel="noopener">Deals: AirPods 4 nearly 25% off, M5 iPad Pro $350 off, M4 iPad Air, Apple accessories from $15, more</a></h2>
+      <p class="summary">Alongside the ongoing all-time low on the 4-pack of Apple’s latest AirTag 2, today’s 9to5Toys Lunch Break is headlined by Amazon still offering Apple’s AirPods 4 at nearly 25% off ahead of July 4th and the pre-price hike M5 iPad Pro deals s…</p>
+      <div class="meta-row">
+        <span class="source">9to5Mac</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T15:26:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2681,7 +3614,59 @@ The Nest x Yale Lock is a pretty iconic release, perhaps being o…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/home/security/10-smart-home-tricks-that-keep-your-house-cool-without-spiking-your-energy-bill/" target="_blank" rel="noopener">10 Smart Home Tricks That Keep Your House Cool Without Spiking Your Energy Bill</a></h2>
+      <p class="summary">Heat waves have gotten harder to ignore, and not just because they&#39;re more frequent. The combination of extreme outdoor temperatures, pets and vulnerable family members inside and an energy bill that climbs with every degree the thermostat …</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T14:17:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Infineon</span>
+        
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.infineon.com/press-release/2026/ifxpr202607-117" target="_blank" rel="noopener">An impulse for Germany, Europe and the world: Infineon</a></h2>
+      <p class="summary">- ASIC
+- Battery management ICs
+- Clocks and timing solutions
+- ESD and surge protection devices
+- Automotive Ethernet
+- Evaluation Boards
+- High reliability
+- Isolation
+- Memories
+- Microcontroller
+- Power
+- RF
+- Security and smart card so…</p>
+      <div class="meta-row">
+        <span class="source">Infineon</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T13:37:46+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -2704,7 +3689,68 @@ Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/computing/winners-of-the-2026-iphone-photography-awards-shutter-the-notion-of-iphone-photos/" target="_blank" rel="noopener">Winners of the 2026 iPhone Photography Awards Redefine the Notion of &#39;iPhone Photos&#39;</a></h2>
+      <p class="summary">The 2026 iPhone Photography Awards, announced Wednesday, showcase stunning photos captured with iPhone cameras, anchored by this year&#39;s Grand Prix-winning night photo of a volcano, taken with an iPhone 15 Pro by Robyn Jensen.
+Whenever photo…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T13:01:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/samsung-galaxy-z-fold-8-rumor-roundup-wider-and-ultra-phones-may-be-coming/" target="_blank" rel="noopener">Samsung Galaxy Z Fold 8 Rumor Roundup: Wider and Ultra Phones May Be Coming</a></h2>
+      <p class="summary">Even though Samsung revealed its flagship Galaxy S26 lineup in February this year, it&#39;s not done unveiling new phones just yet. The company is likely to debut a new line of folding phones sometime soon, with Samsung already teasing new Z Fo…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T13:01:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/mobile/best-iphone/" target="_blank" rel="noopener">Best iPhone in 2026: Here&#39;s Which Apple Phone You Should Buy</a></h2>
+      <p class="summary">Apple announced price hikes of up to hundreds of dollars for many of its products, but the iPhone was spared. Eventually, Apple could raise iPhone prices, too. So if you&#39;re looking to buy one, now might be the best time. But which one shoul…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T11:30:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter">
     <div class="thumb">
       
     </div>
@@ -2724,7 +3770,31 @@ Tim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/home/security/i-tested-the-smart-lock-of-the-future-built-by-a-century-old-lock-maker/" target="_blank" rel="noopener">I Tested the Smart Lock of the Future, Built by a Century-Old Lock Maker</a></h2>
+      <p class="summary">Pros
+- Advanced design with futuristic outside touch panel
+- UWB technology for timely connections and access
+- Matter support for multiple platforms
+- Aliro certification incoming for Samsung and Google Wallet keys as well as existing Appl…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-02T11:00:00+00:00">2026-07-02</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2745,7 +3815,7 @@ The battery claim is the hook. Moto…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2766,7 +3836,7 @@ Motorola&#39;s first book-style foldable leads its most advanced lineup yet, joi
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2786,7 +3856,28 @@ Motorola&#39;s first book-style foldable leads its most advanced lineup yet, joi
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/news/privacy/apples-hide-my-email-feature-appears-to-disclose-all-real-emails-with-discovered-bug/" target="_blank" rel="noopener">Major Apple Bug Appears to Disclose All Real Emails for &#39;Hide My Email&#39; Users</a></h2>
+      <p class="summary">A not-so-small vulnerability in Apple&#39;s Hide My Email feature lets malicious actors see anyone&#39;s real email address, according to reports on Wednesday.
+The co-founder of the Easy Opt Out service, Tyler Murphy, who spoke to 404 Media, said A…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T21:02:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2806,7 +3897,27 @@ Motorola&#39;s first book-style foldable leads its most advanced lineup yet, joi
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Sony</span>
+        <span class="chip chip-app">Retail</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/gaming/sony-phasing-out-physical-discs-for-ps5-closes-stores/" target="_blank" rel="noopener">Sony Phasing Out Physical Discs for PS5, Closes PS3 and PS Vita Stores</a></h2>
+      <p class="summary">The era of physical gaming media appears to be coming to an end, at least for Sony, which announced on Wednesday that it will cease production of discs in 2028. This move would appear to be an indicator that the PlayStation 6, which has yet…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T17:08:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2826,7 +3937,71 @@ Motorola&#39;s first book-style foldable leads its most advanced lineup yet, joi
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Samsung</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/computing/dram-lawsuit-targets-samsung-and-other-chipmakers/" target="_blank" rel="noopener">Lawsuit Targets Samsung and Other Chipmakers Alleging DRAM Price Fixing</a></h2>
+      <p class="summary">Memory chip prices have risen sharply since last year, making it more expensive to upgrade computers or buy new products from companies such as Apple.
+Those price increases are now the subject of a proposed class-action suit, filed by a gro…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T16:13:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/deals/google-home-smart-speaker-bundle-deal/" target="_blank" rel="noopener">Best Buy Is Taking 50% Off the New Google Home Smart Speaker. Here&#39;s How to Qualify</a></h2>
+      <p class="summary">Save $50: Smart speakers can add some serious convenience to your day-to-day life, and right now you can snag one of the newest models on the market for less. The 2026 Google Home speaker sells for $100, but you can pick it up for half off …</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T16:12:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="wifi">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.androidauthority.com/pixel-phones-connectivity-issues-july-2026-3683409/" target="_blank" rel="noopener">Surprise: Pixel phones are once again having Wi-Fi problems</a></h2>
+      <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
+Surprise: Pixel phones are once again having Wi-Fi problems
+6 hours ago
+- Over the past 24 hours, more user reports claiming connectivity issues on Pixel phones have…</p>
+      <div class="meta-row">
+        <span class="source">Android Authority</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T15:57:37+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -2846,7 +4021,7 @@ Motorola&#39;s first book-style foldable leads its most advanced lineup yet, joi
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="thread">
     <div class="thumb">
       
     </div>
@@ -2866,7 +4041,7 @@ Motorola&#39;s first book-style foldable leads its most advanced lineup yet, joi
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2887,7 +4062,34 @@ Motorola&#39;s first book-style foldable leads its most advanced lineup yet, joi
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-vendor">Qualcomm</span>
+        <span class="chip chip-cust">Microsoft</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnet.com/tech/computing/microsoft-surface-laptop-for-business-8th-edition-review/" target="_blank" rel="noopener">Microsoft Surface Laptop for Business (8th Edition) Review: Effective Privacy Screen, Expensive Pricing Scheme</a></h2>
+      <p class="summary">Pros
+- Strong overall performance from Intel Core Ultra X7
+- Privacy screen feature is actually useful
+- Sleek, sturdy chassis
+Cons
+- High price that rarely, if ever, goes on sale
+- Battery life is merely average
+- 1080p webcam disappointin…</p>
+      <div class="meta-row">
+        <span class="source">CNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T12:06:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2908,30 +4110,7 @@ Google b…</p>
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.dailykos.com/stories/2026/7/1/800063348/community/morning-open-thread/" target="_blank" rel="noopener">Morning Open Thread: The Olivier Awards</a></h2>
-      <p class="summary">The Olivier Awards are given a few weeks before the Tony Awards, for plays and musicals in London’s West End. Here are some performances from that show.
-Rachel Zegler, “Don’t Cry for Me, Argentina” from Evita
-🍿🍿🍿
-Morning Open Thread is a da…</p>
-      <div class="meta-row">
-        <span class="source">Daily Kos</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-01T10:52:43+00:00">2026-07-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2952,7 +4131,7 @@ Usually, firmware updates tend …</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -2972,7 +4151,7 @@ Usually, firmware updates tend …</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -2995,7 +4174,7 @@ Sony&#39;s latest WH-1000XM6 update fixes one of Bluetooth gaming&#39;s biggest 
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -3015,7 +4194,47 @@ Sony&#39;s latest WH-1000XM6 update fixes one of Bluetooth gaming&#39;s biggest 
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Robotics</span>
+      </div>
+      <h2 class="title"><a href="https://semiconductor.samsung.com/news-events/news/samsung-ships-industry-first-commercial-hbm4-with-ultimate-performance-for-ai-computing/" target="_blank" rel="noopener">Samsung Ships Industry-First Commercial HBM4 With Ultimate Performance for AI Computing</a></h2>
+      <p class="summary">Click here to learn more about Samsung Foundry Forum &amp; SAFE™. Click here to learn more about Samsung Foundry Forum &amp; SAFE™. Click here to learn more about Samsung Foundry Forum. Samsung Foundry Forum 더 알아보려면 여기를 클릭하세요 Samsung Foundry Forum …</p>
+      <div class="meta-row">
+        <span class="source">Samsung Semiconductor</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T07:00:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        <span class="chip chip-cust">Samsung</span>
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://semiconductor.samsung.com/news-events/news/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026/" target="_blank" rel="noopener">Samsung Unveils HBM4E, Showcasing Comprehensive AI Solutions, NVIDIA Partnership and Vision at NVIDIA GTC 2026</a></h2>
+      <p class="summary">Click here to learn more about Samsung Foundry Forum &amp; SAFE™. Click here to learn more about Samsung Foundry Forum &amp; SAFE™. Click here to learn more about Samsung Foundry Forum. Samsung Foundry Forum 더 알아보려면 여기를 클릭하세요 Samsung Foundry Forum …</p>
+      <div class="meta-row">
+        <span class="source">Samsung Semiconductor</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-01T07:00:00+00:00">2026-07-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -3037,7 +4256,7 @@ July…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -3057,7 +4276,7 @@ July…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="">
     <div class="thumb">
       
     </div>
@@ -3077,27 +4296,7 @@ July…</p>
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.9news.com/article/news/local/colorado-department-of-corrections-group-text/73-98f48a9b-9db4-40c6-b2e0-e23c59200746" target="_blank" rel="noopener">Four Colorado corrections officials shared hundreds of &#39;inappropriate&#39; messages in group text thread</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">9News</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-06-30T23:43:00+00:00">2026-06-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       <img src="https://www.zdnet.com/a/img/resize/bd701e88ac4110c7f071dd7d2f4a28dd26b1590b/2022/08/16/83fe314b-ad45-4607-a1c7-52a5c290e6ed/jada-jones.jpg?auto=webp&amp;amp;fit=crop&amp;amp;frame=1&amp;amp;height=192&amp;amp;width=192" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
     </div>
@@ -3133,5 +4332,69 @@ function timeAgo(iso){
   const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+
+function filterByTech(bucket) {
+  const tabs = document.querySelectorAll('.tech-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const cards = document.querySelectorAll('#grid .card');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    if (bucket === 'all') {
+      card.style.display = '';
+      visibleCount++;
+    } else {
+      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
+      if (buckets.includes(bucket)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+  
+  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+}
+
+async function refreshNews(event) {
+  event.preventDefault();
+  const btn = document.getElementById('refreshBtn');
+  const icon = document.getElementById('refreshIcon');
+  
+  if (btn.disabled) return;
+  
+  btn.disabled = true;
+  icon.classList.add('spinning');
+  btn.textContent = '↻ Refreshing…';
+  
+  try {
+    const response = await fetch('/api/refresh', { method: 'POST' });
+    const data = await response.json();
+    
+    if (data.ok) {
+      btn.textContent = '✓ Done';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      btn.textContent = '✗ Error';
+      setTimeout(() => {
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 3000);
+    }
+  } catch (err) {
+    btn.textContent = '✗ Error';
+    setTimeout(() => {
+      btn.textContent = '↻ Refresh';
+      btn.disabled = false;
+      icon.classList.remove('spinning');
+    }, 3000);
+  }
+}
 </script>
 </body></html>

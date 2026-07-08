@@ -50,9 +50,27 @@ def _site_dev(argv):
         import webbrowser
         webbrowser.open(index.resolve().as_uri())
 
+def _server(argv):
+    """Run interactive Flask server with refresh capability."""
+    import argparse
+    from bluetooth_news.server import run_server
+
+    p = argparse.ArgumentParser(prog="run.py server")
+    p.add_argument("--host", default="127.0.0.1")
+    p.add_argument("--port", type=int, default=5005)
+    p.add_argument("--docs-dir", default="docs")
+    p.add_argument("--debug", action="store_true")
+    a = p.parse_args(argv)
+
+    run_server(host=a.host, port=a.port, docs_dir=a.docs_dir, debug=a.debug)
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "site-dev":
         _site_dev(sys.argv[2:])
+        sys.exit(0)
+    elif len(sys.argv) > 1 and sys.argv[1] == "server":
+        _server(sys.argv[2:])
         sys.exit(0)
     else:
         from bluetooth_news.cli import main

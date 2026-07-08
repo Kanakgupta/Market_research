@@ -84,6 +84,24 @@ a:hover { text-decoration:underline; }
 .tag-region-asia { background:#fef3c7; color:#92400e; }
 
 .disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
 </style>
 </head><body>
 
@@ -91,20 +109,23 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <div class="nav-dd">
-      <a class="nav-dd-trigger active" href="news.html">News <span class="dd-caret">&#9662;</span></a>
-      <div class="nav-dd-menu">
-        <a href="news.html">All News</a>
-        <a href="wifi.html">Wi-Fi</a><a href="bluetooth.html">Bluetooth</a><a href="ieee15_4.html">802.15.4</a><a href="aliro.html">Aliro</a><a href="thread.html">Thread</a><a href="matter.html">Matter</a>
-      </div>
-    </div>
+    <a href="news.html" class="active">News</a>
     <a href="customers.html" class="">Customers</a>
     <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-07 14:02 PDT</div>
+  <div class="meta-info">Updated 2026-07-07 17:07 PDT</div>
 </div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
 <script>
 (function(){
   if(location.protocol !== 'file:') return;
@@ -119,7 +140,7 @@ a:hover { text-decoration:underline; }
   <h1>Bluetooth News</h1>
   <p>Bluetooth 6.0, LE Audio, Auracast, Channel Sounding, Coded PHY, profiles &amp; open-source stacks.</p>
   <div class="stats">
-    <span class="pill">29 articles</span>
+    <span class="pill">30 articles</span>
     <span class="pill">2 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">9 applications</span>
@@ -128,9 +149,11 @@ a:hover { text-decoration:underline; }
 
 
 
+
+
 <div class="grid" id="grid">
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -141,18 +164,38 @@ a:hover { text-decoration:underline; }
         <span class="chip chip-cust">Apple</span>
         <span class="chip chip-app">Wearable</span>
       </div>
-      <h2 class="title"><a href="https://www.analyticsinsight.net/smartwatch/dont-have-an-apple-watch-these-affordable-health-tracking-alternatives-work-too" target="_blank" rel="noopener">Don&#39;t Have an Apple Watch? These Affordable Health Tracking Alternatives Work Too</a></h2>
+      <h2 class="title"><a href="https://www.analyticsinsight.net/amp/story/smartwatch/dont-have-an-apple-watch-these-affordable-health-tracking-alternatives-work-too" target="_blank" rel="noopener">Don&#39;t Have an Apple Watch? These Affordable Health Tracking Alternatives Work Too</a></h2>
       <p class="summary">Affordable smartwatches now offer health tracking features that were once available only on premium devices.
 Heart rate monitoring, sleep tracking, SpO₂ sensors, and Bluetooth calling have become common across budget models.
 The best smartw…</p>
       <div class="meta-row">
         <span class="source">Analytics Insight</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-07T18:45:00+00:00">2026-07-07</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T18:55:22+00:00">2026-07-07</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Microsoft</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://blog.son-video.com/en/2026/07/focal-bathys-midnight-blue-an-elegant-new-finish/" target="_blank" rel="noopener">Focal Bathys Midnight Blue: an elegant new finish - Son-vidéo.com</a></h2>
+      <p class="summary">Four years after shaking up the high-end Bluetooth headphones market, the French audiophile brand continues to expand its color palette. Following the success of the Black and Dune versions, the Saint-Étienne-based brand is now unveiling a …</p>
+      <div class="meta-row">
+        <span class="source">Son-vidéo.com</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T13:32:27+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -173,7 +216,7 @@ Sony looks set to expand its WH-1000XM6 headphone range again – shortly after 
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -195,7 +238,7 @@ The AirTag 2 is down to its …</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -216,7 +259,7 @@ ZDNET&#39;s recommendations are based on many hours of testing, research, and co
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -236,7 +279,7 @@ ZDNET&#39;s recommendations are based on many hours of testing, research, and co
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -275,12 +318,12 @@ Results Table Tool
 Review …</p>
       <div class="meta-row">
         <span class="source">RTINGS.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-06T19:09:35+00:00">2026-07-06</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T07:00:00+00:00">2026-07-06</span>
       </div>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -291,7 +334,7 @@ Review …</p>
         
         
       </div>
-      <h2 class="title"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNNVNDdk1tMkdEQUZidzdjS2k0T08wV3RIOFVlMjNSRjZpcldfMVUtRko4R09NMkVGeHJRZmdZUUQwWlp6UW90b1NNd2pjUmhQZkVuanZqNHo0SWUzNFdsWEFoVzlKTHNIRENTTERZT0Y3T091Uk5NS3dFOXJlQmhyV1E1Y1ZkY08zZkxRTnJvVXhNMklFUzJJUEwtWnY3X0lLT1hESnRPa2twZw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Nordic’s Prototyping Tag to Streamline ‘Find My’ and Asset Tag Designs</a></h2>
+      <h2 class="title"><a href="https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/" target="_blank" rel="noopener">Nordic’s Prototyping Tag to Streamline ‘Find My’ and Asset Tag Designs</a></h2>
       
       <div class="meta-row">
         <span class="source">All About Circuits</span>
@@ -300,7 +343,7 @@ Review …</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -322,7 +365,7 @@ The Apple Watch Series 11 46mm is a truly impressive smartwatch for iPhone users
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -343,7 +386,7 @@ At CES 2025, Lenovo unveiled the Self-Charging Bluetooth Keyboard, which has a f
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -364,7 +407,7 @@ I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -384,7 +427,7 @@ I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -404,7 +447,7 @@ I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -424,7 +467,28 @@ I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/bluetooth-gadget-deals-july-4-2026/" target="_blank" rel="noopener">I found 4 Bluetooth gadgets that are highly functional - and cheap</a></h2>
+      <p class="summary">&#39;ZDNET Recommends&#39;: What exactly does it mean?
+ZDNET&#39;s recommendations are based on many hours of testing, research, and comparison shopping. We gather data from the best available sources, including vendor and retailer listings as well as …</p>
+      <div class="meta-row">
+        <span class="source">ZDNET</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-04T11:01:00+00:00">2026-07-04</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -444,7 +508,7 @@ I tried the Sony WH-1000XM6&#39;s new gaming feature, and at least half of it…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -465,7 +529,7 @@ The MediaTek Dimensity 9500 is a flagship processor (SoC) with 8 CPU cores (octa
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -486,7 +550,7 @@ A new firmware update for both the Sony WH-1000XM6 and WH-1000X The ColleXion ad
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -508,7 +572,7 @@ A new firmware update for the Sony WH-1000XM6 and 1000X The Collexion headphones
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -529,7 +593,7 @@ If you&#39;ve splashed out on the Sony WH-1000XM6 (affiliate link), the manufact
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -551,28 +615,7 @@ Fancy something for the weekend? Well Sony has just the thing. Its Award-winning
     </div>
   </article>
   
-  <article class="card">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Sony</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.inkl.com/news/sonys-award-winning-headphones-just-got-a-surprise-new-feature" target="_blank" rel="noopener">Sony’s Award-winning headphones just got a surprise new feature</a></h2>
-      <p class="summary">Fancy something for the weekend? Well Sony has just the thing. Its Award-winning WH-1000XM6 headphones have just gained a new firmware update that enables an ultra-low-latency mode.
-The update is also available for Sony’s 1000X The Collexio…</p>
-      <div class="meta-row">
-        <span class="source">inkl</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-03T09:45:44+00:00">2026-07-03</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -593,7 +636,7 @@ Sony&#39;s 1000X The Collexion update follows the WH-1000XM6 with a gaming bo…
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -614,7 +657,7 @@ If you’re lucky, the money you spend on a Bluetooth tracker will be wasted. Th
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -635,7 +678,7 @@ The battery claim is the hook. Moto…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -655,7 +698,7 @@ The battery claim is the hook. Moto…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -676,7 +719,7 @@ Usually, firmware updates tend …</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -699,7 +742,7 @@ Sony&#39;s latest WH-1000XM6 update fixes one of Bluetooth gaming&#39;s biggest 
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -721,7 +764,7 @@ July…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       
     </div>
@@ -741,7 +784,7 @@ July…</p>
     </div>
   </article>
   
-  <article class="card">
+  <article class="card" data-buckets="bluetooth">
     <div class="thumb">
       <img src="https://www.zdnet.com/a/img/resize/bd701e88ac4110c7f071dd7d2f4a28dd26b1590b/2022/08/16/83fe314b-ad45-4607-a1c7-52a5c290e6ed/jada-jones.jpg?auto=webp&amp;amp;fit=crop&amp;amp;frame=1&amp;amp;height=192&amp;amp;width=192" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
     </div>
@@ -777,5 +820,69 @@ function timeAgo(iso){
   const y=Math.floor(day/365); return y+(y===1?' year ago':' years ago');
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+
+function filterByTech(bucket) {
+  const tabs = document.querySelectorAll('.tech-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const cards = document.querySelectorAll('#grid .card');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    if (bucket === 'all') {
+      card.style.display = '';
+      visibleCount++;
+    } else {
+      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
+      if (buckets.includes(bucket)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+  
+  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+}
+
+async function refreshNews(event) {
+  event.preventDefault();
+  const btn = document.getElementById('refreshBtn');
+  const icon = document.getElementById('refreshIcon');
+  
+  if (btn.disabled) return;
+  
+  btn.disabled = true;
+  icon.classList.add('spinning');
+  btn.textContent = '↻ Refreshing…';
+  
+  try {
+    const response = await fetch('/api/refresh', { method: 'POST' });
+    const data = await response.json();
+    
+    if (data.ok) {
+      btn.textContent = '✓ Done';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      btn.textContent = '✗ Error';
+      setTimeout(() => {
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 3000);
+    }
+  } catch (err) {
+    btn.textContent = '✗ Error';
+    setTimeout(() => {
+      btn.textContent = '↻ Refresh';
+      btn.disabled = false;
+      icon.classList.remove('spinning');
+    }, 3000);
+  }
+}
 </script>
 </body></html>
