@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T00:07:59Z",
+  "generated_at": "2026-07-08T13:03:56Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3664,17 +3664,21 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 36,
+    "Broadcom": 41,
     "Qualcomm": 17,
-    "Skyworks": 6,
+    "Skyworks": 7,
     "Marvell": 4,
-    "NXP": 3,
+    "Microchip": 3,
+    "Infineon": 3,
     "STMicro": 3,
+    "NXP": 2,
+    "Espressif": 2,
     "u-blox": 2,
     "MediaTek": 2,
-    "Infineon": 2,
-    "Microchip": 1,
-    "Espressif": 1,
+    "Silicon Labs": 1,
+    "LG Innotek": 1,
+    "Onsemi": 1,
+    "Realtek": 1,
     "Apple": 1
   },
   "standards_in_flight": [
@@ -3756,7 +3760,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3718,
+      "issues_open": 3741,
       "prs_open": 0,
       "releases": [
         {
@@ -3778,8 +3782,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15836,
-      "pushed_at": "2026-07-07T21:52:57Z"
+      "stars": 15842,
+      "pushed_at": "2026-07-08T08:04:56Z"
     },
     {
       "name": "ESP-IDF",
@@ -3814,8 +3818,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18496,
-      "pushed_at": "2026-07-07T23:27:46Z"
+      "stars": 18498,
+      "pushed_at": "2026-07-08T08:41:55Z"
     },
     {
       "name": "Linux mac80211",
@@ -3829,7 +3833,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 238695,
+      "stars": 238746,
       "pushed_at": "2026-07-07T02:08:57Z"
     },
     {
@@ -3841,7 +3845,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2714,
+      "issues_open": 2716,
       "prs_open": 0,
       "releases": [
         {
@@ -3863,8 +3867,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8813,
-      "pushed_at": "2026-07-07T23:39:29Z"
+      "stars": 8812,
+      "pushed_at": "2026-07-08T13:00:39Z"
     },
     {
       "name": "OpenThread",
@@ -3874,8 +3878,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 63,
-      "issues_open": 158,
+      "commits_30d": 64,
+      "issues_open": 157,
       "prs_open": 0,
       "releases": [
         {
@@ -3898,7 +3902,7 @@
         }
       ],
       "stars": 3978,
-      "pushed_at": "2026-07-07T21:30:55Z"
+      "pushed_at": "2026-07-08T01:51:14Z"
     },
     {
       "name": "BlueZ",
@@ -3909,7 +3913,7 @@
         "bluetooth"
       ],
       "commits_30d": 55,
-      "issues_open": 105,
+      "issues_open": 103,
       "prs_open": 0,
       "releases": [
         {
@@ -3931,8 +3935,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1091,
-      "pushed_at": "2026-07-07T19:51:23Z"
+      "stars": 1092,
+      "pushed_at": "2026-07-08T12:09:00Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3943,7 +3947,7 @@
         "ieee15_4"
       ],
       "commits_30d": 44,
-      "issues_open": 484,
+      "issues_open": 485,
       "prs_open": 0,
       "releases": [
         {
@@ -3977,7 +3981,7 @@
         "bluetooth"
       ],
       "commits_30d": 15,
-      "issues_open": 266,
+      "issues_open": 269,
       "prs_open": 0,
       "releases": [],
       "stars": 876,
