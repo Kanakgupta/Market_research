@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T13:08:16Z",
+  "generated_at": "2026-07-09T20:09:08Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3022,6 +3022,21 @@
           "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
         },
         {
+          "title": "Microchip Launches Free MPLAB XC Compilers and ML Suite",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
+        },
+        {
+          "title": "Microchip Makes MPLAB XC Pro Compilers Free for Developers",
+          "date": "Jul 2026",
+          "url": "https://www.manufacturingtodayindia.com/microchip-mplab-xc-pro-compilers"
+        },
+        {
+          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Tools Free for Developers",
+          "date": "Jul 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/microchip-makes-mplab-xc-pro-compilers-and-machine-learning-tools-free-for-developers"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
@@ -3050,21 +3065,6 @@
           "title": "Microchip Partners with NASA to Develop Next-Generation Radiation-Hardened Spaceflight Chips",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Microchip+Partners+with+NASA+to+Develop+Next-Generation+Radiation-Hardened+Spaceflight+Chips+Microchip"
-        },
-        {
-          "title": "Microchip Technology Announces Financial Results for Fourth Quarter and Fiscal Year 2026",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Microchip+Technology+Announces+Financial+Results+for+Fourth+Quarter+and+Fiscal+Year+2026+Microchip"
-        },
-        {
-          "title": "Microchip Technology Announces Completion of Micrel Acquisition",
-          "date": "May 2026",
-          "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/announcements/microchip-announces-the-acquisition-of-micrel/MCHP+and+MCRL+Announce+Completion+of+Acquisition+of+MCRL.080315.pdf"
-        },
-        {
-          "title": "Microchip Launches dsPIC33CK Value Line Family of Low-Cost Motor Control MCUs",
-          "date": "May 2026",
-          "url": "https://www.cnx-software.com/2026/05/29/microchip-dspic33ck-low-cost-motor-control-mcu/"
         }
       ]
     },
@@ -3669,16 +3669,15 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 68,
-    "Qualcomm": 19,
-    "Skyworks": 8,
+    "Broadcom": 66,
+    "Qualcomm": 17,
+    "Skyworks": 7,
     "Microchip": 4,
+    "Espressif": 4,
     "Infineon": 3,
-    "Espressif": 3,
     "Marvell": 3,
     "Silicon Labs": 2,
     "MediaTek": 2,
-    "STMicro": 2,
     "Realtek": 1,
     "Nordic": 1,
     "Telink": 1,
@@ -3687,7 +3686,7 @@
     "Onsemi": 1,
     "u-blox": 1,
     "NXP": 1,
-    "Apple": 1
+    "STMicro": 1
   },
   "standards_in_flight": [
     {
@@ -3760,40 +3759,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3731,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15850,
-      "pushed_at": "2026-07-09T12:45:13Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3804,7 +3769,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1618,
+      "issues_open": 1621,
       "prs_open": 0,
       "releases": [
         {
@@ -3826,8 +3791,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18506,
+      "stars": 18510,
       "pushed_at": "2026-07-09T11:51:14Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3741,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15852,
+      "pushed_at": "2026-07-09T17:02:14Z"
     },
     {
       "name": "Matter SDK",
@@ -3838,7 +3837,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2724,
+      "issues_open": 2720,
       "prs_open": 0,
       "releases": [
         {
@@ -3860,8 +3859,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8814,
-      "pushed_at": "2026-07-09T13:00:02Z"
+      "stars": 8816,
+      "pushed_at": "2026-07-09T20:07:05Z"
     },
     {
       "name": "Linux mac80211",
@@ -3875,8 +3874,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 238878,
-      "pushed_at": "2026-07-07T02:08:57Z"
+      "stars": 238898,
+      "pushed_at": "2026-07-09T15:37:15Z"
     },
     {
       "name": "OpenThread",
@@ -3887,7 +3886,7 @@
         "thread"
       ],
       "commits_30d": 50,
-      "issues_open": 161,
+      "issues_open": 160,
       "prs_open": 0,
       "releases": [
         {
@@ -3910,7 +3909,7 @@
         }
       ],
       "stars": 3978,
-      "pushed_at": "2026-07-09T05:30:53Z"
+      "pushed_at": "2026-07-09T17:39:38Z"
     },
     {
       "name": "BlueZ",
@@ -3920,8 +3919,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 45,
-      "issues_open": 101,
+      "commits_30d": 44,
+      "issues_open": 95,
       "prs_open": 0,
       "releases": [
         {
@@ -3944,7 +3943,7 @@
         }
       ],
       "stars": 1092,
-      "pushed_at": "2026-07-08T16:16:28Z"
+      "pushed_at": "2026-07-09T20:05:11Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3954,8 +3953,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 44,
-      "issues_open": 482,
+      "commits_30d": 39,
+      "issues_open": 485,
       "prs_open": 0,
       "releases": [
         {

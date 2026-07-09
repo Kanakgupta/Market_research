@@ -1,7 +1,214 @@
 {
-  "generated_at": "2026-07-09T13:08:16Z",
+  "generated_at": "2026-07-09T20:09:08Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
+    {
+      "title": "Apple's $30 Billion Broadcom Deal Rewards the One Chip Apple Can't Copy",
+      "url": "https://www.techi.com/apple-broadcom-30-billion-deal-avgo-stock/",
+      "source": "techi.com",
+      "date": "2026-07-09",
+      "vendor": "Broadcom",
+      "customer": "Apple",
+      "application": "Industrial",
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "- The dealApple will spend more than $30 billion with Broadcom through 2031 on US-made RF components including FBAR filters \u2014 its largest American Manufacturing Program commitment, with a $1.5 billion Fort Collins expansion and 15 billion+ chips.\n- The twistApple just finished replacing Broadcom's c"
+    },
+    {
+      "title": "Simplifying Intelligent Wireless Design and Security Certification for Healthcare Devices",
+      "url": "https://www.eetimes.com/simplifying-intelligent-wireless-design-and-security-certification-for-healthcare-devices/",
+      "source": "EE Times",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": null,
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Marshall unveils new Auracast-enabled Action IV and Stanmore IV Bluetooth speakers",
+      "url": "https://musictech.com/news/gear/marshall-acton-iv-stanmore-iv/",
+      "source": "MusicTech",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Marshall unveils new Auracast-enabled Action IV and Stanmore IV Bluetooth speakers\nThe audio company famous for its guitar amplifiers has released two models that will give any abode some serious volume.\nCredit: Marshall\nIconic guitar amp and consumer audio company Marshall has unveiled its new Blue"
+    },
+    {
+      "title": "SWKS stock trades steadily as Skyworks Solutions focuses on connectivity chips - Ad-hoc-news.de",
+      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/swks-stock-trades-steadily-as-skyworks-solutions-focuses-on-connectivity/69733401",
+      "source": "Ad-hoc-news.de",
+      "date": "2026-07-09",
+      "vendor": "Skyworks",
+      "customer": null,
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "SWKS stock trades steadily as Skyworks Solutions focuses on connectivity chips\nVer\u00f6ffentlicht: 09.07.2026 um 17:52 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael M\u00fcller (Chefredaktion)Skyworks Solutions Inc. stock (ticker SWKS) represents one of the established names in radio-freque"
+    },
+    {
+      "title": "Sony\u2019s WH-1000XM6 noise-canceling headphones are over $60 off right now",
+      "url": "https://www.soundguys.com/sonys-wh-1000xm6-headphones-deal-159831/",
+      "source": "SoundGuys",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": "Sony",
+      "application": "Retail",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "All products featured are independently chosen by us. However, SoundGuys may receive a commission on orders placed through its retail links. See our ethics statement.\nSony\u2019s WH-1000XM6 noise-canceling headphones are over $60 off right now\nJul 9, 2026 \u2014 11:50 AM ET\nSony\u2019s WH-1000XM6 headphones sit at"
+    },
+    {
+      "title": "Sonos Ace wireless headphones are steeply discounted",
+      "url": "https://www.theverge.com/gadgets/963121/sonos-ace-headphones-dashpass-best-buy-apple-watch-ultra-deal-sale",
+      "source": "The Verge",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": "Sonos",
+      "application": "Wearable",
+      "buckets": [],
+      "summary": "If you\u2019re looking for a discount on a great pair of active noise-canceling headphones for your summer adventures (even if they\u2019re indoors), you\u2019re in luck. The Sonos Ace headphones in black are currently on sale for $279 (usually $399) at a variety of retailers, including Amazon, Best Buy, Walmart, "
+    },
+    {
+      "title": "Sonos, Sony, Anker and More: The Best Amazon Accessory Deals Right Now",
+      "url": "https://www.macrumors.com/2026/07/09/sonos-sony-anker-and-more/",
+      "source": "MacRumors",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "There's a big accessory sale happening on Amazon this week, with the year's best prices on Anker chargers, Samsung monitors, Sonos audio products, and much more.\nNote: MacRumors is an affiliate partner with some of these vendors. When you click a link and make a purchase, we may receive a small paym"
+    },
+    {
+      "title": "New Apple TV 4K Wi-Fi 7: Why It Matters More Than the A17 Pro",
+      "url": "https://wi-fiplanet.com/apple-tv-4k-2026-wifi-7/",
+      "source": "WiFi Planet",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "Apple\u2019s next Apple TV 4K is expected to land in September, and the spec sheet doing the rounds has the usual headline grabbers. An A17 Pro chip. A proper dose of Siri AI. The stuff that gets the write ups.\nThere is one line further down the list that we care about a lot more than the processor, and "
+    },
+    {
+      "title": "Every Bluetooth tracker I owned died mid-trip until I found ones with this feature",
+      "url": "https://www.makeuseof.com/every-bluetooth-tracker-died-until-i-found-this/",
+      "source": "MakeUseOf",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Bluetooth trackers help us keep tabs on our most important items, both at home and away. If you're interested in using crowdsourced networks to find your gear, you've probably heard of the Apple Find My and Google Find My networks. The top tracker for each network is the Apple AirTag 2 and Motorola "
+    },
+    {
+      "title": "I Tested AI to Find Errors in My Medical Bills. Here\u2019s What It Found",
+      "url": "https://www.cnet.com/tech/services-and-software/chatgpt-medical-bill-errors/",
+      "source": "CNET",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": null,
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "I just celebrated a big milestone I hope you never reach: I hit my health insurance plan's $10,150 out-of-pocket maximum less than five months into 2026, thanks mostly to two major eye surgeries. That means no more co-pays or coinsurance for authorized in-network care this year, as long as I keep pa"
+    },
+    {
+      "title": "Chargers Daily Links: Thursday Open Thread",
+      "url": "https://sports.yahoo.com/articles/chargers-daily-links-thursday-open-135000388.html",
+      "source": "Yahoo Sports",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Chargers Daily Links: Thursday Open Thread\nGood morning, Chargers fans!\nYou know what to do!\nAnd now for today\u2019s links.\nChargers News:\nCameron Dicker can continue rewriting the record books this season (Chargers.com)\nWhat is the Chargers biggest position battle entering training camp? (Chargers.com)"
+    },
+    {
+      "title": "Apple Locks In $30 Billion Broadcom Chip Deal to Deepen US Supply Chain Push",
+      "url": "https://boldnewsonline.com/amp/apple-locks-in-30-billion-broadcom-chip-deal-to-deepen-us-supply-chain-push/",
+      "source": "boldnewsonline.com",
+      "date": "2026-07-09",
+      "vendor": "Broadcom",
+      "customer": "Apple",
+      "application": "Industrial",
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "Mumbai, July 09 : Apple has moved to reinforce its semiconductor supply chain with a multi-year chip procurement agreement worth more than $30 billion with Broadcom, a deal that will run through 2031 and support a major manufacturing expansion in the United States. The agreement, announced this week"
+    },
+    {
+      "title": "5 smart home gadgets that are actually worth the investment in 2026",
+      "url": "https://tech.sportskeeda.com/electronics/5-smart-home-gadgets-actually-worth-investment-2026",
+      "source": "Sportskeeda Tech",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": "Aqara",
+      "application": "Smart Home",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Smart home gadgets used to be more trouble than they were worth. You'd buy a plug, realise it needed its own app, and stop using it after a week. That phase is mostly behind us now. These days, new smart home gadgets talk to each other properly, work fast, and don't demand a monthly fee just to func"
+    },
+    {
+      "title": "Samsung Galaxy Z Flip 8 Rumor Roundup: What We've Heard Ahead of the July 22 Unpacked",
+      "url": "https://www.cnet.com/tech/mobile/samsung-galaxy-z-flip-8-rumor-roundup-what-weve-heard-ahead-of-the-july-22-unpacked/",
+      "source": "CNET",
+      "date": "2026-07-09",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Samsung's Galaxy Z Flip 8 could be among the new phones announced at the company's July Unpacked event on July 22. New iterations on Samsung's Galaxy Z Flip and Galaxy Z Fold phones often arrive during the summer, and it's quite likely we'll see the foldable phones debut alongside other rumored devi"
+    },
+    {
+      "title": "Infineon introduces the AIROC UWB TSL100 for precise positioning and smart presence detection on a single chip",
+      "url": "https://electronics360.globalspec.com/article/23965/infineon-introduces-the-airoc-uwb-tsl100-for-precise-positioning-and-smart-presence-detection-on-a-single-chip",
+      "source": "Electronics360",
+      "date": "2026-07-09",
+      "vendor": "Infineon",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "An exceptional win for affordable connectivity as South Africa closes in on standard power 6 GHz regulation - Wi-Fi NOW Global",
+      "url": "https://wifinowglobal.com/news-and-blog/an-exceptional-win-for-affordable-connectivity-as-south-africa-closes-in-on-standard-power-6-ghz-regulation/",
+      "source": "Wi-Fi NOW Global",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "By Claus Hetting, WiFi NOW CEO & Chairman\nIt is not often that African countries lead on spectrum regulation \u2013 but in this case, South Africa is on the cusp of taking a bold step towards better and more affordable connectivity. Wireless pioneer and WAPA* Executive Committee Member Paul Colmer says S"
+    },
+    {
+      "title": "Apple signs $30B deal with Broadcom to boost US chip production",
+      "url": "https://qazinform.com/news/apple-signs-30b-deal-with-broadcom-to-boost-us-chip-production-d3e6f9",
+      "source": "Qazinform",
+      "date": "2026-07-09",
+      "vendor": "Broadcom",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "Apple signs $30B deal with Broadcom to boost US chip production\nUnder the agreement, Broadcom will produce more than 15 billion US-made chips for a wide range of Apple products. Around $1.5 billion will be invested in upgrading Broadcom's facility in Fort Collins, where advanced radio frequency comp"
+    },
     {
       "title": "Microchip makes MPLAB XC Pro Compilers free for developers",
       "url": "https://www.manufacturingtodayindia.com/microchip-mplab-xc-pro-compilers",
@@ -14,21 +221,8 @@
       "summary": ""
     },
     {
-      "title": "Apple signs $30B deal with Broadcom to boost US chip production",
-      "url": "https://qazinform.com/amp/apple-signs-30b-deal-with-broadcom-to-boost-us-chip-production-d3e6f9/",
-      "source": "Qazinform",
-      "date": "2026-07-09",
-      "vendor": "Broadcom",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Apple signs $30B deal with Broadcom to boost US chip production\nUnder the agreement, Broadcom will produce more than 15 billion US-made chips for a wide range of Apple products. Around $1.5 billion will be invested in upgrading Broadcom's facility in Fort Collins, where advanced radio frequency comp"
-    },
-    {
       "title": "Realtek Licenses MPEG-H Audio Software from Fraunhofer IIS",
-      "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18&lang=en-GB",
+      "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18",
       "source": "realtek.com",
       "date": "2026-07-09",
       "vendor": "Realtek",
@@ -36,6 +230,17 @@
       "application": null,
       "buckets": [],
       "summary": "MENU\nToggle Menu\nToggle Menu\nEnglish\nEnglish\n\u7e41\u9ad4\u4e2d\u6587\n\u7c21\u4f53\u4e2d\u6587\n\u65e5\u672c\u8a9e\nEnglish\nEnglish\n\u7e41\u9ad4\u4e2d\u6587\n\u7c21\u4f53\u4e2d\u6587\n\u65e5\u672c\u8a9e\n{newsTitle}\n{newsSubTitle}\n{newsText}"
+    },
+    {
+      "title": "Goodbye Smart Lock Apps! Apple Home Key and Android Wallet Just Got Universal - Video",
+      "url": "https://www.cnet.com/videos/goodbye-smart-lock-apps-apple-home-key-and-android-wallet-just-got-universal/",
+      "source": "CNET",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "New Meta Glasses Hands-On: New Designs Start at $299, and There's a Kylie Jenner Model?\nUp Next\nNew Meta Glasses Hands-On: New Designs Start at $299, and There's a Kylie Jenner Model?\nVPNs Shield You Up to a Point. Turn On Your Kill Switch\nVPNs Shield You Up to a Point. Turn On Your Kill Switch\nI Re"
     },
     {
       "title": "Skyworks Solutions navigates the 5G cycle. Semiconductor demand shapes the outlook - Ad-hoc-news.de",
@@ -49,7 +254,7 @@
       "summary": "Skyworks Solutions navigates the 5G cycle. Semiconductor demand shapes the outlook\nVer\u00f6ffentlicht: 09.07.2026 um 10:14 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael M\u00fcller (Chefredaktion)Skyworks Solutions (ISIN US83088M1027) is a US-based semiconductor company best known for its a"
     },
     {
-      "title": "Microchip offers free MPLAB XC Compilers and ML Suite",
+      "title": "Microchip Launches Free MPLAB XC Compilers and ML Suite",
       "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/",
       "source": "Bisinfotech",
       "date": "2026-07-09",
@@ -184,6 +389,19 @@
       "summary": "Apple Locks In $30 Billion Broadcom Deal to Supercharge U.S. Chip Production\nApple (AAPL) unveiled its most aggressive bet on American manufacturing yet, announcing a multi-year agreement with Broadcom (AVGO) valued at more than $30 billion. The deal, revealed Wednesday, will see the chipmaker desig"
     },
     {
+      "title": "Apple is committing more than $30 billion to Broadcom for U.S.-made chips",
+      "url": "https://qz.com/apple-broadcom-chip-deal-30-billion-fort-collins-070826",
+      "source": "qz.com",
+      "date": "2026-07-09",
+      "vendor": "Broadcom",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "David Paul Morris / Bloomberg via Getty Images\nDavid Paul Morris / Bloomberg via Getty Images\nApple $AAPL announced a new multiyear agreement with Broadcom $AVGO on Wednesday valued at more than $30 billion to design and produce custom silicon components and wireless connectivity technologies for Ap"
+    },
+    {
       "title": "Why Apple's New Deal Still Matters For Broadcom",
       "url": "https://www.moomoo.com/community/feed/why-apple-s-new-deal-still-matters-for-broadcom-116887318298630",
       "source": "Moomoo",
@@ -232,6 +450,17 @@
       "summary": "The Apple TV 4K hasn't been updated since 2022, and it's due for a refresh. An update is planned for 2026, but Apple is likely going to wait to launch it after Siri AI launches in iOS 27.\nDesign\nApple TV design updates don't happen often, and that's not changing. The next Apple TV is going to have t"
     },
     {
+      "title": "Apolosign 32-inch Smart Portable TV review: Very cool, but not great for Apple users",
+      "url": "https://appleinsider.com/articles/26/07/08/apolosign-32-inch-smart-portable-tv-review-very-cool-but-not-great-for-apple-users",
+      "source": "AppleInsider",
+      "date": "2026-07-08",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "The Apolosign 32-inch Smart Portable TV is an interesting battery-powered touchscreen on wheels. At $899 retail, it's a very hard sell for Apple owners because of one key omission.\nThe idea of a freestanding, movable television sounds odd at first. Just the same, LG popularized this category with th"
+    },
+    {
       "title": "8 Of The Best Bluetooth Smart Light Bulbs You Can Buy On Amazon",
       "url": "https://www.aol.com/articles/8-best-bluetooth-smart-light-160200000.html",
       "source": "AOL.com",
@@ -256,252 +485,18 @@
         "wifi"
       ],
       "summary": "Apple just wrote its biggest domestic chip check yet, and it's heading to Fort Collins, Colorado, not Cupertino.\nApple said this week it will commit more than $30 billion to Broadcom through 2031, the largest single pledge under its American Manufacturing Program since the initiative launched last y"
-    },
-    {
-      "title": "Apple extends Broadcom partnership despite in-house chip push [Updated]",
-      "url": "https://www.cultofmac.com/news/apple-broadcom-chip-partnership",
-      "source": "Cult of Mac",
-      "date": "2026-07-08",
-      "vendor": "Broadcom",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Apple locked in one of its most important chip suppliers for years to come.\nBroadcom revealed in a securities filing that it has extended its longstanding technology partnership with Apple through 2031. The companies signed new multi-year agreements under which Broadcom will develop and supply custo"
-    },
-    {
-      "title": "Morning Open Thread: All That Jazz",
-      "url": "https://www.dailykos.com/stories/2026/7/8/800066563/community/morning-open-thread/",
-      "source": "Daily Kos",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "We'll get straight to the point: The financial hardships that Daily Kos is facing this year are tough.\nWe continue to be paywall-free. We continue to be supported by our readers, not billionaires or corporations. But we need to bring in more revenue. We are leaning on our community more than ever to"
-    },
-    {
-      "title": "Big leaks reveal a plethora of Pixel Watch 5 info including a release date",
-      "url": "https://www.phonearena.com/news/plethora-of-pixel-watch-5-info-leaked-includes-release-date_id181726",
-      "source": "PhoneArena",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Big leaks reveal a plethora of Pixel Watch 5 info including a release date\nWe now have an idea of the sizes, prices, and colors for the Pixel 5 Watch along with a possible release date.\nPixel Watch 5 leak includes possible release date | Image by PhoneArena\nNow that we know the date when Google will"
-    },
-    {
-      "title": "Made In USA: Apple And Broadcom Ink $60B Wireless Chip Agreement",
-      "url": "https://www.ubergizmo.com/2026/07/apple-broadcom-partnership/",
-      "source": "Ubergizmo",
-      "date": "2026-07-08",
-      "vendor": "Broadcom",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Apple has just announced a $60 billion agreement with Broadcom to produce wireless modem chips within the United States. This strategic move aligns with a broader commitment the company made to the Trump administration to invest $600 billion domestically over the next four years.\nUnder the terms of "
-    },
-    {
-      "title": "Apple Inks $30 Billion Chip Deal With Broadcom, Deepening US Manufacturing Push",
-      "url": "https://finance.biggo.com/news/87a96856-4248-4c93-8d10-16c34cd9a58d",
-      "source": "finance.biggo.com",
-      "date": "2026-07-08",
-      "vendor": "Broadcom",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Apple Inks $30 Billion Chip Deal With Broadcom, Deepening US Manufacturing Push\nApple Inc. (AAPL) announced a massive multi-year agreement with Broadcom Inc. (AVGO) on Wednesday, committing to purchase over $30 billion worth of US-made semiconductors and wireless components. The deal, the single lar"
-    },
-    {
-      "title": "Snapdragon X2 Plus is much faster - Microsoft Surface Laptop 13.8 2026 Review",
-      "url": "https://www.notebookcheck.net/Snapdragon-X2-Plus-is-much-faster-Microsoft-Surface-Laptop-13-8-2026-Review.1334131.0.html",
-      "source": "Notebookcheck",
-      "date": "2026-07-08",
-      "vendor": "Qualcomm",
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Verdict - Surface Laptop 13.8 is a very good everyday laptop\nMicrosoft did not really change anything in two years and simply equips the Surface Laptop 13.8 with a new Snapdragon X2 Plus processor, but the additional performance is good to have and the overall package is still good. The performance "
-    },
-    {
-      "title": "Zigbee\u2019s Next Phase: Security, Range, and Sub-GHz Expansion",
-      "url": "https://www.mwrf.com/technologies/communications/wireless/article/55389134/connectivity-standards-alliance-zigbees-next-phase-security-range-and-sub-ghz-expansion",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": null,
-      "application": "Smart Home",
-      "buckets": [
-        "ieee15_4"
-      ],
-      "summary": "Zigbee\u2019s Next Phase: Security, Range, and Sub-GHz Expansion\nWhat you\u2019ll learn:\n- Zigbee 3.0 remains highly popular as a mature LPWAN standard.\n- New product development is increasingly focused on the latest Zigbee 4.0 release.\n- The Suzi sub-GHz extension to Zigbee enables extended range for the pro"
-    },
-    {
-      "title": "Matter 1.6 Delivers Smarter Thermostat Experiences and Stronger Device Intelligence",
-      "url": "https://www.silabs.com/blog/matter-1-6-spec-smarter-thermostat-control-and-more",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "Matter 1.6 Delivers Smarter Thermostat Experiences and Stronger Device Intelligence\nThe Connectivity Standards Alliance (CSA) has released Matter 1.6, marking another important step in the evolution of interoperable smart home experiences. While previous releases expanded Matter\u2019s device ecosystem, "
-    },
-    {
-      "title": "Going Inside Aliro: A Q&A With Connectivity Standards Alliance President & CEO Tobin Richardson",
-      "url": "https://www.securityindustry.org/2026/06/30/going-inside-aliro-a-qa-with-connectivity-standards-alliance-president-ceo-tobin-richardson/",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Wearable",
-      "buckets": [
-        "aliro"
-      ],
-      "summary": "Going Inside Aliro: A Q&A With Connectivity Standards Alliance President & CEO Tobin Richardson\nFollowing a recent visit to the Security Industry Association (SIA) offices by Tobin Richardson, president and CEO of the Connectivity Standards Alliance (CSA), SIA wanted to dive deeper on the Aliro prot"
-    },
-    {
-      "title": "Apple\u2019s chip deal with Broadcom expected to top $30 billion",
-      "url": "https://www.ocregister.com/2026/07/08/apples-chip-deal-with-broadcom-expected-to-top-30-billion/",
-      "source": "Orange County Register",
-      "date": "2026-07-08",
-      "vendor": "Broadcom",
-      "customer": "Apple",
-      "application": "Industrial",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "By Mark Gurman | Bloomberg\nApple, following through on a pledge to boost spending on US-made components, said its expanded agreement with Broadcom is expected to top $30 billion.\nThe deal will involve manufacturing more than 15 billion chips in the US, supporting hundreds of jobs, Apple said in a st"
-    },
-    {
-      "title": "After testing Thread, Zigbee, and Matter, here\u2019s how I\u2019m building my smart home differently",
-      "url": "https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter",
-        "ieee15_4"
-      ],
-      "summary": "After testing Thread, Zigbee, and Matter, here's how I'm building my smart home differently\nFollow ZDNET: Add us as a preferred source on Google.\nIf you're a smart home user or on the path to becoming one, you've probably heard the buzzwords of Thread, Zigbee, and Matter thrown around by various man"
-    },
-    {
-      "title": "How Thread is fixing smart home networks on Smart Home Insider",
-      "url": "https://appleinsider.com/articles/26/06/29/how-thread-is-fixing-smart-home-networks-on-smart-home-insider",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": "Silicon Labs",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "This week on Smart Home Insider, Ann Olivo from the Thread Group joins to talk about the future of the wireless standard and how it's improving smart home networks.\nJoining as this week's guest host is Ann Olivo. Olivo serves as the Corporate Campaigns Manager for Silicon Labs, as well as the VP of "
-    },
-    {
-      "title": "Inside the room where the smart home industry is still betting on Matter",
-      "url": "https://www.theverge.com/tech/958008/matter-unify-conference-csa-apple-google-amazon-samsung-smart-home-interoperability",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Four years ago, overlooking a canal in Amsterdam, the smart home industry collectively launched Matter, the one interoperability standard to rule them all. Heralded as the solution to the industry\u2019s struggles, Matter was built on open standards and existing technologies and is the result of years of"
-    },
-    {
-      "title": "Aliro is a vendor-agnostic standard for digital access control working over NFC, Bluetooth LE, or UWB",
-      "url": "https://www.cnx-software.com/2026/06/24/aliro-is-a-vendor-agnostic-standard-for-digital-access-control-working-over-nfc-bluetooth-le-or-uwb/",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "aliro",
-        "bluetooth"
-      ],
-      "summary": "Managed by the Connectivity Standards Alliance, Aliro is a smart lock/access control standard that works over NFC, Bluetooth LE, or UWB and is designed to be vendor-agnostic. While Matter is designed for Smart Home applications, Aliro specifically targets access control, and both aim to address mark"
-    },
-    {
-      "title": "Telink Joins Alliance Board to Develop Global IoT Standard Ecosystem",
-      "url": "https://www.telink-semi.com/telink-joins-csa-board-to-develop-global-iot-standard-ecosystem",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-08",
-      "vendor": "Telink",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Meta Addresses One Smart Glasses Privacy Problem, but Many Others Remain Unsolved",
-      "url": "https://www.cnet.com/tech/services-and-software/metas-addressed-one-smart-glasses-privacy-problem-while-many-others-remain-unsolved/",
-      "source": "CNET",
-      "date": "2026-07-08",
-      "vendor": "Qualcomm",
-      "customer": "Meta",
-      "application": "Smart Glasses",
-      "buckets": [],
-      "summary": "There's been a lot of social blowback against camera-enabled smart glasses this year, particularly those from Facebook-maker Meta. A post on Tuesday from the company addresses privacy concerns raised by me and others over the last year, and there's also a new mandatory firmware update for some Meta "
-    },
-    {
-      "title": "Samsung Is Offering Up to $1,230 in Savings Ahead of the Galaxy Unpacked Event",
-      "url": "https://www.cnet.com/deals/samsung-preorder-savings-ahead-of-galaxy-unpacked-event/",
-      "source": "CNET",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung just announced the Galaxy Unpacked event and there's already ways to save on its upcoming devices. The Galaxy Unpacked event is scheduled for July 22 in London, but starting today, you can reserve an upcoming Galaxy device which will unlock preorder savings.\nThis includes a $30 Samsung credi"
-    },
-    {
-      "title": "Apple, Broadcom chip deal expected to exceed US$30bn",
-      "url": "https://www.taipeitimes.com/News/biz/archives/2026/07/09/2003860432",
-      "source": "Taipei Times",
-      "date": "2026-07-08",
-      "vendor": "Broadcom",
-      "customer": "Apple",
-      "application": "Robotics",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Apple Inc, following through on a pledge to boost spending on US-made components, said its expanded agreement with Broadcom Inc is expected to top US$30 billion.\nThe deal would involve manufacturing more than 15 billion chips in the US, supporting hundreds of jobs, Apple said in a statement yesterda"
-    },
-    {
-      "title": "Amazon Deals of the Day: Never Lose Your Keys Again With This $15 UGreen Tracker",
-      "url": "https://www.cnet.com/deals/amazon-deals-of-the-day-july-8/",
-      "source": "CNET",
-      "date": "2026-07-08",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "Right now, you can score the UGreen FineTrack2 item tracker for a nice 25% off. You can also get the Fitbit Charge 6 for more than half off. Finally, the Anker Prime 3-in-1 charging station is $50 off.\nI've been tracking the prices of a lot of tech gear and home finds on Amazon, and these are the be"
     }
   ],
   "vendor_news_30d": {
-    "Broadcom": 68,
-    "Qualcomm": 19,
-    "Skyworks": 8,
+    "Broadcom": 66,
+    "Qualcomm": 17,
+    "Skyworks": 7,
     "Microchip": 4,
+    "Espressif": 4,
     "Infineon": 3,
-    "Espressif": 3,
     "Marvell": 3,
     "Silicon Labs": 2,
     "MediaTek": 2,
-    "STMicro": 2,
     "Realtek": 1,
     "Nordic": 1,
     "Telink": 1,
@@ -510,58 +505,26 @@
     "Onsemi": 1,
     "u-blox": 1,
     "NXP": 1,
-    "Apple": 1
+    "STMicro": 1
   },
   "customer_news_30d": {
-    "Apple": 114,
-    "Sony": 14,
+    "Apple": 111,
+    "Sony": 15,
     "Amazon": 12,
-    "Google": 11,
-    "Microsoft": 9,
-    "Samsung": 9,
-    "Meta": 3,
+    "Samsung": 10,
+    "Google": 9,
+    "Microsoft": 7,
+    "Aqara": 2,
+    "Meta": 2,
     "Eufy/Anker": 2,
     "Motorola": 2,
+    "Sonos": 1,
+    "SwitchBot": 1,
     "Huawei": 1,
     "Tesla": 1,
-    "Aqara": 1,
     "Xiaomi": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3731,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15850,
-      "pushed_at": "2026-07-09T12:45:13Z"
-    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -573,7 +536,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1618,
+      "issues_open": 1621,
       "prs_open": 0,
       "releases": [
         {
@@ -595,8 +558,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18506,
+      "stars": 18510,
       "pushed_at": "2026-07-09T11:51:14Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3741,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15852,
+      "pushed_at": "2026-07-09T17:02:14Z"
     },
     {
       "name": "Matter SDK",
@@ -607,7 +604,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2724,
+      "issues_open": 2720,
       "prs_open": 0,
       "releases": [
         {
@@ -629,8 +626,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8814,
-      "pushed_at": "2026-07-09T13:00:02Z"
+      "stars": 8816,
+      "pushed_at": "2026-07-09T20:07:05Z"
     },
     {
       "name": "Linux mac80211",
@@ -644,8 +641,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 238878,
-      "pushed_at": "2026-07-07T02:08:57Z"
+      "stars": 238898,
+      "pushed_at": "2026-07-09T15:37:15Z"
     },
     {
       "name": "OpenThread",
@@ -656,7 +653,7 @@
         "thread"
       ],
       "commits_30d": 50,
-      "issues_open": 161,
+      "issues_open": 160,
       "prs_open": 0,
       "releases": [
         {
@@ -679,7 +676,7 @@
         }
       ],
       "stars": 3978,
-      "pushed_at": "2026-07-09T05:30:53Z"
+      "pushed_at": "2026-07-09T17:39:38Z"
     },
     {
       "name": "BlueZ",
@@ -689,8 +686,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 45,
-      "issues_open": 101,
+      "commits_30d": 44,
+      "issues_open": 95,
       "prs_open": 0,
       "releases": [
         {
@@ -713,7 +710,7 @@
         }
       ],
       "stars": 1092,
-      "pushed_at": "2026-07-08T16:16:28Z"
+      "pushed_at": "2026-07-09T20:05:11Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -723,8 +720,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 44,
-      "issues_open": 482,
+      "commits_30d": 39,
+      "issues_open": 485,
       "prs_open": 0,
       "releases": [
         {
@@ -1117,13 +1114,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
-    },
-    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1136,6 +1126,13 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
+    },
+    {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -4171,6 +4168,21 @@
           "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
         },
         {
+          "title": "Microchip Launches Free MPLAB XC Compilers and ML Suite",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
+        },
+        {
+          "title": "Microchip Makes MPLAB XC Pro Compilers Free for Developers",
+          "date": "Jul 2026",
+          "url": "https://www.manufacturingtodayindia.com/microchip-mplab-xc-pro-compilers"
+        },
+        {
+          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Tools Free for Developers",
+          "date": "Jul 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/microchip-makes-mplab-xc-pro-compilers-and-machine-learning-tools-free-for-developers"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
@@ -4199,21 +4211,6 @@
           "title": "Microchip Partners with NASA to Develop Next-Generation Radiation-Hardened Spaceflight Chips",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Microchip+Partners+with+NASA+to+Develop+Next-Generation+Radiation-Hardened+Spaceflight+Chips+Microchip"
-        },
-        {
-          "title": "Microchip Technology Announces Financial Results for Fourth Quarter and Fiscal Year 2026",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Microchip+Technology+Announces+Financial+Results+for+Fourth+Quarter+and+Fiscal+Year+2026+Microchip"
-        },
-        {
-          "title": "Microchip Technology Announces Completion of Micrel Acquisition",
-          "date": "May 2026",
-          "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/announcements/microchip-announces-the-acquisition-of-micrel/MCHP+and+MCRL+Announce+Completion+of+Acquisition+of+MCRL.080315.pdf"
-        },
-        {
-          "title": "Microchip Launches dsPIC33CK Value Line Family of Low-Cost Motor Control MCUs",
-          "date": "May 2026",
-          "url": "https://www.cnx-software.com/2026/05/29/microchip-dspic33ck-low-cost-motor-control-mcu/"
         }
       ]
     },
