@@ -123,12 +123,12 @@ TECH_TUTORIALS: list[dict] = [
             {
                 "title": "MAC Deep Dive: framing, reliability, and medium access",
                 "detail": "MAC defines frame types (Beacon, Data, ACK, MAC Command), frame-control bits (ack request, security enabled, PAN-ID compression, frame pending), sequence numbers, address fields, and FCS. For access, devices run slotted or unslotted CSMA-CA based on mode. Reliability is built with immediate ACKs and retry limits. Management commands cover association, disassociation, orphan notification, and data request for sleepy children.",
-                "points": ["Frame control and addressing", "ACK + retry behavior", "Association/disassociation", "CSMA-CA", "Beacon/superframe", "MAC command set"],
+                "points": ["Frame control and addressing", "ACK + retry behavior", "Association/disassociation", "CSMA-CA", "Beacon/superframe", "Indirect data + frame pending", "MAC command set"],
             },
             {
                 "title": "PHY Deep Dive: channels and CCA feedback",
                 "detail": "PHY handles modulation/spreading, symbol timing, and channel selection. It offers key primitives to MAC: transmit, receive, energy detect, and clear-channel assessment. MAC uses CCA results during CSMA-CA backoff loops before transmission.",
-                "points": ["2.4 GHz channels 11-26", "O-QPSK DSSS (common)", "ED/CCA primitives", "Sub-GHz variants"],
+                "points": ["2.4 GHz channels 11-26", "O-QPSK DSSS (common)", "ED/CCA primitives", "CCA mode selection", "Sub-GHz variants"],
             },
         ],
         "core_concepts": [
@@ -141,6 +141,8 @@ TECH_TUTORIALS: list[dict] = [
             {"term": "Acknowledgment and retransmission", "definition": "A sender can request ACK. If ACK is not received in time, MAC retries transmission up to configured limits. This provides link reliability without requiring upper-layer retries for every hop."},
             {"term": "Addressing", "definition": "Devices can use a globally-unique 64-bit extended address (like a MAC address) or a short 16-bit address assigned after joining a PAN, to keep frame headers small."},
             {"term": "MAC security", "definition": "802.15.4 supports AES-CCM* with frame counters and security control fields to provide integrity, replay protection, and optional confidentiality at link layer."},
+            {"term": "CCA failure budget", "definition": "High CCA busy counts indicate contention/interference. Rising CCA failures usually predict retransmission storms and battery drain before app-level errors appear."},
+            {"term": "Retry/latency tradeoff", "definition": "Higher retry limits improve delivery probability but increase worst-case latency and airtime. Control loops and battery products should tune retries differently."},
         ],
         "how_it_works": [
             {"title": "1. PAN formation", "detail": "A coordinator scans for a quiet channel, picks a PAN ID, and starts the network -- it becomes the root that other devices join."},
@@ -151,12 +153,14 @@ TECH_TUTORIALS: list[dict] = [
             {"title": "6. Sleepy-device exchange", "detail": "Battery end devices can poll parent for pending data using MAC command frames. Parent indicates pending status and delivers queued frames when child wakes."},
             {"title": "7. Security processing", "detail": "If security is enabled, transmitter adds auxiliary security header and frame counter; receiver validates counter/freshness and integrity before accepting payload."},
             {"title": "8. Handoff to upper protocol", "detail": "After MAC accepts payload, bytes are passed to Zigbee NWK/APS or Thread 6LoWPAN/IPv6. At that point routing, sessions, and app semantics are owned above 802.15.4."},
+            {"title": "9. Performance tuning cycle", "detail": "Deployments are tuned by observing ED scans, CCA busy rate, ACK loss, retry counts, and parent-poll intervals, then adjusting channel plan and MAC parameters to stabilize latency and battery life."},
         ],
         "developer_view": [
             {"title": "What app developers touch vs. stack developers", "detail": "Raw MAC APIs are MLME/MCPS primitives used by stack implementers. Product teams usually consume Zigbee SDK APIs or OpenThread APIs because those expose discoverable network/app abstractions."},
             {"title": "When raw MAC knowledge still matters", "detail": "Even if you use Zigbee/Thread APIs, MAC behavior affects your product: channel plan, parent-child polling cadence, ACK/retry tuning, and coexistence with Wi-Fi/BLE strongly influence battery life and reliability."},
             {"title": "Debugging strategy", "detail": "Start at MAC: verify channel occupancy/CCA failures, retry counters, and ACK success. Then move up to NWK/IPv6 routing. This layered approach prevents app-level blame for radio-level loss.",},
             {"title": "Portable implementation mindset", "detail": "Keep app logic above protocol-specific abstractions (ZCL clusters or CoAP resources). Avoid chipset-specific assumptions in payload formats or security policy so migration across silicon families is easier."},
+            {"title": "Field telemetry that matters", "detail": "Track per-node CCA busy rate, MAC retry histograms, parent change events, and average poll interval. These indicators correlate directly with user-visible reliability and battery complaints."},
         ],
         "use_cases": [
             "Zigbee smart bulbs, switches, meters, and sensors",
@@ -260,7 +264,7 @@ TECH_TUTORIALS: list[dict] = [
             {
                 "title": "NWK: 6LoWPAN + IPv6 + MLE",
                 "detail": "6LoWPAN compresses and fragments IPv6 to fit 802.15.4 frames. IPv6/ICMPv6/UDP provide addressing and transport. Mesh Link Establishment (MLE) discovers neighbors, builds routing tables, and keeps the mesh self-healing. Network Data distributes prefixes and services.",
-                "points": ["6LoWPAN adaptation", "IPv6 / UDP", "MLE mesh routing", "Network Data"],
+                "points": ["6LoWPAN adaptation", "IPv6 / UDP", "MLE mesh routing", "RLOC / ML-EID addressing", "Network Data"],
             },
             {
                 "title": "MAC/PHY: reused 802.15.4 radio",
@@ -313,6 +317,14 @@ TECH_TUTORIALS: list[dict] = [
             {
                 "title": "OpenThread as the reference stack",
                 "detail": "OpenThread is the open-source implementation of the full Thread networking layer and role/state machines. It is integrated into the SDKs of most silicon vendors rather than reimplemented per chip, so behavior is consistent across hardware and certification is simpler.",
+            },
+            {
+                "title": "Capability profile for product teams",
+                "detail": "Thread's key capability is IP-native low-power mesh: every node is addressable with standard network tooling, Border Routers can be redundant, and Matter rides naturally on top. This makes Thread highly suitable for future-proof smart-home products that need deep ecosystem interoperability.",
+            },
+            {
+                "title": "Operational levers that move outcomes",
+                "detail": "Most field issues are driven by Border Router placement/quality, parent selection stability for sleepy nodes, and 2.4 GHz coexistence planning. Instrumenting attach time, parent switches, and route churn is more valuable than app-only telemetry.",
             },
         ],
         "use_cases": [
@@ -475,7 +487,7 @@ TECH_TUTORIALS: list[dict] = [
             {
                 "title": "NWK: the mesh brain",
                 "detail": "The Network layer does mesh route discovery and forwarding, assigns 16-bit network addresses, enforces network-key security, and maintains neighbor and routing tables so packets traverse multiple hops reliably.",
-                "points": ["Mesh routing", "Address assignment", "Network key", "Route repair"],
+                "points": ["Mesh routing", "Address assignment", "Network key", "Many-to-one optimization", "Route repair"],
             },
             {
                 "title": "MAC + PHY: reused 802.15.4 radio",
@@ -528,6 +540,14 @@ TECH_TUTORIALS: list[dict] = [
             {
                 "title": "Interworking with Matter",
                 "detail": "Zigbee remains its own ecosystem rather than native IPv6, so cloud/service integration is typically done at a hub. Zigbee devices can be exposed to Matter ecosystems through a bridge, letting existing Zigbee deployments participate in Matter controllers.",
+            },
+            {
+                "title": "Capability profile for product teams",
+                "detail": "Zigbee's strongest capability set is mature low-power mesh control: standardized device semantics (ZCL), robust group/scene behavior for lighting at scale, and stable multi-vendor modules. It is excellent for cost-sensitive, high-node-count control networks when a hub is acceptable.",
+            },
+            {
+                "title": "Operational levers that move outcomes",
+                "detail": "In production, reliability is usually determined by three levers: router density (mains nodes), channel plan quality, and Trust Center policy (install-code onboarding and key updates). App logic is often correct while these levers are the real root cause of field issues.",
             },
         ],
         "use_cases": [

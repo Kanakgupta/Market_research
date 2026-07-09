@@ -210,7 +210,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="active">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-09 06:08 PDT</div>
+  <div class="meta-info">Updated 2026-07-09 12:45 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -549,7 +549,7 @@ a:hover { text-decoration:underline; }
       <h3>MAC Deep Dive: framing, reliability, and medium access</h3>
       <p>MAC defines frame types (Beacon, Data, ACK, MAC Command), frame-control bits (ack request, security enabled, PAN-ID compression, frame pending), sequence numbers, address fields, and FCS. For access, devices run slotted or unslotted CSMA-CA based on mode. Reliability is built with immediate ACKs and retry limits. Management commands cover association, disassociation, orphan notification, and data request for sleepy children.</p>
       
-      <div class="chips"><span>Frame control and addressing</span><span>ACK + retry behavior</span><span>Association/disassociation</span><span>CSMA-CA</span><span>Beacon/superframe</span><span>MAC command set</span></div>
+      <div class="chips"><span>Frame control and addressing</span><span>ACK + retry behavior</span><span>Association/disassociation</span><span>CSMA-CA</span><span>Beacon/superframe</span><span>Indirect data + frame pending</span><span>MAC command set</span></div>
       
     </article>
     
@@ -557,7 +557,7 @@ a:hover { text-decoration:underline; }
       <h3>PHY Deep Dive: channels and CCA feedback</h3>
       <p>PHY handles modulation/spreading, symbol timing, and channel selection. It offers key primitives to MAC: transmit, receive, energy detect, and clear-channel assessment. MAC uses CCA results during CSMA-CA backoff loops before transmission.</p>
       
-      <div class="chips"><span>2.4 GHz channels 11-26</span><span>O-QPSK DSSS (common)</span><span>ED/CCA primitives</span><span>Sub-GHz variants</span></div>
+      <div class="chips"><span>2.4 GHz channels 11-26</span><span>O-QPSK DSSS (common)</span><span>ED/CCA primitives</span><span>CCA mode selection</span><span>Sub-GHz variants</span></div>
       
     </article>
     
@@ -585,6 +585,10 @@ a:hover { text-decoration:underline; }
     
     <div class="concept-card"><div class="term">MAC security</div><div class="def">802.15.4 supports AES-CCM* with frame counters and security control fields to provide integrity, replay protection, and optional confidentiality at link layer.</div></div>
     
+    <div class="concept-card"><div class="term">CCA failure budget</div><div class="def">High CCA busy counts indicate contention/interference. Rising CCA failures usually predict retransmission storms and battery drain before app-level errors appear.</div></div>
+    
+    <div class="concept-card"><div class="term">Retry/latency tradeoff</div><div class="def">Higher retry limits improve delivery probability but increase worst-case latency and airtime. Control loops and battery products should tune retries differently.</div></div>
+    
   </div>
 
   <h2 class="tech-h2">⚙️ How It Works</h2>
@@ -606,6 +610,8 @@ a:hover { text-decoration:underline; }
     
     <div class="step"><span class="num">8</span><div class="st-body"><strong>8. Handoff to upper protocol</strong><span>After MAC accepts payload, bytes are passed to Zigbee NWK/APS or Thread 6LoWPAN/IPv6. At that point routing, sessions, and app semantics are owned above 802.15.4.</span></div></div>
     
+    <div class="step"><span class="num">9</span><div class="st-body"><strong>9. Performance tuning cycle</strong><span>Deployments are tuned by observing ED scans, CCA busy rate, ACK loss, retry counts, and parent-poll intervals, then adjusting channel plan and MAC parameters to stabilize latency and battery life.</span></div></div>
+    
   </div>
 
   <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
@@ -618,6 +624,8 @@ a:hover { text-decoration:underline; }
     <div class="dev-card"><div class="dt">Debugging strategy</div><div class="dd">Start at MAC: verify channel occupancy/CCA failures, retry counters, and ACK success. Then move up to NWK/IPv6 routing. This layered approach prevents app-level blame for radio-level loss.</div></div>
     
     <div class="dev-card"><div class="dt">Portable implementation mindset</div><div class="dd">Keep app logic above protocol-specific abstractions (ZCL clusters or CoAP resources). Avoid chipset-specific assumptions in payload formats or security policy so migration across silicon families is easier.</div></div>
+    
+    <div class="dev-card"><div class="dt">Field telemetry that matters</div><div class="dd">Track per-node CCA busy rate, MAC retry histograms, parent change events, and average poll interval. These indicators correlate directly with user-visible reliability and battery complaints.</div></div>
     
   </div>
 
@@ -777,7 +785,7 @@ a:hover { text-decoration:underline; }
       <h3>NWK: the mesh brain</h3>
       <p>The Network layer does mesh route discovery and forwarding, assigns 16-bit network addresses, enforces network-key security, and maintains neighbor and routing tables so packets traverse multiple hops reliably.</p>
       
-      <div class="chips"><span>Mesh routing</span><span>Address assignment</span><span>Network key</span><span>Route repair</span></div>
+      <div class="chips"><span>Mesh routing</span><span>Address assignment</span><span>Network key</span><span>Many-to-one optimization</span><span>Route repair</span></div>
       
     </article>
     
@@ -858,6 +866,10 @@ a:hover { text-decoration:underline; }
     <article class="deep-card"><h3>Mesh routing behavior</h3><p>Routing runs in the NWK layer among the Coordinator and Routers; End Devices reach the mesh through their parent Router. Routes are discovered and repaired dynamically, while the 802.15.4 MAC still handles per-link contention, ACK, and retries on every hop.</p></article>
     
     <article class="deep-card"><h3>Interworking with Matter</h3><p>Zigbee remains its own ecosystem rather than native IPv6, so cloud/service integration is typically done at a hub. Zigbee devices can be exposed to Matter ecosystems through a bridge, letting existing Zigbee deployments participate in Matter controllers.</p></article>
+    
+    <article class="deep-card"><h3>Capability profile for product teams</h3><p>Zigbee&#39;s strongest capability set is mature low-power mesh control: standardized device semantics (ZCL), robust group/scene behavior for lighting at scale, and stable multi-vendor modules. It is excellent for cost-sensitive, high-node-count control networks when a hub is acceptable.</p></article>
+    
+    <article class="deep-card"><h3>Operational levers that move outcomes</h3><p>In production, reliability is usually determined by three levers: router density (mains nodes), channel plan quality, and Trust Center policy (install-code onboarding and key updates). App logic is often correct while these levers are the real root cause of field issues.</p></article>
     
   </div>
   
@@ -988,7 +1000,7 @@ a:hover { text-decoration:underline; }
       <h3>NWK: 6LoWPAN + IPv6 + MLE</h3>
       <p>6LoWPAN compresses and fragments IPv6 to fit 802.15.4 frames. IPv6/ICMPv6/UDP provide addressing and transport. Mesh Link Establishment (MLE) discovers neighbors, builds routing tables, and keeps the mesh self-healing. Network Data distributes prefixes and services.</p>
       
-      <div class="chips"><span>6LoWPAN adaptation</span><span>IPv6 / UDP</span><span>MLE mesh routing</span><span>Network Data</span></div>
+      <div class="chips"><span>6LoWPAN adaptation</span><span>IPv6 / UDP</span><span>MLE mesh routing</span><span>RLOC / ML-EID addressing</span><span>Network Data</span></div>
       
     </article>
     
@@ -1065,6 +1077,10 @@ a:hover { text-decoration:underline; }
     <article class="deep-card"><h3>Border Router: bridging to the internet</h3><p>The Thread Border Router connects the low-power mesh to Wi-Fi/Ethernet, advertises routable prefixes, and proxies mDNS/DNS-SD so mesh devices are discoverable from the home network. Matter-over-Thread depends on this bridge for controllers (phones, hubs) to reach devices.</p></article>
     
     <article class="deep-card"><h3>OpenThread as the reference stack</h3><p>OpenThread is the open-source implementation of the full Thread networking layer and role/state machines. It is integrated into the SDKs of most silicon vendors rather than reimplemented per chip, so behavior is consistent across hardware and certification is simpler.</p></article>
+    
+    <article class="deep-card"><h3>Capability profile for product teams</h3><p>Thread&#39;s key capability is IP-native low-power mesh: every node is addressable with standard network tooling, Border Routers can be redundant, and Matter rides naturally on top. This makes Thread highly suitable for future-proof smart-home products that need deep ecosystem interoperability.</p></article>
+    
+    <article class="deep-card"><h3>Operational levers that move outcomes</h3><p>Most field issues are driven by Border Router placement/quality, parent selection stability for sleepy nodes, and 2.4 GHz coexistence planning. Instrumenting attach time, parent switches, and route churn is more valuable than app-only telemetry.</p></article>
     
   </div>
   
@@ -1412,7 +1428,7 @@ a:hover { text-decoration:underline; }
 
 
 </main>
-<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-07-09 06:08 PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-07-09 12:45 PDT</div></footer>
 <script>
 (function(){
   var tabs = document.querySelectorAll('.tech-tab');
