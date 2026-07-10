@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T20:09:08Z",
+  "generated_at": "2026-07-10T11:48:32Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -143,6 +143,16 @@
           "url": "https://www.cnx-software.com/2026/07/09/norik-systems-introduces-nrf9151-based-usb-dongle-for-dect-nr-deployments/"
         },
         {
+          "title": "Nordic Launches Prototyping Tag to Streamline 'Find My' and Asset Tag Designs",
+          "date": "Jul 2026",
+          "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
+        },
+        {
+          "title": "Nordic nRF9151 SiP Powers Norik Systems' New USB Dongle for DECT NR+ Deployments",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/09/norik-systems-introduces-nrf9151-based-usb-dongle-for-dect-nr-deployments/"
+        },
+        {
           "title": "nRF54L15 Tag Prototyping Platform Launched",
           "date": "Jun 2026",
           "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag"
@@ -166,16 +176,6 @@
           "title": "Bluetooth SIG Blog: Shorter Connection Intervals for Next-Gen Wireless Innovations",
           "date": "May 2026",
           "url": "https://www.bluetooth.com/blog/how-bluetooth-shorter-connection-intervals-will-impact-the-next-generation-of-wireless-innovations/"
-        },
-        {
-          "title": "Nordic Semiconductor Brings AI-Assisted Development to the Entire Product Lifecycle",
-          "date": "May 2026",
-          "url": "https://www.prnewswire.com/pl/komunikat-prasowy/nordic-semiconductor-brings-ai-assisted-development-to-the-entire-product-lifecycle-302783435.html"
-        },
-        {
-          "title": "u-blox ALMA-B2 Bluetooth 6.0 and 802.15.4 Module Features Nordic nRF54LM20 Edge AI Wireless MCU",
-          "date": "May 2026",
-          "url": "https://www.cnx-software.com/2026/05/29/u-blox-alma-b2-bluetooth-6-0-and-802-15-4-module-features-nordic-nrf54lm20-edge-ai-wireless-mcu/"
         }
       ],
       "events": [
@@ -1515,6 +1515,11 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
         },
         {
+          "title": "MediaTek Launches Filogic 860 Wi-Fi 7 Solution for US Home Routers",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+        },
+        {
           "title": "MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
@@ -1548,11 +1553,6 @@
           "title": "Mediatek set for Computex showcase starring Wi-Fi 8, 6G and edge computing",
           "date": "May 2026",
           "url": "https://www.telecompaper.com/news/mediatek-set-for-computex-showcase-starring-wi-fi-8-6g-and-edge-computing--1572551"
-        },
-        {
-          "title": "ZTE, MediaTek Launch Faster Wi-Fi 7 Solutions for Homes, Small Businesses",
-          "date": "May 2026",
-          "url": "https://techeconomy.ng/zte-mediatek-launch-faster-wi-fi-7-solutions-for-homes-small-businesses/"
         }
       ],
       "events": [
@@ -2776,6 +2776,11 @@
           "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18&lang=en-GB"
         },
         {
+          "title": "Realtek Q2 Revenue Hits Record NT$37.55 Billion",
+          "date": "Jul 2026",
+          "url": "https://finance.biggo.com/news/8ad007db-f483-4d8a-b0c1-7cc5c67ff84f"
+        },
+        {
           "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio and 8K Gaming HID Solutions at COMPUTEX 2026",
           "date": "Jun 2026",
           "url": "https://audioxpress.com/news/realtek-successfully-demonstrates-next-generation-bluetooth-hdt-audio-and-8k-gaming-hid-solutions-at-computex-2026"
@@ -2814,11 +2819,6 @@
           "title": "Realtek USB FE / GbE / 2.5GbE / 5G / 10G Family Controller Software",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Realtek+USB+FE+%2F+GbE+%2F+2.5GbE+%2F+5G+%2F+10G+Family+Controller+Software+Realtek"
-        },
-        {
-          "title": "RTL8723BS Software",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=RTL8723BS+Software+Realtek"
         }
       ]
     },
@@ -2860,6 +2860,11 @@
           "url": "https://www.businesswire.com/news/home/20260708510843/en/Apple-to-increase-spend-with-Broadcom-to-produce-billions-more-U.S.-chips"
         },
         {
+          "title": "Broadcom and Apple Extend Strategic Custom Chip Partnership Through 2031, Valued Over $30 Billion",
+          "date": "Jul 2026",
+          "url": "https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/"
+        },
+        {
           "title": "Broadcom Reports Fiscal Second-Quarter 2026 Earnings",
           "date": "Jun 2026",
           "url": "https://www.cnbc.com/2026/06/03/broadcom-avgo-earnings-report-q2-2026.html"
@@ -2888,11 +2893,6 @@
           "title": "Broadcom Unveils Integrated Wi-Fi 8 and 50G PON Gateway-ICs for the AI Era",
           "date": "May 2026",
           "url": "https://www.allaboutcircuits.com/news/broadcom-unveils-integrated-wi-fi-8-and-50g-pon-gateway-ics-for-the-ai-era/"
-        },
-        {
-          "title": "Broadcom Introduces BCM67142, BCM67192, and BCM68565 Chips for Wi-Fi 8 10 Gbps Fiber Access Points",
-          "date": "May 2026",
-          "url": "https://www.cnx-software.com/2026/05/13/broadcom-bcm67142-bcm67192-and-bcm68565-chips-target-low-cost-wifi-8-10-gbps-fiber-access-points/"
         }
       ]
     },
@@ -2952,6 +2952,16 @@
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
         },
         {
+          "title": "u-blox Expands Industrial IoT Portfolio with New Wi-Fi 6 Module Families",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
+        },
+        {
+          "title": "U-blox Unwraps Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs",
+          "date": "Jul 2026",
+          "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
+        },
+        {
           "title": "u-blox announces MAYA-W5 and NORA-W5 Wi-Fi 6 modules",
           "date": "Jun 2026",
           "url": ""
@@ -2968,16 +2978,6 @@
         },
         {
           "title": "u-blox and Nordic Launch ALMA-B2 Bluetooth LE Modules for Edge ML IoT",
-          "date": "May 2026",
-          "url": "https://www.u-blox.com/en/u-blox-and-nordic-launch-alma-b2-bluetooth-le-modules-with-edge-ml"
-        },
-        {
-          "title": "u-blox Holding AG announces delisting from SIX Swiss Exchange",
-          "date": "May 2026",
-          "url": "https://www.u-blox.com/en/ir-news/cancellation-of-remaining-publicly-held-registered-shares-of-u-blox-holding-ag-and-delisting-from-the-six-swiss-exchange-as-of-18-may-2026"
-        },
-        {
-          "title": "u-blox and Nordic Launch ALMA-B2 Bluetooth LE Modules with Edge ML",
           "date": "May 2026",
           "url": "https://www.u-blox.com/en/u-blox-and-nordic-launch-alma-b2-bluetooth-le-modules-with-edge-ml"
         }
@@ -3037,6 +3037,11 @@
           "url": "https://www.newelectronics.co.uk/content/news/microchip-makes-mplab-xc-pro-compilers-and-machine-learning-tools-free-for-developers"
         },
         {
+          "title": "Microchip Expands Developer Access with Free MPLAB XC Compilers and MPLAB ML Development Suite",
+          "date": "Jul 2026",
+          "url": "https://www.dqindia.com/semiconductors/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-ml-development-suite-12148437"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
@@ -3060,11 +3065,6 @@
           "title": "Seeed Studio XIAO nRF54LM20A and XIAO nRF54LM20A Sense Boards Launched with Ultra-Low-Power Wireless Connectivity",
           "date": "Jun 2026",
           "url": "https://www.cnx-software.com/2026/06/30/xiao-nrf54lm20a-sense-board-enables-ultra-low-power-bluetooth-6-0-matter-thread-zigbee-or-2-4-ghz-proprietary-applications/"
-        },
-        {
-          "title": "Microchip Partners with NASA to Develop Next-Generation Radiation-Hardened Spaceflight Chips",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Microchip+Partners+with+NASA+to+Develop+Next-Generation+Radiation-Hardened+Spaceflight+Chips+Microchip"
         }
       ]
     },
@@ -3099,6 +3099,11 @@
       "press_releases": [
         {
           "title": "Telink Joins Alliance Board to Develop Global IoT Standard Ecosystem",
+          "date": "Jul 2026",
+          "url": "https://www.telink-semi.com/telink-joins-csa-board-to-develop-global-iot-standard-ecosystem"
+        },
+        {
+          "title": "Telink Joins CSA Board to Develop Global IoT Standard Ecosystem",
           "date": "Jul 2026",
           "url": "https://www.telink-semi.com/telink-joins-csa-board-to-develop-global-iot-standard-ecosystem"
         },
@@ -3298,6 +3303,11 @@
       ],
       "press_releases": [
         {
+          "title": "Murata Manufacturing focus on components and global demand",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895"
+        },
+        {
           "title": "Murata Collaborates with Synopsys to Provide Simulation Models",
           "date": "Jun 2026",
           "url": "https://www.murata.com/en-global/news/other/other/2026/0616"
@@ -3341,11 +3351,6 @@
           "title": "Murata Launches Type 2AB Ultra-Compact 5G Module",
           "date": "Jun 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-type-2ab-from-murata-manufacturing-co-ultra-compact-5g-module-for/69656537"
-        },
-        {
-          "title": "Murata Completes Construction of New Ceramic Capacitor R&D Center in Fukui",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Murata+Completes+Construction+of+New+Ceramic+Capacitor+R%26D+Center+in+Fukui+Murata"
         }
       ]
     },
@@ -3420,6 +3425,11 @@
           "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
         },
         {
+          "title": "onsemi Advances Fab Right Strategy with Agreements to Divest Two Manufacturing Facilities",
+          "date": "Jul 2026",
+          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-advances-fab-right-strategy-with-agreements-to-divest-two-manufacturing-facilities"
+        },
+        {
           "title": "onsemi Expands GaN Power Portfolio to Support High-Demand Applications",
           "date": "Jun 2026",
           "url": "https://www.newelectronics.co.uk/content/product-launches/onsemi-expands-gan-power-portfolio-to-support-high-demand-applications"
@@ -3458,11 +3468,6 @@
           "title": "Penn State and onsemi sign MOU to boost silicon carbide research in the U.S.",
           "date": "Jun 2026",
           "url": "https://www.onsemi.com/company/newsroom/news-and-insights/penn-state-and-onsemi-sign-mou-to-boost-silicon-carbide-research-in-the-u-s"
-        },
-        {
-          "title": "Onsemi to Acquire Synaptics to Enable Next Generation of Intelligent Systems for Physical AI",
-          "date": "Jun 2026",
-          "url": "https://www.synaptics.com/company/news/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
         }
       ]
     },
@@ -3669,24 +3674,23 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 66,
+    "Broadcom": 69,
     "Qualcomm": 17,
-    "Skyworks": 7,
+    "Skyworks": 9,
     "Microchip": 4,
     "Espressif": 4,
+    "Silicon Labs": 3,
     "Infineon": 3,
-    "Marvell": 3,
-    "Silicon Labs": 2,
+    "u-blox": 2,
+    "NXP": 2,
+    "Realtek": 2,
     "MediaTek": 2,
-    "Realtek": 1,
+    "Marvell": 2,
     "Nordic": 1,
     "Telink": 1,
     "Murata": 1,
     "LG Innotek": 1,
-    "Onsemi": 1,
-    "u-blox": 1,
-    "NXP": 1,
-    "STMicro": 1
+    "Onsemi": 1
   },
   "standards_in_flight": [
     {
@@ -3759,42 +3763,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1621,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        },
-        {
-          "tag": "v5.2.7",
-          "name": "ESP-IDF Release v5.2.7",
-          "published_at": "2026-05-19T11:17:54Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
-        }
-      ],
-      "stars": 18510,
-      "pushed_at": "2026-07-09T11:51:14Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3803,7 +3771,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3741,
+      "issues_open": 3745,
       "prs_open": 0,
       "releases": [
         {
@@ -3825,8 +3793,59 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15852,
-      "pushed_at": "2026-07-09T17:02:14Z"
+      "stars": 15856,
+      "pushed_at": "2026-07-10T10:34:40Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1618,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        },
+        {
+          "tag": "v5.2.7",
+          "name": "ESP-IDF Release v5.2.7",
+          "published_at": "2026-05-19T11:17:54Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
+        }
+      ],
+      "stars": 18517,
+      "pushed_at": "2026-07-10T09:25:12Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239079,
+      "pushed_at": "2026-07-09T23:45:38Z"
     },
     {
       "name": "Matter SDK",
@@ -3837,7 +3856,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2720,
+      "issues_open": 2724,
       "prs_open": 0,
       "releases": [
         {
@@ -3859,23 +3878,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8816,
-      "pushed_at": "2026-07-09T20:07:05Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 238898,
-      "pushed_at": "2026-07-09T15:37:15Z"
+      "stars": 8819,
+      "pushed_at": "2026-07-10T10:13:01Z"
     },
     {
       "name": "OpenThread",
@@ -3886,7 +3890,7 @@
         "thread"
       ],
       "commits_30d": 50,
-      "issues_open": 160,
+      "issues_open": 165,
       "prs_open": 0,
       "releases": [
         {
@@ -3920,7 +3924,7 @@
         "bluetooth"
       ],
       "commits_30d": 44,
-      "issues_open": 95,
+      "issues_open": 100,
       "prs_open": 0,
       "releases": [
         {
@@ -3942,8 +3946,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1092,
-      "pushed_at": "2026-07-09T20:05:11Z"
+      "stars": 1093,
+      "pushed_at": "2026-07-10T11:28:32Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3954,7 +3958,7 @@
         "ieee15_4"
       ],
       "commits_30d": 39,
-      "issues_open": 485,
+      "issues_open": 482,
       "prs_open": 0,
       "releases": [
         {
@@ -3976,7 +3980,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15281,
+      "stars": 15283,
       "pushed_at": "2026-07-09T11:06:33Z"
     },
     {
@@ -3987,12 +3991,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 13,
-      "issues_open": 269,
+      "commits_30d": 14,
+      "issues_open": 268,
       "prs_open": 0,
       "releases": [],
       "stars": 876,
-      "pushed_at": "2026-07-07T07:43:03Z"
+      "pushed_at": "2026-07-10T10:54:11Z"
     },
     {
       "name": "hostap",
