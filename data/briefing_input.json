@@ -1,20 +1,7 @@
 {
-  "generated_at": "2026-07-10T13:03:22Z",
+  "generated_at": "2026-07-10T13:08:23Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
-    {
-      "title": "Ugreen\u2019s 4-pack of Bluetooth trackers costs less than one Apple AirTag right now",
-      "url": "https://www.pcworld.com/article/3188500/ugreen-4-pack-of-bluetooth-trackers-costs-less-than-one-apple-airtag.html",
-      "source": "PCWorld",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Asset Tracking",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "LOWEST PRICE EVER\nUgreen FineTrack Duo Air (4-pack)\nUgreen\u2019s Bluetooth trackers are on sale, a 4-pack for just $28.49. At just over $7 a piece, that\u2019s a darn good value\u2014especially compared to Apple\u2019s AirTags, which typically cost $29 each. With Ugreen\u2019s compatible with both Apple and Android devices"
-    },
     {
       "title": "u-blox Expands Industrial IoT Portfolio with New Wi-Fi 6 Module Families",
       "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/",
@@ -263,19 +250,6 @@
       "summary": "Apple\u2019s next Apple TV 4K is expected to land in September, and the spec sheet doing the rounds has the usual headline grabbers. An A17 Pro chip. A proper dose of Siri AI. The stuff that gets the write ups.\nThere is one line further down the list that we care about a lot more than the processor, and "
     },
     {
-      "title": "Every Bluetooth tracker I owned died mid-trip until I found ones with this feature",
-      "url": "https://www.makeuseof.com/every-bluetooth-tracker-died-until-i-found-this/",
-      "source": "MakeUseOf",
-      "date": "2026-07-09",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Bluetooth trackers help us keep tabs on our most important items, both at home and away. If you're interested in using crowdsourced networks to find your gear, you've probably heard of the Apple Find My and Google Find My networks. The top tracker for each network is the Apple AirTag 2 and Motorola "
-    },
-    {
       "title": "I Tested AI to Find Errors in My Medical Bills. Here\u2019s What It Found",
       "url": "https://www.cnet.com/tech/services-and-software/chatgpt-medical-bill-errors/",
       "source": "CNET",
@@ -475,11 +449,35 @@
         "wifi"
       ],
       "summary": "MOST POPULAR\nAI\n-\nAI and ML\nOpenAI makes ChatGPT better at banter\nWith GPT-Live, talking, listening, and formulating answers all happen at once\n-\nai and ml\nThe AI that spawned MechaHitler and deepfake porn puts on a suit to become legal advisor and Excel jockey\nThe newly renamed SpaceXAI wants you t"
+    },
+    {
+      "title": "Microchip makes MPLAB XC Pro compilers and Machine Learning Tools free for developers",
+      "url": "https://www.newelectronics.co.uk/content/news/microchip-makes-mplab-xc-pro-compilers-and-machine-learning-tools-free-for-developers",
+      "source": "New Electronics",
+      "date": "2026-07-09",
+      "vendor": "Microchip",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Coats Group plc builds on thread leadership as investors watch global apparel demand",
+      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-builds-on-thread-leadership-as-investors-watch-global/69728669",
+      "source": "AD HOC NEWS",
+      "date": "2026-07-09",
+      "vendor": null,
+      "customer": null,
+      "application": "Industrial",
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Coats Group plc builds on thread leadership as investors watch global apparel demand\nVer\u00f6ffentlicht: 09.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael M\u00fcller (Chefredaktion)Coats Group plc (ISIN GB0002335270) is a long-established supplier of industrial threads, yar"
     }
   ],
   "vendor_news_30d": {
     "Broadcom": 66,
-    "Qualcomm": 13,
+    "Qualcomm": 17,
     "Skyworks": 8,
     "Microchip": 4,
     "Espressif": 4,
@@ -496,10 +494,10 @@
     "Onsemi": 1
   },
   "customer_news_30d": {
-    "Apple": 117,
-    "Amazon": 14,
-    "Sony": 12,
+    "Apple": 110,
+    "Amazon": 12,
     "Samsung": 11,
+    "Sony": 11,
     "Google": 10,
     "Microsoft": 7,
     "Meta": 4,
@@ -511,6 +509,42 @@
     "Tesla": 1
   },
   "github_pulse": [
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1617,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        },
+        {
+          "tag": "v5.2.7",
+          "name": "ESP-IDF Release v5.2.7",
+          "published_at": "2026-05-19T11:17:54Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
+        }
+      ],
+      "stars": 18519,
+      "pushed_at": "2026-07-10T09:25:12Z"
+    },
     {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
@@ -546,42 +580,6 @@
       "pushed_at": "2026-07-10T10:34:40Z"
     },
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1617,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        },
-        {
-          "tag": "v5.2.7",
-          "name": "ESP-IDF Release v5.2.7",
-          "published_at": "2026-05-19T11:17:54Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
-        }
-      ],
-      "stars": 18518,
-      "pushed_at": "2026-07-10T09:25:12Z"
-    },
-    {
       "name": "Linux mac80211",
       "owner": "torvalds",
       "repo": "linux",
@@ -593,7 +591,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239086,
+      "stars": 239087,
       "pushed_at": "2026-07-09T23:45:38Z"
     },
     {
@@ -799,18 +797,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -827,13 +825,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
-    },
-    {
       "vendor": "Qorvo",
       "ticker": "QRVO",
       "form": "8-K",
@@ -841,11 +832,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
-      "vendor": "Broadcom",
-      "ticker": "AVGO",
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
       "form": "8-K",
-      "date": "2026-06-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -853,6 +844,13 @@
       "form": "8-K",
       "date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
+    },
+    {
+      "vendor": "Broadcom",
+      "ticker": "AVGO",
+      "form": "8-K",
+      "date": "2026-06-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -988,6 +986,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
+    },
+    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -1000,13 +1005,6 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1030,6 +1028,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
+    },
+    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1042,13 +1047,6 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1107,13 +1105,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
-    },
-    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1126,6 +1117,13 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
+    },
+    {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -2081,6 +2079,11 @@
       ],
       "press_releases": [
         {
+          "title": "Silicon Labs Foresees Accelerated Smart Home Growth with Matter 1.6",
+          "date": "Jul 2026",
+          "url": "https://www.digitimes.com/news/a20260707PD230/silicon-labs-smart-home-growth-market-2026.html"
+        },
+        {
           "title": "Silicon Labs Advances Large-Scale Matter Deployments with 200-Node Matter-over-Thread Validation Network",
           "date": "Jun 2026",
           "url": "https://www.prnewswire.com/news-releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network-302801809.html"
@@ -2124,11 +2127,6 @@
           "title": "Comminent, Silicon Labs jointly ship over 5 lakh Wi-SUN-compliant modules in India",
           "date": "May 2026",
           "url": "https://telecom.economictimes.indiatimes.com/news/devices/comminent-and-silicon-labs-achieve-milestone-with-500000-wi-sun-modules-shipped-in-india/131256360"
-        },
-        {
-          "title": "Powered by Silicon Labs, Comminent Ships 500,000 Wi-SUN Modules",
-          "date": "May 2026",
-          "url": "https://www.prnewswire.com/news-releases/powered-by-silicon-labs-comminent-ships-500-000-wi-sun-modules-302778368.html"
         }
       ],
       "events": [
@@ -2910,6 +2908,11 @@
           "url": "https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/"
         },
         {
+          "title": "Espressif Launches ESP32-C5 Chip Featuring Dual-Band Wi-Fi 6 and Bluetooth 5 LE",
+          "date": "Jul 2026",
+          "url": ""
+        },
+        {
           "title": "Espressif ESP32-E22 Achieves Wi-Fi 6E Certification and Releases Open-Source Linux Drivers",
           "date": "Jun 2026",
           "url": "https://www.espressif.com/en/news/E22_Wi-Fi_6E_Certificate"
@@ -2941,11 +2944,6 @@
         },
         {
           "title": "Espressif Systems Affirms Commitment to Matter Smart Home Standard",
-          "date": "Jun 2026",
-          "url": "https://csa-iot.org/newsroom/espressif-systems-on-matter/"
-        },
-        {
-          "title": "Espressif Systems on Matter",
           "date": "Jun 2026",
           "url": "https://csa-iot.org/newsroom/espressif-systems-on-matter/"
         }
@@ -4094,6 +4092,11 @@
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
         },
         {
+          "title": "u-blox Launches MAYA-W5 and NORA-W5 Wi-Fi 6 Module Families",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
+        },
+        {
           "title": "u-blox announces MAYA-W5 and NORA-W5 Wi-Fi 6 modules",
           "date": "Jun 2026",
           "url": ""
@@ -4107,11 +4110,6 @@
           "title": "u-blox Launches ZED-R20P Module",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=u-blox+Launches+ZED-R20P+Module+u-blox"
-        },
-        {
-          "title": "u-blox and Nordic Launch ALMA-B2 Bluetooth LE Modules for Edge ML IoT",
-          "date": "May 2026",
-          "url": "https://www.u-blox.com/en/u-blox-and-nordic-launch-alma-b2-bluetooth-le-modules-with-edge-ml"
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T13:03:22Z",
+  "generated_at": "2026-07-10T13:08:23Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -949,6 +949,11 @@
       ],
       "press_releases": [
         {
+          "title": "Silicon Labs Foresees Accelerated Smart Home Growth with Matter 1.6",
+          "date": "Jul 2026",
+          "url": "https://www.digitimes.com/news/a20260707PD230/silicon-labs-smart-home-growth-market-2026.html"
+        },
+        {
           "title": "Silicon Labs Advances Large-Scale Matter Deployments with 200-Node Matter-over-Thread Validation Network",
           "date": "Jun 2026",
           "url": "https://www.prnewswire.com/news-releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network-302801809.html"
@@ -992,11 +997,6 @@
           "title": "Comminent, Silicon Labs jointly ship over 5 lakh Wi-SUN-compliant modules in India",
           "date": "May 2026",
           "url": "https://telecom.economictimes.indiatimes.com/news/devices/comminent-and-silicon-labs-achieve-milestone-with-500000-wi-sun-modules-shipped-in-india/131256360"
-        },
-        {
-          "title": "Powered by Silicon Labs, Comminent Ships 500,000 Wi-SUN Modules",
-          "date": "May 2026",
-          "url": "https://www.prnewswire.com/news-releases/powered-by-silicon-labs-comminent-ships-500-000-wi-sun-modules-302778368.html"
         }
       ],
       "events": [
@@ -1778,6 +1778,11 @@
           "url": "https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/"
         },
         {
+          "title": "Espressif Launches ESP32-C5 Chip Featuring Dual-Band Wi-Fi 6 and Bluetooth 5 LE",
+          "date": "Jul 2026",
+          "url": ""
+        },
+        {
           "title": "Espressif ESP32-E22 Achieves Wi-Fi 6E Certification and Releases Open-Source Linux Drivers",
           "date": "Jun 2026",
           "url": "https://www.espressif.com/en/news/E22_Wi-Fi_6E_Certificate"
@@ -1809,11 +1814,6 @@
         },
         {
           "title": "Espressif Systems Affirms Commitment to Matter Smart Home Standard",
-          "date": "Jun 2026",
-          "url": "https://csa-iot.org/newsroom/espressif-systems-on-matter/"
-        },
-        {
-          "title": "Espressif Systems on Matter",
           "date": "Jun 2026",
           "url": "https://csa-iot.org/newsroom/espressif-systems-on-matter/"
         }
@@ -2962,6 +2962,11 @@
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
         },
         {
+          "title": "u-blox Launches MAYA-W5 and NORA-W5 Wi-Fi 6 Module Families",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
+        },
+        {
           "title": "u-blox announces MAYA-W5 and NORA-W5 Wi-Fi 6 modules",
           "date": "Jun 2026",
           "url": ""
@@ -2975,11 +2980,6 @@
           "title": "u-blox Launches ZED-R20P Module",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=u-blox+Launches+ZED-R20P+Module+u-blox"
-        },
-        {
-          "title": "u-blox and Nordic Launch ALMA-B2 Bluetooth LE Modules for Edge ML IoT",
-          "date": "May 2026",
-          "url": "https://www.u-blox.com/en/u-blox-and-nordic-launch-alma-b2-bluetooth-le-modules-with-edge-ml"
         }
       ]
     },
@@ -3675,7 +3675,7 @@
   ],
   "vendor_news_momentum_30d": {
     "Broadcom": 66,
-    "Qualcomm": 13,
+    "Qualcomm": 17,
     "Skyworks": 8,
     "Microchip": 4,
     "Espressif": 4,
@@ -3762,6 +3762,42 @@
   ],
   "github_stack_activity": [
     {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1617,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        },
+        {
+          "tag": "v5.2.7",
+          "name": "ESP-IDF Release v5.2.7",
+          "published_at": "2026-05-19T11:17:54Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
+        }
+      ],
+      "stars": 18519,
+      "pushed_at": "2026-07-10T09:25:12Z"
+    },
+    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3796,42 +3832,6 @@
       "pushed_at": "2026-07-10T10:34:40Z"
     },
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1617,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        },
-        {
-          "tag": "v5.2.7",
-          "name": "ESP-IDF Release v5.2.7",
-          "published_at": "2026-05-19T11:17:54Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
-        }
-      ],
-      "stars": 18518,
-      "pushed_at": "2026-07-10T09:25:12Z"
-    },
-    {
       "name": "Linux mac80211",
       "owner": "torvalds",
       "repo": "linux",
@@ -3843,7 +3843,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239086,
+      "stars": 239087,
       "pushed_at": "2026-07-09T23:45:38Z"
     },
     {
