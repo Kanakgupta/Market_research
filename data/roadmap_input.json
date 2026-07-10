@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T11:48:32Z",
+  "generated_at": "2026-07-10T13:03:22Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3674,15 +3674,14 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 69,
-    "Qualcomm": 17,
-    "Skyworks": 9,
+    "Broadcom": 66,
+    "Qualcomm": 13,
+    "Skyworks": 8,
     "Microchip": 4,
     "Espressif": 4,
     "Silicon Labs": 3,
     "Infineon": 3,
     "u-blox": 2,
-    "NXP": 2,
     "Realtek": 2,
     "MediaTek": 2,
     "Marvell": 2,
@@ -3771,7 +3770,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3745,
+      "issues_open": 3755,
       "prs_open": 0,
       "releases": [
         {
@@ -3793,7 +3792,7 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15856,
+      "stars": 15857,
       "pushed_at": "2026-07-10T10:34:40Z"
     },
     {
@@ -3807,7 +3806,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1618,
+      "issues_open": 1617,
       "prs_open": 0,
       "releases": [
         {
@@ -3829,7 +3828,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18517,
+      "stars": 18518,
       "pushed_at": "2026-07-10T09:25:12Z"
     },
     {
@@ -3844,7 +3843,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239079,
+      "stars": 239086,
       "pushed_at": "2026-07-09T23:45:38Z"
     },
     {
@@ -3856,7 +3855,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2724,
+      "issues_open": 2718,
       "prs_open": 0,
       "releases": [
         {
@@ -3879,7 +3878,7 @@
         }
       ],
       "stars": 8819,
-      "pushed_at": "2026-07-10T10:13:01Z"
+      "pushed_at": "2026-07-10T13:01:30Z"
     },
     {
       "name": "OpenThread",
@@ -3924,7 +3923,7 @@
         "bluetooth"
       ],
       "commits_30d": 44,
-      "issues_open": 100,
+      "issues_open": 101,
       "prs_open": 0,
       "releases": [
         {
@@ -3991,12 +3990,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 14,
+      "commits_30d": 15,
       "issues_open": 268,
       "prs_open": 0,
       "releases": [],
       "stars": 876,
-      "pushed_at": "2026-07-10T10:54:11Z"
+      "pushed_at": "2026-07-10T12:07:50Z"
     },
     {
       "name": "hostap",
