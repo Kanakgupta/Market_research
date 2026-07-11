@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T13:03:06Z",
+  "generated_at": "2026-07-11T13:07:16Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
@@ -584,21 +584,6 @@
       "pushed_at": "2026-07-11T12:53:52Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 239162,
-      "pushed_at": "2026-07-11T03:07:50Z"
-    },
-    {
       "name": "Matter SDK",
       "owner": "project-chip",
       "repo": "connectedhomeip",
@@ -631,6 +616,21 @@
       ],
       "stars": 8820,
       "pushed_at": "2026-07-11T10:43:21Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239162,
+      "pushed_at": "2026-07-11T03:07:50Z"
     },
     {
       "name": "OpenThread",
@@ -829,18 +829,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
-    },
-    {
       "vendor": "Qorvo",
       "ticker": "QRVO",
       "form": "8-K",
       "date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -1032,6 +1032,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
+    },
+    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1044,13 +1051,6 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",
@@ -2917,6 +2917,16 @@
           "url": ""
         },
         {
+          "title": "Open Book Touch E-reader Features ESP32-S3",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/10/open-book-touch-a-drm-free-wifi-connected-4-26-inch-open-source-hardware-e-reader/"
+        },
+        {
+          "title": "Makerfabs MaUWB Module for Home Assistant Uses ESP32-S3 UWB Chip",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/09/makerfabs-mauwb-for-home-assistant-an-esp32-s3-uwb-module-with-poe-and-enclosure/"
+        },
+        {
           "title": "Espressif ESP32-E22 Achieves Wi-Fi 6E Certification and Releases Open-Source Linux Drivers",
           "date": "Jun 2026",
           "url": "https://www.espressif.com/en/news/E22_Wi-Fi_6E_Certificate"
@@ -2940,16 +2950,6 @@
           "title": "ESP32-S31 Function CoreBoard-1 Adds Gigabit IoT I/O",
           "date": "Jun 2026",
           "url": "https://www.elektormagazine.com/articles/esp32-s31-function-coreboard"
-        },
-        {
-          "title": "CoreBoard 1 Makes The New ESP32 S31 Top Of The S Family",
-          "date": "Jun 2026",
-          "url": "https://www.i-programmer.info/news/91-hardware/18909-coreboard-1-makes-the-new-esp32-s31-top-of-the-s-family.html"
-        },
-        {
-          "title": "Espressif Systems Affirms Commitment to Matter Smart Home Standard",
-          "date": "Jun 2026",
-          "url": "https://csa-iot.org/newsroom/espressif-systems-on-matter/"
         }
       ],
       "events": [
