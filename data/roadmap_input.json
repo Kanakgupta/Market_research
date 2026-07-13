@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T11:49:54Z",
+  "generated_at": "2026-07-13T13:03:02Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3694,8 +3694,8 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 65,
-    "Qualcomm": 17,
+    "Broadcom": 63,
+    "Qualcomm": 16,
     "Microchip": 6,
     "Skyworks": 6,
     "Espressif": 4,
@@ -3709,8 +3709,7 @@
     "Nordic": 1,
     "Telink": 1,
     "Murata": 1,
-    "Onsemi": 1,
-    "STMicro": 1
+    "Onsemi": 1
   },
   "standards_in_flight": [
     {
@@ -3783,6 +3782,40 @@
   ],
   "github_stack_activity": [
     {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3742,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15884,
+      "pushed_at": "2026-07-13T09:23:20Z"
+    },
+    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3815,42 +3848,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18529,
+      "stars": 18530,
       "pushed_at": "2026-07-12T17:35:05Z"
-    },
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3740,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15884,
-      "pushed_at": "2026-07-13T09:23:20Z"
     },
     {
       "name": "Linux mac80211",
@@ -3864,7 +3863,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239320,
+      "stars": 239324,
       "pushed_at": "2026-07-12T21:50:41Z"
     },
     {
@@ -3876,7 +3875,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2716,
+      "issues_open": 2713,
       "prs_open": 0,
       "releases": [
         {
@@ -3898,8 +3897,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8821,
-      "pushed_at": "2026-07-13T10:06:36Z"
+      "stars": 8822,
+      "pushed_at": "2026-07-13T12:57:08Z"
     },
     {
       "name": "OpenThread",
