@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T13:03:02Z",
+  "generated_at": "2026-07-13T13:07:11Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3047,6 +3047,11 @@
           "url": "https://www.manilatimes.net/2026/07/08/tmt-newswire/globenewswire/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-machine-learning-development-suite/2380670"
         },
         {
+          "title": "Microchip Makes MPLAB XC Pro Compilers and ML Development Suite Free",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
@@ -3060,11 +3065,6 @@
           "title": "Microchip's Nantes Facility Achieves QML Class Y Certification",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1401/microchips-nantes-facility-in-france-achieves-qml-class-y-certification-expanding-highreliability-capabilities"
-        },
-        {
-          "title": "Microchip Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
-          "date": "Jun 2026",
-          "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
         }
       ]
     },
@@ -3790,7 +3790,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3742,
+      "issues_open": 3743,
       "prs_open": 0,
       "releases": [
         {
@@ -3852,21 +3852,6 @@
       "pushed_at": "2026-07-12T17:35:05Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 239324,
-      "pushed_at": "2026-07-12T21:50:41Z"
-    },
-    {
       "name": "Matter SDK",
       "owner": "project-chip",
       "repo": "connectedhomeip",
@@ -3899,6 +3884,21 @@
       ],
       "stars": 8822,
       "pushed_at": "2026-07-13T12:57:08Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239325,
+      "pushed_at": "2026-07-12T21:50:41Z"
     },
     {
       "name": "OpenThread",

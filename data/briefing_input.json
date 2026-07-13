@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T13:03:02Z",
+  "generated_at": "2026-07-13T13:07:11Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
@@ -435,19 +435,6 @@
       "summary": "OurBlog Posts\nAtmosic Brings Multimode Support to Tracking Assets\nJanuary 6, 2025\nTargus Wins CES 2024 Innovation Award using Atmosic ATM2 based Bluetooth LE SoC for its ErgoFlip EcoSmart Mouse\nDecember 27, 2023\nAtmosic Joins United Nations Global Compact\nOctober 3, 2023\nIoT4All Podcast with Ryan Ch"
     },
     {
-      "title": "Bluetooth LE Audio Explained: Next-Gen Wireless Sound Standard",
-      "url": "https://techstory.in/the-wireless-waveform-rebuilt-bluetooth-le-audio-explained/",
-      "source": "TechStory",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Audio / Speaker",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "The global consumer wireless market has operated for over two decades on a foundational blueprint known as Bluetooth Classic. When consumers pull true wireless earbuds from a charging case, join a hands-free voice call, or stream high-fidelity stereo files, they step directly onto an old network str"
-    },
-    {
       "title": "Weekly open thread",
       "url": "https://www.the-downballot.com/p/weekly-open-thread-74b",
       "source": "The Downballot",
@@ -481,6 +468,17 @@
       "application": "Audio / Speaker",
       "buckets": [],
       "summary": "Save $450: Upgrade your entertainment setup with the JBL Bar 1000MK2 soundbar system, now available for $750. That's $450 off its typical retail price and a new all-time low price for this system.\nSoundbars are usually a good investment because they deliver audio beyond what your TV can produce on i"
+    },
+    {
+      "title": "Apple Sues OpenAI, Claiming Employees Stole Trade Secrets",
+      "url": "https://www.cnet.com/tech/mobile/former-apple-employees-stole-trade-secrets-for-openai-lawsuit-alleges/",
+      "source": "CNET",
+      "date": "2026-07-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Apple has sued OpenAI, accusing the company of stealing its trade secrets.\nIn a complaint filed in the US District Court for the Northern District of California on Friday, Apple alleges it \"uncovered a pattern of theft of Apple's trade secrets by OpenAI employees who were formerly at Apple.\"\nAlong w"
     }
   ],
   "vendor_news_30d": {
@@ -504,12 +502,12 @@
   "customer_news_30d": {
     "Apple": 115,
     "Samsung": 12,
-    "Amazon": 11,
+    "Amazon": 10,
     "Microsoft": 6,
     "Google": 6,
     "Meta": 4,
-    "Sony": 4,
     "Eufy/Anker": 3,
+    "Sony": 2,
     "Huawei": 2,
     "Aqara": 1,
     "Oura": 1,
@@ -528,7 +526,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3742,
+      "issues_open": 3743,
       "prs_open": 0,
       "releases": [
         {
@@ -590,21 +588,6 @@
       "pushed_at": "2026-07-12T17:35:05Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 239324,
-      "pushed_at": "2026-07-12T21:50:41Z"
-    },
-    {
       "name": "Matter SDK",
       "owner": "project-chip",
       "repo": "connectedhomeip",
@@ -637,6 +620,21 @@
       ],
       "stars": 8822,
       "pushed_at": "2026-07-13T12:57:08Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239325,
+      "pushed_at": "2026-07-12T21:50:41Z"
     },
     {
       "name": "OpenThread",
@@ -807,18 +805,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -835,18 +833,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
       "date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -989,20 +987,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "10-Q",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000036/syna-20260328.htm"
-    },
-    {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
-    },
-    {
       "vendor": "Microchip",
       "ticker": "MCHP",
       "form": "8-K",
@@ -1015,6 +999,20 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "10-Q",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000036/syna-20260328.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1038,13 +1036,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1057,6 +1048,13 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1080,13 +1078,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526201058/ter-20260329.htm"
     },
     {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -1099,6 +1090,13 @@
       "form": "8-K",
       "date": "2026-05-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000025/lyb-20260501.htm"
+    },
+    {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -1115,6 +1113,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1127,13 +1132,6 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
-    },
-    {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -4187,6 +4185,11 @@
           "url": "https://www.manilatimes.net/2026/07/08/tmt-newswire/globenewswire/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-machine-learning-development-suite/2380670"
         },
         {
+          "title": "Microchip Makes MPLAB XC Pro Compilers and ML Development Suite Free",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
@@ -4200,11 +4203,6 @@
           "title": "Microchip's Nantes Facility Achieves QML Class Y Certification",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1401/microchips-nantes-facility-in-france-achieves-qml-class-y-certification-expanding-highreliability-capabilities"
-        },
-        {
-          "title": "Microchip Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
-          "date": "Jun 2026",
-          "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
         }
       ]
     },
