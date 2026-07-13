@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T17:48:59Z",
+  "generated_at": "2026-07-13T11:49:54Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -1525,6 +1525,11 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
         },
         {
+          "title": "MediaTek Filogic 860 Chip for Wi-Fi 7 Home Routers Announced",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+        },
+        {
           "title": "MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
@@ -1548,11 +1553,6 @@
           "title": "MediaTek Honored with Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
-        },
-        {
-          "title": "MediaTek Dimensity 9500 Processor Launched",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=MediaTek+Dimensity+9500+Processor+Launched+MediaTek"
         }
       ],
       "events": [
@@ -1793,6 +1793,11 @@
           "url": "https://www.cnx-software.com/2026/07/09/makerfabs-mauwb-for-home-assistant-an-esp32-s3-uwb-module-with-poe-and-enclosure/"
         },
         {
+          "title": "Espressif ESP32-C5 Devkit Launched Featuring Dual-Band Wi-Fi 6 and Bluetooth 5 LE",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/"
+        },
+        {
           "title": "Espressif ESP32-E22 Achieves Wi-Fi 6E Certification and Releases Open-Source Linux Drivers",
           "date": "Jun 2026",
           "url": "https://www.espressif.com/en/news/E22_Wi-Fi_6E_Certificate"
@@ -1811,11 +1816,6 @@
           "title": "Espressif ESP32-E22 WiFi 6E module gets Wi-Fi CERTIFIED certificate, open-source WiFi and Bluetooth Linux drivers",
           "date": "Jun 2026",
           "url": "https://www.cnx-software.com/2026/06/13/espressif-esp32-e22-wifi-6e-module-gets-wi-fi-certified-certificate-an-open-source-wifi-and-bluetooth-linux-drivers/"
-        },
-        {
-          "title": "ESP32-S31 Function CoreBoard-1 Adds Gigabit IoT I/O",
-          "date": "Jun 2026",
-          "url": "https://www.elektormagazine.com/articles/esp32-s31-function-coreboard"
         }
       ],
       "events": [
@@ -3396,7 +3396,17 @@
           "url": ""
         },
         {
+          "title": "Atmosic Introduces Multimode Support for Asset Tracking Solutions",
+          "date": "Jan 2025",
+          "url": ""
+        },
+        {
           "title": "Targus Wins CES 2024 Innovation Award with Atmosic ATM2-Powered ErgoFlip EcoSmart Mouse",
+          "date": "Dec 2023",
+          "url": ""
+        },
+        {
+          "title": "Targus Wins CES 2024 Innovation Award with ErgoFlip EcoSmart Mouse Featuring Atmosic ATM2 Bluetooth LE SoC",
           "date": "Dec 2023",
           "url": ""
         }
@@ -3684,14 +3694,15 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 66,
-    "Qualcomm": 15,
-    "Skyworks": 7,
-    "Microchip": 5,
+    "Broadcom": 65,
+    "Qualcomm": 17,
+    "Microchip": 6,
+    "Skyworks": 6,
+    "Espressif": 4,
     "Realtek": 3,
     "Silicon Labs": 3,
-    "Espressif": 3,
-    "MediaTek": 2,
+    "MediaTek": 3,
+    "NXP": 1,
     "Atmosic": 1,
     "u-blox": 1,
     "Infineon": 1,
@@ -3699,10 +3710,7 @@
     "Telink": 1,
     "Murata": 1,
     "Onsemi": 1,
-    "Apple": 1,
-    "STMicro": 1,
-    "Renesas": 1,
-    "Marvell": 1
+    "STMicro": 1
   },
   "standards_in_flight": [
     {
@@ -3775,40 +3783,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3753,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15877,
-      "pushed_at": "2026-07-12T16:50:00Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3819,7 +3793,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1629,
+      "issues_open": 1633,
       "prs_open": 0,
       "releases": [
         {
@@ -3841,8 +3815,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18525,
+      "stars": 18529,
       "pushed_at": "2026-07-12T17:35:05Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3740,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15884,
+      "pushed_at": "2026-07-13T09:23:20Z"
     },
     {
       "name": "Linux mac80211",
@@ -3856,8 +3864,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239305,
-      "pushed_at": "2026-07-11T22:48:49Z"
+      "stars": 239320,
+      "pushed_at": "2026-07-12T21:50:41Z"
     },
     {
       "name": "Matter SDK",
@@ -3868,7 +3876,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2718,
+      "issues_open": 2716,
       "prs_open": 0,
       "releases": [
         {
@@ -3891,7 +3899,7 @@
         }
       ],
       "stars": 8821,
-      "pushed_at": "2026-07-12T00:55:04Z"
+      "pushed_at": "2026-07-13T10:06:36Z"
     },
     {
       "name": "OpenThread",
@@ -3902,7 +3910,7 @@
         "thread"
       ],
       "commits_30d": 51,
-      "issues_open": 162,
+      "issues_open": 164,
       "prs_open": 0,
       "releases": [
         {
@@ -3925,7 +3933,7 @@
         }
       ],
       "stars": 3981,
-      "pushed_at": "2026-07-11T01:49:16Z"
+      "pushed_at": "2026-07-13T09:33:46Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3936,7 +3944,7 @@
         "ieee15_4"
       ],
       "commits_30d": 36,
-      "issues_open": 481,
+      "issues_open": 477,
       "prs_open": 0,
       "releases": [
         {
@@ -3958,7 +3966,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15288,
+      "stars": 15290,
       "pushed_at": "2026-07-12T17:08:06Z"
     },
     {
@@ -3992,7 +4000,7 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1095,
+      "stars": 1097,
       "pushed_at": "2026-07-12T14:07:16Z"
     },
     {

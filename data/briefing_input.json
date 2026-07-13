@@ -1,45 +1,74 @@
 {
-  "generated_at": "2026-07-12T17:48:59Z",
+  "generated_at": "2026-07-13T11:49:54Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Samsung Galaxy A57 5G Review: The new mid-range favorite?",
-      "url": "https://www.notebookcheck.net/Samsung-Galaxy-A57-5G-Review-The-new-mid-range-favorite.1340192.0.html",
-      "source": "Notebookcheck",
-      "date": "2026-07-12",
+      "title": "Microchip Makes MPLAB XC Pro Compilers and ML Suite Free",
+      "url": "https://themachinemaker.com/news/microchip-makes-mplab-xc-pro-compilers-and-ml-suite-free/",
+      "source": "Machine Maker",
+      "date": "2026-07-13",
+      "vendor": "Microchip",
+      "customer": "Microsoft",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Microchip Technology Inc (Nasdaq: MCHP) has announced that its MPLAB\u00ae XC Pro Compilers and MPLAB Machine Learning (ML) Development Suite are now available at no cost to customers, giving engineers greater flexibility and broader access to advanced embedded development capabilities. The move enables "
+    },
+    {
+      "title": "Airversa unveils New HomeKit over Thread humidifier w/ plans for Matter",
+      "url": "https://homekitnews.com/2026/07/13/airversa-unveils-new-homekit-over-thread-humidifier-w-plans-for-matter/",
+      "source": "Homekit News and Reviews",
+      "date": "2026-07-13",
       "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Airversa unveils New HomeKit over Thread humidifier w/ plans for Matter\nAirversa has announced a new 3.2L smart humidifier, its second smart humidifier designed for Apple Home users. Like its predecessor \u2013 also called the Humelle \u2013 it connects directly to Apple Home using HomeKit over Thread, offeri"
+    },
+    {
+      "title": "A new leak just revealed almost everything about Samsung's upcoming smartwatches",
+      "url": "https://www.androidauthority.com/samsung-galaxy-watch-9-ultra-2-specs-leak-3686797/",
+      "source": "Android Authority",
+      "date": "2026-07-13",
+      "vendor": "Qualcomm",
       "customer": "Samsung",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Verdict on the Samsung Galaxy A57 5G\nThe Samsung Galaxy A57 5G is a thoroughly successful update to the A Series, but it remains surprisingly conservative compared to its predecessor. The slimmer and lighter body, high-quality build, upgraded IP68 rating, and faster Exynos 1680 chip combine to creat"
+      "application": "Wearable",
+      "buckets": [],
+      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\nA new leak just revealed almost everything about Samsung's upcoming smartwatches\nJul 13, 2026 \u2014 6:48 AM ET\n- A new spec leak suggests the Galaxy Watch Ultra 2 could feature a massive 800mAh battery, a titanium casing, and wat"
     },
     {
-      "title": "Open Thread: 2026 Futures Game",
-      "url": "https://sports.yahoo.com/articles/open-thread-2026-futures-game-160000716.html",
-      "source": "Yahoo Sports",
-      "date": "2026-07-12",
-      "vendor": null,
+      "title": "Qualcomm stock holds steady as mobile and automotive chips shape its long-term growth outlook - ad-hoc-news.de",
+      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/qualcomm-stock-holds-steady-as-mobile-and-automotive-chips-shape-its/69758293",
+      "source": "ad-hoc-news.de",
+      "date": "2026-07-13",
+      "vendor": "Qualcomm",
       "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Open Thread: 2026 Futures Game\nThe Futures Game starts at noon EDT. The only Mets\u2019 prospect in the game is Ryan Clifford, acquired in exchange for Justin Verlander at the 2023 trade deadline. Clifford is a reserve for the National League squad. Chat about all the action here!\nAmerican League lineup\n"
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Qualcomm stock holds steady as mobile and automotive chips shape its long-term growth outlook\nVer\u00f6ffentlicht: 13.07.2026 um 08:09 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael M\u00fcller (Chefredaktion)Qualcomm stock represents one of the longest-established names in mobile semiconduct"
     },
     {
-      "title": "Mariners 2026 MLB Draft Day Two: Draft Tracker and Open Thread",
-      "url": "https://sports.yahoo.com/articles/mariners-2026-mlb-draft-day-154613208.html",
-      "source": "Yahoo Sports",
-      "date": "2026-07-12",
+      "title": "Aqara U400 Review \u2013 This is the ultimate smart lock for any home front door",
+      "url": "https://eftm.com/2026/07/aqara-u400-smart-lock-review-door-pin-key-fingerprint-unlock-apple-tag-homekit-matter-nfc-uwb-278191",
+      "source": "EFTM",
+      "date": "2026-07-13",
       "vendor": null,
-      "customer": null,
+      "customer": "Aqara",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "I installed a \u201csmart lock\u201d on the front door of our home almost 12 years ago, it was cool but it\u2019s a distant memory now as we look at the future in this Aqara U400 Review.\nThe EFTM Snapshot: It\u2019s expensive, I get that, but if you want a smart lock, this is the one. Every single possible way of unloc"
+    },
+    {
+      "title": "Meta admits its first \u2018superintelligence\u2019 was too stupid to survive for three days",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/13/meta-admits-its-first-superintelligence-was-too-stupid-to-survive-for-three-days/5270234",
+      "source": "The Register",
+      "date": "2026-07-13",
+      "vendor": null,
+      "customer": "Meta",
       "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Mariners 2026 MLB Draft Day Two: Draft Tracker and Open Thread\nWe\u2019re back for a packed Day Two because again, MLB does not know how to market their own product. The second and final day of the draft is underway today and we\u2019ll be threading all of the Mariners picks here for rounds five through twent"
+      "buckets": [],
+      "summary": "MOST POPULAR\nAI\n-\nAI + ML\nMemory makers are slaves to the boom-bust rollercoaster, and the AI boom is the wildest ride of all\nThe RAMpocalypse may be the precursor to the AIpocalypse\n-\nAI + ML\nAI customers are coming around to the idea that small is beautiful\nOpenAI and Anthropic have built AI Swiss"
     },
     {
       "title": "MLB Draft Day 2: Atlanta Braves Tracker and Open Thread",
@@ -55,8 +84,43 @@
       "summary": "The Braves had a whirlwhind day one of the 2026 MLB draft, taking five players overall who all are due to slot in the top 20 of the system immediately upon signing. Yet even going with likely over slot pitchers in the second through fourth rounds there is still a feeling they have the wiggle room to"
     },
     {
-      "title": "Open Thread: MLB Draft, Rounds 5-20, 7/12/26",
-      "url": "https://www.amazinavenue.com/new-york-mets-mlb-draft/97572/open-thread-mlb-draft-rounds-5-20-7-12-26-mlb-tv",
+      "title": "Guardians Draft Day Two Open Thread: Rounds 5-20",
+      "url": "https://www.coveringthecorner.com/cleveland-guardians-mlb-draft/71293/guardians-draft-day-two-open-thread-rounds-5-20",
+      "source": "Covering the Corner",
+      "date": "2026-07-12",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Discuss the Guardians Day Two picks below. You can view MLB\u2019s draft tracker here.\nGuardians Draft Day Two Open Thread: Rounds 5-20\nMoar players\nBrian Hemminger will update picks as they happen in the comments below.\nSee More:\nMoar players\nDiscuss the Guardians Day Two picks below. You can view MLB\u2019s"
+    },
+    {
+      "title": "Apple Stores to Expand Use of 'Tap to Pay on iPhone'",
+      "url": "https://www.macrumors.com/2026/07/12/apple-stores-to-expand-tap-to-pay-on-iphone/",
+      "source": "MacRumors",
+      "date": "2026-07-12",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Retail",
+      "buckets": [],
+      "summary": "In 2022, Apple began rolling out Tap to Pay on iPhone, a system that allows small business owners and other merchants to accept contactless payments on an iPhone, with no point-of-sale hardware required. The feature allows customers to pay by simply tapping their iPhone or Apple Watch, credit card o"
+    },
+    {
+      "title": "Ugreen FineTrack Slim Duo is a new AirTag alternative with Apple Find My, Google Find Hub, and 7-year battery life",
+      "url": "https://www.notebookcheck.net/Ugreen-FineTrack-Slim-Duo-is-a-new-AirTag-alternative-with-Apple-Find-My-Google-Find-Hub-and-7-year-battery-life.1340971.0.html",
+      "source": "Notebookcheck",
+      "date": "2026-07-12",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Asset Tracking",
+      "buckets": [],
+      "summary": "Ugreen FineTrack Slim Duo is a new AirTag alternative with Apple Find My, Google Find Hub, and 7-year battery life\nUgreen has released an upgraded version of the FineTrack Slim wallet tracker in the UK. Unlike the refreshed version released earlier this year, the new FineTrack Slim Duo does not supp"
+    },
+    {
+      "title": "Open Thread: 2026 Futures Game",
+      "url": "https://www.amazinavenue.com/new-york-mets-discussion/97662/open-thread-2026-futures-game",
       "source": "Amazin' Avenue",
       "date": "2026-07-12",
       "vendor": null,
@@ -65,7 +129,18 @@
       "buckets": [
         "thread"
       ],
-      "summary": "Chat about the draft as it happens today. Rounds 5-20 will be broadcast on MLB.com/MLB.tv today starting at 11:30am EDT.\nOpen Thread: MLB Draft, Rounds 5-20, 7/12/26\nCome chat about day 2 of the 2026 MLB Draft!\nJoin the conversation!\nSign up for a user account and get:\n- Fewer ads\n- Create community"
+      "summary": "The Futures Game starts at noon EDT. The only Mets\u2019 prospect in the game is Ryan Clifford, acquired in exchange for Justin Verlander at the 2023 trade deadline. Clifford is a reserve for the National League squad. Chat about all the action here!\nOpen Thread: 2026 Futures Game\nWatch tomorrow\u2019s stars "
+    },
+    {
+      "title": "Broadcom Spikes 5% on Expanded Apple Chip Deal; Intel and AMD Drift Lower",
+      "url": "https://www.aol.com/articles/broadcom-spikes-5-expanded-apple-181534000.html",
+      "source": "AOL.com",
+      "date": "2026-07-12",
+      "vendor": "Broadcom",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Broadcom Spikes 5% on Expanded Apple Chip Deal; Intel and AMD Drift Lower\nQuick Read\nApple's $30 billion chip agreement with Broadcom through 2031 drove AVGO stock up 5%, while Intel and AMD drifted modestly lower on no specific negative news.\nThe deal covers custom wireless connectivity technology "
     },
     {
       "title": "Less is more with the Oura Ring 5",
@@ -77,6 +152,32 @@
       "application": "Wearable",
       "buckets": [],
       "summary": "If you\u2019re reading an Oura Ring 5 review at The Verge, you likely fall into one of two camps: newcomers looking for a smartwatch alternative, or Oura users pondering an upgrade. In the case of the former, this is a great casual health tracker and the best smart ring on the market \u2014 but not your best "
+    },
+    {
+      "title": "Open Thread, July 12, 2026: What\u2019s your favorite movie monster?",
+      "url": "https://www.mmamania.com/daily_mania_ufc_mma/456525/open-thread-july-12-2026-whats-your-favorite-movie-monster",
+      "source": "MMA Mania",
+      "date": "2026-07-12",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Hey all, here\u2019s your open thread for Sunday.\nOpen Thread, July 12, 2026: What\u2019s your favorite movie monster?\nYour daily source for off topic chatter with the MMA Mania faithful.\nTim Edwards Tim Edwards has been covering combat sports since 2015. At MMA Mania, Tim specializes in live, up-to-the-minut"
+    },
+    {
+      "title": "Samsung Galaxy A57 5G Review: The new mid-range favorite?",
+      "url": "https://www.notebookcheck.net/Samsung-Galaxy-A57-5G-Review-The-new-mid-range-favorite.1340192.0.html",
+      "source": "Notebookcheck",
+      "date": "2026-07-12",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "Verdict on the Samsung Galaxy A57 5G\nThe Samsung Galaxy A57 5G is a thoroughly successful update to the A Series, but it remains surprisingly conservative compared to its predecessor. The slimmer and lighter body, high-quality build, upgraded IP68 rating, and faster Exynos 1680 chip combine to creat"
     },
     {
       "title": "Meet the Floating Robot Companion Designed for Safe, Friendly Human Interaction",
@@ -127,6 +228,17 @@
       "summary": "Realtek RTL8723BS WiFi Linux Driver Hardened Against Malicious WiFi Access Points\nThe staging driver fixes that were sent out this week ahead of the Linux 7.2-rc3 release is predominantly made up of hardening the Realtek RTL8723BS WiFi driver. In particular, a number of fixes for addressing out-of-b"
     },
     {
+      "title": "Why this lightweight top-of-the-line smartphone is better than its specs suggest - Sony Xperia 1 VIII Review",
+      "url": "https://www.notebookcheck.net/Why-this-lightweight-top-of-the-line-smartphone-is-better-than-its-specs-suggest-Sony-Xperia-1-VIII-Review.1340527.0.html",
+      "source": "Notebookcheck",
+      "date": "2026-07-12",
+      "vendor": "Qualcomm",
+      "customer": "Sony",
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "Conclusion on the Sony Xperia 1 VIII\nThe Xperia 1 VIII leaves a mixed impression in our review because Sony isn't consistently sticking to its own path. The new generation of Xperia phones, lacking Sony\u2019s true DNA with its narrow 21:9 design and high 4K resolution, feels somewhat arbitrary and offer"
+    },
+    {
       "title": "Skyworks Solutions stock reflects its role in global wireless connectivity - ad-hoc-news.de",
       "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/skyworks-solutions-stock-reflects-its-role-in-global-wireless-connectivity/69750813",
       "source": "ad-hoc-news.de",
@@ -136,6 +248,17 @@
       "application": "Smart Home",
       "buckets": [],
       "summary": "Skyworks Solutions stock reflects its role in global wireless connectivity\nVer\u00f6ffentlicht: 12.07.2026 um 07:53 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael M\u00fcller (Chefredaktion)Skyworks Solutions stock gives investors direct exposure to a major supplier of radio-frequency (RF) co"
+    },
+    {
+      "title": "armStone MX8ULP packs NXP i.MX 8ULP into a 100mm Pico-ITX single board computer",
+      "url": "https://linuxgizmos.com/armstonemx8ulp-packs-nxp-i-mx-8ulp-into-a-100mm-pico-itx-single-board-computer/",
+      "source": "LinuxGizmos.com",
+      "date": "2026-07-12",
+      "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "armStone MX8ULP packs NXP i.MX 8ULP into a 100mm Pico-ITX single board computer\nJul 11, 2026 \u2014 by Giorgio Mendoza 83 viewsF&S Elektronik Systeme GmbH has showcased the armStone MX8ULP, a Pico-ITX single board computer based on the NXP i.MX 8ULP processor. The 100 \u00d7 72 mm platform targets industrial,"
     },
     {
       "title": "Coats Group stock holds steady as global thread specialist builds on resilient industrial demand - ad-hoc-news.de",
@@ -239,17 +362,6 @@
         "thread"
       ],
       "summary": "Spurs fans are excited about the drafting of Jayden Quaintance, but we honestly haven\u2019t gotten to see him in action. The 6\u201910\u201d power forward was drafted in the midst of recovering from back-to-back injuries. First, a knee surgery in early 2025 followed by a torn meniscus a year later. In his draft c"
-    },
-    {
-      "title": "How I turned my Pixel into the ultimate Home Assistant smart home companion",
-      "url": "https://www.androidauthority.com/pixel-home-assistant-smart-home-companion-3684122/",
-      "source": "Android Authority",
-      "date": "2026-07-11",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\nHow I turned my Pixel into the ultimate Home Assistant smart home companion\nJul 11, 2026 \u2014 6:00 AM ET\nBuilding a proper smart home can often feel like a never-ending battle against fragmented apps and unreliable cloud connect"
     },
     {
       "title": "Why does Apple still need Qualcomm and Broadcom despite developing its own chips? - \u0622\u064a-\u0641\u0648\u0646 \u0625\u0633\u0644\u0627\u0645",
@@ -368,131 +480,18 @@
       "application": null,
       "buckets": [],
       "summary": "Apple has sued OpenAI, accusing the company of stealing its trade secrets.\nIn a complaint filed in the US District Court for the Northern District of California on Friday, Apple alleges it \"uncovered a pattern of theft of Apple's trade secrets by OpenAI employees who were formerly at Apple.\"\nAlong w"
-    },
-    {
-      "title": "The Samsung 65-Inch S90H OLED TV Just Got a Massive $700 Price Cut",
-      "url": "https://www.cnet.com/deals/samsung-65-inch-s90h-oled-tv-deal-2026-07-10/",
-      "source": "CNET",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Save $700: If you've been wanting to take your summer movie nights to a new level, take a look at the Samsung S90H OLED TV. It's certainly a pricier and more premium pick, but that's why we've brought you this deal. This high-end TV would usually run you about $2,698. But with this $700 discount, yo"
-    },
-    {
-      "title": "Samsung's Galaxy Unpacked Event: We Expect Weird Foldables, Funky AI Glasses and More",
-      "url": "https://www.cnet.com/tech/mobile/samsungs-galaxy-unpacked-event-what-to-expect-how-to-watch/",
-      "source": "CNET",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "AR / VR / XR",
-      "buckets": [],
-      "summary": "Samsung's summer Galaxy Unpacked keynote is set for July 22 in London. This midyear event is typically where the company unveils its latest generation of foldable devices -- like the Galaxy Z Fold 7 and Z Flip 7 -- but this year things might take, let's say, a different shape. Last week, the company"
-    },
-    {
-      "title": "The Best Bluetooth Trackers for 2026",
-      "url": "https://uk.pcmag.com/mobile-phone-accessories/134236/the-best-bluetooth-trackers",
-      "source": "PCMag UK",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "AR / VR / XR",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Unless you're very well organized, you\u2019ve probably misplaced something in the past month. Maybe your couch cushions swallowed your remote. Perhaps a feisty pet swiped your keys off the counter and batted them under an end table. No matter what you're prone to losing, a Bluetooth tracker is a quick a"
-    },
-    {
-      "title": "Apple TV's Modern Day Noir Detective Series Is a Sleek Sci-Fi Mystery in Disguise",
-      "url": "https://www.cnet.com/tech/services-and-software/collin-farrell-sugar-sci-fi-noir-apple-tv/",
-      "source": "CNET",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "In this day and age, it can be a tough sell to convince someone to watch a slow-burning detective series on a streamer when there are so many fast-paced programs vying for your attention. I get it; I do. But sometimes a show comes along that breaks free from the preconceived notions that can come wi"
-    },
-    {
-      "title": "You Can Grab Amazon Kindle and Fire Tablets for Less Than $20 at Woot Today",
-      "url": "https://www.cnet.com/deals/refurbished-amazon-kindle-and-fire-tablets-woot-deal-2026-07-10/",
-      "source": "CNET",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "Save an additional 10%: We've just spotted a Woot offer on refurbished Kindle and Fire tablets, which brings them down to some of the lowest prices we've seen. Amazon makes some of the best tablets and e-readers around, and you can get one for significantly less right now.\nIn addition to current dis"
-    },
-    {
-      "title": "LNDU HK01W Review: What's missing on this Apple Home lock?",
-      "url": "https://9to5mac.com/2026/07/10/lndu-hk01w/",
-      "source": "9to5Mac",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "My top feature for a smart lock for any Apple smart home person is Apple Home Key support. The ability to tap your iPhone or Apple Watch against your front door and walk right inside is incredibly convenient. The problem is that most locks that support this feature are expensive, often costing $ 200"
-    },
-    {
-      "title": "Want Movie-Theater Sound at Home? A Soundbar Is the Easiest Option.",
-      "url": "https://www.nytimes.com/wirecutter/reviews/best-soundbar/",
-      "source": "The New York Times",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Brent Butterworth is a writer dedicated to audio gear. He has been reviewing speakers and other audio products for more than 30 years.\nWe are currently rewriting this guide, with several new picks coming. Vizio\u2019s Elevate 7.1.4 Pro will be our top pick, Samsung\u2019s HW-Q990H will be our upgrade pick, an"
-    },
-    {
-      "title": "Doing battle with Aqara presence sensors and HomeKit",
-      "url": "https://9to5mac.com/2026/07/10/smart-home-diary-sometimes-the-smart-thing-is-to-live-with-dumb-switches/",
-      "source": "9to5Mac",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "I think if we are honest with ourselves, most of us would admit that smart home tech falls into one of two categories. First, there is the genuinely useful. Second, there\u2019s the stuff we do just because we can, and it is to some degree cool.\nI think I\u2019ve now discovered a third category: things that r"
-    },
-    {
-      "title": "Deals: Galaxy Buds 4 Pro, rare Logitech MX Master 4 deal, Bose speaker $150 off, Anker chargers, more",
-      "url": "https://9to5google.com/2026/07/10/deals-galaxy-buds-4-pro-logitech-mx-master-bose-anker/",
-      "source": "9to5Google",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Alongside the Amazon Anker summer sale loaded with chargers and accessories from $8, today\u2019s 9to5Toys Lunch Break is headlined by a chance to land a pair of Samsung\u2019s latest Galaxy Buds 4 Pro at up to $112 off alongside this rare deal on Logitech\u2019s latest haptics-enabled MX Master 4 at the lowest pr"
-    },
-    {
-      "title": "Meta's New AI Tool Creates Deepfakes. Here's How to Protect Yourself on Instagram",
-      "url": "https://www.cnet.com/tech/services-and-software/meta-muse-ai-image-content-reuse-deepfake-news/",
-      "source": "CNET",
-      "date": "2026-07-10",
-      "vendor": null,
-      "customer": "Meta",
-      "application": null,
-      "buckets": [],
-      "summary": "Meta has a new AI model out, this time dedicated to generating and editing AI images. And yes, you can use it on Instagram. But if you have a public account, you need to change your settings now to avoid ending up the unwitting subject of anyone's AI creations.\nThe model, called Muse Image, is the f"
     }
   ],
   "vendor_news_30d": {
-    "Broadcom": 66,
-    "Qualcomm": 15,
-    "Skyworks": 7,
-    "Microchip": 5,
+    "Broadcom": 65,
+    "Qualcomm": 17,
+    "Microchip": 6,
+    "Skyworks": 6,
+    "Espressif": 4,
     "Realtek": 3,
     "Silicon Labs": 3,
-    "Espressif": 3,
-    "MediaTek": 2,
+    "MediaTek": 3,
+    "NXP": 1,
     "Atmosic": 1,
     "u-blox": 1,
     "Infineon": 1,
@@ -500,62 +499,26 @@
     "Telink": 1,
     "Murata": 1,
     "Onsemi": 1,
-    "Apple": 1,
-    "STMicro": 1,
-    "Renesas": 1,
-    "Marvell": 1
+    "STMicro": 1
   },
   "customer_news_30d": {
-    "Apple": 116,
+    "Apple": 115,
     "Samsung": 13,
-    "Amazon": 12,
-    "Google": 8,
-    "Microsoft": 5,
-    "Meta": 3,
+    "Amazon": 11,
+    "Microsoft": 6,
+    "Google": 6,
+    "Meta": 4,
+    "Sony": 4,
     "Eufy/Anker": 3,
-    "Sony": 3,
     "Huawei": 2,
+    "Aqara": 1,
     "Oura": 1,
     "Bose": 1,
     "Motorola": 1,
-    "SwitchBot": 1,
+    "Sonos": 1,
     "Tesla": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3753,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15877,
-      "pushed_at": "2026-07-12T16:50:00Z"
-    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -567,7 +530,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1629,
+      "issues_open": 1633,
       "prs_open": 0,
       "releases": [
         {
@@ -589,8 +552,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18525,
+      "stars": 18529,
       "pushed_at": "2026-07-12T17:35:05Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3740,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15884,
+      "pushed_at": "2026-07-13T09:23:20Z"
     },
     {
       "name": "Linux mac80211",
@@ -604,8 +601,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239305,
-      "pushed_at": "2026-07-11T22:48:49Z"
+      "stars": 239320,
+      "pushed_at": "2026-07-12T21:50:41Z"
     },
     {
       "name": "Matter SDK",
@@ -616,7 +613,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2718,
+      "issues_open": 2716,
       "prs_open": 0,
       "releases": [
         {
@@ -639,7 +636,7 @@
         }
       ],
       "stars": 8821,
-      "pushed_at": "2026-07-12T00:55:04Z"
+      "pushed_at": "2026-07-13T10:06:36Z"
     },
     {
       "name": "OpenThread",
@@ -650,7 +647,7 @@
         "thread"
       ],
       "commits_30d": 51,
-      "issues_open": 162,
+      "issues_open": 164,
       "prs_open": 0,
       "releases": [
         {
@@ -673,7 +670,7 @@
         }
       ],
       "stars": 3981,
-      "pushed_at": "2026-07-11T01:49:16Z"
+      "pushed_at": "2026-07-13T09:33:46Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -684,7 +681,7 @@
         "ieee15_4"
       ],
       "commits_30d": 36,
-      "issues_open": 481,
+      "issues_open": 477,
       "prs_open": 0,
       "releases": [
         {
@@ -706,7 +703,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15288,
+      "stars": 15290,
       "pushed_at": "2026-07-12T17:08:06Z"
     },
     {
@@ -740,7 +737,7 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1095,
+      "stars": 1097,
       "pushed_at": "2026-07-12T14:07:16Z"
     },
     {
@@ -838,18 +835,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
       "date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -992,6 +989,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
     },
     {
+      "vendor": "Microchip",
+      "ticker": "MCHP",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
+    },
+    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -1011,13 +1015,6 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
-    },
-    {
-      "vendor": "Microchip",
-      "ticker": "MCHP",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1041,13 +1038,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1060,6 +1050,13 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1118,6 +1115,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1130,13 +1134,6 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
-    },
-    {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -2668,6 +2665,11 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
         },
         {
+          "title": "MediaTek Filogic 860 Chip for Wi-Fi 7 Home Routers Announced",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+        },
+        {
           "title": "MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
@@ -2691,11 +2693,6 @@
           "title": "MediaTek Honored with Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
-        },
-        {
-          "title": "MediaTek Dimensity 9500 Processor Launched",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=MediaTek+Dimensity+9500+Processor+Launched+MediaTek"
         }
       ],
       "events": [
@@ -2936,6 +2933,11 @@
           "url": "https://www.cnx-software.com/2026/07/09/makerfabs-mauwb-for-home-assistant-an-esp32-s3-uwb-module-with-poe-and-enclosure/"
         },
         {
+          "title": "Espressif ESP32-C5 Devkit Launched Featuring Dual-Band Wi-Fi 6 and Bluetooth 5 LE",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/"
+        },
+        {
           "title": "Espressif ESP32-E22 Achieves Wi-Fi 6E Certification and Releases Open-Source Linux Drivers",
           "date": "Jun 2026",
           "url": "https://www.espressif.com/en/news/E22_Wi-Fi_6E_Certificate"
@@ -2954,11 +2956,6 @@
           "title": "Espressif ESP32-E22 WiFi 6E module gets Wi-Fi CERTIFIED certificate, open-source WiFi and Bluetooth Linux drivers",
           "date": "Jun 2026",
           "url": "https://www.cnx-software.com/2026/06/13/espressif-esp32-e22-wifi-6e-module-gets-wi-fi-certified-certificate-an-open-source-wifi-and-bluetooth-linux-drivers/"
-        },
-        {
-          "title": "ESP32-S31 Function CoreBoard-1 Adds Gigabit IoT I/O",
-          "date": "Jun 2026",
-          "url": "https://www.elektormagazine.com/articles/esp32-s31-function-coreboard"
         }
       ],
       "events": [
@@ -4539,7 +4536,17 @@
           "url": ""
         },
         {
+          "title": "Atmosic Introduces Multimode Support for Asset Tracking Solutions",
+          "date": "Jan 2025",
+          "url": ""
+        },
+        {
           "title": "Targus Wins CES 2024 Innovation Award with Atmosic ATM2-Powered ErgoFlip EcoSmart Mouse",
+          "date": "Dec 2023",
+          "url": ""
+        },
+        {
+          "title": "Targus Wins CES 2024 Innovation Award with ErgoFlip EcoSmart Mouse Featuring Atmosic ATM2 Bluetooth LE SoC",
           "date": "Dec 2023",
           "url": ""
         }
