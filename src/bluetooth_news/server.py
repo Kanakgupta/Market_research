@@ -16,6 +16,23 @@ _refresh_in_progress = False
 logger = logging.getLogger(__name__)
 
 
+def _load_cached_non_news_inputs(root: Path) -> tuple[list, list, list]:
+    """Load cached pulse/patents/filings so news refresh can stay lightweight."""
+    briefing_path = root / "data" / "briefing_input.json"
+    if not briefing_path.exists():
+        return [], [], []
+
+    try:
+        payload = json.loads(briefing_path.read_text(encoding="utf-8"))
+    except Exception:
+        return [], [], []
+
+    pulse = payload.get("github_pulse", []) or []
+    patents = payload.get("patents", []) or []
+    filings = payload.get("edgar_filings", []) or []
+    return pulse, patents, filings
+
+
 def create_app(docs_dir: Path | str = "docs") -> Flask:
     """Create and configure Flask app."""
     app = Flask(__name__)
@@ -143,6 +160,67 @@ def create_app(docs_dir: Path | str = "docs") -> Flask:
             "in_progress": _refresh_in_progress,
             "last_refresh": _last_refresh.isoformat() if _last_refresh else None
         }), 200
+
+    @app.route("/api/refresh-news", methods=["POST"])
+    def api_refresh_news():
+        """Refresh only news dynamically; reuse cached non-news datasets."""
+        global _refresh_in_progress, _last_refresh
+
+        with _refresh_lock:
+            if _refresh_in_progress:
+                return jsonify({
+                    "ok": False,
+                    "message": "Refresh already in progress",
+                    "last_refresh": _last_refresh.isoformat() if _last_refresh else None
+                }), 202
+
+            _refresh_in_progress = True
+
+        try:
+            from .fetcher import fetch_all
+            from .aggregator import process
+            from .enrichment import enrich
+            from .cache import record_history
+            from .briefing import write_inputs
+            from .report import render
+
+            logger.info("Starting news-only refresh...")
+
+            raw = fetch_all()
+            logger.info(f"Fetched {len(raw)} raw articles")
+
+            articles = process(raw, max_age_days=7, limit=1000, verbose=False)
+            logger.info(f"After dedup/filter: {len(articles)} articles")
+
+            articles = enrich(articles)
+            logger.info(f"After enrichment: {len(articles)} articles")
+
+            today = datetime.now().strftime("%Y-%m-%d")
+            record_history(today, articles)
+
+            pulse, patents, filings = _load_cached_non_news_inputs(docs_path.parent)
+            write_inputs(articles, pulse, patents, filings)
+
+            index_path = render(articles, docs_path, pulse=pulse, patents=patents, filings=filings)
+            logger.info(f"Site rendered after news refresh: {index_path}")
+
+            _last_refresh = datetime.now()
+            return jsonify({
+                "ok": True,
+                "message": "News refreshed successfully",
+                "articles_count": len(articles),
+                "timestamp": _last_refresh.isoformat()
+            }), 200
+        except Exception as e:
+            logger.exception(f"News refresh failed: {e}")
+            return jsonify({
+                "ok": False,
+                "message": str(e),
+                "last_refresh": _last_refresh.isoformat() if _last_refresh else None
+            }), 500
+        finally:
+            with _refresh_lock:
+                _refresh_in_progress = False
 
     return app
 

@@ -1,9 +1,9 @@
-# Keep the local report server running and restart it if it exits.
+# Keep the interactive local report server running and restart it if it exits.
 #
 # Recommended Task Scheduler action:
 #   powershell.exe -ExecutionPolicy Bypass -File C:\guptakanak\AI_Agents\Marketing\Research\scripts\run_site_24x7.ps1
 
-$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Continue'
 if (Get-Variable -Name PSNativeCommandUseErrorActionPreference -ErrorAction SilentlyContinue) {
     $PSNativeCommandUseErrorActionPreference = $false
 }
@@ -24,7 +24,10 @@ $currentLog = Join-Path $logDir 'site_24x7_current.log'
 while ($true) {
     $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
     "[$stamp] starting site server" | Tee-Object -FilePath $currentLog -Append
-    & $venvPython scripts/Build_open_site.py --host 127.0.0.1 --port 8888 --page index.html --no-browser *>&1 |
+    # Build from current local snapshot so first load has valid docs before interactive refreshes.
+    & $venvPython run.py site-dev --output-dir docs *>&1 |
+        Tee-Object -FilePath $currentLog -Append
+    & $venvPython run.py server --host 127.0.0.1 --port 8888 --docs-dir docs *>&1 |
         Tee-Object -FilePath $currentLog -Append
     $code = $LASTEXITCODE
     $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'

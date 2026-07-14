@@ -359,7 +359,7 @@ async function refreshNews(event) {
   btn.textContent = '↻ Refreshing…';
   
   try {
-    const response = await fetch('/api/refresh', { method: 'POST' });
+    const response = await fetch('/api/refresh-news', { method: 'POST' });
     const data = await response.json();
     
     if (data.ok) {
