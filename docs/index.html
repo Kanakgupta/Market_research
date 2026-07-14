@@ -224,6 +224,14 @@ a:hover { text-decoration:underline; }
 .std-position { font-size:11.5px; color:var(--muted); font-style:italic; margin:8px 0 0; border-top:1px dashed var(--border); padding-top:8px; }
 .std-activity { font-size:11px; color:var(--muted); margin-top:6px; }
 
+.stack-table { width:100%; border-collapse:separate; border-spacing:0; margin-top:12px; font-size:12.5px; }
+.stack-table th, .stack-table td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--border); }
+.stack-table th { background:#f9fafc; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#64748b; }
+.stack-table td:first-child { font-weight:700; white-space:nowrap; }
+.stack-tag { font-size:10px; font-weight:700; border-radius:999px; padding:2px 7px; margin-left:6px; border:1px solid transparent; }
+.stack-tag.airoc { background:#dcfce7; border-color:#bbf7d0; color:#166534; }
+.stack-tag.oss { background:#eef2ff; border-color:#c7d2fe; color:#3730a3; }
+
 /* Compact market signal feed */
 .signal-feed { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; margin-top:10px; }
 @media (max-width: 800px) { .signal-feed { grid-template-columns:1fr; } }
@@ -258,7 +266,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-14 15:57 PDT</div>
+  <div class="meta-info">Updated 2026-07-14 16:39 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -275,15 +283,40 @@ a:hover { text-decoration:underline; }
   <p>Product-marketing command center for Infineon AIROC — competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
 </section>
 
-<div class="kpi-row">
-  <div class="kpi"><h3>News (last 7d)</h3><div class="v">0</div>
-    <div class="delta flat"> — vs prior 7d</div></div>
-  <div class="kpi"><h3>Competitors tracked</h3><div class="v">21</div>
-    <div class="delta flat">vs Infineon AIROC</div></div>
-  <div class="kpi"><h3>Customers tracked</h3><div class="v">13</div>
-    <div class="delta flat">OEM profiles</div></div>
-  <div class="kpi"><h3>Relationship links</h3><div class="v">113</div>
-    <div class="delta flat">vendor &harr; customer</div></div>
+<div class="section">
+  <div class="section-head">
+    <h2>Data Freshness &amp; Coverage</h2>
+  </div>
+  <p class="section-sub">Current ingestion depth and signal spread powering this view.</p>
+  <div class="mini-grid">
+    <article class="mini-card">
+      <h3>Ingestion Horizon</h3>
+      <p>Article volume by recency window.</p>
+      <ul class="mini-list">
+        <li><b>0</b> articles in last 7 days</li>
+        <li><b>0</b> articles in last 30 days</li>
+        <li><b>0</b> articles in last 45 days</li>
+      </ul>
+    </article>
+    <article class="mini-card">
+      <h3>Source Breadth</h3>
+      <p>How diverse the collected signal is.</p>
+      <ul class="mini-list">
+        <li><b>20</b> unique publishers/sources</li>
+        <li><b>4</b>/6 technology buckets represented</li>
+        <li><b>0</b> days between oldest and newest captured article</li>
+      </ul>
+    </article>
+    <article class="mini-card">
+      <h3>Market Signal Depth</h3>
+      <p>How many entities are backed by recent evidence.</p>
+      <ul class="mini-list">
+        <li><b>4</b> vendors with linked news</li>
+        <li><b>8</b> customers with linked news</li>
+        <li><b>n/a</b> latest article timestamp</li>
+      </ul>
+    </article>
+  </div>
 </div>
 
 <div class="section">
@@ -438,6 +471,366 @@ a:hover { text-decoration:underline; }
       <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
     </article>
     
+    <article class="battle-card">
+      <h3>Espressif<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Unbeatable price point (&lt;$1 in volume) — default choice for cost-driven IoT</li><li class="win">Massive open-source ecosystem: Arduino, MicroPython, ESP-IDF, PlatformIO</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">BLE TX power/sensitivity inferior to Nordic and AIROC at &gt;30m range</li><li class="watch">No automotive or medical certifications (AEC-Q100, IEC 60601)</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/" target="_blank" rel="noopener">ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD</a> &middot; Jul 2026</div>
+        
+          <div><a href="https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/" target="_blank" rel="noopener">Espressif&#39;s ESP32-C5 Chip Powers New Dual-Band Wi-Fi 6 and Bluetooth LE IoT Devices</a> &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>STMicro<span class="region-tag">European</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">EU supply chain sovereignty — critical under EU Chips Act for Bosch, Schneider, OEMs</li><li class="win">STM32 MCU ecosystem lock-in: STM32WBA reuses same IDE, HAL, and middleware</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">No Wi-Fi combo — BLE and 802.15.4 only; no Wi-Fi 6 roadmap</li><li class="watch">LE Audio cadence slower than Nordic and Infineon AIROC</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.globenewswire.com/news-release/2026/07/03/3321641/0/en/STMicroelectronics-Announces-Timing-for-Second-Quarter-2026-Earnings-Release-and-Conference-Call.html" target="_blank" rel="noopener">STMicroelectronics Announces Timing for Second Quarter 2026 Earnings Release and Conference Call</a> &middot; Jul 2026</div>
+        
+          <div><a href="https://www.globenewswire.com/news-release/2026/07/06/3322388/0/en/STMicroelectronics-announces-status-of-common-share-repurchase-program.html" target="_blank" rel="noopener">STMicroelectronics announces status of common share repurchase program</a> &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Renesas<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">DA1469x/DA14695 best published BLE sleep current (1.1 µA) — unmatched for coin-cell devices</li><li class="win">Strong Japan automotive and industrial channel (Toyota, Panasonic, Sony tier-1s)</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">Wi-Fi tops out at Wi-Fi 4 — no Wi-Fi 6 roadmap in DA-series</li><li class="watch">Dialog/Renesas branding still consolidating — confused messaging in western channels</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.renesas.com/en/document/tnn/notes-notes-sample-project-renesas-starter-kit" target="_blank" rel="noopener">Renesas Launches Starter Kits for RX113, RX140, and RX231 Microcontrollers</a> &middot; Jul 2026</div>
+        
+          <div><a href="https://www.renesas.com/en/about/newsroom/renesas-acquires-pictorus-simplify-and-accelerate-embedded-application-software-development" target="_blank" rel="noopener">Renesas Acquires Pictorus to Simplify and Accelerate Embedded Application Software Development</a> &middot; Jun 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Synaptics<span class="region-tag">Americas</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Broadcom-lineage RF IP — proven in Apple/Samsung; best-in-class Wi-Fi sensitivity and range</li><li class="win">Wi-Fi 7 in IoT-class power envelope ahead of most competitors</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">New brand in IoT combo — ecosystem and SDK rebuilding post-Broadcom divestiture</li><li class="watch">Developer resources limited vs mature AIROC ModusToolbox</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/" target="_blank" rel="noopener">Synaptics Unveils Wi-Fi 7-Connected Astra™ AI Microcontroller to Accelerate Edge AI</a> &middot; Jun 2026</div>
+        
+          <div><a href="https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/" target="_blank" rel="noopener">Synaptics Launches Astra™ AI Microcontroller with Wi-Fi 7 Connectivity</a> &middot; Jun 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Realtek<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Lowest BoM in PC/laptop combo</li><li class="win">Volume share in white-box</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">Limited industrial / auto</li><li class="watch">Software ecosystem weaker</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.realtek.com/Article/NewsDetail?id=4806&amp;app_id=18&amp;lang=en-GB" target="_blank" rel="noopener">Realtek Licenses MPEG-H Audio Software from Fraunhofer IIS</a> &middot; Jul 2026</div>
+        
+          <div><a href="https://finance.biggo.com/news/8ad007db-f483-4d8a-b0c1-7cc5c67ff84f" target="_blank" rel="noopener">Realtek Q2 Revenue Hits Record NT$37.55 Billion</a> &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Broadcom<span class="region-tag">Americas</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Apple/Samsung mobile design wins</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">IoT segment divested to Synaptics</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/" target="_blank" rel="noopener">Broadcom and Apple Extend Strategic Custom Chip Partnership Through 2031</a> &middot; Jul 2026</div>
+        
+          <div>Broadcom BCM47765 GPS Chip Powers Premium Wearables &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>u-blox<span class="region-tag">European</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Pre-certified modules — fast time-to-market</li><li class="win">Strong industrial / auto traceability</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">Module margin on top of underlying silicon (Nordic / NXP)</li><li class="watch">Not a chip vendor</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.u-blox.com/en/event/electronica-2026" target="_blank" rel="noopener">u-blox to showcase latest wireless and positioning technology at Electronica 2026</a> &middot; Nov 2026</div>
+        
+          <div><a href="https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/" target="_blank" rel="noopener">u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs</a> &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Microchip<span class="region-tag">Americas</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Long-lifecycle parts, MPLAB ecosystem</li><li class="win">PIC/AVR loyalty</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">No Wi-Fi 6/6E/7 roadmap public</li><li class="watch">Smaller wireless R&amp;D investment</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/" target="_blank" rel="noopener">Microchip Makes MPLAB XC Pro Compilers and MPLAB Machine Learning Development Suite Free for Developers</a> &middot; Jul 2026</div>
+        
+          <div><a href="https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/" target="_blank" rel="noopener">Microchip Launches Free MPLAB XC Compilers and ML Suite</a> &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Telink<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Aggressive China pricing</li><li class="win">Multiprotocol BLE/Zigbee/Thread</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">No Wi-Fi</li><li class="watch">Western certifications/support thin</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div>Telink Joins Alliance Board to Develop Global IoT Standard Ecosystem &middot; Jul 2026</div>
+        
+          <div>Telink Joins CSA Board to Develop Global IoT Standard Ecosystem &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Bouffalo Lab<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Lowest cost Wi-Fi 6 combo</li><li class="win">RISC-V open ecosystem</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">Brand recognition outside China</li><li class="watch">Software stack maturity</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/" target="_blank" rel="noopener">Pine64 Launches PineVoice Smart Speaker Featuring Bouffalo Lab BL606P MCU</a> &middot; Jun 2026</div>
+        
+          <div>Bouffalo Lab BL618 Chip Integrated into Qualcomm QCC74xM EVK &middot; May 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Airoha<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Dominant in mid-tier TWS earbuds</li><li class="win">Tight audio DSP integration</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">Audio-only focus, no Wi-Fi</li><li class="watch">Limited western support</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.prnewswire.com/news-releases/airoha-technology-partners-with-e-ink-for-global-debut-of-4-2-inch-ripple-esl-at-computex-2026--302786961.html" target="_blank" rel="noopener">Airoha Technology Partners with E Ink for Global Debut of 4.2-Inch Ripple™ ESL</a> &middot; Jun 2026</div>
+        
+          <div><a href="https://www.prnewswire.com/news-releases/airoha-technology-partners-with-e-ink-for-global-debut-of-4-2-inch-ripple-esl-at-computex-2026--302786961.html" target="_blank" rel="noopener">Airoha Technology Partners with E Ink for Global Debut of 4.2-Inch Ripple™ ESL at Computex 2026</a> &middot; Jun 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Murata<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Pre-certified modules at scale</li><li class="win">Auto / industrial supply chain</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">Module markup</li><li class="watch">Re-sells underlying silicon (Infineon / NXP)</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895" target="_blank" rel="noopener">Murata Manufacturing focus on components and global demand</a> &middot; Jul 2026</div>
+        
+          <div><a href="https://www.murata.com/en-global/news/other/other/2026/0616" target="_blank" rel="noopener">Murata Collaborates with Synopsys to Provide Simulation Models</a> &middot; Jun 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Atmosic<span class="region-tag">Americas</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Energy-harvesting / battery-less differentiation</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">Niche play, low volume</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.electronicsmedia.info/2026/06/10/atmosic-atm34-e-soc/" target="_blank" rel="noopener">Atmosic ATM34/e SoC Now Available Through Mouser for Ultra-Low Power IoT Applications</a> &middot; Jun 2026</div>
+        
+          <div><a href="https://timestech.in/atmosic-technologies-atm34-e-socs-for-industrial-smart-and-robotics-applications/" target="_blank" rel="noopener">Atmosic Tech ATM34/e SoCs for Industrial, Smart, and Robotics Applications</a> &middot; Jun 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Onsemi<span class="region-tag">Americas</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Industry-low BLE power, hearing-aid wins</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">No Wi-Fi</li><li class="watch">Slow follow-on roadmap</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div><a href="https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai" target="_blank" rel="noopener">onsemi to Acquire Synaptics to Enable the Next Generation of Intelligent Systems for Physical AI</a> &middot; Jul 2026</div>
+        
+          <div><a href="https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-advances-fab-right-strategy-with-agreements-to-divest-two-manufacturing-facilities" target="_blank" rel="noopener">onsemi Advances Fab Right Strategy with Agreements to Divest Two Manufacturing Facilities</a> &middot; Jul 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
+    <article class="battle-card">
+      <h3>Toshiba<span class="region-tag">Asian</span></h3>
+      
+      <ul class="battle-list">
+        <li class="win">Japan auto/industrial channel</li>
+      </ul>
+      
+      
+      <ul class="battle-list">
+        <li class="watch">BLE-only, dated stack</li>
+      </ul>
+      
+      
+      <div class="battle-press">
+        
+          <div>Toshiba Electronic Devices &amp; Storage Corporation Signs MoU for Business Integration Discussions &middot; Mar 2026</div>
+        
+          <div><a href="https://fscdn.rohm.com/en/financial/ir-news-releases/260327_news3_en.pdf" target="_blank" rel="noopener">Toshiba Electronic Devices &amp; Storage Corporation Signs MOU to Commence Business Integration Discussions</a> &middot; Mar 2026</div>
+        
+      </div>
+      
+      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+    </article>
+    
   </div>
 </div>
 
@@ -501,28 +894,15 @@ a:hover { text-decoration:underline; }
     
     <article class="cust-card">
       <div class="hd">
-        <h3>Bose</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 68%</span>
+        <h3>Google</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
       </div>
-      <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Bose LE Audio earbuds refresh</p>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Google wireless product refresh</p>
       <div>
-        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span><span class="feat-chip">Auracast support</span><span class="feat-chip">low-latency audio path</span><span class="feat-chip">public broadcast receive</span>
+        
       </div>
-      <div class="cust-basis">app signal=Audio / Speaker (score 12.0)</div>
-    </article>
-    
-    <article class="cust-card">
-      <div class="hd">
-        <h3>Meta</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 66%</span>
-      </div>
-      <div class="cust-app">Smart Glasses</div>
-      <p class="cust-product">Meta smart glasses generation</p>
-      <div>
-        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">all-day battery profile</span><span class="feat-chip">hands-free BLE peripherals</span>
-      </div>
-      <div class="cust-basis">app signal=Smart Glasses (score 11.0)</div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
     </article>
     
     <article class="cust-card">
@@ -553,6 +933,45 @@ a:hover { text-decoration:underline; }
     
     <article class="cust-card">
       <div class="hd">
+        <h3>Microsoft</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
+      </div>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Microsoft wireless product refresh</p>
+      <div>
+        
+      </div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Meta</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 66%</span>
+      </div>
+      <div class="cust-app">Smart Glasses</div>
+      <p class="cust-product">Meta smart glasses generation</p>
+      <div>
+        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">all-day battery profile</span><span class="feat-chip">hands-free BLE peripherals</span>
+      </div>
+      <div class="cust-basis">app signal=Smart Glasses (score 11.0)</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Samsung</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
+      </div>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Samsung wireless product refresh</p>
+      <div>
+        
+      </div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
         <h3>Sony</h3>
         <span class="conf-badge conf-medium">Medium &middot; 60%</span>
       </div>
@@ -564,9 +983,164 @@ a:hover { text-decoration:underline; }
       <div class="cust-basis">app signal=Audio / Speaker (score 10.0)</div>
     </article>
     
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Bose</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 68%</span>
+      </div>
+      <div class="cust-app">Audio / Speaker</div>
+      <p class="cust-product">Bose LE Audio earbuds refresh</p>
+      <div>
+        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span><span class="feat-chip">Auracast support</span><span class="feat-chip">low-latency audio path</span><span class="feat-chip">public broadcast receive</span>
+      </div>
+      <div class="cust-basis">app signal=Audio / Speaker (score 12.0)</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Sonos</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
+      </div>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Sonos wireless product refresh</p>
+      <div>
+        
+      </div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Arlo</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
+      </div>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Arlo wireless product refresh</p>
+      <div>
+        
+      </div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Garmin</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
+      </div>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Garmin wireless product refresh</p>
+      <div>
+        
+      </div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Tesla</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
+      </div>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Tesla wireless product refresh</p>
+      <div>
+        
+      </div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>BMW</h3>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
+      </div>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">BMW wireless product refresh</p>
+      <div>
+        
+      </div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
+    </article>
+    
   </div>
   
   <p style="margin-top:12px;"><a href="customers.html">All customer profiles &amp; full roadmap table &rarr;</a></p>
+</div>
+
+<div class="section">
+  <div class="section-head">
+    <h2>Bluetooth Stack Positioning &amp; Full Coverage</h2>
+  </div>
+  <p class="section-sub">Complete tracked customer/competitor coverage plus explicit Infineon AIROC Bluetooth stack positioning against Zephyr and BlueZ.</p>
+
+  <table class="stack-table">
+    <thead>
+      <tr>
+        <th>Stack</th>
+        <th>Primary Targets</th>
+        <th>Positioning Strength</th>
+        <th>Trade-off / Gap</th>
+        <th>Missing Features</th>
+        <th>Best Fit</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>Infineon AIROC Bluetooth Stack<span class="stack-tag airoc">Infineon</span></td>
+        <td>AIROC SoCs/modules, embedded MCU and Linux gateway designs</td>
+        <td>Tight silicon + stack integration, low-power tuning, and vendor-backed lifecycle/support</td>
+        <td>Less portable outside Infineon ecosystem than fully open host stacks</td>
+        <td>No native cross-vendor portability layer for non-Infineon silicon</td>
+        <td>Commercial products prioritizing time-to-market, qualification, and long-term support</td>
+      </tr>
+      
+      <tr>
+        <td>Zephyr Bluetooth Host<span class="stack-tag oss">Open Source</span></td>
+        <td>RTOS-based embedded IoT devices across many MCU vendors</td>
+        <td>Portable open-source stack, broad board support, high customization flexibility</td>
+        <td>More integration/maintenance ownership for product teams</td>
+        <td>No single-vendor production support SLA and less turnkey certification assistance</td>
+        <td>Teams optimizing for cross-vendor firmware reuse and deep embedded customization</td>
+      </tr>
+      
+      <tr>
+        <td>BlueZ<span class="stack-tag oss">Open Source</span></td>
+        <td>Linux hosts/gateways, edge computers, and application processors</td>
+        <td>Mature Linux ecosystem integration with strong host-side interoperability</td>
+        <td>Not an RTOS device stack; typically needs Linux-class host footprint</td>
+        <td>Limited direct fit for tiny MCU-only endpoints without a Linux host</td>
+        <td>Gateway/host products where Linux is already the system baseline</td>
+      </tr>
+      
+      <tr>
+        <td>Apache NimBLE<span class="stack-tag oss">Open Source</span></td>
+        <td>Resource-constrained MCU products and embedded RTOS environments</td>
+        <td>Small memory footprint and widely reused BLE host for constrained systems</td>
+        <td>Feature integration breadth depends on chosen platform/vendor SDK</td>
+        <td>No unified full-stack toolchain across all MCU vendors</td>
+        <td>Ultra-low-resource BLE endpoints prioritizing compact implementation</td>
+      </tr>
+      
+      <tr>
+        <td>BTstack<span class="stack-tag oss">Open Source</span></td>
+        <td>Embedded devices, prototyping platforms, and custom Bluetooth firmware</td>
+        <td>Clean architecture and flexibility for custom protocol/application work</td>
+        <td>Requires stronger in-house Bluetooth expertise for production hardening</td>
+        <td>Smaller ecosystem and fewer out-of-box vertical integrations than mainstream stacks</td>
+        <td>Engineering-led products needing highly tailored stack behavior</td>
+      </tr>
+      
+      <tr>
+        <td>Android Fluoride Stack<span class="stack-tag oss">Open Source</span></td>
+        <td>Android phones/tablets and Android-based consumer devices</td>
+        <td>Deep integration with Android framework and large deployed device base</td>
+        <td>Tightly coupled to Android platform release and vendor customization layers</td>
+        <td>Not suitable as a drop-in RTOS stack for standalone MCU peripherals</td>
+        <td>Products with Android as the primary OS and app-facing Bluetooth requirements</td>
+      </tr>
+      
+    </tbody>
+  </table>
 </div>
 
 <div class="section">
@@ -588,7 +1162,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC CYW20829 ships Channel Sounding (PBR/RTT baseline from BT 6.0); CYW55513 covers LE Audio. Track BT 6.3 Channel Sounding refinements (Inline PCT Transfer, per-PHY RTT) for next silicon revs.</p>
-      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="bluetooth.html">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.bluetooth.com/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -603,37 +1177,82 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet — gap vs Synaptics Veros/MediaTek Filogic 380.</p>
-      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="wifi.html">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.wi-fi.org/discover-wi-fi" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
-      <h3>802.15.4 / Thread / Matter</h3>
+      <h3>802.15.4</h3>
       <div class="std-version-row">
-        <span class="std-pill">Now: Thread 1.4 (last publicly verified) · Matter 1.6 (Jun 2026)</span>
-        <span class="std-pill next">Next: Matter 1.7 (scope not yet public); Thread next version unverified</span>
+        <span class="std-pill">Now: IEEE 802.15.4 baseline in active low-power mesh deployments</span>
+        <span class="std-pill next">Next: Incremental profile updates driven by ecosystem layers</span>
+      </div>
+      
+      <ul class="std-feat-list">
+        <li>Low-power PHY/MAC baseline used under Thread/Zigbee mesh ecosystems</li><li>Channel agility and robust coexistence remain central for dense IoT deployments</li><li>Interoperability outcomes depend on upper-layer protocol/profile alignment</li>
+      </ul>
+      
+      <p class="std-position">AIROC CYW55573 provides 802.15.4 support as the PHY/MAC base for Thread and Zigbee class networks.</p>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.ieee802.org/15/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+    </article>
+    
+    <article class="std-card">
+      <h3>Zigbee</h3>
+      <div class="std-version-row">
+        <span class="std-pill">Now: Zigbee ecosystem refresh under CSA (Zigbee 4.0 program messaging)</span>
+        <span class="std-pill next">Next: Broader Zigbee 4.0 ecosystem rollout</span>
+      </div>
+      
+      <ul class="std-feat-list">
+        <li>Zigbee 4.0 relaunch under CSA — new member testimonials (Legrand, Fortune Brands, Jun-Jul 2026)</li>
+      </ul>
+      
+      <p class="std-position">AIROC 802.15.4 capability is relevant for Zigbee-class low-power mesh designs; confirm Zigbee roadmap alignment.</p>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+    </article>
+    
+    <article class="std-card">
+      <h3>Thread</h3>
+      <div class="std-version-row">
+        <span class="std-pill">Now: Thread 1.4 (last publicly verified)</span>
+        <span class="std-pill next">Next: Next Thread revision not publicly confirmed</span>
+      </div>
+      
+      <ul class="std-feat-list">
+        <li>Border-router robustness and commissioning reliability across mixed-vendor homes</li><li>Operational mesh stability tuning for larger multi-hop IoT installations</li><li>Ongoing alignment with Matter-over-Thread deployment best practices</li>
+      </ul>
+      
+      <p class="std-position">AIROC CYW55573 provides the 802.15.4 foundation for Thread-enabled products; continue certification alignment.</p>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.threadgroup.org/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+    </article>
+    
+    <article class="std-card">
+      <h3>Matter</h3>
+      <div class="std-version-row">
+        <span class="std-pill">Now: Matter 1.6 (Jun 2026)</span>
+        <span class="std-pill next">Next: Matter 1.7 (scope not yet public)</span>
       </div>
       
       <ul class="std-feat-list">
         <li>Matter 1.6 — Joint Fabric for cross-ecosystem device sharing (per CSA Unify 2026)</li><li>Matter 1.6 — NFC-based commissioning to simplify device setup</li><li>Matter 1.6 theme is reliability/interoperability polish, not new device types (per CSA messaging)</li>
       </ul>
       
-      <p class="std-position">AIROC has 802.15.4 in CYW55573; Matter SDK supported. Strong vs NXP IW612 / Silicon Labs MG24 in tri-radio stories. Needs to confirm Matter 1.6 (Joint Fabric, NFC commissioning) and Zigbee 4.0 support on roadmap.</p>
-      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="ieee15_4.html">Open feed &rarr;</a></div>
+      <p class="std-position">Matter SDK support is in place; prioritize Matter 1.6 features like Joint Fabric and NFC commissioning.</p>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
-      <h3>UWB</h3>
+      <h3>Aliro</h3>
       <div class="std-version-row">
-        <span class="std-pill">Now: FiRa Core 4.0 (announced Dec 2025, with certification program)</span>
-        <span class="std-pill next">Next: Not yet numbered — FiRa Plugfest #2 interoperability validation scheduled Sep 2026</span>
+        <span class="std-pill">Now: Aliro digital key profile adoption underway (NFC + UWB + BLE)</span>
+        <span class="std-pill next">Next: Additional OEM/member Aliro rollouts expected</span>
       </div>
       
       <ul class="std-feat-list">
-        <li>FiRa Core 4.0 specification + certification program rollout</li><li>FiRa Plugfest #2 (Sep 2026, France) — multi-vendor interoperability testing</li><li>Aliro digital key (NFC+UWB+BLE) gaining auto OEM commitments</li>
+        <li>Aliro digital key (NFC+UWB+BLE) gaining auto OEM commitments</li><li>UWB radar / sensing for presence detection</li><li>Phone-to-phone UWB ranging</li>
       </ul>
       
       <p class="std-position">AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung. Confirm FiRa Core 4.0 alignment before next combo announcement.</p>
-      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="aliro.html">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/aliro/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
   </div>
@@ -669,5 +1288,5 @@ a:hover { text-decoration:underline; }
 </section>
 
 </main>
-<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-14 15:57 PDT</div></footer>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-14 16:39 PDT</div></footer>
 </body></html>

@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import logging
 import threading
+import os
 from pathlib import Path
 from datetime import datetime
 from flask import Flask, jsonify, request, send_from_directory
@@ -14,6 +15,14 @@ _last_refresh = None
 _refresh_in_progress = False
 
 logger = logging.getLogger(__name__)
+
+
+def _lookback_days() -> int:
+    """Read processing horizon from env with safe fallback."""
+    try:
+        return max(7, int(os.getenv("NEWS_LOOKBACK_DAYS", "30")))
+    except ValueError:
+        return 30
 
 
 def _load_cached_non_news_inputs(root: Path) -> tuple[list, list, list]:
@@ -108,7 +117,8 @@ def create_app(docs_dir: Path | str = "docs") -> Flask:
             logger.info(f"Fetched {len(raw)} raw articles")
 
             # Deduplicate and process
-            articles = process(raw, max_age_days=7, limit=1000, verbose=False)
+            lookback_days = _lookback_days()
+            articles = process(raw, max_age_days=lookback_days, limit=1500, verbose=False)
             logger.info(f"After dedup/filter: {len(articles)} articles")
 
             # Enrich
@@ -163,6 +173,7 @@ def create_app(docs_dir: Path | str = "docs") -> Flask:
                 "ok": True,
                 "message": "Refresh completed successfully",
                 "articles_count": len(articles),
+                "lookback_days": lookback_days,
                 "timestamp": _last_refresh.isoformat()
             }), 200
 
@@ -214,7 +225,8 @@ def create_app(docs_dir: Path | str = "docs") -> Flask:
             raw = fetch_all()
             logger.info(f"Fetched {len(raw)} raw articles")
 
-            articles = process(raw, max_age_days=7, limit=1000, verbose=False)
+            lookback_days = _lookback_days()
+            articles = process(raw, max_age_days=lookback_days, limit=1500, verbose=False)
             logger.info(f"After dedup/filter: {len(articles)} articles")
 
             articles = enrich(articles)
@@ -234,6 +246,7 @@ def create_app(docs_dir: Path | str = "docs") -> Flask:
                 "ok": True,
                 "message": "News refreshed successfully",
                 "articles_count": len(articles),
+                "lookback_days": lookback_days,
                 "timestamp": _last_refresh.isoformat()
             }), 200
         except Exception as e:

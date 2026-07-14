@@ -89,12 +89,16 @@ QUERIES: dict[str, list[str]] = {
         "IEEE 802.15.4 chip",
         "802.15.4 multiprotocol SoC",
         "802.15.4 radio MCU",
+        "802.15.4 Thread Zigbee SoC",
+        "IEEE 802.15.4 industrial IoT",
     ],
     "aliro": [
         "Aliro digital key",
         "Aliro CSA access",
         "Aliro NFC UWB Bluetooth",
         "Connectivity Standards Alliance Aliro",
+        "FiRa digital key UWB",
+        "NFC UWB BLE access control",
     ],
     "thread": [
         "Thread protocol IoT",
@@ -102,6 +106,8 @@ QUERIES: dict[str, list[str]] = {
         "OpenThread",
         "Thread 1.4",
         "Thread Group news",
+        "Thread over 802.15.4 smart home",
+        "Matter over Thread deployment",
     ],
     "matter": [
         "Matter smart home",
@@ -109,6 +115,8 @@ QUERIES: dict[str, list[str]] = {
         "Matter Casting",
         "Matter Apple Google Amazon",
         "Matter device launch",
+        "Matter 1.6",
+        "CSA Matter certification",
     ],
 }
 
@@ -117,7 +125,16 @@ RSS_FEEDS: list[dict] = [
     {"name": "Bluetooth SIG Blog",    "url": "https://www.bluetooth.com/blog/feed/"},
     {"name": "Bluetooth SIG News",    "url": "https://www.bluetooth.com/news/feed/"},
     {"name": "CSA / Matter (Zigbee)", "url": "https://csa-iot.org/feed/"},
-    {"name": "ZDNet",                 "url": "https://www.zdnet.com/feeds/latest/"},
+    {"name": "ZDNet",                 "url": "https://www.zdnet.com/news/rss.xml"},
+    {"name": "The Verge",             "url": "https://www.theverge.com/rss/index.xml"},
+    {"name": "Ars Technica",          "url": "https://feeds.arstechnica.com/arstechnica/index"},
+    {"name": "TechCrunch",            "url": "https://techcrunch.com/feed/"},
+    {"name": "IEEE Spectrum",         "url": "https://spectrum.ieee.org/rss"},
+    {"name": "EE Times",              "url": "https://www.eetimes.com/feed/"},
+    {"name": "9to5Google",            "url": "https://9to5google.com/feed/"},
+    {"name": "9to5Mac",               "url": "https://9to5mac.com/feed/"},
+    {"name": "CNX Software",          "url": "https://www.cnx-software.com/feed/"},
+    {"name": "The Register",          "url": "https://www.theregister.com/headlines.atom"},
 ]
 
 # Critical articles that must always be included (bypass relevance filter).

@@ -2081,6 +2081,14 @@ _INDEX_TEMPLATE = """<!doctype html>
 .std-position { font-size:11.5px; color:var(--muted); font-style:italic; margin:8px 0 0; border-top:1px dashed var(--border); padding-top:8px; }
 .std-activity { font-size:11px; color:var(--muted); margin-top:6px; }
 
+.stack-table { width:100%; border-collapse:separate; border-spacing:0; margin-top:12px; font-size:12.5px; }
+.stack-table th, .stack-table td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--border); }
+.stack-table th { background:#f9fafc; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#64748b; }
+.stack-table td:first-child { font-weight:700; white-space:nowrap; }
+.stack-tag { font-size:10px; font-weight:700; border-radius:999px; padding:2px 7px; margin-left:6px; border:1px solid transparent; }
+.stack-tag.airoc { background:#dcfce7; border-color:#bbf7d0; color:#166534; }
+.stack-tag.oss { background:#eef2ff; border-color:#c7d2fe; color:#3730a3; }
+
 /* Compact market signal feed */
 .signal-feed { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; margin-top:10px; }
 @media (max-width: 800px) { .signal-feed { grid-template-columns:1fr; } }
@@ -2111,15 +2119,40 @@ _INDEX_TEMPLATE = """<!doctype html>
   <p>Product-marketing command center for Infineon AIROC \u2014 competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
 </section>
 
-<div class="kpi-row">
-  <div class="kpi"><h3>News (last 7d)</h3><div class="v">{{ articles_7d }}</div>
-    <div class="delta {{ delta_class }}">{{ delta_arrow }} {{ delta_pct }} vs prior 7d</div></div>
-  <div class="kpi"><h3>Competitors tracked</h3><div class="v">{{ competitors|length }}</div>
-    <div class="delta flat">vs Infineon AIROC</div></div>
-  <div class="kpi"><h3>Customers tracked</h3><div class="v">{{ customers|length }}</div>
-    <div class="delta flat">OEM profiles</div></div>
-  <div class="kpi"><h3>Relationship links</h3><div class="v">{{ links|length }}</div>
-    <div class="delta flat">vendor &harr; customer</div></div>
+<div class="section">
+  <div class="section-head">
+    <h2>Data Freshness &amp; Coverage</h2>
+  </div>
+  <p class="section-sub">Current ingestion depth and signal spread powering this view.</p>
+  <div class="mini-grid">
+    <article class="mini-card">
+      <h3>Ingestion Horizon</h3>
+      <p>Article volume by recency window.</p>
+      <ul class="mini-list">
+        <li><b>{{ freshness_7d }}</b> articles in last 7 days</li>
+        <li><b>{{ freshness_30d }}</b> articles in last 30 days</li>
+        <li><b>{{ freshness_45d }}</b> articles in last 45 days</li>
+      </ul>
+    </article>
+    <article class="mini-card">
+      <h3>Source Breadth</h3>
+      <p>How diverse the collected signal is.</p>
+      <ul class="mini-list">
+        <li><b>{{ unique_sources }}</b> unique publishers/sources</li>
+        <li><b>{{ bucket_coverage }}</b>/{{ total_buckets }} technology buckets represented</li>
+        <li><b>{{ lookback_span_days }}</b> days between oldest and newest captured article</li>
+      </ul>
+    </article>
+    <article class="mini-card">
+      <h3>Market Signal Depth</h3>
+      <p>How many entities are backed by recent evidence.</p>
+      <ul class="mini-list">
+        <li><b>{{ vendors_with_news }}</b> vendors with linked news</li>
+        <li><b>{{ customers_with_news }}</b> customers with linked news</li>
+        <li><b>{{ latest_article_label }}</b> latest article timestamp</li>
+      </ul>
+    </article>
+  </div>
 </div>
 
 <div class="section">
@@ -2205,6 +2238,38 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
+    <h2>Bluetooth Stack Positioning &amp; Full Coverage</h2>
+  </div>
+  <p class="section-sub">Complete tracked customer/competitor coverage plus explicit Infineon AIROC Bluetooth stack positioning against Zephyr and BlueZ.</p>
+
+  <table class="stack-table">
+    <thead>
+      <tr>
+        <th>Stack</th>
+        <th>Primary Targets</th>
+        <th>Positioning Strength</th>
+        <th>Trade-off / Gap</th>
+        <th>Missing Features</th>
+        <th>Best Fit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in stack_positioning %}
+      <tr>
+        <td>{{ r.stack }}{% if r.kind == 'AIROC' %}<span class="stack-tag airoc">Infineon</span>{% else %}<span class="stack-tag oss">Open Source</span>{% endif %}</td>
+        <td>{{ r.targets }}</td>
+        <td>{{ r.strength }}</td>
+        <td>{{ r.tradeoff }}</td>
+        <td>{{ r.missing_features }}</td>
+        <td>{{ r.best_fit }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-head">
     <h2>Technology &amp; Standards Radar</h2>
   </div>
   <p class="section-sub">Current vs. next spec version and in-flight features per domain &mdash; direct input for roadmap planning.</p>
@@ -2222,7 +2287,7 @@ _INDEX_TEMPLATE = """<!doctype html>
       </ul>
       {% endif %}
       {% if s.position %}<p class="std-position">{{ s.position }}</p>{% endif %}
-      <div class="std-activity">{{ s.count }} related articles &middot; {{ s.window_label }}{% if s.page %} &middot; <a href="{{ s.page }}">Open feed &rarr;</a>{% endif %}</div>
+      <div class="std-activity">{{ s.count }} related articles &middot; {{ s.window_label }}{% if s.page %} &middot; <a href="{{ s.page }}" target="_blank" rel="noopener">Open feed &rarr;</a>{% endif %}</div>
     </article>
     {% endfor %}
   </div>
@@ -2296,6 +2361,20 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
 
     arts_7d = [a for a in articles if _pub(a) and _pub(a) >= cutoff_7d]
     arts_prev_7d = [a for a in articles if _pub(a) and cutoff_14d <= _pub(a) < cutoff_7d]
+    arts_30d = _recent(articles, 30)
+    arts_45d = _recent(articles, 45)
+
+    published_list = [p for p in (_pub(a) for a in articles) if p]
+    latest_article = max(published_list) if published_list else None
+    oldest_article = min(published_list) if published_list else None
+    lookback_span_days = (latest_article - oldest_article).days if latest_article and oldest_article else 0
+    latest_article_label = latest_article.strftime("%Y-%m-%d") if latest_article else "n/a"
+
+    unique_sources = len({(a.get("source") or "").strip() for a in articles if (a.get("source") or "").strip()})
+    vendors_with_news = len({(a.get("vendor") or "").strip() for a in articles if (a.get("vendor") or "").strip()})
+    customers_with_news = len({(a.get("customer") or "").strip() for a in articles if (a.get("customer") or "").strip()})
+    total_buckets = len(BUCKETS)
+    bucket_coverage = len({b for a in articles for b in (a.get("buckets") or [])})
 
     # KPI delta
     n_now, n_prev = len(arts_7d), len(arts_prev_7d)
@@ -2322,11 +2401,9 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
 
     # --- Competitive battlecard: strengths/weaknesses + latest press per priority competitor
     competitors_list = comp.get("competitors", []) or []
-    priority_comps = [c for c in competitors_list if c.get("priority")]
-    if not priority_comps:
-        priority_comps = competitors_list
+    priority_comps = competitors_list
     battlecard = []
-    for c in priority_comps[:6]:
+    for c in priority_comps:
         battlecard.append({
             "vendor": c.get("vendor", "Unknown"),
             "region": REGION_LABELS.get(c.get("region", ""), c.get("region", "") or ""),
@@ -2351,9 +2428,36 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
 
     # --- Customer opportunity radar: model-predicted next launches
     try:
-        customer_radar = predict_customer_releases(customers, articles, mode="balanced")[:6]
+      customer_radar_predicted = predict_customer_releases(customers, articles, mode="balanced")
     except Exception:
-        customer_radar = []
+      customer_radar_predicted = []
+
+    # Keep predictor output where available, then add fallback rows so all tracked customers appear.
+    by_customer = {
+      (r.get("customer") or "").strip(): r
+      for r in customer_radar_predicted
+      if (r.get("customer") or "").strip()
+    }
+    customer_radar = []
+    for c in (customers or []):
+      name = (c.get("name") or "").strip()
+      if not name:
+        continue
+      if name in by_customer:
+        customer_radar.append(by_customer[name])
+        continue
+
+      apps = c.get("applications") or []
+      needs = c.get("wireless_needs") or []
+      customer_radar.append({
+        "customer": name,
+        "application": apps[0] if apps else "Connected Device",
+        "probable_product": f"{name} wireless product refresh",
+        "expected_features": needs[:6],
+        "confidence": 35,
+        "confidence_label": "Low",
+        "based_on": ["Coverage entry: limited recent launch signal in current news window"],
+      })
 
     # --- Technology & standards radar: current/next version + in-flight features + activity
     standards_path = Path(__file__).resolve().parents[2] / "data" / "standards.json"
@@ -2366,32 +2470,182 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         except (OSError, json.JSONDecodeError):
             standards_by_family = {}
 
+    def _pick_features(items: list[str], keywords: list[str]) -> list[str]:
+      if not items:
+        return []
+      if not keywords:
+        return items[:3]
+      picked = []
+      for feat in items:
+        low = feat.lower()
+        if any(k in low for k in keywords):
+          picked.append(feat)
+      return picked[:3] if picked else items[:3]
+
     STANDARDS_DOMAINS = [
-        ("bluetooth", ["bluetooth"], "bluetooth.html"),
-        ("wi-fi", ["wifi"], "wifi.html"),
-        ("802.15.4 / thread / matter", ["ieee15_4", "thread", "matter"], "ieee15_4.html"),
-        ("uwb", ["aliro"], "aliro.html"),
+      {
+        "label": "Bluetooth",
+        "source_key": "bluetooth",
+        "bucket_slugs": ["bluetooth"],
+        "page": "https://www.bluetooth.com/",
+        "feature_keywords": [],
+      },
+      {
+        "label": "Wi-Fi",
+        "source_key": "wi-fi",
+        "bucket_slugs": ["wifi"],
+        "page": "https://www.wi-fi.org/discover-wi-fi",
+        "feature_keywords": [],
+      },
+      {
+        "label": "802.15.4",
+        "source_key": "802.15.4 / thread / matter",
+        "bucket_slugs": ["ieee15_4"],
+        "page": "https://www.ieee802.org/15/",
+        "feature_keywords": ["802.15.4", "ieee"],
+        "features": [
+          "Low-power PHY/MAC baseline used under Thread/Zigbee mesh ecosystems",
+          "Channel agility and robust coexistence remain central for dense IoT deployments",
+          "Interoperability outcomes depend on upper-layer protocol/profile alignment",
+        ],
+        "current_version": "IEEE 802.15.4 baseline in active low-power mesh deployments",
+        "next_version": "Incremental profile updates driven by ecosystem layers",
+        "position": "AIROC CYW55573 provides 802.15.4 support as the PHY/MAC base for Thread and Zigbee class networks.",
+      },
+      {
+        "label": "Zigbee",
+        "source_key": "802.15.4 / thread / matter",
+        "bucket_slugs": ["ieee15_4"],
+        "page": "https://csa-iot.org/all-solutions/zigbee/",
+        "feature_keywords": ["zigbee"],
+        "current_version": "Zigbee ecosystem refresh under CSA (Zigbee 4.0 program messaging)",
+        "next_version": "Broader Zigbee 4.0 ecosystem rollout",
+        "position": "AIROC 802.15.4 capability is relevant for Zigbee-class low-power mesh designs; confirm Zigbee roadmap alignment.",
+      },
+      {
+        "label": "Thread",
+        "source_key": "802.15.4 / thread / matter",
+        "bucket_slugs": ["thread"],
+        "page": "https://www.threadgroup.org/",
+        "feature_keywords": ["thread"],
+        "features": [
+          "Border-router robustness and commissioning reliability across mixed-vendor homes",
+          "Operational mesh stability tuning for larger multi-hop IoT installations",
+          "Ongoing alignment with Matter-over-Thread deployment best practices",
+        ],
+        "current_version": "Thread 1.4 (last publicly verified)",
+        "next_version": "Next Thread revision not publicly confirmed",
+        "position": "AIROC CYW55573 provides the 802.15.4 foundation for Thread-enabled products; continue certification alignment.",
+      },
+      {
+        "label": "Matter",
+        "source_key": "802.15.4 / thread / matter",
+        "bucket_slugs": ["matter"],
+        "page": "https://csa-iot.org/all-solutions/matter/",
+        "feature_keywords": ["matter", "commission"],
+        "current_version": "Matter 1.6 (Jun 2026)",
+        "next_version": "Matter 1.7 (scope not yet public)",
+        "position": "Matter SDK support is in place; prioritize Matter 1.6 features like Joint Fabric and NFC commissioning.",
+      },
+      {
+        "label": "Aliro",
+        "source_key": "uwb",
+        "bucket_slugs": ["aliro"],
+        "page": "https://csa-iot.org/all-solutions/aliro/",
+        "feature_keywords": ["aliro", "digital key", "nfc", "uwb"],
+        "current_version": "Aliro digital key profile adoption underway (NFC + UWB + BLE)",
+        "next_version": "Additional OEM/member Aliro rollouts expected",
+      },
     ]
     standards_radar = []
-    for family_key, bucket_slugs, page in STANDARDS_DOMAINS:
-        std = standards_by_family.get(family_key)
+    for domain in STANDARDS_DOMAINS:
+        std = standards_by_family.get(domain["source_key"])
         if not std:
             continue
-        b7 = [a for a in arts_7d if any(slug in (a.get("buckets") or []) for slug in bucket_slugs)]
+
+        b7 = [
+            a for a in arts_7d
+            if any(slug in (a.get("buckets") or []) for slug in domain["bucket_slugs"])
+        ]
         b_window = "7d"
         if len(b7) < 2:
-            b7 = [a for a in _recent(articles, 14) if any(slug in (a.get("buckets") or []) for slug in bucket_slugs)]
+            b7 = [
+                a for a in _recent(articles, 14)
+                if any(slug in (a.get("buckets") or []) for slug in domain["bucket_slugs"])
+            ]
             b_window = "14d fallback"
+
         standards_radar.append({
-            "family": std.get("family", family_key.title()),
-            "current_version": std.get("current_version", ""),
-            "next_version": std.get("next_version", ""),
-            "features": (std.get("in_flight_features") or [])[:3],
-            "position": std.get("infineon_position", ""),
+            "family": domain["label"],
+            "current_version": domain.get("current_version", std.get("current_version", "")),
+            "next_version": domain.get("next_version", std.get("next_version", "")),
+          "features": domain.get("features") or _pick_features(
+            std.get("in_flight_features") or [],
+            domain.get("feature_keywords", []),
+          ),
+            "position": domain.get("position", std.get("infineon_position", "")),
             "count": len(b7),
             "window_label": b_window,
-            "page": page,
+            "page": domain["page"],
         })
+
+    # --- Stack positioning (AIROC vs Zephyr/BlueZ)
+    stack_positioning = [
+        {
+            "stack": "Infineon AIROC Bluetooth Stack",
+            "kind": "AIROC",
+            "targets": "AIROC SoCs/modules, embedded MCU and Linux gateway designs",
+            "strength": "Tight silicon + stack integration, low-power tuning, and vendor-backed lifecycle/support",
+            "tradeoff": "Less portable outside Infineon ecosystem than fully open host stacks",
+            "missing_features": "No native cross-vendor portability layer for non-Infineon silicon",
+            "best_fit": "Commercial products prioritizing time-to-market, qualification, and long-term support",
+        },
+        {
+            "stack": "Zephyr Bluetooth Host",
+            "kind": "OSS",
+            "targets": "RTOS-based embedded IoT devices across many MCU vendors",
+            "strength": "Portable open-source stack, broad board support, high customization flexibility",
+            "tradeoff": "More integration/maintenance ownership for product teams",
+            "missing_features": "No single-vendor production support SLA and less turnkey certification assistance",
+            "best_fit": "Teams optimizing for cross-vendor firmware reuse and deep embedded customization",
+        },
+        {
+            "stack": "BlueZ",
+            "kind": "OSS",
+            "targets": "Linux hosts/gateways, edge computers, and application processors",
+            "strength": "Mature Linux ecosystem integration with strong host-side interoperability",
+            "tradeoff": "Not an RTOS device stack; typically needs Linux-class host footprint",
+            "missing_features": "Limited direct fit for tiny MCU-only endpoints without a Linux host",
+            "best_fit": "Gateway/host products where Linux is already the system baseline",
+        },
+        {
+            "stack": "Apache NimBLE",
+            "kind": "OSS",
+            "targets": "Resource-constrained MCU products and embedded RTOS environments",
+            "strength": "Small memory footprint and widely reused BLE host for constrained systems",
+            "tradeoff": "Feature integration breadth depends on chosen platform/vendor SDK",
+            "missing_features": "No unified full-stack toolchain across all MCU vendors",
+            "best_fit": "Ultra-low-resource BLE endpoints prioritizing compact implementation",
+        },
+        {
+            "stack": "BTstack",
+            "kind": "OSS",
+            "targets": "Embedded devices, prototyping platforms, and custom Bluetooth firmware",
+            "strength": "Clean architecture and flexibility for custom protocol/application work",
+            "tradeoff": "Requires stronger in-house Bluetooth expertise for production hardening",
+            "missing_features": "Smaller ecosystem and fewer out-of-box vertical integrations than mainstream stacks",
+            "best_fit": "Engineering-led products needing highly tailored stack behavior",
+        },
+        {
+            "stack": "Android Fluoride Stack",
+            "kind": "OSS",
+            "targets": "Android phones/tablets and Android-based consumer devices",
+            "strength": "Deep integration with Android framework and large deployed device base",
+            "tradeoff": "Tightly coupled to Android platform release and vendor customization layers",
+            "missing_features": "Not suitable as a drop-in RTOS stack for standalone MCU peripherals",
+            "best_fit": "Products with Android as the primary OS and app-facing Bluetooth requirements",
+        },
+    ]
 
     # --- Recent headline pools (still used for the compact Market Signal Feed)
     comp_7d = [a for a in arts_7d if a.get("vendor")]
@@ -2445,7 +2699,18 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         opportunity_wins=opportunity_wins,
         opportunity_watch=opportunity_watch,
         customer_radar=customer_radar,
+        stack_positioning=stack_positioning,
         standards_radar=standards_radar,
+        freshness_7d=len(arts_7d),
+        freshness_30d=len(arts_30d),
+        freshness_45d=len(arts_45d),
+        unique_sources=unique_sources,
+        vendors_with_news=vendors_with_news,
+        customers_with_news=customers_with_news,
+        bucket_coverage=bucket_coverage,
+        total_buckets=total_buckets,
+        lookback_span_days=lookback_span_days,
+        latest_article_label=latest_article_label,
         top_movers=top_movers,
         heatmap=heatmap_rows, heatmap_max=heatmap_max,
         active="index", **ctx,

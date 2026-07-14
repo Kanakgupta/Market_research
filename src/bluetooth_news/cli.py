@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 import shutil
 import sys
 import webbrowser
@@ -31,8 +32,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--max-age-days",
         type=int,
-        default=7,
-        help="Max age for kept articles (default 7 days for recent coverage)",
+        default=int(os.getenv("NEWS_LOOKBACK_DAYS", "30")),
+        help="Max age for kept articles (default 30 days; override with NEWS_LOOKBACK_DAYS)",
     )
     parser.add_argument("--limit", type=int, default=1000)
     parser.add_argument("--output-dir", type=Path, default=Path("docs"))
