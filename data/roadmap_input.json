@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T13:07:11Z",
+  "generated_at": "2026-07-14T11:48:25Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2786,6 +2786,11 @@
           "url": "https://finance.biggo.com/news/8ad007db-f483-4d8a-b0c1-7cc5c67ff84f"
         },
         {
+          "title": "Realtek Announces Record Q2 Revenue of NT$37.55 Billion",
+          "date": "Jul 2026",
+          "url": "https://finance.biggo.com/news/8ad007db-f483-4d8a-b0c1-7cc5c67ff84f"
+        },
+        {
           "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio and 8K Gaming HID Solutions at COMPUTEX 2026",
           "date": "Jun 2026",
           "url": "https://audioxpress.com/news/realtek-successfully-demonstrates-next-generation-bluetooth-hdt-audio-and-8k-gaming-hid-solutions-at-computex-2026"
@@ -2814,11 +2819,6 @@
           "title": "Realtek sees PC revenue growth despite 2026 shipment decline",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Realtek+sees+PC+revenue+growth+despite+2026+shipment+decline+Realtek"
-        },
-        {
-          "title": "Realtek Semiconductor stock (TW0002379005): Q1 earnings and AI-related demand in focus",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Realtek+Semiconductor+stock+%28TW0002379005%29%3A+Q1+earnings+and+AI-related+demand+in+focus+Realtek"
         }
       ]
     },
@@ -2972,14 +2972,14 @@
           "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         },
         {
+          "title": "u-blox Launches New Wi-Fi 6 Module Families for Industrial IoT",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
+        },
+        {
           "title": "u-blox announces MAYA-W5 and NORA-W5 Wi-Fi 6 modules",
           "date": "Jun 2026",
           "url": ""
-        },
-        {
-          "title": "u-blox Launches MAYA-W5 and NORA-W5 Wi-Fi 6 Modules",
-          "date": "Jun 2026",
-          "url": "https://www.tradingview.com/news/eqs:f89c867fd094b:0-u-blox-announces-maya-w5-and-nora-w5-its-new-reliable-wi-fi-6-modules-for-cost-conscious-application/"
         }
       ]
     },
@@ -3401,12 +3401,22 @@
           "url": ""
         },
         {
+          "title": "Atmosic Brings Multimode Support to Tracking Assets",
+          "date": "Jan 2025",
+          "url": ""
+        },
+        {
           "title": "Targus Wins CES 2024 Innovation Award with Atmosic ATM2-Powered ErgoFlip EcoSmart Mouse",
           "date": "Dec 2023",
           "url": ""
         },
         {
           "title": "Targus Wins CES 2024 Innovation Award with ErgoFlip EcoSmart Mouse Featuring Atmosic ATM2 Bluetooth LE SoC",
+          "date": "Dec 2023",
+          "url": ""
+        },
+        {
+          "title": "Targus Wins CES 2024 Innovation Award using Atmosic ATM2 based Bluetooth LE SoC for its ErgoFlip EcoSmart Mouse",
           "date": "Dec 2023",
           "url": ""
         }
@@ -3694,14 +3704,16 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 63,
-    "Qualcomm": 16,
-    "Microchip": 6,
+    "Broadcom": 40,
+    "Qualcomm": 11,
     "Skyworks": 6,
-    "Espressif": 4,
+    "Microchip": 6,
+    "Espressif": 3,
     "Realtek": 3,
     "Silicon Labs": 3,
-    "MediaTek": 3,
+    "MediaTek": 2,
+    "HiSilicon": 2,
+    "Marvell": 1,
     "NXP": 1,
     "Atmosic": 1,
     "u-blox": 1,
@@ -3782,40 +3794,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3743,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15884,
-      "pushed_at": "2026-07-13T09:23:20Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3826,7 +3804,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1633,
+      "issues_open": 1637,
       "prs_open": 0,
       "releases": [
         {
@@ -3848,8 +3826,57 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18530,
-      "pushed_at": "2026-07-12T17:35:05Z"
+      "stars": 18534,
+      "pushed_at": "2026-07-14T08:32:24Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3750,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15893,
+      "pushed_at": "2026-07-14T07:46:18Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239420,
+      "pushed_at": "2026-07-13T23:16:13Z"
     },
     {
       "name": "Matter SDK",
@@ -3860,7 +3887,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2713,
+      "issues_open": 2716,
       "prs_open": 0,
       "releases": [
         {
@@ -3883,22 +3910,7 @@
         }
       ],
       "stars": 8822,
-      "pushed_at": "2026-07-13T12:57:08Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 239325,
-      "pushed_at": "2026-07-12T21:50:41Z"
+      "pushed_at": "2026-07-14T09:03:12Z"
     },
     {
       "name": "OpenThread",
@@ -3908,8 +3920,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 51,
-      "issues_open": 164,
+      "commits_30d": 57,
+      "issues_open": 166,
       "prs_open": 0,
       "releases": [
         {
@@ -3931,42 +3943,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
         }
       ],
-      "stars": 3981,
-      "pushed_at": "2026-07-13T09:33:46Z"
-    },
-    {
-      "name": "Zigbee2MQTT",
-      "owner": "Koenkk",
-      "repo": "zigbee2mqtt",
-      "label": "Zigbee gateway",
-      "tech": [
-        "ieee15_4"
-      ],
-      "commits_30d": 36,
-      "issues_open": 477,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "2.12.1",
-          "name": "2.12.1",
-          "published_at": "2026-07-01T06:04:12Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
-        },
-        {
-          "tag": "2.12.0",
-          "name": "2.12.0",
-          "published_at": "2026-06-09T19:08:29Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
-        },
-        {
-          "tag": "2.11.0",
-          "name": "2.11.0",
-          "published_at": "2026-06-01T18:41:53Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
-        }
-      ],
-      "stars": 15290,
-      "pushed_at": "2026-07-12T17:08:06Z"
+      "stars": 3984,
+      "pushed_at": "2026-07-14T04:20:21Z"
     },
     {
       "name": "BlueZ",
@@ -3976,8 +3954,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 32,
-      "issues_open": 103,
+      "commits_30d": 40,
+      "issues_open": 99,
       "prs_open": 0,
       "releases": [
         {
@@ -4000,7 +3978,41 @@
         }
       ],
       "stars": 1097,
-      "pushed_at": "2026-07-12T14:07:16Z"
+      "pushed_at": "2026-07-14T10:58:02Z"
+    },
+    {
+      "name": "Zigbee2MQTT",
+      "owner": "Koenkk",
+      "repo": "zigbee2mqtt",
+      "label": "Zigbee gateway",
+      "tech": [
+        "ieee15_4"
+      ],
+      "commits_30d": 35,
+      "issues_open": 469,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "2.12.1",
+          "name": "2.12.1",
+          "published_at": "2026-07-01T06:04:12Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
+        },
+        {
+          "tag": "2.12.0",
+          "name": "2.12.0",
+          "published_at": "2026-06-09T19:08:29Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
+        },
+        {
+          "tag": "2.11.0",
+          "name": "2.11.0",
+          "published_at": "2026-06-01T18:41:53Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
+        }
+      ],
+      "stars": 15292,
+      "pushed_at": "2026-07-12T17:08:06Z"
     },
     {
       "name": "NimBLE",
