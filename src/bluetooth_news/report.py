@@ -212,6 +212,27 @@ a:hover { text-decoration:underline; }
 .tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 .tech-actions { display:flex; gap:8px; align-items:center; }
 .tech-count { font-size:12px; color:var(--muted); }
+
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
 """
 
 # ---------------------------------------------------------------- nav
@@ -258,12 +279,17 @@ _NEWS_TEMPLATE = """<!doctype html>
 <main class="wrap content">
 <section class="hero">
   <h1>{{ page_title }}</h1>
+  {% if page_title != 'All News' %}
   <p>{{ page_desc }}</p>
+  {% endif %}
   <div class="stats">
+    {% if page_title != 'All News' %}
     <span class="pill">{{ articles|length }} articles</span>
     {% if vendor_groups %}<span class="pill">{{ vendor_total }} vendors</span>{% endif %}
     {% if customer_tabs %}<span class="pill">{{ customer_tabs|length }} customers</span>{% endif %}
     {% if app_tabs %}<span class="pill">{{ app_tabs|length }} applications</span>{% endif %}
+    {% endif %}
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="{{ generated_at }}">{{ generated_at }} PDT</span></span>
   </div>
 </section>
 
@@ -278,13 +304,48 @@ _NEWS_TEMPLATE = """<!doctype html>
     <button class="btn-refresh" id="refreshBtn" onclick="refreshNews(event)"><span class="refresh-icon" id="refreshIcon">&#x21bb;</span> Refresh</button>
   </div>
 </section>
+
+<div class="news-layout">
+  <aside class="news-sidebar">
+    <div class="news-sidebar-hdr">Classified News</div>
+
+    <div class="news-class-block" id="newsClassCustomers">
+      <button class="news-class-title customers" onclick="toggleNewsSection('newsClassCustomers')">Customers <span class="caret">▾</span></button>
+      <div class="news-class-body">
+        {% for name, cnt in customer_tabs %}
+        <button class="news-side-item" data-side-type="customer" data-side-value="{{ name }}" onclick="filterBySideFromButton(this)">{{ name }} <span class="side-count">{{ cnt }}</span></button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="news-class-block" id="newsClassCompetitors">
+      <button class="news-class-title competitors" onclick="toggleNewsSection('newsClassCompetitors')">Competitors <span class="caret">▾</span></button>
+      <div class="news-class-body">
+        {% for region_slug, region_label, names, region_count in vendor_groups %}
+          {% for name, cnt in names %}
+          <button class="news-side-item" data-side-type="vendor" data-side-value="{{ name }}" onclick="filterBySideFromButton(this)">{{ name }} <span class="side-count">{{ cnt }}</span></button>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="news-class-block" id="newsClassGeneric">
+      <button class="news-class-title generic" onclick="toggleNewsSection('newsClassGeneric')">Generic IoT <span class="caret">▾</span></button>
+      <div class="news-class-body">
+        <button class="news-side-item active" data-side-type="all" data-side-value="" onclick="filterBySideFromButton(this)">All IoT news</button>
+        <button class="news-side-item" data-side-type="market" data-side-value="" onclick="filterBySideFromButton(this)">Generic IoT only</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="news-main">
 {% endif %}
 
 {% if not articles %}<div class="empty">No articles. Try widening <code>--max-age-days</code>.</div>{% endif %}
 
 <div class="grid" id="grid">
   {% for a in articles %}
-  <article class="card" data-buckets="{{ a.buckets|join(',') }}">
+  <article class="card" data-buckets="{{ a.buckets|join(',') }}" data-vendor="{{ a.vendor or '' }}" data-customer="{{ a.customer or '' }}">
     <div class="thumb">
       {% if a.thumb %}<img src="{{ a.thumb }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">{% endif %}
     </div>
@@ -305,9 +366,16 @@ _NEWS_TEMPLATE = """<!doctype html>
   </article>
   {% endfor %}
 </div>
+
+{% if page_title == 'All News' %}
+  </div><!-- /.news-main -->
+</div><!-- /.news-layout -->
+{% endif %}
 </main>
 <footer class="footer"><div class="wrap">IoT Wireless Intel \u00b7 multi-source RSS \u00b7 for informational use</div></footer>
 <script>
+const BUCKET_LABELS = {{ bucket_labels|tojson }};
+
 function timeAgo(iso){
   const d=new Date(iso); if(isNaN(d)) return '';
   let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
@@ -321,69 +389,150 @@ function timeAgo(iso){
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
 
-function filterByTech(bucket) {
-  const tabs = document.querySelectorAll('.tech-tab');
-  tabs.forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
-  
+let techFilter = 'all';
+let sideFilter = { type: 'all', value: '' };
+
+function applyFilters(){
   const cards = document.querySelectorAll('#grid .card');
-  let visibleCount = 0;
-  
+  let visible = 0;
   cards.forEach(card => {
-    if (bucket === 'all') {
-      card.style.display = '';
-      visibleCount++;
-    } else {
-      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
-      if (buckets.includes(bucket)) {
-        card.style.display = '';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
-    }
+    const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
+    const vendor = card.dataset.vendor || '';
+    const customer = card.dataset.customer || '';
+    const techOk = techFilter === 'all' || buckets.includes(techFilter);
+    let sideOk = true;
+    if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
+    else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
+    else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    const show = techOk && sideOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
   });
-  
-  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+  const countEl = document.getElementById('articleCount');
+  if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+}
+
+function filterByTech(bucket) {
+  document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
+  if (window.event && window.event.target) window.event.target.classList.add('active');
+  techFilter = bucket;
+  applyFilters();
+}
+
+function filterBySide(type, value) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  if (window.event && window.event.target) {
+    const btn = window.event.target.closest('.news-side-item');
+    if (btn) btn.classList.add('active');
+  }
+  sideFilter = { type: type, value: value };
+  applyFilters();
+}
+
+function filterBySideFromButton(btn) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  sideFilter = { type: btn.dataset.sideType || 'all', value: btn.dataset.sideValue || '' };
+  applyFilters();
+}
+
+function toggleNewsSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('collapsed');
+}
+
+function escapeHtml(s){
+  return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function cardHtml(a){
+  const buckets = a.buckets || [];
+  const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
+  const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
+  const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
+  const thumb = a.thumb ? '<img src="' + a.thumb + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\\'thumb-empty\\'); this.remove()">' : '';
+  let summary = a.summary || '';
+  if (summary.length > 240) summary = summary.slice(0, 240) + '\u2026';
+  const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
+  const timeHtml = a.published ? '<span class="dot">\u00b7</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+    '<div class="thumb">' + thumb + '</div>' +
+    '<div class="body">' +
+      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
+      summaryHtml +
+      '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
+    '</div>' +
+  '</article>';
+}
+
+async function loadNews(){
+  const grid = document.getElementById('grid');
+  if (!grid) return;
+  try {
+    const res = await fetch('/api/news?limit=50');
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!Array.isArray(data) || !data.length) return;
+    grid.innerHTML = data.map(cardHtml).join('');
+    document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    applyFilters();
+  } catch (e) {
+    // No backend available (static hosting) - keep server-rendered cards as-is.
+  }
 }
 
 async function refreshNews(event) {
   event.preventDefault();
   const btn = document.getElementById('refreshBtn');
   const icon = document.getElementById('refreshIcon');
-  
+
   if (btn.disabled) return;
-  
+
   btn.disabled = true;
   icon.classList.add('spinning');
-  btn.textContent = '↻ Refreshing…';
-  
+  btn.textContent = '\u21bb Refreshing\u2026';
+
   try {
     const response = await fetch('/api/refresh-news', { method: 'POST' });
     const data = await response.json();
-    
+
     if (data.ok) {
-      btn.textContent = '✓ Done';
+      btn.textContent = '\u2713 Done';
+      const lu = document.getElementById('lastUpdatedText');
+      if (lu && data.timestamp) {
+        const d = new Date(data.timestamp);
+        if (!isNaN(d)) lu.textContent = d.toLocaleString();
+      }
+      await loadNews();
       setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+        btn.textContent = '\u21bb Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 1200);
     } else {
-      btn.textContent = '✗ Error';
+      btn.textContent = '\u2717 Error';
       setTimeout(() => {
-        btn.textContent = '↻ Refresh';
+        btn.textContent = '\u21bb Refresh';
         btn.disabled = false;
         icon.classList.remove('spinning');
       }, 3000);
     }
   } catch (err) {
-    btn.textContent = '✗ Error';
+    btn.textContent = '\u2717 Error';
     setTimeout(() => {
-      btn.textContent = '↻ Refresh';
+      btn.textContent = '\u21bb Refresh';
       btn.disabled = false;
       icon.classList.remove('spinning');
     }, 3000);
   }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (document.getElementById('grid')) loadNews();
+});
 </script>
 </body></html>
 """
@@ -567,38 +716,6 @@ _CUSTOMERS_TEMPLATE = """<!doctype html>
           </div>
           {% endfor %}
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">{{ live|length }} articles</span>
-        </div>
-        {% if live %}
-        <div class="oc-news-grid">
-          {% for n in live %}
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              {% if n.thumb %}<img src="{{ n.thumb }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">{% endif %}
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                {% for b in n.buckets %}<span class="chip chip-tech">{{ bucket_labels.get(b, b) }}</span>{% endfor %}
-                <span class="chip chip-cust">{{ c.name }}</span>
-              </div>
-              <h2 class="title"><a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title }}</a></h2>
-              {% if n.summary %}<p class="summary">{{ n.summary }}</p>{% endif %}
-              <div class="meta-row">
-                <span class="source">{{ n.source }}</span>
-                {% if n.date %}<span class="dot">&middot;</span><span class="time" data-ts="{{ n.date }}">{{ n.date }}</span>{% endif %}
-              </div>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-        {% else %}
-        <div class="ci-no-news">No tagged launch headlines in current window.</div>
-        {% endif %}
       </div>
 
     </div>
@@ -914,7 +1031,7 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
             <a href="{{ c.website }}" target="_blank" rel="noopener" class="ci-website-link">{{ c.website }} \u2197</a>
           </div>
         </div>
-        <a class="ci-news-count" href="#cnews-{{ loop.index0 }}" onclick="event.preventDefault();document.getElementById('cnews-'+{{ loop.index0 }}).scrollIntoView({behavior:'smooth',block:'start'});" title="Jump to news feed">
+        <a class="ci-news-count" href="news.html" title="View latest news for {{ c.vendor }} on the News page">
           <div class="ci-nc-num">{{ news_counts.get(c.vendor, 0) }}</div>
           <div class="ci-nc-label">news<br>30-day</div>
         </a>
@@ -1061,39 +1178,6 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
       </div>
       {% endif %}
 
-      <!-- 9. Company news -->
-      {% set cnews = vendor_news.get(c.vendor, []) %}
-      <div class="ci-news-feed-wrap" id="cnews-{{ loop.index0 }}">
-        <div class="ci-section-h">&#x1F4F0; Latest Wireless News &mdash; {{ c.vendor }}
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">{{ cnews|length }} articles</span>
-        </div>
-        {% if cnews %}
-        <div class="oc-news-grid">
-          {% for item in cnews %}
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              {% if item.thumb %}<img src="{{ item.thumb }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">{% endif %}
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                {% for b in item.buckets %}<span class="chip chip-tech">{{ bucket_labels.get(b, b) }}</span>{% endfor %}
-                <span class="chip chip-vendor">{{ c.vendor }}</span>
-              </div>
-              <h2 class="title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></h2>
-              {% if item.summary %}<p class="summary">{{ item.summary }}</p>{% endif %}
-              <div class="meta-row">
-                <span class="source">{{ item.source }}</span>
-                {% if item.published_iso %}<span class="dot">&middot;</span><span class="time" data-ts="{{ item.published_iso }}">{{ item.published }}</span>{% endif %}
-              </div>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-        {% else %}
-        <div class="ci-no-news">No recent wireless news indexed for {{ c.vendor }}.</div>
-        {% endif %}
-      </div>
-
     </div>
     {% else %}
     <!-- Simplified panel for non-priority competitors -->
@@ -1107,7 +1191,7 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
             {% if c.website %}<a href="{{ c.website }}" target="_blank" rel="noopener" class="ci-website-link">{{ c.website }} \u2197</a>{% endif %}
           </div>
         </div>
-        <a class="ci-news-count" href="#cnews-{{ loop.index0 }}" onclick="event.preventDefault();document.getElementById('cnews-'+{{ loop.index0 }}).scrollIntoView({behavior:'smooth',block:'start'});" title="Jump to news feed">
+        <a class="ci-news-count" href="news.html" title="View latest news for {{ c.vendor }} on the News page">
           <div class="ci-nc-num">{{ news_counts.get(c.vendor, 0) }}</div>
           <div class="ci-nc-label">news<br>30-day</div>
         </a>
@@ -1146,38 +1230,6 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div class="ci-customers">
           {% for k in c.key_customers %}<span class="ci-customer-tag">{{ k }}</span>{% endfor %}
         </div>
-      </div>
-      <!-- News feed for non-priority -->
-      {% set cnews = vendor_news.get(c.vendor, []) %}
-      <div class="ci-news-feed-wrap" id="cnews-{{ loop.index0 }}">
-        <div class="ci-section-h">&#x1F4F0; Latest Wireless News &mdash; {{ c.vendor }}
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">{{ cnews|length }} articles</span>
-        </div>
-        {% if cnews %}
-        <div class="oc-news-grid">
-          {% for item in cnews %}
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              {% if item.thumb %}<img src="{{ item.thumb }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">{% endif %}
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                {% for b in item.buckets %}<span class="chip chip-tech">{{ bucket_labels.get(b, b) }}</span>{% endfor %}
-                <span class="chip chip-vendor">{{ c.vendor }}</span>
-              </div>
-              <h2 class="title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></h2>
-              {% if item.summary %}<p class="summary">{{ item.summary }}</p>{% endif %}
-              <div class="meta-row">
-                <span class="source">{{ item.source }}</span>
-                {% if item.published_iso %}<span class="dot">&middot;</span><span class="time" data-ts="{{ item.published_iso }}">{{ item.published }}</span>{% endif %}
-              </div>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-        {% else %}
-        <div class="ci-no-news">No recent wireless news indexed for {{ c.vendor }}.</div>
-        {% endif %}
       </div>
     </div>
     {% endif %}
@@ -1626,6 +1678,33 @@ PINNED_APPS = ["Smart Home", "Industrial", "Automotive", "Wearable",
                "AR / VR / XR", "Smart Glasses", "Audio / Speaker"]
 
 
+def _write_news_cache(articles: list[dict]) -> None:
+    """Persist the current top news articles for the dynamic /api/news endpoint."""
+    data_dir = Path(__file__).resolve().parents[2] / "data"
+    try:
+        data_dir.mkdir(parents=True, exist_ok=True)
+        payload = []
+        for a in articles:
+            pub = a.get("published")
+            payload.append({
+                "title": a.get("title") or "",
+                "url": a.get("url") or "",
+                "source": a.get("source") or "",
+                "summary": a.get("summary") or "",
+                "thumb": a.get("thumb") or "",
+                "buckets": [b for b in (a.get("buckets") or []) if b],
+                "vendor": a.get("vendor") or "",
+                "customer": a.get("customer") or "",
+                "application": a.get("application") or "",
+                "published": pub.isoformat() if pub else "",
+            })
+        (data_dir / "news_cache.json").write_text(
+            json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+    except OSError:
+        pass
+
+
 def render(articles: list[dict], output_dir: Path,
            pulse: list[dict] | None = None,
            patents: list[dict] | None = None,
@@ -1672,13 +1751,18 @@ def render(articles: list[dict], output_dir: Path,
 
     news_template = env.from_string(_NEWS_TEMPLATE)
 
-    # --- All News page ---
+    # --- All News page (dynamic: shows top 50 by recency, refreshed via /api/news) ---
+    articles_by_recency = sorted(
+        articles, key=lambda a: a.get("published") or datetime.min.replace(tzinfo=timezone.utc), reverse=True
+    )
+    top_news = articles_by_recency[:50]
     vg, vt, ct, at = _filters(articles)
     (output_dir / "news.html").write_text(news_template.render(
         page_title="All News", page_desc=PAGE_DESCS["news"],
-        articles=articles, active="news",
+        articles=top_news, active="news",
         vendor_groups=vg, vendor_total=vt, customer_tabs=ct, app_tabs=at, **common_ctx,
     ), encoding="utf-8")
+    _write_news_cache(articles_by_recency[:200])
 
     # --- Per-bucket news pages ---
     for slug, label in BUCKETS:

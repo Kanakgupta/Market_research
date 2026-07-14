@@ -38,6 +38,31 @@ def create_app(docs_dir: Path | str = "docs") -> Flask:
     app = Flask(__name__)
     docs_path = Path(docs_dir)
 
+    @app.route("/api/news", methods=["GET"])
+    def api_news():
+        """Return the current cached top news articles for dynamic page loads."""
+        cache_path = docs_path.parent / "data" / "news_cache.json"
+        if not cache_path.exists():
+            return jsonify([]), 200
+
+        try:
+            items = json.loads(cache_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"Failed to read news cache: {e}")
+            return jsonify([]), 200
+
+        bucket = (request.args.get("bucket") or "").strip()
+        if bucket:
+            items = [it for it in items if bucket in (it.get("buckets") or [])]
+
+        try:
+            limit = int(request.args.get("limit", 50))
+        except ValueError:
+            limit = 50
+        limit = max(1, min(limit, 200))
+
+        return jsonify(items[:limit]), 200
+
     @app.route("/")
     def index():
         """Serve index.html."""

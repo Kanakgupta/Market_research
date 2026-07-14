@@ -103,6 +103,27 @@ a:hover { text-decoration:underline; }
 .tech-actions { display:flex; gap:8px; align-items:center; }
 .tech-count { font-size:12px; color:var(--muted); }
 
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
+
 
 /* ===== OEM CUSTOMER INTELLIGENCE HUB ===== */
 
@@ -199,7 +220,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-14 14:57 PDT</div>
+  <div class="meta-info">Updated 2026-07-14 15:57 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -220,7 +241,7 @@ a:hover { text-decoration:underline; }
 <!-- Stats bar -->
 <div class="oc-stats-bar">
   <div class="oc-stat-pill"><div class="v">13</div><div class="l">OEMs tracked</div></div>
-  <div class="oc-stat-pill"><div class="v">142</div><div class="l">News (all time)</div></div>
+  <div class="oc-stat-pill"><div class="v">32</div><div class="l">News (all time)</div></div>
   <div class="oc-stat-pill"><div class="v">276</div><div class="l">Products tracked</div></div>
 </div>
 
@@ -238,7 +259,7 @@ a:hover { text-decoration:underline; }
         <strong>Google</strong>
         <div class="ci-tab-region">Big Tech / Smart Home</div>
       </div>
-      <span class="ci-news-badge">12</span>
+      <span class="ci-news-badge">9</span>
     </button>
     
     
@@ -248,7 +269,7 @@ a:hover { text-decoration:underline; }
         <strong>Amazon</strong>
         <div class="ci-tab-region">Big Tech / Smart Home</div>
       </div>
-      <span class="ci-news-badge">8</span>
+      <span class="ci-news-badge">2</span>
     </button>
     
     
@@ -258,7 +279,7 @@ a:hover { text-decoration:underline; }
         <strong>Apple</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">90</span>
+      <span class="ci-news-badge">14</span>
     </button>
     
     
@@ -268,7 +289,7 @@ a:hover { text-decoration:underline; }
         <strong>Microsoft</strong>
         <div class="ci-tab-region">Big Tech / PC + Enterprise</div>
       </div>
-      <span class="ci-news-badge">5</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -278,7 +299,7 @@ a:hover { text-decoration:underline; }
         <strong>Meta</strong>
         <div class="ci-tab-region">AR/VR/XR</div>
       </div>
-      <span class="ci-news-badge">5</span>
+      <span class="ci-news-badge">2</span>
     </button>
     
     
@@ -288,7 +309,7 @@ a:hover { text-decoration:underline; }
         <strong>Samsung</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">8</span>
+      <span class="ci-news-badge">1</span>
     </button>
     
     
@@ -298,7 +319,7 @@ a:hover { text-decoration:underline; }
         <strong>Sony</strong>
         <div class="ci-tab-region">Audio / Gaming</div>
       </div>
-      <span class="ci-news-badge">1</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -318,7 +339,7 @@ a:hover { text-decoration:underline; }
         <strong>Sonos</strong>
         <div class="ci-tab-region">Audio / Smart Home</div>
       </div>
-      <span class="ci-news-badge">1</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -384,7 +405,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">12</div>
+          <div class="ci-nc-num">9</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -397,7 +418,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/01/google-tv-streamer-matter-thread" target="_blank" rel="noopener" class="ci-prod-link">Google TV Streamer &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Google TV Streamer</span>
               
             </div>
             <div class="ci-product-type">Thread 1.4, Matter, Wi-Fi 6</div>
@@ -407,7 +428,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.androidauthority.com/google-android-xr-glasses-launch" target="_blank" rel="noopener" class="ci-prod-link">Android XR smart glasses &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Android XR smart glasses</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, Bluetooth 6.0, XR</div>
@@ -417,7 +438,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.wareable.com/fitbit/google-fitbit-air-specs" target="_blank" rel="noopener" class="ci-prod-link">Fitbit Air &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Fitbit Air</span>
               
             </div>
             <div class="ci-product-type">Bluetooth LE, NFC</div>
@@ -427,7 +448,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/02/google-home-speaker-gemini" target="_blank" rel="noopener" class="ci-prod-link">Google Home Speaker &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Google Home Speaker</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6, Bluetooth LE, Matter</div>
@@ -437,7 +458,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.cnet.com/home/smart-home/nest-yale-lock-matter" target="_blank" rel="noopener" class="ci-prod-link">Nest x Yale Lock &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Nest x Yale Lock</span>
               
             </div>
             <div class="ci-product-type">Matter over Thread, Bluetooth</div>
@@ -687,7 +708,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.androidauthority.com/google-pixel-10-specs" target="_blank" rel="noopener" class="ci-prod-link">Pixel 10 / 10 Pro / 10 Pro XL / 10 Pro Fold &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Pixel 10 / 10 Pro / 10 Pro XL / 10 Pro Fold</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, BT 6.0, UWB — announced Aug 20, 2025</div>
@@ -697,7 +718,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.notebookcheck.net/google-pixel-9a-detailed-specs" target="_blank" rel="noopener" class="ci-prod-link">Pixel 9a &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Pixel 9a</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, BT 5.3 — May 2025</div>
@@ -707,7 +728,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.wareable.com/google/google-pixel-watch-4-launch" target="_blank" rel="noopener" class="ci-prod-link">Pixel Watch 4 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Pixel Watch 4</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 5, BT 5.3, NFC</div>
@@ -717,7 +738,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.theverge.com/2024/08/google-pixel-9-specs" target="_blank" rel="noopener" class="ci-prod-link">Pixel 9 / 9 Pro / 9 Pro XL / 9 Pro Fold &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Pixel 9 / 9 Pro / 9 Pro XL / 9 Pro Fold</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, BT 5.3, UWB, Titan M2</div>
@@ -727,7 +748,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.cnet.com/home/smart-home/nest-learning-thermostat-review" target="_blank" rel="noopener" class="ci-prod-link">Nest Learning Thermostat 4th gen &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Nest Learning Thermostat 4th gen</span>
               
             </div>
             <div class="ci-product-type">Thread, Matter, Wi-Fi 6, Bluetooth</div>
@@ -737,7 +758,7 @@ a:hover { text-decoration:underline; }
           <div class="ci-product-card">
             <div class="ci-product-sku">2023 &mdash;
               
-              <a href="https://www.theverge.com/2023/10/google-pixel-8-pro-review" target="_blank" rel="noopener" class="ci-prod-link">Pixel 8 / 8 Pro &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Pixel 8 / 8 Pro</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6E, BT 5.3, UWB</div>
@@ -745,247 +766,6 @@ a:hover { text-decoration:underline; }
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">12 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.androidauthority.com/pixel-10-pro-deal-3687418/" target="_blank" rel="noopener">Google Pixel 10 Pro plunges $300 in its best non-Prime deal ever</a></h2>
-              <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
-Google Pixel 10 Pro plunges $300 in its best non-Prime deal ever
-Jul 14, 2026 — 12:16 PM ET
-Amazon has dropped the Google Pixel 10 Pro to $699, d</p>
-              <div class="meta-row">
-                <span class="source">Android Authority</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/mobile/google-pixel-11-leak-hints-at-higher-prices-new-colors-and-more-storage/" target="_blank" rel="noopener">Google Pixel 11 Could Cost More but Come With More Storage, Says Leak</a></h2>
-              <p class="summary">Google on Tuesday announced that its next Pixel phone line will be unveiled on Aug. 12, but a number of key features for the Pixel 11 leaked on the same day.
-According to the French site Deallabs Magazine, we&#39;ll see pric</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.androidauthority.com/google-pixel-watch-5-renders-leak-3687269/" target="_blank" rel="noopener">Google&#39;s Pixel Watch 5 finally breaks cover in new leaked renders</a></h2>
-              <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
-Google&#39;s Pixel Watch 5 finally breaks cover in new leaked renders
-Jul 14, 2026 — 8:12 AM ET
-- The first high-quality renders of the Pixel Watch 5</p>
-              <div class="meta-row">
-                <span class="source">Android Authority</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.gsmarena.com/pixel_11_series_us_pricing_and_key_specs_revealed_via_leaked_listing-news-73704.php" target="_blank" rel="noopener">Pixel 11 series US pricing and key specs revealed via leaked listing - GSMArena.com news</a></h2>
-              <p class="summary">Google will unveil the Pixel 11 series on August 12. Ahead of the launch, leaked renders have already revealed the designs of the Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL, and Pixel 11 Pro Fold. New leaks have now shed li</p>
-              <div class="meta-row">
-                <span class="source">GSMArena.com</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.androidauthority.com/google-pixel-11-us-pricing-specs-leak-3687082/" target="_blank" rel="noopener">More deleted Pixel 11 Amazon listings reveal full US pricing and specs</a></h2>
-              <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
-More deleted Pixel 11 Amazon listings reveal full US pricing and specs
-Jul 14, 2026 — 12:16 AM ET
-- An Android Authority reader has shared additi</p>
-              <div class="meta-row">
-                <span class="source">Android Authority</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/deals/google-pixel-10-series-deal-2026-07-13/" target="_blank" rel="noopener">With Google&#39;s Pixel 11 Looming, Amazon Slashes Pixel 10 Prices by Up to $300</a></h2>
-              <p class="summary">Save up to $300: If you&#39;re in the market for a new Android phone, these Pixel 10 deals are for you. Google&#39;s unlocked Pixel 10 series is now discounted by up to $300 at Amazon, with prices starting at just $599 for the b</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Matter</span>
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://9to5toys.com/2026/07/13/matter-supported-govee-permanent-outdoor-lights-prism-from-430/" target="_blank" rel="noopener">Add Matter-supported premium ambiance to your home with Govee&#39;s three Permanent Outdoor Lights Prism starting from $430</a></h2>
-              <p class="summary">We just spotted the official Govee Amazon storefront offering 20% discounts on its three sizes Permanent Outdoor Lights Prism with Matter, starting with the 100-foot model down at $429.99 shipped, beating out the direct </p>
-              <div class="meta-row">
-                <span class="source">9to5Toys</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.noypigeeks.com/android/hmd-arc-2/" target="_blank" rel="noopener">HMD Arc 2: Android 14 Go, UNISOC T603 CPU, 5,000mAh battery</a></h2>
-              <p class="summary">HMD has quietly introduced its latest entry-level phone, the Arc 2, and we get why they didn’t want to bring too much attention to this device.
-The HMD Arc 2 shamefully comes with Android 14 Go Edition. Not only is Andro</p>
-              <div class="meta-row">
-                <span class="source">NoypiGeeks</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.makeuseof.com/i-can-finally-use-two-headphones-with-one-windows-laptop/" target="_blank" rel="noopener">I can finally use two headphones with one Windows laptop</a></h2>
-              <p class="summary">Bluetooth audio sharing used to require third-party apps or proprietary wireless protocols, but that&#39;s finally starting to change. Bluetooth Classic Audio — the standard we simply used to refer to as &#34;Bluetooth&#34; — is now</p>
-              <div class="meta-row">
-                <span class="source">MakeUseOf</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.nytimes.com/wirecutter/reviews/best-home-bluetooth-speaker/" target="_blank" rel="noopener">The 3 Best Home Bluetooth Speakers of 2026 | Reviews by Wirecutter</a></h2>
-              <p class="summary">Brent Butterworth is a writer dedicated to audio gear. He has been reviewing speakers and other audio products for more than 30 years.
-Using a Bluetooth tabletop speaker is the simplest way to get satisfying sound in the</p>
-              <div class="meta-row">
-                <span class="source">The New York Times</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-09">2026-07-09</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/google-adds-ai-video-remixer-to-google-photos/" target="_blank" rel="noopener">You Can Now Remix Your Google Photos Into Stylized Videos With Gemini Omni</a></h2>
-              <p class="summary">If you have a stash of pictures in your Google Photos library that you didn&#39;t know what to do with, now you do.
-On Wednesday, Google introduced a new Video Remix feature in Google Photos, which lets you instantly transfo</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-08">2026-07-08</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Google</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/google-fbi-target-netnut-botnet-smart-home-devices-mask-cybercrime-hackers/" target="_blank" rel="noopener">Google and the FBI Target Massive Botnet That Quietly Used Home Devices to Mask Cybercrime</a></h2>
-              <p class="summary">The FBI, in partnership with Google and other tech companies, struck a massive blow against NetNut, a public-facing residential network proxy service that secretly hosted a botnet controlling approximately 2 million Andr</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-08">2026-07-08</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -1008,7 +788,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">8</div>
+          <div class="ci-nc-num">2</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -1021,7 +801,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/01/eero-7-wi-fi-mesh-router" target="_blank" rel="noopener" class="ci-prod-link">eero 7 / eero 7 Pro Mesh Router &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">eero 7 / eero 7 Pro Mesh Router</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, Thread, Matter</div>
@@ -1511,7 +1291,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.engadget.com/amazon-echo-show-10-matter-smart-home" target="_blank" rel="noopener" class="ci-prod-link">Echo Show 10 (Refresh) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Echo Show 10 (Refresh)</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6, BT 5.2, Matter, Zigbee</div>
@@ -1521,7 +1301,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.cnet.com/home/smart-home/ring-battery-doorbell-pro" target="_blank" rel="noopener" class="ci-prod-link">Ring Battery Video Doorbell Pro &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Ring Battery Video Doorbell Pro</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6, BLE 5.2</div>
@@ -1541,7 +1321,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.theverge.com/2024/11/amazon-unveils-huge-echo-show-21" target="_blank" rel="noopener" class="ci-prod-link">Echo Show 21 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Echo Show 21</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6E, BT 5.2, Matter, Zigbee, Thread</div>
@@ -1551,7 +1331,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.wired.com/review/amazon-echo-hub/" target="_blank" rel="noopener" class="ci-prod-link">Echo Hub (Smart Home Controller) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Echo Hub (Smart Home Controller)</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 5, BLE, Matter, Thread, Zigbee</div>
@@ -1561,7 +1341,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.techcrunch.com/2024/02/eero-max-7-review" target="_blank" rel="noopener" class="ci-prod-link">eero Max 7 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">eero Max 7</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, Thread border router, Bluetooth</div>
@@ -1571,7 +1351,7 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           <div class="ci-product-card">
             <div class="ci-product-sku">2023 &mdash;
               
-              <a href="https://www.theverge.com/2023/5/amazon-echo-pop-specs" target="_blank" rel="noopener" class="ci-prod-link">Echo Pop Smart Speaker &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Echo Pop Smart Speaker</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 5, Bluetooth LE, Matter</div>
@@ -1579,174 +1359,6 @@ On Wednesday, Google introduced a new Video Remix feature in Google Photos, whic
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">8 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Matter</span>
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="https://9to5toys.com/2026/07/14/govee-matter-ready-cylinder-pathway-lights-136/" target="_blank" rel="noopener">Line pathways with this 8-pack of Govee Matter-ready cylinder lights down at $136</a></h2>
-              <p class="summary">Through its official Amazon storefront, Govee is offering its Outdoor Cylinder Pathway Lights with Matter 8-Pack at $135.99 shipped, after clipping the on-page 20% off coupon, which matches the price we’re seeing direct </p>
-              <div class="meta-row">
-                <span class="source">9to5Toys</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="https://www.macrumors.com/2026/07/14/amazon-switch-2-deal/" target="_blank" rel="noopener">Amazon Hosts Rare Nintendo Switch 2 Deal, Get $49 Off Game Bundle</a></h2>
-              <p class="summary">Amazon has introduced a big discount on the Nintendo Switch 2: Choose Your Game Bundle, now available for $449.99 when you add the product to your cart, down from $499.00. As the name implies, this bundle allows you to c</p>
-              <div class="meta-row">
-                <span class="source">MacRumors</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/is-your-amazon-prime-subscription-worth-it-we-ran-the-numbers/" target="_blank" rel="noopener">Is Your Amazon Prime Subscription Worth It? We Ran the Numbers</a></h2>
-              <p class="summary">If you signed up for an Amazon Prime subscription, there&#39;s a good chance that you did it for one of two reasons: 1) the fast and free shipping or 2) the video streaming. It&#39;s OK. I&#39;m &#34;guilty&#34; of it myself.
-But unless you</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="https://www.pcguide.com/deals/one-of-jbls-best-bluetooth-speakers-is-down-to-its-lowest-price-ever-on-amazon/" target="_blank" rel="noopener">One of JBL’s best Bluetooth speakers is down to its lowest price ever on Amazon</a></h2>
-              <p class="summary">One of JBL’s best Bluetooth speakers is down to its lowest price ever on Amazon
-Table of Contents
-The JBL Grip is a compact Bluetooth speaker built for people who want a portable device that can deliver great audio. Its </p>
-              <div class="meta-row">
-                <span class="source">PC Guide</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-11">2026-07-11</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="https://techstory.in/the-wireless-waveform-rebuilt-bluetooth-le-audio-explained/" target="_blank" rel="noopener">Bluetooth LE Audio Explained: Next-Gen Wireless Sound Standard</a></h2>
-              <p class="summary">The global consumer wireless market has operated for over two decades on a foundational blueprint known as Bluetooth Classic. When consumers pull true wireless earbuds from a charging case, join a hands-free voice call, </p>
-              <div class="meta-row">
-                <span class="source">TechStory</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/deals/amazon-deals-of-the-day-july-8/" target="_blank" rel="noopener">Amazon Deals of the Day: Never Lose Your Keys Again With This $15 UGreen Tracker</a></h2>
-              <p class="summary">Right now, you can score the UGreen FineTrack2 item tracker for a nice 25% off. You can also get the Fitbit Charge 6 for more than half off. Finally, the Anker Prime 3-in-1 charging station is $50 off.
-I&#39;ve been tracking</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-08">2026-07-08</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Wi-Fi</span>
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="https://www.pcguide.com/deals/excellent-wifi-7-mesh-router-has-just-fallen-to-lowest-price-on-amazon/" target="_blank" rel="noopener">Excellent WiFi 7 mesh router has just fallen to lowest price on Amazon</a></h2>
-              <p class="summary">Excellent WiFi 7 mesh router has just fallen to lowest price on Amazon
-Table of Contents
-When it comes to equipping your home with a wireless network, dead zones and slow speeds are the worst. Ensuring you get rid of bot</p>
-              <div class="meta-row">
-                <span class="source">PC Guide</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-08">2026-07-08</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Thread</span>
-                <span class="chip chip-cust">Amazon</span>
-              </div>
-              <h2 class="title"><a href="http://brooklynheightsblog.com/archives/103195" target="_blank" rel="noopener">Open Thread Wednesday</a></h2>
-              <p class="summary">What’s on your mind? Comment away!
-Nabe Chatter
-- You&#39;ve got to be kidding on Open Thread Wednesday
-- MaggieO on Open Thread Wednesday
-- malcolm on Open Thread Wednesday
-- Andrew Porter on Open Thread Wednesday
-- Andrew </p>
-              <div class="meta-row">
-                <span class="source">Brooklyn Heights Blog</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-08">2026-07-08</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -1769,7 +1381,7 @@ Nabe Chatter
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">90</div>
+          <div class="ci-nc-num">14</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -1802,7 +1414,7 @@ Nabe Chatter
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/02/apple-smart-home-display-homepad" target="_blank" rel="noopener" class="ci-prod-link">Apple HomePad (Smart Hub) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Apple HomePad (Smart Hub)</span>
               
             </div>
             <div class="ci-product-type">Thread 1.4, Matter, Wi-Fi 7, Bluetooth</div>
@@ -2042,7 +1654,7 @@ Nabe Chatter
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.macrumors.com/2026/06/26/iphone-17-pro-everything-we-know/" target="_blank" rel="noopener" class="ci-prod-link">iPhone 17 Pro &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">iPhone 17 Pro</span>
               
             </div>
             <div class="ci-product-type">5G, Wi-Fi</div>
@@ -2092,7 +1704,7 @@ Nabe Chatter
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.technobezz.com/news/ios-27-beta-2-reveals-apple-plans-camera-equipped-airpods-for-visual-intelligence" target="_blank" rel="noopener" class="ci-prod-link">AirPods &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">AirPods</span>
               
             </div>
             <div class="ci-product-type">Bluetooth</div>
@@ -2262,7 +1874,7 @@ Nabe Chatter
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.theverge.com/2024/9/iphone-16-pro-review" target="_blank" rel="noopener" class="ci-prod-link">iPhone 16 / 16 Pro Max &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">iPhone 16 / 16 Pro Max</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, BT 5.4, UWB (U2)</div>
@@ -2282,7 +1894,7 @@ Nabe Chatter
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.cnet.com/tech/computing/apple-vision-pro-review" target="_blank" rel="noopener" class="ci-prod-link">Apple Vision Pro &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Apple Vision Pro</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6, Bluetooth 5.3, Lossless Audio</div>
@@ -2302,7 +1914,7 @@ Nabe Chatter
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.theverge.com/2024/9/apple-watch-series-10-review" target="_blank" rel="noopener" class="ci-prod-link">Apple Watch Series 10 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Apple Watch Series 10</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 5.3, Wi-Fi 6, NFC, Ultra Wideband</div>
@@ -2320,392 +1932,6 @@ Nabe Chatter
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">20 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Wi-Fi</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://techeconomy.ng/why-apple-is-spending-30-billion-to-secure-the-next-iphones-wireless-performance/" target="_blank" rel="noopener">Why Apple is Spending $30 Billion to Secure the Next iPhone’s Wireless Performance</a></h2>
-              <p class="summary">Apple has unveiled a five-year, $30 billion agreement with Broadcom to design and manufacture billions of wireless connectivity chips, alongside a separate $1.5 billion investment to expand Broadcom’s manufacturing facil</p>
-              <div class="meta-row">
-                <span class="source">Techeconomy</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.bgr.com/2211758/useful-alexa-smart-home-automations-smooth-morning/" target="_blank" rel="noopener">4 Useful Smart Home Automations That Will Make Your Mornings Smoother</a></h2>
-              <p class="summary">4 Useful Smart Home Automations That Will Make Your Mornings Smoother
-You invested hundreds of dollars into starting up a smart home, complete with smart speakers, smart lights, a smart thermostat, and a handful of other</p>
-              <div class="meta-row">
-                <span class="source">bgr.com</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Matter</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://apple.gadgethacks.com/news/matter-apple-home-problems-what-buyers-actually-encounter-in-2026/" target="_blank" rel="noopener">Matter Apple Home Problems: What Buyers Actually Encounter in 2026</a></h2>
-              <p class="summary">The pitch for Matter was simple enough to print on a box: buy any device with the logo, scan the QR code, and it works in your smart home. No compatibility research, no ecosystem anxiety, no app drawer colonized by propr</p>
-              <div class="meta-row">
-                <span class="source">Gadget Hacks</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.mylondon.news/whats-on/shopping/bluetooth-trackers-luggage-keys-beat-34288110" target="_blank" rel="noopener">Bluetooth trackers for luggage and keys beat Apple AirTags for £13.75</a></h2>
-              <p class="summary">With summer holiday season almost upon us, Brits are busy making sure they have everything they need for their sun-soaked getaways. And one useful gadget has been branded an invaluable addition to bags and suitcases for </p>
-              <div class="meta-row">
-                <span class="source">My London</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.trustedreviews.com/deals/this-airtag-rival-is-far-cheaper-than-apples-especially-with-this-31-discount" target="_blank" rel="noopener">This AirTag rival is far cheaper than Apple’s option, especially with this 31% discount</a></h2>
-              <p class="summary">A saving of 31% on a four-pack of trackers works out to less than £14 each, which is remarkably cheap insurance against losing your keys again.
-That saving belongs to Tile’s four-pack of Bluetooth trackers, now down from</p>
-              <div class="meta-row">
-                <span class="source">Trusted Reviews</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Matter</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://appleinsider.com/articles/26/07/14/owning-an-apple-home-the-broken-promise-of-matter" target="_blank" rel="noopener">Owning an Apple Home: The broken promise of Matter</a></h2>
-              <p class="summary">Matter has been a unifying standard for the smart home, but it hasn&#39;t saved users from the complexity it promised to fix. Here&#39;s where it falls short in some of our Apple Homes.
-The smart home started life as a disjointe</p>
-              <div class="meta-row">
-                <span class="source">AppleInsider</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/ios-27-public-beta-download/" target="_blank" rel="noopener">Download the iOS 27 Public Beta in 4 Quick Steps</a></h2>
-              <p class="summary">Apple released the first iOS 27 public beta on Monday, and if you have a compatible iPhone, you can download it right now and get an early look at the software update coming this fall.
-The biggest addition is Siri AI, Ap</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/computing/apple-chip-releases-m6-m7-m8-ai-timeline/" target="_blank" rel="noopener">Apple Is Reportedly Accelerating Chip Releases Due to AI Pressure</a></h2>
-              <p class="summary">Apple is changing the way it will handle the release of its next flagship M processors going forward, according to a report from Bloomberg&#39;s Power On newsletter.
-Power On author Mark Gurman wrote that in a race to get to</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.bgr.com/2209459/reasons-upgrade-pc-bluetooth/" target="_blank" rel="noopener">6 Reasons You Should Upgrade Your PC&#39;s Bluetooth</a></h2>
-              <p class="summary">6 Reasons You Should Upgrade Your PC&#39;s Bluetooth
-We may receive a commission on purchases made from links.
-Bluetooth might not be the most exciting technology in your computer, but it&#39;s become one of the most important w</p>
-              <div class="meta-row">
-                <span class="source">bgr.com</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.secnews.gr/en/721118/apple-sxediazei-systima-zeyxis-opos/" target="_blank" rel="noopener">Apple is planning an AirPods-like pairing system for Meta&#39;s Glasses and Quest</a></h2>
-              <p class="summary">Apple is in the process of developing a new API that will allow third-party accessories, such as Meta’s Ray-Ban sunglasses and Quest, to automatically connect to a user’s Apple devices, in the same way that AirPods and t</p>
-              <div class="meta-row">
-                <span class="source">SecNews.gr</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://appleinsider.com/articles/26/07/13/facebook-demands-airpods-like-pairing-for-its-glasses-and-headsets" target="_blank" rel="noopener">Facebook demands AirPods-like pairing for its glasses and headsets</a></h2>
-              <p class="summary">Meta has spent nine months pressing Apple to open up to rivals the way it pairs devices like AirPods, and won&#39;t take Apple&#39;s excuses for an answer.
-Facebook owner Meta has previously been trying to use European Union reg</p>
-              <div class="meta-row">
-                <span class="source">AppleInsider</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Matter</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.howtogeek.com/dont-limit-yourself-to-smart-plugs-usb-adapters-do-the-same-thing/" target="_blank" rel="noopener">Don&#39;t limit yourself to smart plugs—these USB adapters do the same thing at a fraction of the size - How-To Geek</a></h2>
-              <p class="summary">Smart plugs are a no-brainer when setting up a smart home. They let you take almost any traditional device and make it remotely controllable from your phone or other smart devices.
-Yet, even as more devices are added to </p>
-              <div class="meta-row">
-                <span class="source">How-To Geek</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.macrumors.com/2026/07/13/apple-watch-11-to-299/" target="_blank" rel="noopener">Missed the Last Apple Watch Sale? Series 11 Now $100 Off on Amazon</a></h2>
-              <p class="summary">Amazon this week has low prices on the Apple Watch Series 11, with $100 discounts across numerous models of the smartwatch. This sale includes a handful of 42mm and 46mm GPS aluminum models, but cellular devices are a bi</p>
-              <div class="meta-row">
-                <span class="source">MacRumors</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Thread</span><span class="chip chip-tech">Wi-Fi</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.bgr.com/2210851/thread-border-vs-wifi-router-differences/" target="_blank" rel="noopener">What Is A Thread Border Router And How Is It Different From A Wi-Fi Router?</a></h2>
-              <p class="summary">What Is A Thread Border Router And How Is It Different From A Wi-Fi Router?
-If you own, read about, or manage a lot of smart home equipment, you&#39;ve probably heard of Thread. Thread is a low-power wireless network that le</p>
-              <div class="meta-row">
-                <span class="source">bgr.com</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/videos/the-truth-about-ios-27-beta-dont-make-this-mistake/" target="_blank" rel="noopener">The Truth About iOS 27 Beta: Don&#39;t Make This Mistake! - Video</a></h2>
-              <p class="summary">Goodbye Smart Lock Apps! Apple Home Key and Android Wallet Just Got Universal
-Up Next
-Goodbye Smart Lock Apps! Apple Home Key and Android Wallet Just Got Universal
-New Meta Glasses Hands-On: New Designs Start at $299, an</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Matter</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://homekitnews.com/2026/07/13/airversa-unveils-new-homekit-over-thread-humidifier-w-plans-for-matter/" target="_blank" rel="noopener">Airversa unveils New HomeKit over Thread humidifier w/ plans for Matter</a></h2>
-              <p class="summary">Airversa unveils New HomeKit over Thread humidifier w/ plans for Matter
-Airversa has announced a new 3.2L smart humidifier, its second smart humidifier designed for Apple Home users. Like its predecessor – also called th</p>
-              <div class="meta-row">
-                <span class="source">Homekit News and Reviews</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.howtogeek.com/esp32-bluetooth-presence-sensor/" target="_blank" rel="noopener">I turned an ESP32 into a Bluetooth presence sensor, and it knows which room I&#39;m in - How-To Geek</a></h2>
-              <p class="summary">Your smart home knowing when your home is empty can be really useful. You can create automations that turn off your lights, shut down heating or cooling, power down devices, and more. Knowing which room you&#39;re in is even</p>
-              <div class="meta-row">
-                <span class="source">How-To Geek</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Bluetooth</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.consumerthai.org/productSearch/pictureSearch?id=9996264080620" target="_blank" rel="noopener">Iphone Bluetooth How To Turn Off Airplane Mode On Apple Watch The Water Is Very Blue And Green With Some Light Shining On It&#39;s Surface</a></h2>
-              
-              <div class="meta-row">
-                <span class="source">มูลนิธิเพื่อผู้บริโภค มพบ.</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-12">2026-07-12</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Wi-Fi</span>
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://iphoneislam.com/language/en/2026/07/why-does-apple-still-need-qualcomm-and-broadcom-despite-developing-its-own-chips/169117" target="_blank" rel="noopener">Why does Apple still need Qualcomm and Broadcom despite developing its own chips? - آي-فون إسلام</a></h2>
-              <p class="summary">For many years, Apple has dreamed of the day it could declare “total independence” from third-party chipmakers and rely entirely on its own engineers in Cupertino. Indeed, the company began launching its own 5G modem las</p>
-              <div class="meta-row">
-                <span class="source">آي-فون إسلام</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-12">2026-07-12</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Apple</span>
-              </div>
-              <h2 class="title"><a href="https://www.macrumors.com/2026/07/12/apple-stores-to-expand-tap-to-pay-on-iphone/" target="_blank" rel="noopener">Apple Stores to Expand Use of &#39;Tap to Pay on iPhone&#39;</a></h2>
-              <p class="summary">In 2022, Apple began rolling out Tap to Pay on iPhone, a system that allows small business owners and other merchants to accept contactless payments on an iPhone, with no point-of-sale hardware required. The feature allo</p>
-              <div class="meta-row">
-                <span class="source">MacRumors</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-12">2026-07-12</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -2728,7 +1954,7 @@ Airversa has announced a new 3.2L smart humidifier, its second smart humidifier 
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">5</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -2741,7 +1967,7 @@ Airversa has announced a new 3.2L smart humidifier, its second smart humidifier 
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/04/surface-pro-12-wi-fi-7" target="_blank" rel="noopener" class="ci-prod-link">Surface Pro 12 (Copilot+ PC) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Surface Pro 12 (Copilot+ PC)</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, Bluetooth 6.0, Cellular</div>
@@ -2851,7 +2077,7 @@ Airversa has announced a new 3.2L smart humidifier, its second smart humidifier 
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.engadget.com/microsoft-surface-pro-11-copilot-pc-review" target="_blank" rel="noopener" class="ci-prod-link">Surface Pro 11 / Laptop 7 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Surface Pro 11 / Laptop 7</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, Bluetooth 5.4, Snapdragon X Elite</div>
@@ -2861,7 +2087,7 @@ Airversa has announced a new 3.2L smart humidifier, its second smart humidifier 
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.polygon.com/reviews/xbox-wireless-controller-2024-review" target="_blank" rel="noopener" class="ci-prod-link">Xbox Wireless Controller (Refresh) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Xbox Wireless Controller (Refresh)</span>
               
             </div>
             <div class="ci-product-type">Xbox Wireless, Bluetooth LE Audio</div>
@@ -2869,121 +2095,6 @@ Airversa has announced a new 3.2L smart humidifier, its second smart humidifier 
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">5 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Microsoft</span>
-              </div>
-              <h2 class="title"><a href="https://www.dqindia.com/semiconductors/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-ml-development-suite-12148437" target="_blank" rel="noopener">Microchip expands developer access with free MPLAB XC Compilers and MPLAB ML development suite</a></h2>
-              <p class="summary">Microchip Technology has announced that its MPLAB XC Pro Compilers and MPLAB Machine Learning (ML) Development Suite are now available at no cost to customers.
-By enabling unlimited installs across individual and team en</p>
-              <div class="meta-row">
-                <span class="source">dqindia.com</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Microsoft</span>
-              </div>
-              <h2 class="title"><a href="https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/" target="_blank" rel="noopener">Microchip Launches Free MPLAB XC Compilers and ML Suite</a></h2>
-              <p class="summary">Microchip Launches Free MPLAB XC Compilers and ML Suite
-Microchip Technology has announced that its MPLAB® XC Pro Compilers and MPLAB Machine Learning (ML) Development Suite are now available at no cost to customers. By </p>
-              <div class="meta-row">
-                <span class="source">Bisinfotech</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-09">2026-07-09</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Wi-Fi</span>
-                <span class="chip chip-cust">Microsoft</span>
-              </div>
-              <h2 class="title"><a href="https://www.theregister.com/security/2026/07/09/thief-posed-as-wi-fi-fixing-hero-then-stole-priceless-trophy/5268750" target="_blank" rel="noopener">Thief posed as Wi-Fi fixing hero, then stole priceless trophy</a></h2>
-              <p class="summary">MOST POPULAR
-AI
--
-AI and ML
-OpenAI makes ChatGPT better at banter
-With GPT-Live, talking, listening, and formulating answers all happen at once
--
-ai and ml
-The AI that spawned MechaHitler and deepfake porn puts on a suit</p>
-              <div class="meta-row">
-                <span class="source">The Register</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-09">2026-07-09</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Microsoft</span>
-              </div>
-              <h2 class="title"><a href="https://www.manilatimes.net/2026/07/08/tmt-newswire/globenewswire/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-machine-learning-development-suite/2380670" target="_blank" rel="noopener">Microchip Expands Developer Access with Free MPLAB® XC Compilers and MPLAB Machine Learning Development Suite</a></h2>
-              <p class="summary">Unlimited installs and built-in optimization tools support simplified, accelerated embedded and edge AI deployment
-CHANDLER, Ariz., July 08, 2026 (GLOBE NEWSWIRE) -- Microchip Technology (Nasdaq: MCHP) has announced that</p>
-              <div class="meta-row">
-                <span class="source">The Manila Times</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-08">2026-07-08</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Microsoft</span>
-              </div>
-              <h2 class="title"><a href="https://www.stocktitan.net/news/MCHP/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-q4cawbx05q2b.html" target="_blank" rel="noopener">Microchip drops license fees for MPLAB tools, including machine learning suite</a></h2>
-              <p class="summary">Microchip Expands Developer Access with Free MPLAB® XC Compilers and MPLAB Machine Learning Development Suite
-Rhea-AI Summary
-Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine Learning Develo</p>
-              <div class="meta-row">
-                <span class="source">Stock Titan</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-08">2026-07-08</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -3006,7 +2117,7 @@ Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine L
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">5</div>
+          <div class="ci-nc-num">2</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -3019,7 +2130,7 @@ Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine L
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/02/meta-ray-ban-ar-display-glasses" target="_blank" rel="noopener" class="ci-prod-link">Ray-Ban Meta AI Glasses (Display Edition) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Ray-Ban Meta AI Glasses (Display Edition)</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6E, Bluetooth 5.4, BLE Audio</div>
@@ -3069,7 +2180,7 @@ Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine L
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.wired.com/story/meta-orion-ar-glasses-first-look/" target="_blank" rel="noopener" class="ci-prod-link">Orion AR Glasses (Prototype-Release) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Orion AR Glasses (Prototype-Release)</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, Bluetooth 5.4, EMG Neural Link</div>
@@ -3079,7 +2190,7 @@ Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine L
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.uploadvr.com/meta-quest-4-details-rumors/" target="_blank" rel="noopener" class="ci-prod-link">Meta Quest 4 / Quest 4 Pro &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Meta Quest 4 / Quest 4 Pro</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, BT 5.4, Snapdragon XR2+ Gen 2</div>
@@ -3089,7 +2200,7 @@ Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine L
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.theverge.com/2023/10/ray-ban-meta-smart-glasses-review" target="_blank" rel="noopener" class="ci-prod-link">Ray-Ban Meta Smart Glasses (2nd Gen) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Ray-Ban Meta Smart Glasses (2nd Gen)</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 5.2, Wi-Fi 6, Snapdragon AR1</div>
@@ -3099,7 +2210,7 @@ Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine L
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.cnet.com/reviews/meta-quest-3s-review/" target="_blank" rel="noopener" class="ci-prod-link">Meta Quest 3S &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Meta Quest 3S</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6E, BT 5.2, Snapdragon XR2 Gen 2</div>
@@ -3107,120 +2218,6 @@ Microchip (Nasdaq:MCHP) is making its MPLAB XC Pro Compilers and MPLAB Machine L
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">5 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Meta</span>
-              </div>
-              <h2 class="title"><a href="https://www.androidauthority.com/htc-vive-eagle-us-preorders-live-3687050/" target="_blank" rel="noopener">HTC’s answer to Ray-Ban Meta is coming to the US, but the price may sting</a></h2>
-              <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
-HTC’s answer to Ray-Ban Meta is coming to the US, but the price may sting
-Jul 13, 2026 — 3:40 PM ET
-- HTC’s Vive Eagle AI glasses are finally com</p>
-              <div class="meta-row">
-                <span class="source">Android Authority</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Meta</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/meta-pulls-instagram-ai-deepfake-update-backlash-news/" target="_blank" rel="noopener">Meta Pulls Instagram AI Update After Everyone Said They Didn&#39;t Want to Be Deepfaked</a></h2>
-              <p class="summary">After intense backlash last week, Meta pulled the most troubling part of its newest AI update on Instagram. You will no longer be easily able to create deepfakes of other Instagram users.
-&#34;We&#39;ve heard the feedback that t</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Meta</span>
-              </div>
-              <h2 class="title"><a href="https://www.theregister.com/ai-and-ml/2026/07/13/meta-admits-its-first-superintelligence-was-too-stupid-to-survive-for-three-days/5270234" target="_blank" rel="noopener">Meta admits its first ‘superintelligence’ was too stupid to survive for three days</a></h2>
-              <p class="summary">MOST POPULAR
-AI
--
-AI + ML
-Memory makers are slaves to the boom-bust rollercoaster, and the AI boom is the wildest ride of all
-The RAMpocalypse may be the precursor to the AIpocalypse
--
-AI + ML
-AI customers are coming aro</p>
-              <div class="meta-row">
-                <span class="source">The Register</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Meta</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/services-and-software/meta-muse-ai-image-content-reuse-deepfake-news/" target="_blank" rel="noopener">Meta&#39;s New AI Tool Creates Deepfakes. Here&#39;s How to Protect Yourself on Instagram</a></h2>
-              <p class="summary">Meta has a new AI model out, this time dedicated to generating and editing AI images. And yes, you can use it on Instagram. But if you have a public account, you need to change your settings now to avoid ending up the un</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Meta</span>
-              </div>
-              <h2 class="title"><a href="https://9to5google.com/2026/07/09/meta-smart-glasses-privacy-light-always-on/" target="_blank" rel="noopener">Meta fixed its smart glasses privacy light problem, just in time for always-on model to reportedly not use it</a></h2>
-              <p class="summary">In a case of hilarious timing – you know, in a dystopian kind of way – a new report details Meta’s forthcoming “super sensing” smart glasses that would have microphones and cameras that are constantly active, right as th</p>
-              <div class="meta-row">
-                <span class="source">9to5Google</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-09">2026-07-09</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -3243,7 +2240,7 @@ AI customers are coming aro</p>
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">8</div>
+          <div class="ci-nc-num">1</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -3256,7 +2253,7 @@ AI customers are coming aro</p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.androidauthority.com/samsung-galaxy-s26-specs" target="_blank" rel="noopener" class="ci-prod-link">Galaxy S26 Ultra / Plus &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Galaxy S26 Ultra / Plus</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 8 (802.11bn), Bluetooth 6.0, UWB, 5G</div>
@@ -3266,7 +2263,7 @@ AI customers are coming aro</p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/01/samsung-galaxy-buds4-pro" target="_blank" rel="noopener" class="ci-prod-link">Galaxy Buds4 Pro &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Galaxy Buds4 Pro</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 6.0, LE Audio, Auracast</div>
@@ -3516,7 +2513,7 @@ AI customers are coming aro</p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://gizmodo.com/samsung-galaxy-smarttag2-at-40-off-beats-airtag-in-the-prime-day-discount-war-among-bluetooth-trackers" target="_blank" rel="noopener" class="ci-prod-link">Samsung Galaxy SmartTag2 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Samsung Galaxy SmartTag2</span>
               
             </div>
             <div class="ci-product-type">Bluetooth</div>
@@ -3916,7 +2913,7 @@ AI customers are coming aro</p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.engadget.com/samsung-galaxy-s25-ultra-review" target="_blank" rel="noopener" class="ci-prod-link">Galaxy S25 / S25+ / S25 Ultra &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Galaxy S25 / S25+ / S25 Ultra</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, BT 5.4, UWB, Snapdragon 8 Elite</div>
@@ -3926,7 +2923,7 @@ AI customers are coming aro</p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.wareable.com/samsung/samsung-galaxy-watch-8-release" target="_blank" rel="noopener" class="ci-prod-link">Galaxy Watch 8 / Watch Ultra 2 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Galaxy Watch 8 / Watch Ultra 2</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 5.4, Wi-Fi 6, NFC, Dual-Band GPS</div>
@@ -3956,7 +2953,7 @@ AI customers are coming aro</p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.theverge.com/2024/1/samsung-galaxy-s24-ultra-review" target="_blank" rel="noopener" class="ci-prod-link">Galaxy S24 / S24 Ultra &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Galaxy S24 / S24 Ultra</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, BT 5.4, UWB, Galaxy AI</div>
@@ -3964,169 +2961,6 @@ AI customers are coming aro</p>
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">8 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/mobile/samsungs-galaxy-unpacked-event-what-to-expect-how-to-watch/" target="_blank" rel="noopener">Samsung Galaxy Unpacked 2026: Here&#39;s What We Expect on July 22</a></h2>
-              <p class="summary">Samsung&#39;s summer Galaxy Unpacked keynote is set for July 22 in London. This midyear event is typically where the company unveils its latest generation of foldable devices -- like the Galaxy Z Fold 7 and Z Flip 7 -- but t</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-14">2026-07-14</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://www.androidauthority.com/samsung-galaxy-watch-9-ultra-2-specs-leak-3686797/" target="_blank" rel="noopener">A new leak just revealed almost everything about Samsung&#39;s upcoming smartwatches</a></h2>
-              <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
-A new leak just revealed almost everything about Samsung&#39;s upcoming smartwatches
-Jul 13, 2026 — 6:48 AM ET
-- A new spec leak suggests the Galaxy </p>
-              <div class="meta-row">
-                <span class="source">Android Authority</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-13">2026-07-13</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                <span class="chip chip-tech">Wi-Fi</span>
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://www.notebookcheck.net/Samsung-Galaxy-A57-5G-Review-The-new-mid-range-favorite.1340192.0.html" target="_blank" rel="noopener">Samsung Galaxy A57 5G Review: The new mid-range favorite?</a></h2>
-              <p class="summary">Verdict on the Samsung Galaxy A57 5G
-The Samsung Galaxy A57 5G is a thoroughly successful update to the A Series, but it remains surprisingly conservative compared to its predecessor. The slimmer and lighter body, high-q</p>
-              <div class="meta-row">
-                <span class="source">Notebookcheck</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-12">2026-07-12</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/mobile/spider-man-movie-samsung-galaxy-z-fold-8-teaser/" target="_blank" rel="noopener">Spider-Man Snares Galaxy Z Fold 8 in Samsung Tie-in Teaser</a></h2>
-              <p class="summary">If you still doubted it, a new Samsung Galaxy Z foldable looks like a sure thing for the company&#39;s upcoming Galaxy Unpacked event this month -- a Spider-Man tie-in teaser posted on X on Wednesday pretty much confirms it.</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/deals/samsung-65-inch-s90h-oled-tv-deal-2026-07-10/" target="_blank" rel="noopener">The Samsung 65-Inch S90H OLED TV Just Got a Massive $700 Price Cut</a></h2>
-              <p class="summary">Save $700: If you&#39;ve been wanting to take your summer movie nights to a new level, take a look at the Samsung S90H OLED TV. It&#39;s certainly a pricier and more premium pick, but that&#39;s why we&#39;ve brought you this deal. This</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://9to5google.com/2026/07/10/deals-galaxy-buds-4-pro-logitech-mx-master-bose-anker/" target="_blank" rel="noopener">Deals: Galaxy Buds 4 Pro, rare Logitech MX Master 4 deal, Bose speaker $150 off, Anker chargers, more</a></h2>
-              <p class="summary">Alongside the Amazon Anker summer sale loaded with chargers and accessories from $8, today’s 9to5Toys Lunch Break is headlined by a chance to land a pair of Samsung’s latest Galaxy Buds 4 Pro at up to $112 off alongside </p>
-              <div class="meta-row">
-                <span class="source">9to5Google</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://www.androidauthority.com/secret-dial-codes-samsung-phones-3684761/" target="_blank" rel="noopener">6 hidden Samsung dial codes that unlock secret features on your Galaxy phone</a></h2>
-              <p class="summary">Affiliate links on Android Authority may earn us a commission. Learn more.
-6 hidden Samsung dial codes that unlock secret features on your Galaxy phone
-Jul 10, 2026 — 6:30 AM ET
-That dialpad on your Samsung Galaxy phone </p>
-              <div class="meta-row">
-                <span class="source">Android Authority</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-10">2026-07-10</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Samsung</span>
-              </div>
-              <h2 class="title"><a href="https://www.cnet.com/tech/mobile/samsung-galaxy-z-flip-8-rumor-roundup-what-weve-heard-ahead-of-the-july-22-unpacked/" target="_blank" rel="noopener">Samsung Galaxy Z Flip 8 Rumor Roundup: What We&#39;ve Heard Ahead of the July 22 Unpacked</a></h2>
-              <p class="summary">Samsung&#39;s Galaxy Z Flip 8 could be among the new phones announced at the company&#39;s July Unpacked event on July 22. New iterations on Samsung&#39;s Galaxy Z Flip and Galaxy Z Fold phones often arrive during the summer, and it</p>
-              <div class="meta-row">
-                <span class="source">CNET</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-09">2026-07-09</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -4149,7 +2983,7 @@ That dialpad on your Samsung Galaxy phone </p>
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">1</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4162,7 +2996,7 @@ That dialpad on your Samsung Galaxy phone </p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/03/sony-wf-1000xm6-earbuds-announcement" target="_blank" rel="noopener" class="ci-prod-link">Sony WF-1000XM6 Earbuds &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Sony WF-1000XM6 Earbuds</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 6.0, LE Audio, Auracast, LDAC</div>
@@ -4302,7 +3136,7 @@ That dialpad on your Samsung Galaxy phone </p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.cnet.com/tech/gaming/playstation-5-pro-review" target="_blank" rel="noopener" class="ci-prod-link">PlayStation 5 Pro &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">PlayStation 5 Pro</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 7, Bluetooth 5.4, PS Link Loseley</div>
@@ -4322,7 +3156,7 @@ That dialpad on your Samsung Galaxy phone </p>
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.soundandvision.com/sony-wh-1000xm6-headphones-specs" target="_blank" rel="noopener" class="ci-prod-link">Sony WH-1000XM6 Headphones &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Sony WH-1000XM6 Headphones</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 5.4 LE Audio, Auracast, LDAC</div>
@@ -4330,37 +3164,6 @@ That dialpad on your Samsung Galaxy phone </p>
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">1 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Sony</span>
-              </div>
-              <h2 class="title"><a href="https://www.notebookcheck.net/Why-this-lightweight-top-of-the-line-smartphone-is-better-than-its-specs-suggest-Sony-Xperia-1-VIII-Review.1340527.0.html" target="_blank" rel="noopener">Why this lightweight top-of-the-line smartphone is better than its specs suggest - Sony Xperia 1 VIII Review</a></h2>
-              <p class="summary">Conclusion on the Sony Xperia 1 VIII
-The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t consistently sticking to its own path. The new generation of Xperia phones, lacking Sony’s true DNA with i</p>
-              <div class="meta-row">
-                <span class="source">Notebookcheck</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-12">2026-07-12</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -4396,7 +3199,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2026 &mdash;
               
-              <a href="https://www.theverge.com/2026/03/bose-soundlink-max-review" target="_blank" rel="noopener" class="ci-prod-link">Bose SoundLink Max Bluetooth Speaker &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Bose SoundLink Max Bluetooth Speaker</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 6.0, Bluetooth LE Audio, Auracast</div>
@@ -4446,7 +3249,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.cnet.com/tech/mobile/bose-ultra-open-earbuds-review" target="_blank" rel="noopener" class="ci-prod-link">Bose Ultra Open Earbuds &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Bose Ultra Open Earbuds</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 5.3, Snapdragon Sound, LE Audio</div>
@@ -4456,7 +3259,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.engadget.com/bose-quietcomfort-ultra-headphones-review" target="_blank" rel="noopener" class="ci-prod-link">Bose QuietComfort Ultra Over-Ear / Earbuds &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Bose QuietComfort Ultra Over-Ear / Earbuds</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 5.3, Snapdragon Sound, aptX Adaptive</div>
@@ -4464,16 +3267,6 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">0 articles</span>
-        </div>
-        
-        <div class="ci-no-news">No tagged launch headlines in current window.</div>
-        
       </div>
 
     </div>
@@ -4496,7 +3289,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">1</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4519,7 +3312,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.theverge.com/2025/11/sonos-ace-2-headphones" target="_blank" rel="noopener" class="ci-prod-link">Sonos Ace 2 Wireless Headphones &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Sonos Ace 2 Wireless Headphones</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6, Bluetooth 5.4 LE Audio, Trueplay</div>
@@ -4529,7 +3322,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.wired.com/review/sonos-arc-ultra-soundbar/" target="_blank" rel="noopener" class="ci-prod-link">Sonos Arc Ultra Soundbar &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Sonos Arc Ultra Soundbar</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6, Bluetooth 5.3, Dolby Atmos</div>
@@ -4539,7 +3332,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.cnet.com/reviews/sonos-ace-headphones-review" target="_blank" rel="noopener" class="ci-prod-link">Sonos Ace Headphones &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Sonos Ace Headphones</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi, Bluetooth 5.4 LE Audio, USB-C</div>
@@ -4557,36 +3350,6 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">1 articles</span>
-        </div>
-        
-        <div class="oc-news-grid">
-          
-          <article class="card" style="margin:0;">
-            <div class="thumb">
-              
-            </div>
-            <div class="body">
-              <div class="meta-row">
-                
-                <span class="chip chip-cust">Sonos</span>
-              </div>
-              <h2 class="title"><a href="https://www.theverge.com/gadgets/963121/sonos-ace-headphones-dashpass-best-buy-apple-watch-ultra-deal-sale" target="_blank" rel="noopener">Sonos Ace wireless headphones are steeply discounted</a></h2>
-              <p class="summary">If you’re looking for a discount on a great pair of active noise-canceling headphones for your summer adventures (even if they’re indoors), you’re in luck. The Sonos Ace headphones in black are currently on sale for $279</p>
-              <div class="meta-row">
-                <span class="source">The Verge</span>
-                <span class="dot">&middot;</span><span class="time" data-ts="2026-07-09">2026-07-09</span>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-        
       </div>
 
     </div>
@@ -4622,7 +3385,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.cnet.com/home/smart-home/arlo-pro-6-security-camera" target="_blank" rel="noopener" class="ci-prod-link">Arlo Pro 6 Smart Security Camera &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Arlo Pro 6 Smart Security Camera</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 6, Matter over Thread, Bluetooth</div>
@@ -4632,7 +3395,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.wired.com/review/arlo-video-doorbell-2nd-gen" target="_blank" rel="noopener" class="ci-prod-link">Arlo Video Doorbell 2K (2nd Gen) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Arlo Video Doorbell 2K (2nd Gen)</span>
               
             </div>
             <div class="ci-product-type">Wi-Fi 5, Bluetooth, BLE</div>
@@ -4640,16 +3403,6 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">0 articles</span>
-        </div>
-        
-        <div class="ci-no-news">No tagged launch headlines in current window.</div>
-        
       </div>
 
     </div>
@@ -4695,7 +3448,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.wareable.com/garmin/garmin-fenix-8-pro-release" target="_blank" rel="noopener" class="ci-prod-link">Garmin Fenix 8 Pro / Venu 4 &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Garmin Fenix 8 Pro / Venu 4</span>
               
             </div>
             <div class="ci-product-type">Bluetooth 5.4 LE Audio, Wi-Fi 6, ANT+, NFC</div>
@@ -4713,16 +3466,6 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">0 articles</span>
-        </div>
-        
-        <div class="ci-no-news">No tagged launch headlines in current window.</div>
-        
       </div>
 
     </div>
@@ -4758,7 +3501,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.theverge.com/2025/11/tesla-model-y-juniper-refresh-announcement" target="_blank" rel="noopener" class="ci-prod-link">Tesla Model Y (Juniper Refresh) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Tesla Model Y (Juniper Refresh)</span>
               
             </div>
             <div class="ci-product-type">Ultra-Wideband (UWB), Bluetooth 5.3, Wi-Fi 6</div>
@@ -4768,7 +3511,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.cnet.com/roadshow/reviews/tesla-cybertruck-review" target="_blank" rel="noopener" class="ci-prod-link">Tesla Cybertruck &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">Tesla Cybertruck</span>
               
             </div>
             <div class="ci-product-type">Ultra-Wideband (UWB), Bluetooth, Wi-Fi 6</div>
@@ -4776,16 +3519,6 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           </div>
           
         </div>
-      </div>
-
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">0 articles</span>
-        </div>
-        
-        <div class="ci-no-news">No tagged launch headlines in current window.</div>
-        
       </div>
 
     </div>
@@ -4821,7 +3554,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
-              <a href="https://www.bmwblog.com/bmw-neue-klasse-ix3-specs/" target="_blank" rel="noopener" class="ci-prod-link">BMW iX3 (Neue Klasse SAV) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">BMW iX3 (Neue Klasse SAV)</span>
               
             </div>
             <div class="ci-product-type">UWB Digital Key Plus, Bluetooth 5.4, Wi-Fi 7</div>
@@ -4831,7 +3564,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
           <div class="ci-product-card">
             <div class="ci-product-sku">2024 &mdash;
               
-              <a href="https://www.caranddriver.com/reviews/bmw-i5-electric-sedan-test" target="_blank" rel="noopener" class="ci-prod-link">BMW i5 Sedan (5 Series) &#x2197;</a>
+              <span class="ci-prod-link" title="Direct source URL not available">BMW i5 Sedan (5 Series)</span>
               
             </div>
             <div class="ci-product-type">UWB Digital Key Plus, Bluetooth 5.3, Wi-Fi 6E</div>
@@ -4841,16 +3574,6 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
         </div>
       </div>
 
-      <!-- Live news feed -->
-      <div class="ci-news-feed-wrap">
-        <div class="ci-section-h">&#x1F4F0; Live News &amp; Launch Evidence
-          <span style="font-size:12px;font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px;">0 articles</span>
-        </div>
-        
-        <div class="ci-no-news">No tagged launch headlines in current window.</div>
-        
-      </div>
-
     </div>
     
   </div>
@@ -4858,7 +3581,7 @@ The Xperia 1 VIII leaves a mixed impression in our review because Sony isn&#39;t
 </div><!-- /ci-layout -->
 
 </main>
-<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-07-14 14:57</div></footer>
+<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-07-14 15:57</div></footer>
 <script>
 function timeAgo(iso){
   var s=iso; if(s&&s.length===10)s+='T00:00:00Z';

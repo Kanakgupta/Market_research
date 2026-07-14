@@ -25,9 +25,9 @@ while ($true) {
     $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
     "[$stamp] starting site server" | Tee-Object -FilePath $currentLog -Append
     # Build from current local snapshot so first load has valid docs before interactive refreshes.
-    & $venvPython run.py site-dev --output-dir docs *>&1 |
+    & $venvPython run.py site-dev --output-dir docs 2>&1 |
         Tee-Object -FilePath $currentLog -Append
-    & $venvPython run.py server --host 127.0.0.1 --port 8888 --docs-dir docs *>&1 |
+    & $venvPython run.py server --host 127.0.0.1 --port 8888 --docs-dir docs 2>&1 |
         Tee-Object -FilePath $currentLog -Append
     $code = $LASTEXITCODE
     $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'

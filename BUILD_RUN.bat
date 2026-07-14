@@ -29,7 +29,7 @@ echo.
 echo ============================================================
 echo  STEP 1/4  Start local server on http://localhost:5005
 echo ============================================================
-start "IoT Local Server (5005)" cmd /k %PYTHON% -m http.server 5005 --directory "%ROOT%\docs"
+start "IoT Local Server (5005)" cmd /k %PYTHON% run.py server --host 127.0.0.1 --port 5005 --docs-dir "%ROOT%\docs"
 
 echo Waiting a few seconds for the server to come up...
 timeout /t 2 /nobreak >nul

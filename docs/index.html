@@ -103,6 +103,27 @@ a:hover { text-decoration:underline; }
 .tech-actions { display:flex; gap:8px; align-items:center; }
 .tech-count { font-size:12px; color:var(--muted); }
 
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
+
 .kpi-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin:18px 0; }
 .kpi { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
 .kpi h3 { margin:0 0 6px; font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
@@ -237,7 +258,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-14 14:57 PDT</div>
+  <div class="meta-info">Updated 2026-07-14 15:57 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -255,13 +276,13 @@ a:hover { text-decoration:underline; }
 </section>
 
 <div class="kpi-row">
-  <div class="kpi"><h3>News (last 7d)</h3><div class="v">196</div>
-    <div class="delta flat"> new vs prior 7d</div></div>
+  <div class="kpi"><h3>News (last 7d)</h3><div class="v">0</div>
+    <div class="delta flat"> — vs prior 7d</div></div>
   <div class="kpi"><h3>Competitors tracked</h3><div class="v">21</div>
     <div class="delta flat">vs Infineon AIROC</div></div>
   <div class="kpi"><h3>Customers tracked</h3><div class="v">13</div>
     <div class="delta flat">OEM profiles</div></div>
-  <div class="kpi"><h3>Relationship links</h3><div class="v">117</div>
+  <div class="kpi"><h3>Relationship links</h3><div class="v">113</div>
     <div class="delta flat">vendor &harr; customer</div></div>
 </div>
 
@@ -408,9 +429,9 @@ a:hover { text-decoration:underline; }
       
       <div class="battle-press">
         
-          <div><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016" target="_blank" rel="noopener">MediaTek Launches Filogic 860 for Wi-Fi 7 Home Routers</a> &middot; Jul 2026</div>
+          <div>MediaTek Launches Filogic 860 for Wi-Fi 7 Home Routers &middot; Jul 2026</div>
         
-          <div><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016" target="_blank" rel="noopener">MediaTek Launches Filogic 860 Wi-Fi 7 Chip for US Home Routers</a> &middot; Jul 2026</div>
+          <div>MediaTek Launches Filogic 860 Wi-Fi 7 Chip for US Home Routers &middot; Jul 2026</div>
         
       </div>
       
@@ -480,45 +501,6 @@ a:hover { text-decoration:underline; }
     
     <article class="cust-card">
       <div class="hd">
-        <h3>Apple</h3>
-        <span class="conf-badge conf-high">High &middot; 87%</span>
-      </div>
-      <div class="cust-app">Smart Home</div>
-      <p class="cust-product">Apple Matter hub refresh</p>
-      <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
-      </div>
-      <div class="cust-basis">app signal=Smart Home (score 18.0)</div>
-    </article>
-    
-    <article class="cust-card">
-      <div class="hd">
-        <h3>Meta</h3>
-        <span class="conf-badge conf-high">High &middot; 82%</span>
-      </div>
-      <div class="cust-app">Smart Glasses</div>
-      <p class="cust-product">Meta smart glasses generation</p>
-      <div>
-        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">all-day battery profile</span><span class="feat-chip">hands-free BLE peripherals</span>
-      </div>
-      <div class="cust-basis">app signal=Smart Glasses (score 12.0)</div>
-    </article>
-    
-    <article class="cust-card">
-      <div class="hd">
-        <h3>Amazon</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 75%</span>
-      </div>
-      <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Amazon LE Audio earbuds refresh</p>
-      <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
-      </div>
-      <div class="cust-basis">app signal=Audio / Speaker (score 12.0)</div>
-    </article>
-    
-    <article class="cust-card">
-      <div class="hd">
         <h3>Bose</h3>
         <span class="conf-badge conf-medium">Medium &middot; 68%</span>
       </div>
@@ -532,28 +514,54 @@ a:hover { text-decoration:underline; }
     
     <article class="cust-card">
       <div class="hd">
-        <h3>Google</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 67%</span>
+        <h3>Meta</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 66%</span>
       </div>
-      <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Google LE Audio earbuds refresh</p>
+      <div class="cust-app">Smart Glasses</div>
+      <p class="cust-product">Meta smart glasses generation</p>
       <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">all-day battery profile</span><span class="feat-chip">hands-free BLE peripherals</span>
       </div>
-      <div class="cust-basis">app signal=Audio / Speaker (score 9.0)</div>
+      <div class="cust-basis">app signal=Smart Glasses (score 11.0)</div>
     </article>
     
     <article class="cust-card">
       <div class="hd">
-        <h3>Microsoft</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 64%</span>
+        <h3>Amazon</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 63%</span>
+      </div>
+      <div class="cust-app">Smart Home</div>
+      <p class="cust-product">Amazon Matter hub refresh</p>
+      <div>
+        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+      </div>
+      <div class="cust-basis">app signal=Smart Home (score 10.0)</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Apple</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 63%</span>
+      </div>
+      <div class="cust-app">Smart Home</div>
+      <p class="cust-product">Apple Matter hub refresh</p>
+      <div>
+        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+      </div>
+      <div class="cust-basis">app signal=Smart Home (score 13.0)</div>
+    </article>
+    
+    <article class="cust-card">
+      <div class="hd">
+        <h3>Sony</h3>
+        <span class="conf-badge conf-medium">Medium &middot; 60%</span>
       </div>
       <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Microsoft LE Audio earbuds refresh</p>
+      <p class="cust-product">Sony LE Audio earbuds refresh</p>
       <div>
-        <span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span><span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span>
+        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span><span class="feat-chip">Auracast support</span><span class="feat-chip">low-latency audio path</span><span class="feat-chip">public broadcast receive</span>
       </div>
-      <div class="cust-basis">app signal=Audio / Speaker (score 6.0)</div>
+      <div class="cust-basis">app signal=Audio / Speaker (score 10.0)</div>
     </article>
     
   </div>
@@ -580,7 +588,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC CYW20829 ships Channel Sounding (PBR/RTT baseline from BT 6.0); CYW55513 covers LE Audio. Track BT 6.3 Channel Sounding refinements (Inline PCT Transfer, per-PHY RTT) for next silicon revs.</p>
-      <div class="std-activity">22 related articles &middot; 7d &middot; <a href="bluetooth.html">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="bluetooth.html">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -595,7 +603,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet — gap vs Synaptics Veros/MediaTek Filogic 380.</p>
-      <div class="std-activity">47 related articles &middot; 7d &middot; <a href="wifi.html">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="wifi.html">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -610,7 +618,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC has 802.15.4 in CYW55573; Matter SDK supported. Strong vs NXP IW612 / Silicon Labs MG24 in tri-radio stories. Needs to confirm Matter 1.6 (Joint Fabric, NFC commissioning) and Zigbee 4.0 support on roadmap.</p>
-      <div class="std-activity">32 related articles &middot; 7d &middot; <a href="ieee15_4.html">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="ieee15_4.html">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -625,7 +633,7 @@ a:hover { text-decoration:underline; }
       </ul>
       
       <p class="std-position">AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung. Confirm FiRa Core 4.0 alignment before next combo announcement.</p>
-      <div class="std-activity">2 related articles &middot; 7d &middot; <a href="aliro.html">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="aliro.html">Open feed &rarr;</a></div>
     </article>
     
   </div>
@@ -634,145 +642,17 @@ a:hover { text-decoration:underline; }
 <div class="section">
   <div class="section-head">
     <h2>Market Signal Feed</h2>
-    <span class="pill">7d</span>
+    <span class="pill">14d fallback</span>
   </div>
   <p class="section-sub">Latest competitor and customer headlines &mdash; supporting evidence for the sections above.</p>
   <div class="signal-feed">
     <div class="signal-col">
       <h3>Competitor signals</h3>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://techeconomy.ng/why-apple-is-spending-30-billion-to-secure-the-next-iphones-wireless-performance/" target="_blank" rel="noopener">Why Apple is Spending $30 Billion to Secure the Next iPhone’s Wireless Performance</a>
-          <div class="signal-meta">Qualcomm &middot; Techeconomy &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-stock-reflects-the-chipmaker-s-strategic-role-in-global/69768803" target="_blank" rel="noopener">Broadcom stock reflects the chipmaker&#39;s strategic role in global connectivity - Ad-hoc-news.de</a>
-          <div class="signal-meta">Broadcom &middot; Ad-hoc-news.de &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.gsmarena.com/pixel_11_series_us_pricing_and_key_specs_revealed_via_leaked_listing-news-73704.php" target="_blank" rel="noopener">Pixel 11 series US pricing and key specs revealed via leaked listing - GSMArena.com news</a>
-          <div class="signal-meta">MediaTek &middot; GSMArena.com &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.gsmarena.com/huawei_freeclip_2_s_announced_alongside_the_matepad_air_2026-news-73698.php" target="_blank" rel="noopener">Huawei FreeClip 2 S announced alongside the MatePad Air (2026) - GSMArena.com news</a>
-          <div class="signal-meta">HiSilicon &middot; GSMArena.com &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.gsmarena.com/huawei_pura_90s_pro_max_goes_global_with_200mp_tele_cam_pura_90s_pro_also_unveiled-news-73694.php" target="_blank" rel="noopener">Huawei Pura 90s Pro Max goes global with 200MP tele cam, Pura 90s Pro also unveiled - GSMArena.com news</a>
-          <div class="signal-meta">HiSilicon &middot; GSMArena.com &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.androidauthority.com/htc-vive-eagle-us-preorders-live-3687050/" target="_blank" rel="noopener">HTC’s answer to Ray-Ban Meta is coming to the US, but the price may sting</a>
-          <div class="signal-meta">Qualcomm &middot; Android Authority &middot; Jul 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.howtogeek.com/esp32-bluetooth-presence-sensor/" target="_blank" rel="noopener">I turned an ESP32 into a Bluetooth presence sensor, and it knows which room I&#39;m in - How-To Geek</a>
-          <div class="signal-meta">Espressif &middot; How-To Geek &middot; Jul 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.androidauthority.com/samsung-galaxy-watch-9-ultra-2-specs-leak-3686797/" target="_blank" rel="noopener">A new leak just revealed almost everything about Samsung&#39;s upcoming smartwatches</a>
-          <div class="signal-meta">Qualcomm &middot; Android Authority &middot; Jul 13</div>
-        </div>
-      </div>
-      
+      <p class="muted">No competitor headlines yet.</p>
     </div>
     <div class="signal-col">
       <h3>Customer signals</h3>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://techeconomy.ng/why-apple-is-spending-30-billion-to-secure-the-next-iphones-wireless-performance/" target="_blank" rel="noopener">Why Apple is Spending $30 Billion to Secure the Next iPhone’s Wireless Performance</a>
-          <div class="signal-meta">Apple &middot; Techeconomy &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://9to5toys.com/2026/07/14/govee-matter-ready-cylinder-pathway-lights-136/" target="_blank" rel="noopener">Line pathways with this 8-pack of Govee Matter-ready cylinder lights down at $136</a>
-          <div class="signal-meta">Amazon &middot; 9to5Toys &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.macrumors.com/2026/07/14/amazon-switch-2-deal/" target="_blank" rel="noopener">Amazon Hosts Rare Nintendo Switch 2 Deal, Get $49 Off Game Bundle</a>
-          <div class="signal-meta">Amazon &middot; MacRumors &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.gsmarena.com/xiaomi_redmi_note_17_pro_5g_(china)-14797.php" target="_blank" rel="noopener">Xiaomi Redmi Note 17 Pro (China) - Full phone specifications</a>
-          <div class="signal-meta">Xiaomi &middot; GSMArena.com &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.androidauthority.com/pixel-10-pro-deal-3687418/" target="_blank" rel="noopener">Google Pixel 10 Pro plunges $300 in its best non-Prime deal ever</a>
-          <div class="signal-meta">Google &middot; Android Authority &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.bgr.com/2211758/useful-alexa-smart-home-automations-smooth-morning/" target="_blank" rel="noopener">4 Useful Smart Home Automations That Will Make Your Mornings Smoother</a>
-          <div class="signal-meta">Apple &middot; bgr.com &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.cnet.com/tech/mobile/samsungs-galaxy-unpacked-event-what-to-expect-how-to-watch/" target="_blank" rel="noopener">Samsung Galaxy Unpacked 2026: Here&#39;s What We Expect on July 22</a>
-          <div class="signal-meta">Samsung &middot; CNET &middot; Jul 14</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.cnet.com/tech/mobile/google-pixel-11-leak-hints-at-higher-prices-new-colors-and-more-storage/" target="_blank" rel="noopener">Google Pixel 11 Could Cost More but Come With More Storage, Says Leak</a>
-          <div class="signal-meta">Google &middot; CNET &middot; Jul 14</div>
-        </div>
-      </div>
-      
+      <p class="muted">No customer headlines yet.</p>
     </div>
   </div>
   <p style="margin-top:12px;"><a href="news.html">Browse all news &rarr;</a></p>
@@ -789,5 +669,5 @@ a:hover { text-decoration:underline; }
 </section>
 
 </main>
-<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-14 14:57 PDT</div></footer>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-14 15:57 PDT</div></footer>
 </body></html>

@@ -102,6 +102,27 @@ a:hover { text-decoration:underline; }
 .tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 .tech-actions { display:flex; gap:8px; align-items:center; }
 .tech-count { font-size:12px; color:var(--muted); }
+
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
 </style>
 </head><body>
 
@@ -115,7 +136,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-14 14:57 PDT</div>
+  <div class="meta-info">Updated 2026-07-14 15:57 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -138,12 +159,17 @@ a:hover { text-decoration:underline; }
 <main class="wrap content">
 <section class="hero">
   <h1>Matter News</h1>
+  
   <p>Matter spec, certified devices, Matter Casting, ecosystem moves.</p>
+  
   <div class="stats">
-    <span class="pill">10 articles</span>
-    <span class="pill">1 vendors</span>
+    
+    <span class="pill">4 articles</span>
+    <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
+    
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-14 15:57">2026-07-14 15:57 PDT</span></span>
   </div>
 </section>
 
@@ -153,27 +179,7 @@ a:hover { text-decoration:underline; }
 
 <div class="grid" id="grid">
   
-  <article class="card" data-buckets="matter">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span>
-        
-        <span class="chip chip-cust">Amazon</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://9to5toys.com/2026/07/14/govee-matter-ready-cylinder-pathway-lights-136/" target="_blank" rel="noopener">Line pathways with this 8-pack of Govee Matter-ready cylinder lights down at $136</a></h2>
-      <p class="summary">Through its official Amazon storefront, Govee is offering its Outdoor Cylinder Pathway Lights with Matter 8-Pack at $135.99 shipped, after clipping the on-page 20% off coupon, which matches the price we’re seeing direct from the brand’s web…</p>
-      <div class="meta-row">
-        <span class="source">9to5Toys</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-14T19:45:00+00:00">2026-07-14</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="matter">
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="Apple">
     <div class="thumb">
       
     </div>
@@ -188,12 +194,12 @@ a:hover { text-decoration:underline; }
       <p class="summary">The pitch for Matter was simple enough to print on a box: buy any device with the logo, scan the QR code, and it works in your smart home. No compatibility research, no ecosystem anxiety, no app drawer colonized by proprietary software. Thr…</p>
       <div class="meta-row">
         <span class="source">Gadget Hacks</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-14T15:02:11+00:00">2026-07-14</span>
+        
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="matter">
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="Apple">
     <div class="thumb">
       
     </div>
@@ -209,12 +215,12 @@ a:hover { text-decoration:underline; }
 The smart home started life as a disjointed mess and new stand…</p>
       <div class="meta-row">
         <span class="source">AppleInsider</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-14T12:20:00+00:00">2026-07-14</span>
+        
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="matter">
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="Google">
     <div class="thumb">
       
     </div>
@@ -229,12 +235,12 @@ The smart home started life as a disjointed mess and new stand…</p>
       <p class="summary">We just spotted the official Govee Amazon storefront offering 20% discounts on its three sizes Permanent Outdoor Lights Prism with Matter, starting with the 100-foot model down at $429.99 shipped, beating out the direct website where it’s k…</p>
       <div class="meta-row">
         <span class="source">9to5Toys</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T16:29:00+00:00">2026-07-13</span>
+        
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="matter">
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="Apple">
     <div class="thumb">
       
     </div>
@@ -250,120 +256,19 @@ The smart home started life as a disjointed mess and new stand…</p>
 Yet, even as more devices are added to the smart home, the …</p>
       <div class="meta-row">
         <span class="source">How-To Geek</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T14:15:15+00:00">2026-07-13</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="matter">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span>
         
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://homekitnews.com/2026/07/13/airversa-unveils-new-homekit-over-thread-humidifier-w-plans-for-matter/" target="_blank" rel="noopener">Airversa unveils New HomeKit over Thread humidifier w/ plans for Matter</a></h2>
-      <p class="summary">Airversa unveils New HomeKit over Thread humidifier w/ plans for Matter
-Airversa has announced a new 3.2L smart humidifier, its second smart humidifier designed for Apple Home users. Like its predecessor – also called the Humelle – it conne…</p>
-      <div class="meta-row">
-        <span class="source">Homekit News and Reviews</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T11:09:25+00:00">2026-07-13</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4,matter">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Matter</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.geeky-gadgets.com/smart-sensor-buying-guide-2026/" target="_blank" rel="noopener">2026 Smart Home Sensors Compared; Zigbee vs Thread vs Matter</a></h2>
-      <p class="summary">The landscape of smart sensors in 2026 presents a complex but rewarding challenge for those looking to enhance their home automation setups. With options ranging from PIR motion sensors to mmWave presence sensors, the choice often comes dow…</p>
-      <div class="meta-row">
-        <span class="source">Geeky Gadgets</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-11T12:03:53+00:00">2026-07-11</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="matter">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.silabs.com/blog/matter-1-6-spec-smarter-thermostat-control-and-more" target="_blank" rel="noopener">Matter 1.6 Delivers Smarter Thermostat Experiences and Stronger Device Intelligence</a></h2>
-      <p class="summary">Matter 1.6 Delivers Smarter Thermostat Experiences and Stronger Device Intelligence
-The Connectivity Standards Alliance (CSA) has released Matter 1.6, marking another important step in the evolution of interoperable smart home experiences. …</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:25:47+00:00">2026-07-08</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="matter,ieee15_4">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here’s how I’m building my smart home differently</a></h2>
-      <p class="summary">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently
-Follow ZDNET: Add us as a preferred source on Google.
-If you&#39;re a smart home user or on the path to becoming one, you&#39;ve probably heard the buzzword…</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:24:59+00:00">2026-07-08</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="matter">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Matter</span>
-        <span class="chip chip-vendor">Silicon Labs</span>
-        
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.digitimes.com/news/a20260707PD230/silicon-labs-smart-home-growth-market-2026.html" target="_blank" rel="noopener">Silicon Labs says Matter 1.6 will accelerate smart home growth</a></h2>
-      <p class="summary">Silicon Labs principal product manager Rob Alexander said Matter 1.6, which the Connectivity Standards Alliance (CSA) is set to introduce in June 2026, will be a key upgrade for fully connected edge AIoT devices.
-The article requires paid s…</p>
-      <div class="meta-row">
-        <span class="source">digitimes</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-07T23:57:28+00:00">2026-07-07</span>
       </div>
     </div>
   </article>
   
 </div>
+
+
 </main>
 <footer class="footer"><div class="wrap">IoT Wireless Intel · multi-source RSS · for informational use</div></footer>
 <script>
+const BUCKET_LABELS = {"aliro": "Aliro", "bluetooth": "Bluetooth", "ieee15_4": "802.15.4", "matter": "Matter", "thread": "Thread", "wifi": "Wi-Fi"};
+
 function timeAgo(iso){
   const d=new Date(iso); if(isNaN(d)) return '';
   let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
@@ -377,52 +282,129 @@ function timeAgo(iso){
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
 
-function filterByTech(bucket) {
-  const tabs = document.querySelectorAll('.tech-tab');
-  tabs.forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
-  
+let techFilter = 'all';
+let sideFilter = { type: 'all', value: '' };
+
+function applyFilters(){
   const cards = document.querySelectorAll('#grid .card');
-  let visibleCount = 0;
-  
+  let visible = 0;
   cards.forEach(card => {
-    if (bucket === 'all') {
-      card.style.display = '';
-      visibleCount++;
-    } else {
-      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
-      if (buckets.includes(bucket)) {
-        card.style.display = '';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
-    }
+    const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
+    const vendor = card.dataset.vendor || '';
+    const customer = card.dataset.customer || '';
+    const techOk = techFilter === 'all' || buckets.includes(techFilter);
+    let sideOk = true;
+    if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
+    else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
+    else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    const show = techOk && sideOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
   });
-  
-  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+  const countEl = document.getElementById('articleCount');
+  if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+}
+
+function filterByTech(bucket) {
+  document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
+  if (window.event && window.event.target) window.event.target.classList.add('active');
+  techFilter = bucket;
+  applyFilters();
+}
+
+function filterBySide(type, value) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  if (window.event && window.event.target) {
+    const btn = window.event.target.closest('.news-side-item');
+    if (btn) btn.classList.add('active');
+  }
+  sideFilter = { type: type, value: value };
+  applyFilters();
+}
+
+function filterBySideFromButton(btn) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  sideFilter = { type: btn.dataset.sideType || 'all', value: btn.dataset.sideValue || '' };
+  applyFilters();
+}
+
+function toggleNewsSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('collapsed');
+}
+
+function escapeHtml(s){
+  return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function cardHtml(a){
+  const buckets = a.buckets || [];
+  const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
+  const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
+  const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
+  const thumb = a.thumb ? '<img src="' + a.thumb + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'thumb-empty\'); this.remove()">' : '';
+  let summary = a.summary || '';
+  if (summary.length > 240) summary = summary.slice(0, 240) + '…';
+  const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
+  const timeHtml = a.published ? '<span class="dot">·</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+    '<div class="thumb">' + thumb + '</div>' +
+    '<div class="body">' +
+      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
+      summaryHtml +
+      '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
+    '</div>' +
+  '</article>';
+}
+
+async function loadNews(){
+  const grid = document.getElementById('grid');
+  if (!grid) return;
+  try {
+    const res = await fetch('/api/news?limit=50');
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!Array.isArray(data) || !data.length) return;
+    grid.innerHTML = data.map(cardHtml).join('');
+    document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    applyFilters();
+  } catch (e) {
+    // No backend available (static hosting) - keep server-rendered cards as-is.
+  }
 }
 
 async function refreshNews(event) {
   event.preventDefault();
   const btn = document.getElementById('refreshBtn');
   const icon = document.getElementById('refreshIcon');
-  
+
   if (btn.disabled) return;
-  
+
   btn.disabled = true;
   icon.classList.add('spinning');
   btn.textContent = '↻ Refreshing…';
-  
+
   try {
-    const response = await fetch('/api/refresh', { method: 'POST' });
+    const response = await fetch('/api/refresh-news', { method: 'POST' });
     const data = await response.json();
-    
+
     if (data.ok) {
       btn.textContent = '✓ Done';
+      const lu = document.getElementById('lastUpdatedText');
+      if (lu && data.timestamp) {
+        const d = new Date(data.timestamp);
+        if (!isNaN(d)) lu.textContent = d.toLocaleString();
+      }
+      await loadNews();
       setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 1200);
     } else {
       btn.textContent = '✗ Error';
       setTimeout(() => {
@@ -440,5 +422,9 @@ async function refreshNews(event) {
     }, 3000);
   }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (document.getElementById('grid')) loadNews();
+});
 </script>
 </body></html>

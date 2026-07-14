@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T21:57:18Z",
+  "generated_at": "2026-07-14T22:56:06Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -229,12 +229,12 @@
         {
           "name": "Garmin",
           "date": "Jan 2024",
-          "url": "https://www.garmin.com/en-US/newsroom/press-release/general/"
+          "url": ""
         },
         {
           "name": "Polar",
           "date": "Sep 2023",
-          "url": "https://www.polar.com/blog"
+          "url": ""
         },
         {
           "name": "Apple (AirTag)",
@@ -249,7 +249,7 @@
         {
           "name": "Jabra",
           "date": "Nov 2023",
-          "url": "https://www.jabra.com/news"
+          "url": ""
         },
         {
           "name": "Arlo",
@@ -370,7 +370,7 @@
         {
           "sku": "88W9098",
           "type": "Wi-Fi 6E + BT 5.3 enterprise/gateway combo",
-          "site": "https://www.nxp.com/products/wireless/wi-fi-plus-bluetooth-plus-802-15-4",
+          "site": "",
           "datasheet": ""
         }
       ],
@@ -393,17 +393,17 @@
         {
           "title": "Matter Reference Design (RW612)",
           "type": "app_note",
-          "url": "https://www.nxp.com/design/design-center/development-boards-and-designs/matter-solution:MATTER-SOLUTION"
+          "url": ""
         },
         {
           "title": "NXP Automotive Wi-Fi Security Whitepaper",
           "type": "whitepaper",
-          "url": "https://www.nxp.com/docs/en/white-paper/AUTOWIFISECWP.pdf"
+          "url": ""
         },
         {
           "title": "Wi-Fi + BT + 802.15.4 Family Overview",
           "type": "product_brief",
-          "url": "https://www.nxp.com/products/wireless/wi-fi-plus-bluetooth-plus-802-15-4"
+          "url": ""
         }
       ],
       "press_releases": [
@@ -503,37 +503,37 @@
         {
           "name": "Tesla",
           "date": "2022",
-          "url": "https://www.nxp.com/company/about-nxp/press-room"
+          "url": ""
         },
         {
           "name": "BMW",
           "date": "Mar 2023",
-          "url": "https://www.nxp.com/company/about-nxp/press-room"
+          "url": ""
         },
         {
           "name": "Bosch",
           "date": "2023",
-          "url": "https://www.nxp.com/company/about-nxp/press-room"
+          "url": ""
         },
         {
           "name": "Amazon (Echo)",
           "date": "Sep 2023",
-          "url": "https://www.nxp.com/company/about-nxp/press-room"
+          "url": ""
         },
         {
           "name": "Carrier (smart locks)",
           "date": "Oct 2023",
-          "url": "https://www.nxp.com/company/about-nxp/press-room"
+          "url": ""
         },
         {
           "name": "Signify (Philips Hue)",
           "date": "2022",
-          "url": "https://www.nxp.com/company/about-nxp/press-room"
+          "url": ""
         },
         {
           "name": "NIO",
           "date": "2023",
-          "url": "https://www.nxp.com/company/about-nxp/press-room"
+          "url": ""
         }
       ],
       "wireless_protocols": {
@@ -636,7 +636,7 @@
         {
           "sku": "FastConnect 7800",
           "type": "Wi-Fi 7 + BT 5.4 flagship mobile/PC combo (4x4 MU-MIMO)",
-          "site": "https://www.qualcomm.com/products/technology/connectivity/fastconnect-7800",
+          "site": "",
           "datasheet": ""
         },
         {
@@ -650,7 +650,7 @@
         {
           "title": "FastConnect 7800 Product Brief",
           "type": "product_brief",
-          "url": "https://www.qualcomm.com/products/technology/connectivity/fastconnect-7800"
+          "url": ""
         },
         {
           "title": "QCC5181 LE Audio SoC Overview",
@@ -660,17 +660,17 @@
         {
           "title": "Snapdragon Sound Technology Whitepaper",
           "type": "whitepaper",
-          "url": "https://www.qualcomm.com/snapdragon-sound"
+          "url": ""
         },
         {
           "title": "Aliro UWB Access Control Brief",
           "type": "app_note",
-          "url": "https://www.qualcomm.com/research/standards/aliro"
+          "url": ""
         },
         {
           "title": "Wi-Fi 7 Multi-Link Operation App Note",
           "type": "app_note",
-          "url": "https://www.qualcomm.com/research/technology/wi-fi"
+          "url": ""
         },
         {
           "title": "IoT Developer SDK & Tools",
@@ -717,7 +717,7 @@
         {
           "title": "Qualcomm Modems Expected to Power US iPhone 18 Pro Models",
           "date": "Jul 2026",
-          "url": "https://www.macrumors.com/2026/07/02/iphone-18-pro-could-use-qualcomm-modem-in_the_us/"
+          "url": ""
         },
         {
           "title": "Microsoft Surface Pro OLED 2026 Features Qualcomm Snapdragon X2 Elite Processor",
@@ -934,7 +934,7 @@
         {
           "title": "Bluetooth LE Audio & Auracast Whitepaper",
           "type": "whitepaper",
-          "url": "https://www.silabs.com/wireless/bluetooth/auracast"
+          "url": ""
         },
         {
           "title": "Thread 1.3 Certification Guide",
@@ -1045,37 +1045,37 @@
         {
           "name": "Amazon (eero, Echo)",
           "date": "2022",
-          "url": "https://www.silabs.com/about-us/newsroom"
+          "url": ""
         },
         {
           "name": "Samsung SmartThings",
           "date": "Oct 2023",
-          "url": "https://www.silabs.com/about-us/newsroom"
+          "url": ""
         },
         {
           "name": "Aqara",
           "date": "2023",
-          "url": "https://www.silabs.com/about-us/newsroom"
+          "url": ""
         },
         {
           "name": "Schlage (Allegion)",
           "date": "Sep 2023",
-          "url": "https://www.silabs.com/about-us/newsroom"
+          "url": ""
         },
         {
           "name": "Legrand",
           "date": "2023",
-          "url": "https://www.silabs.com/about-us/newsroom"
+          "url": ""
         },
         {
           "name": "Yale Smart Locks",
           "date": "2022",
-          "url": "https://www.silabs.com/about-us/newsroom"
+          "url": ""
         },
         {
           "name": "Comcast (gateway)",
           "date": "2022",
-          "url": "https://www.silabs.com/about-us/newsroom"
+          "url": ""
         }
       ],
       "wireless_protocols": {
@@ -1125,7 +1125,7 @@
           },
           {
             "name": "EFR32FG28",
-            "url": "https://www.silabs.com/wireless/sub-ghz"
+            "url": ""
           }
         ],
         "certifications": [
@@ -1210,7 +1210,7 @@
         {
           "title": "SimpleLink Low-Power F3 SDK",
           "type": "sdk",
-          "url": "https://www.ti.com/tool/SIMPLELINK-LOWPOWER-F3-SDK"
+          "url": ""
         },
         {
           "title": "Bluetooth Direction Finding Application Report",
@@ -1220,12 +1220,12 @@
         {
           "title": "Matter over Thread with CC2674 \u2014 Reference Design",
           "type": "app_note",
-          "url": "https://www.ti.com/reference-designs/TIDEP-01013"
+          "url": ""
         },
         {
           "title": "Industrial Wireless Security Whitepaper",
           "type": "whitepaper",
-          "url": "https://www.ti.com/document-viewer/SLAA993"
+          "url": ""
         },
         {
           "title": "Wi-Fi 6 vs Wi-Fi 5 Power Comparison App Note",
@@ -1466,13 +1466,13 @@
         {
           "sku": "MT7922",
           "type": "Wi-Fi 6E + BT 5.2 PCIe combo \u2014 laptop/PC",
-          "site": "https://www.mediatek.com/products/broadband-wifi",
+          "site": "",
           "datasheet": ""
         },
         {
           "sku": "MT793x",
           "type": "Wi-Fi 6 + BT IoT SoC \u2014 cost-sensitive smart home devices",
-          "site": "https://www.mediatek.com/products/broadband-wifi",
+          "site": "",
           "datasheet": ""
         }
       ],
@@ -1490,44 +1490,44 @@
         {
           "title": "MediaTek Wi-Fi 7 Multi-Link Operation Technology Brief",
           "type": "whitepaper",
-          "url": "https://www.mediatek.com/innovation/wi-fi-7"
+          "url": ""
         },
         {
           "title": "Filogic SDK & Developer Resources",
           "type": "sdk",
-          "url": "https://www.mediatek.com/products/broadband-wifi"
+          "url": ""
         },
         {
           "title": "Wi-Fi 7 vs Wi-Fi 6E Performance Comparison App Note",
           "type": "app_note",
-          "url": "https://www.mediatek.com/innovation/wi-fi-7"
+          "url": ""
         }
       ],
       "press_releases": [
         {
           "title": "MediaTek Launches Filogic 860 for Wi-Fi 7 Home Routers",
           "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+          "url": ""
         },
         {
           "title": "MediaTek Launches Filogic 860 Wi-Fi 7 Chip for US Home Routers",
           "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+          "url": ""
         },
         {
           "title": "MediaTek Launches Filogic 860 Wi-Fi 7 Solution for US Home Routers",
           "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+          "url": ""
         },
         {
           "title": "MediaTek Filogic 860 Chipset Powers New Wi-Fi 7 Home Routers",
           "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+          "url": ""
         },
         {
           "title": "MediaTek Filogic 860 Chip for Wi-Fi 7 Home Routers Announced",
           "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+          "url": ""
         },
         {
           "title": "MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
@@ -1601,32 +1601,32 @@
         {
           "name": "Amazon (eero)",
           "date": "Jun 2023",
-          "url": "https://www.mediatek.com/news-events/press-releases"
+          "url": ""
         },
         {
           "name": "ASUS",
           "date": "2023",
-          "url": "https://www.mediatek.com/news-events/press-releases"
+          "url": ""
         },
         {
           "name": "TP-Link",
           "date": "2023",
-          "url": "https://www.mediatek.com/news-events/press-releases"
+          "url": ""
         },
         {
           "name": "Xiaomi",
           "date": "2022",
-          "url": "https://www.mediatek.com/news-events/press-releases"
+          "url": ""
         },
         {
           "name": "TCL",
           "date": "2023",
-          "url": "https://www.mediatek.com/news-events/press-releases"
+          "url": ""
         },
         {
           "name": "Netgear",
           "date": "Sep 2023",
-          "url": "https://www.mediatek.com/news-events/press-releases"
+          "url": ""
         }
       ],
       "wireless_protocols": {
@@ -1645,21 +1645,21 @@
         "key_bt_chips": [
           {
             "name": "MT7902",
-            "url": "https://www.mediatek.com/products/broadbandWifi/mt7902"
+            "url": ""
           },
           {
             "name": "Filogic 180n",
-            "url": "https://www.mediatek.com/products/broadbandWifi/filogic-180n"
+            "url": ""
           },
           {
             "name": "MT6835",
-            "url": "https://www.mediatek.com/products/smartphones/mt6835"
+            "url": ""
           }
         ],
         "key_154_chips": [
           {
             "name": "MT7902 (multiprotocol)",
-            "url": "https://www.mediatek.com/products/broadbandWifi/mt7902"
+            "url": ""
           }
         ],
         "certifications": [
@@ -1758,7 +1758,7 @@
         {
           "title": "Thread & OpenThread on ESP32-H2 Guide",
           "type": "app_note",
-          "url": "https://docs.espressif.com/projects/esp-idf/en/latest/esp32h2/api-guides/thread.html"
+          "url": ""
         },
         {
           "title": "Power Consumption Optimization \u2014 ESP32-C6",
@@ -1864,37 +1864,37 @@
         {
           "name": "Aqara",
           "date": "2023",
-          "url": "https://www.espressif.com/en/news/all"
+          "url": ""
         },
         {
           "name": "SwitchBot",
           "date": "Mar 2024",
-          "url": "https://www.espressif.com/en/news/all"
+          "url": ""
         },
         {
           "name": "Tuya (SDK platform)",
           "date": "2022",
-          "url": "https://www.espressif.com/en/news/all"
+          "url": ""
         },
         {
           "name": "Ikea (Dirigera hub)",
           "date": "2022",
-          "url": "https://www.espressif.com/en/news/all"
+          "url": ""
         },
         {
           "name": "Shelly (smart relays)",
           "date": "2023",
-          "url": "https://www.espressif.com/en/news/all"
+          "url": ""
         },
         {
           "name": "M5Stack",
           "date": "2023",
-          "url": "https://www.espressif.com/en/news/all"
+          "url": ""
         },
         {
           "name": "Eve Systems",
           "date": "2023",
-          "url": "https://www.espressif.com/en/news/all"
+          "url": ""
         }
       ],
       "wireless_protocols": {
@@ -2036,7 +2036,7 @@
         {
           "title": "BLE Channel Sounding on STM32WBA \u2014 App Note",
           "type": "app_note",
-          "url": "https://www.st.com/en/wireless-connectivity/bluetooth-low-energy.html"
+          "url": ""
         },
         {
           "title": "Industrial BLE Security with TrustZone Whitepaper",
@@ -2142,32 +2142,32 @@
         {
           "name": "Bosch",
           "date": "2022",
-          "url": "https://www.st.com/content/st_com/en/about/st_company_information/media-center/press-item.html"
+          "url": ""
         },
         {
           "name": "Schneider Electric",
           "date": "2023",
-          "url": "https://www.st.com/content/st_com/en/about/st_company_information/media-center/press-item.html"
+          "url": ""
         },
         {
           "name": "Legrand",
           "date": "2023",
-          "url": "https://www.st.com/content/st_com/en/about/st_company_information/media-center/press-item.html"
+          "url": ""
         },
         {
           "name": "STMicro (BlueNRG in medical wearables)",
           "date": "Feb 2024",
-          "url": "https://www.st.com/en/wireless-connectivity/bluenrg-series.html"
+          "url": ""
         },
         {
           "name": "Honeywell",
           "date": "2022",
-          "url": "https://www.st.com/content/st_com/en/about/st_company_information/media-center/press-item.html"
+          "url": ""
         },
         {
           "name": "ABB",
           "date": "2022",
-          "url": "https://www.st.com/content/st_com/en/about/st_company_information/media-center/press-item.html"
+          "url": ""
         }
       ],
       "wireless_protocols": {
@@ -2198,13 +2198,13 @@
           },
           {
             "name": "STM32WBA55",
-            "url": "https://www.st.com/en/microcontrollers-microprocessors/stm32wba55.html"
+            "url": ""
           }
         ],
         "key_154_chips": [
           {
             "name": "STM32WB55",
-            "url": "https://www.st.com/en/microcontrollers-microprocessors/stm32wb55.html"
+            "url": ""
           },
           {
             "name": "STM32WB5M",
@@ -2212,7 +2212,7 @@
           },
           {
             "name": "STM32WB1M",
-            "url": "https://www.st.com/en/microcontrollers-microprocessors/stm32wb1mmg.html"
+            "url": ""
           }
         ],
         "certifications": [
@@ -2711,19 +2711,19 @@
         "key_bt_chips": [
           {
             "name": "SYN43751",
-            "url": "https://www.synaptics.com/products/wireless/bluetooth-wifi"
+            "url": ""
           },
           {
             "name": "SYN43756",
-            "url": "https://www.synaptics.com/products/wireless/bluetooth-wifi"
+            "url": ""
           },
           {
             "name": "SYN4830",
-            "url": "https://www.synaptics.com/products/wireless/bluetooth-wifi"
+            "url": ""
           },
           {
             "name": "SYN4897",
-            "url": "https://www.synaptics.com/products/wireless/bluetooth-wifi"
+            "url": ""
           }
         ],
         "key_154_chips": [],
@@ -2793,22 +2793,22 @@
         {
           "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio and 8K Gaming HID Solutions at COMPUTEX 2026",
           "date": "Jun 2026",
-          "url": "https://audioxpress.com/news/realtek-successfully-demonstrates-next-generation-bluetooth-hdt-audio-and-8k-gaming-hid-solutions-at-computex-2026"
+          "url": ""
         },
         {
           "title": "Realtek Releases RTL8773J, a Next-Generation Bluetooth HDT Audio SoC",
           "date": "Jun 2026",
-          "url": "https://audioxpress.com/news/realtek-successfully-demonstrates-next-generation-bluetooth-hdt-audio-and-8k-gaming-hid-solutions-at-computex-2026"
+          "url": ""
         },
         {
           "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio SoC (RTL8773J) and 8K Gaming HID Solutions at COMPUTEX 2026",
           "date": "Jun 2026",
-          "url": "https://audioxpress.com/news/realtek-successfully-demonstrates-next-generation-bluetooth-hdt-audio-and-8k-gaming-hid-solutions-at-computex-2026"
+          "url": ""
         },
         {
           "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio and 8K Gaming HID Solutions, Featuring RTL8773J SoC, at COMPUTEX 2026",
           "date": "Jun 2026",
-          "url": "https://audioxpress.com/news/realtek-successfully-demonstrates-next-generation-bluetooth-hdt-audio-and-8k-gaming-hid-solutions-at-computex-2026"
+          "url": ""
         },
         {
           "title": "Realtek Reports PC Revenue Growth",
@@ -2852,7 +2852,7 @@
         {
           "title": "Broadcom BCM47765 GPS Chip Powers Premium Wearables",
           "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-bcm47765-from-broadcom-inc-gps-chip-quietly-powers-premium/69701881"
+          "url": ""
         },
         {
           "title": "Broadcom to Manufacture Over $30 Billion in US-Made Wireless Chips and Custom Silicon for Apple",
@@ -2903,12 +2903,12 @@
         {
           "sku": "NINA-B5",
           "type": "BLE 5.3 module (Nordic nRF54L inside)",
-          "site": "https://www.u-blox.com/en/product/nina-b5-series"
+          "site": ""
         },
         {
           "sku": "NORA-B1",
           "type": "BLE + 802.15.4 module (nRF5340)",
-          "site": "https://www.u-blox.com/en/product/nora-b1-series"
+          "site": ""
         },
         {
           "sku": "JODY-W6",
@@ -3075,12 +3075,12 @@
         {
           "sku": "TLSR9518A",
           "type": "BLE 5.4 + 802.15.4 + 2.4 GHz proprietary",
-          "site": "https://www.telink-semi.com/product/TLSR9518A.html"
+          "site": ""
         },
         {
           "sku": "TLSR8258",
           "type": "Low-cost BLE 5.x SoC",
-          "site": "https://www.telink-semi.com/product/TLSR8258.html"
+          "site": ""
         }
       ],
       "vs_airoc_strengths": [
@@ -3100,12 +3100,12 @@
         {
           "title": "Telink Joins Alliance Board to Develop Global IoT Standard Ecosystem",
           "date": "Jul 2026",
-          "url": "https://www.telink-semi.com/telink-joins-csa-board-to-develop-global-iot-standard-ecosystem"
+          "url": ""
         },
         {
           "title": "Telink Joins CSA Board to Develop Global IoT Standard Ecosystem",
           "date": "Jul 2026",
-          "url": "https://www.telink-semi.com/telink-joins-csa-board-to-develop-global-iot-standard-ecosystem"
+          "url": ""
         },
         {
           "title": "Telink Joins Connectivity Standards Alliance Board",
@@ -3212,7 +3212,7 @@
         {
           "sku": "AB1568",
           "type": "TWS earbud BLE Audio SoC + ANC",
-          "site": "https://www.airoha.com/products/p/U7K0D2k9LdwAGHJ4"
+          "site": ""
         },
         {
           "sku": "AB1585",
@@ -3335,7 +3335,7 @@
         {
           "title": "Murata Launches Ultra-Compact Type 2AB 5G Module",
           "date": "Jun 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-type-2ab-from-murata-manufacturing-co-ultra-compact-5g-module-for/69656537"
+          "url": ""
         },
         {
           "title": "Murata Collaborates with Synopsys to Offer Simulation Models via Ansys Tools",
@@ -3350,7 +3350,7 @@
         {
           "title": "Murata Launches Type 2AB Ultra-Compact 5G Module",
           "date": "Jun 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-type-2ab-from-murata-manufacturing-co-ultra-compact-5g-module-for/69656537"
+          "url": ""
         }
       ]
     },
@@ -3361,12 +3361,12 @@
         {
           "sku": "ATM33",
           "type": "BLE 5.3 + 802.15.4 + RF energy harvesting",
-          "site": "https://atmosic.com/products/atm33-series/"
+          "site": ""
         },
         {
           "sku": "ATM34",
           "type": "BLE 5.4 with Matter / Thread",
-          "site": "https://atmosic.com/products/atm34-series/"
+          "site": ""
         }
       ],
       "vs_airoc_strengths": [
@@ -3508,12 +3508,12 @@
         {
           "sku": "TC35681",
           "type": "BLE 5.0 SoC for Japan auto/industrial",
-          "site": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/wireless-communication-ics/bluetooth-ic.html"
+          "site": ""
         },
         {
           "sku": "TC3567x",
           "type": "Bluetooth + low-power MCU",
-          "site": "https://toshiba.semicon-storage.com/ap-en/semiconductor/product/wireless-communication-ics.html"
+          "site": ""
         }
       ],
       "vs_airoc_strengths": [
@@ -3704,7 +3704,7 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 37,
+    "Broadcom": 36,
     "Qualcomm": 12,
     "Skyworks": 6,
     "Microchip": 6,
@@ -3719,6 +3719,7 @@
     "UNISOC": 1,
     "u-blox": 1,
     "Infineon": 1,
+    "Nordic": 1,
     "Telink": 1,
     "Murata": 1
   },

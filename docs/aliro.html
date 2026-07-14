@@ -102,6 +102,27 @@ a:hover { text-decoration:underline; }
 .tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 .tech-actions { display:flex; gap:8px; align-items:center; }
 .tech-count { font-size:12px; color:var(--muted); }
+
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
 </style>
 </head><body>
 
@@ -115,7 +136,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-14 14:57 PDT</div>
+  <div class="meta-info">Updated 2026-07-14 15:57 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -138,66 +159,34 @@ a:hover { text-decoration:underline; }
 <main class="wrap content">
 <section class="hero">
   <h1>Aliro News</h1>
+  
   <p>Aliro digital-key spec from CSA — NFC + UWB + Bluetooth LE access.</p>
+  
   <div class="stats">
-    <span class="pill">2 articles</span>
-    <span class="pill">1 vendors</span>
+    
+    <span class="pill">0 articles</span>
+    <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
+    
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-14 15:57">2026-07-14 15:57 PDT</span></span>
   </div>
 </section>
 
 
 
-
+<div class="empty">No articles. Try widening <code>--max-age-days</code>.</div>
 
 <div class="grid" id="grid">
   
-  <article class="card" data-buckets="aliro">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Aliro</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Wearable</span>
-      </div>
-      <h2 class="title"><a href="https://www.securityindustry.org/2026/06/30/going-inside-aliro-a-qa-with-connectivity-standards-alliance-president-ceo-tobin-richardson/" target="_blank" rel="noopener">Going Inside Aliro: A Q&amp;A With Connectivity Standards Alliance President &amp; CEO Tobin Richardson</a></h2>
-      <p class="summary">Going Inside Aliro: A Q&amp;A With Connectivity Standards Alliance President &amp; CEO Tobin Richardson
-Following a recent visit to the Security Industry Association (SIA) offices by Tobin Richardson, president and CEO of the Connectivity Standards…</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:25:25+00:00">2026-07-08</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="aliro,bluetooth">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Bluetooth</span>
-        <span class="chip chip-vendor">Qualcomm</span>
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/06/24/aliro-is-a-vendor-agnostic-standard-for-digital-access-control-working-over-nfc-bluetooth-le-or-uwb/" target="_blank" rel="noopener">Aliro is a vendor-agnostic standard for digital access control working over NFC, Bluetooth LE, or UWB</a></h2>
-      <p class="summary">Managed by the Connectivity Standards Alliance, Aliro is a smart lock/access control standard that works over NFC, Bluetooth LE, or UWB and is designed to be vendor-agnostic. While Matter is designed for Smart Home applications, Aliro speci…</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:20:32+00:00">2026-07-08</span>
-      </div>
-    </div>
-  </article>
-  
 </div>
+
+
 </main>
 <footer class="footer"><div class="wrap">IoT Wireless Intel · multi-source RSS · for informational use</div></footer>
 <script>
+const BUCKET_LABELS = {"aliro": "Aliro", "bluetooth": "Bluetooth", "ieee15_4": "802.15.4", "matter": "Matter", "thread": "Thread", "wifi": "Wi-Fi"};
+
 function timeAgo(iso){
   const d=new Date(iso); if(isNaN(d)) return '';
   let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
@@ -211,52 +200,129 @@ function timeAgo(iso){
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
 
-function filterByTech(bucket) {
-  const tabs = document.querySelectorAll('.tech-tab');
-  tabs.forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
-  
+let techFilter = 'all';
+let sideFilter = { type: 'all', value: '' };
+
+function applyFilters(){
   const cards = document.querySelectorAll('#grid .card');
-  let visibleCount = 0;
-  
+  let visible = 0;
   cards.forEach(card => {
-    if (bucket === 'all') {
-      card.style.display = '';
-      visibleCount++;
-    } else {
-      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
-      if (buckets.includes(bucket)) {
-        card.style.display = '';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
-    }
+    const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
+    const vendor = card.dataset.vendor || '';
+    const customer = card.dataset.customer || '';
+    const techOk = techFilter === 'all' || buckets.includes(techFilter);
+    let sideOk = true;
+    if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
+    else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
+    else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    const show = techOk && sideOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
   });
-  
-  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+  const countEl = document.getElementById('articleCount');
+  if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+}
+
+function filterByTech(bucket) {
+  document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
+  if (window.event && window.event.target) window.event.target.classList.add('active');
+  techFilter = bucket;
+  applyFilters();
+}
+
+function filterBySide(type, value) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  if (window.event && window.event.target) {
+    const btn = window.event.target.closest('.news-side-item');
+    if (btn) btn.classList.add('active');
+  }
+  sideFilter = { type: type, value: value };
+  applyFilters();
+}
+
+function filterBySideFromButton(btn) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  sideFilter = { type: btn.dataset.sideType || 'all', value: btn.dataset.sideValue || '' };
+  applyFilters();
+}
+
+function toggleNewsSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('collapsed');
+}
+
+function escapeHtml(s){
+  return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function cardHtml(a){
+  const buckets = a.buckets || [];
+  const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
+  const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
+  const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
+  const thumb = a.thumb ? '<img src="' + a.thumb + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'thumb-empty\'); this.remove()">' : '';
+  let summary = a.summary || '';
+  if (summary.length > 240) summary = summary.slice(0, 240) + '…';
+  const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
+  const timeHtml = a.published ? '<span class="dot">·</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+    '<div class="thumb">' + thumb + '</div>' +
+    '<div class="body">' +
+      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
+      summaryHtml +
+      '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
+    '</div>' +
+  '</article>';
+}
+
+async function loadNews(){
+  const grid = document.getElementById('grid');
+  if (!grid) return;
+  try {
+    const res = await fetch('/api/news?limit=50');
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!Array.isArray(data) || !data.length) return;
+    grid.innerHTML = data.map(cardHtml).join('');
+    document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    applyFilters();
+  } catch (e) {
+    // No backend available (static hosting) - keep server-rendered cards as-is.
+  }
 }
 
 async function refreshNews(event) {
   event.preventDefault();
   const btn = document.getElementById('refreshBtn');
   const icon = document.getElementById('refreshIcon');
-  
+
   if (btn.disabled) return;
-  
+
   btn.disabled = true;
   icon.classList.add('spinning');
   btn.textContent = '↻ Refreshing…';
-  
+
   try {
-    const response = await fetch('/api/refresh', { method: 'POST' });
+    const response = await fetch('/api/refresh-news', { method: 'POST' });
     const data = await response.json();
-    
+
     if (data.ok) {
       btn.textContent = '✓ Done';
+      const lu = document.getElementById('lastUpdatedText');
+      if (lu && data.timestamp) {
+        const d = new Date(data.timestamp);
+        if (!isNaN(d)) lu.textContent = d.toLocaleString();
+      }
+      await loadNews();
       setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 1200);
     } else {
       btn.textContent = '✗ Error';
       setTimeout(() => {
@@ -274,5 +340,9 @@ async function refreshNews(event) {
     }, 3000);
   }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (document.getElementById('grid')) loadNews();
+});
 </script>
 </body></html>

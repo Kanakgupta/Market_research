@@ -102,6 +102,27 @@ a:hover { text-decoration:underline; }
 .tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 .tech-actions { display:flex; gap:8px; align-items:center; }
 .tech-count { font-size:12px; color:var(--muted); }
+
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
 </style>
 </head><body>
 
@@ -115,7 +136,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-14 14:57 PDT</div>
+  <div class="meta-info">Updated 2026-07-14 15:57 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -138,12 +159,17 @@ a:hover { text-decoration:underline; }
 <main class="wrap content">
 <section class="hero">
   <h1>Thread News</h1>
+  
   <p>Thread protocol, OpenThread, Thread 1.4, border routers.</p>
+  
   <div class="stats">
-    <span class="pill">21 articles</span>
+    
+    <span class="pill">6 articles</span>
     <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
+    
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-14 15:57">2026-07-14 15:57 PDT</span></span>
   </div>
 </section>
 
@@ -153,7 +179,27 @@ a:hover { text-decoration:underline; }
 
 <div class="grid" id="grid">
   
-  <article class="card" data-buckets="thread">
+  <article class="card" data-buckets="thread" data-vendor="" data-customer="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://cartilagefreecaptain.sbnation.com/general/72119/world-cup-france-vs-spain-semifinal-open-thread" target="_blank" rel="noopener">World Cup: France vs. Spain semifinal open thread</a></h2>
+      <p class="summary">Today we determine which of two outstanding international and European football clubs will play for a World Cup final. On hand we have France, who have looked more or less unbeatable in this tournament behind superstar Kylian Mbappe and Mic…</p>
+      <div class="meta-row">
+        <span class="source">Cartilage Free Captain</span>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="thread" data-vendor="" data-customer="">
     <div class="thumb">
       
     </div>
@@ -172,12 +218,12 @@ Spurs players on the ringers updated top 100 list:
 26) St…</p>
       <div class="meta-row">
         <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-14T12:00:02+00:00">2026-07-14</span>
+        
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="thread">
+  <article class="card" data-buckets="thread" data-vendor="" data-customer="">
     <div class="thumb">
       
     </div>
@@ -188,18 +234,18 @@ Spurs players on the ringers updated top 100 list:
         
         
       </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/open-thread-2026-home-run-230059904.html" target="_blank" rel="noopener">Open Thread: 2026 Home Run Derby</a></h2>
-      <p class="summary">Open Thread: 2026 Home Run Derby
-Today is the Home Run Derby, arguably the best part of the All Star Break. We’ve got a new format this year, removing the timer from the last couple seasons and going back to a swing limit.
-Here are this yea…</p>
+      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/97765/open-thread-2026-home-run-derby" target="_blank" rel="noopener">Open Thread: 2026 Home Run Derby</a></h2>
+      <p class="summary">Today is the Home Run Derby, arguably the best part of the All Star Break. We’ve got a new format this year, removing the timer from the last couple seasons and going back to a swing limit.
+Open Thread: 2026 Home Run Derby
+New format, new n…</p>
       <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T23:00:59+00:00">2026-07-13</span>
+        <span class="source">Amazin&#39; Avenue</span>
+        
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="thread">
+  <article class="card" data-buckets="thread" data-vendor="" data-customer="">
     <div class="thumb">
       
     </div>
@@ -219,12 +265,12 @@ Chargers News:
 Joe Alt was ranked as one of the NFL’s top offensive tackles in ESPN’s latest positional rankings (Chargers…</p>
       <div class="meta-row">
         <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T13:50:00+00:00">2026-07-13</span>
+        
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="thread">
+  <article class="card" data-buckets="thread" data-vendor="" data-customer="">
     <div class="thumb">
       
     </div>
@@ -245,12 +291,12 @@ Name a better big man to do it.
 T…</p>
       <div class="meta-row">
         <span class="source">MMA Mania</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T13:05:00+00:00">2026-07-13</span>
+        
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="thread,wifi">
+  <article class="card" data-buckets="thread,wifi" data-vendor="" data-customer="Apple">
     <div class="thumb">
       
     </div>
@@ -266,367 +312,19 @@ T…</p>
 If you own, read about, or manage a lot of smart home equipment, you&#39;ve probably heard of Thread. Thread is a low-power wireless network that lets smart-home device…</p>
       <div class="meta-row">
         <span class="source">bgr.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T12:47:00+00:00">2026-07-13</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
         
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.managingmadrid.com/general/110000/open-thread-13-july-2026" target="_blank" rel="noopener">Open Thread: 13 July 2026</a></h2>
-      <p class="summary">The Daily Merengue is a place where you can feel free to d all things football. Do not be alarmed by the overt RMCF bias. It’s in the name! Shoutout to the mods who do a fantastic job, Ezek, Valyrian Steel, Kung_Fu_Zizou, Juninho, NeRObutBl…</p>
-      <div class="meta-row">
-        <span class="source">Managing Madrid</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T05:00:00+00:00">2026-07-13</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/97660/mets-red-sox-lineups-broadcast-info-open-thread-thornton-tolle-ewing" target="_blank" rel="noopener">Mets vs Red Sox: Lineups, broadcast info, and open thread, 7/12/26</a></h2>
-      <p class="summary">Mets vs Red Sox: Lineups, broadcast info, and open thread, 7/12/26
-The Mets look to avoid a sweep against the streaking Red Sox.
-- A.J. Ewing - CF
-- Juan Soto - DH
-- Francisco Lindor - SS
-- Eric Wagaman - 1B
-- Carson Benge - RF
-- Tyrone Tay…</p>
-      <div class="meta-row">
-        <span class="source">Amazin&#39; Avenue</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-12T16:40:00+00:00">2026-07-12</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.coveringthecorner.com/cleveland-guardians-mlb-draft/71293/guardians-draft-day-two-open-thread-rounds-5-20" target="_blank" rel="noopener">Guardians Draft Day Two Open Thread: Rounds 5-20</a></h2>
-      <p class="summary">Discuss the Guardians Day Two picks below. You can view MLB’s draft tracker here.
-Guardians Draft Day Two Open Thread: Rounds 5-20
-Moar players
-Brian Hemminger will update picks as they happen in the comments below.
-See More:
-Moar players
-D…</p>
-      <div class="meta-row">
-        <span class="source">Covering the Corner</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-12T16:11:58+00:00">2026-07-12</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/97662/open-thread-2026-futures-game" target="_blank" rel="noopener">Open Thread: 2026 Futures Game</a></h2>
-      <p class="summary">The Futures Game starts at noon EDT. The only Mets’ prospect in the game is Ryan Clifford, acquired in exchange for Justin Verlander at the 2023 trade deadline. Clifford is a reserve for the National League squad. Chat about all the action …</p>
-      <div class="meta-row">
-        <span class="source">Amazin&#39; Avenue</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-12T16:00:00+00:00">2026-07-12</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/456525/open-thread-july-12-2026-whats-your-favorite-movie-monster" target="_blank" rel="noopener">Open Thread, July 12, 2026: What’s your favorite movie monster?</a></h2>
-      <p class="summary">Hey all, here’s your open thread for Sunday.
-Open Thread, July 12, 2026: What’s your favorite movie monster?
-Your daily source for off topic chatter with the MMA Mania faithful.
-Tim Edwards Tim Edwards has been covering combat sports since …</p>
-      <div class="meta-row">
-        <span class="source">MMA Mania</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-12T13:05:00+00:00">2026-07-12</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        <span class="chip chip-app">Automotive</span>
-      </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-stock-holds-steady-as-global-thread-specialist-builds-on/69750438" target="_blank" rel="noopener">Coats Group stock holds steady as global thread specialist builds on resilient industrial demand - Ad-hoc-news.de</a></h2>
-      <p class="summary">Coats Group stock holds steady as global thread specialist builds on resilient industrial demand
-Veröffentlicht: 12.07.2026 um 07:16 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)Coats Group stock rep…</p>
-      <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-12T05:16:49+00:00">2026-07-12</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.royalsreview.com/kansas-city-royals-mlb-draft/102029/mlb-draft-open-thread" target="_blank" rel="noopener">2026 MLB Draft open thread</a></h2>
-      <p class="summary">It is draft day! And that means we need a thread so we can discuss whatever it is the Royals end up doing with their picks! First, let’s talk about how you can watch, because it’s not as simple as you might have hoped.
-2026 MLB Draft open t…</p>
-      <div class="meta-row">
-        <span class="source">Royals Review</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-11T16:30:00+00:00">2026-07-11</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://cartilagefreecaptain.sbnation.com/general/72042/world-cup-day-30-recap-and-england-norway-open-thread" target="_blank" rel="noopener">World Cup: Day 30 recap and England-Norway open thread</a></h2>
-      <p class="summary">Well, one World Cup semifinal is set, and to nobody’s surprise it’s France vs. Spain. In fact, that’s what pretty much everyone figured as they’re clearly the two best teams in that half of the bracket. Spain managed to get past a surprisin…</p>
-      <div class="meta-row">
-        <span class="source">Cartilage Free Captain</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-11T12:34:27+00:00">2026-07-11</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.the-downballot.com/p/weekly-open-thread-74b" target="_blank" rel="noopener">Weekly open thread</a></h2>
-      <p class="summary">Weekly open thread
-What races are you interested in?
-Squeeze - Up the Junction
-If you enjoy participating in The Downballot’s comment section, we’d be extremely grateful if you’d consider upgrading to a paid subscription to support our work…</p>
-      <div class="meta-row">
-        <span class="source">The Downballot</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-10T21:22:24+00:00">2026-07-10</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://cartilagefreecaptain.sbnation.com/general/72035/__trashed" target="_blank" rel="noopener">World Cup: Day 29 recap and Spain vs. Belgium open thread</a></h2>
-      <p class="summary">The World Cup is starting to wind down and at the end of today we’ll know the first semifinal matchup, as Belgium and Spain battle. The “winner” gets to play France. Spain played one of the most boring games of the tournament in the last ro…</p>
-      <div class="meta-row">
-        <span class="source">Cartilage Free Captain</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-10T13:59:23+00:00">2026-07-10</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.makeuseof.com/thread-border-router-options-at-home/" target="_blank" rel="noopener">You probably already have a Thread router in your home that you&#39;re not using</a></h2>
-      <p class="summary">Setting up a smart home in today&#39;s day and age shouldn&#39;t be difficult. There is no shortage of devices that you can choose from to furnish your smart home. Plus, they don&#39;t even have to be from the same manufacturer to run your smart home.
-…</p>
-      <div class="meta-row">
-        <span class="source">MakeUseOf</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-09T21:00:19+00:00">2026-07-09</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://cartilagefreecaptain.sbnation.com/general/72024/world-cup-day-28-france-vs-morocco-open-thread" target="_blank" rel="noopener">World Cup: Day 28 France vs. Morocco open thread</a></h2>
-      <p class="summary">Another busy day, another late open thread. Sorry, gang. I’m through the worst of it now.
-World Cup: Day 28 France vs. Morocco open thread
-The World Cup rolls on.
-We’re down to the final 8 teams in the World Cup, and the opening match of th…</p>
-      <div class="meta-row">
-        <span class="source">Cartilage Free Captain</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-09T19:54:33+00:00">2026-07-09</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        <span class="chip chip-app">Industrial</span>
-      </div>
-      <h2 class="title"><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/coats-group-plc-builds-on-thread-leadership-as-investors-watch-global/69728669" target="_blank" rel="noopener">Coats Group plc builds on thread leadership as investors watch global apparel demand - Ad-hoc-news.de</a></h2>
-      <p class="summary">Coats Group plc builds on thread leadership as investors watch global apparel demand
-Veröffentlicht: 09.07.2026 um 08:32 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael Müller (Chefredaktion)Coats Group plc (ISIN GB000233527…</p>
-      <div class="meta-row">
-        <span class="source">Ad-hoc-news.de</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-09T06:32:32+00:00">2026-07-09</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-us/news/us/wednesday-open-thread/ar-AA27tGET" target="_blank" rel="noopener">Wednesday open thread</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MSN</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-08T14:19:10+00:00">2026-07-08</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.poundingtherock.com/spurs-discussion-threads/106050/open-thread-spurs-sign-tobias-harris" target="_blank" rel="noopener">Open Thread: Spurs sign Tobias Harris</a></h2>
-      <p class="summary">It’s been a busy week for the Spurs. They signed their draftees and sent them off to San Francisco for the California Classic. Starting Thursday, they’ll be competing in Las Vegas. They also finalized the signing of Tobias Harris, the free …</p>
-      <div class="meta-row">
-        <span class="source">Pounding The Rock</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-08T11:00:00+00:00">2026-07-08</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="http://brooklynheightsblog.com/archives/103195" target="_blank" rel="noopener">Open Thread Wednesday</a></h2>
-      <p class="summary">What’s on your mind? Comment away!
-Nabe Chatter
-- You&#39;ve got to be kidding on Open Thread Wednesday
-- MaggieO on Open Thread Wednesday
-- malcolm on Open Thread Wednesday
-- Andrew Porter on Open Thread Wednesday
-- Andrew Porter on Open Threa…</p>
-      <div class="meta-row">
-        <span class="source">Brooklyn Heights Blog</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-08T04:00:42+00:00">2026-07-08</span>
       </div>
     </div>
   </article>
   
 </div>
+
+
 </main>
 <footer class="footer"><div class="wrap">IoT Wireless Intel · multi-source RSS · for informational use</div></footer>
 <script>
+const BUCKET_LABELS = {"aliro": "Aliro", "bluetooth": "Bluetooth", "ieee15_4": "802.15.4", "matter": "Matter", "thread": "Thread", "wifi": "Wi-Fi"};
+
 function timeAgo(iso){
   const d=new Date(iso); if(isNaN(d)) return '';
   let s=Math.floor((Date.now()-d.getTime())/1000); if(s<0)s=0;
@@ -640,52 +338,129 @@ function timeAgo(iso){
 }
 document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
 
-function filterByTech(bucket) {
-  const tabs = document.querySelectorAll('.tech-tab');
-  tabs.forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
-  
+let techFilter = 'all';
+let sideFilter = { type: 'all', value: '' };
+
+function applyFilters(){
   const cards = document.querySelectorAll('#grid .card');
-  let visibleCount = 0;
-  
+  let visible = 0;
   cards.forEach(card => {
-    if (bucket === 'all') {
-      card.style.display = '';
-      visibleCount++;
-    } else {
-      const buckets = (card.dataset.buckets || '').split(',').filter(b => b);
-      if (buckets.includes(bucket)) {
-        card.style.display = '';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
-    }
+    const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
+    const vendor = card.dataset.vendor || '';
+    const customer = card.dataset.customer || '';
+    const techOk = techFilter === 'all' || buckets.includes(techFilter);
+    let sideOk = true;
+    if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
+    else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
+    else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    const show = techOk && sideOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
   });
-  
-  document.getElementById('articleCount').textContent = visibleCount + ' article' + (visibleCount !== 1 ? 's' : '');
+  const countEl = document.getElementById('articleCount');
+  if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+}
+
+function filterByTech(bucket) {
+  document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
+  if (window.event && window.event.target) window.event.target.classList.add('active');
+  techFilter = bucket;
+  applyFilters();
+}
+
+function filterBySide(type, value) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  if (window.event && window.event.target) {
+    const btn = window.event.target.closest('.news-side-item');
+    if (btn) btn.classList.add('active');
+  }
+  sideFilter = { type: type, value: value };
+  applyFilters();
+}
+
+function filterBySideFromButton(btn) {
+  document.querySelectorAll('.news-side-item').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  sideFilter = { type: btn.dataset.sideType || 'all', value: btn.dataset.sideValue || '' };
+  applyFilters();
+}
+
+function toggleNewsSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('collapsed');
+}
+
+function escapeHtml(s){
+  return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function cardHtml(a){
+  const buckets = a.buckets || [];
+  const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
+  const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
+  const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
+  const thumb = a.thumb ? '<img src="' + a.thumb + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'thumb-empty\'); this.remove()">' : '';
+  let summary = a.summary || '';
+  if (summary.length > 240) summary = summary.slice(0, 240) + '…';
+  const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
+  const timeHtml = a.published ? '<span class="dot">·</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+    '<div class="thumb">' + thumb + '</div>' +
+    '<div class="body">' +
+      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
+      summaryHtml +
+      '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
+    '</div>' +
+  '</article>';
+}
+
+async function loadNews(){
+  const grid = document.getElementById('grid');
+  if (!grid) return;
+  try {
+    const res = await fetch('/api/news?limit=50');
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!Array.isArray(data) || !data.length) return;
+    grid.innerHTML = data.map(cardHtml).join('');
+    document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    applyFilters();
+  } catch (e) {
+    // No backend available (static hosting) - keep server-rendered cards as-is.
+  }
 }
 
 async function refreshNews(event) {
   event.preventDefault();
   const btn = document.getElementById('refreshBtn');
   const icon = document.getElementById('refreshIcon');
-  
+
   if (btn.disabled) return;
-  
+
   btn.disabled = true;
   icon.classList.add('spinning');
   btn.textContent = '↻ Refreshing…';
-  
+
   try {
-    const response = await fetch('/api/refresh', { method: 'POST' });
+    const response = await fetch('/api/refresh-news', { method: 'POST' });
     const data = await response.json();
-    
+
     if (data.ok) {
       btn.textContent = '✓ Done';
+      const lu = document.getElementById('lastUpdatedText');
+      if (lu && data.timestamp) {
+        const d = new Date(data.timestamp);
+        if (!isNaN(d)) lu.textContent = d.toLocaleString();
+      }
+      await loadNews();
       setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+        btn.textContent = '↻ Refresh';
+        btn.disabled = false;
+        icon.classList.remove('spinning');
+      }, 1200);
     } else {
       btn.textContent = '✗ Error';
       setTimeout(() => {
@@ -703,5 +478,9 @@ async function refreshNews(event) {
     }, 3000);
   }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (document.getElementById('grid')) loadNews();
+});
 </script>
 </body></html>
