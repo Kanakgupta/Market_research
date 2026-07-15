@@ -1,7 +1,102 @@
 {
-  "generated_at": "2026-07-15T11:55:08Z",
+  "generated_at": "2026-07-15T13:07:47Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
+    {
+      "title": "6 \"dumb\" household appliances you can add to your smart home\u2014and how to do it properly - How-To Geek",
+      "url": "https://www.howtogeek.com/dumb-household-appliances-you-can-add-to-your-smart-homeand-how-to-do-it-properly/",
+      "source": "How-To Geek",
+      "date": "2026-07-15",
+      "vendor": "Espressif",
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Though new appliances often boast of \u201csmart\u201d features, the execution is often disappointing. The truth is that you can bring actually useful smart features to your trusty old appliances with some cheap upgrades and a few minutes of your time.\nNever \u201cupgrade\u201d your trusty old appliance for smart featu"
+    },
+    {
+      "title": "Waze just gave me 5 new reasons to switch from Apple Maps",
+      "url": "https://www.zdnet.com/article/waze-update-may-beat-apple-maps/",
+      "source": "ZDNet",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Waze just gave me 5 new reasons to switch from Apple Maps\nFollow ZDNET: Add us as a preferred source on Google.\nZDNET's key takeaways\n- Waze is adding five new features to the iOS and Android apps.\n- You'll get personalized directions and fewer audio interruptions.\n- You can suggest map changes by v"
+    },
+    {
+      "title": "AWS sustainability claims don't hold water, lawsuit alleges",
+      "url": "https://www.theregister.com/on-prem/2026/07/15/aws-sustainability-claims-dont-hold-water-lawsuit-alleges/5269723",
+      "source": "The Register",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Ex-staffer accuses Amazon's Virginia datacenters of quietly guzzling H20 all year round, despite 'water positive' PR push"
+    },
+    {
+      "title": "The Motorola Edge 70 Max is all about power",
+      "url": "https://www.theverge.com/tech/965884/motorola-edge-70-max-qi2-wireless-price-availability",
+      "source": "The Verge",
+      "date": "2026-07-15",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Motorola has launched the Edge 70 Max, its latest flagship phone that's designed for power intensive tasks like streaming video and mobile gaming. Alongside having a huge battery and rapid wired charging support, the Motorola Edge 70 Max is the first Android phone to support full 25W wireless Qi2 ch"
+    },
+    {
+      "title": "I tested Google Maps vs. Waze to find the best updated navigation app",
+      "url": "https://www.zdnet.com/article/google-maps-vs-waze-2026/",
+      "source": "and this one wins",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Want to know whether Waze or Google Maps is better? I've driven with both for hundreds of miles. Here's my choice."
+    },
+    {
+      "title": "Silicon Labs (SLAB) Demonstrates Large-Scale Matter-over-Thread Networking Capability",
+      "url": "https://finance.yahoo.com/technology/articles/silicon-labs-slab-demonstrates-large-121017444.html",
+      "source": "Yahoo Finance",
+      "date": "2026-07-15",
+      "vendor": "Silicon Labs",
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [
+        "matter",
+        "thread"
+      ],
+      "summary": "Silicon Laboratories Inc. (NASDAQ:SLAB) is one of the best performing semiconductor stocks to invest in. On June 16, Silicon Labs successfully operated a 200-node Matter-over-Thread validation network within its Boston office. This project demonstrates that Matter technology is ready for large-scale"
+    },
+    {
+      "title": "Why Realta Fusion is building a fusion reactor at an old hot dog factory",
+      "url": "https://techcrunch.com/2026/07/15/why-realta-fusion-is-building-a-fusion-reactor-at-an-old-hot-dog-factory/",
+      "source": "TechCrunch",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": null,
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "An old Oscar Mayer factory in Wisconsin will become America's latest fusion power research and development hub."
+    },
+    {
+      "title": "IoT Connectivity Market Rebounds as Bluetooth Shipments",
+      "url": "https://www.globenewswire.com/news-release/2026/07/15/3327648/0/en/iot-connectivity-market-rebounds-as-bluetooth-shipments-march-toward-8-1-billion-by-2030-and-wi-fi-8-enters-the-spotlight.html",
+      "source": "GlobeNewswire",
+      "date": "2026-07-15",
+      "vendor": "Broadcom",
+      "customer": null,
+      "application": "Smart Home",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "NEW YORK, July 15, 2026 (GLOBE NEWSWIRE) -- The global IoT connectivity market has rebounded sharply following the inventory, supply chain, and demand challenges that weighed on the wireless industry from 2022 through 2024, with 2025 ending on a notably stronger footing for leading vendors, accordin"
+    },
     {
       "title": "PSA: Beware of fake Mac crash reports out to steal your passwords, crypto wallets, more",
       "url": "https://9to5mac.com/2026/07/15/psa-beware-of-fake-mac-crash-reports-out-to-steal-your-passwords-crypto-wallets-more/",
@@ -58,6 +153,17 @@
       "summary": "Anker's Solix E10 made backup power understandable for this first-timer, and I can't wait to expand the system."
     },
     {
+      "title": "AMD Ryzen 7 5800X3D Outsells Ryzen 7 7800X3D For The Same Price On Amazon Despite Being Weaker",
+      "url": "https://wccftech.com/amd-ryzen-7-5800x3d-outsells-ryzen-7-7800x3d-for-the-same-price-on-amazon-despite-being-weaker/",
+      "source": "Wccftech",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "It's crazy how a six-year-old CPU can sell incredibly well, given it's based on an older platform.\nAMD Ryzen 7 5800X3D Grabs Fourth Spot In Best Selling CPUs List On Amazon Despite Selling For $349\nIt's hardly been a month since the launch of AMD's Ryzen 7 5800X3D 10th anniversary edition, and we ar"
+    },
+    {
       "title": "Motorola Edge 70 Max is official with a 7,100mAh battery and 6.8-inch display - GSMArena.com news",
       "url": "https://www.gsmarena.com/motorola_edge_70_max_is_official_with_a_7100mah_battery_and_68inch_display-news-73726.php",
       "source": "GSMArena.com",
@@ -69,17 +175,6 @@
       "summary": "Motorola has expanded its Edge 70 lineup in India with the launch of the Edge 70 Max. The new smartphone features a large 6.8-inch display, a 7,100mAh battery, and the Snapdragon 8 Gen 5 chipset.\nThe 6.8-inch AMOLED display offers a Quad HD+ resolution, a refresh rate of 144Hz, a claimed peak bright"
     },
     {
-      "title": "Xiaomi Redmi Note 17 Pro (China) - Full phone specifications",
-      "url": "https://www.gsmarena.com/xiaomi_redmi_note_17_pro_5g_(china)-14797.php",
-      "source": "GSMArena.com",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Xiaomi",
-      "application": null,
-      "buckets": [],
-      "summary": "Login\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nBluetooth 5.1 \ud83e\udd40\nConsumers will definitely go for this phone\nVery slow processor and very small camera. Lol"
-    },
-    {
       "title": "The Star Wars cantina scene shows we need a new hope for the agentic web",
       "url": "https://www.theregister.com/columnists/2026/07/15/the-star-wars-cantina-scene-shows-we-need-a-new-hope-for-the-agentic-web/5270946",
       "source": "The Register",
@@ -89,28 +184,6 @@
       "application": null,
       "buckets": [],
       "summary": "'We don't serve their kind here' protects today's publishers, but won't help rebels destroy the monetization Death Stars built by Google and Meta"
-    },
-    {
-      "title": "I tested Google Maps vs. Waze to find the best navigation app",
-      "url": "https://www.zdnet.com/article/google-maps-vs-waze-compared-2026/",
-      "source": "and this one wins",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Want to know whether Waze or Google Maps is better? I've driven with both for hundreds of miles. Here's my choice."
-    },
-    {
-      "title": "Motorola Edge 70 Max - Full phone specifications",
-      "url": "https://www.gsmarena.com/motorola_edge_70_max_5g-14789.php",
-      "source": "GSMArena.com",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Motorola",
-      "application": null,
-      "buckets": [],
-      "summary": "Login\nUnofficial preliminary specifications\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nReally motorola, its an utter shame that the display panel in flagships like motorola signature (which i own) is of 1.5k resolution, while this one is having 2k r"
     },
     {
       "title": "Google and Epic give up fighting \u2014 third-party Android app stores are coming next week",
@@ -273,17 +346,6 @@
       "summary": "Open Thread: 2026 All-Star Game\nCome chat about our All-Star left fielder.\nMike Trout - CF (Los Angeles Angels)\nYordan Alvarez - DH (Houston Astros)\nShea Langeliers - C (Athletics)\nJunior Caminero - 3B (Tampa Bay Rays)\nBobby Witt Jr. - SS (Kansas City Royals)\nCody Bellinger - RF (New York Yankees)\nB"
     },
     {
-      "title": "Samsung teases Flex Titanium tech, a key innovation for its next-gen foldables - GSMArena.com news",
-      "url": "https://www.gsmarena.com/samsung_introduces_flex_titanium_a_key_innovation_for_its_nextgen_foldables-news-73709.php",
-      "source": "GSMArena.com",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "The Galaxy Z Fold7 featured a third generation of Armor FlexHinge, which was 27% thinner and 43% lighter than the hinge inside the Z Fold6. Now the company is introducing the next innovation that will make foldable displays even tougher and slimmer while minimizing the crease \u2013 Flex Titanium.\nThis i"
-    },
-    {
       "title": "Beyond the Galaxy Z Fold: Samsung's Future Phone Concepts That Roll, Slide and Expand",
       "url": "https://www.cnet.com/tech/mobile/samsungs-future-phone-concepts-roll-slide-expand/",
       "source": "CNET",
@@ -392,70 +454,13 @@
       "application": "Audio / Speaker",
       "buckets": [],
       "summary": "OpenAI's first device is set to be a smart speaker that lets you talk with ChatGPT, according to a report from Bloomberg. The device apparently won't have a screen, but will use a camera and additional sensors to \"understand\" your environment. The report comes just days after Apple filed a lawsuit a"
-    },
-    {
-      "title": "Some Galaxy S26 Ultra Phone Displays Are Reportedly Developing a Red Tint",
-      "url": "https://www.cnet.com/tech/mobile/galaxy-s26-ultra-phone-displays-reportedly-develop-red-tint/",
-      "source": "CNET",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung's $1,300 Galaxy S26 Ultra phones may be experiencing a slight display discoloration over time. According to Korean news outlet Newsway, several reports on Reddit and Samsung's community forum, some of the phones are developing a reddish tint.\nThe reports show discoloration on the Galaxy S26 "
-    },
-    {
-      "title": "Report: OpenAI\u2019s first device will be a portable speaker with a camera and other sensors",
-      "url": "https://9to5mac.com/2026/07/14/report-openais-first-device-will-be-a-portable-speaker-with-a-camera-and-other-sensors/",
-      "source": "9to5Mac",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "According to Bloomberg, OpenAI\u2019s anticipated entry into the hardware market is slated to begin with a portable, screenless smart speaker. Here are the details."
-    },
-    {
-      "title": "Patchpocalypse Now: Microsoft tops last month's record with 622 Patch Tuesday CVEs",
-      "url": "https://www.theregister.com/security/2026/07/14/patchpocalypse-now-microsoft-tops-last-months-record-with-622-patch-tuesday-cves/5271434",
-      "source": "The Register",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Remember when last month's 206 CVEs seemed eye-watering? Yeah, those were the days"
-    },
-    {
-      "title": "Why Apple is Spending $30 Billion to Secure the Next iPhone\u2019s Wireless Performance",
-      "url": "https://techeconomy.ng/why-apple-is-spending-30-billion-to-secure-the-next-iphones-wireless-performance/",
-      "source": "Techeconomy",
-      "date": "2026-07-14",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Apple has unveiled a five-year, $30 billion agreement with Broadcom to design and manufacture billions of wireless connectivity chips, alongside a separate $1.5 billion investment to expand Broadcom\u2019s manufacturing facility in Fort Collins, Colorado, where advanced radio-frequency components, includ"
-    },
-    {
-      "title": "I've used the iOS 27 beta for a month: 7 ways the new Siri is dramatically better",
-      "url": "https://www.zdnet.com/article/public-beta-ios-27-siri-ai-hands-on-testing/",
-      "source": "ZDNet",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Siri AI is the star of iOS 27, and now most iPhone users can try it with the first public beta of the OS."
     }
   ],
   "vendor_news_30d": {
-    "Broadcom": 65,
+    "Broadcom": 67,
     "Qualcomm": 31,
-    "Silicon Labs": 13,
-    "Espressif": 11,
+    "Silicon Labs": 14,
+    "Espressif": 12,
     "Skyworks": 11,
     "Microchip": 10,
     "Marvell": 9,
@@ -470,30 +475,29 @@
     "Murata": 3,
     "HiSilicon": 2,
     "u-blox": 2,
+    "Infineon": 2,
     "LG Innotek": 2,
     "TI": 2,
     "Synaptics": 2,
     "Atmosic": 1,
     "UNISOC": 1,
-    "Infineon": 1,
     "Telink": 1
   },
   "customer_news_30d": {
-    "Apple": 255,
-    "Google": 91,
-    "Samsung": 45,
-    "Amazon": 24,
+    "Apple": 258,
+    "Google": 92,
+    "Samsung": 44,
+    "Amazon": 26,
     "Microsoft": 18,
-    "Sony": 13,
     "Meta": 12,
+    "Sony": 12,
     "Motorola": 7,
-    "Philips Hue": 7,
+    "Philips Hue": 6,
     "Eufy/Anker": 4,
     "Huawei": 4,
-    "Xiaomi": 3,
+    "Bose": 2,
     "Aqara": 2,
-    "Whoop": 1,
-    "Bose": 1,
+    "Xiaomi": 2,
     "Oura": 1,
     "BMW": 1,
     "Mercedes": 1,
@@ -502,40 +506,6 @@
     "SwitchBot": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3746,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15905,
-      "pushed_at": "2026-07-15T11:02:45Z"
-    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -573,6 +543,40 @@
       "pushed_at": "2026-07-15T10:04:28Z"
     },
     {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3751,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15905,
+      "pushed_at": "2026-07-15T11:02:45Z"
+    },
+    {
       "name": "Linux mac80211",
       "owner": "torvalds",
       "repo": "linux",
@@ -584,7 +588,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239542,
+      "stars": 239547,
       "pushed_at": "2026-07-14T20:06:52Z"
     },
     {
@@ -972,6 +976,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
     },
     {
+      "vendor": "Microchip",
+      "ticker": "MCHP",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
+    },
+    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -984,13 +995,6 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
-    },
-    {
-      "vendor": "Microchip",
-      "ticker": "MCHP",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1063,6 +1067,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526201058/ter-20260329.htm"
     },
     {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -1075,13 +1086,6 @@
       "form": "8-K",
       "date": "2026-05-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000025/lyb-20260501.htm"
-    },
-    {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
     },
     {
       "vendor": "Silicon Labs",

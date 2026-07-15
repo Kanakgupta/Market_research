@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T11:55:08Z",
+  "generated_at": "2026-07-15T13:07:47Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,10 +3709,10 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 65,
+    "Broadcom": 67,
     "Qualcomm": 31,
-    "Silicon Labs": 13,
-    "Espressif": 11,
+    "Silicon Labs": 14,
+    "Espressif": 12,
     "Skyworks": 11,
     "Microchip": 10,
     "Marvell": 9,
@@ -3727,12 +3727,12 @@
     "Murata": 3,
     "HiSilicon": 2,
     "u-blox": 2,
+    "Infineon": 2,
     "LG Innotek": 2,
     "TI": 2,
     "Synaptics": 2,
     "Atmosic": 1,
     "UNISOC": 1,
-    "Infineon": 1,
     "Telink": 1
   },
   "standards_in_flight": [
@@ -3806,40 +3806,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3746,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15905,
-      "pushed_at": "2026-07-15T11:02:45Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3876,6 +3842,40 @@
       "pushed_at": "2026-07-15T10:04:28Z"
     },
     {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3751,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15905,
+      "pushed_at": "2026-07-15T11:02:45Z"
+    },
+    {
       "name": "Linux mac80211",
       "owner": "torvalds",
       "repo": "linux",
@@ -3887,7 +3887,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239542,
+      "stars": 239547,
       "pushed_at": "2026-07-14T20:06:52Z"
     },
     {
