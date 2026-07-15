@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T22:58:53Z",
+  "generated_at": "2026-07-15T11:55:08Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -418,44 +418,44 @@
           "url": "https://www.newelectronics.co.uk/content/product-launches/mouser-adds-nxp-frdm-automotive-development-boards-to-product-portfolio"
         },
         {
+          "title": "NXP Semiconductors Announces Q2 2026 Earnings Report",
+          "date": "Jul 2026",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/expect-nxp-semiconductors-q2-2026-125413645.html"
+        },
+        {
+          "title": "F&S Elektronik Systeme GmbH Launches armStone MX8ULP with NXP i.MX 8ULP",
+          "date": "Jul 2026",
+          "url": "https://linuxgizmos.com/armstonemx8ulp-packs-nxp-i-mx-8ulp-into-a-100mm-pico-itx-single-board-computer/"
+        },
+        {
           "title": "NXP\u2019s Latest Single-Chip Radar Solution Brings On-Sensor L2/L2+ ADAS Processing to Mainstream Vehicle Platforms",
           "date": "Jun 2026",
           "url": "https://www.nxp.com/company/about-nxp/newsroom/NW-NXP-LATEST-SINGLE-CHIP-RADAR-SENSOR-L2-ADAS"
         },
         {
+          "title": "Simplia CONNECT RW612 6-in-1 M.2 2230 module offers WiFi 6, Bluetooth 5.4, 802.15.4, LTE-M, NB-IoT, and GNSS connectivity",
+          "date": "Jun 2026",
+          "url": "https://www.cnx-software.com/2026/06/29/simplia-connect-rw612-6-in-1-m-2-2230-module-offers-wifi-6-bluetooth-5-4-802-15-4-lte-m-nb-iot-and-gnss-connectivity/"
+        },
+        {
+          "title": "NXP Introduces IW610: An IoT Optimized Wi-Fi 6 Tri-Radio Solution",
+          "date": "Jun 2026",
+          "url": "https://www.nxp.com/company/about-nxp/smarter-world-videos/IW610-IOT-OPT-WIFI6-TRI-RADIO"
+        },
+        {
+          "title": "Quectel Launches Multi-Protocol NXP-Based Module for Wi-Fi 6, Thread and Zigbee IoT Devices",
+          "date": "Jun 2026",
+          "url": "https://iotbusinessnews.com/2026/06/26/quectel-adds-multi-protocol-nxp-based-module-for-wi-fi-6-thread-and-zigbee-iot-devices/"
+        },
+        {
+          "title": "NXP Releases BMS EIS Chipset Overview",
+          "date": "Jun 2026",
+          "url": "https://www.nxp.com/company/about-nxp/smarter-world-videos/NXP-BMS-EIS-CHIPSET-OVERVIEW-VID"
+        },
+        {
           "title": "NXP Collaborates with Quanta to Accelerate Deterministic Zonal Networking for Software Defined Vehicles",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=NXP+Collaborates+with+Quanta+to+Accelerate+Deterministic+Zonal+Networking+for+Software+Defined+Vehicles+NXP"
-        },
-        {
-          "title": "NXP Semiconductors stock (NL0009538779): Q1 2026 earnings beat lifts shares on strong auto and IoT d",
-          "date": "May 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/nxp-semiconductors-stock-nl0009538779-q1-2026-earnings-beat-lifts/69298719"
-        },
-        {
-          "title": "NXP Semiconductors stock (NL0009538779): Q1 earnings beat with $2.62 EPS",
-          "date": "May 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/nxp-semiconductors-stock-nl0009538779-q1-earnings-beat-with-2-62-eps/69322468"
-        },
-        {
-          "title": "NXP Semiconductors stock (NL0009538779): Q1 earnings beat with revenue guidance raised",
-          "date": "May 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/nxp-semiconductors-stock-nl0009538779-q1-earnings-beat-with-revenue/69335989"
-        },
-        {
-          "title": "NXP Semiconductors stock (NL0009538779): Q1 beat, guidance lift and rate-jitters hit chip shares",
-          "date": "May 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/nxp-semiconductors-stock-nl0009538779-q1-beat-guidance-lift-and/69360944"
-        },
-        {
-          "title": "Variscite SMARC family incorporates NXP i.MX 95-based SoM with security and edge AI",
-          "date": "May 2026",
-          "url": "https://www.newelectronics.co.uk/content/news/variscite-smarc-family-incorporates-nxp-imx-95-based-som-with-security-and-edge-ai"
-        },
-        {
-          "title": "NXP Semiconductors Reports First Quarter 2026 Results",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=NXP+Semiconductors+Reports+First+Quarter+2026+Results+NXP"
         }
       ],
       "events": [
@@ -1798,24 +1798,24 @@
           "url": "https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/"
         },
         {
-          "title": "Espressif ESP32-E22 Achieves Wi-Fi 6E Certification and Releases Open-Source Linux Drivers",
-          "date": "Jun 2026",
-          "url": "https://www.espressif.com/en/news/E22_Wi-Fi_6E_Certificate"
+          "title": "Waveshare ESP32-C5-LCD-1.47: First ESP32-C5 Dev Kit with 1.47-inch Color LCD, Dual-Band WiFi 6, Bluetooth LE",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/"
         },
         {
-          "title": "Espressif ESP32-E22 WiFi 6E Module Gains Wi-Fi CERTIFIED Status",
-          "date": "Jun 2026",
-          "url": "https://www.rswebsols.com/news/espressif-esp32-e22-wifi-6e-module-earns-wi-fi-certified-status-featuring-open-source-wifi-and-bluetooth-drivers-for-linux/"
+          "title": "M5Stack Stamp-C5: Tiny ESP32-C5 USB-C Board with WiFi 6, Bluetooth LE, and 802.15.4 Support",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/10/m5stack-stamp-c5-a-tiny-esp32-c5-usb-c-board-module-with-up-to-19-gpio-3-7v-battery-support/"
         },
         {
-          "title": "Espressif Prepares for ESP32-E22 General Availability with Wi-Fi 6E Certification, Open Linux Driver",
-          "date": "Jun 2026",
-          "url": "https://www.hackster.io/news/espressif-prepares-for-esp32-e22-general-availability-with-wi-fi-6e-certification-open-linux-driver-5e175fe7d011"
+          "title": "Open Book Touch: ESP32-S3-based E-reader Launched via Crowdfunding",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/10/open-book-touch-a-drm-free-wifi-connected-4-26-inch-open-source-hardware-e-reader/"
         },
         {
-          "title": "Espressif ESP32-E22 WiFi 6E module gets Wi-Fi CERTIFIED certificate, open-source WiFi and Bluetooth Linux drivers",
-          "date": "Jun 2026",
-          "url": "https://www.cnx-software.com/2026/06/13/espressif-esp32-e22-wifi-6e-module-gets-wi-fi-certified-certificate-an-open-source-wifi-and-bluetooth-linux-drivers/"
+          "title": "PocketMage: ESP32-S3 Personal Digital Assistant Launched via Crowdfunding",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/07/pocketmage-esp32-s3-personal-digital-assistant/"
         }
       ],
       "events": [
@@ -2326,6 +2326,11 @@
           "url": "https://www.renesas.com/en/document/tnn/notes-notes-sample-project-renesas-starter-kit"
         },
         {
+          "title": "Titan Mini is a smaller Renesas RA8P1-based Edge AI board for RT-Thread RTOS development",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/02/titan-mini-smaller-renesas-ra8p1-based-edge-ai-board-for-rt-thread-rtos-development/"
+        },
+        {
           "title": "Renesas Acquires Pictorus to Simplify and Accelerate Embedded Application Software Development",
           "date": "Jun 2026",
           "url": "https://www.renesas.com/en/about/newsroom/renesas-acquires-pictorus-simplify-and-accelerate-embedded-application-software-development"
@@ -2364,11 +2369,6 @@
           "title": "Renesas Compiler Floating License That Allows the Computer in Use to Be Changed Flexibly",
           "date": "Mar 2026",
           "url": "https://www.google.com/search?q=Renesas+Compiler+Floating+License+That+Allows+the+Computer+in+Use+to+Be+Changed+Flexibly+Renesas"
-        },
-        {
-          "title": "Renesas Compiler Floating License Offers Flexible Computer Changes",
-          "date": "Mar 2026",
-          "url": "https://www.google.com/search?q=Renesas+Compiler+Floating+License+Offers+Flexible+Computer+Changes+Renesas"
         }
       ],
       "events": [
@@ -2791,6 +2791,11 @@
           "url": "https://finance.biggo.com/news/8ad007db-f483-4d8a-b0c1-7cc5c67ff84f"
         },
         {
+          "title": "Realtek RTL8723BS WiFi Linux Driver Hardened Against Malicious WiFi Access Points",
+          "date": "Jul 2026",
+          "url": "https://www.phoronix.com/news/Realtek-RTL8723BS-WiFi-Bad-APs"
+        },
+        {
           "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio and 8K Gaming HID Solutions at COMPUTEX 2026",
           "date": "Jun 2026",
           "url": ""
@@ -2814,11 +2819,6 @@
           "title": "Realtek Reports PC Revenue Growth",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Realtek+Reports+PC+Revenue+Growth+Realtek"
-        },
-        {
-          "title": "Realtek sees PC revenue growth despite 2026 shipment decline",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Realtek+sees+PC+revenue+growth+despite+2026+shipment+decline+Realtek"
         }
       ]
     },
@@ -2870,29 +2870,29 @@
           "url": "https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/"
         },
         {
-          "title": "Broadcom Reports Fiscal Second-Quarter 2026 Earnings",
-          "date": "Jun 2026",
-          "url": "https://www.cnbc.com/2026/06/03/broadcom-avgo-earnings-report-q2-2026.html"
+          "title": "Broadcom Extends Chip Supply Agreement With Apple to 2031",
+          "date": "Jul 2026",
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262013221-broadcom-avgo-apple-aapl-tradingkey"
         },
         {
-          "title": "H3C Introduces World's First Wi-Fi 8 Access Point Powered by Broadcom Silicon",
-          "date": "Jun 2026",
-          "url": "https://www.techradar.com/pro/huaweis-fiercest-competitor-just-launched-the-worlds-first-wi-fi-8-access-point-and-it-uses-a-cutting-edge-us-chip"
+          "title": "Apple and Broadcom Extend Chip Supply Partnership Through 2031",
+          "date": "Jul 2026",
+          "url": "https://www.mactrast.com/2026/07/apple-and-broadcom-extend-chip-supply-partnership-through-2031/"
         },
         {
-          "title": "Asus Introduces New ROG Octopus 7 Router with Wi-Fi 7 Standard",
-          "date": "Jun 2026",
-          "url": "https://zamin.uz/en/technology/209960-asus-introduces-new-rog-octopus-7-router-with-wi-fi-7-standard.html"
+          "title": "Apple and Broadcom Extend Chip Supply Deal to 2031",
+          "date": "Jul 2026",
+          "url": "https://www.macrumors.com/2026/07/06/apple-and-broadcom-extend-deal/"
         },
         {
-          "title": "Broadcom Delivers Industry\u2019s First Integrated Wi-Fi 8 SoCs for Next-Gen Mesh and Multi-Gigabit Routers",
-          "date": "May 2026",
-          "url": "https://www.broadcom.com/company/news/product-releases/64346"
+          "title": "Apple and Broadcom renew partnership through 2031",
+          "date": "Jul 2026",
+          "url": "https://appleinsider.com/articles/26/07/06/apple-broadcom-renew-partnership-through-2031"
         },
         {
-          "title": "Broadcom and Samsung Electronics Unveil World\u2019s First Integrated 5G and Wi-Fi 8 FWA Platform",
-          "date": "May 2026",
-          "url": "https://www.broadcom.com/company/news/product-releases/64351"
+          "title": "Broadcom and Apple extend custom chip partnership",
+          "date": "Jul 2026",
+          "url": "https://www.mobileworldlive.com/apple/broadcom-apple-extend-custom-chip-partnership/"
         }
       ]
     },
@@ -2977,9 +2977,9 @@
           "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         },
         {
-          "title": "u-blox announces MAYA-W5 and NORA-W5 Wi-Fi 6 modules",
-          "date": "Jun 2026",
-          "url": ""
+          "title": "u-blox Launches New Wi-Fi 6 Module Families MAYA-W5 and NORA-W5",
+          "date": "Jul 2026",
+          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         }
       ]
     },
@@ -3052,6 +3052,11 @@
           "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
         },
         {
+          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Suite Free for Developers",
+          "date": "Jul 2026",
+          "url": "https://www.stocktitan.net/news/MCHP/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-q4cawbx05q2b.html"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
@@ -3060,11 +3065,6 @@
           "title": "Microchip Provides Data Center Solutions Business Unit Revenue Information",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1395/microchip-provides-data-center-solutions-business-unit-revenue-information"
-        },
-        {
-          "title": "Microchip's Nantes Facility Achieves QML Class Y Certification",
-          "date": "Jun 2026",
-          "url": "https://ir.microchip.com/news-events/press-releases/detail/1401/microchips-nantes-facility-in-france-achieves-qml-class-y-certification-expanding-highreliability-capabilities"
         }
       ]
     },
@@ -3175,6 +3175,11 @@
       "press_releases": [
         {
           "title": "Pine64 Launches PineVoice Smart Speaker Featuring Bouffalo Lab BL606P MCU",
+          "date": "Jun 2026",
+          "url": "https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/"
+        },
+        {
+          "title": "Pine64 Launches $50 RISC-V Smart Speaker 'Pinevoice' Powered by Bouffalo Lab BL606P MCU",
           "date": "Jun 2026",
           "url": "https://www.cnx-software.com/2026/06/20/pine64-pinevoice-a-50-risc-v-smart-speaker-for-home-assistant-based-on-bouffalo-lab-bl606p-mcu/"
         },
@@ -3308,6 +3313,11 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895"
         },
         {
+          "title": "Murata Launches Automotive Safety-Certified Lead-Type Disc Ceramic Capacitors with Y1 Class Certification",
+          "date": "Jul 2026",
+          "url": "https://www.murata.com/en-global/news/capacitor/ceramiccapacitor/2026/0715"
+        },
+        {
           "title": "Murata Collaborates with Synopsys to Provide Simulation Models",
           "date": "Jun 2026",
           "url": "https://www.murata.com/en-global/news/other/other/2026/0616"
@@ -3346,11 +3356,6 @@
           "title": "Murata Type 2LL Module Enables Wi-Fi 6, Bluetooth & IoT Connectivity",
           "date": "Jun 2026",
           "url": "https://timestech.in/murata-type-2ll-module-enables-wi-fi-6-bluetooth-iot-connectivity/"
-        },
-        {
-          "title": "Murata Launches Type 2AB Ultra-Compact 5G Module",
-          "date": "Jun 2026",
-          "url": ""
         }
       ]
     },
@@ -3704,24 +3709,31 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 36,
-    "Qualcomm": 12,
-    "Skyworks": 6,
-    "Microchip": 6,
-    "Silicon Labs": 3,
-    "MediaTek": 2,
+    "Broadcom": 65,
+    "Qualcomm": 31,
+    "Silicon Labs": 13,
+    "Espressif": 11,
+    "Skyworks": 11,
+    "Microchip": 10,
+    "Marvell": 9,
+    "STMicro": 7,
+    "MediaTek": 6,
+    "NXP": 6,
+    "Realtek": 5,
+    "Onsemi": 5,
+    "Qorvo": 4,
+    "Apple": 4,
+    "Nordic": 4,
+    "Murata": 3,
     "HiSilicon": 2,
-    "Espressif": 2,
-    "Realtek": 2,
-    "Marvell": 1,
-    "NXP": 1,
+    "u-blox": 2,
+    "LG Innotek": 2,
+    "TI": 2,
+    "Synaptics": 2,
     "Atmosic": 1,
     "UNISOC": 1,
-    "u-blox": 1,
     "Infineon": 1,
-    "Nordic": 1,
-    "Telink": 1,
-    "Murata": 1
+    "Telink": 1
   },
   "standards_in_flight": [
     {
@@ -3824,8 +3836,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15900,
-      "pushed_at": "2026-07-14T20:41:45Z"
+      "stars": 15905,
+      "pushed_at": "2026-07-15T11:02:45Z"
     },
     {
       "name": "ESP-IDF",
@@ -3860,8 +3872,23 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18535,
-      "pushed_at": "2026-07-14T19:04:01Z"
+      "stars": 18541,
+      "pushed_at": "2026-07-15T10:04:28Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239542,
+      "pushed_at": "2026-07-14T20:06:52Z"
     },
     {
       "name": "Matter SDK",
@@ -3872,7 +3899,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2715,
+      "issues_open": 2716,
       "prs_open": 0,
       "releases": [
         {
@@ -3894,23 +3921,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8822,
-      "pushed_at": "2026-07-14T21:23:23Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 239476,
-      "pushed_at": "2026-07-14T20:06:52Z"
+      "stars": 8823,
+      "pushed_at": "2026-07-15T08:18:16Z"
     },
     {
       "name": "OpenThread",
@@ -3920,8 +3932,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 63,
-      "issues_open": 164,
+      "commits_30d": 67,
+      "issues_open": 159,
       "prs_open": 0,
       "releases": [
         {
@@ -3944,7 +3956,7 @@
         }
       ],
       "stars": 3984,
-      "pushed_at": "2026-07-14T20:28:06Z"
+      "pushed_at": "2026-07-15T02:09:33Z"
     },
     {
       "name": "BlueZ",
@@ -3955,7 +3967,7 @@
         "bluetooth"
       ],
       "commits_30d": 40,
-      "issues_open": 100,
+      "issues_open": 103,
       "prs_open": 0,
       "releases": [
         {
@@ -3977,8 +3989,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1097,
-      "pushed_at": "2026-07-14T10:58:02Z"
+      "stars": 1098,
+      "pushed_at": "2026-07-15T09:31:06Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3989,7 +4001,7 @@
         "ieee15_4"
       ],
       "commits_30d": 35,
-      "issues_open": 470,
+      "issues_open": 464,
       "prs_open": 0,
       "releases": [
         {
@@ -4011,8 +4023,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15294,
-      "pushed_at": "2026-07-12T17:08:06Z"
+      "stars": 15297,
+      "pushed_at": "2026-07-15T11:09:25Z"
     },
     {
       "name": "NimBLE",
