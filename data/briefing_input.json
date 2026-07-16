@@ -1,7 +1,51 @@
 {
-  "generated_at": "2026-07-16T11:58:43Z",
+  "generated_at": "2026-07-16T13:07:10Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
+    {
+      "title": "Signal Ring gives blood pressure readings, not just alerts like Apple Watch",
+      "url": "https://9to5mac.com/2026/07/16/signal-ring-gives-blood-pressure-readings-not-just-alerts-like-apple-watch/",
+      "source": "9to5Mac",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Five Apple Watch models are able to measure your blood pressure in order to generate alerts for possible hypertension. However, they do not provide your actual blood pressure readings. A few smart rings and other fitness devices do so, but rely on regular calibration with a traditional cuff monitor."
+    },
+    {
+      "title": "Google ordered to open Android and Search to rivals in Europe",
+      "url": "https://www.theverge.com/policy/966438/eu-google-android-ai-interoperability-search-data-dma",
+      "source": "The Verge",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Google must give rival AI assistants and search engines greater access to key parts of Android and Google Search after the European Union ordered the company to comply with the bloc's digital antitrust rules. The two decisions, handed down Thursday, could weaken Google's control over two of the tech"
+    },
+    {
+      "title": "Digital Surveillance Reshapes Fishery Enforcement in Indonesia",
+      "url": "https://spectrum.ieee.org/fishery-satellite-surveillance",
+      "source": "IEEE Spectrum",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": null,
+      "application": "Asset Tracking",
+      "buckets": [],
+      "summary": "In the eastern Indian Ocean, south of Java in the vast sea stretching toward Australia, a fishing vessel slightly alters its course while operating near the boundary of its authorized fishing ground. Nothing appears unusual on deck. Nets remain in the water. Engines maintain a steady speed. To the c"
+    },
+    {
+      "title": "Galaxy Z Flip 8 leaks in full with almost no changes; still no Snapdragon [Gallery]",
+      "url": "https://9to5google.com/2026/07/16/samsung-galaxy-z-flip-8-specs-leak/",
+      "source": "9to5Google",
+      "date": "2026-07-16",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Alongside plenty of other Samsung leaks, a new report offers up the full details of the Galaxy Z Flip 8, and there\u2019s a reason nobody is particularly excited about this one."
+    },
     {
       "title": "TSMC says it may build 12 Arizona chip plants in total, but be skeptical",
       "url": "https://9to5mac.com/2026/07/16/tsmc-says-it-may-build-12-arizona-chip-plants-in-total-but-be-skeptical/",
@@ -212,6 +256,17 @@
       "summary": "The final sticking point in the long-running Google vs Epic Games lawsuit is coming to an end, as Google is opening the door to third-party app stores on Android starting on July 22."
     },
     {
+      "title": "Apple Closes Loophole Letting Buyers Pick Unlocked iPhones Using Carrier Payment Plans",
+      "url": "https://www.cnet.com/tech/mobile/apple-closes-loophole-letting-buyers-pick-unlocked-iphones-using-carrier-payment-plans/",
+      "source": "CNET",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "An update to Apple's iPhone 17 selling FAQs closes a loophole that allowed buyers to choose an unlocked iPhone from T-Mobile and Verizon.\nBefore this update, as noticed on Wednesday by Reddit users, you could pick an unlocked iPhone with the Verizon Device Payment Program or the T-Mobile Equipment I"
+    },
+    {
       "title": "Apple\u2019s reportedly raising the price for AppleCare Plus on Macs and iPads",
       "url": "https://www.theverge.com/tech/966219/apple-care-plus-price-increase",
       "source": "The Verge",
@@ -405,66 +460,11 @@
         "bluetooth"
       ],
       "summary": ""
-    },
-    {
-      "title": "AppleCare+ gets a price increase for new Mac and iPad plans",
-      "url": "https://9to5mac.com/2026/07/15/applecare-gets-a-price-increase-for-new-mac-and-ipad-plans/",
-      "source": "9to5Mac",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "As Bloomberg reports, Apple has increased its monthly and annual AppleCare+ rates for new Mac and iPad customers. Here are the details."
-    },
-    {
-      "title": "Microsoft patches bug in video game Age of Empires II",
-      "url": "https://techcrunch.com/2026/07/15/microsoft-patches-bug-in-video-game-age-of-empires-ii/",
-      "source": "TechCrunch",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "The vulnerability in the decades-old game could have allowed hackers to take over victims\u2019 computers with a malicious game invite."
-    },
-    {
-      "title": "Microsoft patches record 570 Windows security bugs with two exploited zero days",
-      "url": "https://www.zdnet.com/article/microsoft-patches-570-vulnerabilities-exploited-zero-days/",
-      "source": "update now",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "The July Patch Tuesday Windows update breaks the record for the most security bugs fixed in a single month, with three zero-day flaws and 61 rated critical."
-    },
-    {
-      "title": "Something\u2019s glowing on the Pixel 11\u2019s camera bar",
-      "url": "https://www.theverge.com/tech/966120/google-pixel-11-camera-bar-teaser",
-      "source": "The Verge",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "A new teaser for Google\u2019s upcoming Pixel 11 lineup reveals that the phones will feature some kind of glowing orb on the camera bar, as reported by 9to5Google.\nSomething\u2019s glowing on the Pixel 11\u2019s camera bar\nGoogle\u2019s new teaser has us pondering an orb.\nGoogle\u2019s new teaser has us pondering an orb.\nGo"
-    },
-    {
-      "title": "Apple bans home services from its upcoming Maps ads",
-      "url": "https://techcrunch.com/2026/07/15/apple-quietly-reveals-how-its-maps-ads-will-differ-from-googles/",
-      "source": "TechCrunch",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Healthcare",
-      "buckets": [],
-      "summary": "Apple has published the policies governing its upcoming Maps advertising business, revealing a strategy that differs from Google\u2019s. The new rules prohibit home services businesses like plumbers, electricians, locksmiths, and roofers from advertising on Apple Maps, along with several other sensitive "
     }
   ],
   "vendor_news_30d": {
     "Broadcom": 65,
-    "Qualcomm": 30,
+    "Qualcomm": 31,
     "Skyworks": 12,
     "Espressif": 11,
     "Silicon Labs": 11,
@@ -490,14 +490,14 @@
     "Bouffalo Lab": 1
   },
   "customer_news_30d": {
-    "Apple": 254,
-    "Google": 97,
+    "Apple": 246,
+    "Google": 96,
     "Samsung": 43,
     "Microsoft": 26,
     "Amazon": 25,
-    "Motorola": 11,
-    "Sony": 11,
-    "Meta": 10,
+    "Sony": 10,
+    "Motorola": 9,
+    "Meta": 8,
     "Philips Hue": 7,
     "Huawei": 5,
     "Eufy/Anker": 4,
@@ -512,6 +512,40 @@
     "Xiaomi": 1
   },
   "github_pulse": [
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3743,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15916,
+      "pushed_at": "2026-07-16T12:36:32Z"
+    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -549,40 +583,6 @@
       "pushed_at": "2026-07-16T10:33:29Z"
     },
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3757,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15915,
-      "pushed_at": "2026-07-16T10:19:25Z"
-    },
-    {
       "name": "Linux mac80211",
       "owner": "torvalds",
       "repo": "linux",
@@ -594,7 +594,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239645,
+      "stars": 239650,
       "pushed_at": "2026-07-16T05:59:47Z"
     },
     {
@@ -606,7 +606,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2716,
+      "issues_open": 2717,
       "prs_open": 0,
       "releases": [
         {
@@ -629,7 +629,7 @@
         }
       ],
       "stars": 8824,
-      "pushed_at": "2026-07-16T11:17:18Z"
+      "pushed_at": "2026-07-16T12:50:30Z"
     },
     {
       "name": "OpenThread",
@@ -674,7 +674,7 @@
         "bluetooth"
       ],
       "commits_30d": 36,
-      "issues_open": 106,
+      "issues_open": 107,
       "prs_open": 0,
       "releases": [
         {
@@ -696,7 +696,7 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1099,
+      "stars": 1100,
       "pushed_at": "2026-07-16T11:56:04Z"
     },
     {
@@ -708,7 +708,7 @@
         "ieee15_4"
       ],
       "commits_30d": 32,
-      "issues_open": 462,
+      "issues_open": 463,
       "prs_open": 0,
       "releases": [
         {
@@ -730,7 +730,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15299,
+      "stars": 15301,
       "pushed_at": "2026-07-15T17:13:50Z"
     },
     {
@@ -800,18 +800,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -828,18 +828,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
-    },
-    {
       "vendor": "Qorvo",
       "ticker": "QRVO",
       "form": "8-K",
       "date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -982,20 +982,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "10-Q",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000036/syna-20260328.htm"
-    },
-    {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "8-K",
@@ -1008,6 +994,20 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "10-Q",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000036/syna-20260328.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1031,6 +1031,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
+    },
+    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1043,13 +1050,6 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",

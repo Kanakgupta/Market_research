@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T11:58:43Z",
+  "generated_at": "2026-07-16T13:07:10Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3710,7 +3710,7 @@
   ],
   "vendor_news_momentum_30d": {
     "Broadcom": 65,
-    "Qualcomm": 30,
+    "Qualcomm": 31,
     "Skyworks": 12,
     "Espressif": 11,
     "Silicon Labs": 11,
@@ -3806,6 +3806,40 @@
   ],
   "github_stack_activity": [
     {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3743,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15916,
+      "pushed_at": "2026-07-16T12:36:32Z"
+    },
+    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3842,40 +3876,6 @@
       "pushed_at": "2026-07-16T10:33:29Z"
     },
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3757,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15915,
-      "pushed_at": "2026-07-16T10:19:25Z"
-    },
-    {
       "name": "Linux mac80211",
       "owner": "torvalds",
       "repo": "linux",
@@ -3887,7 +3887,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239645,
+      "stars": 239650,
       "pushed_at": "2026-07-16T05:59:47Z"
     },
     {
@@ -3899,7 +3899,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2716,
+      "issues_open": 2717,
       "prs_open": 0,
       "releases": [
         {
@@ -3922,7 +3922,7 @@
         }
       ],
       "stars": 8824,
-      "pushed_at": "2026-07-16T11:17:18Z"
+      "pushed_at": "2026-07-16T12:50:30Z"
     },
     {
       "name": "OpenThread",
@@ -3967,7 +3967,7 @@
         "bluetooth"
       ],
       "commits_30d": 36,
-      "issues_open": 106,
+      "issues_open": 107,
       "prs_open": 0,
       "releases": [
         {
@@ -3989,7 +3989,7 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1099,
+      "stars": 1100,
       "pushed_at": "2026-07-16T11:56:04Z"
     },
     {
@@ -4001,7 +4001,7 @@
         "ieee15_4"
       ],
       "commits_30d": 32,
-      "issues_open": 462,
+      "issues_open": 463,
       "prs_open": 0,
       "releases": [
         {
@@ -4023,7 +4023,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15299,
+      "stars": 15301,
       "pushed_at": "2026-07-15T17:13:50Z"
     },
     {
