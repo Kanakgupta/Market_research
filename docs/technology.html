@@ -219,7 +219,27 @@ a:hover { text-decoration:underline; }
 .sap.iface { color:#0f172a; border-color:#e2e8f0; background:#f8fafc; }
 .arch-cap { font-size:12px; color:#475569; line-height:1.6; margin:14px 2px 0; padding:10px 13px; background:#f8fafc; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; }
 </style>
-</head><body>
+<script id="password-gate-v1">
+(function(){
+  var KEY='airoc_unlock_v1';
+  var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
+  function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
+  function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
+  if (sessionStorage.getItem(KEY)==='1') { return; }
+  document.documentElement.style.display='none';
+  (async function(){
+    while(true){
+      var p=prompt('Enter password to access this site');
+      if (p===null){ location.replace('about:blank'); return; }
+      try {
+        var h=await sha256(p);
+        if (h===HASH){ sessionStorage.setItem(KEY,'1'); document.documentElement.style.display=''; return; }
+      } catch (e) {}
+      alert('Wrong password');
+    }
+  })();
+})();
+</script></head><body>
 
 <header class="topnav"><div class="wrap">
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
@@ -1467,3 +1487,4 @@ a:hover { text-decoration:underline; }
 })();
 </script>
 </body></html>
+
