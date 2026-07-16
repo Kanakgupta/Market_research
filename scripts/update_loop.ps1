@@ -26,10 +26,6 @@ Set-Location $Root
 $Python = Join-Path $Root '.venv\Scripts\python.exe'
 if (-not (Test-Path $Python)) { $Python = 'python' }
 
-$LogDir = Join-Path $Root 'logs'
-if (-not (Test-Path $LogDir)) { New-Item -ItemType Directory -Path $LogDir | Out-Null }
-$Log = Join-Path $LogDir 'update_loop.log'
-
 $StateDir = Join-Path $Root 'data'
 if (-not (Test-Path $StateDir)) { New-Item -ItemType Directory -Path $StateDir | Out-Null }
 $StateFile = Join-Path $StateDir 'auto_update_state.json'
@@ -37,13 +33,12 @@ $StateFile = Join-Path $StateDir 'auto_update_state.json'
 function Write-Log([string]$msg) {
     $line = '[{0}] {1}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $msg
     Write-Host $line
-    Add-Content -Path $Log -Value $line
 }
 
 function Invoke-LoggedCommand([string]$stepMsg, [string]$cmdText, [scriptblock]$cmdBlock) {
     Write-Log $stepMsg
     Write-Log ("CMD> " + $cmdText)
-    & $cmdBlock 2>&1 | Tee-Object -FilePath $Log -Append
+    & $cmdBlock
     if ($LASTEXITCODE -ne 0) {
         Write-Log ("Command failed with exit code $LASTEXITCODE")
     }
@@ -123,7 +118,7 @@ function Invoke-UpdateCycle {
         Write-Log 'CMD> git status --porcelain'
         $changes = git status --porcelain
         if (-not [string]::IsNullOrWhiteSpace($changes)) {
-            $changes | Tee-Object -FilePath $Log -Append | Out-Null
+            $changes | ForEach-Object { Write-Host $_ }
         }
 
         if ([string]::IsNullOrWhiteSpace($changes)) {
