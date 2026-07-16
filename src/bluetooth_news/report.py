@@ -2097,6 +2097,14 @@ _INDEX_TEMPLATE = """<!doctype html>
 .cust-product { font-size:13px; font-weight:600; margin:0 0 6px; }
 .feat-chip { display:inline-block; background:#eef2ff; color:#3730a3; font-size:10.5px; padding:2px 8px; border-radius:999px; margin:2px 4px 2px 0; }
 .cust-basis { font-size:11px; color:var(--muted); margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; }
+.cust-links { margin-top:10px; display:flex; flex-wrap:wrap; gap:8px; }
+.cust-links a { font-size:12px; font-weight:600; color:var(--accent); text-decoration:none; }
+.cust-links a:hover { text-decoration:underline; }
+.cust-signal { margin-top:8px; font-size:11px; color:var(--muted); }
+.cust-evidence { margin:8px 0 0; padding-left:16px; }
+.cust-evidence li { margin:4px 0; font-size:12px; color:#334155; }
+.cust-evidence a { color:#1e40af; text-decoration:none; }
+.cust-evidence a:hover { text-decoration:underline; }
 
 /* Technology & standards radar */
 .std-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px; margin-top:12px; }
@@ -2259,7 +2267,19 @@ _INDEX_TEMPLATE = """<!doctype html>
       <div>
         {% for f in r.expected_features %}<span class="feat-chip">{{ f }}</span>{% endfor %}
       </div>
+      <div class="cust-signal">Recent customer signals (30d): <b>{{ r.recent_signals_30d }}</b></div>
+      {% if r.evidence_links %}
+      <ul class="cust-evidence">
+        {% for ev in r.evidence_links %}
+        <li><a href="{{ ev.url }}" target="_blank" rel="noopener">{{ ev.title }}</a> &middot; {{ ev.source }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
       {% if r.based_on %}<div class="cust-basis">{{ r.based_on[0] }}</div>{% endif %}
+      <div class="cust-links">
+        <a href="{{ r.customer_page }}">Customer profile &rarr;</a>
+        <a href="{{ r.news_page }}">Customer news feed &rarr;</a>
+      </div>
     </article>
     {% endfor %}
   </div>
@@ -2474,8 +2494,24 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
       name = (c.get("name") or "").strip()
       if not name:
         continue
+      cust_articles = [a for a in articles if (a.get("customer") or "").strip() == name and a.get("url")]
+      cust_articles.sort(key=lambda a: (_pub(a) is None, -(_pub(a).timestamp() if _pub(a) else 0)))
+      recent_signals_30d = len([a for a in cust_articles if _pub(a) and _pub(a) >= now - timedelta(days=30)])
+      evidence_links = [
+        {
+          "title": (a.get("title") or "Untitled")[:120],
+          "url": a.get("url"),
+          "source": a.get("source") or "Unknown",
+        }
+        for a in cust_articles[:3]
+      ]
       if name in by_customer:
-        customer_radar.append(by_customer[name])
+        row = dict(by_customer[name])
+        row["recent_signals_30d"] = recent_signals_30d
+        row["evidence_links"] = evidence_links
+        row["customer_page"] = "customers.html"
+        row["news_page"] = "news.html"
+        customer_radar.append(row)
         continue
 
       apps = c.get("applications") or []
@@ -2488,6 +2524,10 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         "confidence": 35,
         "confidence_label": "Low",
         "based_on": ["Coverage entry: limited recent launch signal in current news window"],
+        "recent_signals_30d": recent_signals_30d,
+        "evidence_links": evidence_links,
+        "customer_page": "customers.html",
+        "news_page": "news.html",
       })
 
     # --- Technology & standards radar: current/next version + in-flight features + activity
