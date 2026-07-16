@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T13:18:05Z",
+  "generated_at": "2026-07-16T11:58:43Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -984,19 +984,19 @@
           "url": "https://www.thetechoutlook.com/new-release/gadgets-release/laptop/acer-travellite-tl24-54m-with-intel-core-series-3-processor-wi-fi-7-mil-std-810h-durability-announced-in-india/"
         },
         {
+          "title": "Silicon Labs Validates 200-Node Matter-over-Thread Network for Large-Scale Deployments",
+          "date": "Jun 2026",
+          "url": "https://www.bentoncourier.com/online_features/press_releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network/article_cca86037-ee5f-5559-9a22-0b3f98318f94.html"
+        },
+        {
+          "title": "Silicon Labs Collaborates with Signify to Enhance Philips Hue Matter Support",
+          "date": "Jun 2026",
+          "url": "https://www.prnewswire.com/news-releases/signify-enhances-philips-hue-matter-support-through-collaboration-with-silicon-labs-302806896.html"
+        },
+        {
           "title": "Silicon Labs Reports First Quarter 2026 Results",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Silicon+Labs+Reports+First+Quarter+2026+Results+Silicon+Labs"
-        },
-        {
-          "title": "Comminent and Silicon Labs Ship 500,000 Wi-SUN Modules for India's Smart Grid Rollout",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Comminent+and+Silicon+Labs+Ship+500%2C000+Wi-SUN+Modules+for+India%27s+Smart+Grid+Rollout+Silicon+Labs"
-        },
-        {
-          "title": "Silicon Labs Chip-Based Wi-SUN Modules Surpass 500,000 Shipments in India",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Silicon+Labs+Chip-Based+Wi-SUN+Modules+Surpass+500%2C000+Shipments+in+India+Silicon+Labs"
         }
       ],
       "events": [
@@ -1530,6 +1530,16 @@
           "url": ""
         },
         {
+          "title": "Bigme Launches Hibreak Dual 2 Smartphone Powered by MediaTek Dimensity 8300",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/15/bigme-hibreak-dual-2-an-android-16-smartphone-with-6-13-inch-80fps-e-ink-and-5-inch-lcd-display/"
+        },
+        {
+          "title": "MediaTek Introduces Filogic 860 Wi-Fi 7 Solution for US Home Routers",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+        },
+        {
           "title": "MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
@@ -1543,16 +1553,6 @@
           "title": "MediaTek Showcases its Active Intelligent Cockpit Solution, Ushering t",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/press-room/tag/dimensity-ax"
-        },
-        {
-          "title": "MediaTek Prepares Price Adjustments for Mature-Process Chip Products",
-          "date": "Jun 2026",
-          "url": "https://ximitime.com/mediatek-chip-price-hike-could-affect-future-xiaomi-devices-97938/"
-        },
-        {
-          "title": "MediaTek Honored with Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
-          "date": "Jun 2026",
-          "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
         }
       ],
       "events": [
@@ -2604,6 +2604,11 @@
           "url": "https://www.synaptics.com/company/news/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
         },
         {
+          "title": "Onsemi to Acquire Synaptics",
+          "date": "Jun 2026",
+          "url": "https://www.synaptics.com/company/news/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
+        },
+        {
           "title": "Synaptics to Showcase Real-World Edge AI Use Cases at COMPUTEX 2026",
           "date": "May 2026",
           "url": "https://www.synaptics.com/company/news/synaptics-showcase-real-world-edge-ai-use-cases-at-computex-2026"
@@ -2617,11 +2622,6 @@
           "title": "Coralboard Features Synaptics Astra SL2619 Edge AI SoC, Supports Google Gemma 3 Inference",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Coralboard+Features+Synaptics+Astra+SL2619+Edge+AI+SoC%2C+Supports+Google+Gemma+3+Inference+Synaptics"
-        },
-        {
-          "title": "Synaptics Astra SL2619 Edge AI SoC Powers Coralboard, Supporting Google Gemma 3 Inference",
-          "date": "May 2026",
-          "url": "https://www.cnx-software.com/2026/05/20/coralboard-features-synaptics-astra-sl2619-edge-ai-soc-supports-google-gemma-3-inference/"
         }
       ],
       "events": [
@@ -3057,14 +3057,14 @@
           "url": "https://www.stocktitan.net/news/MCHP/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-q4cawbx05q2b.html"
         },
         {
+          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Development Suite Free for Developers",
+          "date": "Jul 2026",
+          "url": "https://www.manilatimes.net/2026/07/08/tmt-newswire/globenewswire/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-machine-learning-development-suite/2380670"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
-        },
-        {
-          "title": "Microchip Provides Data Center Solutions Business Unit Revenue Information",
-          "date": "Jun 2026",
-          "url": "https://ir.microchip.com/news-events/press-releases/detail/1395/microchip-provides-data-center-solutions-business-unit-revenue-information"
         }
       ]
     },
@@ -3709,31 +3709,31 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 67,
-    "Qualcomm": 31,
-    "Silicon Labs": 14,
-    "Espressif": 12,
-    "Skyworks": 11,
+    "Broadcom": 65,
+    "Qualcomm": 30,
+    "Skyworks": 12,
+    "Espressif": 11,
+    "Silicon Labs": 11,
     "Microchip": 10,
+    "MediaTek": 9,
     "Marvell": 9,
-    "STMicro": 7,
-    "MediaTek": 6,
     "NXP": 6,
+    "Nordic": 6,
+    "STMicro": 6,
+    "Apple": 5,
     "Realtek": 5,
-    "Onsemi": 5,
-    "Qorvo": 4,
-    "Apple": 4,
-    "Nordic": 4,
-    "Murata": 3,
-    "HiSilicon": 2,
+    "Infineon": 4,
+    "Onsemi": 4,
+    "Qorvo": 3,
+    "HiSilicon": 3,
+    "Murata": 2,
     "u-blox": 2,
-    "Infineon": 2,
-    "LG Innotek": 2,
     "TI": 2,
     "Synaptics": 2,
     "Atmosic": 1,
     "UNISOC": 1,
-    "Telink": 1
+    "LG Innotek": 1,
+    "Bouffalo Lab": 1
   },
   "standards_in_flight": [
     {
@@ -3806,40 +3806,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3751,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15905,
-      "pushed_at": "2026-07-15T11:02:45Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3850,7 +3816,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1638,
+      "issues_open": 1637,
       "prs_open": 0,
       "releases": [
         {
@@ -3872,8 +3838,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18541,
-      "pushed_at": "2026-07-15T10:04:28Z"
+      "stars": 18549,
+      "pushed_at": "2026-07-16T10:33:29Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3757,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15915,
+      "pushed_at": "2026-07-16T10:19:25Z"
     },
     {
       "name": "Linux mac80211",
@@ -3887,8 +3887,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239548,
-      "pushed_at": "2026-07-14T20:06:52Z"
+      "stars": 239645,
+      "pushed_at": "2026-07-16T05:59:47Z"
     },
     {
       "name": "Matter SDK",
@@ -3921,8 +3921,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8823,
-      "pushed_at": "2026-07-15T08:18:16Z"
+      "stars": 8824,
+      "pushed_at": "2026-07-16T11:17:18Z"
     },
     {
       "name": "OpenThread",
@@ -3932,8 +3932,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 67,
-      "issues_open": 159,
+      "commits_30d": 65,
+      "issues_open": 164,
       "prs_open": 0,
       "releases": [
         {
@@ -3956,7 +3956,7 @@
         }
       ],
       "stars": 3984,
-      "pushed_at": "2026-07-15T02:09:33Z"
+      "pushed_at": "2026-07-16T04:26:12Z"
     },
     {
       "name": "BlueZ",
@@ -3966,8 +3966,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 40,
-      "issues_open": 103,
+      "commits_30d": 36,
+      "issues_open": 106,
       "prs_open": 0,
       "releases": [
         {
@@ -3989,8 +3989,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1098,
-      "pushed_at": "2026-07-15T09:31:06Z"
+      "stars": 1099,
+      "pushed_at": "2026-07-16T11:56:04Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4000,8 +4000,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 35,
-      "issues_open": 464,
+      "commits_30d": 32,
+      "issues_open": 462,
       "prs_open": 0,
       "releases": [
         {
@@ -4023,8 +4023,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15297,
-      "pushed_at": "2026-07-15T11:09:25Z"
+      "stars": 15299,
+      "pushed_at": "2026-07-15T17:13:50Z"
     },
     {
       "name": "NimBLE",
@@ -4035,7 +4035,7 @@
         "bluetooth"
       ],
       "commits_30d": 16,
-      "issues_open": 272,
+      "issues_open": 274,
       "prs_open": 0,
       "releases": [],
       "stars": 876,

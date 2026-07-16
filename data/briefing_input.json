@@ -1,545 +1,517 @@
 {
-  "generated_at": "2026-07-15T13:18:05Z",
+  "generated_at": "2026-07-16T11:58:43Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "6 \"dumb\" household appliances you can add to your smart home\u2014and how to do it properly - How-To Geek",
-      "url": "https://www.howtogeek.com/dumb-household-appliances-you-can-add-to-your-smart-homeand-how-to-do-it-properly/",
-      "source": "How-To Geek",
-      "date": "2026-07-15",
-      "vendor": "Espressif",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "Though new appliances often boast of \u201csmart\u201d features, the execution is often disappointing. The truth is that you can bring actually useful smart features to your trusty old appliances with some cheap upgrades and a few minutes of your time.\nNever \u201cupgrade\u201d your trusty old appliance for smart featu"
-    },
-    {
-      "title": "Waze just gave me 5 new reasons to switch from Apple Maps",
-      "url": "https://www.zdnet.com/article/waze-update-may-beat-apple-maps/",
-      "source": "ZDNet",
-      "date": "2026-07-15",
+      "title": "TSMC says it may build 12 Arizona chip plants in total, but be skeptical",
+      "url": "https://9to5mac.com/2026/07/16/tsmc-says-it-may-build-12-arizona-chip-plants-in-total-but-be-skeptical/",
+      "source": "9to5Mac",
+      "date": "2026-07-16",
       "vendor": null,
       "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "Waze just gave me 5 new reasons to switch from Apple Maps\nFollow ZDNET: Add us as a preferred source on Google.\nZDNET's key takeaways\n- Waze is adding five new features to the iOS and Android apps.\n- You'll get personalized directions and fewer audio interruptions.\n- You can suggest map changes by v"
-    },
-    {
-      "title": "AWS sustainability claims don't hold water, lawsuit alleges",
-      "url": "https://www.theregister.com/on-prem/2026/07/15/aws-sustainability-claims-dont-hold-water-lawsuit-alleges/5269723",
-      "source": "The Register",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "Ex-staffer accuses Amazon's Virginia datacenters of quietly guzzling H20 all year round, despite 'water positive' PR push"
-    },
-    {
-      "title": "The Motorola Edge 70 Max is all about power",
-      "url": "https://www.theverge.com/tech/965884/motorola-edge-70-max-qi2-wireless-price-availability",
-      "source": "The Verge",
-      "date": "2026-07-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Motorola has launched the Edge 70 Max, its latest flagship phone that's designed for power intensive tasks like streaming video and mobile gaming. Alongside having a huge battery and rapid wired charging support, the Motorola Edge 70 Max is the first Android phone to support full 25W wireless Qi2 ch"
-    },
-    {
-      "title": "I tested Google Maps vs. Waze to find the best updated navigation app",
-      "url": "https://www.zdnet.com/article/google-maps-vs-waze-2026/",
-      "source": "and this one wins",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Want to know whether Waze or Google Maps is better? I've driven with both for hundreds of miles. Here's my choice."
+      "summary": "Apple chipmaker TSMC had already said that it would build a total of eight plants in Arizona, and has now announced an investment boost that could see that number increased to 12. This could potentially see more chips for Apple devices made in the US, but there are reasons to be skeptical about this"
     },
     {
-      "title": "Silicon Labs (SLAB) Demonstrates Large-Scale Matter-over-Thread Networking Capability",
-      "url": "https://finance.yahoo.com/technology/articles/silicon-labs-slab-demonstrates-large-121017444.html",
-      "source": "Yahoo Finance",
-      "date": "2026-07-15",
-      "vendor": "Silicon Labs",
-      "customer": "Google",
-      "application": "Smart Home",
-      "buckets": [
-        "matter",
-        "thread"
-      ],
-      "summary": "Silicon Laboratories Inc. (NASDAQ:SLAB) is one of the best performing semiconductor stocks to invest in. On June 16, Silicon Labs successfully operated a 200-node Matter-over-Thread validation network within its Boston office. This project demonstrates that Matter technology is ready for large-scale"
-    },
-    {
-      "title": "Why Realta Fusion is building a fusion reactor at an old hot dog factory",
-      "url": "https://techcrunch.com/2026/07/15/why-realta-fusion-is-building-a-fusion-reactor-at-an-old-hot-dog-factory/",
+      "title": "Meta now alerts parents if their teen discussed suicide or self-harm with its AI chatbot",
+      "url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
       "source": "TechCrunch",
-      "date": "2026-07-15",
+      "date": "2026-07-16",
       "vendor": null,
-      "customer": null,
-      "application": "Industrial",
+      "customer": "Meta",
+      "application": null,
       "buckets": [],
-      "summary": "An old Oscar Mayer factory in Wisconsin will become America's latest fusion power research and development hub."
+      "summary": "The updates come as Meta and other tech companies are facing scrutiny from regulators and parents around how AI chatbots respond to users in crisis, particularly teenagers."
     },
     {
-      "title": "IoT Connectivity Market Rebounds as Bluetooth Shipments",
-      "url": "https://www.globenewswire.com/news-release/2026/07/15/3327648/0/en/iot-connectivity-market-rebounds-as-bluetooth-shipments-march-toward-8-1-billion-by-2030-and-wi-fi-8-enters-the-spotlight.html",
-      "source": "GlobeNewswire",
-      "date": "2026-07-15",
-      "vendor": "Broadcom",
-      "customer": null,
-      "application": "Smart Home",
+      "title": "9to5Mac Daily: July 16, 2026 \u2013 OpenAI responds to Apple, more",
+      "url": "https://9to5mac.com/2026/07/16/daily-july-16-2026/",
+      "source": "9to5Mac",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple\u2019s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overcast and other podcast players. Sponsored by Backblaze: Backup you can rely on. Save 20% with code 9to"
+    },
+    {
+      "title": "pico-usb-wifi firmware converts the Raspberry Pi Pico W into a driverless USB WiFi adapter",
+      "url": "https://www.cnx-software.com/2026/07/16/pico-usb-wifi-converts-the-raspberry-pi-pico-w-into-a-driverless-usb-wifi-adapter/",
+      "source": "CNX Software",
+      "date": "2026-07-16",
+      "vendor": "Infineon",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "pico-usb-wifi is an open-source firmware project that converts the Raspberry Pi Pico W into a driverless USB WiFi adapter that works with Windows, Linux, macOS, and other operating systems with USB CDC-NCM support. The Infineon CYW43439 chip found in the SBC can&#8217;t be used directly as a USB to "
+    },
+    {
+      "title": "Security Bite Podcast: Apple is watching your taps",
+      "url": "https://9to5mac.com/2026/07/16/security-bite-podcast-apple-is-watching-your-taps/",
+      "source": "9to5Mac",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "9to5Mac Security Bite is exclusively brought to you by Mosyle, the only Apple Unified Platform. Making Apple devices work-ready and enterprise-safe is all we do. Our unique integrated approach to management and security combines state-of-the-art Apple-specific security solutions for fully automated "
+    },
+    {
+      "title": "OpenInfrared Point is an ESP32-S3 powered universal remote hub with Infrared, BLE, NFC, audio streaming (Crowdfunding)",
+      "url": "https://www.cnx-software.com/2026/07/16/openinfrared-point-esp32-s3-universal-remote-hub-infrared-ble-nfc-audio-streaming/",
+      "source": "CNX Software",
+      "date": "2026-07-16",
+      "vendor": "Espressif",
+      "customer": "Apple",
+      "application": "Industrial",
+      "buckets": [
+        "bluetooth",
+        "wifi"
+      ],
+      "summary": "OpenInfrared Point is a universal remote hub built around ESP32-S3 that lets users control compatible devices from a smartphone by scanning a QR code or tapping an NFC tag, eliminating the need for dedicated remote controls. Powered via USB-C, the Point hub can learn IR codes from existing remote co"
+    },
+    {
+      "title": "Apple Store launches 2026 Back to School offer: get up to $150 gift card with Mac or iPad purchase",
+      "url": "https://9to5mac.com/2026/07/16/apple-store-back-to-school-gift-card-deal-promo/",
+      "source": "9to5Mac",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple today launched its Back to School deal for 2026. Students can get a gift card worth up to $150 with the purchase of a MacBook Pro. $100 gift cards are available with the purchase of MacBook Air, iPad Pro, and iPad Air. As is typical, you can usually save more money than the $150 gift card incl"
+    },
+    {
+      "title": "M5\u2019s Neural Accelerators Mark A Strategic Shift For The Future Of Apple Silicon Gaming; Non-Native Titles Obtain Major FPS Boost With Frame Generation On",
+      "url": "https://wccftech.com/m5-neural-accelerators-deliver-massive-fps-boost-in-games-with-fg-enabled/",
+      "source": "Wccftech",
+      "date": "2026-07-16",
+      "vendor": "Apple",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Apple has somewhat revitalized gaming on a Mac with its M-series of chipsets, but despite the improvements, the internal GPU will present a performance bottleneck that cannot be overcome with raw rasterization capabilities.\nInstead, Apple has moved to major architectural shifts that enable the use o"
+    },
+    {
+      "title": "WWDC26: Find Your Accessory With Bluetooth Channel Sounding | Apple Clarence Carter (Pk50vBRjvz)",
+      "url": "https://mshale.com/2926168a/1e19d561pMDBJxJ0SNQ",
+      "source": "Mshale",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
       "buckets": [
         "bluetooth"
       ],
-      "summary": "NEW YORK, July 15, 2026 (GLOBE NEWSWIRE) -- The global IoT connectivity market has rebounded sharply following the inventory, supply chain, and demand challenges that weighed on the wireless industry from 2022 through 2024, with 2025 ending on a notably stronger footing for leading vendors, accordin"
+      "summary": ""
     },
     {
-      "title": "PSA: Beware of fake Mac crash reports out to steal your passwords, crypto wallets, more",
-      "url": "https://9to5mac.com/2026/07/15/psa-beware-of-fake-mac-crash-reports-out-to-steal-your-passwords-crypto-wallets-more/",
-      "source": "9to5Mac",
-      "date": "2026-07-15",
+      "title": "Open Thread: 16 July 2026",
+      "url": "https://sports.yahoo.com/articles/open-thread-16-july-2026-040742626.html",
+      "source": "Yahoo Sports",
+      "date": "2026-07-16",
       "vendor": null,
-      "customer": "Apple",
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Open Thread: 16 July 2026\nThe Daily Merengue is a place where you can feel free to d all things football. Do not be alarmed by the overt RMCF bias. It\u2019s in the name! Shoutout to the mods who do a fantastic job, Ezek, Valyrian Steel, Kung_Fu_Zizou, Juninho, NeRObutBlanco and yours truly, Felipejack.\n"
+    },
+    {
+      "title": "Walmart just restocked the Onn 4K Pro Google TV box, just not for everyone",
+      "url": "https://9to5google.com/2026/07/15/walmart-onn-4k-pro-google-tv-box-restock-stores/",
+      "source": "9to5Google",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "While macOS is generally very stable, there are times when an app will crash and your Mac will offer to send a diagnostic report to Apple. A new form of Mac malware has been discovered, which creates fake versions of this form, requesting your Mac password as part of the data collection. If you comp"
+      "summary": "Walmart\u2019s Onn 4K Pro box with Google TV has proven rather elusive, but a relatively big restock has just landed for the $59 streamer."
     },
     {
-      "title": "Apple reaches agreement with Chinese government on Apple Intelligence rollout",
-      "url": "https://9to5mac.com/2026/07/15/apple-reaches-agreement-with-chinese-government-on-apple-intelligence-rollout/",
-      "source": "9to5Mac",
-      "date": "2026-07-15",
+      "title": "Cyberattack threatens utterly critical infrastructure in Japan: KFC",
+      "url": "https://www.theregister.com/security/2026/07/16/cyberattack-threatens-utterly-critical-infrastructure-in-japan-kfc/5272220",
+      "source": "The Register",
+      "date": "2026-07-16",
       "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
+      "customer": "Microsoft",
+      "application": "Asset Tracking",
       "buckets": [],
-      "summary": "The new Siri and other Apple Intelligence features are currently only supported in the iOS 27 beta in English in a small number of countries, but Apple has promised that they will \u201cquickly expand\u201d to additional countries and languages. China posed a particular challenge for the company as the law th"
+      "summary": "The Colonel stops taking online orders and may close stores after logistics partner\u2019s systems go down"
     },
     {
-      "title": "Samsung\u2019s new foldable display is harder to crease and damage",
-      "url": "https://www.theverge.com/tech/965850/samsung-display-flex-titanium-galaxy-foldables",
-      "source": "The Verge",
-      "date": "2026-07-15",
+      "title": "Google Play Opens the Door to Third-Party App Stores, Starting Next Week",
+      "url": "https://www.cnet.com/tech/google-play-third-party-app-stores-android/",
+      "source": "CNET",
+      "date": "2026-07-16",
       "vendor": null,
-      "customer": "Samsung",
+      "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "Samsung has unveiled a new flexible display technology for foldable phones that's designed to be slimmer, more durable, and less prone to creasing. The Flex Titanium tech is the culmination of everything that the company has learned over seven generations of foldables, according to Samsung, and will"
+      "summary": "Get ready, Android users: Google will begin letting people download third-party apps from the Google Play Store next week, Bloomberg reports. This news comes after the five-year antitrust lawsuit filed by Epic Games, the creator of the popular video game Fortnite, concluded on Tuesday.\nOwners of And"
     },
     {
-      "title": "The PS6 sure sounds like a handheld",
-      "url": "https://www.theverge.com/games/963132/sony-playstation-future-handheld-pc-business-meeting-end-of-discs",
+      "title": "AirPods just got a long-requested feature in new public beta",
+      "url": "https://9to5mac.com/2026/07/15/airpods-just-got-a-long-requested-feature-in-new-public-beta/",
+      "source": "9to5Mac",
+      "date": "2026-07-16",
+      "vendor": "Apple",
+      "customer": "Apple",
+      "application": "Audio / Speaker",
+      "buckets": [],
+      "summary": "While it was overshadowed by the iOS 27 public beta, Apple also released a new public beta firmware for AirPods this week. The update brings a long-requested feature to supported AirPods models: custom EQ."
+    },
+    {
+      "title": "Microsoft built an actual fake airplane cabin to test Windows 11's Shared Audio outside a lab for once",
+      "url": "https://www.windowslatest.com/2026/07/16/microsoft-built-an-actual-fake-airplane-to-test-windows-11s-shared-audio-outside-a-lab-for-once/",
+      "source": "Windows Latest",
+      "date": "2026-07-16",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": "Audio / Speaker",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Microsoft says it built a full mock airplane cabin to test Windows 11\u2019s Shared Audio feature, which lets two people listen to Windows audio using two different Bluetooth devices. The company later turned the fake airplane setup into a short film set to show what goes on behind the scenes.\nShared Aud"
+    },
+    {
+      "title": "Skullcandy\u2019s bass-boosting Crusher headphones now come with Bose\u2019s ANC",
+      "url": "https://www.theverge.com/tech/966022/skullcandy-cruser-1080-anc-bose-tuning-noise-cancelling-wireless-headphones",
       "source": "The Verge",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Bose",
+      "application": "Audio / Speaker",
+      "buckets": [],
+      "summary": "Skullcandy announced a new version of its Crusher wireless headphones today featuring a few of Bose's audio technologies including its QuietControl ANC and head-tracking spatial audio. The Crusher headphone line differentiates itself from the competition through the use of both full-range and dedica"
+    },
+    {
+      "title": "Microsoft is reportedly training salespeople to talk down OpenAI and Anthropic",
+      "url": "https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/",
+      "source": "TechCrunch",
       "date": "2026-07-15",
       "vendor": null,
       "customer": "Microsoft",
       "application": null,
       "buckets": [],
-      "summary": "The video game industry is in turmoil. Microsoft and Sony are starting to pivot to their next consoles, but it's not looking great: Prices are soaring, Sony is killing the video game disc, and Microsoft is jettisoning studios ahead of the transition. What could entice people to pay? On the Xbox fron"
+      "summary": "Microsoft is looking to sell its in-house AI models as more efficient and cost-effective than its competitors' models."
     },
     {
-      "title": "Four months with my first home battery taught me what whole-home backup really means",
-      "url": "https://www.zdnet.com/article/anker-solix-e10-review/",
-      "source": "ZDNet",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Eufy/Anker",
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "Anker's Solix E10 made backup power understandable for this first-timer, and I can't wait to expand the system."
-    },
-    {
-      "title": "AMD Ryzen 7 5800X3D Outsells Ryzen 7 7800X3D For The Same Price On Amazon Despite Being Weaker",
-      "url": "https://wccftech.com/amd-ryzen-7-5800x3d-outsells-ryzen-7-7800x3d-for-the-same-price-on-amazon-despite-being-weaker/",
-      "source": "Wccftech",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "It's crazy how a six-year-old CPU can sell incredibly well, given it's based on an older platform.\nAMD Ryzen 7 5800X3D Grabs Fourth Spot In Best Selling CPUs List On Amazon Despite Selling For $349\nIt's hardly been a month since the launch of AMD's Ryzen 7 5800X3D 10th anniversary edition, and we ar"
-    },
-    {
-      "title": "Motorola Edge 70 Max is official with a 7,100mAh battery and 6.8-inch display - GSMArena.com news",
-      "url": "https://www.gsmarena.com/motorola_edge_70_max_is_official_with_a_7100mah_battery_and_68inch_display-news-73726.php",
-      "source": "GSMArena.com",
-      "date": "2026-07-15",
-      "vendor": "Qualcomm",
-      "customer": "Motorola",
-      "application": null,
-      "buckets": [],
-      "summary": "Motorola has expanded its Edge 70 lineup in India with the launch of the Edge 70 Max. The new smartphone features a large 6.8-inch display, a 7,100mAh battery, and the Snapdragon 8 Gen 5 chipset.\nThe 6.8-inch AMOLED display offers a Quad HD+ resolution, a refresh rate of 144Hz, a claimed peak bright"
-    },
-    {
-      "title": "The Star Wars cantina scene shows we need a new hope for the agentic web",
-      "url": "https://www.theregister.com/columnists/2026/07/15/the-star-wars-cantina-scene-shows-we-need-a-new-hope-for-the-agentic-web/5270946",
-      "source": "The Register",
+      "title": "Google is opening the floodgates to third-party app stores on Android next week",
+      "url": "https://9to5google.com/2026/07/15/google-play-store-third-party-android-app-store-changes-july/",
+      "source": "9to5Google",
       "date": "2026-07-15",
       "vendor": null,
       "customer": "Google",
-      "application": null,
+      "application": "Automotive",
       "buckets": [],
-      "summary": "'We don't serve their kind here' protects today's publishers, but won't help rebels destroy the monetization Death Stars built by Google and Meta"
+      "summary": "The final sticking point in the long-running Google vs Epic Games lawsuit is coming to an end, as Google is opening the door to third-party app stores on Android starting on July 22."
     },
     {
-      "title": "Google and Epic give up fighting \u2014 third-party Android app stores are coming next week",
-      "url": "https://www.theverge.com/policy/965792/google-epic-withdraw-injunction-third-party-app-stores-coming-google-play",
+      "title": "Apple\u2019s reportedly raising the price for AppleCare Plus on Macs and iPads",
+      "url": "https://www.theverge.com/tech/966219/apple-care-plus-price-increase",
       "source": "The Verge",
-      "date": "2026-07-14",
+      "date": "2026-07-15",
       "vendor": null,
-      "customer": "Google",
+      "customer": "Apple",
+      "application": "AR / VR / XR",
+      "buckets": [],
+      "summary": "An AppleCare Plus subscription for a Mac or iPad will cost more soon, with prices going up by $0.50 per month or $5 per year for new sign-ups while remaining the same for existing subscribers, according to Bloomberg's Mark Gurman. Gurman says that under the new AppleCare Plus pricing, \"a plan for a "
+    },
+    {
+      "title": "Hundreds rally at Bethesda HQ to protest Xbox layoffs, and Ars was there",
+      "url": "https://arstechnica.com/gaming/2026/07/hundreds-rally-at-bethesda-hq-to-protest-xbox-layoffs-and-ars-was-there/",
+      "source": "Ars Technica",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Microsoft",
       "application": null,
       "buckets": [],
-      "summary": "Epic Games and Google have just jointly withdrawn their attempt to retroactively settle the lawsuit that's changing how Android app stores work in the United States - and that means Google will be forced to carry rival app stores inside of its own. In fact, Google tells the court, it's ready to begi"
+      "summary": "Union wants to halt a \"perpetual cycle\" of layoffs, get back to contract bargaining."
     },
     {
-      "title": "Big Savings Alert! AIVON PCBA Monthly SMT Special Deals + Free Shipping (Sponsored)",
-      "url": "https://www.cnx-software.com/2026/07/15/big-savings-alert-aivon-pcba-monthly-smt-special-deals-free-shipping/",
-      "source": "CNX Software",
+      "title": "Android 17 QPR1 Beta 7 rolling out for Pixel",
+      "url": "https://9to5google.com/2026/07/15/android-17-qpr1-beta-6-pixel-2/",
+      "source": "9to5Google",
       "date": "2026-07-15",
       "vendor": null,
-      "customer": "Amazon",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "In today\u2019s fast-paced electronics industry, bringing innovative products from concept to market quickly and cost-effectively is more important than ever. AIVON, a trusted PCB manufacturing expert with over 15 years of experience in high-quality PCBA production, understands these challenges deeply. T"
-    },
-    {
-      "title": "Limited series \u2018Lucky\u2019, starring Anya Taylor-Joy, premieres on Apple TV",
-      "url": "https://9to5mac.com/2026/07/14/limited-series-lucky-starring-anya-taylor-joy-premieres-on-apple-tv/",
-      "source": "9to5Mac",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Apple",
+      "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "The first episodes of Lucky, Apple TV\u2019s new limited series starring Anya Taylor-Joy (The Menu), are now streaming. Watch the trailer below."
+      "summary": "Following the last release two weeks ago, Android 17 QPR1 Beta 7 is rolling out today for Pixel devices."
     },
     {
-      "title": "Why I'm using wired Android Auto when all the cool kids are switching to wireless",
-      "url": "https://www.zdnet.com/article/why-im-using-wired-android-auto-when-all-the-cool-kids-are-switching-to-wireless/",
-      "source": "ZDNet",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "'ZDNET Recommends': What exactly does it mean?\nZDNET's recommendations are based on many hours of testing, research, and comparison shopping. We gather data from the best available sources, including vendor and retailer listings as well as other relevant and independent reviews sites. And we pore ov"
-    },
-    {
-      "title": "iOS 27: My favorite new iPhone features (other than AI)",
-      "url": "https://9to5mac.com/2026/07/14/ios-27-my-favorite-new-iphone-features-other-than-ai/",
-      "source": "9to5Mac",
-      "date": "2026-07-15",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The iOS 27 public beta is here, and the headlining changes are Siri AI and the array of new Apple Intelligence features. However, the update also includes plenty of non-AI features. Here are a few of my favorite iOS 27 features (other than Siri and AI)."
-    },
-    {
-      "title": "Murata Launches Automotive Safety-Certified Lead-Type Disc Ceramic Capacitors with Y1 Class Certification",
-      "url": "https://www.murata.com/en-global/news/capacitor/ceramiccapacitor/2026/0715",
-      "source": "Murata Manufacturing Co., Ltd.",
-      "date": "2026-07-15",
-      "vendor": "Murata",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Murata Manufacturing Co., Ltd has announced the introduction of the DE5 series, a new lineup of automotive safety-certified lead-type disc ceramic capacitors that have acquired safety standard class* X1/Y1 certification. Compared to the existing X1/Y2-certified DE6 series, the DE5 series delivers an"
-    },
-    {
-      "title": "Google Cloud's VMware service loses resilience due to a dud update",
-      "url": "https://www.theregister.com/virtualization/2026/07/15/google-clouds-vmware-service-loses-resilience-due-to-a-dud-update/5271511",
+      "title": "Amazon Web Services' most vocal customer now runs EC2",
+      "url": "https://www.theregister.com/paas-and-iaas/2026/07/15/aws-ec2-leadership-change-dave-treadwell-replaces-brown/5272154",
       "source": "The Register",
       "date": "2026-07-15",
       "vendor": null,
-      "customer": "Google",
-      "application": null,
+      "customer": "Amazon",
+      "application": "Retail",
       "buckets": [],
-      "summary": "MOST POPULAR\nAI\n-\nAI and ML\nOpenAI hides Codex agent instructions behind encryption, leaving developers in the dark\nDevelopers worry encrypted MultiAgentV2 messages will make debugging and auditing harder\n-\nAI and ML\nIf you want Claude to speak nicely to you, try Hindi or Arabic\nAnthropic finds Clau"
+      "summary": "Retail foundation leader Dave Treadwell takes over as senior leader and 19-year vet Dave Brown departs for pastures unknown"
     },
     {
-      "title": "Sprng, a new thread in Grasim's growth story as Birla's flagship",
-      "url": "https://www.livemint.com/news/sprng-a-new-thread-in-grasims-growth-story-as-birlas-flagship-11784029330021.html",
-      "source": "livemint.com",
+      "title": "Tesla driver in fatal Texas crash pressed accelerator 100%, NTSB confirms",
+      "url": "https://techcrunch.com/2026/07/15/tesla-driver-in-fatal-texas-crash-pressed-accelerator-100-ntsb-confirms/",
+      "source": "TechCrunch",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The safety board confirmed Tesla's account of the crash, which the company shared days after it happened last month."
+    },
+    {
+      "title": "Todd Blanche Confirmation Open Thread",
+      "url": "https://emptywheel.net/2026/07/15/todd-blanche-confirmation-open-thread/",
+      "source": "emptywheel.net",
       "date": "2026-07-15",
       "vendor": null,
       "customer": null,
-      "application": "Industrial",
+      "application": null,
       "buckets": [
         "thread"
       ],
-      "summary": "Mumbai: The $1.8 billion acquisition of Sprng Energy by Aditya Birla Renewables brings the spotlight on Grasim Industries, the Aditya Birla Group's flagship holding and incubation company. Once known primarily for semi-synthetic yarn and chemicals, Grasim today owns, backs or incubates many of the c"
+      "summary": "I will not be able to watch the Todd Blanche confirmation hearing, which will start at 9ET. I will be out of pocket much of the time until the weekend, so I probably won\u2019t address the hearing and related shenanigans until then.\nBlanche has been remarkably incompetent in the lead-up to the hearing. I"
     },
     {
-      "title": "Google Cast is being downsized - and that's actually a good thing - Pocket-lint",
-      "url": "https://www.pocket-lint.com/sony-google-cast-matter-casting/",
-      "source": "Pocket-lint",
+      "title": "Mid-week Android app deals and freebies: ScourgeBringer, Retro Zoo CEO, Final Fantasy Dimensions, more",
+      "url": "https://9to5toys.com/2026/07/15/mid-week-android-app-deals-scourgebringer-retro-zoo/",
+      "source": "9to5Google",
       "date": "2026-07-15",
       "vendor": null,
       "customer": "Google",
-      "application": "Audio / Speaker",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Your afternoon lineup of the best Android game and app deals is now ready, including titles like ScourgeBringer, Retro Zoo CEO, Guardian War: Ultimate Edition, Final Fantasy Dimensions, Tiny Terraces, Beat Workers, and more. We also have a rare deal live today on the official Google Pixel Flex Dual "
+    },
+    {
+      "title": "Skyworks Sets Date for Third Quarter Fiscal 2026 Earnings Release and Conference Call",
+      "url": "https://investors.skyworksinc.com/news-releases/news-release-details/skyworks-sets-date-third-quarter-fiscal-2026-earnings-release",
+      "source": "Skyworks",
+      "date": "2026-07-15",
+      "vendor": "Skyworks",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Skyworks Sets Date for Third Quarter Fiscal 2026 Earnings Release and Conference Call\nAfter the close of the market on\nTo listen to the conference call, please visit the investor relations section of Skyworks\u2019 website at https://investors.skyworksinc.com/events-presentations. Playback of the confere"
+    },
+    {
+      "title": "Windows 0-day drops the same day Microsoft releases record number of patches",
+      "url": "https://arstechnica.com/security/2026/07/windows-0-day-drops-the-same-day-microsoft-releases-record-number-of-patches/",
+      "source": "Ars Technica",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "HiveLegacy is a \"powerful primitive\" that's likely capable of other nefarious actions."
+    },
+    {
+      "title": "5 Useful iPad Accessories Cheaper Than Apple Brand Products",
+      "url": "https://www.bgr.com/2207152/useful-ipad-accessories-cheaper-than-apple/",
+      "source": "bgr.com",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "5 Useful iPad Accessories Cheaper Than Apple Brand Products\nWe may receive a commission on purchases made from links.\nThe iPad is a powerful device you can use for just about anything you use a computer for, ranging from work to play. Whether you have the standard model, iPad Air, iPad Mini, or iPad"
+    },
+    {
+      "title": "When Career Risks Are Worth Taking",
+      "url": "https://spectrum.ieee.org/career-risks",
+      "source": "IEEE Spectrum",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": null,
+      "application": null,
       "buckets": [
         "matter"
       ],
-      "summary": "If you own a Sony soundbar, an AV receiver, or one of the company\u2019s older Blu-ray players, I'm sad to say that the Google Cast button you've always reached for is on borrowed time. From November 17, 2026, Sony is pulling a batch of network services from more than 70 legacy audio and video devices, a"
+      "summary": "This article is crossposted from IEEE Spectrum\u2019s careers newsletter. Sign up now to get insider tips, expert advice, and practical strategies, written in partnership with tech career development company Parsity and delivered to your inbox for free!Before we get into this week\u2019s article, I\u2019d love to "
     },
     {
-      "title": "OpenAI's First Device Will Reportedly Be a Portable Smart Speaker",
-      "url": "https://www.cnet.com/tech/openais-first-device-will-reportedly-be-a-portable-smart-speaker/",
-      "source": "CNET",
-      "date": "2026-07-14",
-      "vendor": "Qualcomm",
+      "title": "5 smart home gadgets I consider completely non-negotiable",
+      "url": "https://www.zdnet.com/article/5-smart-home-gadgets-i-consider-completely-non-negotiable-and-why/",
+      "source": "and why",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "These smart home gadgets elevate my home and routine. Here's why you may want them too."
+    },
+    {
+      "title": "Amid hardware legal battle, OpenAI releases a $230 keyboard for Codex",
+      "url": "https://techcrunch.com/2026/07/15/amid-hardware-legal-battle-openai-releases-a-230-keyboard-for-codex/",
+      "source": "TechCrunch",
+      "date": "2026-07-15",
+      "vendor": null,
       "customer": "Apple",
       "application": "Audio / Speaker",
       "buckets": [],
-      "summary": "OpenAI's entry into the world of consumer devices is expected to begin with the release of a portable smart speaker that lacks a screen, according to a Bloomberg report on Tuesday. The device is being positioned as \"a new type of computer for the AI era,\" Bloomberg's Mark Gurman reported, adding tha"
+      "summary": "OpenAI, which is in the middle of a legal battle with Apple over hardware trade theft allegations, just released a light-up keyboard designed to be paired with its agentic coding app."
     },
     {
-      "title": "Opera gains ground among iPhone users in the US and UK",
-      "url": "https://9to5mac.com/2026/07/14/opera-gains-ground-among-iphone-users-in-the-us-and-uk/",
-      "source": "9to5Mac",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Opera says its iOS browser saw monthly active users grow 93% in the UK and 50% in the US during Q2 2026 compared with the same period last year. Here are the details."
-    },
-    {
-      "title": "Qorvo stock holds steady as RF chip maker navigates diversified demand - Ad-hoc-news.de",
-      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/qorvo-stock-holds-steady-as-rf-chip-maker-navigates-diversified-demand/69769492",
-      "source": "Ad-hoc-news.de",
-      "date": "2026-07-14",
-      "vendor": "Qorvo",
-      "customer": null,
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Qorvo stock holds steady as RF chip maker navigates diversified demand\nVer\u00f6ffentlicht: 15.07.2026 um 01:38 Uhr, Redaktion AD HOC NEWS, Redaktionelle Verantwortung: Rafael M\u00fcller (Chefredaktion)Qorvo Inc. stock represents a diversified play on radio-frequency (RF) and power management chips used acro"
-    },
-    {
-      "title": "Samsung says Galaxy Z Fold 8 crease is less visible thanks to \u2018Flex Titanium\u2019 display",
-      "url": "https://9to5google.com/2026/07/14/samsung-galaxy-z-fold-8-flex-titanium-display/",
+      "title": "Gemini Spark gets Workspace upgrades as Google teases AI Pro access soon",
+      "url": "https://9to5google.com/2026/07/15/gemini-spark-workspace-upgrades/",
       "source": "9to5Google",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The Galaxy Z Fold 8 series will get a new foldable display architecture, Samsung admits, which will improve the phone\u2019s resistance to developing an unsightly crease down the inner display."
-    },
-    {
-      "title": "Open Thread: 2026 All-Star Game",
-      "url": "https://www.amazinavenue.com/new-york-mets-discussion/97841/open-thread-2026-all-star-game-juan-soto-mets",
-      "source": "Amazin' Avenue",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Open Thread: 2026 All-Star Game\nCome chat about our All-Star left fielder.\nMike Trout - CF (Los Angeles Angels)\nYordan Alvarez - DH (Houston Astros)\nShea Langeliers - C (Athletics)\nJunior Caminero - 3B (Tampa Bay Rays)\nBobby Witt Jr. - SS (Kansas City Royals)\nCody Bellinger - RF (New York Yankees)\nB"
-    },
-    {
-      "title": "Beyond the Galaxy Z Fold: Samsung's Future Phone Concepts That Roll, Slide and Expand",
-      "url": "https://www.cnet.com/tech/mobile/samsungs-future-phone-concepts-roll-slide-expand/",
-      "source": "CNET",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Over the years, phone-makers have shown off handsets that stretch, bend and fold. But inside a secret room at Samsung Display's headquarters in South Korea -- one that had never before been opened up to the press -- I got a firsthand look at the company's vision for the future of smartphones.\nAlong "
-    },
-    {
-      "title": "From Extreme Heat to Half a Million Folds: A Rare Look Inside Samsung's Display Lab",
-      "url": "https://www.cnet.com/tech/mobile/inside-samsungs-secret-lab-foldable-displays/",
-      "source": "CNET",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "In a secluded room deep within Samsung Display's headquarters in South Korea, rows of whirring gray and black machines repeatedly fold, flex and stress test the company's newest mobile displays. During a mid-June visit, I was among the first people outside the company to step inside the high-securit"
-    },
-    {
-      "title": "Google temporarily offers open Pixel Care+ enrollment for Pixel 9 and 10",
-      "url": "https://9to5google.com/2026/07/14/pixel-care-open-enrollment/",
-      "source": "9to5Google",
-      "date": "2026-07-14",
+      "date": "2026-07-15",
       "vendor": null,
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Google today announced a limited-time Pixel Care+ open enrollment period for existing Pixel 9 and 10 owners."
+      "summary": "Following the last update two weeks ago, Google is rolling out a series of new features for Gemini Spark."
     },
     {
-      "title": "Nothing\u2019s good-looking Watch 3 Pro smartwatch is just $69",
-      "url": "https://www.theverge.com/gadgets/965565/cmf-nothing-watch-3-pro-smartwatch-ios-android-deal-sale",
-      "source": "The Verge",
-      "date": "2026-07-14",
+      "title": "Apple faces new questions from Brazil over betting apps accessible to minors",
+      "url": "https://9to5mac.com/2026/07/15/apple-faces-new-questions-from-brazil-over-betting-apps-accessible-to-minors/",
+      "source": "9to5Mac",
+      "date": "2026-07-15",
       "vendor": null,
-      "customer": "Amazon",
-      "application": "Wearable",
+      "customer": "Apple",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "While most fitness trackers are losing the screens to keep the price low, the CMF by Nothing Watch 3 Pro is a bit different. The budget-friendly smartwatch with a 1.43-inch OLED display is even cheaper than usual at Amazon, where it costs $69 in every color (the price fluctuates between $79 and $99)"
+      "summary": "Nearly three months after Brazilian officials first questioned Apple over betting apps accessible to minors, the company has now been given five business days to provide additional details about its App Store safeguards. Here are the details."
     },
     {
-      "title": "OpenAI\u2019s first hardware device is reportedly a screenless speaker that can move",
-      "url": "https://techcrunch.com/2026/07/14/openais-first-hardware-device-is-reportedly-a-screenless-speaker-that-can-move/",
+      "title": "Apple Maps won\u2019t allow ads from these categories at launch",
+      "url": "https://9to5mac.com/2026/07/15/apple-maps-wont-allow-ads-from-these-categories-at-launch/",
+      "source": "9to5Mac",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Ads are coming to Apple Maps in the United States and Canada sometime this summer. Ahead of that launch, Apple has shared more details about what will and won\u2019t be allowed for ads in Apple Maps."
+    },
+    {
+      "title": "Why TL3228 Is the Go-To Standard Chip Powering True 8K Wireless Gaming Peripherals",
+      "url": "https://www.eetimes.com/why-tl3228-is-the-go-to-standard-chip-powering-true-8k-wireless-gaming-peripherals/",
+      "source": "EE Times",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": ""
+    },
+    {
+      "title": "AppleCare+ gets a price increase for new Mac and iPad plans",
+      "url": "https://9to5mac.com/2026/07/15/applecare-gets-a-price-increase-for-new-mac-and-ipad-plans/",
+      "source": "9to5Mac",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "As Bloomberg reports, Apple has increased its monthly and annual AppleCare+ rates for new Mac and iPad customers. Here are the details."
+    },
+    {
+      "title": "Microsoft patches bug in video game Age of Empires II",
+      "url": "https://techcrunch.com/2026/07/15/microsoft-patches-bug-in-video-game-age-of-empires-ii/",
       "source": "TechCrunch",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "The device is weirdly described as involving \"mechanical elements that can move on their own\" and the Bloomberg report includes the detail that the device is designed to \"feel like a companion and become a physical manifestation of OpenAI\u2019s ChatGPT.\""
-    },
-    {
-      "title": "Microsoft\u2019s Secure Boot has been broken for a decade and no one noticed until now",
-      "url": "https://arstechnica.com/security/2026/07/microsoft-secure-boot-has-been-broken-for-most-of-its-existence/",
-      "source": "Ars Technica",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "Old and forgotten \"shims\" Microsoft failed to revoke have made Secure Boot bypasses simple."
-    },
-    {
-      "title": "OpenAI pushes back on Apple trade secret lawsuit",
-      "url": "https://techcrunch.com/2026/07/14/openai-pushes-back-on-apple-trade-secret-lawsuit/",
-      "source": "TechCrunch",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "OpenAI has issued another statement on the lawsuit, this time suggesting it lacks merit."
-    },
-    {
-      "title": "OpenAI's first hardware device will be a HomePod, but don't tell them that",
-      "url": "https://appleinsider.com/articles/26/07/14/openais-first-hardware-device-will-be-a-homepod-but-dont-tell-them-that",
-      "source": "AppleInsider",
-      "date": "2026-07-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "The description for OpenAI's first hardware device suggests it will be a speaker that can wiggle around a bit while it reads your email, so a HomePod, but more annoying and privacy-invasive.\nJust moments after OpenAI shared an empty statement on Apple's trade secret lawsuit, new information was shar"
-    },
-    {
-      "title": "Microsoft\u2019s biggest ever patch Tuesday lets you hold off updating for longer",
-      "url": "https://www.theverge.com/tech/965643/microsoft-windows-11-july-2026-patch-tuesday-updates",
-      "source": "The Verge",
-      "date": "2026-07-14",
+      "date": "2026-07-15",
       "vendor": null,
       "customer": "Microsoft",
       "application": null,
       "buckets": [],
-      "summary": "Microsoft just released a long list of improvements for Windows 11 as part of its bigger patch Tuesdays, patching at least 570 security holes, almost triple the number fixed in last month's record-breaking release, according to Krebs on Security. It also includes the ability to pause updates indefin"
+      "summary": "The vulnerability in the decades-old game could have allowed hackers to take over victims\u2019 computers with a malicious game invite."
     },
     {
-      "title": "Some Galaxy S26 Ultra Phone Displays Are Reportedly Developing a Red Tint",
-      "url": "https://www.cnet.com/tech/mobile/galaxy-s26-ultra-phone-displays-reportedly-develop-red-tint/",
-      "source": "CNET",
-      "date": "2026-07-14",
+      "title": "Microsoft patches record 570 Windows security bugs with two exploited zero days",
+      "url": "https://www.zdnet.com/article/microsoft-patches-570-vulnerabilities-exploited-zero-days/",
+      "source": "update now",
+      "date": "2026-07-15",
       "vendor": null,
-      "customer": "Samsung",
+      "customer": "Microsoft",
+      "application": "Audio / Speaker",
+      "buckets": [],
+      "summary": "The July Patch Tuesday Windows update breaks the record for the most security bugs fixed in a single month, with three zero-day flaws and 61 rated critical."
+    },
+    {
+      "title": "Something\u2019s glowing on the Pixel 11\u2019s camera bar",
+      "url": "https://www.theverge.com/tech/966120/google-pixel-11-camera-bar-teaser",
+      "source": "The Verge",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "Samsung's $1,300 Galaxy S26 Ultra phones may be experiencing a slight display discoloration over time. According to Korean news outlet Newsway, several reports on Reddit and Samsung's community forum, some of the phones are developing a reddish tint.\nThe reports show discoloration on the Galaxy S26 "
+      "summary": "A new teaser for Google\u2019s upcoming Pixel 11 lineup reveals that the phones will feature some kind of glowing orb on the camera bar, as reported by 9to5Google.\nSomething\u2019s glowing on the Pixel 11\u2019s camera bar\nGoogle\u2019s new teaser has us pondering an orb.\nGoogle\u2019s new teaser has us pondering an orb.\nGo"
+    },
+    {
+      "title": "Apple bans home services from its upcoming Maps ads",
+      "url": "https://techcrunch.com/2026/07/15/apple-quietly-reveals-how-its-maps-ads-will-differ-from-googles/",
+      "source": "TechCrunch",
+      "date": "2026-07-15",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "Apple has published the policies governing its upcoming Maps advertising business, revealing a strategy that differs from Google\u2019s. The new rules prohibit home services businesses like plumbers, electricians, locksmiths, and roofers from advertising on Apple Maps, along with several other sensitive "
     }
   ],
   "vendor_news_30d": {
-    "Broadcom": 67,
-    "Qualcomm": 31,
-    "Silicon Labs": 14,
-    "Espressif": 12,
-    "Skyworks": 11,
+    "Broadcom": 65,
+    "Qualcomm": 30,
+    "Skyworks": 12,
+    "Espressif": 11,
+    "Silicon Labs": 11,
     "Microchip": 10,
+    "MediaTek": 9,
     "Marvell": 9,
-    "STMicro": 7,
-    "MediaTek": 6,
     "NXP": 6,
+    "Nordic": 6,
+    "STMicro": 6,
+    "Apple": 5,
     "Realtek": 5,
-    "Onsemi": 5,
-    "Qorvo": 4,
-    "Apple": 4,
-    "Nordic": 4,
-    "Murata": 3,
-    "HiSilicon": 2,
+    "Infineon": 4,
+    "Onsemi": 4,
+    "Qorvo": 3,
+    "HiSilicon": 3,
+    "Murata": 2,
     "u-blox": 2,
-    "Infineon": 2,
-    "LG Innotek": 2,
     "TI": 2,
     "Synaptics": 2,
     "Atmosic": 1,
     "UNISOC": 1,
-    "Telink": 1
+    "LG Innotek": 1,
+    "Bouffalo Lab": 1
   },
   "customer_news_30d": {
-    "Apple": 257,
-    "Google": 91,
-    "Samsung": 44,
-    "Amazon": 26,
-    "Microsoft": 18,
-    "Meta": 12,
-    "Sony": 12,
-    "Motorola": 7,
-    "Philips Hue": 6,
+    "Apple": 254,
+    "Google": 97,
+    "Samsung": 43,
+    "Microsoft": 26,
+    "Amazon": 25,
+    "Motorola": 11,
+    "Sony": 11,
+    "Meta": 10,
+    "Philips Hue": 7,
+    "Huawei": 5,
     "Eufy/Anker": 4,
-    "Huawei": 4,
-    "Bose": 2,
-    "Aqara": 2,
-    "Xiaomi": 2,
+    "Tesla": 2,
+    "Bose": 1,
+    "Aqara": 1,
     "Oura": 1,
     "BMW": 1,
     "Mercedes": 1,
     "IKEA": 1,
-    "Tesla": 1,
-    "SwitchBot": 1
+    "SwitchBot": 1,
+    "Xiaomi": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3751,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15905,
-      "pushed_at": "2026-07-15T11:02:45Z"
-    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -551,7 +523,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1638,
+      "issues_open": 1637,
       "prs_open": 0,
       "releases": [
         {
@@ -573,8 +545,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
         }
       ],
-      "stars": 18541,
-      "pushed_at": "2026-07-15T10:04:28Z"
+      "stars": 18549,
+      "pushed_at": "2026-07-16T10:33:29Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3757,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15915,
+      "pushed_at": "2026-07-16T10:19:25Z"
     },
     {
       "name": "Linux mac80211",
@@ -588,8 +594,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239548,
-      "pushed_at": "2026-07-14T20:06:52Z"
+      "stars": 239645,
+      "pushed_at": "2026-07-16T05:59:47Z"
     },
     {
       "name": "Matter SDK",
@@ -622,8 +628,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8823,
-      "pushed_at": "2026-07-15T08:18:16Z"
+      "stars": 8824,
+      "pushed_at": "2026-07-16T11:17:18Z"
     },
     {
       "name": "OpenThread",
@@ -633,8 +639,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 67,
-      "issues_open": 159,
+      "commits_30d": 65,
+      "issues_open": 164,
       "prs_open": 0,
       "releases": [
         {
@@ -657,7 +663,7 @@
         }
       ],
       "stars": 3984,
-      "pushed_at": "2026-07-15T02:09:33Z"
+      "pushed_at": "2026-07-16T04:26:12Z"
     },
     {
       "name": "BlueZ",
@@ -667,8 +673,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 40,
-      "issues_open": 103,
+      "commits_30d": 36,
+      "issues_open": 106,
       "prs_open": 0,
       "releases": [
         {
@@ -690,8 +696,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1098,
-      "pushed_at": "2026-07-15T09:31:06Z"
+      "stars": 1099,
+      "pushed_at": "2026-07-16T11:56:04Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -701,8 +707,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 35,
-      "issues_open": 464,
+      "commits_30d": 32,
+      "issues_open": 462,
       "prs_open": 0,
       "releases": [
         {
@@ -724,8 +730,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15297,
-      "pushed_at": "2026-07-15T11:09:25Z"
+      "stars": 15299,
+      "pushed_at": "2026-07-15T17:13:50Z"
     },
     {
       "name": "NimBLE",
@@ -736,7 +742,7 @@
         "bluetooth"
       ],
       "commits_30d": 16,
-      "issues_open": 272,
+      "issues_open": 274,
       "prs_open": 0,
       "releases": [],
       "stars": 876,
@@ -822,18 +828,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
       "date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -976,13 +982,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
     },
     {
-      "vendor": "Microchip",
-      "ticker": "MCHP",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -1002,6 +1001,13 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
+    },
+    {
+      "vendor": "Microchip",
+      "ticker": "MCHP",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1025,13 +1031,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1044,6 +1043,13 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1067,6 +1073,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526201058/ter-20260329.htm"
     },
     {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -1079,13 +1092,6 @@
       "form": "8-K",
       "date": "2026-05-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000025/lyb-20260501.htm"
-    },
-    {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -1102,6 +1108,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1114,13 +1127,6 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
-    },
-    {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -2104,19 +2110,19 @@
           "url": "https://www.thetechoutlook.com/new-release/gadgets-release/laptop/acer-travellite-tl24-54m-with-intel-core-series-3-processor-wi-fi-7-mil-std-810h-durability-announced-in-india/"
         },
         {
+          "title": "Silicon Labs Validates 200-Node Matter-over-Thread Network for Large-Scale Deployments",
+          "date": "Jun 2026",
+          "url": "https://www.bentoncourier.com/online_features/press_releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network/article_cca86037-ee5f-5559-9a22-0b3f98318f94.html"
+        },
+        {
+          "title": "Silicon Labs Collaborates with Signify to Enhance Philips Hue Matter Support",
+          "date": "Jun 2026",
+          "url": "https://www.prnewswire.com/news-releases/signify-enhances-philips-hue-matter-support-through-collaboration-with-silicon-labs-302806896.html"
+        },
+        {
           "title": "Silicon Labs Reports First Quarter 2026 Results",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Silicon+Labs+Reports+First+Quarter+2026+Results+Silicon+Labs"
-        },
-        {
-          "title": "Comminent and Silicon Labs Ship 500,000 Wi-SUN Modules for India's Smart Grid Rollout",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Comminent+and+Silicon+Labs+Ship+500%2C000+Wi-SUN+Modules+for+India%27s+Smart+Grid+Rollout+Silicon+Labs"
-        },
-        {
-          "title": "Silicon Labs Chip-Based Wi-SUN Modules Surpass 500,000 Shipments in India",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Silicon+Labs+Chip-Based+Wi-SUN+Modules+Surpass+500%2C000+Shipments+in+India+Silicon+Labs"
         }
       ],
       "events": [
@@ -2650,6 +2656,16 @@
           "url": ""
         },
         {
+          "title": "Bigme Launches Hibreak Dual 2 Smartphone Powered by MediaTek Dimensity 8300",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/15/bigme-hibreak-dual-2-an-android-16-smartphone-with-6-13-inch-80fps-e-ink-and-5-inch-lcd-display/"
+        },
+        {
+          "title": "MediaTek Introduces Filogic 860 Wi-Fi 7 Solution for US Home Routers",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
+        },
+        {
           "title": "MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
@@ -2663,16 +2679,6 @@
           "title": "MediaTek Showcases its Active Intelligent Cockpit Solution, Ushering t",
           "date": "Jun 2026",
           "url": "https://www.mediatek.com/press-room/tag/dimensity-ax"
-        },
-        {
-          "title": "MediaTek Prepares Price Adjustments for Mature-Process Chip Products",
-          "date": "Jun 2026",
-          "url": "https://ximitime.com/mediatek-chip-price-hike-could-affect-future-xiaomi-devices-97938/"
-        },
-        {
-          "title": "MediaTek Honored with Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
-          "date": "Jun 2026",
-          "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
         }
       ],
       "events": [
@@ -3724,6 +3730,11 @@
           "url": "https://www.synaptics.com/company/news/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
         },
         {
+          "title": "Onsemi to Acquire Synaptics",
+          "date": "Jun 2026",
+          "url": "https://www.synaptics.com/company/news/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
+        },
+        {
           "title": "Synaptics to Showcase Real-World Edge AI Use Cases at COMPUTEX 2026",
           "date": "May 2026",
           "url": "https://www.synaptics.com/company/news/synaptics-showcase-real-world-edge-ai-use-cases-at-computex-2026"
@@ -3737,11 +3748,6 @@
           "title": "Coralboard Features Synaptics Astra SL2619 Edge AI SoC, Supports Google Gemma 3 Inference",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Coralboard+Features+Synaptics+Astra+SL2619+Edge+AI+SoC%2C+Supports+Google+Gemma+3+Inference+Synaptics"
-        },
-        {
-          "title": "Synaptics Astra SL2619 Edge AI SoC Powers Coralboard, Supporting Google Gemma 3 Inference",
-          "date": "May 2026",
-          "url": "https://www.cnx-software.com/2026/05/20/coralboard-features-synaptics-astra-sl2619-edge-ai-soc-supports-google-gemma-3-inference/"
         }
       ],
       "events": [
@@ -4177,14 +4183,14 @@
           "url": "https://www.stocktitan.net/news/MCHP/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-q4cawbx05q2b.html"
         },
         {
+          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Development Suite Free for Developers",
+          "date": "Jul 2026",
+          "url": "https://www.manilatimes.net/2026/07/08/tmt-newswire/globenewswire/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-machine-learning-development-suite/2380670"
+        },
+        {
           "title": "Microchip Technology Receives U.S. Export License to Expand Advanced FPGA Development in Armenia",
           "date": "Jun 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1398/microchip-technology-receives-u-s-export-license-to-expand-advanced-fpga-development-in-armenia"
-        },
-        {
-          "title": "Microchip Provides Data Center Solutions Business Unit Revenue Information",
-          "date": "Jun 2026",
-          "url": "https://ir.microchip.com/news-events/press-releases/detail/1395/microchip-provides-data-center-solutions-business-unit-revenue-information"
         }
       ]
     },
