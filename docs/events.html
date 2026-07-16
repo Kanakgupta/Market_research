@@ -135,27 +135,7 @@ a:hover { text-decoration:underline; }
 .timeline .item { margin-bottom:10px; }
 .timeline .when { font-weight:700; color:var(--accent); font-size:12.5px; }
 .repo-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; }
-</style><script id="password-gate-v1">
-(function(){
-  var KEY='airoc_unlock_v1';
-  var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
-  function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
-  function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
-  if (sessionStorage.getItem(KEY)==='1') { return; }
-  document.documentElement.style.display='none';
-  (async function(){
-    while(true){
-      var p=prompt('Enter password to access this site');
-      if (p===null){ location.replace('about:blank'); return; }
-      try {
-        var h=await sha256(p);
-        if (h===HASH){ sessionStorage.setItem(KEY,'1'); document.documentElement.style.display=''; return; }
-      } catch (e) {}
-      alert('Wrong password');
-    }
-  })();
-})();
-</script></head><body>
+</style></head><body>
 <header class="topnav"><div class="wrap">
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
@@ -166,7 +146,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-16 14:47 PDT</div>
+  <div class="meta-info">Updated 2026-07-16 15:39 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -294,5 +274,4 @@ a:hover { text-decoration:underline; }
 </tbody>
 </table>
 </section>
-</main><footer class="footer"><div class="wrap">IoT Wireless Intel · 2026-07-16 14:47 PDT</div></footer></body></html>
-
+</main><footer class="footer"><div class="wrap">IoT Wireless Intel · 2026-07-16 15:39 PDT</div></footer></body></html>

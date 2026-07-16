@@ -235,6 +235,31 @@ a:hover { text-decoration:underline; }
 .news-main { min-width:0; }
 """
 
+# Client-side password gate injected into every generated page.
+_PASSWORD_GATE_HTML = """
+<script id="password-gate-v1">
+(function(){
+  var KEY='airoc_unlock_v1';
+  var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
+  function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
+  function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
+  if (sessionStorage.getItem(KEY)==='1') { return; }
+  document.documentElement.style.display='none';
+  (async function(){
+    while(true){
+      var p=prompt('Enter password to access this site');
+      if (p===null){ location.replace('about:blank'); return; }
+      try {
+        var h=await sha256(p);
+        if (h===HASH){ sessionStorage.setItem(KEY,'1'); document.documentElement.style.display=''; return; }
+      } catch (e) {}
+      alert('Wrong password');
+    }
+  })();
+})();
+</script>
+"""
+
 # ---------------------------------------------------------------- nav
 _NAV_HTML = """
 <header class="topnav"><div class="wrap">
@@ -265,6 +290,7 @@ _NEWS_TEMPLATE = """<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ page_title }} \u00b7 IoT Wireless Intel</title>
 <style>{{ css }}</style>
+""" + _PASSWORD_GATE_HTML + """
 </head><body>
 """ + _NAV_HTML + """
 <script>
@@ -637,6 +663,7 @@ _CUSTOMERS_TEMPLATE = """<!doctype html>
 .oc-news-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:16px; margin-top:12px; }
 .oc-news-grid .card { margin:0; }
 </style>
+""" + _PASSWORD_GATE_HTML + """
 </head><body>
 """ + _NAV_HTML + """
 <main class="wrap content">
@@ -951,6 +978,7 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
 .ci-secondary { margin-top:32px; }
 .ci-secondary h2 { font-size:17px; margin-bottom:10px; color:#374151; }
 </style>
+""" + _PASSWORD_GATE_HTML + """
 </head><body>
 """ + _NAV_HTML + """
 {% set priority_comps = competitors | selectattr('priority') | list %}
@@ -1287,6 +1315,7 @@ _RELATIONSHIPS_TEMPLATE = """<!doctype html>
 .legend span { display:inline-flex; align-items:center; gap:5px; }
 .legend i { display:inline-block; width:12px; height:12px; border-radius:3px; }
 </style>
+""" + _PASSWORD_GATE_HTML + """
 </head><body>
 """ + _NAV_HTML + """
 <main class="wrap content">
@@ -1517,6 +1546,7 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 .sap.iface { color:#0f172a; border-color:#e2e8f0; background:#f8fafc; }
 .arch-cap { font-size:12px; color:#475569; line-height:1.6; margin:14px 2px 0; padding:10px 13px; background:#f8fafc; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; }
 </style>
+""" + _PASSWORD_GATE_HTML + """
 </head><body>
 """ + _NAV_HTML + """
 <main class="wrap content">
@@ -2111,6 +2141,7 @@ _INDEX_TEMPLATE = """<!doctype html>
 .mini-list li { margin:5px 0; font-size:13px; }
 .mini-meta { font-size:11.5px; color:var(--muted); }
 </style>
+""" + _PASSWORD_GATE_HTML + """
 </head><body>
 """ + _NAV_HTML + """
 <main class="wrap content">
@@ -2715,4 +2746,5 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         heatmap=heatmap_rows, heatmap_max=heatmap_max,
         active="index", **ctx,
     )
+
 
