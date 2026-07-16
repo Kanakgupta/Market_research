@@ -497,6 +497,7 @@ function cardHtml(a){
 async function loadNews(){
   const grid = document.getElementById('grid');
   if (!grid) return;
+  if (!isLocalBackend()) return;
   try {
     const res = await fetch('/api/news?limit=50');
     if (!res.ok) return;
@@ -510,6 +511,17 @@ async function loadNews(){
   }
 }
 
+function isLocalBackend() {
+  return location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+}
+
+function staticRefreshFallback(btn, icon) {
+  btn.textContent = '\u21bb Reloading\u2026';
+  const next = new URL(location.href);
+  next.searchParams.set('_ts', String(Date.now()));
+  location.href = next.toString();
+}
+
 async function refreshNews(event) {
   event.preventDefault();
   const btn = document.getElementById('refreshBtn');
@@ -520,6 +532,11 @@ async function refreshNews(event) {
   btn.disabled = true;
   icon.classList.add('spinning');
   btn.textContent = '\u21bb Refreshing\u2026';
+
+  if (!isLocalBackend()) {
+    staticRefreshFallback(btn, icon);
+    return;
+  }
 
   try {
     const response = await fetch('/api/refresh-news', { method: 'POST' });
@@ -557,6 +574,10 @@ async function refreshNews(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  const btn = document.getElementById('refreshBtn');
+  if (btn && !isLocalBackend()) {
+    btn.title = 'GitHub Pages cannot run backend refresh; this reloads the page to pick up latest published content.';
+  }
   if (document.getElementById('grid')) loadNews();
 });
 </script>
