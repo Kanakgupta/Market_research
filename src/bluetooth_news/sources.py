@@ -7,6 +7,9 @@ X/Twitter timelines are fetched via a nitter instance (configurable via NITTER_I
 """
 import os
 from urllib.parse import quote_plus
+from urllib.parse import urlparse
+
+from .data_loader import load_customers, load_competitors
 
 # Tab order in the generated site.
 BUCKETS: list[tuple[str, str]] = [
@@ -333,35 +336,163 @@ def nitter_rss(handle: str) -> str:
     return f"{instance}/{handle}/rss"
 
 
+def _domain_from_url(url: str) -> str:
+    if not url:
+        return ""
+    try:
+        host = (urlparse(url).netloc or "").lower().strip()
+    except ValueError:
+        return ""
+    if host.startswith("www."):
+        host = host[4:]
+    return host
+
+
+def dynamic_site_queries() -> list[str]:
+    """Build focused site queries from customer/competitor websites and known URLs.
+
+    This pulls recent signal from official newsroom/press pages and pages linked in
+    customer/competitor datasets so 30/60-day sections are less likely to be empty.
+    """
+    queries: list[str] = []
+    seen: set[str] = set()
+
+    def add(q: str) -> None:
+        q = (q or "").strip()
+        if not q or q in seen:
+            return
+        seen.add(q)
+        queries.append(q)
+
+    wireless_terms = "(wireless OR bluetooth OR wifi OR matter OR thread OR 802.15.4)"
+
+    # Competitor sites
+    try:
+        comp = load_competitors()
+    except Exception:
+        comp = {"competitors": []}
+    for c in (comp.get("competitors") or []):
+        vendor = (c.get("vendor") or "").strip()
+        domains = set()
+        d = _domain_from_url(c.get("website") or "")
+        if d:
+            domains.add(d)
+        for pr in (c.get("press_releases") or []):
+            d = _domain_from_url(pr.get("url") or "")
+            if d:
+                domains.add(d)
+        for d in list(domains)[:3]:
+            add(f"site:{d} ({vendor} OR newsroom OR press release OR announcement) {wireless_terms}")
+            add(f"site:{d} ({vendor} OR product launch OR new chip OR new module) {wireless_terms}")
+
+    # Customer sites from known product/article URLs
+    try:
+        customers = load_customers()
+    except Exception:
+        customers = []
+    for c in customers:
+        name = (c.get("name") or "").strip()
+        domains = set()
+        for p in (c.get("recent_products") or []):
+            d = _domain_from_url(p.get("url") or "")
+            if d:
+                domains.add(d)
+        for d in list(domains)[:4]:
+            add(f"site:{d} ({name} OR launch OR announced OR release) {wireless_terms}")
+            add(f"site:{d} ({name} OR iot OR smart home OR wearable) {wireless_terms}")
+
+    return queries
+
+
+def dynamic_entity_queries() -> list[str]:
+    """Build broad (unfiltered) news queries for every tracked competitor/customer.
+
+    This mirrors a manual Google News search behavior where the company name itself
+    is the query, with no wireless-only filter applied.
+    """
+    queries: list[str] = []
+    seen: set[str] = set()
+
+    def add(q: str) -> None:
+        q = (q or "").strip()
+        if not q or q in seen:
+            return
+        seen.add(q)
+        queries.append(q)
+
+    try:
+        comp = load_competitors()
+    except Exception:
+        comp = {"competitors": []}
+    for c in (comp.get("competitors") or []):
+        vendor = (c.get("vendor") or "").strip()
+        if vendor:
+            add(vendor)
+            add(f"{vendor} press release")
+
+    try:
+        customers = load_customers()
+    except Exception:
+        customers = []
+    for c in customers:
+        name = (c.get("name") or "").strip()
+        if name:
+            add(name)
+            add(f"{name} launch")
+
+    return queries
+
+
 def all_feed_urls() -> list[dict]:
     """Return list of {name, url, bucket} entries for every feed to fetch."""
     feeds: list[dict] = []
+    seen_search_queries: set[tuple[str, str]] = set()
+
+    def add_search_feeds(query: str, bucket: str | None = None, include_bing: bool = True) -> None:
+        q = (query or "").strip()
+        if not q:
+            return
+        key_g = ("google", q.lower())
+        if key_g not in seen_search_queries:
+            feeds.append({"name": f"Google: {q}", "url": google_news_rss(q), "bucket": bucket})
+            seen_search_queries.add(key_g)
+        if include_bing:
+            key_b = ("bing", q.lower())
+            if key_b not in seen_search_queries:
+                feeds.append({"name": f"Bing: {q}", "url": bing_news_rss(q), "bucket": bucket})
+                seen_search_queries.add(key_b)
+
     for f in RSS_FEEDS:
         feeds.append({**f, "bucket": None})  # bucket inferred by classifier
     for bucket, queries in QUERIES.items():
         for q in queries:
-            feeds.append({"name": f"Google: {q}", "url": google_news_rss(q), "bucket": bucket})
-            feeds.append({"name": f"Bing: {q}",   "url": bing_news_rss(q),   "bucket": bucket})
+            add_search_feeds(q, bucket=bucket, include_bing=True)
     for q in VENDOR_QUERIES:
-        feeds.append({"name": f"Google: {q}", "url": google_news_rss(q), "bucket": None})
-        feeds.append({"name": f"Bing: {q}",   "url": bing_news_rss(q),   "bucket": None})
+        add_search_feeds(q, bucket=None, include_bing=True)
     for q in VENDOR_PRESS_SITES:
-        feeds.append({"name": f"Google: {q}", "url": google_news_rss(q), "bucket": None})
+        add_search_feeds(q, bucket=None, include_bing=False)
     for q in TRADE_PRESS_QUERIES:
-        feeds.append({"name": f"Google: {q}", "url": google_news_rss(q), "bucket": None})
-        feeds.append({"name": f"Bing: {q}",   "url": bing_news_rss(q),   "bucket": None})
-    # LinkedIn company pages (via RSSHub) and X timelines (via nitter)
-    for h in SOCIAL_HANDLES:
-        vendor = h["vendor"]
-        feeds.append({
-            "name": f"LinkedIn: {vendor}",
-            "url": rsshub_linkedin_rss(h["linkedin"]),
-            "bucket": None,
-        })
-        if h.get("x"):
+        add_search_feeds(q, bucket=None, include_bing=True)
+    # Broad company-name news (no tech filter): competitors + customers.
+    for q in dynamic_entity_queries():
+        add_search_feeds(q, bucket=None, include_bing=True)
+    for q in dynamic_site_queries():
+        add_search_feeds(q, bucket=None, include_bing=True)
+    # LinkedIn company pages (via RSSHub) and X timelines (via nitter).
+    # Disabled by default because public instances often rate-limit/403.
+    # Enable explicitly with ENABLE_SOCIAL_FEEDS=1.
+    if os.getenv("ENABLE_SOCIAL_FEEDS", "0").strip().lower() in ("1", "true", "yes", "on"):
+        for h in SOCIAL_HANDLES:
+            vendor = h["vendor"]
             feeds.append({
-                "name": f"X: {vendor}",
-                "url": nitter_rss(h["x"]),
+                "name": f"LinkedIn: {vendor}",
+                "url": rsshub_linkedin_rss(h["linkedin"]),
                 "bucket": None,
             })
+            if h.get("x"):
+                feeds.append({
+                    "name": f"X: {vendor}",
+                    "url": nitter_rss(h["x"]),
+                    "bucket": None,
+                })
     return feeds
