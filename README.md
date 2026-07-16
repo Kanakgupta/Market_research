@@ -56,3 +56,30 @@ output/           # Generated HTML reports (gitignored)
 ## Extending
 
 Add new RSS feeds to `RSS_FEEDS` in [src/bluetooth_news/sources.py](src/bluetooth_news/sources.py). Add new search terms to `SEARCH_QUERIES` to expand Google/Bing News coverage.
+
+## Password-Protected GitHub Pages
+
+This repository includes a GitHub Actions workflow that encrypts every HTML file in `docs/` using Staticrypt and deploys only the encrypted output to GitHub Pages.
+
+Workflow file:
+
+- `.github/workflows/pages-password-protected.yml`
+
+Required one-time setup:
+
+1. In GitHub, open repository **Settings -> Secrets and variables -> Actions**.
+2. Create a repository secret named `STATIC_SITE_PASSWORD`.
+3. Set its value to your unlock password (for your current plan: `AIROC(TM)`).
+4. In **Settings -> Pages**, set **Source** to **GitHub Actions**.
+
+How deploy works:
+
+1. Push changes to `main` (or run the workflow manually).
+2. Workflow copies `docs/` to a deploy folder.
+3. Workflow encrypts all `*.html` pages with the secret password.
+4. GitHub Pages serves only encrypted pages.
+
+Important note:
+
+- This protects the GitHub Pages URL with a password prompt.
+- If plaintext `docs/` files remain in this public repository, they are still visible via GitHub repository browsing.
