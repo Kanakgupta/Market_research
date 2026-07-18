@@ -56,6 +56,7 @@ a:hover { text-decoration:underline; }
 .chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
 .chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
 .chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
 .source { font-weight:600; opacity:.75; }
 .dot { opacity:.5; }
 .title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
@@ -118,6 +119,7 @@ a:hover { text-decoration:underline; }
 .news-class-title.customers { background:#fdf2f8; color:#9d174d; }
 .news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
 .news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
 .news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
 .news-side-item:hover { background:var(--hover); color:var(--accent); }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
@@ -159,7 +161,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-17 07:23 PDT</div>
+  <div class="meta-info">Updated 2026-07-18 06:06 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -187,20 +189,41 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">0 articles</span>
+    <span class="pill">1 articles</span>
     <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-17 07:23">2026-07-17 07:23 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-18 06:06">2026-07-18 06:06 PDT</span></span>
   </div>
 </section>
 
 
 
-<div class="empty">No articles. Try widening <code>--max-age-days</code>.</div>
+
 
 <div class="grid" id="grid">
+  
+  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="thread">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Thread spec</span>
+        <span class="chip chip-tech">Thread</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Thread standard — spec &amp; roadmap (IEEE / Thread Group / CSA)</a></h2>
+      <p class="summary">Current: Thread 1.4 (last publicly verified) · Matter 1.6 (Jun 2026). Next: Matter 1.7 (scope not yet public); Thread next version unverified. Roadmap: Matter 1.6 — Joint Fabric for cross-ecosystem device sharing (per CSA Unify 2026) · Matt…</p>
+      <div class="meta-row">
+        <span class="source">IEEE / Thread Group / CSA</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T00:00:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
   
 </div>
 
@@ -233,11 +256,13 @@ function applyFilters(){
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
     const vendor = card.dataset.vendor || '';
     const customer = card.dataset.customer || '';
+    const standard = card.dataset.standard || '';
     const techOk = techFilter === 'all' || buckets.includes(techFilter);
     let sideOk = true;
     if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    else if (sideFilter.type === 'standard') sideOk = sideFilter.value ? (standard === sideFilter.value) : (standard !== '');
     const show = techOk && sideOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
@@ -246,9 +271,10 @@ function applyFilters(){
   if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
 }
 
-function filterByTech(bucket) {
+function filterByTech(bucket, el) {
   document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
-  if (window.event && window.event.target) window.event.target.classList.add('active');
+  const target = el || (window.event && window.event.target && window.event.target.closest('.tech-tab'));
+  if (target) target.classList.add('active');
   techFilter = bucket;
   applyFilters();
 }
@@ -283,6 +309,7 @@ function escapeHtml(s){
 function cardHtml(a){
   const buckets = a.buckets || [];
   const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const stdChip = a.standard ? '<span class="chip chip-std">' + escapeHtml((BUCKET_LABELS[a.standard] || a.standard)) + ' spec</span>' : '';
   const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
   const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
   const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
@@ -291,10 +318,10 @@ function cardHtml(a){
   if (summary.length > 240) summary = summary.slice(0, 240) + '…';
   const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
   const timeHtml = a.published ? '<span class="dot">·</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
-  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '" data-standard="' + escapeHtml(a.standard || '') + '">' +
     '<div class="thumb">' + thumb + '</div>' +
     '<div class="body">' +
-      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<div class="meta-row">' + stdChip + bucketChips + vendorChip + customerChip + appChip + '</div>' +
       '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
       summaryHtml +
       '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
@@ -307,7 +334,7 @@ async function loadNews(){
   if (!grid) return;
   if (!isLocalBackend()) return;
   try {
-    const res = await fetch('/api/news?limit=50');
+    const res = await fetch('/api/news?limit=2000');
     if (!res.ok) return;
     const data = await res.json();
     if (!Array.isArray(data) || !data.length) return;

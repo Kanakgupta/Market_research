@@ -52,6 +52,7 @@ a:hover { text-decoration:underline; }
 .chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
 .chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
 .chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
 .source { font-weight:600; opacity:.75; }
 .dot { opacity:.5; }
 .title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
@@ -114,6 +115,7 @@ a:hover { text-decoration:underline; }
 .news-class-title.customers { background:#fdf2f8; color:#9d174d; }
 .news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
 .news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
 .news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
 .news-side-item:hover { background:var(--hover); color:var(--accent); }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
@@ -146,7 +148,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-17 07:23 PDT</div>
+  <div class="meta-info">Updated 2026-07-18 06:06 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -166,34 +168,12 @@ a:hover { text-decoration:underline; }
 <div class="repo-grid">
 
 <div class="r-card">
-  <h3><a href="https://github.com/espressif/esp-idf" target="_blank" rel="noopener">ESP-IDF</a></h3>
-  <div class="meta">Espressif Wi-Fi/BT/Thread SDK</div>
-  <p style="margin:8px 0;">
-    <strong>100</strong> commits 30d ·
-    <strong>1639</strong> open issues
-    · <strong>18549</strong> ★
-  </p>
-  
-  <div class="src">Recent releases:</div>
-  <ul>
-  
-    <li><a href="https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1" target="_blank" rel="noopener">v6.1-beta1</a> <span class="meta">2026-06-29</span></li>
-  
-    <li><a href="https://github.com/espressif/esp-idf/releases/tag/v6.0.2" target="_blank" rel="noopener">v6.0.2</a> <span class="meta">2026-06-29</span></li>
-  
-    <li><a href="https://github.com/espressif/esp-idf/releases/tag/v5.2.7" target="_blank" rel="noopener">v5.2.7</a> <span class="meta">2026-05-19</span></li>
-  
-  </ul>
-  
-</div>
-
-<div class="r-card">
   <h3><a href="https://github.com/zephyrproject-rtos/zephyr" target="_blank" rel="noopener">Zephyr Bluetooth</a></h3>
   <div class="meta">BLE host + controller (RTOS)</div>
   <p style="margin:8px 0;">
     <strong>100</strong> commits 30d ·
-    <strong>3781</strong> open issues
-    · <strong>15923</strong> ★
+    <strong>3742</strong> open issues
+    · <strong>15929</strong> ★
   </p>
   
   <div class="src">Recent releases:</div>
@@ -210,12 +190,45 @@ a:hover { text-decoration:underline; }
 </div>
 
 <div class="r-card">
+  <h3><a href="https://github.com/espressif/esp-idf" target="_blank" rel="noopener">ESP-IDF</a></h3>
+  <div class="meta">Espressif Wi-Fi/BT/Thread SDK</div>
+  <p style="margin:8px 0;">
+    <strong>100</strong> commits 30d ·
+    <strong>1639</strong> open issues
+    · <strong>18555</strong> ★
+  </p>
+  
+  <div class="src">Recent releases:</div>
+  <ul>
+  
+    <li><a href="https://github.com/espressif/esp-idf/releases/tag/v5.5.5" target="_blank" rel="noopener">v5.5.5</a> <span class="meta">2026-07-17</span></li>
+  
+    <li><a href="https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1" target="_blank" rel="noopener">v6.1-beta1</a> <span class="meta">2026-06-29</span></li>
+  
+    <li><a href="https://github.com/espressif/esp-idf/releases/tag/v6.0.2" target="_blank" rel="noopener">v6.0.2</a> <span class="meta">2026-06-29</span></li>
+  
+  </ul>
+  
+</div>
+
+<div class="r-card">
+  <h3><a href="https://github.com/torvalds/linux" target="_blank" rel="noopener">Linux mac80211</a></h3>
+  <div class="meta">Linux Wi-Fi (kernel)</div>
+  <p style="margin:8px 0;">
+    <strong>100</strong> commits 30d ·
+    <strong>3</strong> open issues
+    · <strong>239696</strong> ★
+  </p>
+  
+</div>
+
+<div class="r-card">
   <h3><a href="https://github.com/project-chip/connectedhomeip" target="_blank" rel="noopener">Matter SDK</a></h3>
   <div class="meta">Matter (connectedhomeip)</div>
   <p style="margin:8px 0;">
     <strong>100</strong> commits 30d ·
-    <strong>2725</strong> open issues
-    · <strong>8825</strong> ★
+    <strong>2714</strong> open issues
+    · <strong>8826</strong> ★
   </p>
   
   <div class="src">Recent releases:</div>
@@ -232,23 +245,12 @@ a:hover { text-decoration:underline; }
 </div>
 
 <div class="r-card">
-  <h3><a href="https://github.com/torvalds/linux" target="_blank" rel="noopener">Linux mac80211</a></h3>
-  <div class="meta">Linux Wi-Fi (kernel)</div>
-  <p style="margin:8px 0;">
-    <strong>100</strong> commits 30d ·
-    <strong>3</strong> open issues
-    · <strong>239612</strong> ★
-  </p>
-  
-</div>
-
-<div class="r-card">
   <h3><a href="https://github.com/openthread/openthread" target="_blank" rel="noopener">OpenThread</a></h3>
   <div class="meta">Google Thread implementation</div>
   <p style="margin:8px 0;">
-    <strong>71</strong> commits 30d ·
-    <strong>160</strong> open issues
-    · <strong>3985</strong> ★
+    <strong>72</strong> commits 30d ·
+    <strong>162</strong> open issues
+    · <strong>3987</strong> ★
   </p>
   
   <div class="src">Recent releases:</div>
@@ -269,8 +271,8 @@ a:hover { text-decoration:underline; }
   <div class="meta">Linux BT stack</div>
   <p style="margin:8px 0;">
     <strong>37</strong> commits 30d ·
-    <strong>111</strong> open issues
-    · <strong>1101</strong> ★
+    <strong>109</strong> open issues
+    · <strong>1102</strong> ★
   </p>
   
   <div class="src">Recent releases:</div>
@@ -290,9 +292,9 @@ a:hover { text-decoration:underline; }
   <h3><a href="https://github.com/Koenkk/zigbee2mqtt" target="_blank" rel="noopener">Zigbee2MQTT</a></h3>
   <div class="meta">Zigbee gateway</div>
   <p style="margin:8px 0;">
-    <strong>32</strong> commits 30d ·
+    <strong>30</strong> commits 30d ·
     <strong>463</strong> open issues
-    · <strong>15310</strong> ★
+    · <strong>15314</strong> ★
   </p>
   
   <div class="src">Recent releases:</div>
@@ -334,4 +336,4 @@ a:hover { text-decoration:underline; }
 </section>
 
 
-</main><footer class="footer"><div class="wrap">IoT Wireless Intel · 2026-07-17 07:23 PDT</div></footer></body></html>
+</main><footer class="footer"><div class="wrap">IoT Wireless Intel · 2026-07-18 06:06 PDT</div></footer></body></html>

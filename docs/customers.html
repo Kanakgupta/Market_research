@@ -56,6 +56,7 @@ a:hover { text-decoration:underline; }
 .chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
 .chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
 .chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
 .source { font-weight:600; opacity:.75; }
 .dot { opacity:.5; }
 .title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
@@ -118,6 +119,7 @@ a:hover { text-decoration:underline; }
 .news-class-title.customers { background:#fdf2f8; color:#9d174d; }
 .news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
 .news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
 .news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
 .news-side-item:hover { background:var(--hover); color:var(--accent); }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
@@ -243,7 +245,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-17 07:23 PDT</div>
+  <div class="meta-info">Updated 2026-07-18 06:06 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -264,8 +266,8 @@ a:hover { text-decoration:underline; }
 <!-- Stats bar -->
 <div class="oc-stats-bar">
   <div class="oc-stat-pill"><div class="v">13</div><div class="l">OEMs tracked</div></div>
-  <div class="oc-stat-pill"><div class="v">884</div><div class="l">News (all time)</div></div>
-  <div class="oc-stat-pill"><div class="v">345</div><div class="l">Products tracked</div></div>
+  <div class="oc-stat-pill"><div class="v">75</div><div class="l">News (all time)</div></div>
+  <div class="oc-stat-pill"><div class="v">348</div><div class="l">Products tracked</div></div>
 </div>
 
 <!-- Main layout -->
@@ -282,7 +284,7 @@ a:hover { text-decoration:underline; }
         <strong>Google</strong>
         <div class="ci-tab-region">Big Tech / Smart Home</div>
       </div>
-      <span class="ci-news-badge">128</span>
+      <span class="ci-news-badge">13</span>
     </button>
     
     
@@ -292,7 +294,7 @@ a:hover { text-decoration:underline; }
         <strong>Amazon</strong>
         <div class="ci-tab-region">Big Tech / Smart Home</div>
       </div>
-      <span class="ci-news-badge">107</span>
+      <span class="ci-news-badge">24</span>
     </button>
     
     
@@ -302,7 +304,7 @@ a:hover { text-decoration:underline; }
         <strong>Apple</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">133</span>
+      <span class="ci-news-badge">18</span>
     </button>
     
     
@@ -312,7 +314,7 @@ a:hover { text-decoration:underline; }
         <strong>Microsoft</strong>
         <div class="ci-tab-region">Big Tech / PC + Enterprise</div>
       </div>
-      <span class="ci-news-badge">65</span>
+      <span class="ci-news-badge">12</span>
     </button>
     
     
@@ -322,7 +324,7 @@ a:hover { text-decoration:underline; }
         <strong>Meta</strong>
         <div class="ci-tab-region">AR/VR/XR</div>
       </div>
-      <span class="ci-news-badge">75</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -332,7 +334,7 @@ a:hover { text-decoration:underline; }
         <strong>Samsung</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">93</span>
+      <span class="ci-news-badge">2</span>
     </button>
     
     
@@ -342,7 +344,7 @@ a:hover { text-decoration:underline; }
         <strong>Sony</strong>
         <div class="ci-tab-region">Audio / Gaming</div>
       </div>
-      <span class="ci-news-badge">55</span>
+      <span class="ci-news-badge">2</span>
     </button>
     
     
@@ -352,7 +354,7 @@ a:hover { text-decoration:underline; }
         <strong>Bose</strong>
         <div class="ci-tab-region">Audio</div>
       </div>
-      <span class="ci-news-badge">26</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -362,7 +364,7 @@ a:hover { text-decoration:underline; }
         <strong>Sonos</strong>
         <div class="ci-tab-region">Audio / Smart Home</div>
       </div>
-      <span class="ci-news-badge">8</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -372,7 +374,7 @@ a:hover { text-decoration:underline; }
         <strong>Arlo</strong>
         <div class="ci-tab-region">Smart Home / Security</div>
       </div>
-      <span class="ci-news-badge">4</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -382,7 +384,7 @@ a:hover { text-decoration:underline; }
         <strong>Garmin</strong>
         <div class="ci-tab-region">Wearable / Fitness</div>
       </div>
-      <span class="ci-news-badge">31</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -392,7 +394,7 @@ a:hover { text-decoration:underline; }
         <strong>Tesla</strong>
         <div class="ci-tab-region">Automotive</div>
       </div>
-      <span class="ci-news-badge">78</span>
+      <span class="ci-news-badge">1</span>
     </button>
     
     
@@ -402,7 +404,7 @@ a:hover { text-decoration:underline; }
         <strong>BMW</strong>
         <div class="ci-tab-region">Automotive</div>
       </div>
-      <span class="ci-news-badge">67</span>
+      <span class="ci-news-badge">1</span>
     </button>
     
   </aside>
@@ -428,7 +430,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">128</div>
+          <div class="ci-nc-num">13</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -779,6 +781,16 @@ a:hover { text-decoration:underline; }
           </div>
           
           <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://arstechnica.com/space/2026/07/google-backed-satellites-for-wildfire-detection-launch-as-smoke-chokes-us-canada/" target="_blank" rel="noopener" class="ci-prod-link">FireSat program satellites &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Satellite communication</div>
+            <div class="ci-product-summary">The first three operational satellites in the Google-backed FireSat program successfully launched into orbit. Designed for wildfire detection, they provide crucial monitoring capabilities to combat the spread of fires.</div>
+          </div>
+          
+          <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
               <span class="ci-prod-link" title="Direct source URL not available">Pixel 10 / 10 Pro / 10 Pro XL / 10 Pro Fold</span>
@@ -861,7 +873,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">107</div>
+          <div class="ci-nc-num">24</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -1542,6 +1554,16 @@ a:hover { text-decoration:underline; }
           </div>
           
           <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.cnx-software.com/2026/07/09/makerfabs-mauwb-for-home-assistant-an-esp32-s3-uwb-module-with-poe-and-enclosure/" target="_blank" rel="noopener" class="ci-prod-link">Makerfabs MaUWB for Home Assistant &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">UWB</div>
+            <div class="ci-product-summary">This ESP32-S3-based module offers Ultra-Wideband (UWB) connectivity for indoor positioning and RTLS. It integrates with Home Assistant and includes PoE and an enclosure for easy deployment.</div>
+          </div>
+          
+          <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
               <span class="ci-prod-link" title="Direct source URL not available">Echo Show 10 (Refresh)</span>
@@ -1634,7 +1656,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">133</div>
+          <div class="ci-nc-num">18</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -2215,6 +2237,16 @@ a:hover { text-decoration:underline; }
           </div>
           
           <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.zdnet.com/article/iphone-enhanced-bluetooth-tracking-with-ios-27-theres-a-catch/" target="_blank" rel="noopener" class="ci-prod-link">iPhone Channel Sounding &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Bluetooth</div>
+            <div class="ci-product-summary">iPhones will support Bluetooth Channel Sounding with iOS 27. This technology promises enhanced, fine-ranging capabilities for the Find My device feature, improving location accuracy and security.</div>
+          </div>
+          
+          <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
               <a href="https://www.macrumors.com/guide/airtags-2/" target="_blank" rel="noopener" class="ci-prod-link">AirTag 2 (Precision Tracker) &#x2197;</a>
@@ -2307,7 +2339,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">65</div>
+          <div class="ci-nc-num">12</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -2490,7 +2522,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">75</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -2623,7 +2655,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">93</div>
+          <div class="ci-nc-num">2</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -3466,7 +3498,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">55</div>
+          <div class="ci-nc-num">2</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -3739,7 +3771,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">26</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -3932,7 +3964,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">8</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4025,7 +4057,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">4</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4088,7 +4120,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">31</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4171,7 +4203,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">78</div>
+          <div class="ci-nc-num">1</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4244,7 +4276,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">67</div>
+          <div class="ci-nc-num">1</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4294,7 +4326,7 @@ a:hover { text-decoration:underline; }
 </div><!-- /ci-layout -->
 
 </main>
-<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-07-17 07:23</div></footer>
+<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-07-18 06:06</div></footer>
 <script>
 function timeAgo(iso){
   var s=iso; if(s&&s.length===10)s+='T00:00:00Z';

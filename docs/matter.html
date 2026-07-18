@@ -56,6 +56,7 @@ a:hover { text-decoration:underline; }
 .chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
 .chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
 .chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
 .source { font-weight:600; opacity:.75; }
 .dot { opacity:.5; }
 .title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
@@ -118,6 +119,7 @@ a:hover { text-decoration:underline; }
 .news-class-title.customers { background:#fdf2f8; color:#9d174d; }
 .news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
 .news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
 .news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
 .news-side-item:hover { background:var(--hover); color:var(--accent); }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
@@ -159,7 +161,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-17 07:23 PDT</div>
+  <div class="meta-info">Updated 2026-07-18 06:06 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -187,20 +189,337 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">0 articles</span>
-    <span class="pill">0 vendors</span>
+    <span class="pill">14 articles</span>
+    <span class="pill">3 vendors</span>
     <span class="pill">33 customers</span>
-    <span class="pill">7 applications</span>
+    <span class="pill">8 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-17 07:23">2026-07-17 07:23 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-18 06:06">2026-07-18 06:06 PDT</span></span>
   </div>
 </section>
 
 
 
-<div class="empty">No articles. Try widening <code>--max-age-days</code>.</div>
+
 
 <div class="grid" id="grid">
+  
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="" data-standard="matter">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Matter spec</span>
+        <span class="chip chip-tech">Matter</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Matter standard — spec &amp; roadmap (IEEE / Thread Group / CSA)</a></h2>
+      <p class="summary">Current: Thread 1.4 (last publicly verified) · Matter 1.6 (Jun 2026). Next: Matter 1.7 (scope not yet public); Thread next version unverified. Roadmap: Matter 1.6 — Joint Fabric for cross-ecosystem device sharing (per CSA Unify 2026) · Matt…</p>
+      <div class="meta-row">
+        <span class="source">IEEE / Thread Group / CSA</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T00:00:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter,aliro,bluetooth,wifi" data-vendor="Espressif" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/ESP32-C-ESP32-H21-Aliro-smart-lock-720x429.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/17/espressif-releases-sdk-for-aliro-smart-door-locks-based-on-esp32-c-or-esp32-h-socs/" target="_blank" rel="noopener">Espressif releases SDK for Aliro smart door locks based on ESP32-C or ESP32-H SoCs</a></h2>
+      <p class="summary">Espressif Systems has just released the SDK for Aliro, designed for smart Matter door locks and other access control solutions built around ESP32-C (WiFi) or ESP32-H (Thread) microcontroller and third-party NFC chips. We recently wrote abou…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-17T10:19:22+00:00">2026-07-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="ieee15_4,matter" data-vendor="" data-customer="" data-standard="ieee15_4">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">802.15.4 spec</span>
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Matter</span>
+        
+        
+        <span class="chip chip-app">Energy/Utility</span>
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/newsroom/edf-on-zigbee-4-0/" target="_blank" rel="noopener">EDF on Zigbee 4.0</a></h2>
+      <p class="summary">How is an electricity utility putting Zigbee 4.0 to work? In this interview, Vincent, an engineer at EDF&amp;#8217;s R&amp;#38;D Centre, shares how the latest evolution of the standard is shaping&amp;#8230;</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-16T20:20:13+00:00">2026-07-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="" data-standard="">
+    <div class="thumb">
+      <img src="https://spectrum.ieee.org/media-library/an-illustration-of-stylized-people-wearing-business-casual-clothing.jpg?id=59104110&amp;width=980" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://spectrum.ieee.org/career-risks" target="_blank" rel="noopener">When Career Risks Are Worth Taking</a></h2>
+      <p class="summary">This article is crossposted from IEEE Spectrum’s careers newsletter. Sign up now to get insider tips, expert advice, and practical strategies, written in partnership with tech career development company Parsity and delivered to your inbox f…</p>
+      <div class="meta-row">
+        <span class="source">IEEE Spectrum</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-15T19:52:41+00:00">2026-07-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter" data-vendor="NXP" data-customer="" data-standard="matter">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Matter spec</span>
+        <span class="chip chip-tech">Matter</span>
+        <span class="chip chip-vendor">NXP</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://csa-iot.org/newsroom/nxp-semiconductor-on-matter/" target="_blank" rel="noopener">NXP Semiconductor on Matter</a></h2>
+      <p class="summary">“Matter is a crucial piece that has been missing in the market because of the interoperability, the freedom of choice, the simplicity, the reliability and the security that Matter represents&amp;#8230;</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-15T17:27:27+00:00">2026-07-15</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter,wifi" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://spectrum.ieee.org/media-library/two-young-girls-stand-in-front-of-a-glass-case-containing-2000-era-cellphones-behind-them-is-a-display-that-says-nokia.jpg?id=67118775&amp;width=980" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://spectrum.ieee.org/nokia-phones-history" target="_blank" rel="noopener">Nokia’s 14 Years of Mobile-Phone Supremacy Ended in an Afternoon</a></h2>
+      <p class="summary">In 2005, Nokia sold its billionth mobile phone, a budget-friendly device that went to a customer in Nigeria. By then, the company, based in Espoo, Finland, was making one of every three cellphones globally.But just nine years later, the mob…</p>
+      <div class="meta-row">
+        <span class="source">IEEE Spectrum</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-13T13:00:01+00:00">2026-07-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="Google" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Google</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.youtube.com/watch?v=kLkgn9pl-tg" target="_blank" rel="noopener">Jennifer Pattison Tuohy of The Verge talks about Matter 1.6</a></h2>
+      <p class="summary">About
+Press
+Copyright
+Contact us
+Creators
+Advertise
+Developers
+Terms
+Privacy
+Policy &amp; Safety
+How YouTube works
+Test new features
+NFL Sunday Ticket
+© 2026 Google LLC</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T19:00:06+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="ieee15_4,matter" data-vendor="" data-customer="" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Matter</span>
+        
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.mwrf.com/technologies/communications/wireless/article/55389134/connectivity-standards-alliance-zigbees-next-phase-security-range-and-sub-ghz-expansion" target="_blank" rel="noopener">Zigbee’s Next Phase: Security, Range, and Sub-GHz Expansion</a></h2>
+      <p class="summary">Zigbee’s Next Phase: Security, Range, and Sub-GHz Expansion
+What you’ll learn:
+- Zigbee 3.0 remains highly popular as a mature LPWAN standard.
+- New product development is increasingly focused on the latest Zigbee 4.0 release.
+- The Suzi su…</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:26:17+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.silabs.com/blog/matter-1-6-spec-smarter-thermostat-control-and-more" target="_blank" rel="noopener">Matter 1.6 Delivers Smarter Thermostat Experiences and Stronger Device Intelligence</a></h2>
+      <p class="summary">Matter 1.6 Delivers Smarter Thermostat Experiences and Stronger Device Intelligence
+The Connectivity Standards Alliance (CSA) has released Matter 1.6, marking another important step in the evolution of interoperable smart home experiences. …</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:25:47+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="aliro,matter" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Wearable</span>
+      </div>
+      <h2 class="title"><a href="https://www.securityindustry.org/2026/06/30/going-inside-aliro-a-qa-with-connectivity-standards-alliance-president-ceo-tobin-richardson/" target="_blank" rel="noopener">Going Inside Aliro: A Q&amp;A With Connectivity Standards Alliance President &amp; CEO Tobin Richardson</a></h2>
+      <p class="summary">Going Inside Aliro: A Q&amp;A With Connectivity Standards Alliance President &amp; CEO Tobin Richardson
+Following a recent visit to the Security Industry Association (SIA) offices by Tobin Richardson, president and CEO of the Connectivity Standards…</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:25:25+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter,ieee15_4" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">802.15.4</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/home-and-office/smart-home/thread-vs-zigbee-vs-matter/" target="_blank" rel="noopener">After testing Thread, Zigbee, and Matter, here’s how I’m building my smart home differently</a></h2>
+      <p class="summary">After testing Thread, Zigbee, and Matter, here&#39;s how I&#39;m building my smart home differently
+Follow ZDNET: Add us as a preferred source on Google.
+If you&#39;re a smart home user or on the path to becoming one, you&#39;ve probably heard the buzzword…</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:24:59+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter" data-vendor="Silicon Labs" data-customer="" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="http://www.silabs.com/blog/takeaways-from-unify-2026" target="_blank" rel="noopener">Takeaways From Unify 2026</a></h2>
+      <p class="summary">Takeaways From Unify 2026
+This month, I had the opportunity to attend Unify 2026, hosted by the Connectivity Standards Alliance (CSA). As a senior campaign manager on the Global Marketing team, I work closely with Product Marketing to trans…</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:23:25+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter" data-vendor="Silicon Labs" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span>
+        <span class="chip chip-vendor">Silicon Labs</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://appleinsider.com/articles/26/06/29/how-thread-is-fixing-smart-home-networks-on-smart-home-insider" target="_blank" rel="noopener">How Thread is fixing smart home networks on Smart Home Insider</a></h2>
+      <p class="summary">This week on Smart Home Insider, Ann Olivo from the Thread Group joins to talk about the future of the wireless standard and how it&#39;s improving smart home networks.
+Joining as this week&#39;s guest host is Ann Olivo. Olivo serves as the Corpora…</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:22:36+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.theverge.com/tech/958008/matter-unify-conference-csa-apple-google-amazon-samsung-smart-home-interoperability" target="_blank" rel="noopener">Inside the room where the smart home industry is still betting on Matter</a></h2>
+      <p class="summary">Four years ago, overlooking a canal in Amsterdam, the smart home industry collectively launched Matter, the one interoperability standard to rule them all. Heralded as the solution to the industry’s struggles, Matter was built on open stand…</p>
+      <div class="meta-row">
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:21:25+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
   
 </div>
 
@@ -233,11 +552,13 @@ function applyFilters(){
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
     const vendor = card.dataset.vendor || '';
     const customer = card.dataset.customer || '';
+    const standard = card.dataset.standard || '';
     const techOk = techFilter === 'all' || buckets.includes(techFilter);
     let sideOk = true;
     if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    else if (sideFilter.type === 'standard') sideOk = sideFilter.value ? (standard === sideFilter.value) : (standard !== '');
     const show = techOk && sideOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
@@ -246,9 +567,10 @@ function applyFilters(){
   if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
 }
 
-function filterByTech(bucket) {
+function filterByTech(bucket, el) {
   document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
-  if (window.event && window.event.target) window.event.target.classList.add('active');
+  const target = el || (window.event && window.event.target && window.event.target.closest('.tech-tab'));
+  if (target) target.classList.add('active');
   techFilter = bucket;
   applyFilters();
 }
@@ -283,6 +605,7 @@ function escapeHtml(s){
 function cardHtml(a){
   const buckets = a.buckets || [];
   const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const stdChip = a.standard ? '<span class="chip chip-std">' + escapeHtml((BUCKET_LABELS[a.standard] || a.standard)) + ' spec</span>' : '';
   const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
   const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
   const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
@@ -291,10 +614,10 @@ function cardHtml(a){
   if (summary.length > 240) summary = summary.slice(0, 240) + '…';
   const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
   const timeHtml = a.published ? '<span class="dot">·</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
-  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '" data-standard="' + escapeHtml(a.standard || '') + '">' +
     '<div class="thumb">' + thumb + '</div>' +
     '<div class="body">' +
-      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<div class="meta-row">' + stdChip + bucketChips + vendorChip + customerChip + appChip + '</div>' +
       '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
       summaryHtml +
       '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
@@ -307,7 +630,7 @@ async function loadNews(){
   if (!grid) return;
   if (!isLocalBackend()) return;
   try {
-    const res = await fetch('/api/news?limit=50');
+    const res = await fetch('/api/news?limit=2000');
     if (!res.ok) return;
     const data = await res.json();
     if (!Array.isArray(data) || !data.length) return;

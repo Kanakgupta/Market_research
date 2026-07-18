@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T14:23:10Z",
+  "generated_at": "2026-07-18T13:06:29Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -438,6 +438,11 @@
           "url": "https://www.kavout.com/market-lens/how-did-nxp-semiconductors-perform-in-q4-2025"
         },
         {
+          "title": "NXP Semiconductor on Matter",
+          "date": "Jul 2026",
+          "url": "https://csa-iot.org/newsroom/nxp-semiconductor-on-matter/"
+        },
+        {
           "title": "NXP\u2019s Latest Single-Chip Radar Solution Brings On-Sensor L2/L2+ ADAS Processing to Mainstream Vehicle Platforms",
           "date": "Jun 2026",
           "url": "https://www.nxp.com/company/about-nxp/newsroom/NW-NXP-LATEST-SINGLE-CHIP-RADAR-SENSOR-L2-ADAS"
@@ -451,11 +456,6 @@
           "title": "NXP Introduces IW610: An IoT Optimized Wi-Fi 6 Tri-Radio Solution",
           "date": "Jun 2026",
           "url": "https://www.nxp.com/company/about-nxp/smarter-world-videos/IW610-IOT-OPT-WIFI6-TRI-RADIO"
-        },
-        {
-          "title": "Quectel Launches Multi-Protocol NXP-Based Module for Wi-Fi 6, Thread and Zigbee IoT Devices",
-          "date": "Jun 2026",
-          "url": "https://iotbusinessnews.com/2026/06/26/quectel-adds-multi-protocol-nxp-based-module-for-wi-fi-6-thread-and-zigbee-iot-devices/"
         }
       ],
       "events": [
@@ -1550,9 +1550,9 @@
           "url": "https://www.notebookcheck.net/MediaTek-Dimensity-7450X-Processor-Benchmarks-and-Specs.1308574.0.html"
         },
         {
-          "title": "MediaTek Wins Two COMPUTEX Best Choice Awards for Wi-Fi Innovation",
-          "date": "Jun 2026",
-          "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-wins-two-computex-best-choice-awards-for-wi-fi-innovation"
+          "title": "Bigme Hibreak Dual 2 Smartphone Features MediaTek Dimensity 8300 Processor",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/15/bigme-hibreak-dual-2-an-android-16-smartphone-with-6-13-inch-80fps-e-ink-and-5-inch-lcd-display/"
         }
       ],
       "events": [
@@ -3709,19 +3709,18 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 34,
-    "Qualcomm": 26,
-    "Microchip": 12,
-    "Onsemi": 11,
-    "STMicro": 9,
-    "MediaTek": 8,
-    "NXP": 5,
-    "TI": 4,
-    "Espressif": 3,
-    "Infineon": 3,
-    "Renesas": 2,
-    "Telink": 1,
-    "Synaptics": 1
+    "Espressif": 8,
+    "Microchip": 4,
+    "MediaTek": 3,
+    "Silicon Labs": 2,
+    "Onsemi": 1,
+    "Infineon": 1,
+    "NXP": 1,
+    "Qorvo": 1,
+    "Nordic": 1,
+    "STMicro": 1,
+    "TI": 1,
+    "u-blox": 1
   },
   "standards_in_flight": [
     {
@@ -3794,42 +3793,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1639,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        },
-        {
-          "tag": "v5.2.7",
-          "name": "ESP-IDF Release v5.2.7",
-          "published_at": "2026-05-19T11:17:54Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.7"
-        }
-      ],
-      "stars": 18549,
-      "pushed_at": "2026-07-17T13:15:27Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3838,7 +3801,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3781,
+      "issues_open": 3742,
       "prs_open": 0,
       "releases": [
         {
@@ -3860,8 +3823,59 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15923,
-      "pushed_at": "2026-07-17T08:15:23Z"
+      "stars": 15929,
+      "pushed_at": "2026-07-17T23:14:53Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1639,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18555,
+      "pushed_at": "2026-07-18T05:34:21Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239696,
+      "pushed_at": "2026-07-18T04:53:39Z"
     },
     {
       "name": "Matter SDK",
@@ -3872,7 +3886,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2725,
+      "issues_open": 2714,
       "prs_open": 0,
       "releases": [
         {
@@ -3894,23 +3908,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8825,
-      "pushed_at": "2026-07-17T13:55:33Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 239612,
-      "pushed_at": "2026-07-16T23:58:04Z"
+      "stars": 8826,
+      "pushed_at": "2026-07-18T12:21:58Z"
     },
     {
       "name": "OpenThread",
@@ -3920,8 +3919,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 71,
-      "issues_open": 160,
+      "commits_30d": 72,
+      "issues_open": 162,
       "prs_open": 0,
       "releases": [
         {
@@ -3943,8 +3942,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
         }
       ],
-      "stars": 3985,
-      "pushed_at": "2026-07-17T05:49:01Z"
+      "stars": 3987,
+      "pushed_at": "2026-07-17T19:54:31Z"
     },
     {
       "name": "BlueZ",
@@ -3955,7 +3954,7 @@
         "bluetooth"
       ],
       "commits_30d": 37,
-      "issues_open": 111,
+      "issues_open": 109,
       "prs_open": 0,
       "releases": [
         {
@@ -3977,8 +3976,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1101,
-      "pushed_at": "2026-07-17T14:17:08Z"
+      "stars": 1102,
+      "pushed_at": "2026-07-18T04:17:12Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3988,7 +3987,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 32,
+      "commits_30d": 30,
       "issues_open": 463,
       "prs_open": 0,
       "releases": [
@@ -4011,7 +4010,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15310,
+      "stars": 15314,
       "pushed_at": "2026-07-16T17:53:29Z"
     },
     {

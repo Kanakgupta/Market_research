@@ -56,6 +56,7 @@ a:hover { text-decoration:underline; }
 .chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
 .chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
 .chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
 .source { font-weight:600; opacity:.75; }
 .dot { opacity:.5; }
 .title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
@@ -118,6 +119,7 @@ a:hover { text-decoration:underline; }
 .news-class-title.customers { background:#fdf2f8; color:#9d174d; }
 .news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
 .news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
 .news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
 .news-side-item:hover { background:var(--hover); color:var(--accent); }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
@@ -159,7 +161,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-17 07:23 PDT</div>
+  <div class="meta-info">Updated 2026-07-18 06:06 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -187,12 +189,12 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">2 articles</span>
+    <span class="pill">3 articles</span>
     <span class="pill">1 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-17 07:23">2026-07-17 07:23 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-18 06:06">2026-07-18 06:06 PDT</span></span>
   </div>
 </section>
 
@@ -202,20 +204,41 @@ a:hover { text-decoration:underline; }
 
 <div class="grid" id="grid">
   
-  <article class="card" data-buckets="aliro" data-vendor="Espressif" data-customer="Apple">
+  <article class="card" data-buckets="aliro" data-vendor="" data-customer="" data-standard="aliro">
     <div class="thumb">
       
     </div>
     <div class="body">
       <div class="meta-row">
+        <span class="chip chip-std">Aliro spec</span>
         <span class="chip chip-tech">Aliro</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.firaconsortium.org/" target="_blank" rel="noopener">Aliro standard — spec &amp; roadmap (FiRa Consortium / Aliro)</a></h2>
+      <p class="summary">Current: FiRa Core 4.0 (announced Dec 2025, with certification program). Next: Not yet numbered — FiRa Plugfest #2 interoperability validation scheduled Sep 2026. Roadmap: FiRa Core 4.0 specification + certification program rollout · FiRa P…</p>
+      <div class="meta-row">
+        <span class="source">FiRa Consortium / Aliro</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T00:00:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="matter,aliro,bluetooth,wifi" data-vendor="Espressif" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/ESP32-C-ESP32-H21-Aliro-smart-lock-720x429.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
         <span class="chip chip-vendor">Espressif</span>
         <span class="chip chip-cust">Apple</span>
         <span class="chip chip-app">Smart Home</span>
       </div>
       <h2 class="title"><a href="https://www.cnx-software.com/2026/07/17/espressif-releases-sdk-for-aliro-smart-door-locks-based-on-esp32-c-or-esp32-h-socs/" target="_blank" rel="noopener">Espressif releases SDK for Aliro smart door locks based on ESP32-C or ESP32-H SoCs</a></h2>
-      <p class="summary">Espressif Systems has just released the SDK for Aliro, designed for smart Matter door locks and other access control solutions built around ESP32-C (WiFi) or ESP32-H (Thread) microcontroller and third-party NFC chips.
-We recently wrote abou…</p>
+      <p class="summary">Espressif Systems has just released the SDK for Aliro, designed for smart Matter door locks and other access control solutions built around ESP32-C (WiFi) or ESP32-H (Thread) microcontroller and third-party NFC chips. We recently wrote abou…</p>
       <div class="meta-row">
         <span class="source">CNX Software</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-17T10:19:22+00:00">2026-07-17</span>
@@ -223,22 +246,24 @@ We recently wrote abou…</p>
     </div>
   </article>
   
-  <article class="card" data-buckets="aliro" data-vendor="Espressif" data-customer="">
+  <article class="card" data-buckets="aliro,matter" data-vendor="" data-customer="Apple" data-standard="">
     <div class="thumb">
       
     </div>
     <div class="body">
       <div class="meta-row">
-        <span class="chip chip-tech">Aliro</span>
-        <span class="chip chip-vendor">Espressif</span>
         
+        <span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Matter</span>
         
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Wearable</span>
       </div>
-      <h2 class="title"><a href="https://www.newswiretoday.com/news/186563/Espressif-Announces-Aliro-Solution-for-Interoperable-Smart-Access-Products/" target="_blank" rel="noopener">Espressif Announces Aliro Solution for Interoperable Smart Access Products</a></h2>
-      
+      <h2 class="title"><a href="https://www.securityindustry.org/2026/06/30/going-inside-aliro-a-qa-with-connectivity-standards-alliance-president-ceo-tobin-richardson/" target="_blank" rel="noopener">Going Inside Aliro: A Q&amp;A With Connectivity Standards Alliance President &amp; CEO Tobin Richardson</a></h2>
+      <p class="summary">Going Inside Aliro: A Q&amp;A With Connectivity Standards Alliance President &amp; CEO Tobin Richardson
+Following a recent visit to the Security Industry Association (SIA) offices by Tobin Richardson, president and CEO of the Connectivity Standards…</p>
       <div class="meta-row">
-        <span class="source">NewswireToday</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-16T16:27:57+00:00">2026-07-16</span>
+        <span class="source">CSA / Matter (Zigbee)</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T18:25:25+00:00">2026-07-08</span>
       </div>
     </div>
   </article>
@@ -274,11 +299,13 @@ function applyFilters(){
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
     const vendor = card.dataset.vendor || '';
     const customer = card.dataset.customer || '';
+    const standard = card.dataset.standard || '';
     const techOk = techFilter === 'all' || buckets.includes(techFilter);
     let sideOk = true;
     if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    else if (sideFilter.type === 'standard') sideOk = sideFilter.value ? (standard === sideFilter.value) : (standard !== '');
     const show = techOk && sideOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
@@ -287,9 +314,10 @@ function applyFilters(){
   if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
 }
 
-function filterByTech(bucket) {
+function filterByTech(bucket, el) {
   document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
-  if (window.event && window.event.target) window.event.target.classList.add('active');
+  const target = el || (window.event && window.event.target && window.event.target.closest('.tech-tab'));
+  if (target) target.classList.add('active');
   techFilter = bucket;
   applyFilters();
 }
@@ -324,6 +352,7 @@ function escapeHtml(s){
 function cardHtml(a){
   const buckets = a.buckets || [];
   const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const stdChip = a.standard ? '<span class="chip chip-std">' + escapeHtml((BUCKET_LABELS[a.standard] || a.standard)) + ' spec</span>' : '';
   const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
   const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
   const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
@@ -332,10 +361,10 @@ function cardHtml(a){
   if (summary.length > 240) summary = summary.slice(0, 240) + '…';
   const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
   const timeHtml = a.published ? '<span class="dot">·</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
-  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '" data-standard="' + escapeHtml(a.standard || '') + '">' +
     '<div class="thumb">' + thumb + '</div>' +
     '<div class="body">' +
-      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<div class="meta-row">' + stdChip + bucketChips + vendorChip + customerChip + appChip + '</div>' +
       '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
       summaryHtml +
       '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
@@ -348,7 +377,7 @@ async function loadNews(){
   if (!grid) return;
   if (!isLocalBackend()) return;
   try {
-    const res = await fetch('/api/news?limit=50');
+    const res = await fetch('/api/news?limit=2000');
     if (!res.ok) return;
     const data = await res.json();
     if (!Array.isArray(data) || !data.length) return;

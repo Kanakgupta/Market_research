@@ -56,6 +56,7 @@ a:hover { text-decoration:underline; }
 .chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
 .chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
 .chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
 .source { font-weight:600; opacity:.75; }
 .dot { opacity:.5; }
 .title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
@@ -118,6 +119,7 @@ a:hover { text-decoration:underline; }
 .news-class-title.customers { background:#fdf2f8; color:#9d174d; }
 .news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
 .news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
 .news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
 .news-side-item:hover { background:var(--hover); color:var(--accent); }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
@@ -159,7 +161,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-17 07:23 PDT</div>
+  <div class="meta-info">Updated 2026-07-18 06:06 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -187,12 +189,12 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">7 articles</span>
-    <span class="pill">1 vendors</span>
+    <span class="pill">23 articles</span>
+    <span class="pill">3 vendors</span>
     <span class="pill">33 customers</span>
-    <span class="pill">8 applications</span>
+    <span class="pill">10 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-17 07:23">2026-07-17 07:23 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-18 06:06">2026-07-18 06:06 PDT</span></span>
   </div>
 </section>
 
@@ -202,101 +204,83 @@ a:hover { text-decoration:underline; }
 
 <div class="grid" id="grid">
   
-  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Samsung">
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
     <div class="thumb">
       
     </div>
     <div class="body">
       <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
         <span class="chip chip-tech">Bluetooth</span>
         
-        <span class="chip chip-cust">Samsung</span>
-        <span class="chip chip-app">Audio / Speaker</span>
+        
+        
       </div>
-      <h2 class="title"><a href="https://basic-tutorials.com/news/munich-airport-tests-bluetooth-auracast-for-gate-announcements/" target="_blank" rel="noopener">Munich Airport Tests Bluetooth Auracast for Gate Announcements</a></h2>
-      <p class="summary">Passengers at Munich Airport can now use Bluetooth Auracast to receive announcements directly through compatible headphones or earbuds. The public address systems provider Sittig Technologies has activated the broadcast technology at a tota…</p>
+      <h2 class="title"><a href="https://www.bluetooth.com/specifications/specs/core-specification/" target="_blank" rel="noopener">Bluetooth standard — spec &amp; roadmap (Bluetooth SIG)</a></h2>
+      <p class="summary">Current: Bluetooth Core Specification 6.3 (adopted). Next: Not yet announced (6.3 is the latest adopted release). Roadmap: Channel Sounding Inline PCT Transfer (BT 6.3) — analog phase pre-compensation for faster, lower-overhead ranging · Ch…</p>
       <div class="meta-row">
-        <span class="source">Basic Tutorials</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-17T05:00:46+00:00">2026-07-17</span>
+        <span class="source">Bluetooth SIG</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T00:00:00+00:00">2026-07-07</span>
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Apple">
+  <article class="card" data-buckets="matter,aliro,bluetooth,wifi" data-vendor="Espressif" data-customer="Apple" data-standard="">
     <div class="thumb">
-      
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/ESP32-C-ESP32-H21-Aliro-smart-lock-720x429.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
     </div>
     <div class="body">
       <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
         
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Asset Tracking</span>
-      </div>
-      <h2 class="title"><a href="https://www.life360.com/blog/tile-vs-airtag" target="_blank" rel="noopener">Tile vs AirTag: Which Bluetooth Tracker Should You Buy?</a></h2>
-      <p class="summary">Tile vs. AirTag: Which Bluetooth Tracker Is Right for You?
-Keys. Wallet. Luggage. The bag you swore you&#39;d never set down — and then absolutely set down.
-Both Tile and Apple AirTag™ solve the same problem: attach a tracker, open an app, and …</p>
-      <div class="meta-row">
-        <span class="source">Life360</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-17T00:00:51+00:00">2026-07-17</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Amazon">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Amazon</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://www.tomsguide.com/audio/bluetooth-speakers/11-best-bluetooth-speaker-deals-under-usd100-at-amazon-save-up-to-50-percent-on-bose-jbl-anker-and-more" target="_blank" rel="noopener">11 best Bluetooth speaker deals under $100 at Amazon — save up to 50% on Bose, JBL, Anker and more</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Tom&#39;s Guide</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-16T15:35:46+00:00">2026-07-16</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Samsung">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
-        
-        <span class="chip chip-cust">Samsung</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://www.phonearena.com/news/jbl-flip-7-woot-deal-below-90-usd_id181897" target="_blank" rel="noopener">JBL Flip 7 Bluetooth speaker plummets below $90 after limited-time deal</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">PhoneArena</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-16T13:32:33+00:00">2026-07-16</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="bluetooth" data-vendor="Espressif" data-customer="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
         <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Smart Home</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/17/espressif-releases-sdk-for-aliro-smart-door-locks-based-on-esp32-c-or-esp32-h-socs/" target="_blank" rel="noopener">Espressif releases SDK for Aliro smart door locks based on ESP32-C or ESP32-H SoCs</a></h2>
+      <p class="summary">Espressif Systems has just released the SDK for Aliro, designed for smart Matter door locks and other access control solutions built around ESP32-C (WiFi) or ESP32-H (Thread) microcontroller and third-party NFC chips. We recently wrote abou…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-17T10:19:22+00:00">2026-07-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
         
         
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/how-lighting-and-hvac-systems-are-powering-sustainability-initiatives-across-commercial-spaces/" target="_blank" rel="noopener">How lighting and HVAC systems are powering sustainability initiatives across commercial spaces</a></h2>
+      <p class="summary">For decades, Bluetooth® technology has been synonymous with powering headphones, smartphones, and automotive infotainment systems. However, its role has expanded...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-16T16:36:26+00:00">2026-07-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="Espressif" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/OpenInfrared-Point-Universal-Remote-Hub-720x480.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Industrial</span>
       </div>
       <h2 class="title"><a href="https://www.cnx-software.com/2026/07/16/openinfrared-point-esp32-s3-universal-remote-hub-infrared-ble-nfc-audio-streaming/" target="_blank" rel="noopener">OpenInfrared Point is an ESP32-S3 powered universal remote hub with Infrared, BLE, NFC, audio streaming (Crowdfunding)</a></h2>
-      
+      <p class="summary">OpenInfrared Point is a universal remote hub built around ESP32-S3 that lets users control compatible devices from a smartphone by scanning a QR code or tapping an NFC tag, eliminating the need for dedicated remote controls. Powered via USB…</p>
       <div class="meta-row">
         <span class="source">CNX Software</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-16T07:41:28+00:00">2026-07-16</span>
@@ -304,42 +288,401 @@ Both Tile and Apple AirTag™ solve the same problem: attach a tracker, open an 
     </div>
   </article>
   
-  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Apple">
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="Espressif" data-customer="Amazon" data-standard="">
     <div class="thumb">
-      
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/wM-Bus-Gateway-720x480.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
     </div>
     <div class="body">
       <div class="meta-row">
-        <span class="chip chip-tech">Bluetooth</span>
         
-        <span class="chip chip-cust">Apple</span>
-        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Smart Home</span>
       </div>
-      <h2 class="title"><a href="https://mshale.com/2926168a/1e19d561pMDBJxJ0SNQ" target="_blank" rel="noopener">WWDC26: Find Your Accessory With Bluetooth Channel Sounding | Apple Clarence Carter (Pk50vBRjvz)</a></h2>
-      
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/14/iotlabs-wm-bus-gateway-an-esp32-device-with-wireless-m-bus-connectivity-for-home-assistant/" target="_blank" rel="noopener">IoTLabs wM-Bus gateway – An ESP32 device with Wireless M-Bus connectivity for Home Assistant</a></h2>
+      <p class="summary">IoTLabs wM-Bus Gateway is an ESP32 device supporting the Wireless M-Bus (wM-Bus) standard for receiving data from compatible meters and sensors, designed for full integration with Home Assistant. Wireless M-Bus (Wireless Meter Bus) is a wir…</p>
       <div class="meta-row">
-        <span class="source">Mshale</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-16T05:26:32+00:00">2026-07-16</span>
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-14T03:52:51+00:00">2026-07-14</span>
       </div>
     </div>
   </article>
   
-  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Microsoft">
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
     <div class="thumb">
       
     </div>
     <div class="body">
       <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
         <span class="chip chip-tech">Bluetooth</span>
         
-        <span class="chip chip-cust">Microsoft</span>
+        
+        <span class="chip chip-app">Industrial</span>
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/how-bluetooth-technology-is-being-used-to-help-create-a-more-sustainable-world/" target="_blank" rel="noopener">How Bluetooth® technology is being used to help create a more sustainable world</a></h2>
+      <p class="summary">While the Bluetooth we have known for decades lives inside our headphones, mobile devices, and cars, Bluetooth® technology has also...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-13T13:07:00+00:00">2026-07-13</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="ieee15_4,bluetooth,wifi" data-vendor="Espressif" data-customer="Amazon" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/M5Stack-Stamp-C5-720x405.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Amazon</span>
         
       </div>
-      <h2 class="title"><a href="https://www.windowslatest.com/2026/07/16/microsoft-built-an-actual-fake-airplane-to-test-windows-11s-shared-audio-outside-a-lab-for-once/" target="_blank" rel="noopener">Microsoft built an actual fake airplane cabin to test Windows 11&#39;s Shared Audio outside a lab for once</a></h2>
-      
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/10/m5stack-stamp-c5-a-tiny-esp32-c5-usb-c-board-module-with-up-to-19-gpio-3-7v-battery-support/" target="_blank" rel="noopener">M5Stack Stamp-C5 – A Tiny ESP32-C5 USB-C board/module with up to 19 GPIO, 3.7V battery support</a></h2>
+      <p class="summary">M5Stack Stamp-C5, also known as the M5Stamp-C5, is a tiny wireless IoT USB-C board based on the Espressif ESP32-C5 RISC-V microcontroller with dual-band WiFi 6, Bluetooth LE, and 802.15.4 (Zigbee/Thread) connectivity. Despite its small size…</p>
       <div class="meta-row">
-        <span class="source">Windows Latest</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-16T00:09:50+00:00">2026-07-16</span>
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-10T11:21:21+00:00">2026-07-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="Espressif" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/Open-Book-Touch-720x557.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Apple</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/10/open-book-touch-a-drm-free-wifi-connected-4-26-inch-open-source-hardware-e-reader/" target="_blank" rel="noopener">Open Book Touch – A DRM-free, WiFi-connected 4.26-inch open-source hardware e-reader (Crowdfunding)</a></h2>
+      <p class="summary">Oddly Specific Objects has launched a crowdfunding campaign for the Open Book Touch, an ESP32-S3-based e-reader with a 4.26-inch e-paper display with 480 x 800 resolution and a capacitive touch screen. The open-source hardware device comes …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-10T02:05:38+00:00">2026-07-10</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="Qorvo" data-customer="Amazon" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/MaUWB-for-Home-Assistant-720x480.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Qorvo</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Asset Tracking</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/09/makerfabs-mauwb-for-home-assistant-an-esp32-s3-uwb-module-with-poe-and-enclosure/" target="_blank" rel="noopener">Makerfabs MaUWB for Home Assistant – An ESP32-S3 UWB module with PoE and enclosure</a></h2>
+      <p class="summary">Makerfabs MaUWB for Home Assistant is an ESP32-S3-based Ultra-Wideband (UWB) module designed for indoor positioning and Real-Time Location Systems (RTLS). It runs ESPHome for Home Assistant integration, enabling it to be used as part of a U…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-09T10:57:49+00:00">2026-07-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="" data-customer="Amazon" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/Rikomagic-DS04-4K-digital-signage-player-720x480.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/08/rikomagic-ds04-an-android-14-4k-digital-signage-player-powered-by-rockchip-rk3576-soc/" target="_blank" rel="noopener">Rikomagic DS04 – An Android 14 4K digital signage player powered by Rockchip RK3576 SoC</a></h2>
+      <p class="summary">Rikomagic DS04 is a new 4K digital signage player running Android 14 on a Rockchip RK3576 octa-core Cortex-A72/A53 processor paired with 4GB of RAM and 32GB of storage. It looks to be a cost-down version of the Rockchip RK3588-powered Rikom…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T07:47:02+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="" data-customer="Amazon" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/ACEMAGIC-Retro-X3-720x647.webp" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/08/acemagic-discounts-its-amd-ryzen-7-mini-pcs-by-up-to-32/" target="_blank" rel="noopener">ACEMAGIC discounts its AMD Ryzen 7 mini PCs by up to 32% for a limited time (Sponsored)</a></h2>
+      <p class="summary">ACEMAGIC has launched a promotion for two of its AMD Ryzen 7 mini PCs. The Matrix Mini K1 mini PC, powered by a Ryzen 7 7730U paired with 16GB LPDDR4X and a 512GB NVMe SSD, benefits from a 23% discount down to $386, and the company offers a…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-08T03:00:19+00:00">2026-07-08</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="Espressif" data-customer="Amazon" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/ESP32-C5-Touch-LCD-2.8-720x542.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/" target="_blank" rel="noopener">ESP32-C5 devkit offers 2.8-inch capacitive touch display, dual-band Wi-Fi 6, Bluetooth 5 LE, LiPo battery support</a></h2>
+      <p class="summary">Last week, I wrote about the ESP32-C5-LCD-1.47 as one of the first ESP32-C5 devkits with a built-in display enabling dual-band WiFi 6 connectivity for IoT and HMI projects. However, one reader lamented the lack of touch-capable screens, at …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T10:56:06+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="Espressif" data-customer="Amazon" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/ESP32-S3-Personal-Digital-Assistant-PDA-720x486.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">Espressif</span>
+        <span class="chip chip-cust">Amazon</span>
+        
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/07/pocketmage-esp32-s3-personal-digital-assistant/" target="_blank" rel="noopener">PocketMage – An ESP32-S3-based Personal Digital Assistant (Crowdfunding)</a></h2>
+      <p class="summary">PocketMage is an open-source hardware, ESP32-S3 personal digital assistant (PDA) with a primary, sun-readable 3.1-inch E Ink display, a secondary 1.8-inch OLED for high-refresh rate feedback, a full tactile QWERTY keyboard, and a capacitive…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-07T03:54:53+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="MediaTek" data-customer="Amazon" data-standard="">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/Beelink-EQi-Wildcat-Lake-Core-3-304-review-720x551.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
+        <span class="chip chip-vendor">MediaTek</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Retail</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/06/beelink-eqi-wildcat-lake-core-3-304-mini-pc-review-part-1-specifications-unboxing-teardown-and-first-boot/" target="_blank" rel="noopener">Beelink EQi Wildcat Lake Core 3 304 mini PC review – Part 1: Specifications, unboxing, teardown, and first boot</a></h2>
+      <p class="summary">We&amp;#8217;ve received our first Wildcat Lake hardware for review, as Beelink has sent us an EQi mini PC powered by the Intel Core 3 304 entry-level 5-core processor with a 15 TOPS AI accelerator. The mini PC ships with either 16GB of LPDDR5 …</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-06T11:10:14+00:00">2026-07-06</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/bluetooth-connectivity-in-industrial-facilities-when-rssi-is-enough-when-direction-matters-and-when-precise-ranging-pays-off/" target="_blank" rel="noopener">Bluetooth® connectivity in industrial facilities: when RSSI is enough, when direction matters, and when precise ranging pays off</a></h2>
+      <p class="summary">Industrial facilities rarely need to know location for its own sake. They need faster tool retrieval, fewer blind spots, safer...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-17T17:41:30+00:00">2026-06-17</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://www.zdnet.com/a/img/resize/bd701e88ac4110c7f071dd7d2f4a28dd26b1590b/2022/08/16/83fe314b-ad45-4607-a1c7-52a5c290e6ed/jada-jones.jpg?auto=webp&amp;amp;fit=crop&amp;amp;frame=1&amp;amp;height=192&amp;amp;width=192" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.zdnet.com/article/iphone-enhanced-bluetooth-tracking-with-ios-27-theres-a-catch/" target="_blank" rel="noopener">Your iPhone may support Channel Sounding via Bluetooth with iOS 27</a></h2>
+      <p class="summary">iPhones will support Bluetooth Channel Sounding in iOS 27. Channel Sounding promises secure, fine-ranging Find My device capabilities. Although exciting, adoption will be slow -- per usual. This year&#39;s WWDC is over, and now it&#39;s time for de…</p>
+      <div class="meta-row">
+        <span class="source">Featured</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-16T00:00:00+00:00">2026-06-16</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Google" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/consumer-audio-is-going-all-in-on-auracast-broadcast-audio-are-you-keeping-up/" target="_blank" rel="noopener">Consumer audio is going all in on Auracast™ broadcast audio: Are you keeping up?</a></h2>
+      <p class="summary">Auracast™ broadcast audio, a new Bluetooth® capability, lets you share audio with friends and family; unmute silent TVs in sports...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-12T20:57:12+00:00">2026-06-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/real-world-listening-auracast-broadcast-audios-clearer-sound-is-driving-meaningful-progress/" target="_blank" rel="noopener">Real-world listening: Auracast™ broadcast audio’s clearer sound is driving meaningful progress</a></h2>
+      <p class="summary">To explore how Auracast™ broadcast audio performs across a variety of acoustic conditions, we invited several dozen participants with hearing...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-12T01:22:38+00:00">2026-06-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        
+        <span class="chip chip-app">Healthcare</span>
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/gn-hearing-japan-implements-auracast-broadcast-audio-in-its-offices/" target="_blank" rel="noopener">GN Hearing Japan implements Auracast™ broadcast audio in its offices</a></h2>
+      <p class="summary">Auracast™ broadcast audio is transforming how people experience sound in public and professional spaces — making environments more inclusive and...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-09T19:25:21+00:00">2026-06-09</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Google" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Asset Tracking</span>
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/true-distance-awareness-with-bluetooth-channel-sounding/" target="_blank" rel="noopener">True distance awareness with Bluetooth® Channel Sounding</a></h2>
+      <p class="summary">Bluetooth® Channel Sounding, introduced in Bluetooth® Core 6.0, is a reliable way to estimate distance by using phase-based measurements (and...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-06-01T16:37:54+00:00">2026-06-01</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/auracast-broadcast-audio-transforms-the-home-theater-experience/" target="_blank" rel="noopener">Auracast™ broadcast audio transforms the home theater experience</a></h2>
+      <p class="summary">As wireless audio rapidly gains traction across personal and public settings, the constraints of traditional connection methods, such as limited...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-14T16:49:09+00:00">2026-05-14</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        
+        
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/bluetooth-wireless-technology-in-industrial-environments-local-visibility-for-safer-access-and-faster-decisions/" target="_blank" rel="noopener">Bluetooth® wireless technology in industrial environments: Local visibility for safer access and faster decisions</a></h2>
+      <p class="summary">A quick check on a field instrument is rarely quick when you have to do it the traditional way. Verifying...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-12T15:05:00+00:00">2026-05-12</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Amazon" data-standard="bluetooth">
+    <div class="thumb">
+      
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        <span class="chip chip-std">Bluetooth spec</span>
+        <span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.bluetooth.com/blog/is-auracast-broadcast-audio-ada-compliant/" target="_blank" rel="noopener">Is Auracast™ broadcast audio ADA compliant?</a></h2>
+      <p class="summary">Whenever a new technology enters the accessibility conversation, venue managers, consultants, and integrators throughout the United States want to be...</p>
+      <div class="meta-row">
+        <span class="source">Bluetooth SIG Blog</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-05-08T21:34:00+00:00">2026-05-08</span>
       </div>
     </div>
   </article>
@@ -375,11 +718,13 @@ function applyFilters(){
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
     const vendor = card.dataset.vendor || '';
     const customer = card.dataset.customer || '';
+    const standard = card.dataset.standard || '';
     const techOk = techFilter === 'all' || buckets.includes(techFilter);
     let sideOk = true;
     if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    else if (sideFilter.type === 'standard') sideOk = sideFilter.value ? (standard === sideFilter.value) : (standard !== '');
     const show = techOk && sideOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
@@ -388,9 +733,10 @@ function applyFilters(){
   if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
 }
 
-function filterByTech(bucket) {
+function filterByTech(bucket, el) {
   document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
-  if (window.event && window.event.target) window.event.target.classList.add('active');
+  const target = el || (window.event && window.event.target && window.event.target.closest('.tech-tab'));
+  if (target) target.classList.add('active');
   techFilter = bucket;
   applyFilters();
 }
@@ -425,6 +771,7 @@ function escapeHtml(s){
 function cardHtml(a){
   const buckets = a.buckets || [];
   const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const stdChip = a.standard ? '<span class="chip chip-std">' + escapeHtml((BUCKET_LABELS[a.standard] || a.standard)) + ' spec</span>' : '';
   const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
   const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
   const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
@@ -433,10 +780,10 @@ function cardHtml(a){
   if (summary.length > 240) summary = summary.slice(0, 240) + '…';
   const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
   const timeHtml = a.published ? '<span class="dot">·</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
-  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '" data-standard="' + escapeHtml(a.standard || '') + '">' +
     '<div class="thumb">' + thumb + '</div>' +
     '<div class="body">' +
-      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<div class="meta-row">' + stdChip + bucketChips + vendorChip + customerChip + appChip + '</div>' +
       '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
       summaryHtml +
       '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
@@ -449,7 +796,7 @@ async function loadNews(){
   if (!grid) return;
   if (!isLocalBackend()) return;
   try {
-    const res = await fetch('/api/news?limit=50');
+    const res = await fetch('/api/news?limit=2000');
     if (!res.ok) return;
     const data = await res.json();
     if (!Array.isArray(data) || !data.length) return;
