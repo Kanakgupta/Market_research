@@ -269,8 +269,8 @@ _NAV_HTML = """
   <nav>
     <a href="index.html" class="{{ 'active' if active=='index' else '' }}">Overview</a>
     <a href="news.html" class="{{ 'active' if active in news_slugs else '' }}">News</a>
-    <a href="customers.html" class="{{ 'active' if active=='customers' else '' }}">Opportunity</a>
-    <a href="competitors.html" class="{{ 'active' if active=='competitors' else '' }}">Threat</a>
+    <a href="opportunity.html" class="{{ 'active' if active in ['customers','opportunity'] else '' }}">Opportunity</a>
+    <a href="threat.html" class="{{ 'active' if active in ['competitors','threat'] else '' }}">Threat</a>
     <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
     <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
   </nav>
@@ -2015,11 +2015,14 @@ def render(articles: list[dict], output_dir: Path,
       rest = [r for r in deduped if (r.get("url") or "") not in featured_urls]
       customer_live[cname] = (pinned + rest)[:20]
     predictions = predict_customer_releases(customers, articles, mode="conservative")
-    (output_dir / "customers.html").write_text(env.from_string(_CUSTOMERS_TEMPLATE).render(
+    customers_html = env.from_string(_CUSTOMERS_TEMPLATE).render(
       customers=customers, customer_live=customer_live,
       predictions=predictions,
-      news_counts=cust_news_counts, active="customers", **common_ctx,
-    ), encoding="utf-8")
+      news_counts=cust_news_counts, active="opportunity", **common_ctx,
+    )
+    (output_dir / "opportunity.html").write_text(customers_html, encoding="utf-8")
+    # Keep legacy URL for backward compatibility.
+    (output_dir / "customers.html").write_text(customers_html, encoding="utf-8")
 
     # --- Competitors page ---
     comp = load_competitors()
@@ -2093,11 +2096,14 @@ def render(articles: list[dict], output_dir: Path,
         if fallback:
             vendor_news[v] = fallback
 
-    (output_dir / "competitors.html").write_text(env.from_string(_COMPETITORS_TEMPLATE).render(
+    competitors_html = env.from_string(_COMPETITORS_TEMPLATE).render(
         anchor=comp.get("anchor", {}), competitors=comp.get("competitors", []),
         news_counts=vendor_news_counts, vendor_news=vendor_news,
-        active="competitors", **common_ctx,
-    ), encoding="utf-8")
+      active="threat", **common_ctx,
+    )
+    (output_dir / "threat.html").write_text(competitors_html, encoding="utf-8")
+    # Keep legacy URL for backward compatibility.
+    (output_dir / "competitors.html").write_text(competitors_html, encoding="utf-8")
 
     # --- Relationships page ---
     links = build_links(articles, iot_only=True)
@@ -2400,7 +2406,7 @@ _INDEX_TEMPLATE = """<!doctype html>
         {% endfor %}
       </div>
       {% endif %}
-      <a class="battle-link" href="competitors.html">Full profile &rarr;</a>
+      <a class="battle-link" href="threat.html">Full profile &rarr;</a>
     </article>
     {% endfor %}
   </div>
@@ -2463,7 +2469,7 @@ _INDEX_TEMPLATE = """<!doctype html>
     {% endfor %}
   </div>
   {% if not customer_radar %}<p class="muted">Not enough signal yet to project next launches &mdash; check back after the next data refresh.</p>{% endif %}
-  <p style="margin-top:12px;"><a href="customers.html">All customer profiles &amp; full roadmap table &rarr;</a></p>
+  <p style="margin-top:12px;"><a href="opportunity.html">All customer profiles &amp; full roadmap table &rarr;</a></p>
 </div>
 
 <div class="section">
@@ -2562,8 +2568,8 @@ _INDEX_TEMPLATE = """<!doctype html>
   <h2>Where do you want to go?</h2>
   <div class="jump-row">
     <a class="jump-card" href="news.html"><h3>News \u2192</h3><p>All recent articles by technology, vendor, customer and application.</p></a>
-    <a class="jump-card" href="customers.html"><h3>Customers \u2192</h3><p>OEM profiles \u2014 recent products and forward roadmap signals.</p></a>
-    <a class="jump-card" href="competitors.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
+    <a class="jump-card" href="opportunity.html"><h3>Customers \u2192</h3><p>OEM profiles \u2014 recent products and forward roadmap signals.</p></a>
+    <a class="jump-card" href="threat.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
     <a class="jump-card" href="relationships.html"><h3>Relationships \u2192</h3><p>Sankey map of which vendor sells to which customer.</p></a>
   </div>
 </section>
@@ -2688,7 +2694,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         row = dict(by_customer[name])
         row["recent_signals_30d"] = recent_signals_30d
         row["evidence_links"] = evidence_links
-        row["customer_page"] = "customers.html"
+        row["customer_page"] = "opportunity.html"
         row["news_page"] = "news.html"
         customer_radar.append(row)
         continue
@@ -2705,7 +2711,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         "based_on": ["Coverage entry: limited recent launch signal in current news window"],
         "recent_signals_30d": recent_signals_30d,
         "evidence_links": evidence_links,
-        "customer_page": "customers.html",
+        "customer_page": "opportunity.html",
         "news_page": "news.html",
       })
 
