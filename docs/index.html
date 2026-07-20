@@ -187,7 +187,7 @@ a:hover { text-decoration:underline; }
 .battle-press a:hover { color:var(--accent); }
 .battle-link { font-size:12px; margin-top:10px; display:inline-block; font-weight:600; }
 
-/* Opportunity radar (win vs respond) */
+/* Strength/Weakness radar (win vs respond) */
 .opp-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:12px; }
 @media (max-width: 800px) { .opp-grid { grid-template-columns:1fr; } }
 .opp-col { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
@@ -199,7 +199,7 @@ a:hover { text-decoration:underline; }
 .opp-item:last-child { border-bottom:none; }
 .opp-item b { color:var(--text); }
 
-/* Customer opportunity radar */
+/* Customer radar */
 .cust-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; margin-top:12px; }
 .cust-card { background:var(--card); border:1px solid var(--border); border-top:3px solid #db2777; border-radius:10px; padding:14px 16px; }
 .cust-card .hd { display:flex; align-items:center; justify-content:space-between; gap:8px; }
@@ -239,7 +239,7 @@ a:hover { text-decoration:underline; }
 .stack-table th { background:#f9fafc; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#64748b; }
 .stack-table td:first-child { font-weight:700; white-space:nowrap; }
 .stack-tag { font-size:10px; font-weight:700; border-radius:999px; padding:2px 7px; margin-left:6px; border:1px solid transparent; }
-.stack-tag.airoc { background:#dcfce7; border-color:#bbf7d0; color:#166534; }
+.stack-tag.platform { background:#dcfce7; border-color:#bbf7d0; color:#166534; }
 .stack-tag.oss { background:#eef2ff; border-color:#c7d2fe; color:#3730a3; }
 
 /* Compact market signal feed */
@@ -267,7 +267,7 @@ a:hover { text-decoration:underline; }
 
 <script id="password-gate-v1">
 (function(){
-  var KEY='airoc_unlock_v1';
+  var KEY='site_unlock_v1';
   var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
   function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
@@ -294,12 +294,12 @@ a:hover { text-decoration:underline; }
   <nav>
     <a href="index.html" class="active">Overview</a>
     <a href="news.html" class="">News</a>
-    <a href="customers.html" class="">Opportunity</a>
-    <a href="competitors.html" class="">Threat</a>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-20 07:30 PDT</div>
+  <div class="meta-info">Updated 2026-07-20 08:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -313,7 +313,7 @@ a:hover { text-decoration:underline; }
 <main class="wrap content">
 <section class="hero">
   <h1>IoT Wireless Intelligence</h1>
-  <p>Product-marketing command center for Infineon AIROC — competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
+  <p>Product-marketing command center for the Infineon wireless platform — competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
 </section>
 
 <div class="section">
@@ -326,16 +326,16 @@ a:hover { text-decoration:underline; }
       <h3>Ingestion Horizon</h3>
       <p>Article volume by recency window.</p>
       <ul class="mini-list">
-        <li><b>216</b> articles in last 7 days</li>
-        <li><b>262</b> articles in last 30 days</li>
-        <li><b>267</b> articles in last 45 days</li>
+        <li><b>207</b> articles in last 7 days</li>
+        <li><b>252</b> articles in last 30 days</li>
+        <li><b>257</b> articles in last 45 days</li>
       </ul>
     </article>
     <article class="mini-card">
       <h3>Source Breadth</h3>
       <p>How diverse the collected signal is.</p>
       <ul class="mini-list">
-        <li><b>22</b> unique publishers/sources</li>
+        <li><b>19</b> unique publishers/sources</li>
         <li><b>5</b>/6 technology buckets represented</li>
         <li><b>72</b> days between oldest and newest captured article</li>
       </ul>
@@ -345,7 +345,7 @@ a:hover { text-decoration:underline; }
       <p>How many entities are backed by recent evidence.</p>
       <ul class="mini-list">
         <li><b>13</b> vendors with linked news</li>
-        <li><b>13</b> customers with linked news</li>
+        <li><b>12</b> customers with linked news</li>
         <li><b>2026-07-20</b> latest article timestamp</li>
       </ul>
     </article>
@@ -355,9 +355,9 @@ a:hover { text-decoration:underline; }
 <div class="section">
   <div class="section-head">
     <h2>Competitive Battlecard</h2>
-    <span class="pill">vs Infineon AIROC</span>
+    <span class="pill">SWOT</span>
   </div>
-  <p class="section-sub">Where AIROC wins today and where each rival leads &mdash; use this to sharpen messaging and spot feature gaps.</p>
+  <p class="section-sub">Where we are strongest today and where each rival leads &mdash; use this to sharpen messaging and spot feature gaps.</p>
   <div class="battle-grid">
     
     <article class="battle-card">
@@ -513,7 +513,7 @@ a:hover { text-decoration:underline; }
       
       
       <ul class="battle-list">
-        <li class="watch">BLE TX power/sensitivity inferior to Nordic and AIROC at &gt;30m range</li><li class="watch">No automotive or medical certifications (AEC-Q100, IEC 60601)</li>
+        <li class="watch">BLE TX power/sensitivity inferior to Nordic and Infineon at &gt;30m range</li><li class="watch">No automotive or medical certifications (AEC-Q100, IEC 60601)</li>
       </ul>
       
       
@@ -537,7 +537,7 @@ a:hover { text-decoration:underline; }
       
       
       <ul class="battle-list">
-        <li class="watch">No Wi-Fi combo — BLE and 802.15.4 only; no Wi-Fi 6 roadmap</li><li class="watch">LE Audio cadence slower than Nordic and Infineon AIROC</li>
+        <li class="watch">No Wi-Fi combo — BLE and 802.15.4 only; no Wi-Fi 6 roadmap</li><li class="watch">LE Audio cadence slower than Nordic and Infineon</li>
       </ul>
       
       
@@ -585,7 +585,7 @@ a:hover { text-decoration:underline; }
       
       
       <ul class="battle-list">
-        <li class="watch">New brand in IoT combo — ecosystem and SDK rebuilding post-Broadcom divestiture</li><li class="watch">Developer resources limited vs mature AIROC ModusToolbox</li>
+        <li class="watch">New brand in IoT combo — ecosystem and SDK rebuilding post-Broadcom divestiture</li><li class="watch">Developer resources limited vs mature Infineon ModusToolbox</li>
       </ul>
       
       
@@ -869,12 +869,12 @@ a:hover { text-decoration:underline; }
 
 <div class="section">
   <div class="section-head">
-    <h2>Opportunity Radar</h2>
+    <h2>Strength/Weakness Radar</h2>
   </div>
   <p class="section-sub">Aggregated across tracked competitors &mdash; where to lean into messaging, and where to close the gap.</p>
   <div class="opp-grid">
     <div class="opp-col win">
-      <h3>✓ Where AIROC Wins</h3>
+      <h3>✓ Strengths</h3>
       <p class="section-sub">Lead with these in positioning &amp; sales collateral.</p>
       
       <div class="opp-item"><b>Nordic:</b> Best-in-class BLE current draw (nRF54L series)</div>
@@ -895,7 +895,7 @@ a:hover { text-decoration:underline; }
       
     </div>
     <div class="opp-col watch">
-      <h3>⚠ Where We Must Respond</h3>
+      <h3>⚠ Weaknesses</h3>
       <p class="section-sub">Feature gaps competitors use against us &mdash; candidates for the roadmap.</p>
       
       <div class="opp-item"><b>Nordic:</b> No native Wi-Fi 6/6E in a single die</div>
@@ -910,7 +910,7 @@ a:hover { text-decoration:underline; }
       
       <div class="opp-item"><b>MediaTek:</b> No automotive AEC-Q100 certifications</div>
       
-      <div class="opp-item"><b>Espressif:</b> BLE TX power/sensitivity inferior to Nordic and AIROC at &gt;30m range</div>
+      <div class="opp-item"><b>Espressif:</b> BLE TX power/sensitivity inferior to Nordic and Infineon at &gt;30m range</div>
       
       <div class="opp-item"><b>STMicro:</b> No Wi-Fi combo — BLE and 802.15.4 only; no Wi-Fi 6 roadmap</div>
       
@@ -920,7 +920,7 @@ a:hover { text-decoration:underline; }
 
 <div class="section">
   <div class="section-head">
-    <h2>Customer Opportunity Radar</h2>
+    <h2>Customer Radar</h2>
   </div>
   <p class="section-sub">Model-predicted next launches per OEM, with expected features &mdash; a window into what customers will need next.</p>
   <div class="cust-grid">
@@ -986,26 +986,26 @@ a:hover { text-decoration:underline; }
     <article class="cust-card">
       <div class="hd">
         <h3>Apple</h3>
-        <span class="conf-badge conf-high">High &middot; 88%</span>
+        <span class="conf-badge conf-high">High &middot; 87%</span>
       </div>
-      <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Apple LE Audio earbuds refresh</p>
+      <div class="cust-app">Smart Home</div>
+      <p class="cust-product">Apple Matter hub refresh</p>
       <div>
         <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>109</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>102</b></div>
       
       <ul class="cust-evidence">
         
+        <li><a href="https://www.theverge.com/gadgets/967822/airpods-max-2-logitech-superstrike-kodak-charmera-deal-sale" target="_blank" rel="noopener">The AirPods Max 2 are down to their second-best price</a> &middot; The Verge</li>
+        
+        <li><a href="https://9to5mac.com/2026/07/20/apples-sports-app-expands-soccer-features-heres-whats-new/" target="_blank" rel="noopener">Apple’s Sports app expands soccer features, here’s what’s new</a> &middot; 9to5Mac</li>
+        
         <li><a href="https://9to5mac.com/2026/07/20/amazon-just-broke-one-of-apple-wallets-best-recent-features/" target="_blank" rel="noopener">Amazon just broke one of Apple Wallet’s best recent features</a> &middot; 9to5Mac</li>
-        
-        <li><a href="https://9to5mac.com/2026/07/20/higher-apple-prices-look-set-to-slow-upgrade-cycles/" target="_blank" rel="noopener">Higher Apple prices look set to slow upgrade cycles</a> &middot; 9to5Mac</li>
-        
-        <li><a href="https://9to5mac.com/2026/07/20/ai-fakes-a-growing-problem-on-apple-books-some-written-in-a-few-hours/" target="_blank" rel="noopener">AI fakes a growing problem on Apple Books, some ‘written’ in a few hours</a> &middot; 9to5Mac</li>
         
       </ul>
       
-      <div class="cust-basis">app signal=Audio / Speaker (score 14.0)</div>
+      <div class="cust-basis">app signal=Smart Home (score 13.0)</div>
       <div class="cust-links">
         <a href="customers.html">Customer profile &rarr;</a>
         <a href="news.html">Customer news feed &rarr;</a>
@@ -1069,26 +1069,26 @@ a:hover { text-decoration:underline; }
     <article class="cust-card">
       <div class="hd">
         <h3>Samsung</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 69%</span>
+        <span class="conf-badge conf-medium">Medium &middot; 64%</span>
       </div>
       <div class="cust-app">Wearable</div>
       <p class="cust-product">Samsung health wearable refresh</p>
       <div>
         <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>21</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>20</b></div>
       
       <ul class="cust-evidence">
         
         <li><a href="https://www.zdnet.com/article/blood-pressure-watches-samsung-amazfit-yhe/" target="_blank" rel="noopener">I tested 3 blood pressure trackers for a month</a> &middot; only one rivaled my Garmin Index BP Monitor</li>
         
-        <li><a href="https://kotaku.com/samsung-slashes-34-off-the-galaxy-watch-8-as-2025-smartwatch-models-go-on-clearance-2000713035" target="_blank" rel="noopener">Samsung Slashes 34% Off the Galaxy Watch 8 as 2025 Smartwatch Models Go on Clearance</a> &middot; Bing: Samsung</li>
-        
         <li><a href="https://9to5google.com/2026/07/19/samsung-galaxy-z-fold-8-real-life-bts-leak/" target="_blank" rel="noopener">Here’s what the wide Galaxy Z Fold 8 looks like in real life [Gallery]</a> &middot; 9to5Google</li>
+        
+        <li><a href="https://9to5google.com/2026/07/18/galaxy-watch-9-is-powered-by-snapdragon-wear-elite-leaked-images-confirm-gallery/" target="_blank" rel="noopener">Galaxy Watch 9 is ‘Powered by Snapdragon Wear Elite,’ leaked images confirm [Gallery]</a> &middot; 9to5Google</li>
         
       </ul>
       
-      <div class="cust-basis">app signal=Wearable (score 10.0)</div>
+      <div class="cust-basis">app signal=Wearable (score 9.0)</div>
       <div class="cust-links">
         <a href="customers.html">Customer profile &rarr;</a>
         <a href="news.html">Customer news feed &rarr;</a>
@@ -1109,7 +1109,7 @@ a:hover { text-decoration:underline; }
       
       <ul class="cust-evidence">
         
-        <li><a href="https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-year/" target="_blank" rel="noopener">All the EVs that were discontinued or killed off in the U.S. this year</a> &middot; TechCrunch</li>
+        <li><a href="https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-year/" target="_blank" rel="noopener">All the EVs that were discontinued or killed off in the US this year</a> &middot; TechCrunch</li>
         
         <li><a href="https://spectrum.ieee.org/panasonic-camcorder-ieee-milstone" target="_blank" rel="noopener">Panasonic’s PV-460 Camcorder Stabilized Shaky Videos</a> &middot; IEEE Spectrum</li>
         
@@ -1261,7 +1261,7 @@ a:hover { text-decoration:underline; }
   <div class="section-head">
     <h2>Bluetooth Stack Positioning &amp; Full Coverage</h2>
   </div>
-  <p class="section-sub">Complete tracked customer/competitor coverage plus explicit Infineon AIROC Bluetooth stack positioning against Zephyr and BlueZ.</p>
+  <p class="section-sub">Complete tracked customer/competitor coverage plus explicit Infineon Bluetooth stack positioning against Zephyr and BlueZ.</p>
 
   <table class="stack-table">
     <thead>
@@ -1277,8 +1277,8 @@ a:hover { text-decoration:underline; }
     <tbody>
       
       <tr>
-        <td>Infineon AIROC Bluetooth Stack<span class="stack-tag airoc">Infineon</span></td>
-        <td>AIROC SoCs/modules, embedded MCU and Linux gateway designs</td>
+        <td>Infineon Bluetooth Stack<span class="stack-tag platform">Infineon</span></td>
+        <td>Infineon SoCs/modules, embedded MCU and Linux gateway designs</td>
         <td>Tight silicon + stack integration, low-power tuning, and vendor-backed lifecycle/support</td>
         <td>Less portable outside Infineon ecosystem than fully open host stacks</td>
         <td>No native cross-vendor portability layer for non-Infineon silicon</td>
@@ -1352,7 +1352,7 @@ a:hover { text-decoration:underline; }
         <li>Channel Sounding Inline PCT Transfer (BT 6.3) — analog phase pre-compensation for faster, lower-overhead ranging</li><li>Channel Sounding PHY-specific RTT Accuracy (BT 6.3) — per-PHY ranging precision (LE 1M/2M)</li><li>Running Out of Bits (BT 6.3) — expanded HCI command/event bitmask for future feature growth</li>
       </ul>
       
-      <p class="std-position">AIROC CYW20829 ships Channel Sounding (PBR/RTT baseline from BT 6.0); CYW55513 covers LE Audio. Track BT 6.3 Channel Sounding refinements (Inline PCT Transfer, per-PHY RTT) for next silicon revs.</p>
+      <p class="std-position">Infineon CYW20829 ships Channel Sounding (PBR/RTT baseline from BT 6.0); CYW55513 covers LE Audio. Track BT 6.3 Channel Sounding refinements (Inline PCT Transfer, per-PHY RTT) for next silicon revs.</p>
       <div class="std-activity">7 related articles &middot; 7d &middot; <a href="https://www.bluetooth.com/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
@@ -1367,7 +1367,7 @@ a:hover { text-decoration:underline; }
         <li>Wi-Fi 7 MLO mass deployment in routers/clients</li><li>Wi-Fi 8 UHR — Ultra-High Reliability (deterministic, mobility)</li><li>AFC (Automated Frequency Coordination) for 6 GHz standard power</li>
       </ul>
       
-      <p class="std-position">AIROC CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet — gap vs Synaptics Veros/MediaTek Filogic 380.</p>
+      <p class="std-position">Infineon CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet — gap vs Synaptics Veros/MediaTek Filogic 380.</p>
       <div class="std-activity">8 related articles &middot; 7d &middot; <a href="https://www.wi-fi.org/discover-wi-fi" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
@@ -1382,7 +1382,7 @@ a:hover { text-decoration:underline; }
         <li>Low-power PHY/MAC baseline used under Thread/Zigbee mesh ecosystems</li><li>Channel agility and robust coexistence remain central for dense IoT deployments</li><li>Interoperability outcomes depend on upper-layer protocol/profile alignment</li>
       </ul>
       
-      <p class="std-position">AIROC CYW55573 provides 802.15.4 support as the PHY/MAC base for Thread and Zigbee class networks.</p>
+      <p class="std-position">Infineon CYW55573 provides 802.15.4 support as the PHY/MAC base for Thread and Zigbee class networks.</p>
       <div class="std-activity">4 related articles &middot; 14d fallback &middot; <a href="https://www.ieee802.org/15/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
@@ -1397,7 +1397,7 @@ a:hover { text-decoration:underline; }
         <li>Zigbee 4.0 relaunch under CSA — new member testimonials (Legrand, Fortune Brands, Jun-Jul 2026)</li>
       </ul>
       
-      <p class="std-position">AIROC 802.15.4 capability is relevant for Zigbee-class low-power mesh designs; confirm Zigbee roadmap alignment.</p>
+      <p class="std-position">Infineon 802.15.4 capability is relevant for Zigbee-class low-power mesh designs; confirm Zigbee roadmap alignment.</p>
       <div class="std-activity">4 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
@@ -1412,7 +1412,7 @@ a:hover { text-decoration:underline; }
         <li>Border-router robustness and commissioning reliability across mixed-vendor homes</li><li>Operational mesh stability tuning for larger multi-hop IoT installations</li><li>Ongoing alignment with Matter-over-Thread deployment best practices</li>
       </ul>
       
-      <p class="std-position">AIROC CYW55573 provides the 802.15.4 foundation for Thread-enabled products; continue certification alignment.</p>
+      <p class="std-position">Infineon CYW55573 provides the 802.15.4 foundation for Thread-enabled products; continue certification alignment.</p>
       <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.threadgroup.org/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
@@ -1442,7 +1442,7 @@ a:hover { text-decoration:underline; }
         <li>Aliro digital key (NFC+UWB+BLE) gaining auto OEM commitments</li><li>UWB radar / sensing for presence detection</li><li>Phone-to-phone UWB ranging</li>
       </ul>
       
-      <p class="std-position">AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung. Confirm FiRa Core 4.0 alignment before next combo announcement.</p>
+      <p class="std-position">Infineon has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung. Confirm FiRa Core 4.0 alignment before next combo announcement.</p>
       <div class="std-activity">2 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/aliro/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
@@ -1478,24 +1478,8 @@ a:hover { text-decoration:underline; }
       <div class="signal-row">
         <span class="signal-dot vendor"></span>
         <div class="signal-body">
-          <a class="signal-title" href="https://www.macrumors.com/2026/07/20/apple-shelved-two-mac-pro-models/" target="_blank" rel="noopener">Apple Shelved Two Mac Pro Models, Including an Intel-Based One</a>
-          <div class="signal-meta">Apple &middot; Bing: Apple &middot; Jul 20</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
           <a class="signal-title" href="https://www.cnx-software.com/2026/07/20/iotextra-modular-automation-boards-with-4-inputs-4-outputs-work-with-raspberry-pi-and-esp32-mcu-boards/" target="_blank" rel="noopener">IoTextra modular automation boards with 4 inputs, 4 outputs work with Raspberry Pi and ESP32 MCU boards</a>
           <div class="signal-meta">Espressif &middot; CNX Software &middot; Jul 20</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://kotaku.com/airpods-pro-3-are-quietly-back-in-the-100-range-on-amazon-while-apple-still-charges-full-price-2000716832" target="_blank" rel="noopener">AirPods Pro 3 Are Quietly Back in the $100 Range on Amazon, While Apple Still Charges Full Price</a>
-          <div class="signal-meta">Apple &middot; Bing: Apple &middot; Jul 20</div>
         </div>
       </div>
       
@@ -1523,9 +1507,41 @@ a:hover { text-decoration:underline; }
         </div>
       </div>
       
+      <div class="signal-row">
+        <span class="signal-dot vendor"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.cnx-software.com/2026/07/19/beelink-eqi-304-review-part-3-ubuntu-26-04-on-a-wildcat-lake-mini-pc/" target="_blank" rel="noopener">Beelink EQi 304 review – Part 3: Ubuntu 26.04 on a Wildcat Lake mini PC</a>
+          <div class="signal-meta">MediaTek &middot; CNX Software &middot; Jul 19</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot vendor"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://9to5google.com/2026/07/18/galaxy-watch-9-is-powered-by-snapdragon-wear-elite-leaked-images-confirm-gallery/" target="_blank" rel="noopener">Galaxy Watch 9 is ‘Powered by Snapdragon Wear Elite,’ leaked images confirm [Gallery]</a>
+          <div class="signal-meta">Qualcomm &middot; 9to5Google &middot; Jul 18</div>
+        </div>
+      </div>
+      
     </div>
     <div class="signal-col">
       <h3>Customer signals</h3>
+      
+      <div class="signal-row">
+        <span class="signal-dot customer"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://www.theverge.com/gadgets/967822/airpods-max-2-logitech-superstrike-kodak-charmera-deal-sale" target="_blank" rel="noopener">The AirPods Max 2 are down to their second-best price</a>
+          <div class="signal-meta">Apple &middot; The Verge &middot; Jul 20</div>
+        </div>
+      </div>
+      
+      <div class="signal-row">
+        <span class="signal-dot customer"></span>
+        <div class="signal-body">
+          <a class="signal-title" href="https://9to5mac.com/2026/07/20/apples-sports-app-expands-soccer-features-heres-whats-new/" target="_blank" rel="noopener">Apple’s Sports app expands soccer features, here’s what’s new</a>
+          <div class="signal-meta">Apple &middot; 9to5Mac &middot; Jul 20</div>
+        </div>
+      </div>
       
       <div class="signal-row">
         <span class="signal-dot customer"></span>
@@ -1575,22 +1591,6 @@ a:hover { text-decoration:underline; }
         </div>
       </div>
       
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.theregister.com/os-platforms/2026/07/20/microsoft-rushes-out-windows-fix-for-dells-hot-and-bothered-pcs/5274810" target="_blank" rel="noopener">Microsoft rushes out Windows fix for Dell&#39;s hot and bothered PCs</a>
-          <div class="signal-meta">Microsoft &middot; The Register &middot; Jul 20</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://9to5mac.com/2026/07/20/ai-fakes-a-growing-problem-on-apple-books-some-written-in-a-few-hours/" target="_blank" rel="noopener">AI fakes a growing problem on Apple Books, some ‘written’ in a few hours</a>
-          <div class="signal-meta">Apple &middot; 9to5Mac &middot; Jul 20</div>
-        </div>
-      </div>
-      
     </div>
   </div>
   <p style="margin-top:12px;"><a href="news.html">Browse all news &rarr;</a></p>
@@ -1601,11 +1601,11 @@ a:hover { text-decoration:underline; }
   <div class="jump-row">
     <a class="jump-card" href="news.html"><h3>News →</h3><p>All recent articles by technology, vendor, customer and application.</p></a>
     <a class="jump-card" href="customers.html"><h3>Customers →</h3><p>OEM profiles — recent products and forward roadmap signals.</p></a>
-    <a class="jump-card" href="competitors.html"><h3>Competitors →</h3><p>Side-by-side comparison vs Infineon AIROC — SKUs, strengths, weaknesses.</p></a>
+    <a class="jump-card" href="competitors.html"><h3>Strength/Weakness →</h3><p>Side-by-side SWOT comparison — SKUs, strengths, weaknesses.</p></a>
     <a class="jump-card" href="relationships.html"><h3>Relationships →</h3><p>Sankey map of which vendor sells to which customer.</p></a>
   </div>
 </section>
 
 </main>
-<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-20 07:30 PDT</div></footer>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-07-20 08:01 PDT</div></footer>
 </body></html>

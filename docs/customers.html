@@ -213,7 +213,7 @@ a:hover { text-decoration:underline; }
 
 <script id="password-gate-v1">
 (function(){
-  var KEY='airoc_unlock_v1';
+  var KEY='site_unlock_v1';
   var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
   function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
@@ -240,12 +240,12 @@ a:hover { text-decoration:underline; }
   <nav>
     <a href="index.html" class="">Overview</a>
     <a href="news.html" class="">News</a>
-    <a href="customers.html" class="active">Opportunity</a>
-    <a href="competitors.html" class="">Threat</a>
+    <a href="customers.html" class="active">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-20 07:30 PDT</div>
+  <div class="meta-info">Updated 2026-07-20 08:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -266,7 +266,7 @@ a:hover { text-decoration:underline; }
 <!-- Stats bar -->
 <div class="oc-stats-bar">
   <div class="oc-stat-pill"><div class="v">13</div><div class="l">OEMs tracked</div></div>
-  <div class="oc-stat-pill"><div class="v">247</div><div class="l">News (all time)</div></div>
+  <div class="oc-stat-pill"><div class="v">238</div><div class="l">News (all time)</div></div>
   <div class="oc-stat-pill"><div class="v">355</div><div class="l">Products tracked</div></div>
 </div>
 
@@ -304,7 +304,7 @@ a:hover { text-decoration:underline; }
         <strong>Apple</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">110</span>
+      <span class="ci-news-badge">103</span>
     </button>
     
     
@@ -334,7 +334,7 @@ a:hover { text-decoration:underline; }
         <strong>Samsung</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">21</span>
+      <span class="ci-news-badge">20</span>
     </button>
     
     
@@ -1716,7 +1716,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">110</div>
+          <div class="ci-nc-num">103</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -2715,7 +2715,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">21</div>
+          <div class="ci-nc-num">20</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4396,7 +4396,7 @@ a:hover { text-decoration:underline; }
 </div><!-- /ci-layout -->
 
 </main>
-<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-07-20 07:30</div></footer>
+<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-07-20 08:01</div></footer>
 <script>
 function timeAgo(iso){
   var s=iso; if(s&&s.length===10)s+='T00:00:00Z';

@@ -129,7 +129,7 @@ a:hover { text-decoration:underline; }
 
 <script id="password-gate-v1">
 (function(){
-  var KEY='airoc_unlock_v1';
+  var KEY='site_unlock_v1';
   var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
   function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
@@ -156,12 +156,12 @@ a:hover { text-decoration:underline; }
   <nav>
     <a href="index.html" class="">Overview</a>
     <a href="news.html" class="active">News</a>
-    <a href="customers.html" class="">Opportunity</a>
-    <a href="competitors.html" class="">Threat</a>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-20 07:30 PDT</div>
+  <div class="meta-info">Updated 2026-07-20 08:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -187,7 +187,7 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-20 07:30">2026-07-20 07:30 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-20 08:01">2026-07-20 08:01 PDT</span></span>
   </div>
 </section>
 
@@ -198,7 +198,7 @@ a:hover { text-decoration:underline; }
     <button class="tech-tab" data-filter="wifi" onclick="filterByTech('wifi', this)">Wi-Fi</button><button class="tech-tab" data-filter="bluetooth" onclick="filterByTech('bluetooth', this)">Bluetooth</button><button class="tech-tab" data-filter="ieee15_4" onclick="filterByTech('ieee15_4', this)">802.15.4</button><button class="tech-tab" data-filter="aliro" onclick="filterByTech('aliro', this)">Aliro</button><button class="tech-tab" data-filter="thread" onclick="filterByTech('thread', this)">Thread</button><button class="tech-tab" data-filter="matter" onclick="filterByTech('matter', this)">Matter</button>
   </div>
   <div class="tech-actions">
-    <span class="tech-count" id="articleCount">277 articles</span>
+    <span class="tech-count" id="articleCount">267 articles</span>
     <button class="btn-refresh" id="refreshBtn" onclick="refreshNews(event)"><span class="refresh-icon" id="refreshIcon">&#x21bb;</span> Refresh</button>
   </div>
 </section>
@@ -235,13 +235,13 @@ a:hover { text-decoration:underline; }
         
         <button class="news-side-item" data-side-type="customer" data-side-value="Amazon" onclick="filterBySideFromButton(this)">Amazon <span class="side-count">23</span></button>
         
-        <button class="news-side-item" data-side-type="customer" data-side-value="Apple" onclick="filterBySideFromButton(this)">Apple <span class="side-count">110</span></button>
+        <button class="news-side-item" data-side-type="customer" data-side-value="Apple" onclick="filterBySideFromButton(this)">Apple <span class="side-count">103</span></button>
         
         <button class="news-side-item" data-side-type="customer" data-side-value="Microsoft" onclick="filterBySideFromButton(this)">Microsoft <span class="side-count">12</span></button>
         
         <button class="news-side-item" data-side-type="customer" data-side-value="Meta" onclick="filterBySideFromButton(this)">Meta <span class="side-count">1</span></button>
         
-        <button class="news-side-item" data-side-type="customer" data-side-value="Samsung" onclick="filterBySideFromButton(this)">Samsung <span class="side-count">21</span></button>
+        <button class="news-side-item" data-side-type="customer" data-side-value="Samsung" onclick="filterBySideFromButton(this)">Samsung <span class="side-count">20</span></button>
         
         <button class="news-side-item" data-side-type="customer" data-side-value="Sony" onclick="filterBySideFromButton(this)">Sony <span class="side-count">2</span></button>
         
@@ -285,7 +285,7 @@ a:hover { text-decoration:underline; }
         
         <button class="news-side-item" data-side-type="customer" data-side-value="Xiaomi" onclick="filterBySideFromButton(this)">Xiaomi <span class="side-count">0</span></button>
         
-        <button class="news-side-item" data-side-type="customer" data-side-value="Huawei" onclick="filterBySideFromButton(this)">Huawei <span class="side-count">1</span></button>
+        <button class="news-side-item" data-side-type="customer" data-side-value="Huawei" onclick="filterBySideFromButton(this)">Huawei <span class="side-count">0</span></button>
         
         <button class="news-side-item" data-side-type="customer" data-side-value="Tesla" onclick="filterBySideFromButton(this)">Tesla <span class="side-count">3</span></button>
         
@@ -323,7 +323,7 @@ a:hover { text-decoration:underline; }
           
           <button class="news-side-item" data-side-type="vendor" data-side-value="Synaptics" onclick="filterBySideFromButton(this)">Synaptics <span class="side-count">0</span></button>
           
-          <button class="news-side-item" data-side-type="vendor" data-side-value="Apple" onclick="filterBySideFromButton(this)">Apple <span class="side-count">5</span></button>
+          <button class="news-side-item" data-side-type="vendor" data-side-value="Apple" onclick="filterBySideFromButton(this)">Apple <span class="side-count">3</span></button>
           
           <button class="news-side-item" data-side-type="vendor" data-side-value="Lattice" onclick="filterBySideFromButton(this)">Lattice <span class="side-count">0</span></button>
           
@@ -422,6 +422,48 @@ a:hover { text-decoration:underline; }
 
 
 <div class="grid" id="grid">
+  
+  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/airpodsmax2.png?quality=90&amp;#038;strip=all&amp;#038;crop=0,0,100,100" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.theverge.com/gadgets/967822/airpods-max-2-logitech-superstrike-kodak-charmera-deal-sale" target="_blank" rel="noopener">The AirPods Max 2 are down to their second-best price</a></h2>
+      <p class="summary">There are a ton of deals available to shop today thanks to Best Buy’s “Black Friday in July” sale lasting all week. The sale typically aligns closely with Prime Day each year, but of course, Amazon’s shopping holiday happened much earlier t…</p>
+      <div class="meta-row">
+        <span class="source">The Verge</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-20T10:41:29-04:00">2026-07-20</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
+    <div class="thumb">
+      <img src="https://9to5mac.com/wp-content/uploads/sites/6/2026/07/apple-sports-soccer-leagues.jpg?quality=82&amp;#038;strip=all&amp;#038;w=1600" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        
+        
+        <span class="chip chip-cust">Apple</span>
+        <span class="chip chip-app">Automotive</span>
+      </div>
+      <h2 class="title"><a href="https://9to5mac.com/2026/07/20/apples-sports-app-expands-soccer-features-heres-whats-new/" target="_blank" rel="noopener">Apple’s Sports app expands soccer features, here’s what’s new</a></h2>
+      <p class="summary">The 2026 World Cup is over, but a new update for Apple Sports makes the app an even better place to follow soccer around the world. Here’s what’s new.</p>
+      <div class="meta-row">
+        <span class="source">9to5Mac</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-07-20T14:28:55+00:00">2026-07-20</span>
+      </div>
+    </div>
+  </article>
   
   <article class="card" data-buckets="" data-vendor="" data-customer="Microsoft" data-standard="">
     <div class="thumb">
@@ -654,48 +696,6 @@ a:hover { text-decoration:underline; }
     </div>
   </article>
   
-  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Retail</span>
-      </div>
-      <h2 class="title"><a href="https://gizmodo.com/m4-macbook-air-now-cheaper-than-before-apples-price-hikes-as-certified-refurbished-models-drop-even-further-2000787382" target="_blank" rel="noopener">M4 MacBook Air Now Cheaper Than Before Apple’s Price Hikes as Certified Refurbished Models Drop Even Further</a></h2>
-      <p class="summary">Back Market has the 13-inch 2025 MacBook Air with the M4 series processor certified refurbished on sale for $140 off.</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-20T06:40:00+00:00">2026-07-20</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="" data-vendor="Apple" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        <span class="chip chip-vendor">Apple</span>
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.macrumors.com/2026/07/20/apple-shelved-two-mac-pro-models/" target="_blank" rel="noopener">Apple Shelved Two Mac Pro Models, Including an Intel-Based One</a></h2>
-      <p class="summary">Apple developed two Mac Pro models in recent years that never made it to market, according to Bloomberg&#39;s Mark Gurman. In his latest &#34;Power On&#34; newsletter, Gurman revealed that Apple internally developed two unreleased Mac Pro projects code…</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-20T06:30:00+00:00">2026-07-20</span>
-      </div>
-    </div>
-  </article>
-  
   <article class="card" data-buckets="" data-vendor="Espressif" data-customer="Amazon" data-standard="">
     <div class="thumb">
       <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/IoTsmart-IoTextra-modular-automation-boards-720x417.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
@@ -734,48 +734,6 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="source">CNX Software</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-20T02:58:07+00:00">2026-07-20</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="" data-vendor="Apple" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        <span class="chip chip-vendor">Apple</span>
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://kotaku.com/airpods-pro-3-are-quietly-back-in-the-100-range-on-amazon-while-apple-still-charges-full-price-2000716832" target="_blank" rel="noopener">AirPods Pro 3 Are Quietly Back in the $100 Range on Amazon, While Apple Still Charges Full Price</a></h2>
-      <p class="summary">The Apple AirPods Pro 3 are the third-generation Pro-tier wireless earbuds from Apple, released in September 2025 as the direct replacement for the AirPods Pro 2 from 2022. The H2 chip inside brings the same processing power as the previous…</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-20T01:46:00+00:00">2026-07-20</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="" data-vendor="" data-customer="Samsung" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Samsung</span>
-        <span class="chip chip-app">Wearable</span>
-      </div>
-      <h2 class="title"><a href="https://kotaku.com/samsung-slashes-34-off-the-galaxy-watch-8-as-2025-smartwatch-models-go-on-clearance-2000713035" target="_blank" rel="noopener">Samsung Slashes 34% Off the Galaxy Watch 8 as 2025 Smartwatch Models Go on Clearance</a></h2>
-      <p class="summary">A good smartwatch can help your track and refine your performance, making it easier to spot progress, adjust your training, and sty motivated over time. It can also keep an eye on your daily activity,</p>
-      <div class="meta-row">
-        <span class="source">Bing: Samsung</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-20T00:44:00+00:00">2026-07-20</span>
       </div>
     </div>
   </article>
@@ -948,48 +906,6 @@ a:hover { text-decoration:underline; }
     </div>
   </article>
   
-  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-us/money/technology/apple-maps-didn-t-erase-lebanese-town-names-here-s-evidence/ar-AA28fXC4?ocid=BingNewsVerp" target="_blank" rel="noopener">Apple Maps didn&#39;t &#39;erase&#39; Lebanese town names. Here&#39;s evidence</a></h2>
-      <p class="summary">As the death toll from Israel&#39;s 2026 bombing of Lebanon exceeded 4,000, people online claimed Apple Maps was complicit in the erasure of towns.</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-19T16:00:00+00:00">2026-07-19</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="" data-vendor="" data-customer="" data-standard="">
-    <div class="thumb">
-      <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/Netvue-Birdfy-Lifestyle-Image.webp?quality=90&amp;#038;strip=all&amp;#038;crop=0,0,100,100" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        
-        <span class="chip chip-app">Energy/Utility</span>
-      </div>
-      <h2 class="title"><a href="https://www.theverge.com/gadgets/967336/birdfy-feeder-ai-powered-smart-bird-feeder-with-camera-deal-sale" target="_blank" rel="noopener">Birdfy&amp;#8217;s solar-powered smart feeder is down to one of its best prices</a></h2>
-      <p class="summary">Birdfy has kicked off a midyear sale, taking up to 40 percent off a range of its smart bird feeders. One of the best deals is on Netvue’s Birdfy Feeder AI-Powered Smart Bird Feeder with Camera, which has dropped to $149.99 at Birdfy and is …</p>
-      <div class="meta-row">
-        <span class="source">The Verge</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-19T11:00:00-04:00">2026-07-19</span>
-      </div>
-    </div>
-  </article>
-  
   <article class="card" data-buckets="" data-vendor="Qualcomm" data-customer="Google" data-standard="">
     <div class="thumb">
       <img src="https://9to5google.com/wp-content/uploads/sites/4/2026/07/oneplus-open-and-13.jpg?quality=82&amp;#038;strip=all&amp;#038;w=1600" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
@@ -1028,27 +944,6 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="source">CNX Software</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-19T10:41:53+00:00">2026-07-19</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.geeky-gadgets.com/apple-foldable-iphone-ultra-rumors/" target="_blank" rel="noopener">Is Apple’s Upcoming iPhone Ultra Fold Actually Worth the Money?</a></h2>
-      <p class="summary">Apple&#39;s rumored foldable iPhone Ultra might struggle to justify its expected $2,000 starting price, launching in September 2026.</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-19T06:00:00+00:00">2026-07-19</span>
       </div>
     </div>
   </article>
@@ -1137,27 +1032,6 @@ ZDNET&#39;s key takeaways
       <div class="meta-row">
         <span class="source">9to5Mac</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-18T21:38:18+00:00">2026-07-18</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.forbes.com/sites/davidphelan/2026/07/19/iphone-18-pro-release-date-apples-15-year-event-timeline-points-to-one-september-date/" target="_blank" rel="noopener">iPhone 18 Pro Release Date: Apple’s 15-Year Event Timeline Signals Exact Date</a></h2>
-      <p class="summary">Apple is poised to unveil the iPhone 18 Pro at its annual September special event, a tradition upheld consistently since 2012. Analysis of past keynote dates reveals a strict window between September 7th and 14th,</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-18T20:59:00+00:00">2026-07-18</span>
       </div>
     </div>
   </article>
@@ -1258,7 +1132,7 @@ ZDNET&#39;s key takeaways
         <span class="chip chip-cust">Sony</span>
         <span class="chip chip-app">Automotive</span>
       </div>
-      <h2 class="title"><a href="https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-year/" target="_blank" rel="noopener">All the EVs that were discontinued or killed off in the U.S. this year</a></h2>
+      <h2 class="title"><a href="https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-year/" target="_blank" rel="noopener">All the EVs that were discontinued or killed off in the US this year</a></h2>
       <p class="summary">Th Honda Prologue will no longer be sold in the U.S., joining a growing list of EV models to exit the market this year.</p>
       <div class="meta-row">
         <span class="source">TechCrunch</span>
@@ -1410,27 +1284,6 @@ ZDNET&#39;s key takeaways
       <div class="meta-row">
         <span class="source">here&#39;s what we know</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-18T10:00:39+00:00">2026-07-18</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://www.forbes.com/sites/forbes-personal-shopper/2026/07/17/apple-macbook-air-m5-review/" target="_blank" rel="noopener">I Tested The Apple MacBook Air (M5) As A Windows Power User: My Verdict</a></h2>
-      <p class="summary">The Apple MacBook Air (M5) nails the essentials: a gorgeous display, excellent keyboard and trackpad, and useful software. Here&#39;s my Apple MacBook Air review.</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-18T09:00:00+00:00">2026-07-18</span>
       </div>
     </div>
   </article>
@@ -3247,27 +3100,6 @@ Needless to say…</p>
     </div>
   </article>
   
-  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.msn.com/en-us/news/technology/apple-intelligence-approved-for-launch-in-china-with-alibaba-and-baidu/ar-AA27YkL5?ocid=BingNewsVerp" target="_blank" rel="noopener">Apple Intelligence approved for launch in China with Alibaba and Baidu</a></h2>
-      <p class="summary">The deal, which was rumored to be in the works last year, marks an important step for Apple&#39;s AI ambitions in a key market.</p>
-      <div class="meta-row">
-        <span class="source">Bing: Apple</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-16T06:17:59+00:00">2026-07-16</span>
-      </div>
-    </div>
-  </article>
-  
   <article class="card" data-buckets="" data-vendor="" data-customer="Google" data-standard="">
     <div class="thumb">
       <img src="https://9to5google.com/wp-content/uploads/sites/4/2026/04/walmart-onn-4k-pro-2026-11.jpg?quality=82&amp;#038;strip=all&amp;#038;w=1600" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
@@ -4570,27 +4402,6 @@ Needless to say…</p>
     </div>
   </article>
   
-  <article class="card" data-buckets="" data-vendor="" data-customer="Apple" data-standard="">
-    <div class="thumb">
-      <img src="https://9to5mac.com/wp-content/uploads/sites/6/2026/05/iphone-17-pro-cosmic-orange-cameras-angle.jpg?quality=82&amp;#038;strip=all&amp;#038;w=1600" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        
-        
-        <span class="chip chip-cust">Apple</span>
-        <span class="chip chip-app">Automotive</span>
-      </div>
-      <h2 class="title"><a href="https://9to5mac.com/2026/07/14/idc-apple-shipped-nearly-1-in-5-smartphones-in-china-in-q2-2026/" target="_blank" rel="noopener">IDC: Apple shipped nearly 1 in 5 smartphones in China in Q2 2026</a></h2>
-      <p class="summary">In a report published today, IDC said Huawei and Apple were the only smartphone makers to record shipment growth in China during the second quarter of 2026. Here are the details.</p>
-      <div class="meta-row">
-        <span class="source">9to5Mac</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-14T14:47:03+00:00">2026-07-14</span>
-      </div>
-    </div>
-  </article>
-  
   <article class="card" data-buckets="bluetooth" data-vendor="" data-customer="Samsung" data-standard="">
     <div class="thumb">
       <img src="https://9to5google.com/wp-content/uploads/sites/4/2023/12/samsung-galaxy-smarttag-2-1.jpg?quality=82&amp;#038;strip=all&amp;#038;w=1600" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
@@ -5091,27 +4902,6 @@ Needless to say…</p>
       <div class="meta-row">
         <span class="source">9to5Google</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-13T09:00:00+00:00">2026-07-13</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="wifi" data-vendor="" data-customer="Huawei" data-standard="">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Wi-Fi</span>
-        
-        <span class="chip chip-cust">Huawei</span>
-        
-      </div>
-      <h2 class="title"><a href="http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;aid=&amp;tid=6a5e2f8ef4e3478d9607c6240032ec61&amp;url=https%3a%2f%2fwww.usatoday.com%2fpress-release%2fstory%2f37126%2fhuawei-announces-wi-fi-7-patent-licensing-rates-reaffirms-commitment-to-transparent-and-reasonable-licensing-2%2f&amp;c=15516783710421106777&amp;mkt=en-us" target="_blank" rel="noopener">Huawei Announces Wi-Fi 7 Patent Licensing Rates, Reaffirms Commitment to Transparent and Reasonable Licensing</a></h2>
-      <p class="summary">SHENZHEN, CHINA - Media OutReach Newswire - 3 July 2026 - Huawei today announced that its patent licensing royalty rate ...</p>
-      <div class="meta-row">
-        <span class="source">Bing: Wi-Fi 7 release announcement</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-13T05:44:00+00:00">2026-07-13</span>
       </div>
     </div>
   </article>

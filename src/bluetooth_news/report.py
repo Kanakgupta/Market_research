@@ -960,7 +960,7 @@ _COMPETITORS_TEMPLATE = """<!doctype html>
 .ci-event-meta { font-size:13px; color:var(--muted); margin:2px 0; }
 .ci-event-role { display:inline-block; background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; border-radius:6px; padding:1px 7px; font-size:10.5px; font-weight:600; }
 
-/* vs AIROC section */
+/* SWOT section */
 .ci-vs-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
 @media (max-width:700px) { .ci-vs-grid { grid-template-columns:1fr; } }
 .ci-vs-box { border-radius:10px; padding:14px 16px; }
@@ -1171,15 +1171,15 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">\u26a1 vs Infineon {{ anchor.family }}</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">\u26a1 SWOT vs {{ anchor.family }}</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>\u2714 Where {{ c.vendor }} wins vs AIROC\u2122</h4>
+          <h4>\u2714 Strengths: {{ c.vendor }}</h4>
           <ul>{% for s in c.vs_airoc_strengths %}<li>{{ s }}</li>{% endfor %}</ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>\u2717 Where AIROC\u2122 has the edge</h4>
+          <h4>\u2717 Weaknesses: {{ c.vendor }}</h4>
           <ul>{% for s in c.vs_airoc_weaknesses %}<li>{{ s }}</li>{% endfor %}</ul>
         </div>
       </div>
@@ -1281,11 +1281,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>\u2714 Where {{ c.vendor }} wins vs AIROC\u2122</h4>
+              <h4>\u2714 Strengths: {{ c.vendor }}</h4>
               <ul>{% for s in c.vs_airoc_strengths %}<li>{{ s }}</li>{% endfor %}</ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>\u2717 Where AIROC\u2122 has the edge</h4>
+              <h4>\u2717 Weaknesses: {{ c.vendor }}</h4>
               <ul>{% for s in c.vs_airoc_weaknesses %}<li>{{ s }}</li>{% endfor %}</ul>
             </div>
           </div>
@@ -1377,7 +1377,7 @@ _RELATIONSHIPS_TEMPLATE = """<!doctype html>
     <tbody>
     {% for l in links[:60] %}
       <tr>
-        <td><strong>{{ l.vendor }}</strong>{% if l.vendor == 'Infineon' %} <span class="tag">AIROC</span>{% endif %}</td>
+        <td><strong>{{ l.vendor }}</strong>{% if l.vendor == 'Infineon' %} <span class="tag">Infineon</span>{% endif %}</td>
         <td>{{ l.customer }}</td>
         <td>{{ l.weight }}</td>
         <td>{{ l.strength_explained }}</td>
@@ -2091,6 +2091,9 @@ def render(articles: list[dict], output_dir: Path,
     # --- Index = Overview ---
     (output_dir / "index.html").write_text(_render_index(env, common_ctx, articles, customers, comp, links), encoding="utf-8")
 
+    # Normalize visible terminology across all generated HTML pages.
+    _neutralize_site_outputs(output_dir)
+
     # --- Post-process: rewrite Google News RSS redirect URLs to working
     #     Google-search URLs (the rss/articles/... links don't open in
     #     a browser; they return an interstitial). Done in-place across
@@ -2127,6 +2130,33 @@ def _rewrite_broken_links(output_dir: Path) -> None:
         new = _GNEWS_HREF_RE.sub(_sub, src)
         if new != src:
             html.write_text(new, encoding="utf-8")
+ 
+
+def _neutralize_site_html(text: str) -> str:
+    text = text.replace("airoc_unlock_v1", "site_unlock_v1")
+    text = text.replace("stack-tag.airoc", "stack-tag.platform")
+    replacements = [
+        (re.compile(r'Infineon AIROC(?:™)?', re.IGNORECASE), 'Infineon'),
+        (re.compile(r'\bAIROC(?:™)?\b', re.IGNORECASE), 'Infineon'),
+        (re.compile(r'\bvs\s+Infineon\b', re.IGNORECASE), 'SWOT vs Infineon'),
+        (re.compile(r'\bAIROC\s+position\b', re.IGNORECASE), 'Platform position'),
+        (re.compile(r'\bAIROC\s+roadmap\b', re.IGNORECASE), 'Platform roadmap'),
+        (re.compile(r'\bAIROC\s+Bluetooth\s+stack\b', re.IGNORECASE), 'Bluetooth stack'),
+    ]
+    for pattern, replacement in replacements:
+        text = pattern.sub(replacement, text)
+    return text
+
+
+def _neutralize_site_outputs(output_dir: Path) -> None:
+    for html in output_dir.rglob("*.html"):
+        try:
+            original = html.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        updated = _neutralize_site_html(original)
+        if updated != original:
+            html.write_text(updated, encoding="utf-8")
 
 
 _INDEX_TEMPLATE = """<!doctype html>
@@ -2195,7 +2225,7 @@ _INDEX_TEMPLATE = """<!doctype html>
 .battle-press a:hover { color:var(--accent); }
 .battle-link { font-size:12px; margin-top:10px; display:inline-block; font-weight:600; }
 
-/* Opportunity radar (win vs respond) */
+/* Strength/Weakness radar (win vs respond) */
 .opp-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:12px; }
 @media (max-width: 800px) { .opp-grid { grid-template-columns:1fr; } }
 .opp-col { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
@@ -2207,7 +2237,7 @@ _INDEX_TEMPLATE = """<!doctype html>
 .opp-item:last-child { border-bottom:none; }
 .opp-item b { color:var(--text); }
 
-/* Customer opportunity radar */
+/* Customer radar */
 .cust-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; margin-top:12px; }
 .cust-card { background:var(--card); border:1px solid var(--border); border-top:3px solid #db2777; border-radius:10px; padding:14px 16px; }
 .cust-card .hd { display:flex; align-items:center; justify-content:space-between; gap:8px; }
@@ -2247,7 +2277,7 @@ _INDEX_TEMPLATE = """<!doctype html>
 .stack-table th { background:#f9fafc; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#64748b; }
 .stack-table td:first-child { font-weight:700; white-space:nowrap; }
 .stack-tag { font-size:10px; font-weight:700; border-radius:999px; padding:2px 7px; margin-left:6px; border:1px solid transparent; }
-.stack-tag.airoc { background:#dcfce7; border-color:#bbf7d0; color:#166534; }
+.stack-tag.platform { background:#dcfce7; border-color:#bbf7d0; color:#166534; }
 .stack-tag.oss { background:#eef2ff; border-color:#c7d2fe; color:#3730a3; }
 
 /* Compact market signal feed */
@@ -2278,7 +2308,7 @@ _INDEX_TEMPLATE = """<!doctype html>
 <main class="wrap content">
 <section class="hero">
   <h1>IoT Wireless Intelligence</h1>
-  <p>Product-marketing command center for Infineon AIROC \u2014 competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
+  <p>Product-marketing command center for the Infineon wireless platform \u2014 competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
 </section>
 
 <div class="section">
@@ -2320,9 +2350,9 @@ _INDEX_TEMPLATE = """<!doctype html>
 <div class="section">
   <div class="section-head">
     <h2>Competitive Battlecard</h2>
-    <span class="pill">vs Infineon AIROC</span>
+    <span class="pill">SWOT</span>
   </div>
-  <p class="section-sub">Where AIROC wins today and where each rival leads &mdash; use this to sharpen messaging and spot feature gaps.</p>
+  <p class="section-sub">Where we are strongest today and where each rival leads &mdash; use this to sharpen messaging and spot feature gaps.</p>
   <div class="battle-grid">
     {% for c in battlecard %}
     <article class="battle-card">
@@ -2352,19 +2382,19 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>Opportunity Radar</h2>
+    <h2>Strength/Weakness Radar</h2>
   </div>
   <p class="section-sub">Aggregated across tracked competitors &mdash; where to lean into messaging, and where to close the gap.</p>
   <div class="opp-grid">
     <div class="opp-col win">
-      <h3>\u2713 Where AIROC Wins</h3>
+      <h3>\u2713 Strengths</h3>
       <p class="section-sub">Lead with these in positioning &amp; sales collateral.</p>
       {% for o in opportunity_wins %}
       <div class="opp-item"><b>{{ o.vendor }}:</b> {{ o.text }}</div>
       {% endfor %}
     </div>
     <div class="opp-col watch">
-      <h3>\u26a0 Where We Must Respond</h3>
+      <h3>\u26a0 Weaknesses</h3>
       <p class="section-sub">Feature gaps competitors use against us &mdash; candidates for the roadmap.</p>
       {% for o in opportunity_watch %}
       <div class="opp-item"><b>{{ o.vendor }}:</b> {{ o.text }}</div>
@@ -2375,7 +2405,7 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>Customer Opportunity Radar</h2>
+    <h2>Customer Radar</h2>
   </div>
   <p class="section-sub">Model-predicted next launches per OEM, with expected features &mdash; a window into what customers will need next.</p>
   <div class="cust-grid">
@@ -2414,7 +2444,7 @@ _INDEX_TEMPLATE = """<!doctype html>
   <div class="section-head">
     <h2>Bluetooth Stack Positioning &amp; Full Coverage</h2>
   </div>
-  <p class="section-sub">Complete tracked customer/competitor coverage plus explicit Infineon AIROC Bluetooth stack positioning against Zephyr and BlueZ.</p>
+  <p class="section-sub">Complete tracked customer/competitor coverage plus explicit Infineon Bluetooth stack positioning against Zephyr and BlueZ.</p>
 
   <table class="stack-table">
     <thead>
@@ -2430,7 +2460,7 @@ _INDEX_TEMPLATE = """<!doctype html>
     <tbody>
       {% for r in stack_positioning %}
       <tr>
-        <td>{{ r.stack }}{% if r.kind == 'AIROC' %}<span class="stack-tag airoc">Infineon</span>{% else %}<span class="stack-tag oss">Open Source</span>{% endif %}</td>
+        <td>{{ r.stack }}{% if r.kind == 'Platform' %}<span class="stack-tag platform">Infineon</span>{% else %}<span class="stack-tag oss">Open Source</span>{% endif %}</td>
         <td>{{ r.targets }}</td>
         <td>{{ r.strength }}</td>
         <td>{{ r.tradeoff }}</td>
@@ -2507,7 +2537,7 @@ _INDEX_TEMPLATE = """<!doctype html>
   <div class="jump-row">
     <a class="jump-card" href="news.html"><h3>News \u2192</h3><p>All recent articles by technology, vendor, customer and application.</p></a>
     <a class="jump-card" href="customers.html"><h3>Customers \u2192</h3><p>OEM profiles \u2014 recent products and forward roadmap signals.</p></a>
-    <a class="jump-card" href="competitors.html"><h3>Competitors \u2192</h3><p>Side-by-side comparison vs Infineon AIROC \u2014 SKUs, strengths, weaknesses.</p></a>
+    <a class="jump-card" href="competitors.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
     <a class="jump-card" href="relationships.html"><h3>Relationships \u2192</h3><p>Sankey map of which vendor sells to which customer.</p></a>
   </div>
 </section>
@@ -2586,7 +2616,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
             "press": (c.get("press_releases") or [])[:2],
         })
 
-    # --- Opportunity radar: aggregate first strength/weakness across ALL competitors
+    # --- Strength/Weakness radar: aggregate first strength/weakness across ALL competitors
     opportunity_wins = []
     opportunity_watch = []
     for c in competitors_list:
@@ -2600,7 +2630,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
     opportunity_wins = opportunity_wins[:8]
     opportunity_watch = opportunity_watch[:8]
 
-    # --- Customer opportunity radar: model-predicted next launches
+    # --- Customer radar: model-predicted next launches
     try:
       customer_radar_predicted = predict_customer_releases(customers, articles, mode="balanced")
     except Exception:
@@ -2704,7 +2734,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         ],
         "current_version": "IEEE 802.15.4 baseline in active low-power mesh deployments",
         "next_version": "Incremental profile updates driven by ecosystem layers",
-        "position": "AIROC CYW55573 provides 802.15.4 support as the PHY/MAC base for Thread and Zigbee class networks.",
+        "position": "Infineon CYW55573 provides 802.15.4 support as the PHY/MAC base for Thread and Zigbee class networks.",
       },
       {
         "label": "Zigbee",
@@ -2714,7 +2744,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         "feature_keywords": ["zigbee"],
         "current_version": "Zigbee ecosystem refresh under CSA (Zigbee 4.0 program messaging)",
         "next_version": "Broader Zigbee 4.0 ecosystem rollout",
-        "position": "AIROC 802.15.4 capability is relevant for Zigbee-class low-power mesh designs; confirm Zigbee roadmap alignment.",
+        "position": "Infineon 802.15.4 capability is relevant for Zigbee-class low-power mesh designs; confirm Zigbee roadmap alignment.",
       },
       {
         "label": "Thread",
@@ -2729,7 +2759,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         ],
         "current_version": "Thread 1.4 (last publicly verified)",
         "next_version": "Next Thread revision not publicly confirmed",
-        "position": "AIROC CYW55573 provides the 802.15.4 foundation for Thread-enabled products; continue certification alignment.",
+        "position": "Infineon CYW55573 provides the 802.15.4 foundation for Thread-enabled products; continue certification alignment.",
       },
       {
         "label": "Matter",
@@ -2783,12 +2813,12 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
             "page": domain["page"],
         })
 
-    # --- Stack positioning (AIROC vs Zephyr/BlueZ)
+    # --- Stack positioning (platform vs Zephyr/BlueZ)
     stack_positioning = [
         {
-            "stack": "Infineon AIROC Bluetooth Stack",
-            "kind": "AIROC",
-            "targets": "AIROC SoCs/modules, embedded MCU and Linux gateway designs",
+            "stack": "Infineon Bluetooth Stack",
+            "kind": "Platform",
+            "targets": "Infineon SoCs/modules, embedded MCU and Linux gateway designs",
             "strength": "Tight silicon + stack integration, low-power tuning, and vendor-backed lifecycle/support",
             "tradeoff": "Less portable outside Infineon ecosystem than fully open host stacks",
             "missing_features": "No native cross-vendor portability layer for non-Infineon silicon",

@@ -226,7 +226,7 @@ a:hover { text-decoration:underline; }
 .ci-event-meta { font-size:13px; color:var(--muted); margin:2px 0; }
 .ci-event-role { display:inline-block; background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; border-radius:6px; padding:1px 7px; font-size:10.5px; font-weight:600; }
 
-/* vs AIROC section */
+/* SWOT section */
 .ci-vs-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
 @media (max-width:700px) { .ci-vs-grid { grid-template-columns:1fr; } }
 .ci-vs-box { border-radius:10px; padding:14px 16px; }
@@ -285,7 +285,7 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
 
 <script id="password-gate-v1">
 (function(){
-  var KEY='airoc_unlock_v1';
+  var KEY='site_unlock_v1';
   var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
   function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
@@ -312,12 +312,12 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
   <nav>
     <a href="index.html" class="">Overview</a>
     <a href="news.html" class="">News</a>
-    <a href="customers.html" class="">Opportunity</a>
-    <a href="competitors.html" class="active">Threat</a>
+    <a href="customers.html" class="">Customers</a>
+    <a href="competitors.html" class="active">Competitors</a>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-20 07:30 PDT</div>
+  <div class="meta-info">Updated 2026-07-20 08:01 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -336,9 +336,9 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
 <!-- ── Anchor Bar ── -->
 <div class="ci-anchor-bar">
   <div style="flex:1;min-width:220px;">
-    <h2>Infineon AIROC™</h2>
+    <h2>Infineon</h2>
     <p>Our wireless connectivity portfolio — the benchmark for every comparison on this page.</p>
-    <a class="ci-anchor-link" href="https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/" target="_blank" rel="noopener">Product family page ↗</a>
+    <a class="ci-anchor-link" href="https://www.infineon.com/cms/en/product/wireless-connectivity/Infineon-wi-fi-plus-bluetooth-combos/" target="_blank" rel="noopener">Product family page ↗</a>
   </div>
   <div>
     <div style="font-size:11px;text-transform:uppercase;letter-spacing:.07em;opacity:.7;margin-bottom:6px;">Headline SKUs</div>
@@ -360,7 +360,7 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
 <div class="ci-stats-bar">
   <div class="ci-stat-pill"><div class="v">10</div><div class="l">Deep-dive</div></div>
   <div class="ci-stat-pill"><div class="v">21</div><div class="l">Total monitored</div></div>
-  <div class="ci-stat-pill"><div class="v">44</div><div class="l">News articles (30d)</div></div>
+  <div class="ci-stat-pill"><div class="v">42</div><div class="l">News articles (30d)</div></div>
   <div class="ci-stat-pill"><div class="v">3</div><div class="l">Regions covered</div></div>
   <div class="ci-stat-pill" style="flex:1;min-width:200px;align-items:flex-start;">
     <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Data note</div>
@@ -836,15 +836,15 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where Nordic wins vs AIROC™</h4>
+          <h4>✔ Strengths: Nordic</h4>
           <ul><li>Best-in-class BLE current draw (nRF54L series)</li><li>Mature &amp; widely adopted nRF Connect SDK / Zephyr</li><li>Channel Sounding (BT 6.0) leadership — first to GA</li><li>Massive developer mindshare and community</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
+          <h4>✗ Weaknesses: Nordic</h4>
           <ul><li>No native Wi-Fi 6/6E in a single die</li><li>Wi-Fi only available via companion chip (nRF7002)</li><li>Premium pricing vs Asian competitors</li><li>No automotive AEC-Q100 certified combo parts</li></ul>
         </div>
       </div>
@@ -1205,15 +1205,15 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where NXP wins vs AIROC™</h4>
+          <h4>✔ Strengths: NXP</h4>
           <ul><li>True tri-radio in single die (RW612) — Wi-Fi 6 + BT + 802.15.4 + MCU</li><li>Strongest automotive AEC-Q100 footprint in wireless combo</li><li>Deep Tesla, BMW, Bosch design-win relationships</li><li>Matter-over-Thread reference designs and full ecosystem</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
+          <h4>✗ Weaknesses: NXP</h4>
           <ul><li>Wi-Fi 6E missing from tri-radio line (max Wi-Fi 6 today)</li><li>Higher BoM vs MediaTek/Realtek for cost-sensitive consumer IoT</li><li>RW612 MCU performance limited vs dedicated MCU + wireless combo</li></ul>
         </div>
       </div>
@@ -1566,15 +1566,15 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where Qualcomm wins vs AIROC™</h4>
+          <h4>✔ Strengths: Qualcomm</h4>
           <ul><li>Wi-Fi 7 leadership in mobile/PC (FastConnect)</li><li>Snapdragon Sound brand dominates premium audio narrative</li><li>Aliro UWB investment — direct competition to Infineon SLx9670</li><li>Strong design-win base with Samsung, Meta, Harman</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
+          <h4>✗ Weaknesses: Qualcomm</h4>
           <ul><li>Premium pricing — not competitive in cost-sensitive IoT segments</li><li>SDK less open; tightly coupled to Qualcomm reference platform</li><li>Limited industrial-grade (AEC-Q100 / IEC 61508) certifications</li><li>IoT division smaller relative to handset — strategic priority risk</li></ul>
         </div>
       </div>
@@ -1913,16 +1913,16 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where Silicon Labs wins vs AIROC™</h4>
-          <ul><li>Matter/Thread market leader — highest CSA silicon shipment count</li><li>SiWx917: only Wi-Fi 6 + BT + 802.15.4 + Matter all-in-one at ultra-low power</li><li>Simplicity Studio praised as best-in-class IoT IDE with full Matter stack</li><li>Pure-play IoT focus = faster roadmap iteration vs Infineon’s diversified portfolio</li></ul>
+          <h4>✔ Strengths: Silicon Labs</h4>
+          <ul><li>Matter/Thread market leader — highest CSA silicon shipment count</li><li>SiWx917: only Wi-Fi 6 + BT + 802.15.4 + Matter all-in-one at ultra-low power</li><li>Simplicity Studio praised as best-in-class IoT IDE with full Matter stack</li><li>Pure-play IoT focus = faster roadmap iteration SWOT vs Infineon’s diversified portfolio</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
-          <ul><li>Wi-Fi tops out at 6 — no Wi-Fi 6E or Wi-Fi 7 announced</li><li>No automotive-grade (AEC-Q100) Wi-Fi combo</li><li>Lower RF throughput headroom vs AIROC in high-demand scenarios</li><li>Limited mobile/PC presence</li></ul>
+          <h4>✗ Weaknesses: Silicon Labs</h4>
+          <ul><li>Wi-Fi tops out at 6 — no Wi-Fi 6E or Wi-Fi 7 announced</li><li>No automotive-grade (AEC-Q100) Wi-Fi combo</li><li>Lower RF throughput headroom SWOT vs Infineon in high-demand scenarios</li><li>Limited mobile/PC presence</li></ul>
         </div>
       </div>
 
@@ -2279,16 +2279,16 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where TI wins vs AIROC™</h4>
+          <h4>✔ Strengths: TI</h4>
           <ul><li>SimpleLink SDK — unified codebase across Wi-Fi, BLE, Sub-GHz, 802.15.4 reduces porting effort</li><li>Industry-leading 30-year product longevity guarantee</li><li>AEC-Q100 Grade 1 automotive certifications on several devices</li><li>Deep industrial/factory automation customer loyalty</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
-          <ul><li>No Wi-Fi 6E or Wi-Fi 7 roadmap announced publicly</li><li>Wi-Fi only as companion (no single-die combo at Wi-Fi 6)</li><li>BLE throughput behind Nordic and Infineon AIROC benchmarks</li><li>Slower innovation cadence on new wireless standards</li></ul>
+          <h4>✗ Weaknesses: TI</h4>
+          <ul><li>No Wi-Fi 6E or Wi-Fi 7 roadmap announced publicly</li><li>Wi-Fi only as companion (no single-die combo at Wi-Fi 6)</li><li>BLE throughput behind Nordic and Infineon benchmarks</li><li>Slower innovation cadence on new wireless standards</li></ul>
         </div>
       </div>
 
@@ -2641,15 +2641,15 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where MediaTek wins vs AIROC™</h4>
+          <h4>✔ Strengths: MediaTek</h4>
           <ul><li>Aggressive Wi-Fi 7 pricing — lowest BoM for consumer CPE and STB</li><li>Dominant TV/STB SoC relationships (ASUS, TP-Link, IPTV OEMs)</li><li>Rapid standard adoption: first Wi-Fi 7 chips in production</li><li>Strong APAC OEM ecosystem leverage</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
+          <h4>✗ Weaknesses: MediaTek</h4>
           <ul><li>No automotive AEC-Q100 certifications</li><li>Limited BLE standalone portfolio</li><li>SDK less mature for industrial/embedded MCU use cases</li><li>Less channel investment for Western industrial OEMs</li></ul>
         </div>
       </div>
@@ -2981,16 +2981,16 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where Espressif wins vs AIROC™</h4>
+          <h4>✔ Strengths: Espressif</h4>
           <ul><li>Unbeatable price point (&lt;$1 in volume) — default choice for cost-driven IoT</li><li>Massive open-source ecosystem: Arduino, MicroPython, ESP-IDF, PlatformIO</li><li>Full Matter/Thread stack with active CSA contributions</li><li>Fastest time-to-market for new IoT designs with huge online community</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
-          <ul><li>BLE TX power/sensitivity inferior to Nordic and AIROC at &gt;30m range</li><li>No automotive or medical certifications (AEC-Q100, IEC 60601)</li><li>Software quality less consistent than Infineon ModusToolbox</li><li>Security features less comprehensive (no PSA Level 3 equivalent)</li></ul>
+          <h4>✗ Weaknesses: Espressif</h4>
+          <ul><li>BLE TX power/sensitivity inferior to Nordic and Infineon at &gt;30m range</li><li>No automotive or medical certifications (AEC-Q100, IEC 60601)</li><li>Software quality less consistent than Infineon ModusToolbox</li><li>Security features less comprehensive (no PSA Level 3 equivalent)</li></ul>
         </div>
       </div>
 
@@ -3342,16 +3342,16 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where STMicro wins vs AIROC™</h4>
+          <h4>✔ Strengths: STMicro</h4>
           <ul><li>EU supply chain sovereignty — critical under EU Chips Act for Bosch, Schneider, OEMs</li><li>STM32 MCU ecosystem lock-in: STM32WBA reuses same IDE, HAL, and middleware</li><li>Long lifecycle guarantees (10+ years) for industrial/white-goods customers</li><li>BlueNRG-LPS best-in-class for compact medical device BLE designs</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
-          <ul><li>No Wi-Fi combo — BLE and 802.15.4 only; no Wi-Fi 6 roadmap</li><li>LE Audio cadence slower than Nordic and Infineon AIROC</li><li>Limited presence in consumer audio / wearables vs Nordic, Qualcomm</li><li>Wireless R&amp;D spending dwarfed by overall STM32 MCU priorities</li></ul>
+          <h4>✗ Weaknesses: STMicro</h4>
+          <ul><li>No Wi-Fi combo — BLE and 802.15.4 only; no Wi-Fi 6 roadmap</li><li>LE Audio cadence slower than Nordic and Infineon</li><li>Limited presence in consumer audio / wearables vs Nordic, Qualcomm</li><li>Wireless R&amp;D spending dwarfed by overall STM32 MCU priorities</li></ul>
         </div>
       </div>
 
@@ -3694,16 +3694,16 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where Renesas wins vs AIROC™</h4>
+          <h4>✔ Strengths: Renesas</h4>
           <ul><li>DA1469x/DA14695 best published BLE sleep current (1.1 µA) — unmatched for coin-cell devices</li><li>Strong Japan automotive and industrial channel (Toyota, Panasonic, Sony tier-1s)</li><li>DA16600 ultra-low-power Wi-Fi has no direct rival for battery IoT (300 µA avg)</li><li>RA MCU + wireless combo simplifies BSP and reduces software integration risk</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
-          <ul><li>Wi-Fi tops out at Wi-Fi 4 — no Wi-Fi 6 roadmap in DA-series</li><li>Dialog/Renesas branding still consolidating — confused messaging in western channels</li><li>BLE + Wi-Fi combo lacks security certification depth of AIROC CYW55513</li><li>Smaller western FAE and distribution network vs Infineon</li></ul>
+          <h4>✗ Weaknesses: Renesas</h4>
+          <ul><li>Wi-Fi tops out at Wi-Fi 4 — no Wi-Fi 6 roadmap in DA-series</li><li>Dialog/Renesas branding still consolidating — confused messaging in western channels</li><li>BLE + Wi-Fi combo lacks security certification depth of Infineon CYW55513</li><li>Smaller western FAE and distribution network SWOT vs Infineon</li></ul>
         </div>
       </div>
 
@@ -4031,16 +4031,16 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         </div>
       </div>
 
-      <!-- 6. vs AIROC -->
-      <div class="ci-section-h" style="margin-bottom:10px;">⚡ vs Infineon AIROC™</div>
+      <!-- 6. SWOT -->
+      <div class="ci-section-h" style="margin-bottom:10px;">⚡ SWOT SWOT vs Infineon™</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
-          <h4>✔ Where Synaptics wins vs AIROC™</h4>
+          <h4>✔ Strengths: Synaptics</h4>
           <ul><li>Broadcom-lineage RF IP — proven in Apple/Samsung; best-in-class Wi-Fi sensitivity and range</li><li>Wi-Fi 7 in IoT-class power envelope ahead of most competitors</li><li>Strong relationships with premium audio OEMs (Bose, Sonos, Harman)</li></ul>
         </div>
         <div class="ci-vs-box ci-vs-weakness">
-          <h4>✗ Where AIROC™ has the edge</h4>
-          <ul><li>New brand in IoT combo — ecosystem and SDK rebuilding post-Broadcom divestiture</li><li>Developer resources limited vs mature AIROC ModusToolbox</li><li>No automotive AEC-Q100 certified parts; limited industrial certifications</li><li>Limited coverage in APAC distribution vs NXP, MediaTek</li></ul>
+          <h4>✗ Weaknesses: Synaptics</h4>
+          <ul><li>New brand in IoT combo — ecosystem and SDK rebuilding post-Broadcom divestiture</li><li>Developer resources limited vs mature Infineon ModusToolbox</li><li>No automotive AEC-Q100 certified parts; limited industrial certifications</li><li>Limited coverage in APAC distribution vs NXP, MediaTek</li></ul>
         </div>
       </div>
 
@@ -4199,11 +4199,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Realtek wins vs AIROC™</h4>
+              <h4>✔ Strengths: Realtek</h4>
               <ul><li>Lowest BoM in PC/laptop combo</li><li>Volume share in white-box</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Realtek</h4>
               <ul><li>Limited industrial / auto</li><li>Software ecosystem weaker</li></ul>
             </div>
           </div>
@@ -4255,11 +4255,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Broadcom wins vs AIROC™</h4>
+              <h4>✔ Strengths: Broadcom</h4>
               <ul><li>Apple/Samsung mobile design wins</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Broadcom</h4>
               <ul><li>IoT segment divested to Synaptics</li></ul>
             </div>
           </div>
@@ -4329,11 +4329,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where u-blox wins vs AIROC™</h4>
+              <h4>✔ Strengths: u-blox</h4>
               <ul><li>Pre-certified modules — fast time-to-market</li><li>Strong industrial / auto traceability</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: u-blox</h4>
               <ul><li>Module margin on top of underlying silicon (Nordic / NXP)</li><li>Not a chip vendor</li></ul>
             </div>
           </div>
@@ -4403,11 +4403,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Microchip wins vs AIROC™</h4>
+              <h4>✔ Strengths: Microchip</h4>
               <ul><li>Long-lifecycle parts, MPLAB ecosystem</li><li>PIC/AVR loyalty</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Microchip</h4>
               <ul><li>No Wi-Fi 6/6E/7 roadmap public</li><li>Smaller wireless R&amp;D investment</li></ul>
             </div>
           </div>
@@ -4468,11 +4468,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Telink wins vs AIROC™</h4>
+              <h4>✔ Strengths: Telink</h4>
               <ul><li>Aggressive China pricing</li><li>Multiprotocol BLE/Zigbee/Thread</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Telink</h4>
               <ul><li>No Wi-Fi</li><li>Western certifications/support thin</li></ul>
             </div>
           </div>
@@ -4533,11 +4533,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Bouffalo Lab wins vs AIROC™</h4>
+              <h4>✔ Strengths: Bouffalo Lab</h4>
               <ul><li>Lowest cost Wi-Fi 6 combo</li><li>RISC-V open ecosystem</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Bouffalo Lab</h4>
               <ul><li>Brand recognition outside China</li><li>Software stack maturity</li></ul>
             </div>
           </div>
@@ -4598,11 +4598,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Airoha wins vs AIROC™</h4>
+              <h4>✔ Strengths: Airoha</h4>
               <ul><li>Dominant in mid-tier TWS earbuds</li><li>Tight audio DSP integration</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Airoha</h4>
               <ul><li>Audio-only focus, no Wi-Fi</li><li>Limited western support</li></ul>
             </div>
           </div>
@@ -4663,11 +4663,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Murata wins vs AIROC™</h4>
+              <h4>✔ Strengths: Murata</h4>
               <ul><li>Pre-certified modules at scale</li><li>Auto / industrial supply chain</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Murata</h4>
               <ul><li>Module markup</li><li>Re-sells underlying silicon (Infineon / NXP)</li></ul>
             </div>
           </div>
@@ -4728,11 +4728,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Atmosic wins vs AIROC™</h4>
+              <h4>✔ Strengths: Atmosic</h4>
               <ul><li>Energy-harvesting / battery-less differentiation</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Atmosic</h4>
               <ul><li>Niche play, low volume</li></ul>
             </div>
           </div>
@@ -4793,11 +4793,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Onsemi wins vs AIROC™</h4>
+              <h4>✔ Strengths: Onsemi</h4>
               <ul><li>Industry-low BLE power, hearing-aid wins</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Onsemi</h4>
               <ul><li>No Wi-Fi</li><li>Slow follow-on roadmap</li></ul>
             </div>
           </div>
@@ -4858,11 +4858,11 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
         <div>
           <div class="ci-vs-grid" style="grid-template-columns:1fr;gap:10px;">
             <div class="ci-vs-box ci-vs-strength">
-              <h4>✔ Where Toshiba wins vs AIROC™</h4>
+              <h4>✔ Strengths: Toshiba</h4>
               <ul><li>Japan auto/industrial channel</li></ul>
             </div>
             <div class="ci-vs-box ci-vs-weakness">
-              <h4>✗ Where AIROC™ has the edge</h4>
+              <h4>✗ Weaknesses: Toshiba</h4>
               <ul><li>BLE-only, dated stack</li></ul>
             </div>
           </div>
