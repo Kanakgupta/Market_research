@@ -1,496 +1,490 @@
 {
-  "generated_at": "2026-07-20T13:05:13Z",
+  "generated_at": "2026-07-20T13:40:30Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Microsoft rushes out Windows fix for Dell's hot and bothered PCs",
-      "url": "https://www.theregister.com/os-platforms/2026/07/20/microsoft-rushes-out-windows-fix-for-dells-hot-and-bothered-pcs/5274810",
-      "source": "The Register",
+      "title": "Google Says Don't Uninstall/Reinstall Google & YouTube Shopify App",
+      "url": "https://www.seroundtable.com/google-google-youtube-shopify-app-update-41713.html",
+      "source": "Search Engine Roundtable",
       "date": "2026-07-20",
       "vendor": null,
-      "customer": "Microsoft",
+      "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "With a wave of the wand, affected models will go to the Patch Tuesday ball after all"
+      "summary": "Google has updated us on the Google and YouTube Shopify app issue with uninstalling and reinstalling the app. In short, do not do it, do not uninstall and reinstall the app. Google said it will handle the API transition for you. If you do uninstall and reinstall the app, it can currently lead to iss"
     },
     {
-      "title": "Globalscale Case8 \u2013 A MediaTek Genio 520/720 cyberdeck for gaming, home automation, and education (Crowdfunding)",
-      "url": "https://www.cnx-software.com/2026/07/20/globalscale-case8-mediatek-genio-520-720-cyberdeck-for-gaming-home-automation-and-education/",
-      "source": "CNX Software",
+      "title": "Apple\u2019s iPhone 18 AI bet hides a pricing trap",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcGVhZkN0emhUTHJZS1ZldlExSEJibVJSTHZiTjRRS1FLa2RKbUtHN09SUHI2RUF6WENkOENOV19SenhMV0p6MmdTNVhHSUI3SlBxOW8xTDBtcU9qRjFlZTJwdmpOUlZxd0s3LTRTSHRraWhEZm5hbXVVTjBWdzdUX1NYTF9VODA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "thestreet.com",
       "date": "2026-07-20",
-      "vendor": "MediaTek",
-      "customer": "Amazon",
-      "application": "Smart Home",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "Globalscale Technologies has launched the Case8 series of open-source cyberdeck-style computing platforms based on MediaTek Genio 520 and Genio 720 processors. The platform is offered in hacker (PCBA only), gaming, home automation, and education variants. The Case8 is built around an OSM-L compute m"
-    },
-    {
-      "title": "Geniatech XPI-3576-CM5 \u2013 A Raspberry Pi CM5-compatible Rockchip RK3576 AI Compute Module with WiFi 6, Bluetooth 5.3",
-      "url": "https://www.cnx-software.com/2026/07/20/geniatech-xpi-3576-cm5-a-raspberry-pi-cm5-compatible-rockchip-rk3576-ai-compute-module-with-wifi-6-bluetooth-5-3/",
-      "source": "CNX Software",
-      "date": "2026-07-20",
-      "vendor": "Realtek",
-      "customer": "Amazon",
-      "application": "Automotive",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "Geniatech XPI-3576-CM5 is a Rockchip RK3576 octa-core Arm Cortex-A72/A53 system-on-module based on the Raspberry Pi CM4/CM5 form factor with up to 16GB LPDDR5 and 128GB eMMC flash. The module also features a RealTek RTL8211F Gigabit Ethernet controller, an Ampak AP6275S wireless module for dual-band"
-    },
-    {
-      "title": "IoTextra modular automation boards with 4 inputs, 4 outputs work with Raspberry Pi and ESP32 MCU boards",
-      "url": "https://www.cnx-software.com/2026/07/20/iotextra-modular-automation-boards-with-4-inputs-4-outputs-work-with-raspberry-pi-and-esp32-mcu-boards/",
-      "source": "CNX Software",
-      "date": "2026-07-20",
-      "vendor": "Espressif",
-      "customer": "Amazon",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Last week, we wrote about the Olimex PICO-EVB automation board equipped with four relays and four isolated inputs and designed for Raspberry Pi Pico-compatible boards. Make Things Happy does something similar, but in a modular way, with the IoTextra family of carrier boards with four inputs and four"
-    },
-    {
-      "title": "Efinix Titanium Edge FPGA family targets low-power edge AI and vision systems",
-      "url": "https://www.cnx-software.com/2026/07/20/efinix-titanium-edge-fpga-family-targets-low-power-edge-ai-and-vision-systems/",
-      "source": "CNX Software",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Efinix has introduced the Titanium Edge FPGA family designed for low-power edge AI and machine vision applications. Based on the company&#8217;s Titanium FPGA architecture, the new family introduces lower static power consumption, configurable 2.5 Gbps MIPI I/O, built-in single-event upset (SEU) cor"
-    },
-    {
-      "title": "This unpronounceable series of glyphs is an incredible side project from Kieran Hebden (aka Four Tet)",
-      "url": "https://www.theverge.com/entertainment/967696/four-tet-wingdings-album-review",
-      "source": "The Verge",
-      "date": "2026-07-19",
       "vendor": null,
       "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "Just why? &#645;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;(&#824;&#802;&#795;&#828;&#798;&#813;&#843;&#837;)&#824;&#858;&#816;&#859;&#788;&#830;&#768;&#831;&#850;&#834;:&#820;&#851;&#798;&#785;&#780;&#770;&#774;&#778;&#843;&#768;:&#824;&#846;&#799;&#815;&#770;&#787;&#780;&#12"
+      "summary": ""
     },
     {
-      "title": "Birdfy&#8217;s solar-powered smart feeder is down to one of its best prices",
-      "url": "https://www.theverge.com/gadgets/967336/birdfy-feeder-ai-powered-smart-bird-feeder-with-camera-deal-sale",
-      "source": "The Verge",
-      "date": "2026-07-19",
+      "title": "Samsung\u2019s Galaxy Z Fold 8 Leaks With Wider Display Ahead of Launch",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUmxhbmJFaWVCNm95ZnQ2LXJXR0Flemw1OElDdm1KYU51enhTenhaLW1xdEtaZlZlNU5VQlctZmNteEVnZy1QajQ4U2U2blJ0OWNKQjZSR0VQeEp5TUZBSVczVFcwQ1VEUzFiTVhRSF9ZdUJ6ZUE1MldlYUtMaXRBVkdsN3N3ZUpJU1ZCd2Fn?oc=5",
+      "source": "TechRepublic",
+      "date": "2026-07-20",
       "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "The Samsung Browser app on Wear OS now lets you download images and GIFs",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORXNQZ085dnlsSDR5cHpDVU5ka05FM1JvOUR1SENadWVlSVFROUtxb0hYWjRrRVkyd0lmY0tHLUhNQ0NrU19QTk5VU1ZpX1huVG9ITnZXVDlkeGwtLXNhVUg3M3REeEw0Mmx6SU9BS3FFT1pkUlNtaXZMYUN6Zk5OMTVXTVZOMWc?oc=5",
+      "source": "Android Authority",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "GM and Tesla Say That Overly Bright Headlights Aren't Their Problem",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcEIwRnhGdVZCOEFjWDg5b2tJT0V2NGtKN1luVktTazZEQU1UTjJZbHFrX3NmQmM2UjhoU3RMT3c4TFpaRTRFdDVZSUR5Tm1BQjNVZFZmcktoSnE1QWM2ZFIzMlRxS3FoNE52ZWphVHlVQ0lxdnJzYlpESkZlbkl2aFRyR2luQTRiXzc2SGZBZnpUZ1NLMHNodktCbUVoNk9WTmtMOVotMmpEOUtKQXdOUGRJZ1o?oc=5",
+      "source": "Autoguide.com",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Sony Patents PlayStation Modular Controller With Touchscreen Interface",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWFVVd3VnTGRSc2F1d3RVQjdvcXBoNEtOVlV5bm4zVWlyUEYtdnRSREtBbUxiUG5weUJ5cHZzUERHM1ZPbWtCcFBsNDVqam51bUxfclVaa2dkRkF0UDhVd1VVOGJ1bWtfakVna05kSm9DRzNBZkFJWXliUFlseFBkMGVQancyMERsRlV6Mk55M3Vlb0hha0pOSFFOdlM?oc=5",
+      "source": "PlayStation Universe",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Sony",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "A leak has revealed details about the Samsung Galaxy Watch9 - Root-Nation.com",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNYkpsaGlnV1dCRzNQSUF0UVBLVExCc2NwVjVKMTQ1TGtwWEZjcFM4RmpzZkQ1T08wVnB1dDVwZm1XbWR2cS14cFRoUWNpNmcyRlFfUk9iNXJkbklESWNUdVE2cncxWVMtWnF2bjZndFBXbmpBWHhkUXVhRGM1MWVrNGRKRGRhWWtSS3prQVpR?oc=5",
+      "source": "Root-Nation.com",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "A leak has revealed details about the Samsung Galaxy Watch9&nbsp;&nbsp;Root-Nation.com"
+    },
+    {
+      "title": "Shoppers Are Comparing These Under-$70 Amazon Sneakers to Hokas\u2014See the 10 Best Picks, From $50",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNTUhZTkNlbkNSODJVZjFLYTFMVUN0RG10ZHBRUDBrczZwYW8xZmVHdElqcmQxQjZ3LUhsbEVOZnJmaWpKVUtXUDZrdU82SmwxUUdOR0VOUWVhZ0RHaFdUYVJWcDZlcVhLVnlQbF9RejF3LUJmWWhJS2E3UkRFTW84YWN0U1lsYkV5VE1QcHZpakd2QU0?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Travel + Leisure",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Why the Pixel 11a is more exciting than Pixel 11",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQY2YzV1c1T1pQYmhLRE9RWVJreDM2OWN0eW1ubzNiSkxUUjc3b3M4RERqYVV3RXhOMWZjd25WZjlnUm5LTEllbFdsWngydmpSd2ZlQVlsaU1FSXNldUgzZ244OTlVblpFMThTS211Ni12S3pSRWtkeDl4dElGSGtyWktHWXEzRjhoNW1XQy1LTWJ1Rm9SdlJWNm5IOTh3ZlhXcHc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Tech Advisor",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Tennessee sues Meta alleging Instagram designed to addict teens",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBaWEtzdWZ2dS1rM01PX2tfWTB4TlA2S1RkdTVxU2tjRTNVUjdJYVRkXzdCX19YbUZHdWd0cXA5ZGI4X183SUV2MGNXQXVGQmQ2ckhFaDNOVl9SUlRmWWhnRVhVY3JGVEZh?oc=5",
+      "source": "\u041c\u0435\u0436\u0430. \u041d\u043e\u0432\u0438\u043d\u0438 \u0423\u043a\u0440\u0430\u0457\u043d\u0438.",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Samsung, Micron, and SK hynix are ditching their own CXL controller projects",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5WXzZ6akRXTUVRNzZhRDJELThYb1BHZGllVk9QS2VMWHM1QkxPWGxfM2x4clVMUEwzMjZGMUNRR3p5TE1Zbm9HTmZHZ0w4R1k2UUJCVGlzYlJjRmFsYlZSR243eHRKdDBXMGt3TnNyUmVOZjVWU3dBNkdQYVQ?oc=5",
+      "source": "Crypto Briefing",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Why is Broadcom stock climbing today?",
+      "url": "https://www.investing.com/news/stock-market-news/why-is-broadcom-stock-climbing-today-93CH-4800613",
+      "source": "Investing.com",
+      "date": "2026-07-20",
+      "vendor": "Broadcom",
       "customer": null,
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "Birdfy has kicked off a midyear sale, taking up to 40 percent off a range of its smart bird feeders. One of the best deals is on Netvue\u2019s Birdfy Feeder AI-Powered Smart Bird Feeder with Camera, which has dropped to $149.99 at Birdfy and is its second-best price to date. The bundle, which includes a "
-    },
-    {
-      "title": "The Clapper was a bad smart home gadget \u2014\u00a0and a viral sensation",
-      "url": "https://www.theverge.com/podcast/967642/the-clapper-version-history",
-      "source": "The Verge",
-      "date": "2026-07-19",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Clap on. Clap off. Well, more like, Clap, pause for half a beat but no longer because otherwise it'll stop hearing you, clap again because you waited too long, clap louder and faster, that didn't work, clap two more times, and suddenly: on. The Clapper didn't always work - and even when it did, it ["
-    },
-    {
-      "title": "Beelink EQi 304 review \u2013 Part 3: Ubuntu 26.04 on a Wildcat Lake mini PC",
-      "url": "https://www.cnx-software.com/2026/07/19/beelink-eqi-304-review-part-3-ubuntu-26-04-on-a-wildcat-lake-mini-pc/",
-      "source": "CNX Software",
-      "date": "2026-07-19",
-      "vendor": "MediaTek",
-      "customer": "Google",
-      "application": "Audio / Speaker",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "After checking out the hardware with an unboxing and a teardown of the Beelink EQi Wildcat Lake mini PC, we reviewed the Intel Core 3 304 computer with Windows 11 in detail. We&#8217;ve now had time to test the Beelink EQi mini PC running Ubuntu 26.04 with Linux 7.0/7.1 kernels. We&#8217;ll report o"
-    },
-    {
-      "title": "I've been a Google phone diehard for 10 years - here's my 5-part wishlist for Pixel 11",
-      "url": "https://www.zdnet.com/article/five-improvements-google-needs-to-deliver-at-next-months-pixel-11-event/",
-      "source": "ZDNet",
-      "date": "2026-07-19",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "I've been a Google phone diehard for 10 years - here's my 5-part wishlist for Pixel 11\nFollow ZDNET: Add us as a preferred source on Google.\nZDNET's key takeaways\n- Google will officially unveil the Pixel 11 lineup on Aug. 12.\n- The new Pixel Glow feature could be the highlight.\n- Pixels need an AI "
-    },
-    {
-      "title": "The iPad mini's biggest update in 5 years is expected this fall",
-      "url": "https://www.zdnet.com/article/apple-ipad-mini-2026-redesign-oled-rumors/",
-      "source": "here's what we know",
-      "date": "2026-07-18",
-      "vendor": null,
-      "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "The next iPad mini is rumored to feature an OLED panel and a more powerful processor. A new base iPad is also in the works."
+      "summary": ""
     },
     {
-      "title": "NextBSD returns to dollop Apple source on FreeBSD",
-      "url": "https://www.theregister.com/os-platforms/2026/07/18/nextbsd-returns-to-dollop-apple-source-on-freebsd/5273788",
-      "source": "The Register",
-      "date": "2026-07-18",
+      "title": "Samsung Biologics plans to acquire Swiss contract manufacturer",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA5WkZMSDFaV3lxTExuUDdKQTZ6bk1zVTloMEY4cE05dkdpMWgyV0VWRUVPSkh3elFmblI4eGRXb1J5R1pSaElrRE5zMGlodFJrbDFvY3ZhUGtVQWQ2cG1vTDV0VWFYMDNteElNbXNkYw?oc=5",
+      "source": "medwatch.com",
+      "date": "2026-07-20",
       "vendor": null,
-      "customer": "Apple",
+      "customer": "Samsung",
       "application": null,
       "buckets": [],
-      "summary": "New maintainer revives the project with Darwin components, Gershwin, and Claude Code"
+      "summary": ""
     },
     {
-      "title": "M5Stack Core2 gets open-source firmware to reproduce OpenAI\u2019s Codex Micro features",
-      "url": "https://www.cnx-software.com/2026/07/18/m5stack-core2-gets-open-source-firmware-to-reproduce-openais-codex-micro-features/",
-      "source": "CNX Software",
-      "date": "2026-07-18",
-      "vendor": "Espressif",
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "IAMLIUBO has written firmware for the M5Stack Core2 IoT controller to reproduce the features of the $230 Codex Micro macro pad for OpenAI&#8217;s AI coding agent platform, enabling developers to more easily monitor and control agents. The original is neat with a CNC-milled enclosure, a rotary encode"
-    },
-    {
-      "title": "Google-backed satellites for wildfire detection launch as smoke chokes US, Canada",
-      "url": "https://arstechnica.com/space/2026/07/google-backed-satellites-for-wildfire-detection-launch-as-smoke-chokes-us-canada/",
-      "source": "Ars Technica",
-      "date": "2026-07-17",
+      "title": "Google merges two Shopping policy sets but adds zero merchant restrictions",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdnJmNk1TeGtvQkpCLVl5eWhHaUlBcGNkT2IzSmltRERrdmZheFI5aEZGeXZZdWNodjVYX3Q1NFFZLWJyQWZOZmphRmszcEdYVlZNbEN6YmJSZUs5ZGZleFQwWUtDWlc3Y0dxdUliaVIxVmctZmFzZkk1YTMxYzZmR2dLdXhibFNrY1Z2V3RaaHpKb1BGT0FR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "PPC Land",
+      "date": "2026-07-20",
       "vendor": null,
       "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "As smoke from hundreds of burning wildfires spread across Canada and the United States, the first three operational satellites in the Google-backed FireSat program successfully launched into orbit. The satellites will begin providing wildfire detection capable of spotting even small fires in the Uni"
+      "summary": ""
     },
     {
-      "title": "Hegseth wants a \"High-T\" military; doctors call it a clinical minefield",
-      "url": "https://arstechnica.com/health/2026/07/hegseth-wants-a-high-t-military-doctors-call-it-a-clinical-minefield/",
-      "source": "Ars Technica",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": null,
-      "application": "Healthcare",
-      "buckets": [],
-      "summary": "On Wednesday, Defense Secretary Pete Hegseth made the startling announcement that the US military would begin requiring all active duty and reserve personnel aged 30 and older to undergo mandatory screening for testosterone deficiency. The screenings will take place during yearly health assessments."
-    },
-    {
-      "title": "This Graduate Student Equips NASA\u2019s Robots With Assembly Skills",
-      "url": "https://spectrum.ieee.org/graduate-student-nasas-robots-assembly",
-      "source": "IEEE Spectrum",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": "Robotics",
-      "buckets": [],
-      "summary": "Like many engineers, Sarah Downs says she knew she wanted to pursue a STEM career from a young age. As a teenager, she discovered robotics through her Tulsa, Okla., middle school\u2019s First Lego League team, and she fell in love with the field, she says. Downs participated in the international robotics"
-    },
-    {
-      "title": "Microsoft cuts OneDrive support for older Windows 10 versions next month",
-      "url": "https://www.theregister.com/os-platforms/2026/07/17/microsoft-cuts-onedrive-support-for-older-windows-10-versions-next-month/5274489",
-      "source": "The Register",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "MOST POPULAR\nAI\n-\nAI and ML\nOpenAI admits GPT-5.6 occasionally deletes files \u2013 but it's an 'honest mistake'\nData purges deemed an example of 'misaligned behavior' that upstart is working to avoid\n-\nAI and ML\nResearcher poisons open-weight AI model for under $100\nModels demand trust without offering "
-    },
-    {
-      "title": "This air purifier is helping keep my home's air free of wildfire smoke",
-      "url": "https://www.zdnet.com/article/blueair-blue-pure-211i-max-air-purifier-deal/",
-      "source": "and it's on sale",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "Get cleaner air for less with the Blueair Blue Pure 211i Max air purifier for 20% off on Amazon right now."
-    },
-    {
-      "title": "Billing software error sends billion-dollar AWS estimates",
-      "url": "https://www.theregister.com/off-prem/2026/07/17/billing-software-error-sends-billion-dollar-aws-estimates/5274521",
-      "source": "The Register",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "MOST POPULAR\nAI\n-\nAI and ML\nOpenAI admits GPT-5.6 occasionally deletes files \u2013 but it's an 'honest mistake'\nData purges deemed an example of 'misaligned behavior' that upstart is working to avoid\n-\nAI and ML\nResearcher poisons open-weight AI model for under $100\nModels demand trust without offering "
-    },
-    {
-      "title": "San Francisco orders Apple, Google to remove nudify apps from app stores",
-      "url": "https://arstechnica.com/tech-policy/2026/07/apple-google-must-stop-profiting-off-ai-nudify-apps-san-francisco-ag-says/",
-      "source": "Ars Technica",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "This week, San Francisco\u2019s attorney general, David Chiu, sent cease-and-desist letters, demanding that Apple and Google remove 13 so-called nudification apps from their app stores, Wired reported.\nNudification apps can make it trivially easy to transform ordinary photos of real people into explicit "
-    },
-    {
-      "title": "I wore 3 blood pressure watches for a month to find the most accurate",
-      "url": "https://www.zdnet.com/article/blood-pressure-watches-samsung-amazfit-yhe/",
-      "source": "and this one wins",
-      "date": "2026-07-17",
+      "title": "Samsung Galaxy Watch Ultra 2 Leak Teases Thinner, Brighter Flagship Smartwatch",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQT2ROTjNxYTFjYjhJdWNzdHliUUNhUVdBd3N2YkRXdUJRWmdNU3YwZURLdnA3c2h0bW1XZzk0ekJyUGNZekFDcVVhdkZtTVNxd1FGM3FIeWU0M1hhalp3czdjd2VkRDk1UndVb0x2elUzRW9hS0s5ZkhnMUFYeTM3SERxZ3hYMzk0amZ4R3lXVThUOW94ZkNmbVJ4SWNicU1tdDd4Ukh5SQ?oc=5",
+      "source": "Engadget",
+      "date": "2026-07-20",
       "vendor": null,
       "customer": "Samsung",
       "application": "Wearable",
       "buckets": [],
-      "summary": "I tested Samsung, Amazfit, and Doctor Fit blood pressure watches - and only one rivaled my Garmin Index BP Monitor."
+      "summary": ""
     },
     {
-      "title": "5 underrated iOS 27 features that make my iPhone way better",
-      "url": "https://www.zdnet.com/article/i-used-ios-27-for-a-month-and-these-5-non-siri-ai-features-are-already-making-my-life-easier/",
-      "source": "and none are Siri AI",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Some of my favorite new features in iOS 27 are flying under the radar, but no less impactful."
-    },
-    {
-      "title": "How to get a tax-free Mac, iPad, or iPhone in 8 states",
-      "url": "https://www.zdnet.com/article/apple-products-tax-free-shopping/",
-      "source": "but only on these dates",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "AR / VR / XR",
-      "buckets": [],
-      "summary": "Certain states will let you buy items tax-free from different retailers, and Apple is one of them. Here's when and the products that qualify."
-    },
-    {
-      "title": "Microsoft gives admins Exchange Online breathing room",
-      "url": "https://www.theregister.com/saas/2026/07/17/microsoft-gives-admins-exchange-online-breathing-room/5274346",
-      "source": "The Register",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "MOST POPULAR\nAI\n-\nAI and ML\nOpenAI admits GPT-5.6 occasionally deletes files \u2013 but it's an 'honest mistake'\nData purges deemed an example of 'misaligned behavior' that upstart is working to avoid\n-\nAI and ML\nResearcher poisons open-weight AI model for under $100\nModels demand trust without offering "
-    },
-    {
-      "title": "Top EU court clips YouTube's intermediary defense over reviewed content",
-      "url": "https://www.theregister.com/off-prem/2026/07/17/top-eu-court-clips-youtubes-intermediary-defense-over-reviewed-content/5274299",
-      "source": "The Register",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "You can't claim to be a passive host after vetting a creator's channel, Google warned"
-    },
-    {
-      "title": "Europe's chip ambitions won't break dependence on US cloud and software, says Forrester",
-      "url": "https://www.theregister.com/paas-and-iaas/2026/07/17/europes-chip-ambitions-wont-break-dependence-on-us-cloud-and-software-says-forrester/5274086",
-      "source": "The Register",
-      "date": "2026-07-17",
-      "vendor": "Onsemi",
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Brussels may spend billions on semiconductor fabs, but tech sovereignty remains firmly in American and Chinese hands"
-    },
-    {
-      "title": "Espressif releases SDK for Aliro smart door locks based on ESP32-C or ESP32-H SoCs",
-      "url": "https://www.cnx-software.com/2026/07/17/espressif-releases-sdk-for-aliro-smart-door-locks-based-on-esp32-c-or-esp32-h-socs/",
-      "source": "CNX Software",
-      "date": "2026-07-17",
-      "vendor": "Espressif",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter",
-        "aliro",
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "Espressif Systems has just released the SDK for Aliro, designed for smart Matter door locks and other access control solutions built around ESP32-C (WiFi) or ESP32-H (Thread) microcontroller and third-party NFC chips. We recently wrote about the Aliro vendor-agnostic digital access control standard "
-    },
-    {
-      "title": "Google fixing Android lock screen bug that lets Gemini send SMS without a PIN",
-      "url": "https://www.theregister.com/security/2026/07/17/google-fixing-android-lock-screen-bug-that-lets-gemini-send-sms-without-a-pin/5273027",
-      "source": "The Register",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "A specific multi-touch gesture bypasses an authentication prompt, allowing anyone to send messages"
-    },
-    {
-      "title": "reCamera Pro \u201cOpen AI Camera\u201d supports computer vision, LLM, VLM, STT, and TTS workloads",
-      "url": "https://www.cnx-software.com/2026/07/17/recamera-pro-open-ai-camera-supports-computer-vision-llm-vlm-stt-and-tts-workloads/",
-      "source": "CNX Software",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Audio / Speaker",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Seeed Studio&#8217;s reCamera Pro is an AI camera powered by a Rockchip RV1126B quad-core Cortex-A53 SoC with a 3 TOPS NPU for on-device AI vision, but also large language models (LLMs), vision language models (VLMs), as well as speech-to-text (STT) and text-to-speech (TTS) with built-in audio capab"
-    },
-    {
-      "title": "Own a Pixel? You can add device protection now for $5/month",
-      "url": "https://www.zdnet.com/article/google-just-reopened-enrollment-to-add-pixel-care-plus-to-older-phones-heres-who-should-and-shouldnt-sign-up/",
-      "source": "but should you?",
-      "date": "2026-07-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "If you skipped Google's phone insurance at checkout, you can now add it again. But should you?"
-    },
-    {
-      "title": "Amsterdam activists throw acid at Microsoft datacenter project",
-      "url": "https://www.theregister.com/ai-and-ml/2026/07/16/amsterdam-activists-throw-acid-at-microsoft-datacenter-project/5273943",
-      "source": "The Register",
-      "date": "2026-07-16",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Extinction Rebellion claims responsibility for chemical-filled balloon attack targeting concrete and steel"
-    },
-    {
-      "title": "EDF on Zigbee 4.0",
-      "url": "https://csa-iot.org/newsroom/edf-on-zigbee-4-0/",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-16",
-      "vendor": null,
-      "customer": null,
-      "application": "Energy/Utility",
-      "buckets": [
-        "ieee15_4",
-        "matter"
-      ],
-      "summary": "How is an electricity utility putting Zigbee 4.0 to work? In this interview, Vincent, an engineer at EDF&#8217;s R&#38;D Centre, shares how the latest evolution of the standard is shaping&#8230;"
-    },
-    {
-      "title": "4 surprise products we could see at Samsung Galaxy Unpacked (including the Galaxy Glasses)",
-      "url": "https://www.zdnet.com/article/samsung-galaxy-unpacked-what-to-expect-2026/",
-      "source": "ZDNet",
-      "date": "2026-07-16",
+      "title": "NVIDIA\u2019s AI GPUs Face Overwhelming Data Growth Bottleneck, But Samsung\u2019s V10 NAND Production For Next-Generation CMX Storage To Offer Relief, At The Industry\u2019s Expense",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUVdET1Nqa3YzR0tmdVpvV2s1S2RtSnpxdWZCZXFGR0FFX0Q2R2tnVEZfYlR3YThnRVJuTmVRNzUwTjhSZG9jNUNNdFlwS0NKaTU4Qk80cmVYcHJOUktwdG1OdEFIRU1UT0FmczZUZDR6aDFZcU93bE9mcElzTkRHUFVkLVpVQkRfT1J4OENJQ19YM3VkZEw3MkE2RDEyUTZVNTlwdnVB0gGrAUFVX3lxTE9CQm55YzhqV1lheGlFVENVRm85X1RIUHBLcTV0d2I3eW14d3JFSDhOSF91TDBGWTU1dGJseHYtajFrZjJfdEozeTliSEh1UUozbEE5Y2FpaENvUm14NlRRNGFxYmFtYnhMNXNkLVp1VllHaks0aU5UMXhaOUdabkQ5blVwclhCVTRSck14ODgxalhkOUVCd1hXZ01oS3N2S1BoZ1FzODFneWwwbw?oc=5",
+      "source": "Wccftech",
+      "date": "2026-07-20",
       "vendor": null,
       "customer": "Samsung",
-      "application": "AR / VR / XR",
+      "application": null,
       "buckets": [],
-      "summary": "We're expecting some curveballs at Samsung's 2026 Galaxy Unpacked event. Here's everything we know."
+      "summary": ""
     },
     {
-      "title": "EU forces Google to share its toys with the other AI and search kids",
-      "url": "https://www.theregister.com/software/2026/07/16/eu-forces-google-to-share-its-toys-with-the-other-ai-and-search-kids/5273819",
-      "source": "The Register",
-      "date": "2026-07-16",
+      "title": "Apple\u2019s $4.9 Trillion Victory Flips the Entire AI Narrative",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbjRIaUEzVHFHNHI1U2FXQVN3bGdXWnpJX0dDcHA3YXN3Ulk5MFE0djJwVHVBUnV5S01NTFFRd0pobWdyMU5FekhLbmVSRFZldjZQV0p1eXFna0hlY2FwTm1KYlhDLUFfclNjcU5fSHRFZmVwdWhaQmNjdnd4bDdPbWVUcW1YNGNWRlpQRHhsSWc0cnRZV2NRNkRxVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "inc.com",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "New Sony Patent Suggests PlayStation 6 Will Fix One of PS5\u2019s Biggest Issues",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOV21SdTRqNkVXNWJmeGlvVXhfWnB1UmJRTlJ5b2RDb2dYTDJoeUlFSVRmb3poME40WHR6LVlSSDVkQXJlRmNYWk1VZGRqeXJOcVBTT1FneXQxM1ppNVJFT1NQcktNMGJ1aHBfMEtSb3N2Y3VUdllFZEhqWjdGeDhWOEdBTTQyX0VwaXV6TDNDdjQ1Ui0xSl9pLTNucWllRTJtWmlv?oc=5",
+      "source": "Insider Gaming",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Sony",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google Content API for Shopping Extended Access Form",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0wdDFrYllYeUR3S3RtakVkTUphZDFrdnVjOVcwOFhHYlIzdFdiMGZSLTQ3NmZON1hRNmdJelplS1o3dXQxN2lCY3FidUZ5cC1BNU9nSXV4OEtCM1l1SEtfYk5VS2ZyWUNoblk2TmhSYUh6MzQwMVJj?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Search Engine Roundtable",
+      "date": "2026-07-20",
       "vendor": null,
       "customer": "Google",
-      "application": "Industrial",
+      "application": null,
       "buckets": [],
-      "summary": "Spelled out in big colorful letters that even Google can understand, the EU is now requiring the Chocolate Factory to share search data with competitors while enhancing Android AI interoperability for bots other than Gemini.\nNeedless to say, the company would like to find a way to disable this defau"
+      "summary": ""
     },
     {
-      "title": "How lighting and HVAC systems are powering sustainability initiatives across commercial spaces",
-      "url": "https://www.bluetooth.com/blog/how-lighting-and-hvac-systems-are-powering-sustainability-initiatives-across-commercial-spaces/",
-      "source": "Bluetooth SIG Blog",
-      "date": "2026-07-16",
+      "title": "Meta's Instagram faces Tennessee addiction trial: Check details here",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQcjVrRUpCVGMteWVzdWI0aGlvbi1RWDR4bXJrczVsSXpzaEYwakUzYVEwQUhUQlRLejY0LVdXSFFBdUVmY0NlZ1RhbWp0QklQdFRMbDFWTHRrck1UTTFxTjQtV296T043Sjk0Y0YtUDFHN202T3c1RndyOUlRUlYyT19VWTYyX3ZjeE84WEplOHdLbHBrSXFCTzlkYjBkNGVObWlYcnFKOEJKTjlN?oc=5",
+      "source": "The News International",
+      "date": "2026-07-20",
       "vendor": null,
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "For decades, Bluetooth\u00ae technology has been synonymous with powering headphones, smartphones, and automotive infotainment systems. However, its role has expanded..."
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": ""
     },
     {
-      "title": "Kick your mouse out of the house with this AI-assisted keyboard utility",
-      "url": "https://www.theregister.com/software/2026/07/16/kick-your-mouse-out-of-the-house-with-this-ai-assisted-keyboard-utility/5271938",
+      "title": "Microsoft rushes out Windows fix for Dell's hot and bothered PCs",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOUptVi1EUkN6TUtiWWctV2ROeDRwZGtseEkydktoRFVkSFNPanAzMEFMV1ZrLTAtbUd3T05LSjNidE5sZlhKOXptYzA3X3JCV2dWNWgzZmstczZOUjN0QmwwYzNYYmtoNEVNRURpTzhGRVF6ZURhdjJWVXlqc0ZPN2lTd0ZuUGVsZldwckVzUlAtOHJiYThWb3REb1VWNXBVOGVsREt3emE5VmVuMHY3anU4a21HOUhLcXJHdFdvSGc?oc=5",
       "source": "The Register",
-      "date": "2026-07-16",
+      "date": "2026-07-20",
       "vendor": null,
       "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Kincmo No-Drill Smart Blinds w/ Matter over Thread (review)",
+      "url": "https://homekitnews.com/2026/07/20/kincmo-no-drill-smart-blinds-w-matter-over-thread-review/",
+      "source": "Homekit News and Reviews",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Retail",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Kincmo No-Drill Smart Blinds w/ Matter over Thread (review)\nSince testing my first set of custom smart blinds in 2022, Omnia\u2019s HomeKit over Thread MotionBlinds, I\u2019ve reviewed products from several other manufacturers, including SmartWings, SmartWave, and Bringnox, all of which have supported Matter "
+    },
+    {
+      "title": "Tesla plans for a major production boost at its plant in Germany (TSLA:NASDAQ)",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZXZaY0RqTWNmaFZuMHhaeUtFdXVXMzNYb1pJcVFIZGo4MlZfWFBEM1FHcUZjaGxJN0pfamNucldGT3hxOXU0RXJYMXRXQmI4SXl5LVhRcGRuMlVWVEc2c2xaU2lDbVR4cERURlpNMUg1Tm13U2VhQXdsQk9CcDV3Q3hBbWZ0SlhScTRHbzktODJEclJVZHdvZGxLcEtDRlltMHc?oc=5",
+      "source": "Seeking Alpha",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Apple Watch water resistant but not unsinkable, owners learn",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE43NmtkVzN4cUV3UzJvYVlWVHROTnZabDJZdE83VFFYeENPME8xMFczUHI1VGp0blV1QVM3NEVCWFhhS21OeVFJVmRSbHNiVk1mZXI4aFk1aml0OVJpSWhBSVFQTjNTVmdyS193eG9iVTlRTEtp?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Cybernews",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google Says Don't Place AI Labels On Corners Of Images",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBXNjJJNWppam5pTnpjUlB1MG1oVWFtQlJ1U05QQmtfR3RVT1d0Zk1qZm1hbHRmUXFhSmNCUVFPT2NyTG5fdXJUaHZGRTNpX2pVTWJPTmRja0VJdXlzWlY1TUFROUFPQldTclNTZnVNSUVZQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Search Engine Roundtable",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Bose QuietComfort Ultra Earbuds (2nd Gen) No Longer Cost More Than AirPods After Hitting a 90-Day Low on Amazon",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQUzNZdmN5c2lSZ0JVUm1fRUN4NWtYeG9COTFHWGtpeXo1M1NsaTNwSkdRbUF5QlM0ekNBOFE1eHF4V2ZwLVZXMWZjTUlVZ29oYzVxcWlORlZkTklGeHNXZkNaV1RmaGVRVnVaajR1RDdCV0JNRExFb3B1WG8wRkc5eUFNMlMxUmszYVM1anBaMm1lSGlCa3lfSmtjREFnUWY1U3Y3ODBlb0d4Q281S0toY1VMUGMweVlaellkZlg3YmlST2lYOWpkaFJldmxVX2UxOV8td2VlWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Gizmodo",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Audio / Speaker",
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "AI fakes a growing problem on Apple Books, some \u2018written\u2019 in a few hours",
+      "url": "https://9to5mac.com/2026/07/20/ai-fakes-a-growing-problem-on-apple-books-some-written-in-a-few-hours/",
+      "source": "9to5Mac",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Tech writer Joanna Stern wrote last month about discovering 10 fake versions of her book I Am Not a Robot on Apple Books within days of the real thing being published. While she was able to get these removed, new ones quickly appeared. New York Times journalist Kashmir Hill found a fake biography of"
+    },
+    {
+      "title": "Apple's Secret Siri Interface Buried in macOS 27 Beta: How to Enable",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPX3RHS1JUSGs5S2dzcGd3cDZuTlpjQUtSeHNSelg2X1RtamVqTDlnWWVYRnNCY2xPUE9zOWJKY0ZhcDU5NjlTc1lIYzI3dW5TTjduTDVpYXNORVdGSjU1ZERVdlFFX1NzREJPZEw3RlU5ZVhiU1BMUkFQaERCLUQzYmtCLV9uRmM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "MacRumors",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Tesla Diner is throwing a birthday party with a Franz-signed special treat",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5wekRPbG5YdVllVjJFczFtdzg0cGlMZWVSZ2ZKdGQ3amtCUlgxeHBXUTRGZ3JOSGZReHBuYUx5MDhBTHJwLTdHWFN1MDJnTENWeEVjTDYwdndWNHc5a2tZR3ZBY2d1dw?oc=5",
+      "source": "Teslarati",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google Backs Largest US Solar Energy Project",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQLUw5RlFQamxVRlNaX3FWcUtMYW53dTlNQU9oVkpwMU1sWHBIVzdOb01lTFgtRmVGSVdSUlFRbFluTkd6aG43MUVfUXYwNDBYc0I5YUFxTjQ2Mk9Wc1V1dnB2LWRGczJvN0VkZVJ2WGRVU2xmQnhESkp4d3dtUVNVa2RSck1URTRVUjVVRjF0cm1pbG04YjFwWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "ESG News.earth",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Google",
       "application": "Energy/Utility",
       "buckets": [],
-      "summary": "Neverclick avoids being limited to certain apps by ditching accessibility APIs for a quick, lightweight computer vision model."
+      "summary": ""
     },
     {
-      "title": "Microsoft open-sources Comic Chat, its cartoon IRC curiosity",
-      "url": "https://www.theregister.com/offbeat/2026/07/16/microsoft-open-sources-comic-chat-its-cartoon-irc-curiosity/5274382",
-      "source": "The Register",
-      "date": "2026-07-16",
+      "title": "The Google Pixel 10a is on offer at T-Mobile \u2014 here\u2019s how to save up to $800",
+      "url": "https://mashable.com/tech/july-20-t-mobile-google-pixel-10a-deal",
+      "source": "Mashable",
+      "date": "2026-07-20",
       "vendor": null,
-      "customer": "Microsoft",
+      "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "Step back three decades to 'a period when software teams were willing to color outside the lines'"
+      "summary": "The Google Pixel 10a is on offer at T-Mobile \u2014 here\u2019s how to save up to $800\nSAVE UP TO $800: T-Mobile is offering the Google Pixel 10a for $0/month over 24 months with a qualifying plan and new line. New customers who port in their number can also get an additional $100 rebate.\nGoogle\u2019s Pixel 10a i"
     },
     {
-      "title": "Digital Surveillance Reshapes Fishery Enforcement in Indonesia",
-      "url": "https://spectrum.ieee.org/fishery-satellite-surveillance",
-      "source": "IEEE Spectrum",
-      "date": "2026-07-16",
+      "title": "Roundup: FCC's direct-to-Wi-Fi-device satellite, Verizon's 5 Gbps fibre with Wi-Fi 6E, Costa Rica's full-band 6 GHz - Wi-Fi NOW Global",
+      "url": "https://wifinowglobal.com/news-and-blog/roundup-fccs-direct-to-wi-fi-device-satellite-verizons-5-gbps-fibre-with-wi-fi-6e-costa-ricas-full-band-6-ghz/",
+      "source": "Wi-Fi NOW Global",
+      "date": "2026-07-20",
       "vendor": null,
-      "customer": null,
-      "application": "Asset Tracking",
-      "buckets": [],
-      "summary": "In the eastern Indian Ocean, south of Java in the vast sea stretching toward Australia, a fishing vessel slightly alters its course while operating near the boundary of its authorized fishing ground. Nothing appears unusual on deck. Nets remain in the water. Engines maintain a steady speed. To the c"
-    },
-    {
-      "title": "pico-usb-wifi firmware converts the Raspberry Pi Pico W into a driverless USB WiFi adapter",
-      "url": "https://www.cnx-software.com/2026/07/16/pico-usb-wifi-converts-the-raspberry-pi-pico-w-into-a-driverless-usb-wifi-adapter/",
-      "source": "CNX Software",
-      "date": "2026-07-16",
-      "vendor": "Infineon",
-      "customer": "Amazon",
-      "application": null,
+      "customer": "Google",
+      "application": "Healthcare",
       "buckets": [
         "wifi"
       ],
-      "summary": "pico-usb-wifi is an open-source firmware project that converts the Raspberry Pi Pico W into a driverless USB WiFi adapter that works with Windows, Linux, macOS, and other operating systems with USB CDC-NCM support. The Infineon CYW43439 chip found in the SBC can&#8217;t be used directly as a USB to "
+      "summary": "By Claus Hetting, WiFi NOW CEO & Chairman\nFCC wants to expand direct-to-device satellite connectivity to unlicensed devices\nThe FCC now wants to start \u201ca new proceeding to explore new avenues to allow innovative unlicensed wireless devices to communicate directly with satellites,\u201d the FCC said in st"
     },
     {
-      "title": "OpenInfrared Point is an ESP32-S3 powered universal remote hub with Infrared, BLE, NFC, audio streaming (Crowdfunding)",
-      "url": "https://www.cnx-software.com/2026/07/16/openinfrared-point-esp32-s3-universal-remote-hub-infrared-ble-nfc-audio-streaming/",
-      "source": "CNX Software",
-      "date": "2026-07-16",
-      "vendor": "Espressif",
+      "title": "Samsung Biologics to acquire PolyPeptide in $1.81bn cash deal",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbVRZaEVnYk9CSzFEaGthT2s2YmNnbnNCRzh1WnF0aUZYSGdKcWJGLU9XWEluTzJVYzRoTGplSHZoMlVfSWkta2dUdk1lQVR5eUFnY0c2bTVITEI3TV9xdlF1ME5keThZMnYza3ZHTW5TaE1jOFFrcWdEVk1ILUpPU0dTOXg4UnhRNk1XN2Z6aEw1U09JWlVtZzM3TTk0Ui1OdlE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Yahoo Finance",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Apple (AAPL) Introduces Live Notes for Enhanced Customer Interac",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOamFTWldSenVnQmgyVUhTTXdxWlJoRXREVkM0alVvQVhYa0J5WVlSa01qZTM3OWZJenM3NEZPSHJnanEzSXpVTDZHUlFWVi13dDF6a3NkX2NHUmpRM1JGTmtUc3BQRzd6VXRMSldyQ21BcmZxOHB2d3B4ZUs1RWdMNUpYZjJpVDVxUWt1MWl5TmhhRlNxRUI0SGJGdGFnN2hfdG13eGxFaVJUQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "GuruFocus",
+      "date": "2026-07-20",
+      "vendor": null,
       "customer": "Apple",
-      "application": "Industrial",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "OpenInfrared Point is a universal remote hub built around ESP32-S3 that lets users control compatible devices from a smartphone by scanning a QR code or tapping an NFC tag, eliminating the need for dedicated remote controls. Powered via USB-C, the Point hub can learn IR codes from existing remote co"
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Samsung Biologics agrees $1.81bn takeover of PolyPeptide",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZ1FzbmtIUVJEYk52bTRCQVlaRE8xR3RZWVNsbXBBemZQYW5hTDhraVU2S2tJVWtJV0FrcTlQUGVQalU1ZG5KY2Q4aGZ5aW1FaW01RW5HM2JEVEJBRGxoRFBOY19Ha1VELTdtSjBLTzdHZGgweVdIZDNod29nMUZ3bzd1TlpRRFkz?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "pharmaphorum",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Samsung launch cinematic new spot with Jacob Batalon",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNVloQ190TjZwNDlzcWc5bXBMTDhrZWQ4ZngzVmItM0doTVNyUjh1VDQ1WnY1QlgzbnJadmFmaGhycEQ2Rmpnd1VVRmUtcy1uTENFRndrOWZ2OXNKWTE1Mi00Tmk0OTlEYmt0c2RvYy1EVVhCRF9ULTVnNl9CWHRIYW5qV3JXb1k?oc=5",
+      "source": "shots.net",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google alerts Android users about a major backup storage change",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRnhFbk13a1JtMmtBaGxjazJqazUxWFA3bTJPMVBjWkpiT01CVVhrcUV5WUFSa2pPS1V1djBFSXRrT0hUampOSFNjN1pJYVRpQ09XaFNuaFEzQUlMM3F1cjY5b2hLVVNnS3dEX3o3VzFFSTg5dTVIdE1xdm9McnFqMW9HWFRCQzUwODVnaWVfQ05sczdaY3RB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Android Police",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "I Got A Real-World Taste Of The New BMW F 450 GS, And I Want More",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQVWU1V3JZRUxkNUZ2U05vajZhdDRoQmhEQWVzM19pUFR6Z0ZJZmFzQWwwUmc5X1o1MnpUNUNmRnNLbzYtb2dzLUFWTmFwUDNzUGZfVVNWWXNTc21vamZmYmZ1VmhIajN2MEllckRONnptaVktdE1JcGpmRTVLU3NueE9SNGRGNjBPLTNETF80LUFKNjRod1k5dDZKZC12QQ?oc=5",
+      "source": "Yahoo Autos",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "BMW",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google India and YouTube launch Digital Wellbeing Guidebook for Indian families, focusing on healthier...",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQdDZnVmJSVmpqR2x4aUhQNktOdEFBR1FzdWdUaTlLS3hvbFVGdkpLZWEwejAzaTlLQUExdDMwd0JEZWF1NUkxQXJmbnhpMEpuaUVMUVZHVUJ5clNkNjlFeG4walI0dVNrZ3luS3MyeTlTTFh4bW9BYmhuSERWajh1MXRCd0dNLVpTVndLaS1ueFZGNVYwRU5MQ0xnQ1p2MlRiSTU5Q2JRVWVPZ3pZNjZRcWFqdFNWbnpTSlBNekpGV2xPSWpGQm1vc0hfbGpSU0ZtMmZDWXFuQk1aa3BvME5jTms4NzVXUk5ZYzdJZUJCWjRXMV9WTWVrS1dYYWpfOTFuMnNKcWUtVDdTeTNpWDVqTDEwVk4tcWlsXzBmVExpX0hEd9IBpwJBVV95cUxOaFFrS3ZmeXkxNVZMOFZNdW1QYVQ4Ri0tWVlnbFBzUGQ0OWdoZUI3MEdUUHNuWThET2p2ZXZ2WXFuTFVIakZab1NBMWJ3OFNLbHVhYlh2Y3VsWU1ZYldmZmwtY2pXVC1kdnhIR3lHTmdXNTVOdFF1aDZxUW5uM3ExS08tRHhWOXdEaWRPUGRXcG5zR2xDZEYtb0xRZGRyS003clA1amQwSjRGMWVRaWY3U3pvTDZwTDh5WnJhYlBwZmxxaVJBZnpNOXFiY2JEUEdfYVFpZ1ZielBnVElLa2RvalFSWExEbEZva0lpbTdIN2I4MTk5SEQ1YVhrbjFITU9vNVBVTFJoNXZfSElERHhzZUZmMGd5RjdENVVxRHhoaEgzRGVWV1NN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Moneycontrol.com",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google Images Wants To Be Your New Pinterest",
+      "url": "https://www.inman.com/2026/07/20/google-images-pinterest-redesign-trending/",
+      "source": "Inman Real Estate News",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Ever wished the photos you post online could actually work harder for you? Google just gave image search a Pinterest-style makeover, which means the listing photos and staged rooms you share could start pulling their own weight in ways they never did before.\nMeanwhile, LinkedIn is handing out the ex"
     }
   ],
   "vendor_news_30d": {
-    "Espressif": 8,
-    "MediaTek": 4,
-    "Microchip": 4,
-    "Silicon Labs": 2,
+    "Qualcomm": 28,
+    "Broadcom": 25,
+    "Microchip": 13,
+    "NXP": 9,
+    "MediaTek": 7,
+    "STMicro": 4,
+    "Synaptics": 2,
+    "Espressif": 2,
+    "Onsemi": 2,
+    "Skyworks": 2,
+    "TI": 2,
+    "Marvell": 1,
     "Realtek": 1,
-    "Onsemi": 1,
-    "Infineon": 1,
-    "NXP": 1,
     "Qorvo": 1,
-    "Nordic": 1,
-    "STMicro": 1
+    "Bosch": 1
   },
   "customer_news_30d": {
-    "Amazon": 21,
-    "Apple": 15,
-    "Google": 12,
-    "Microsoft": 11,
-    "Samsung": 2,
-    "Sony": 1,
-    "BMW": 1,
-    "Mercedes": 1,
-    "Tesla": 1
+    "Apple": 161,
+    "Samsung": 137,
+    "Google": 108,
+    "Amazon": 98,
+    "Tesla": 95,
+    "Meta": 72,
+    "Microsoft": 64,
+    "BMW": 60,
+    "Sony": 42,
+    "Garmin": 26,
+    "Bose": 9,
+    "Sonos": 8,
+    "Xiaomi": 3,
+    "Eufy/Anker": 2,
+    "SwitchBot": 2,
+    "Mercedes": 2,
+    "Reolink": 1,
+    "Philips Hue": 1,
+    "Arlo": 1,
+    "GoPro": 1
   },
   "github_pulse": [
     {
@@ -504,30 +498,9 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1646,
+      "issues_open": 0,
       "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18574,
-      "pushed_at": "2026-07-20T12:21:24Z"
+      "releases": []
     },
     {
       "name": "Zephyr Bluetooth",
@@ -538,113 +511,9 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3880,
+      "issues_open": 0,
       "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15943,
-      "pushed_at": "2026-07-19T14:55:03Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2716,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        },
-        {
-          "tag": "v1.5.0.0",
-          "name": "v1.5.0.0 Release",
-          "published_at": "2025-11-17T22:07:57Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
-        }
-      ],
-      "stars": 8831,
-      "pushed_at": "2026-07-20T11:10:21Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 239898,
-      "pushed_at": "2026-07-19T20:55:05Z"
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 73,
-      "issues_open": 163,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v2026.07.0",
-          "name": "OpenThread v2026.07.0",
-          "published_at": "2026-07-01T00:58:53Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
-        },
-        {
-          "tag": "v2026.06.0",
-          "name": "OpenThread v2026.06.0",
-          "published_at": "2026-06-01T01:01:04Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
-        },
-        {
-          "tag": "thread-reference-20250612",
-          "name": "Thread Reference 2025-06-12",
-          "published_at": "2025-09-16T18:13:38Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
-        }
-      ],
-      "stars": 3989,
-      "pushed_at": "2026-07-20T09:33:35Z"
+      "releases": []
     },
     {
       "name": "BlueZ",
@@ -657,62 +526,9 @@
       "commits_30d": 36,
       "issues_open": 110,
       "prs_open": 0,
-      "releases": [
-        {
-          "tag": "5.87",
-          "name": "5.87",
-          "published_at": "2026-07-07T16:41:14Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
-        },
-        {
-          "tag": "5.86",
-          "name": "5.86",
-          "published_at": "2026-02-09T21:27:33Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
-        }
-      ],
+      "releases": [],
       "stars": 1104,
       "pushed_at": "2026-07-20T07:46:47Z"
-    },
-    {
-      "name": "Zigbee2MQTT",
-      "owner": "Koenkk",
-      "repo": "zigbee2mqtt",
-      "label": "Zigbee gateway",
-      "tech": [
-        "ieee15_4"
-      ],
-      "commits_30d": 28,
-      "issues_open": 464,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "2.12.1",
-          "name": "2.12.1",
-          "published_at": "2026-07-01T06:04:12Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
-        },
-        {
-          "tag": "2.12.0",
-          "name": "2.12.0",
-          "published_at": "2026-06-09T19:08:29Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
-        },
-        {
-          "tag": "2.11.0",
-          "name": "2.11.0",
-          "published_at": "2026-06-01T18:41:53Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
-        }
-      ],
-      "stars": 15320,
-      "pushed_at": "2026-07-18T18:59:40Z"
     },
     {
       "name": "NimBLE",
@@ -730,12 +546,64 @@
       "pushed_at": "2026-07-10T15:55:08Z"
     },
     {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
       "name": "hostap",
       "owner": "ihewitt",
       "repo": "hostap",
       "label": "wpa_supplicant / hostapd Wi-Fi",
       "tech": [
         "wifi"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
+      "name": "Zigbee2MQTT",
+      "owner": "Koenkk",
+      "repo": "zigbee2mqtt",
+      "label": "Zigbee gateway",
+      "tech": [
+        "ieee15_4"
       ],
       "commits_30d": 0,
       "issues_open": 0,
@@ -809,18 +677,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
       "date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -963,6 +831,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
     },
     {
+      "vendor": "Microchip",
+      "ticker": "MCHP",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
+    },
+    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -982,13 +857,6 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
-    },
-    {
-      "vendor": "Microchip",
-      "ticker": "MCHP",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1012,13 +880,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1031,6 +892,13 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1054,6 +922,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526201058/ter-20260329.htm"
     },
     {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -1066,13 +941,6 @@
       "form": "8-K",
       "date": "2026-05-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000025/lyb-20260501.htm"
-    },
-    {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -1089,6 +957,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1101,13 +976,6 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
-    },
-    {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     },
     {
       "vendor": "Silicon Labs",
