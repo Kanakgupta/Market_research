@@ -17,6 +17,7 @@ from .data_loader import load_customers, load_competitors
 from .relationships import build_links
 from .predictive_model import predict_customer_releases
 from .tech_tutorials import TECH_TUTORIALS
+from .applications_data import APPLICATIONS, APP_CATEGORIES
 
 PDT = timezone(timedelta(hours=-7), name="PDT")
 
@@ -273,6 +274,7 @@ _NAV_HTML = """
     <a href="threat.html" class="{{ 'active' if active in ['competitors','threat'] else '' }}">Threat</a>
     <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
     <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
+    <a href="applications.html" class="{{ 'active' if active=='applications' else '' }}">Applications</a>
   </nav>
   <div class="meta-info">Updated {{ generated_at }} PDT</div>
 </div></header>
@@ -1760,6 +1762,175 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 </body></html>
 """
 
+# ---------------------------------------------------------------- applications template
+_APPLICATIONS_TEMPLATE = """<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Applications \u00b7 IoT Wireless Intel</title>
+<style>{{ css }}
+.app-hero { background:linear-gradient(120deg,#4f46e5,#0ea5e9 55%,#06b6d4); color:#fff; border-radius:16px; padding:26px 28px; margin:14px 0 6px; box-shadow:0 18px 40px rgba(2,132,199,.18); }
+.app-hero h1 { margin:0 0 6px; font-size:27px; letter-spacing:-.01em; color:#fff; }
+.app-hero p { margin:0; font-size:14px; line-height:1.6; color:#eaf2ff; max-width:900px; }
+
+.app-layout { display:grid; grid-template-columns:270px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .app-layout { grid-template-columns:1fr; } }
+.app-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.app-cat-hdr { padding:9px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; color:#3730a3; background:#eef2ff; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.app-cat-hdr:first-child { border-top:none; }
+.app-item { display:block; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:9px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.app-item:hover { background:var(--hover); color:var(--accent); }
+.app-item.active { background:#eef2ff; color:var(--accent); font-weight:700; border-left:3px solid var(--accent); }
+.app-main { min-width:0; }
+.app-panel { display:none; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:22px 24px; }
+.app-panel.active { display:block; }
+.app-title { margin:0 0 4px; font-size:21px; color:#0f172a; }
+.app-cat-tag { display:inline-block; font-size:11px; font-weight:700; background:#eef2ff; color:#3730a3; border-radius:999px; padding:2px 10px; margin-bottom:8px; }
+.app-tagline { color:var(--muted); font-size:13.5px; margin:2px 0 14px; }
+.app-h3 { font-size:15px; margin:22px 0 8px; padding-top:14px; border-top:1px solid var(--border); }
+.app-h3:first-of-type { border-top:none; padding-top:0; margin-top:4px; }
+.app-overview { font-size:13.5px; line-height:1.65; color:#1f2937; margin:4px 0 0; }
+
+.app-diagram { display:flex; flex-wrap:wrap; gap:10px; align-items:stretch; margin-top:10px; }
+.app-blk { flex:1 1 160px; border-radius:10px; padding:12px 14px; color:#fff; box-shadow:0 8px 18px rgba(15,23,42,.12); }
+.app-blk .bn { font-weight:800; font-size:13px; }
+.app-blk .bs { font-size:11.3px; margin-top:4px; opacity:.95; line-height:1.5; }
+.app-blk.c1 { background:linear-gradient(120deg,#6d28d9,#8b5cf6); }
+.app-blk.c2 { background:linear-gradient(120deg,#0f766e,#14b8a6); }
+.app-blk.c3 { background:linear-gradient(120deg,#1d4ed8,#3b82f6); }
+.app-blk.c4 { background:linear-gradient(120deg,#334155,#64748b); }
+
+.radio-zoom { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.radio-chip { background:#f8fafc; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:8px 12px; font-size:12px; max-width:280px; }
+.radio-chip b { display:block; font-size:12.5px; color:#0f172a; margin-bottom:2px; }
+
+.mkt-stats { display:flex; gap:12px; flex-wrap:wrap; margin:10px 0; }
+.mkt-stat { background:#f9fafc; border:1px solid var(--border); border-radius:8px; padding:8px 14px; font-size:12px; }
+.mkt-stat b { display:block; font-size:16px; color:#0f172a; }
+.mkt-chart-box { background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px 14px 6px; }
+.mkt-svg { width:100%; height:auto; display:block; }
+.mkt-legend { display:flex; gap:16px; font-size:11.5px; color:#475569; margin-top:6px; }
+.mkt-legend span { display:inline-flex; align-items:center; }
+.mkt-legend span::before { content:""; display:inline-block; width:14px; height:3px; margin-right:5px; }
+.mkt-legend .l-hist::before { background:#0284c7; }
+.mkt-legend .l-fc::before { background:#94a3b8; border-top:2px dashed #94a3b8; height:0; }
+
+.feat-cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; margin-top:10px; }
+.feat-col { border-radius:10px; padding:12px 14px; }
+.feat-col.mand { background:#fef2f2; border:1px solid #fecaca; }
+.feat-col.good { background:#fffbeb; border:1px solid #fde68a; }
+.feat-col.future { background:#eff6ff; border:1px solid #bfdbfe; }
+.feat-col h4 { margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:#334155; }
+.feat-col ul { margin:0; padding-left:16px; }
+.feat-col li { margin-bottom:8px; font-size:12.3px; line-height:1.5; }
+.feat-col li b { color:#0f172a; display:block; }
+</style>
+""" + _PASSWORD_GATE_HTML + """
+</head><body>
+""" + _NAV_HTML + """
+<main class="wrap content">
+<section class="app-hero">
+  <h1>Applications \u2014 Market Research by End Device</h1>
+  <p>Pick an application to see its wireless system architecture, a 15-year market-size trend, which wireless
+  features are mandatory vs. good-to-have vs. future-looking, and which silicon vendors are positioned to win
+  the wireless content inside it. Built for product-marketing and roadmap prioritization.</p>
+</section>
+
+<div class="disclaimer">Market figures are directional estimates synthesized from public secondary research
+(Grand View Research, Fortune Business Insights, MarketsandMarkets, IDC, Counterpoint, ABI Research and similar
+syndicated reports) as of 2024-2025. Use them to prioritize roadmap bets, not as audited figures -- validate
+with a paid syndicated study before citing externally.</div>
+
+<div class="app-layout">
+  <nav class="app-sidebar" id="appSidebar">
+    {% for cat in categories %}
+    <div class="app-cat-hdr">{{ cat }}</div>
+    {% for a in applications %}{% if a.category == cat %}
+    <button type="button" class="app-item {{ 'active' if a.slug == applications[0].slug else '' }}" data-slug="{{ a.slug }}">{{ a.label }}</button>
+    {% endif %}{% endfor %}
+    {% endfor %}
+  </nav>
+  <div class="app-main">
+    {% for a in applications %}
+    <article class="app-panel {{ 'active' if loop.first else '' }}" id="app-panel-{{ a.slug }}">
+      <span class="app-cat-tag">{{ a.category }}</span>
+      <h2 class="app-title">{{ a.label }}</h2>
+      <p class="app-tagline">{{ a.tagline }}</p>
+
+      <h3 class="app-h3">\U0001F4D6 Summary</h3>
+      <p class="app-overview">{{ a.overview }}</p>
+
+      <h3 class="app-h3">\U0001F9F1 System Block Diagram</h3>
+      <div class="app-diagram">
+        {% for b in a.diagram %}
+        <div class="app-blk {{ b.k }}"><div class="bn">{{ b.name }}</div><div class="bs">{{ b.sub }}</div></div>
+        {% endfor %}
+      </div>
+
+      <h3 class="app-h3">\U0001F50E Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        {% for r in a.radios %}
+        <div class="radio-chip"><b>{{ r.name }}</b>{{ r.role }}</div>
+        {% endfor %}
+      </div>
+
+      <h3 class="app-h3">\U0001F4C8 Market Trend ({{ a.unit }})</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>{{ a.size_now_year }} size</span><b>${{ a.size_now }}B</b></div>
+        <div class="mkt-stat"><span>{{ a.size_future_year }} projected</span><b>${{ a.size_future }}B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>{{ a.cagr_hist }}</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>{{ a.cagr_fwd }}</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        {{ a.chart | safe }}
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">\u2699\uFE0F Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul>{% for f in a.features.mandatory %}<li><b>{{ f.f }}</b>{{ f.w }}</li>{% endfor %}</ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul>{% for f in a.features.good_to_have %}<li><b>{{ f.f }}</b>{{ f.w }}</li>{% endfor %}</ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul>{% for f in a.features.future %}<li><b>{{ f.f }}</b>{{ f.w }}</li>{% endfor %}</ul></div>
+      </div>
+
+      <h3 class="app-h3">\U0001F3ED Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        {% for v in a.vendors %}
+          <tr><td><strong>{{ v.company }}</strong></td><td>{{ v.chip }}</td><td>{{ v.note }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+
+</main>
+<footer class="footer"><div class="wrap">Applications market research \u00b7 hand-curated, not news-driven \u00b7 estimates as of {{ generated_at }} PDT</div></footer>
+<script>
+(function(){
+  var items = document.querySelectorAll('.app-item');
+  var panels = document.querySelectorAll('.app-panel');
+  function activate(slug){
+    items.forEach(function(t){ t.classList.toggle('active', t.dataset.slug === slug); });
+    panels.forEach(function(p){ p.classList.toggle('active', p.id === 'app-panel-' + slug); });
+  }
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      activate(this.dataset.slug);
+      history.replaceState(null, '', '#' + this.dataset.slug);
+    });
+  });
+  if (location.hash) {
+    var slug = location.hash.replace('#', '');
+    if (document.getElementById('app-panel-' + slug)) activate(slug);
+  }
+})();
+</script>
+</body></html>
+"""
+
 
 PINNED_CUSTOMERS = ["Google", "Amazon", "Apple", "Microsoft", "Meta", "Samsung",
                     "Sony", "LG", "Motorola", "Bose", "Sonos", "Sennheiser", "Bang & Olufsen",
@@ -1978,6 +2149,11 @@ def render(articles: list[dict], output_dir: Path,
 
     (output_dir / "technology.html").write_text(env.from_string(_TECHNOLOGY_TEMPLATE).render(
       tech_tutorials=tech_tutorials, active="technology", **common_ctx
+    ), encoding="utf-8")
+
+    # --- Applications page (hand-crafted market-research content per end-device) ---
+    (output_dir / "applications.html").write_text(env.from_string(_APPLICATIONS_TEMPLATE).render(
+      applications=APPLICATIONS, categories=APP_CATEGORIES, active="applications", **common_ctx
     ), encoding="utf-8")
 
     # --- Customers page ---
@@ -2571,6 +2747,7 @@ _INDEX_TEMPLATE = """<!doctype html>
     <a class="jump-card" href="opportunity.html"><h3>Customers \u2192</h3><p>OEM profiles \u2014 recent products and forward roadmap signals.</p></a>
     <a class="jump-card" href="threat.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
     <a class="jump-card" href="relationships.html"><h3>Relationships \u2192</h3><p>Sankey map of which vendor sells to which customer.</p></a>
+    <a class="jump-card" href="applications.html"><h3>Applications \u2192</h3><p>Market research per end-device: architecture, market trend, feature requirements and chip vendor positioning.</p></a>
   </div>
 </section>
 

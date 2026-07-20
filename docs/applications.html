@@ -1,0 +1,1666 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Applications · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
+
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
+
+.app-hero { background:linear-gradient(120deg,#4f46e5,#0ea5e9 55%,#06b6d4); color:#fff; border-radius:16px; padding:26px 28px; margin:14px 0 6px; box-shadow:0 18px 40px rgba(2,132,199,.18); }
+.app-hero h1 { margin:0 0 6px; font-size:27px; letter-spacing:-.01em; color:#fff; }
+.app-hero p { margin:0; font-size:14px; line-height:1.6; color:#eaf2ff; max-width:900px; }
+
+.app-layout { display:grid; grid-template-columns:270px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .app-layout { grid-template-columns:1fr; } }
+.app-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.app-cat-hdr { padding:9px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; color:#3730a3; background:#eef2ff; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.app-cat-hdr:first-child { border-top:none; }
+.app-item { display:block; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:9px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.app-item:hover { background:var(--hover); color:var(--accent); }
+.app-item.active { background:#eef2ff; color:var(--accent); font-weight:700; border-left:3px solid var(--accent); }
+.app-main { min-width:0; }
+.app-panel { display:none; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:22px 24px; }
+.app-panel.active { display:block; }
+.app-title { margin:0 0 4px; font-size:21px; color:#0f172a; }
+.app-cat-tag { display:inline-block; font-size:11px; font-weight:700; background:#eef2ff; color:#3730a3; border-radius:999px; padding:2px 10px; margin-bottom:8px; }
+.app-tagline { color:var(--muted); font-size:13.5px; margin:2px 0 14px; }
+.app-h3 { font-size:15px; margin:22px 0 8px; padding-top:14px; border-top:1px solid var(--border); }
+.app-h3:first-of-type { border-top:none; padding-top:0; margin-top:4px; }
+.app-overview { font-size:13.5px; line-height:1.65; color:#1f2937; margin:4px 0 0; }
+
+.app-diagram { display:flex; flex-wrap:wrap; gap:10px; align-items:stretch; margin-top:10px; }
+.app-blk { flex:1 1 160px; border-radius:10px; padding:12px 14px; color:#fff; box-shadow:0 8px 18px rgba(15,23,42,.12); }
+.app-blk .bn { font-weight:800; font-size:13px; }
+.app-blk .bs { font-size:11.3px; margin-top:4px; opacity:.95; line-height:1.5; }
+.app-blk.c1 { background:linear-gradient(120deg,#6d28d9,#8b5cf6); }
+.app-blk.c2 { background:linear-gradient(120deg,#0f766e,#14b8a6); }
+.app-blk.c3 { background:linear-gradient(120deg,#1d4ed8,#3b82f6); }
+.app-blk.c4 { background:linear-gradient(120deg,#334155,#64748b); }
+
+.radio-zoom { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.radio-chip { background:#f8fafc; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:8px 12px; font-size:12px; max-width:280px; }
+.radio-chip b { display:block; font-size:12.5px; color:#0f172a; margin-bottom:2px; }
+
+.mkt-stats { display:flex; gap:12px; flex-wrap:wrap; margin:10px 0; }
+.mkt-stat { background:#f9fafc; border:1px solid var(--border); border-radius:8px; padding:8px 14px; font-size:12px; }
+.mkt-stat b { display:block; font-size:16px; color:#0f172a; }
+.mkt-chart-box { background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px 14px 6px; }
+.mkt-svg { width:100%; height:auto; display:block; }
+.mkt-legend { display:flex; gap:16px; font-size:11.5px; color:#475569; margin-top:6px; }
+.mkt-legend span { display:inline-flex; align-items:center; }
+.mkt-legend span::before { content:""; display:inline-block; width:14px; height:3px; margin-right:5px; }
+.mkt-legend .l-hist::before { background:#0284c7; }
+.mkt-legend .l-fc::before { background:#94a3b8; border-top:2px dashed #94a3b8; height:0; }
+
+.feat-cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; margin-top:10px; }
+.feat-col { border-radius:10px; padding:12px 14px; }
+.feat-col.mand { background:#fef2f2; border:1px solid #fecaca; }
+.feat-col.good { background:#fffbeb; border:1px solid #fde68a; }
+.feat-col.future { background:#eff6ff; border:1px solid #bfdbfe; }
+.feat-col h4 { margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:#334155; }
+.feat-col ul { margin:0; padding-left:16px; }
+.feat-col li { margin-bottom:8px; font-size:12.3px; line-height:1.5; }
+.feat-col li b { color:#0f172a; display:block; }
+</style>
+
+<script id="password-gate-v1">
+(function(){
+  var KEY='site_unlock_v1';
+  var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
+  function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
+  function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
+  if (sessionStorage.getItem(KEY)==='1') { return; }
+  document.documentElement.style.display='none';
+  (async function(){
+    while(true){
+      var p=prompt('Enter password to access this site');
+      if (p===null){ location.replace('about:blank'); return; }
+      try {
+        var h=await sha256(p);
+        if (h===HASH){ sessionStorage.setItem(KEY,'1'); document.documentElement.style.display=''; return; }
+      } catch (e) {}
+      alert('Wrong password');
+    }
+  })();
+})();
+</script>
+
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <a href="news.html" class="">News</a>
+    <a href="opportunity.html" class="">Opportunity</a>
+    <a href="threat.html" class="">Threat</a>
+    <a href="relationships.html" class="">Relationships</a>
+    <a href="technology.html" class="">Technology</a>
+    <a href="applications.html" class="active">Applications</a>
+  </nav>
+  <div class="meta-info">Updated 2026-07-20 15:11 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+<section class="app-hero">
+  <h1>Applications — Market Research by End Device</h1>
+  <p>Pick an application to see its wireless system architecture, a 15-year market-size trend, which wireless
+  features are mandatory vs. good-to-have vs. future-looking, and which silicon vendors are positioned to win
+  the wireless content inside it. Built for product-marketing and roadmap prioritization.</p>
+</section>
+
+<div class="disclaimer">Market figures are directional estimates synthesized from public secondary research
+(Grand View Research, Fortune Business Insights, MarketsandMarkets, IDC, Counterpoint, ABI Research and similar
+syndicated reports) as of 2024-2025. Use them to prioritize roadmap bets, not as audited figures -- validate
+with a paid syndicated study before citing externally.</div>
+
+<div class="app-layout">
+  <nav class="app-sidebar" id="appSidebar">
+    
+    <div class="app-cat-hdr">Wearables &amp; XR</div>
+    
+    <button type="button" class="app-item active" data-slug="smartwatch">Smart Watch</button>
+    
+    <button type="button" class="app-item " data-slug="smartglasses">Smart Glasses</button>
+    
+    <button type="button" class="app-item " data-slug="arvrmr">AR/VR/MR Headset</button>
+    
+    
+    <div class="app-cat-hdr">Smart Home &amp; Security</div>
+    
+    <button type="button" class="app-item " data-slug="doorlock">Video Doorbell / Smart Door Lock</button>
+    
+    <button type="button" class="app-item " data-slug="securityhub">Security Hub</button>
+    
+    <button type="button" class="app-item " data-slug="thermostat">Smart Thermostat</button>
+    
+    <button type="button" class="app-item " data-slug="ipcamera">IP Camera</button>
+    
+    
+    <div class="app-cat-hdr">Audio &amp; Entertainment</div>
+    
+    <button type="button" class="app-item " data-slug="speaker">Portable Speaker</button>
+    
+    <button type="button" class="app-item " data-slug="soundbar">Wireless Soundbar</button>
+    
+    <button type="button" class="app-item " data-slug="streamingstick">Streaming Media Stick</button>
+    
+    <button type="button" class="app-item " data-slug="audiobox">Kids&#39; Audio Box (Yoto-style)</button>
+    
+    <button type="button" class="app-item " data-slug="dsr">Satellite / Set-Top Receiver (DSR)</button>
+    
+    
+    <div class="app-cat-hdr">Robotics</div>
+    
+    <button type="button" class="app-item " data-slug="domesticrobot">Domestic Robot</button>
+    
+    <button type="button" class="app-item " data-slug="industrialrobot">Industrial Robot</button>
+    
+    <button type="button" class="app-item " data-slug="humanoid">Humanoid Robot</button>
+    
+    
+    <div class="app-cat-hdr">Networking Infrastructure</div>
+    
+    <button type="button" class="app-item " data-slug="meshrouter">Mesh Router (Wi-Fi/BT/802.15.4)</button>
+    
+    
+    <div class="app-cat-hdr">Automotive</div>
+    
+    <button type="button" class="app-item " data-slug="rse">Rear Seat Entertainment</button>
+    
+    <button type="button" class="app-item " data-slug="headunit">Head Unit (Infotainment)</button>
+    
+    <button type="button" class="app-item " data-slug="twowheeler">2-Wheeler Head Unit</button>
+    
+    
+  </nav>
+  <div class="app-main">
+    
+    <article class="app-panel active" id="app-panel-smartwatch">
+      <span class="app-cat-tag">Wearables &amp; XR</span>
+      <h2 class="app-title">Smart Watch</h2>
+      <p class="app-tagline">The anchor wearable: phone-companion notifications, health sensing, payments and (increasingly) standalone cellular.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Smart watches pair a low-power always-on display and health sensor suite with a phone-companion app model. BLE carries the bulk of the traffic (notifications, health sync, LE Audio to earbuds); Wi-Fi and an optional eSIM/LTE modem let premium tiers work untethered from the phone. NFC adds tap-to-pay, and GNSS adds standalone workout tracking without the phone in-pocket.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Watch UI / Health Apps</div><div class="bs">Watch face, notifications, workout &amp; health apps, on-device voice assistant</div></div>
+        
+        <div class="app-blk c2"><div class="bn">SoC + RTOS</div><div class="bs">Ultra-low-power MCU/AP, sensor hub (HR, SpO2, accelerometer), always-on display controller</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Combo radio die (see zoom below) handling phone sync, standalone data, ranging and payments</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Sensors, Battery &amp; Haptics</div><div class="bs">PPG/ECG sensors, haptic motor, multi-day Li-poly cell, wireless charging coil</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Bluetooth LE (+ LE Audio)</b>Primary phone-companion link; streams notifications/health data and pairs to LE Audio earbuds.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi (STA)</b>Backup/parallel data path when phone is out of range but a known Wi-Fi AP is in reach; OTA updates.</div>
+        
+        <div class="radio-chip"><b>NFC</b>Contactless payment (Google/Samsung/Apple Pay) and quick pairing.</div>
+        
+        <div class="radio-chip"><b>GNSS</b>Standalone location for run/ride tracking without the phone.</div>
+        
+        <div class="radio-chip"><b>eSIM LTE/5G (premium tier)</b>Untethered calls, streaming and messaging on cellular-capable models.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$38B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$164B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>21%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>16%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,168.0 88.7,162.6 131.4,159.1 174.1,155.5 216.9,150.2" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,143.9 259.6,136.8 302.3,128.8 345.0,119.9 387.7,110.1 430.4,98.5 473.1,86.0 515.9,71.8 558.6,55.7 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="168.0" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="162.6" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="159.1" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="155.5" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="150.2" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="136.8" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="128.8" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="119.9" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="110.1" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="98.5" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="86.0" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="71.8" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="55.7" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">47</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">94</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">141</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">189</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Bluetooth LE 5.2+ / LE Audio</b>Table-stakes phone sync plus LC3 codec for LE Audio earbuds and Auracast.</li><li><b>NFC (ISO 14443)</b>Contactless payment is now an expected flagship feature, not a differentiator.</li><li><b>Coexistence (BLE+Wi-Fi+GNSS on one die)</b>Board space and battery are the binding constraints; combo silicon is required.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 6 low-power mode (TWT)</b>Faster OTA/app sync without materially hurting multi-day battery life.</li><li><b>UWB ranging</b>Precision item-finding and secure unlock use cases some flagships already ship.</li><li><b>eSIM / RedCap 5G</b>Standalone connectivity tier commands a subscription and higher ASP.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Satellite SOS (non-terrestrial NR)</b>Emergency messaging off-grid, following the smartphone satellite trend.</li><li><b>Channel Sounding (BT 6.x)</b>Secure distance-bound unlock/handoff without a dedicated UWB radio.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Snapdragon Wear / W5+ Gen 1</td><td>Leads Wear OS reference platforms; strongest at cellular-capable flagship watches.</td></tr>
+        
+          <tr><td><strong>Apple (in-house)</strong></td><td>S-series SiP</td><td>Vertically integrated SiP; sets the bar for combo-radio + sensor-hub power efficiency.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>CYW20xxx combo</td><td>BLE/Wi-Fi combo silicon widely used across Android/Samsung and fitness-wearable tiers.</td></tr>
+        
+          <tr><td><strong>Nordic Semiconductor</strong></td><td>nRF54 / nRF52 series</td><td>Dominant in low-cost fitness bands and entry smartwatches on BLE-only designs.</td></tr>
+        
+          <tr><td><strong>MediaTek</strong></td><td>MT2xxx wearable SoC</td><td>Value-tier Android watches, strong in China/India OEM designs.</td></tr>
+        
+          <tr><td><strong>Broadcom</strong></td><td>BCM4xxx combo</td><td>Long-standing combo-chip supplier inside premium smartwatch platforms.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-smartglasses">
+      <span class="app-cat-tag">Wearables &amp; XR</span>
+      <h2 class="app-title">Smart Glasses</h2>
+      <p class="app-tagline">Camera- and audio-first glasses (Ray-Ban Meta style) — the lightweight, all-day sibling of AR headsets.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Smart glasses prioritize weight and battery life over compute, so most intelligence (voice assistant, photo/video processing) happens on the paired phone or in the cloud. The glasses themselves are essentially a BLE+Wi-Fi accessory with a camera, open-ear speakers and mic array; heavier optical waveguide/AR variants add a dedicated display and start converging with the AR/VR/MR category.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Capture &amp; Audio UX</div><div class="bs">Camera capture, open-ear audio, voice-assistant wake word, LED privacy indicator</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Companion-App Compute</div><div class="bs">Most AI/vision processing offloaded to the paired phone app or cloud</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">BLE control link + Wi-Fi Direct high-bandwidth media offload (see zoom)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Optics, Battery &amp; Frame</div><div class="bs">Camera module, small day-long battery in the temple, optional waveguide display</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Low-power control channel: pairing, settings, voice-assistant trigger, telemetry.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi Direct / Aware</b>High-bandwidth burst offload of photos/video clips to the phone without cloud round-trip.</div>
+        
+        <div class="radio-chip"><b>LE Audio / Auracast</b>Open-ear audio streaming and, on some models, broadcast audio reception.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$3.8B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$48B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>33%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>29%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,180.3 88.7,179.1 131.4,177.6 174.1,175.4 216.9,172.4" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,168.1 259.6,162.6 302.3,155.6 345.0,146.7 387.7,135.7 430.4,122.3 473.1,106.1 515.9,86.8 558.6,64.2 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="180.3" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="179.1" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="177.6" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="175.4" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="172.4" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="162.6" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="155.6" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="146.7" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="135.7" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="122.3" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="106.1" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="86.8" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="64.2" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">14</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">27</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">41</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">55</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Bluetooth LE 5.x</b>Baseline control link for pairing and low-rate telemetry with minimal power draw.</li><li><b>Wi-Fi Direct (P2P)</b>Media-sized transfers (photo/video) are impractical over BLE alone.</li><li><b>LE Audio (LC3)</b>Efficient, higher-quality open-ear audio inside a very small power budget.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Auracast receive</b>Tune into public broadcast audio (venues, kiosks) without pairing.</li><li><b>Wi-Fi 6E offload</b>Faster cloud sync for AI features (live translation, visual search) when near an AP.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>On-glasses RedCap 5G</b>Cloud-AI features without depending on the phone&#39;s tether.</li><li><b>UWB for spatial anchoring</b>Precise device-to-device handoff as glasses gain waveguide displays.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Snapdragon AR1 Gen 1</td><td>Reference SoC behind Ray-Ban Meta and most camera-glasses designs.</td></tr>
+        
+          <tr><td><strong>Nordic Semiconductor</strong></td><td>nRF53 series</td><td>Dual-core BLE MCU commonly used for the low-power control/audio path.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>CYW20xxx combo</td><td>BLE+Wi-Fi combo for designs needing Wi-Fi Direct offload in one die.</td></tr>
+        
+          <tr><td><strong>Synaptics</strong></td><td>Astra SL18xx</td><td>Edge-AI + connectivity combo pitched specifically at AI glasses.</td></tr>
+        
+          <tr><td><strong>Espressif</strong></td><td>ESP32-C6</td><td>Low-cost Wi-Fi 6 + BLE combo used in smaller-brand smart glasses.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-arvrmr">
+      <span class="app-cat-tag">Wearables &amp; XR</span>
+      <h2 class="app-title">AR/VR/MR Headset</h2>
+      <p class="app-tagline">Standalone mixed-reality headsets — the highest wireless-bandwidth wearable, bridging to 6 GHz Wi-Fi and cellular XR.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Standalone MR headsets (Quest, Vision Pro-class) run full compute onboard but still lean on wireless for controller tracking, PC/console streaming (Wi-Fi 6E/7), and companion accessories. Low-latency, high-throughput links matter more here than in any other wearable category, making 6 GHz Wi-Fi and UWB/BLE-based controller tracking first-class requirements rather than nice-to-haves.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Immersive UX</div><div class="bs">Passthrough/AR overlay, hand &amp; eye tracking UI, spatial app runtime</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Onboard SoC + GPU</div><div class="bs">High-performance AP with dedicated vision/AI accelerators for SLAM and passthrough</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Multi-radio combo: Wi-Fi 6E/7, BLE for controllers, UWB/optical for tracking (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Optics, Sensors &amp; Battery</div><div class="bs">Pancake lenses, IMU/eye/hand cameras, hot-swappable battery pack</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi 6E/7 (6 GHz)</b>Wireless PC/console streaming (Air Link-class) needs uncongested, high-throughput spectrum.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Controller pairing, haptics link, low-rate accessory telemetry.</div>
+        
+        <div class="radio-chip"><b>UWB / IR / optical tracking</b>Sub-cm controller and boundary tracking latency that BLE alone can&#39;t guarantee.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$32B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$254B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>28%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>23%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,177.1 88.7,173.6 131.4,171.3 174.1,169.0 216.9,165.6" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,161.0 259.6,155.2 302.3,147.8 345.0,138.6 387.7,127.6 430.4,114.4 473.1,98.9 515.9,81.0 558.6,60.9 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="177.1" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="173.6" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="171.3" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="169.0" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="165.6" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="155.2" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="147.8" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="138.6" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="127.6" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="114.4" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="98.9" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="81.0" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="60.9" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">73</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">146</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">219</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">292</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 6E (6 GHz)</b>Only realistic band for stutter-free wireless PC-streamed VR given 2.4/5 GHz congestion.</li><li><b>Bluetooth LE 5.x</b>Controller and accessory pairing baseline across every platform.</li><li><b>Low-latency proprietary 2.4 GHz link (controllers)</b>Sub-5ms controller polling still often uses a proprietary link, not BLE, for competitive titles.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 7 (MLO)</b>Multi-link operation further cuts streaming latency/jitter for premium tethered-free PCVR.</li><li><b>UWB precision tracking</b>Improves boundary and multi-headset co-location tracking accuracy.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>On-device 5G RedCap/mmWave</b>Untethered cloud-rendered AR/VR without a home Wi-Fi dependency.</li><li><b>60 GHz WiGig short-hop</b>Multi-gigabit local streaming for uncompressed passthrough/AR video.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Snapdragon XR2 Gen 2</td><td>Reference silicon behind Quest 3/3S and most Android-based standalone headsets.</td></tr>
+        
+          <tr><td><strong>Apple (in-house)</strong></td><td>R1 co-processor + M-series</td><td>Dedicated R1 chip purely for low-latency sensor/wireless I/O in Vision Pro.</td></tr>
+        
+          <tr><td><strong>Broadcom</strong></td><td>BCM4389/6 combo</td><td>Wi-Fi 6E/7 + BLE combo used in premium headset reference designs.</td></tr>
+        
+          <tr><td><strong>MediaTek</strong></td><td>XR SoC platforms</td><td>Positioned for value/mid-tier standalone headsets, especially in China.</td></tr>
+        
+          <tr><td><strong>Qorvo</strong></td><td>UWB + Wi-Fi FEM</td><td>RF front-end and UWB ranging components for precision controller tracking.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-doorlock">
+      <span class="app-cat-tag">Smart Home &amp; Security</span>
+      <h2 class="app-title">Video Doorbell / Smart Door Lock</h2>
+      <p class="app-tagline">The entry point of the smart home — Matter&#39;s flagship use case, bridging Wi-Fi video with Thread-based locks.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Video doorbells need sustained Wi-Fi bandwidth for streaming and cloud clips, while smart locks prioritize ultra-low-power mesh (Thread/Zigbee) for instant, battery-friendly response. Matter over Thread has become the interoperability layer of choice for locks, while doorbells remain mostly Wi-Fi-only due to their higher power/bandwidth needs and mains or high-capacity battery power.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">App &amp; Notifications</div><div class="bs">Live view, motion/person alerts, remote lock/unlock, guest access codes</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Edge Compute</div><div class="bs">On-device person/package detection, local video buffer, secure element for keys</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi for video doorbells; Thread/Zigbee/BLE for locks (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Actuator, Camera &amp; Battery</div><div class="bs">Motor/deadbolt or camera+IR, battery or mains power, tamper sensor</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi (2.4/5 GHz)</b>Video doorbell streaming and cloud upload; needs sustained throughput.</div>
+        
+        <div class="radio-chip"><b>Thread (802.15.4)</b>Low-power mesh for battery locks; Matter&#39;s preferred transport for locks/sensors.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Commissioning (in-app QR pairing), local proximity unlock, out-of-band setup.</div>
+        
+        <div class="radio-chip"><b>Zigbee (legacy installs)</b>Still shipped for backward compatibility with existing hub ecosystems.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$7.1B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$32B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>22%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>16%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,169.3 88.7,165.6 131.4,161.4 174.1,156.8 216.9,151.3" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,144.8 259.6,137.5 302.3,129.2 345.0,119.9 387.7,109.3 430.4,97.8 473.1,84.9 515.9,70.6 558.6,55.0 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="169.3" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="165.6" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="161.4" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="156.8" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="151.3" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="137.5" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="129.2" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="119.9" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="109.3" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="97.8" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="84.9" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="70.6" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="55.0" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">9.1</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">18</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">27</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">36</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Matter over Thread (locks)</b>Cross-ecosystem support (Apple Home/Google Home/Alexa) is now a purchase-decision checkbox.</li><li><b>Wi-Fi 4/5 dual-band (doorbells)</b>Reliable streaming from garages/porches at the edge of home Wi-Fi coverage.</li><li><b>BLE commissioning</b>Standard QR/BLE onboarding flow expected by every major smart-home app.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 6 (doorbells)</b>Better performance in dense multi-device homes, longer battery for battery-powered doorbells.</li><li><b>Thread Border Router built-in (hub)</b>Extends Thread mesh coverage without an extra dedicated hub.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>UWB fine-ranging unlock</b>Walk-up-and-unlock without touching phone or key, similar to automotive digital keys.</li><li><b>Wi-Fi HaLow for wide-yard sensors</b>Sub-GHz Wi-Fi extends range to gate/driveway sensors far from the router.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Nordic Semiconductor</strong></td><td>nRF52840 (Thread+BLE)</td><td>Leading Thread SoC choice for Matter-certified smart locks.</td></tr>
+        
+          <tr><td><strong>Silicon Labs</strong></td><td>MG24 (Thread/Zigbee/BLE)</td><td>Multiprotocol SoC widely used by lock and sensor OEMs for Matter certification.</td></tr>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>QCC/IPQ Wi-Fi platforms</td><td>Wi-Fi camera SoCs powering many video-doorbell reference designs.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>CYW43xxx Wi-Fi</td><td>Wi-Fi module supplier across mainstream video doorbell OEMs.</td></tr>
+        
+          <tr><td><strong>Espressif</strong></td><td>ESP32-C6 (Wi-Fi 6 + 802.15.4)</td><td>Cost-effective combo silicon increasingly used in value-tier locks/doorbells.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-securityhub">
+      <span class="app-cat-tag">Smart Home &amp; Security</span>
+      <h2 class="app-title">Security Hub</h2>
+      <p class="app-tagline">The whole-home security brain — a multi-radio bridge tying sensors, cameras and locks into one monitored system.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">A security hub&#39;s job is being the most reliable radio in the house: it typically runs Wi-Fi/Ethernet backhaul to the cloud plus a Zigbee/Z-Wave/Thread radio to talk to dozens of battery sensors, and a cellular backup so an intruder cutting the internet doesn&#39;t disable monitoring. This makes hubs the most radio-dense device in the smart home.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Monitoring App &amp; Rules</div><div class="bs">Arm/disarm, event timeline, professional-monitoring integration, automations</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Hub Compute</div><div class="bs">Local rules engine, event buffering during outages, secure credential storage</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi/Ethernet backhaul + Zigbee/Z-Wave/Thread mesh + cellular backup (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Siren, Battery Backup &amp; I/O</div><div class="bs">Onboard siren, backup battery, wired panel/keypad interfaces</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi / Ethernet</b>Primary backhaul to the monitoring cloud and mobile app.</div>
+        
+        <div class="radio-chip"><b>Zigbee / Z-Wave</b>Mesh to legacy door/window/motion sensors — still the largest installed base.</div>
+        
+        <div class="radio-chip"><b>Thread (Matter Border Router)</b>Newer sensors and locks increasingly ship Matter/Thread instead of Zigbee.</div>
+        
+        <div class="radio-chip"><b>Cellular (LTE-M/CAT-1)</b>Backup uplink so cutting the home internet/power doesn&#39;t disable monitoring.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Keypad/fob pairing and installer commissioning.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$8.1B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$28B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>16%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>13%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,160.9 88.7,156.7 131.4,152.6 174.1,148.0 216.9,142.3" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,136.2 259.6,129.0 302.3,121.2 345.0,112.5 387.7,102.7 430.4,91.9 473.1,80.1 515.9,67.2 558.6,53.3 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="160.9" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="156.7" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="152.6" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="148.0" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="142.3" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="129.0" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="121.2" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="112.5" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="102.7" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="91.9" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="80.1" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="67.2" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="53.3" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">8.2</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">16</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">24</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">33</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Zigbee 3.0 mesh</b>Largest installed base of legacy sensors that a new hub still must support.</li><li><b>Cellular backup (LTE-M/CAT-1)</b>Table-stakes for any professionally-monitored security offering.</li><li><b>Wi-Fi dual-band backhaul</b>Primary uplink for events, live video and app control.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Thread Border Router + Matter</b>Future-proofs the hub as sensor/lock OEMs migrate away from proprietary Zigbee profiles.</li><li><b>Z-Wave Long Range</b>Extends mesh reach in large homes/multi-building properties for the installed Z-Wave base.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Wi-Fi HaLow sub-GHz</b>Longer range, lower power sensors covering garages, sheds and perimeters.</li><li><b>Satellite IoT backup</b>Monitoring continuity even when both cellular and Wi-Fi backhaul fail.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Silicon Labs</strong></td><td>EFR32 multiprotocol (Zigbee/Thread/BLE)</td><td>Dominant multiprotocol SoC in professional and DIY security-hub designs.</td></tr>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>IPQ/QCA Wi-Fi + cellular modules</td><td>Wi-Fi and LTE-M modules used in premium/professionally-monitored hubs.</td></tr>
+        
+          <tr><td><strong>NXP Semiconductors</strong></td><td>JN51xx / K32W (Zigbee/Thread)</td><td>Long-standing supplier to security panel OEMs for mesh radios.</td></tr>
+        
+          <tr><td><strong>u-blox</strong></td><td>LTE-M/NB-IoT modules</td><td>Cellular-backup module supplier across alarm-panel and hub OEMs.</td></tr>
+        
+          <tr><td><strong>Texas Instruments</strong></td><td>CC13xx/CC26xx multiprotocol</td><td>Sub-GHz + 2.4 GHz combo used by several panel and sensor makers.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-thermostat">
+      <span class="app-cat-tag">Smart Home &amp; Security</span>
+      <h2 class="app-title">Smart Thermostat</h2>
+      <p class="app-tagline">The energy-savings poster child — Wi-Fi first, with Matter/Thread adoption accelerating for whole-home HVAC control.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Thermostats are mains-powered (thermostats tap the HVAC transformer), so unlike battery sensors they default to Wi-Fi for direct cloud connectivity, energy-utility demand-response programs and voice assistant integration. Matter-over-Wi-Fi and Matter-over-Thread variants are both shipping as OEMs chase multi-ecosystem certification (Apple Home, Google Home, Amazon Alexa, SmartThings).</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Schedules &amp; Energy App</div><div class="bs">Learning schedules, geofencing, utility demand-response, energy reports</div></div>
+        
+        <div class="app-blk c2"><div class="bn">HVAC Control Logic</div><div class="bs">Relay control for heat/cool/fan stages, occupancy &amp; temperature sensing</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi primary, with Thread/Matter for multi-vendor sensor ecosystems (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Display, Sensors &amp; Power</div><div class="bs">Color touch display, humidity/occupancy sensors, C-wire or battery-buffered power</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi (2.4 GHz)</b>Primary and often only radio: cloud connectivity, app control, firmware updates.</div>
+        
+        <div class="radio-chip"><b>Thread</b>Growing option for Matter certification and talking to satellite temperature sensors.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>In-app setup/commissioning before Wi-Fi credentials are provisioned.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$4.8B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$17B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>17%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>13%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,161.7 88.7,157.4 131.4,153.1 174.1,148.8 216.9,142.8" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,136.7 259.6,129.9 302.3,122.1 345.0,113.5 387.7,104.1 430.4,93.8 473.1,81.7 515.9,68.8 558.6,54.2 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="161.7" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="157.4" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="153.1" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="148.8" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="142.8" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="129.9" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="122.1" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="113.5" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="104.1" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="93.8" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="81.7" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="68.8" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="54.2" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">4.9</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">9.8</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">15</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">20</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 4/5 (2.4 GHz)</b>Universal requirement: every mainstream thermostat is Wi-Fi first for cloud/app control.</li><li><b>BLE commissioning</b>Standard onboarding flow before Wi-Fi credentials are handed over.</li><li><b>Matter over Wi-Fi</b>Multi-ecosystem certification is now a shelf-placement requirement at major retailers.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Thread (satellite sensors)</b>Low-power link to remote room-temperature sensors without extra Wi-Fi APs.</li><li><b>Wi-Fi 6 (low-power mode)</b>Better coexistence in dense-device homes without hurting standby power.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Wi-Fi HaLow for whole-house sensors</b>Sub-GHz reach for basements/detached rooms beyond normal Wi-Fi coverage.</li><li><b>Grid-aware demand-response signaling</b>Direct utility-to-device signaling for real-time grid/carbon-aware setpoints.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Platform</strong></td><td>CYW43xxx Wi-Fi</td><td>Widely used Wi-Fi module across leading connected-thermostat brands.</td></tr>
+        
+          <tr><td><strong>Espressif</strong></td><td>ESP32 series</td><td>Popular low-cost Wi-Fi+BLE SoC for value-tier and white-label thermostats.</td></tr>
+        
+          <tr><td><strong>Silicon Labs</strong></td><td>EFR32MG (Thread)</td><td>Thread radio supplier for thermostats adding Matter/satellite-sensor support.</td></tr>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>QCA4xxx Wi-Fi</td><td>Wi-Fi SoC supplier to several premium thermostat and HVAC-control OEMs.</td></tr>
+        
+          <tr><td><strong>NXP Semiconductors</strong></td><td>88W Wi-Fi + Thread combo</td><td>Combo silicon positioned for next-gen Matter-over-Thread thermostats.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-ipcamera">
+      <span class="app-cat-tag">Smart Home &amp; Security</span>
+      <h2 class="app-title">IP Camera</h2>
+      <p class="app-tagline">Consumer and prosumer network cameras — the highest sustained-throughput radio load in the smart home.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">IP cameras stream continuous or motion-triggered video, so Wi-Fi throughput and range dominate the wireless requirements list; PoE remains common in prosumer/commercial installs. Local (on-device or hub-based) AI person/vehicle detection is shifting compute to the edge to cut cloud bandwidth and improve response latency.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Live View &amp; Alerts App</div><div class="bs">Live stream, event clips, person/vehicle/package AI alerts, two-way audio</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Vision Compute</div><div class="bs">On-device NPU for person/object detection, local video buffering (SD/NVR)</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi dual-band primary; PoE Ethernet for prosumer/commercial (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Sensor, IR &amp; Power</div><div class="bs">Image sensor, IR/color-night-vision LEDs, PoE or battery + solar panel option</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi (dual-band)</b>Sustained video upload; 5 GHz preferred where range allows for less 2.4 GHz congestion.</div>
+        
+        <div class="radio-chip"><b>Ethernet / PoE</b>Prosumer and commercial installs prefer wired power+data reliability over Wi-Fi.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Setup/commissioning and firmware pairing before Wi-Fi is configured.</div>
+        
+        <div class="radio-chip"><b>Cellular (battery/solar cams)</b>Off-grid battery cameras without a nearby router use LTE-M/CAT-1 backhaul.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$12B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$45B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>16%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>14%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,161.9 88.7,158.0 131.4,154.1 174.1,149.6 216.9,144.4" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,138.6 259.6,132.1 302.3,124.6 345.0,116.2 387.7,106.7 430.4,96.0 473.1,84.0 515.9,70.4 558.6,55.1 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="161.9" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="158.0" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="154.1" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="149.6" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="144.4" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="132.1" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="124.6" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="116.2" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="106.7" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="96.0" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="84.0" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="70.4" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="55.1" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">13</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">26</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">39</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">52</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 5 dual-band</b>Baseline throughput/range needed for reliable HD/QHD continuous or event streaming.</li><li><b>BLE/Wi-Fi commissioning</b>Standard app-guided setup flow expected across every consumer camera brand.</li><li><b>WPA3</b>Camera feeds are a high-value target; WPA3 is now a baseline security requirement.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 6/6E</b>Better performance in multi-camera households and denser urban RF environments.</li><li><b>PoE (prosumer/commercial)</b>Eliminates battery/Wi-Fi reliability concerns for fixed installations.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Wi-Fi HaLow (long-range, low-power)</b>Perimeter/driveway/barn cameras far outside normal Wi-Fi and on battery+solar.</li><li><b>On-camera RedCap 5G</b>Backhaul-independent cameras for construction sites and temporary installs.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>QCS/IPQ camera platforms</td><td>Wi-Fi + vision SoC combination widely used across premium IP-camera brands.</td></tr>
+        
+          <tr><td><strong>Realtek</strong></td><td>RTL819x Wi-Fi</td><td>Cost-optimized Wi-Fi SoC supplier for mainstream/value camera OEMs.</td></tr>
+        
+          <tr><td><strong>Ambarella</strong></td><td>CV-series vision SoC</td><td>Leading vision/AI processor paired with third-party Wi-Fi modules.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>CYW43xxx Wi-Fi</td><td>Wi-Fi module supplier across several battery and mains-powered camera lines.</td></tr>
+        
+          <tr><td><strong>u-blox</strong></td><td>LTE-M modules</td><td>Cellular backhaul for off-grid solar/battery security cameras.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-speaker">
+      <span class="app-cat-tag">Audio &amp; Entertainment</span>
+      <h2 class="app-title">Portable Speaker</h2>
+      <p class="app-tagline">The default Bluetooth-audio device — party speakers to pocket speakers, increasingly with Wi-Fi multiroom.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Portable speakers are overwhelmingly Bluetooth Classic (A2DP) devices today, with LE Audio migration underway for battery efficiency and multi-speaker broadcast (Auracast party mode). Premium multiroom speakers add Wi-Fi for higher-fidelity streaming and whole-home group playback alongside Bluetooth for simple, router-free pairing.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Playback UX</div><div class="bs">EQ, party-mode pairing, voice-assistant wake word, companion app control</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Audio DSP</div><div class="bs">Codec decode, active EQ, multi-driver crossover, battery/thermal management</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Bluetooth Classic/LE primary; Wi-Fi on multiroom-capable models (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Drivers, Battery &amp; Enclosure</div><div class="bs">Passive radiators, rugged/waterproof housing, multi-hour rechargeable battery</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Bluetooth Classic (A2DP)</b>Dominant streaming path today: simple, router-free, universal phone support.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE Audio / Auracast</b>Emerging: lower power, multi-speaker broadcast &#34;party mode&#34; without pairing each unit.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi (multiroom models)</b>Higher-fidelity streaming and synchronized whole-home group playback.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$14B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$41B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>13%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>11%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,153.8 88.7,149.2 131.4,144.9 174.1,139.9 216.9,134.2" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,128.2 259.6,121.4 302.3,114.0 345.0,105.8 387.7,96.9 430.4,87.0 473.1,76.3 515.9,64.6 558.6,51.8 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="153.8" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="149.2" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="144.9" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="139.9" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="134.2" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="121.4" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="114.0" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="105.8" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="96.9" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="87.0" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="76.3" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="64.6" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="51.8" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">12</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">24</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">35</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">47</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Bluetooth Classic A2DP</b>Still the universal, zero-setup streaming path every phone supports.</li><li><b>Bluetooth 5.x (BLE control)</b>App-based EQ/firmware control channel alongside the audio streaming link.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>LE Audio / Auracast</b>Lower power draw and broadcast &#34;stereo/party pairing&#34; across many units at once.</li><li><b>Wi-Fi multiroom (AirPlay/Chromecast/proprietary)</b>Whole-home synchronized playback and hi-res streaming beyond Bluetooth&#39;s bitrate.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Auracast as default broadcast mode</b>Instant multi-speaker sync without manual pairing as Auracast device support matures.</li><li><b>Wi-Fi 6 low-power audio profiles</b>Better coexistence for Wi-Fi speakers living alongside dense home mesh networks.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>QCC Bluetooth audio SoC</td><td>Leading Bluetooth audio SoC family across mainstream and premium portable speakers.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>Bluetooth Audio combo</td><td>Bluetooth Classic/LE Audio SoCs used broadly across the portable-speaker market.</td></tr>
+        
+          <tr><td><strong>Realtek</strong></td><td>RTL87xx Bluetooth audio</td><td>Cost-competitive Bluetooth audio SoC common in value-tier speakers.</td></tr>
+        
+          <tr><td><strong>MediaTek</strong></td><td>MT2xxx/Airoha audio platforms</td><td>Bluetooth audio SoCs (via Airoha) widely used in Asia-based speaker OEMs.</td></tr>
+        
+          <tr><td><strong>Qualcomm/Sonos-style</strong></td><td>Wi-Fi + BT combo</td><td>Combo silicon for multiroom speakers that need both Wi-Fi streaming and BT fallback.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-soundbar">
+      <span class="app-cat-tag">Audio &amp; Entertainment</span>
+      <h2 class="app-title">Wireless Soundbar</h2>
+      <p class="app-tagline">TV-companion audio — wireless subwoofer/rear-channel links plus Wi-Fi streaming and Bluetooth casting.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Soundbars use a proprietary low-latency 2.4/5 GHz link to their wireless subwoofer and rear satellite speakers (a use case Bluetooth&#39;s latency profile doesn&#39;t comfortably serve), while offering Bluetooth for phone casting and Wi-Fi for AirPlay/Chromecast and multiroom grouping with other speakers in the same ecosystem.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Home-Theater UX</div><div class="bs">Dialogue enhancement, surround virtualization, companion app EQ, voice-assistant mic</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Audio Processing</div><div class="bs">Multi-channel DSP, HDMI-ARC/eARC audio return, Dolby Atmos/DTS:X decode</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Proprietary wireless sub/rears + Wi-Fi streaming + Bluetooth casting (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Drivers, Sub &amp; Power</div><div class="bs">Multi-driver bar array, wireless powered subwoofer, mains power</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Proprietary 2.4/5 GHz link</b>Ultra-low-latency wireless subwoofer/rear-satellite audio that Bluetooth can&#39;t match.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi</b>AirPlay/Chromecast casting and multiroom grouping with other speakers in the home.</div>
+        
+        <div class="radio-chip"><b>Bluetooth Classic</b>Direct phone/tablet casting without joining the home Wi-Fi network.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$7.3B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$21B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>15%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>11%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,155.1 88.7,150.2 131.4,145.4 174.1,139.9 216.9,133.7" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,127.5 259.6,120.6 302.3,113.0 345.0,104.8 387.7,95.8 430.4,86.1 473.1,75.8 515.9,64.1 558.6,51.7 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="155.1" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="150.2" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="145.4" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="139.9" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="133.7" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="120.6" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="113.0" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="104.8" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="95.8" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="86.1" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="75.8" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="64.1" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="51.7" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">6.1</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">12</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">18</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">24</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Proprietary low-latency wireless sub/rear link</b>Sub-audio sync latency requirements Bluetooth&#39;s codec/link layer isn&#39;t built for.</li><li><b>Bluetooth Classic (casting)</b>Expected fallback for direct phone streaming without Wi-Fi setup.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi (AirPlay 2 / Chromecast built-in)</b>Multiroom grouping and higher-fidelity streaming beyond Bluetooth bitrate limits.</li><li><b>Wi-Fi 6</b>More reliable multiroom sync in homes with many competing 2.4/5 GHz devices.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>LE Audio for TV-to-soundbar link</b>Standardizing the TV-audio handoff instead of each brand&#39;s proprietary protocol.</li><li><b>Auracast broadcast to personal earbuds</b>Private TV listening broadcast directly to Auracast-capable headphones.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>QCC Bluetooth + Wi-Fi combo</td><td>Common combo platform for soundbar casting and multiroom features.</td></tr>
+        
+          <tr><td><strong>MediaTek</strong></td><td>Home-theater audio SoC</td><td>Audio-processing SoC family used across many mainstream soundbar OEMs.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>CYW combo (Wi-Fi+BT)</td><td>Wi-Fi/Bluetooth combo silicon supplier for multiroom-capable soundbars.</td></tr>
+        
+          <tr><td><strong>Texas Instruments</strong></td><td>Proprietary sub/rear RF + amp ICs</td><td>RF and amplifier ICs behind many proprietary wireless-subwoofer links.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-streamingstick">
+      <span class="app-cat-tag">Audio &amp; Entertainment</span>
+      <h2 class="app-title">Streaming Media Stick</h2>
+      <p class="app-tagline">The Fire TV Stick/Chromecast/Roku category — Wi-Fi for 4K streaming, Bluetooth for the remote and audio.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">A maturing category: growth has slowed as smart TVs increasingly embed the same streaming OS directly, shrinking the standalone-dongle opportunity. Wireless requirements are dominated by Wi-Fi throughput for 4K/HDR streaming and Bluetooth LE for the remote control and headphone-jack-free private listening mode.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Streaming OS &amp; Apps</div><div class="bs">App store, voice search, universal search across streaming services</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Media SoC</div><div class="bs">4K/HDR video decode, app processor, local storage for app caching</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi for video streaming, BLE for remote and private-listening headphones (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Remote, HDMI &amp; Power</div><div class="bs">BLE/IR remote, HDMI output, USB/mains power adapter</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi (dual-band)</b>Primary link for 4K/HDR video streaming; 5 GHz strongly preferred for bandwidth/latency.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Remote-control pairing and private-listening audio to Bluetooth headphones.</div>
+        
+        <div class="radio-chip"><b>Bluetooth Classic (some models)</b>Direct game-controller or headphone pairing for casual gaming apps.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$8.6B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$15B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>12%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>5%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,129.0 88.7,119.0 131.4,111.0 174.1,104.0 216.9,97.9" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,91.9 259.6,85.9 302.3,79.9 345.0,73.9 387.7,67.9 430.4,61.9 473.1,55.9 515.9,49.9 558.6,43.9 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="129.0" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="119.0" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="111.0" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="104.0" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="97.9" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="85.9" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="79.9" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="73.9" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="67.9" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="61.9" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="55.9" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="49.9" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="43.9" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">4.2</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">8.4</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">13</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">17</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 5 dual-band</b>Minimum bar for reliable 4K/HDR streaming without buffering in typical homes.</li><li><b>Bluetooth LE (remote)</b>Standard low-power remote-control link across every major streaming-stick brand.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 6</b>Better performance in dense multi-device households streaming 4K on several TVs at once.</li><li><b>LE Audio private listening</b>Lower-latency, lower-power headphone streaming directly from the stick.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Wi-Fi 7 (low-latency multi-link)</b>Headroom for 8K and cloud-gaming style low-latency streaming use cases.</li><li><b>Matter smart-home hub role</b>Repurposing the always-on stick as a Thread border router for the home.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Amlogic</strong></td><td>S9xx media SoC</td><td>Widely used media-streaming SoC platform across multiple stick/box OEMs.</td></tr>
+        
+          <tr><td><strong>MediaTek</strong></td><td>MT8695/streaming SoC</td><td>Media SoC and Wi-Fi combo supplier for several streaming-device brands.</td></tr>
+        
+          <tr><td><strong>Broadcom</strong></td><td>BCM Wi-Fi+BT combo</td><td>Combo connectivity silicon inside several flagship streaming-stick designs.</td></tr>
+        
+          <tr><td><strong>Realtek</strong></td><td>RTD1xxx media SoC</td><td>Cost-optimized streaming SoC for value-tier sticks and smart-TV dongles.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-audiobox">
+      <span class="app-cat-tag">Audio &amp; Entertainment</span>
+      <h2 class="app-title">Kids&#39; Audio Box (Yoto-style)</h2>
+      <p class="app-tagline">Screen-free kids&#39; audio players — Wi-Fi for library sync, Bluetooth/NFC for card-based, tactile content triggering.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">The screen-free kids-audio category (Yoto and similar) is built around physical cards/pebbles that trigger playback, so NFC/RFID tap detection is as important as the streaming radio. Wi-Fi handles content library sync and parental-control app connectivity, while Bluetooth remains a fallback for headphone/speaker pairing.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Kid-Safe Playback UX</div><div class="bs">Card/pebble tap-to-play, screen-free pixel display, parental controls app</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Content Compute</div><div class="bs">Local content cache, daily podcast/radio download scheduler, volume limiter</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">NFC/RFID card reader + Wi-Fi library sync + BLE setup (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Speaker, Battery &amp; Enclosure</div><div class="bs">Kid-durable housing, rechargeable battery, built-in speaker/headphone jack</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>NFC / RFID</b>Physical card or pebble tap-to-play is the core interaction model of the category.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi</b>Content library sync, daily downloadable audio, parental-control app connectivity.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE / Classic</b>Initial app-based setup and, on some models, external speaker/headphone pairing.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$0.5B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$2.8B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>30%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>18%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,174.5 88.7,171.3 131.4,167.1 174.1,162.3 216.9,156.5" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,150.1 259.6,142.7 302.3,134.2 345.0,124.7 387.7,113.6 430.4,101.4 473.1,87.7 515.9,72.8 558.6,55.9 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="174.5" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="171.3" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="167.1" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="162.3" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="156.5" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="142.7" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="134.2" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="124.7" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="113.6" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="101.4" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="87.7" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="72.8" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="55.9" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">0.8</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">1.6</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">2.4</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">3.2</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>NFC/RFID card reader</b>The physical tap-to-play interaction is the category&#39;s core differentiator vs. app-based players.</li><li><b>Wi-Fi (2.4 GHz)</b>Content sync and parental-control connectivity; most models skip 5 GHz to save cost/power.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Bluetooth LE (setup + audio out)</b>Simple app onboarding and optional external speaker/headphone pairing.</li><li><b>Offline content caching over Wi-Fi</b>Reduces reliance on constant connectivity for car trips and travel.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Matter/Thread parental-control integration</b>Tie screen-time and audio limits into the broader smart-home ecosystem.</li><li><b>Wi-Fi 6 low-power mode</b>Longer battery life for all-day, always-connected use by young children.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>NXP Semiconductors</strong></td><td>NFC reader ICs (PN7xx)</td><td>Widely used NFC/RFID front-end for card- and pebble-based audio players.</td></tr>
+        
+          <tr><td><strong>Espressif</strong></td><td>ESP32 (Wi-Fi+BLE)</td><td>Cost-effective combo SoC common across smaller kids-audio hardware makers.</td></tr>
+        
+          <tr><td><strong>Nordic Semiconductor</strong></td><td>nRF52 series</td><td>BLE SoC used for setup/companion-app connectivity in several designs.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-dsr">
+      <span class="app-cat-tag">Audio &amp; Entertainment</span>
+      <h2 class="app-title">Satellite / Set-Top Receiver (DSR)</h2>
+      <p class="app-tagline">Digital satellite/set-top receivers — a shrinking but still meaningful base with Wi-Fi/Bluetooth for app and remote control.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Traditional satellite/cable set-top receivers are in structural decline as cord-cutting accelerates, but the installed base still requires Wi-Fi for companion-app control, whole-home client boxes, and streaming-app integration, plus Bluetooth LE for modern voice remotes replacing legacy IR.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Guide &amp; App UX</div><div class="bs">Program guide, DVR management, streaming-app integration, voice remote search</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Tuner &amp; Media SoC</div><div class="bs">Satellite/cable tuner, video decode, DVR storage controller</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi for whole-home client boxes and apps; BLE for the voice remote (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Dish/Cable Front-End &amp; Power</div><div class="bs">LNB/tuner front-end, HDMI output, mains power</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi (dual-band)</b>Whole-home client-box video distribution and streaming-app connectivity.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Modern voice remotes replacing legacy IR remotes.</div>
+        
+        <div class="radio-chip"><b>MoCA (coax networking, adjunct)</b>Common wired alternative/complement to Wi-Fi for whole-home video distribution.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$12B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$9.1B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>-4%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>-3%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,37.9 88.7,43.1 131.4,48.3 174.1,52.5 216.9,57.7" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,61.9 259.6,66.1 302.3,69.2 345.0,72.3 387.7,75.5 430.4,78.6 473.1,81.7 515.9,83.8 558.6,87.0 601.3,89.0" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="37.9" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="43.1" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="48.3" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="52.5" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="57.7" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="66.1" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="69.2" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="72.3" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="75.5" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="78.6" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="81.7" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="83.8" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="87.0" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="89.0" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">4.0</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">8.0</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">12</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">16</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi dual-band</b>Required for whole-home client boxes and any streaming-app integration on the main receiver.</li><li><b>Bluetooth LE (voice remote)</b>Now the standard remote-control link, replacing IR line-of-sight limitations.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 6</b>Better multi-client-box performance as more households run 3+ TVs off one receiver.</li><li><b>MoCA 2.5 coax backhaul</b>More reliable whole-home distribution than Wi-Fi in RF-noisy or large homes.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Hybrid satellite+broadband streaming stack</b>Bolt-on streaming-app hub to slow subscriber erosion from pure OTT competitors.</li><li><b>Matter smart-home hub repurposing</b>Using the always-on box as a Thread border router to extend its usefulness.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Broadcom</strong></td><td>BCM7xxx set-top SoC</td><td>Long-standing set-top/satellite-receiver SoC and Wi-Fi combo supplier.</td></tr>
+        
+          <tr><td><strong>MaxLinear</strong></td><td>Satellite tuner + MoCA</td><td>Tuner and MoCA/coax-networking silicon for satellite/cable receiver platforms.</td></tr>
+        
+          <tr><td><strong>Realtek</strong></td><td>RTD/Wi-Fi combo</td><td>Wi-Fi module supplier for whole-home client-box connectivity.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-domesticrobot">
+      <span class="app-cat-tag">Robotics</span>
+      <h2 class="app-title">Domestic Robot</h2>
+      <p class="app-tagline">Robot vacuums, mops and lawn mowers — Wi-Fi for app control/mapping, with UWB/precision-nav sensors emerging.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Domestic robots (robovacs, robomops, robomowers) rely on Wi-Fi for remote start, map sharing and firmware updates, while onboard LiDAR/camera SLAM handles navigation rather than a dedicated wireless positioning radio. Multi-robot and dock-to-robot coordination is a growing use case for low-latency local links as households add multiple units.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Cleaning App &amp; Maps</div><div class="bs">Room maps, no-go zones, scheduling, voice-assistant integration</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Navigation Compute</div><div class="bs">LiDAR/vSLAM processor, obstacle-avoidance AI, motor control</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi primary control/app link; BLE for setup and dock communication (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Motors, Dock &amp; Battery</div><div class="bs">Drive motors, self-empty/self-wash dock, high-capacity battery pack</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi (2.4 GHz)</b>Primary app control, map upload/sync, scheduling and remote-start link.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Initial setup/commissioning and short-range dock/robot pairing.</div>
+        
+        <div class="radio-chip"><b>UWB (emerging)</b>Precision multi-robot or robot-to-furniture positioning beyond camera/LiDAR SLAM.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$10B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$42B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>19%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>15%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,166.7 88.7,162.6 131.4,158.8 174.1,154.3 216.9,149.1" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,143.2 259.6,136.3 302.3,128.7 345.0,119.8 387.7,109.7 430.4,98.4 473.1,85.6 515.9,71.4 558.6,55.5 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="166.7" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="162.6" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="158.8" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="154.3" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="149.1" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="136.3" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="128.7" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="119.8" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="109.7" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="98.4" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="85.6" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="71.4" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="55.5" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">12</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">24</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">36</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">49</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 4 (2.4 GHz)</b>Baseline for app control, scheduling and remote start across every mainstream robovac.</li><li><b>Bluetooth LE commissioning</b>Standard setup flow before Wi-Fi credentials are provisioned.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 6 (dual-band)</b>Faster map uploads and better coexistence in crowded smart-home 2.4 GHz bands.</li><li><b>Matter smart-home integration</b>Cross-ecosystem scheduling and status alongside other Matter devices.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>UWB multi-robot coordination</b>Precision positioning for multi-unit fleets (vacuum + mop + mower) working together.</li><li><b>5G/RedCap connectivity (commercial robots)</b>Untethered operation across large commercial floor plans beyond Wi-Fi coverage.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Robotics RB-series SoC</td><td>Vision/AI + Wi-Fi platform positioned for premium navigation-heavy robovacs.</td></tr>
+        
+          <tr><td><strong>Espressif</strong></td><td>ESP32 (Wi-Fi+BLE)</td><td>Dominant low-cost combo SoC across the majority of value and mid-tier robovacs.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>CYW43xxx Wi-Fi</td><td>Wi-Fi module supplier to several premium robotic-vacuum brands.</td></tr>
+        
+          <tr><td><strong>Realtek</strong></td><td>RTL8xxx Wi-Fi</td><td>Cost-competitive Wi-Fi SoC widely used across Chinese ODM robovac platforms.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-industrialrobot">
+      <span class="app-cat-tag">Robotics</span>
+      <h2 class="app-title">Industrial Robot</h2>
+      <p class="app-tagline">Factory-floor arms and AGVs/AMVs — private 5G and Wi-Fi 6/6E driving the shift away from tethered fieldbus cabling.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Industrial robots and mobile AGVs/AMRs are the leading edge of the private-5G and Wi-Fi 6E push in manufacturing, replacing drag-chains and slip-rings with wireless for mobility and reconfigurability. Deterministic, low-latency wireless (TSN over Wi-Fi 6/6E, private 5G URLLC) is now a real requirement for motion-control loops, not just monitoring/telemetry.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">MES/Fleet Management</div><div class="bs">Production scheduling, fleet routing (AGV/AMR), digital-twin monitoring</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Robot Controller</div><div class="bs">Real-time motion control, safety PLC, on-arm vision/force sensing</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Private 5G/Wi-Fi 6E for mobility + wired TSN Ethernet for fixed arms (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Actuators, Safety &amp; Power</div><div class="bs">Servo motors/grippers, safety-rated e-stop, battery (mobile) or mains power (fixed)</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Private 5G (URLLC)</b>Deterministic, low-latency wireless replacing cabling for mobile robots and reconfigurable cells.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi 6/6E (TSN-aware)</b>Cost-effective deterministic wireless for AGV/AMR fleets in most factory deployments today.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Handheld teach-pendant pairing, asset tags, technician diagnostic tools.</div>
+        
+        <div class="radio-chip"><b>UWB</b>Centimeter-accurate AGV/AMR indoor positioning where GPS is unavailable.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$26B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$85B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>13%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>13%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,156.5 88.7,151.3 131.4,147.9 174.1,144.5 216.9,139.3" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,134.2 259.6,127.3 302.3,120.4 345.0,111.8 387.7,103.2 430.4,92.9 473.1,80.9 515.9,68.8 558.6,53.4 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="156.5" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="151.3" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="147.9" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="144.5" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="139.3" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="127.3" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="120.4" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="111.8" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="103.2" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="92.9" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="80.9" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="68.8" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="53.4" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">24</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">49</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">73</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">98</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 6/6E (deterministic QoS)</b>Current mainstream wireless backbone for AGV/AMR fleets and factory monitoring.</li><li><b>Bluetooth LE (tools/tags)</b>Teach-pendant, asset-tag and diagnostic-tool connectivity baseline.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Private 5G (URLLC)</b>Deterministic latency/reliability for motion-critical wireless control loops at scale.</li><li><b>UWB positioning</b>Precise indoor localization for AMR fleets and safety zoning around moving robots.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Wi-Fi 7 (TSN + multi-link)</b>Wireless replacement for the last tethered motion-control cabling on fixed arms.</li><li><b>5G-Advanced RedCap sensors</b>Battery-friendly wireless sensor swarms across large industrial sites.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>FSM private-5G platforms</td><td>Reference private-5G radio platforms positioned for factory AGV/AMR deployments.</td></tr>
+        
+          <tr><td><strong>Siemens/Nokia-class infra</strong></td><td>Private 5G RAN + Wi-Fi 6E APs</td><td>Infrastructure vendors partnering with chipmakers for industrial wireless rollouts.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>Industrial Wi-Fi 6/BLE combo</td><td>Ruggedized combo connectivity for factory-floor robot and sensor modules.</td></tr>
+        
+          <tr><td><strong>u-blox</strong></td><td>UWB + Wi-Fi/BLE modules</td><td>Positioning and connectivity modules used across AMR/AGV fleet vendors.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-humanoid">
+      <span class="app-cat-tag">Robotics</span>
+      <h2 class="app-title">Humanoid Robot</h2>
+      <p class="app-tagline">The newest, fastest-growing category — dense onboard sensor fusion demands the highest-bandwidth, lowest-latency wireless stack of any consumer/industrial device.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Humanoid robots combine industrial-grade mobility with consumer-adjacent deployment (homes, warehouses, retail), needing simultaneous high-bandwidth video/lidar telemetry, low-latency teleoperation links, and dense onboard sensor buses. This is currently the highest-growth, most speculative category on this page, with valuations driven heavily by future potential rather than current shipment volume.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Task &amp; Teleop UX</div><div class="bs">Autonomous task planning, remote-teleoperation console, fleet dashboard</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Onboard AI Compute</div><div class="bs">Multimodal foundation model inference, real-time motion/balance control</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Wi-Fi 6E/7 telemetry + 5G/private-5G teleop link + UWB/BLE sensor mesh (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Actuators, Battery &amp; Safety</div><div class="bs">Dexterous hands/legs, high-density battery pack, safety e-stop and geofencing</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi 6E/7</b>High-bandwidth camera/LiDAR telemetry and model-update streaming while docked or roaming.</div>
+        
+        <div class="radio-chip"><b>Private 5G / RedCap</b>Low-latency remote-teleoperation and fleet coordination beyond a single Wi-Fi cell.</div>
+        
+        <div class="radio-chip"><b>UWB</b>Precise robot-to-robot and robot-to-charging-dock positioning in shared spaces.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Onboard sensor/actuator bus links and technician diagnostic tools.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$3.2B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$84B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>28%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>39%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,181.9 88.7,181.4 131.4,180.7 174.1,179.8 216.9,178.4" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,176.0 259.6,172.2 302.3,166.8 345.0,159.3 387.7,149.2 430.4,135.8 473.1,118.7 515.9,97.1 558.6,70.5 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="181.9" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="181.4" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="180.7" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="179.8" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="178.4" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="172.2" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="166.8" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="159.3" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="149.2" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="135.8" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="118.7" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="97.1" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="70.5" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">24</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">48</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">72</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">96</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 6E (dual/tri-band)</b>Sustained high-bandwidth sensor telemetry and over-the-air model updates.</li><li><b>Bluetooth LE (sensor bus/tools)</b>Low-power links for distributed onboard sensors and field diagnostics.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Private 5G/RedCap teleop link</b>Reliable low-latency remote operation across a warehouse or campus, not just one Wi-Fi cell.</li><li><b>UWB fleet positioning</b>Safe multi-robot coordination and precision docking/charging in shared human spaces.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Wi-Fi 7 multi-link teleoperation</b>Near-zero-jitter video/haptic feedback for high-fidelity remote teleoperation.</li><li><b>Satellite/5G-A backhaul</b>Connectivity continuity for humanoid fleets operating outside dense-Wi-Fi facilities.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Robotics RB6/Snapdragon platforms</td><td>AI + connectivity reference platform positioned for humanoid and mobile-robot OEMs.</td></tr>
+        
+          <tr><td><strong>NVIDIA</strong></td><td>Jetson Thor + partner Wi-Fi/5G modules</td><td>Dominant onboard AI compute partner; relies on third-party silicon for wireless connectivity.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>Industrial Wi-Fi 6E/BLE combo</td><td>Positioned for ruggedized humanoid sensor-bus and telemetry connectivity.</td></tr>
+        
+          <tr><td><strong>u-blox</strong></td><td>UWB + 5G modules</td><td>Positioning and cellular module supplier for early humanoid fleet pilots.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-meshrouter">
+      <span class="app-cat-tag">Networking Infrastructure</span>
+      <h2 class="app-title">Mesh Router (Wi-Fi/BT/802.15.4)</h2>
+      <p class="app-tagline">The connective tissue of the smart home — whole-home Wi-Fi mesh plus a built-in Thread/Zigbee/Matter border router.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Modern mesh Wi-Fi systems have become the default smart-home hub by adding a Thread border router and Bluetooth LE radio alongside their core Wi-Fi mesh backhaul, letting one box provide both internet connectivity and the low-power mesh backbone for Matter-certified sensors and locks.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Home Network App</div><div class="bs">Network topology, parental controls, guest Wi-Fi, Matter/Thread device management</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Router/Mesh Compute</div><div class="bs">Wi-Fi mesh routing (802.11s/proprietary), QoS engine, Thread border-router stack</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Tri-band Wi-Fi mesh backhaul + Thread/Zigbee border router + BLE (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">WAN, Antennas &amp; Power</div><div class="bs">Cable/fiber/5G WAN uplink, multi-antenna array, mains power with battery-backup option</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi 6/6E/7 (tri-band mesh)</b>Dedicated backhaul band plus client bands for whole-home coverage without speed loss.</div>
+        
+        <div class="radio-chip"><b>Thread (802.15.4)</b>Built-in Matter border router extending low-power mesh to sensors, locks and bulbs.</div>
+        
+        <div class="radio-chip"><b>Zigbee (select models)</b>Legacy mesh support for existing non-Matter Zigbee device ecosystems.</div>
+        
+        <div class="radio-chip"><b>Bluetooth LE</b>Node commissioning and Matter/BLE device onboarding handoff to Wi-Fi/Thread.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$4.7B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$20B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>24%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>16%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,169.4 88.7,165.0 131.4,160.6 174.1,155.5 216.9,149.7" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,143.1 259.6,135.8 302.3,127.8 345.0,118.3 387.7,108.0 430.4,96.3 473.1,83.9 515.9,70.1 558.6,54.7 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="169.4" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="165.0" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="160.6" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="155.5" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="149.7" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="135.8" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="127.8" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="118.3" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="108.0" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="96.3" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="83.9" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="70.1" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="54.7" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">5.8</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">12</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">17</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">23</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Wi-Fi 6 tri-band mesh</b>Dedicated backhaul band is now the baseline expectation for premium mesh systems.</li><li><b>Thread border router + Matter</b>Table-stakes differentiator versus legacy single-purpose Wi-Fi routers.</li><li><b>Bluetooth LE onboarding</b>Standard commissioning flow for both the router nodes and Matter accessories.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi 6E/7 (6 GHz)</b>Interference-free backhaul and client bands in dense multi-AP, multi-device homes.</li><li><b>Zigbee bridging</b>Backward compatibility for households with an existing non-Matter Zigbee device base.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Wi-Fi HaLow gateway role</b>Extending whole-property coverage to long-range, low-power outdoor sensors.</li><li><b>Built-in 5G/satellite WAN failover</b>Uplink resiliency as mesh systems become the single point of home connectivity.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Networking Pro Wi-Fi 7 platform</td><td>Reference chipset behind most premium tri-band mesh Wi-Fi systems.</td></tr>
+        
+          <tr><td><strong>Broadcom</strong></td><td>BCM Wi-Fi 6E/7 SoC</td><td>Leading Wi-Fi SoC supplier for flagship mesh-router platforms.</td></tr>
+        
+          <tr><td><strong>MediaTek</strong></td><td>Filogic Wi-Fi 6E/7</td><td>Fast-growing Wi-Fi SoC platform across value and mid-tier mesh systems.</td></tr>
+        
+          <tr><td><strong>Silicon Labs</strong></td><td>EFR32 (Thread border router)</td><td>Thread/Zigbee radio supplier embedded inside many mesh-router SKUs.</td></tr>
+        
+          <tr><td><strong>NXP Semiconductors</strong></td><td>88W Wi-Fi + 802.15.4 combo</td><td>Combo silicon positioned for integrated Wi-Fi+Thread mesh-router designs.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-rse">
+      <span class="app-cat-tag">Automotive</span>
+      <h2 class="app-title">Rear Seat Entertainment</h2>
+      <p class="app-tagline">In-cabin passenger displays and audio — Bluetooth/Wi-Fi streaming plus wireless headphone and device-mirroring links.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Rear-seat entertainment systems stream content to passenger displays and support Bluetooth headphone pairing and device screen-mirroring, increasingly over an in-vehicle Wi-Fi hotspot fed by the head unit&#39;s cellular modem. Multi-zone audio (different audio per seat) is a growing premium differentiator relying on LE Audio&#39;s multi-stream capability.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Passenger UX</div><div class="bs">Per-seat displays, streaming apps, device mirroring, multi-zone audio control</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Media Compute</div><div class="bs">Video decode SoC, app processor for streaming apps, content caching</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">In-vehicle Wi-Fi hotspot + Bluetooth headphone/mirroring links (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Displays, Speakers &amp; Power</div><div class="bs">Seatback/overhead displays, per-zone speakers, vehicle 12V power</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Wi-Fi (in-vehicle hotspot)</b>Streaming content and device-mirroring backhaul fed by the head unit&#39;s cellular modem.</div>
+        
+        <div class="radio-chip"><b>Bluetooth Classic/LE Audio</b>Wireless headphone pairing; LE Audio multi-stream enables different audio per passenger.</div>
+        
+        <div class="radio-chip"><b>NFC</b>Tap-to-mirror or tap-to-pair for a passenger&#39;s phone/tablet.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$3.1B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$10B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>15%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>13%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,158.5 88.7,154.2 131.4,150.0 174.1,145.7 216.9,140.0" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,134.4 259.6,127.3 302.3,120.2 345.0,111.7 387.7,101.7 430.4,91.8 473.1,80.5 515.9,67.7 558.6,53.5 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="158.5" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="154.2" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="150.0" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="145.7" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="140.0" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="127.3" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="120.2" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="111.7" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="101.7" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="91.8" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="80.5" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="67.7" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="53.5" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">3.0</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">5.9</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">8.9</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">12</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Bluetooth Classic (A2DP headphones)</b>Baseline wireless headphone pairing expected in every rear-seat entertainment package.</li><li><b>Wi-Fi in-vehicle hotspot</b>Streaming-app and device-mirroring connectivity for passenger displays.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>LE Audio multi-stream</b>Distinct audio per passenger/zone from one broadcast source without extra hardware.</li><li><b>NFC tap-to-pair/mirror</b>Faster, simpler passenger onboarding than manual Bluetooth pairing menus.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Auracast per-seat broadcast</b>Any passenger&#39;s own headphones can tune into their seat&#39;s audio feed instantly.</li><li><b>5G-fed edge streaming cache</b>Reduces buffering by pre-caching content via the vehicle&#39;s cellular connection.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Snapdragon Cockpit platform</td><td>Cockpit SoC family increasingly bundling rear-seat display and connectivity IP.</td></tr>
+        
+          <tr><td><strong>NXP Semiconductors</strong></td><td>Bluetooth/Wi-Fi automotive combo</td><td>Automotive-grade combo connectivity widely used in cabin infotainment modules.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>Automotive combo (Wi-Fi/BLE)</td><td>Automotive-qualified Wi-Fi/BLE combo positioned for in-cabin entertainment modules.</td></tr>
+        
+          <tr><td><strong>Texas Instruments</strong></td><td>Automotive Bluetooth/Wi-Fi</td><td>Connectivity IC supplier across several rear-seat entertainment Tier-1 designs.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-headunit">
+      <span class="app-cat-tag">Automotive</span>
+      <h2 class="app-title">Head Unit (Infotainment)</h2>
+      <p class="app-tagline">The car&#39;s central cockpit computer — Wi-Fi/Bluetooth for phone projection, plus cellular and V2X for connected-car services.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">The head unit is the most radio-dense automotive application: Bluetooth for hands-free calling and phone-audio, Wi-Fi for CarPlay/Android Auto wireless projection and hotspot, embedded cellular for connected services (OTA updates, telematics, eCall), and growing V2X/UWB support for digital-key and vehicle-to-infrastructure use cases.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Cockpit UX</div><div class="bs">Navigation, phone projection (CarPlay/Android Auto), voice assistant, cluster integration</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Cockpit Domain Controller</div><div class="bs">Multi-display SoC, OTA update manager, telematics control unit (TCU)</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Bluetooth + Wi-Fi + embedded cellular + UWB/V2X (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Antennas, Displays &amp; Power</div><div class="bs">Shark-fin antenna module, multi-display cluster/center-stack, 12V/48V vehicle power</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Bluetooth Classic/LE</b>Hands-free calling, phone-audio streaming, and digital-key BLE ranging.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi (dual/tri-band)</b>Wireless CarPlay/Android Auto projection and in-vehicle hotspot for passengers.</div>
+        
+        <div class="radio-chip"><b>Embedded cellular (4G/5G)</b>OTA software updates, telematics, eCall, connected-navigation and streaming.</div>
+        
+        <div class="radio-chip"><b>UWB</b>Secure, relay-attack-resistant digital-key ranging for passive entry/start.</div>
+        
+        <div class="radio-chip"><b>C-V2X (emerging)</b>Direct vehicle-to-vehicle/infrastructure safety and traffic-signal messaging.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$33B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$89B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>11%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>10%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,147.9 88.7,143.0 131.4,139.7 174.1,134.8 216.9,129.8" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,123.3 259.6,116.7 302.3,110.1 345.0,101.9 387.7,93.7 430.4,83.9 473.1,74.0 515.9,62.5 558.6,51.0 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="147.9" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="143.0" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="139.7" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="134.8" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="129.8" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="116.7" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="110.1" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="101.9" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="93.7" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="83.9" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="74.0" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="62.5" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="51.0" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">26</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">51</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">77</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">102</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Bluetooth 5.x (hands-free + audio)</b>Regulatory and consumer-expectation baseline for hands-free calling worldwide.</li><li><b>Wi-Fi (wireless CarPlay/Android Auto)</b>Now a mainstream buyer expectation across most trim levels, not just premium.</li><li><b>Embedded cellular (telematics/eCall)</b>Regulatory requirement in several regions (e.g., EU eCall) plus OTA update dependency.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>UWB digital key</b>Premium anti-relay-attack passive entry, differentiating against legacy BLE-only keyless entry.</li><li><b>Wi-Fi 6E in-cabin hotspot</b>Higher-throughput passenger connectivity, especially with rear-seat entertainment onboard.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>C-V2X / 5G-Advanced sidelink</b>Direct vehicle-to-vehicle/infrastructure safety messaging as regulatory mandates mature.</li><li><b>Satellite connectivity fallback</b>Connected-service continuity in cellular dead zones for safety and navigation features.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Snapdragon Digital Chassis (Cockpit + TCU)</td><td>Leading integrated cockpit + connectivity platform across many global OEMs.</td></tr>
+        
+          <tr><td><strong>NXP Semiconductors</strong></td><td>S32 + automotive UWB/BLE</td><td>Strong automotive UWB digital-key and multi-radio connectivity positioning.</td></tr>
+        
+          <tr><td><strong>Platform</strong></td><td>AURIX + automotive RF/UWB</td><td>Automotive-grade microcontrollers and RF front-end IP for connectivity modules.</td></tr>
+        
+          <tr><td><strong>Renesas</strong></td><td>R-Car cockpit SoC</td><td>Cockpit domain-controller SoC family used by multiple Tier-1 infotainment suppliers.</td></tr>
+        
+          <tr><td><strong>Texas Instruments</strong></td><td>Automotive Bluetooth/Wi-Fi/UWB</td><td>Broad automotive connectivity IC portfolio spanning BT, Wi-Fi and UWB ranging.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+    <article class="app-panel " id="app-panel-twowheeler">
+      <span class="app-cat-tag">Automotive</span>
+      <h2 class="app-title">2-Wheeler Head Unit</h2>
+      <p class="app-tagline">Connected motorcycle/scooter dashboards — a smaller, cost- and power-constrained cousin of the car head unit.</p>
+
+      <h3 class="app-h3">📖 Summary</h3>
+      <p class="app-overview">Two-wheeler head units bring car-style connectivity (navigation, phone notifications, call handling) to motorcycles and scooters under tighter cost, power and ruggedization constraints, so Bluetooth for helmet-intercom/phone pairing and low-cost Wi-Fi/cellular for navigation and OTA updates dominate the radio bill of materials.</p>
+
+      <h3 class="app-h3">🧱 System Block Diagram</h3>
+      <div class="app-diagram">
+        
+        <div class="app-blk c1"><div class="bn">Rider UX</div><div class="bs">Turn-by-turn nav, call/notification display, helmet-intercom integration</div></div>
+        
+        <div class="app-blk c2"><div class="bn">Dash Compute</div><div class="bs">Ruggedized low-power display SoC, GNSS nav engine, vibration-hardened design</div></div>
+        
+        <div class="app-blk c3"><div class="bn">Connectivity Subsystem</div><div class="bs">Bluetooth for phone/helmet + optional Wi-Fi/cellular for nav/OTA (zoom below)</div></div>
+        
+        <div class="app-blk c4"><div class="bn">Display, GNSS &amp; Power</div><div class="bs">Sunlight-readable display, GNSS antenna, 12V motorcycle battery with regulator</div></div>
+        
+      </div>
+
+      <h3 class="app-h3">🔎 Zoom: Wireless Technologies</h3>
+      <div class="radio-zoom">
+        
+        <div class="radio-chip"><b>Bluetooth Classic/LE</b>Phone pairing for calls/notifications and helmet-intercom communication.</div>
+        
+        <div class="radio-chip"><b>GNSS</b>Turn-by-turn navigation, core to nearly every connected 2-wheeler dash.</div>
+        
+        <div class="radio-chip"><b>Wi-Fi (setup/OTA, select models)</b>Firmware updates and initial app-based configuration where fitted.</div>
+        
+        <div class="radio-chip"><b>Embedded cellular (premium models)</b>Connected navigation, theft-tracking and telematics on higher-end motorcycles.</div>
+        
+      </div>
+
+      <h3 class="app-h3">📈 Market Trend (US$ Billion)</h3>
+      <div class="mkt-stats">
+        <div class="mkt-stat"><span>2024 size</span><b>$1.4B</b></div>
+        <div class="mkt-stat"><span>2034 projected</span><b>$7.5B</b></div>
+        <div class="mkt-stat"><span>CAGR (history)</span><b>23%</b></div>
+        <div class="mkt-stat"><span>CAGR (forecast)</span><b>19%</b></div>
+      </div>
+      <div class="mkt-chart-box">
+        <svg viewBox="0 0 660 210" class="mkt-svg" role="img" aria-label="Market size trend"><line x1="46" y1="184.0" x2="644" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="142.0" x2="644" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="100.0" x2="644" y2="100.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="58.0" x2="644" y2="58.0" stroke="#e5e7eb" stroke-width="1"/><line x1="46" y1="16.0" x2="644" y2="16.0" stroke="#e5e7eb" stroke-width="1"/><line x1="216.9" y1="16" x2="216.9" y2="184" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/><text x="216.9" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#b45309">now</text><polyline points="46.0,172.3 88.7,169.3 131.4,166.0 174.1,162.1 216.9,157.4" fill="none" stroke="#0284c7" stroke-width="2.2"/><polyline points="216.9,151.9 259.6,145.4 302.3,137.8 345.0,129.0 387.7,118.6 430.4,106.6 473.1,92.9 515.9,77.1 558.6,58.9 601.3,37.9" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5,4"/><circle cx="46.0" cy="172.3" r="2.6" fill="#0284c7"/> <circle cx="88.7" cy="169.3" r="2.6" fill="#0284c7"/> <circle cx="131.4" cy="166.0" r="2.6" fill="#0284c7"/> <circle cx="174.1" cy="162.1" r="2.6" fill="#0284c7"/> <circle cx="216.9" cy="157.4" r="2.6" fill="#0284c7"/><circle cx="259.6" cy="145.4" r="2.6" fill="#94a3b8"/> <circle cx="302.3" cy="137.8" r="2.6" fill="#94a3b8"/> <circle cx="345.0" cy="129.0" r="2.6" fill="#94a3b8"/> <circle cx="387.7" cy="118.6" r="2.6" fill="#94a3b8"/> <circle cx="430.4" cy="106.6" r="2.6" fill="#94a3b8"/> <circle cx="473.1" cy="92.9" r="2.6" fill="#94a3b8"/> <circle cx="515.9" cy="77.1" r="2.6" fill="#94a3b8"/> <circle cx="558.6" cy="58.9" r="2.6" fill="#94a3b8"/> <circle cx="601.3" cy="37.9" r="2.6" fill="#94a3b8"/><text x="40" y="187.0" text-anchor="end" font-size="9" fill="#64748b">0.0</text><text x="40" y="145.0" text-anchor="end" font-size="9" fill="#64748b">2.1</text><text x="40" y="103.0" text-anchor="end" font-size="9" fill="#64748b">4.3</text><text x="40" y="61.0" text-anchor="end" font-size="9" fill="#64748b">6.4</text><text x="40" y="19.0" text-anchor="end" font-size="9" fill="#64748b">8.6</text><text x="46.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2020</text><text x="131.4" y="204" text-anchor="middle" font-size="9" fill="#64748b">2022</text><text x="216.9" y="204" text-anchor="middle" font-size="9" fill="#64748b">2024</text><text x="302.3" y="204" text-anchor="middle" font-size="9" fill="#64748b">2026</text><text x="387.7" y="204" text-anchor="middle" font-size="9" fill="#64748b">2028</text><text x="473.1" y="204" text-anchor="middle" font-size="9" fill="#64748b">2030</text><text x="558.6" y="204" text-anchor="middle" font-size="9" fill="#64748b">2032</text><text x="644.0" y="204" text-anchor="middle" font-size="9" fill="#64748b">2034</text></svg>
+        <div class="mkt-legend"><span class="l-hist">History (actuals)</span><span class="l-fc">Forecast (est.)</span></div>
+      </div>
+
+      <h3 class="app-h3">⚙️ Wireless Feature Requirements</h3>
+      <div class="feat-cols">
+        <div class="feat-col mand"><h4>Mandatory</h4><ul><li><b>Bluetooth Classic/LE (phone + intercom)</b>Core rider use case: calls, notifications and helmet-intercom pairing.</li><li><b>GNSS</b>Turn-by-turn navigation is now the primary reason riders buy a connected dash.</li></ul></div>
+        <div class="feat-col good"><h4>Good to have</h4><ul><li><b>Wi-Fi (setup/OTA)</b>Simplifies configuration and firmware updates versus cellular-only or USB-only updates.</li><li><b>Theft-alert BLE beacon</b>Low-cost proximity/tamper alert leveraging the existing BLE radio.</li></ul></div>
+        <div class="feat-col future"><h4>Future / emerging</h4><ul><li><b>Embedded cellular telematics</b>Connected navigation and stolen-vehicle tracking as cost of cellular modules keeps falling.</li><li><b>C-V2X hazard/blind-spot alerts</b>Motorcycle-specific safety use case as V2X infrastructure rolls out for cars first.</li></ul></div>
+      </div>
+
+      <h3 class="app-h3">🏭 Chipset Vendor Positioning</h3>
+      <table class="tbl">
+        <thead><tr><th>Company</th><th>Representative platform</th><th>Positioning</th></tr></thead>
+        <tbody>
+        
+          <tr><td><strong>Qualcomm</strong></td><td>Snapdragon Wear/automotive-lite platforms</td><td>Repurposed wearable/automotive-lite SoCs positioned for cost-sensitive 2-wheeler dashes.</td></tr>
+        
+          <tr><td><strong>Nordic Semiconductor</strong></td><td>nRF52/53 (BLE)</td><td>Low-cost BLE SoC widely used for phone/intercom pairing in 2-wheeler dashboards.</td></tr>
+        
+          <tr><td><strong>u-blox</strong></td><td>GNSS + cellular modules</td><td>GNSS and cellular module supplier for navigation and telematics features.</td></tr>
+        
+          <tr><td><strong>MediaTek</strong></td><td>Automotive-lite Wi-Fi/BT SoC</td><td>Cost-optimized connectivity SoC positioned for mass-market scooter/motorcycle OEMs.</td></tr>
+        
+        </tbody>
+      </table>
+    </article>
+    
+  </div>
+</div>
+
+</main>
+<footer class="footer"><div class="wrap">Applications market research · hand-curated, not news-driven · estimates as of 2026-07-20 15:11 PDT</div></footer>
+<script>
+(function(){
+  var items = document.querySelectorAll('.app-item');
+  var panels = document.querySelectorAll('.app-panel');
+  function activate(slug){
+    items.forEach(function(t){ t.classList.toggle('active', t.dataset.slug === slug); });
+    panels.forEach(function(p){ p.classList.toggle('active', p.id === 'app-panel-' + slug); });
+  }
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      activate(this.dataset.slug);
+      history.replaceState(null, '', '#' + this.dataset.slug);
+    });
+  });
+  if (location.hash) {
+    var slug = location.hash.replace('#', '');
+    if (document.getElementById('app-panel-' + slug)) activate(slug);
+  }
+})();
+</script>
+</body></html>
