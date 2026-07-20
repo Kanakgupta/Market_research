@@ -1,7 +1,101 @@
 {
-  "generated_at": "2026-07-19T13:04:15Z",
+  "generated_at": "2026-07-20T13:05:13Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
+    {
+      "title": "Microsoft rushes out Windows fix for Dell's hot and bothered PCs",
+      "url": "https://www.theregister.com/os-platforms/2026/07/20/microsoft-rushes-out-windows-fix-for-dells-hot-and-bothered-pcs/5274810",
+      "source": "The Register",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "With a wave of the wand, affected models will go to the Patch Tuesday ball after all"
+    },
+    {
+      "title": "Globalscale Case8 \u2013 A MediaTek Genio 520/720 cyberdeck for gaming, home automation, and education (Crowdfunding)",
+      "url": "https://www.cnx-software.com/2026/07/20/globalscale-case8-mediatek-genio-520-720-cyberdeck-for-gaming-home-automation-and-education/",
+      "source": "CNX Software",
+      "date": "2026-07-20",
+      "vendor": "MediaTek",
+      "customer": "Amazon",
+      "application": "Smart Home",
+      "buckets": [
+        "bluetooth",
+        "wifi"
+      ],
+      "summary": "Globalscale Technologies has launched the Case8 series of open-source cyberdeck-style computing platforms based on MediaTek Genio 520 and Genio 720 processors. The platform is offered in hacker (PCBA only), gaming, home automation, and education variants. The Case8 is built around an OSM-L compute m"
+    },
+    {
+      "title": "Geniatech XPI-3576-CM5 \u2013 A Raspberry Pi CM5-compatible Rockchip RK3576 AI Compute Module with WiFi 6, Bluetooth 5.3",
+      "url": "https://www.cnx-software.com/2026/07/20/geniatech-xpi-3576-cm5-a-raspberry-pi-cm5-compatible-rockchip-rk3576-ai-compute-module-with-wifi-6-bluetooth-5-3/",
+      "source": "CNX Software",
+      "date": "2026-07-20",
+      "vendor": "Realtek",
+      "customer": "Amazon",
+      "application": "Automotive",
+      "buckets": [
+        "bluetooth",
+        "wifi"
+      ],
+      "summary": "Geniatech XPI-3576-CM5 is a Rockchip RK3576 octa-core Arm Cortex-A72/A53 system-on-module based on the Raspberry Pi CM4/CM5 form factor with up to 16GB LPDDR5 and 128GB eMMC flash. The module also features a RealTek RTL8211F Gigabit Ethernet controller, an Ampak AP6275S wireless module for dual-band"
+    },
+    {
+      "title": "IoTextra modular automation boards with 4 inputs, 4 outputs work with Raspberry Pi and ESP32 MCU boards",
+      "url": "https://www.cnx-software.com/2026/07/20/iotextra-modular-automation-boards-with-4-inputs-4-outputs-work-with-raspberry-pi-and-esp32-mcu-boards/",
+      "source": "CNX Software",
+      "date": "2026-07-20",
+      "vendor": "Espressif",
+      "customer": "Amazon",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Last week, we wrote about the Olimex PICO-EVB automation board equipped with four relays and four isolated inputs and designed for Raspberry Pi Pico-compatible boards. Make Things Happy does something similar, but in a modular way, with the IoTextra family of carrier boards with four inputs and four"
+    },
+    {
+      "title": "Efinix Titanium Edge FPGA family targets low-power edge AI and vision systems",
+      "url": "https://www.cnx-software.com/2026/07/20/efinix-titanium-edge-fpga-family-targets-low-power-edge-ai-and-vision-systems/",
+      "source": "CNX Software",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "Efinix has introduced the Titanium Edge FPGA family designed for low-power edge AI and machine vision applications. Based on the company&#8217;s Titanium FPGA architecture, the new family introduces lower static power consumption, configurable 2.5 Gbps MIPI I/O, built-in single-event upset (SEU) cor"
+    },
+    {
+      "title": "This unpronounceable series of glyphs is an incredible side project from Kieran Hebden (aka Four Tet)",
+      "url": "https://www.theverge.com/entertainment/967696/four-tet-wingdings-album-review",
+      "source": "The Verge",
+      "date": "2026-07-19",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Just why? &#645;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;(&#824;&#802;&#795;&#828;&#798;&#813;&#843;&#837;)&#824;&#858;&#816;&#859;&#788;&#830;&#768;&#831;&#850;&#834;:&#820;&#851;&#798;&#785;&#780;&#770;&#774;&#778;&#843;&#768;:&#824;&#846;&#799;&#815;&#770;&#787;&#780;&#12"
+    },
+    {
+      "title": "Birdfy&#8217;s solar-powered smart feeder is down to one of its best prices",
+      "url": "https://www.theverge.com/gadgets/967336/birdfy-feeder-ai-powered-smart-bird-feeder-with-camera-deal-sale",
+      "source": "The Verge",
+      "date": "2026-07-19",
+      "vendor": null,
+      "customer": null,
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "Birdfy has kicked off a midyear sale, taking up to 40 percent off a range of its smart bird feeders. One of the best deals is on Netvue\u2019s Birdfy Feeder AI-Powered Smart Bird Feeder with Camera, which has dropped to $149.99 at Birdfy and is its second-best price to date. The bundle, which includes a "
+    },
+    {
+      "title": "The Clapper was a bad smart home gadget \u2014\u00a0and a viral sensation",
+      "url": "https://www.theverge.com/podcast/967642/the-clapper-version-history",
+      "source": "The Verge",
+      "date": "2026-07-19",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Clap on. Clap off. Well, more like, Clap, pause for half a beat but no longer because otherwise it'll stop hearing you, clap again because you waited too long, clap louder and faster, that didn't work, clap two more times, and suddenly: on. The Clapper didn't always work - and even when it did, it ["
+    },
     {
       "title": "Beelink EQi 304 review \u2013 Part 3: Ubuntu 26.04 on a Wildcat Lake mini PC",
       "url": "https://www.cnx-software.com/2026/07/19/beelink-eqi-304-review-part-3-ubuntu-26-04-on-a-wildcat-lake-mini-pc/",
@@ -25,61 +119,6 @@
       "application": "Automotive",
       "buckets": [],
       "summary": "I've been a Google phone diehard for 10 years - here's my 5-part wishlist for Pixel 11\nFollow ZDNET: Add us as a preferred source on Google.\nZDNET's key takeaways\n- Google will officially unveil the Pixel 11 lineup on Aug. 12.\n- The new Pixel Glow feature could be the highlight.\n- Pixels need an AI "
-    },
-    {
-      "title": "Google might not kneecap the Pixel 11a with an old processor",
-      "url": "https://www.theverge.com/tech/967612/google-pixel-11a-tensor-g6-leak",
-      "source": "The Verge",
-      "date": "2026-07-18",
-      "vendor": "MediaTek",
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Mystic Leaks suggests that the Pixel 11a will return to featuring a flagship-grade processor with the Tensor G6. Rather than the Tensor G5 found in the Pixel 10 and 10 Pro, the Pixel 10a shipped with the previous generation Tensor G4. That was a huge disappointment since, typically, the Pixel a line"
-    },
-    {
-      "title": "Google is open-sourcing its 3D emoji",
-      "url": "https://www.theverge.com/design/967606/google-open-source-3d-emoji",
-      "source": "The Verge",
-      "date": "2026-07-18",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Now, if you want to, you can use Google's 3D emoji in your own creations. The company shared some details about how it went about designing the little pictograms and why, as part of World Emoji Day on Friday. Things you might not necessarily worry about in a 2D illustration suddenly become very impo"
-    },
-    {
-      "title": "GoPro&#8217;s discounted Max 2 bundle includes $100 worth of accessories",
-      "url": "https://www.theverge.com/gadgets/967311/gopro-max2-360-degree-action-cam-accessory-bundle-deal-sale",
-      "source": "The Verge",
-      "date": "2026-07-18",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "A 360-degree camera is a great way to ensure you capture every bit of the action, but prices tend to be on the high end for models worth your attention. That\u2019s why it\u2019s notable that the GoPro Max 2 accessory bundle is discounted to $369 at Amazon (a dollar more at Best Buy and GoPro). [&#8230;]"
-    },
-    {
-      "title": "Surprise! Facial recognition smart locks are actually good",
-      "url": "https://www.theverge.com/tech/967183/best-facial-recognition-smart-locks-review",
-      "source": "The Verge",
-      "date": "2026-07-18",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Hands-free unlocking is the future of smart locks. The best smart home tech removes friction, and having your door unlock for you as you walk up is as frictionless as it gets - no passcodes to remember, no need to have a free hand to wave, press, or poke at the lock. One way to [&#8230;]"
-    },
-    {
-      "title": "Sony\u2019s flagship RGB LED TV is incredible",
-      "url": "https://www.theverge.com/tech/966788/sony-bravia-9-ii-tv-review",
-      "source": "The Verge",
-      "date": "2026-07-18",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": "The Sony Bravia 9 II is the most anticipated new TV in years. It's an amazing RGB LED TV. I watched Dungeons &#38; Dragons: Honor Among Thieves on the new Bravia with my son, who has been getting into the roleplaying game but had never seen the movie. The landscapes of Faer&#251;n looked natural and"
     },
     {
       "title": "The iPad mini's biggest update in 5 years is expected this fall",
@@ -320,17 +359,6 @@
       "summary": "Extinction Rebellion claims responsibility for chemical-filled balloon attack targeting concrete and steel"
     },
     {
-      "title": "It's official: EU will force Google to share search data and open up AI on Android",
-      "url": "https://arstechnica.com/gadgets/2026/07/its-official-eu-will-force-google-to-share-search-data-and-open-up-ai-on-android/",
-      "source": "Ars Technica",
-      "date": "2026-07-16",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Europe wasted no time using its landmark Digital Markets Act (DMA) to try and rein in Big Tech. Companies like Apple, Meta, and Google have faced steep fines and orders to modify their business practices since the law came into force in 2024. And the hits keep on coming for Big Tech in Europe. After"
-    },
-    {
       "title": "EDF on Zigbee 4.0",
       "url": "https://csa-iot.org/newsroom/edf-on-zigbee-4-0/",
       "source": "CSA / Matter (Zigbee)",
@@ -356,17 +384,6 @@
       "summary": "We're expecting some curveballs at Samsung's 2026 Galaxy Unpacked event. Here's everything we know."
     },
     {
-      "title": "Amazon dropped this Blink video doorbell and security camera bundle to 43% off",
-      "url": "https://www.zdnet.com/article/amazon-blink-video-doorbell-outdoor-4-bundled-deal/",
-      "source": "and we recommend it",
-      "date": "2026-07-16",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "This Blink Video Doorbell and Outdoor 4 security camera bundle deal will help you set up a home security system for less."
-    },
-    {
       "title": "EU forces Google to share its toys with the other AI and search kids",
       "url": "https://www.theregister.com/software/2026/07/16/eu-forces-google-to-share-its-toys-with-the-other-ai-and-search-kids/5273819",
       "source": "The Register",
@@ -389,17 +406,6 @@
         "bluetooth"
       ],
       "summary": "For decades, Bluetooth\u00ae technology has been synonymous with powering headphones, smartphones, and automotive infotainment systems. However, its role has expanded..."
-    },
-    {
-      "title": "Amazon just cut $300 off the Google Pixel 10 Pro",
-      "url": "https://www.zdnet.com/article/google-pixel-10-pro-deal/",
-      "source": "and I'd recommend buying one",
-      "date": "2026-07-16",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Google's Pixel 10 Pro has one of the best camera systems for an Android today. Grab it for $699 right now, one of the best prices we've seen."
     },
     {
       "title": "Kick your mouse out of the house with this AI-assisted keyboard utility",
@@ -464,64 +470,29 @@
   ],
   "vendor_news_30d": {
     "Espressif": 8,
-    "MediaTek": 5,
+    "MediaTek": 4,
     "Microchip": 4,
     "Silicon Labs": 2,
+    "Realtek": 1,
     "Onsemi": 1,
     "Infineon": 1,
     "NXP": 1,
     "Qorvo": 1,
     "Nordic": 1,
-    "STMicro": 1,
-    "TI": 1,
-    "u-blox": 1
+    "STMicro": 1
   },
   "customer_news_30d": {
-    "Amazon": 24,
-    "Google": 15,
+    "Amazon": 21,
     "Apple": 15,
+    "Google": 12,
     "Microsoft": 11,
-    "Sony": 2,
     "Samsung": 2,
+    "Sony": 1,
     "BMW": 1,
     "Mercedes": 1,
     "Tesla": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3785,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15937,
-      "pushed_at": "2026-07-18T14:26:30Z"
-    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -533,7 +504,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1642,
+      "issues_open": 1646,
       "prs_open": 0,
       "releases": [
         {
@@ -555,23 +526,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18562,
-      "pushed_at": "2026-07-19T09:18:04Z"
+      "stars": 18574,
+      "pushed_at": "2026-07-20T12:21:24Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
       "tech": [
-        "wifi"
+        "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3,
+      "issues_open": 3880,
       "prs_open": 0,
-      "releases": [],
-      "stars": 239808,
-      "pushed_at": "2026-07-19T04:17:15Z"
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15943,
+      "pushed_at": "2026-07-19T14:55:03Z"
     },
     {
       "name": "Matter SDK",
@@ -582,7 +572,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2715,
+      "issues_open": 2716,
       "prs_open": 0,
       "releases": [
         {
@@ -604,8 +594,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8827,
-      "pushed_at": "2026-07-19T00:57:38Z"
+      "stars": 8831,
+      "pushed_at": "2026-07-20T11:10:21Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 239898,
+      "pushed_at": "2026-07-19T20:55:05Z"
     },
     {
       "name": "OpenThread",
@@ -615,8 +620,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 71,
-      "issues_open": 161,
+      "commits_30d": 73,
+      "issues_open": 163,
       "prs_open": 0,
       "releases": [
         {
@@ -638,8 +643,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
         }
       ],
-      "stars": 3988,
-      "pushed_at": "2026-07-18T16:32:59Z"
+      "stars": 3989,
+      "pushed_at": "2026-07-20T09:33:35Z"
     },
     {
       "name": "BlueZ",
@@ -649,8 +654,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 37,
-      "issues_open": 109,
+      "commits_30d": 36,
+      "issues_open": 110,
       "prs_open": 0,
       "releases": [
         {
@@ -672,8 +677,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1102,
-      "pushed_at": "2026-07-18T20:24:57Z"
+      "stars": 1104,
+      "pushed_at": "2026-07-20T07:46:47Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -683,8 +688,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 29,
-      "issues_open": 465,
+      "commits_30d": 28,
+      "issues_open": 464,
       "prs_open": 0,
       "releases": [
         {
@@ -706,7 +711,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15317,
+      "stars": 15320,
       "pushed_at": "2026-07-18T18:59:40Z"
     },
     {
@@ -721,7 +726,7 @@
       "issues_open": 274,
       "prs_open": 0,
       "releases": [],
-      "stars": 876,
+      "stars": 878,
       "pushed_at": "2026-07-10T15:55:08Z"
     },
     {
@@ -958,13 +963,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
     },
     {
-      "vendor": "Microchip",
-      "ticker": "MCHP",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -984,6 +982,13 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
+    },
+    {
+      "vendor": "Microchip",
+      "ticker": "MCHP",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1049,13 +1054,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526201058/ter-20260329.htm"
     },
     {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -1068,6 +1066,13 @@
       "form": "8-K",
       "date": "2026-05-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000025/lyb-20260501.htm"
+    },
+    {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -1117,13 +1122,6 @@
       "form": "8-K",
       "date": "2026-04-21",
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000039/avgo-20260420.htm"
-    },
-    {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "8-K",
-      "date": "2026-04-20",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126015711/ef20071035_8k.htm"
     }
   ],
   "tracked_competitors": [
