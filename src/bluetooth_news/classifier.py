@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from urllib.parse import urlparse
 
 # --- Tech bucket detection ----------------------------------------------
 BUCKET_PATTERNS: list[tuple[str, re.Pattern]] = [
@@ -30,6 +31,51 @@ def classify_buckets(text: str, hint: str | None = None) -> list[str]:
     if hint and hint not in found:
         found.append(hint)
     return found
+
+
+# --- Standards-body (SDO) news detection --------------------------------
+# Articles that originate from an official standards-development organisation
+# domain are tagged with the relevant technology family so the News page can
+# show spec adoptions / roadmaps / official press releases separate from
+# generic coverage. Domain match is authoritative; CSA is an umbrella body so
+# its family is resolved from the article text.
+STANDARDS_DOMAINS: list[tuple[str, str]] = [
+    ("bluetooth.com", "bluetooth"),
+    ("bluetooth.org", "bluetooth"),
+    ("wi-fi.org", "wifi"),
+    ("wifialliance.org", "wifi"),
+    ("threadgroup.org", "thread"),
+    ("openthread.io", "thread"),
+    ("standards.ieee.org", "ieee15_4"),
+    ("firaconsortium.org", "aliro"),
+    ("csa-iot.org", ""),  # umbrella -> resolve from content
+    ("connectivitystandardsalliance.org", ""),
+]
+
+
+def classify_standard(url: str, text: str, buckets: list[str] | None = None) -> str:
+    """Return the standards technology family (wifi/bluetooth/ieee15_4/aliro/
+    thread/matter) when an article comes from an official standards body,
+    else ''."""
+    if not url:
+        return ""
+    host = urlparse(url).netloc.lower()
+    if host.startswith("www."):
+        host = host[4:]
+    low = (text or "").lower()
+    for domain, fam in STANDARDS_DOMAINS:
+        if host == domain or host.endswith("." + domain):
+            if fam:
+                return fam
+            # CSA umbrella: pick the most specific family from the content.
+            if "aliro" in low:
+                return "aliro"
+            if "thread" in low:
+                return "thread"
+            if "zigbee" in low or "802.15.4" in low or "15.4" in low:
+                return "ieee15_4"
+            return "matter"
+    return ""
 
 
 # --- Chip / wireless vendor detection (with region) ---------------------

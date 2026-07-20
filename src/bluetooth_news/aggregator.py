@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, urlunparse
 from difflib import SequenceMatcher
 
-from .classifier import classify_buckets, detect_vendor, detect_customer, detect_application
+from .classifier import classify_buckets, detect_vendor, detect_customer, detect_application, classify_standard
 
 _WS = re.compile(r"\s+")
 _TAG = re.compile(r"<[^>]+>")
@@ -111,14 +111,8 @@ def process(
         seen_urls.add(nu)
         
         published = a.get("published")
-        # Featured articles bypass age filter
         is_featured = a.get("feed_name") == "Featured Articles"
-        if cutoff and published and published < cutoff and not is_featured:
-            filtered_count["age"] += 1
-            if verbose:
-                logger.info(f"Filtered by age (older than {max_age_days}d): {title[:60]}...")
-            continue
-        
+
         summary = _strip_html(a.get("summary") or "")
         # Strip Google News RSS artifact: summary = "Title\xa0\xa0Publisher" (title repeated)
         _sum_norm = re.sub(r"[\s\xa0]+", " ", summary).lower().strip()
@@ -131,10 +125,22 @@ def process(
         vendor, vendor_region = detect_vendor(text)
         customer = detect_customer(text)
         application = detect_application(text)
-        
+        standard = classify_standard(url, text, buckets)
+
+        # Official standards-body posts (bluetooth.com, csa-iot.org, wi-fi.org,
+        # threadgroup.org, FiRa/Aliro, ...) bypass the age + relevance filters so
+        # spec adoptions, roadmaps and press releases are always surfaced under
+        # the Standards section, regardless of publish date.
+        bypass_filters = is_featured or bool(standard)
+
+        if cutoff and published and published < cutoff and not bypass_filters:
+            filtered_count["age"] += 1
+            if verbose:
+                logger.info(f"Filtered by age (older than {max_age_days}d): {title[:60]}...")
+            continue
+
         # Keep article when at least one of (bucket / vendor / customer / app) matches.
-        # Featured articles bypass this filter.
-        if not is_featured and not buckets and not vendor and not customer and not application:
+        if not bypass_filters and not buckets and not vendor and not customer and not application:
             filtered_count["relevance"] += 1
             if verbose:
                 logger.info(f"Filtered by relevance (no match): {title[:60]}...")
@@ -147,6 +153,7 @@ def process(
             "buckets": buckets,
             "vendor": vendor, "vendor_region": vendor_region,
             "customer": customer, "application": application,
+            "standard": standard,
         })
     
     # Second pass: semantic/content-based dedup (fuzzy matching)
@@ -202,18 +209,32 @@ def process(
         else:
             filtered_count["semantic_dup"] += 1
     
-    # Sort by recency (newest first)
-    cleaned.sort(key=lambda x: (x["published"] is None,
-                                -(x["published"].timestamp() if x["published"] else 0)))
-    if limit:
-        cleaned = cleaned[:limit]
-
-    # Decode Google News tracking URLs to direct source URLs in parallel
+    # Decode Google News tracking URLs to direct source URLs BEFORE classifying
+    # standards / applying the cap. Official standards-body links arrive as
+    # news.google.com redirects from site: queries, so the real domain is only
+    # known after decoding.
     try:
         from .gnews_decoder import decode_articles_urls
         cleaned = decode_articles_urls(cleaned)
     except Exception as e:
         logger.warning("Failed decoding Google News URLs: %s", e)
+
+    # Re-tag the standards family using the final (decoded) URL so official
+    # bluetooth.com / csa-iot.org / wi-fi.org / threadgroup.org / firaconsortium
+    # posts are recognised regardless of how they were fetched.
+    for a in cleaned:
+        a["standard"] = classify_standard(
+            a.get("url", ""), f"{a.get('title', '')} {a.get('summary', '')}", a.get("buckets")
+        )
+
+    # Sort by recency (newest first)
+    cleaned.sort(key=lambda x: (x["published"] is None,
+                                -(x["published"].timestamp() if x["published"] else 0)))
+    if limit and len(cleaned) > limit:
+        kept = cleaned[:limit]
+        # Always retain official standards-body posts even if beyond the cap.
+        extra_standards = [a for a in cleaned[limit:] if a.get("standard")]
+        cleaned = kept + extra_standards
 
     if verbose or filtered_count["relevance"] > 100 or filtered_count["semantic_dup"] > 0:
         logger.info(

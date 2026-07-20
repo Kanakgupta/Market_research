@@ -166,6 +166,7 @@ a:hover { text-decoration:underline; }
 .chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
 .chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
 .chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
 .source { font-weight:600; opacity:.75; }
 .dot { opacity:.5; }
 .title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
@@ -228,6 +229,7 @@ a:hover { text-decoration:underline; }
 .news-class-title.customers { background:#fdf2f8; color:#9d174d; }
 .news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
 .news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
 .news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
 .news-side-item:hover { background:var(--hover); color:var(--accent); }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
@@ -322,8 +324,8 @@ _NEWS_TEMPLATE = """<!doctype html>
 {% if page_title == 'All News' %}
 <section class="tech-toolbar">
   <div class="tech-tabs" id="techTabs">
-    <button class="tech-tab active" data-filter="all" onclick="filterByTech('all')">All News</button>
-    {% for bucket, label in bucket_labels.items() %}<button class="tech-tab" data-filter="{{ bucket }}" onclick="filterByTech('{{ bucket }}')">{{ label }}</button>{% endfor %}
+    <button class="tech-tab active" data-filter="all" onclick="filterByTech('all', this)">All News</button>
+    {% for bucket, label in bucket_labels.items() %}<button class="tech-tab" data-filter="{{ bucket }}" onclick="filterByTech('{{ bucket }}', this)">{{ label }}</button>{% endfor %}
   </div>
   <div class="tech-actions">
     <span class="tech-count" id="articleCount">{{ articles|length }} articles</span>
@@ -334,6 +336,16 @@ _NEWS_TEMPLATE = """<!doctype html>
 <div class="news-layout">
   <aside class="news-sidebar">
     <div class="news-sidebar-hdr">Classified News</div>
+
+    <div class="news-class-block" id="newsClassStandards">
+      <button class="news-class-title standards" onclick="toggleNewsSection('newsClassStandards')">Standards <span class="caret">▾</span></button>
+      <div class="news-class-body">
+        <button class="news-side-item" data-side-type="standard" data-side-value="" onclick="filterBySideFromButton(this)">All standards news <span class="side-count">{{ standard_total }}</span></button>
+        {% for slug, label, cnt in standard_tabs %}
+        <button class="news-side-item" data-side-type="standard" data-side-value="{{ slug }}" onclick="filterBySideFromButton(this)">{{ label }} <span class="side-count">{{ cnt }}</span></button>
+        {% endfor %}
+      </div>
+    </div>
 
     <div class="news-class-block" id="newsClassCustomers">
       <button class="news-class-title customers" onclick="toggleNewsSection('newsClassCustomers')">Customers <span class="caret">▾</span></button>
@@ -371,12 +383,13 @@ _NEWS_TEMPLATE = """<!doctype html>
 
 <div class="grid" id="grid">
   {% for a in articles %}
-  <article class="card" data-buckets="{{ a.buckets|join(',') }}" data-vendor="{{ a.vendor or '' }}" data-customer="{{ a.customer or '' }}">
+  <article class="card" data-buckets="{{ a.buckets|join(',') }}" data-vendor="{{ a.vendor or '' }}" data-customer="{{ a.customer or '' }}" data-standard="{{ a.standard or '' }}">
     <div class="thumb">
       {% if a.thumb %}<img src="{{ a.thumb }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">{% endif %}
     </div>
     <div class="body">
       <div class="meta-row">
+        {% if a.standard %}<span class="chip chip-std">{{ bucket_labels[a.standard] }} spec</span>{% endif %}
         {% for b in a.buckets %}<span class="chip chip-tech">{{ bucket_labels[b] }}</span>{% endfor %}
         {% if a.vendor %}<span class="chip chip-vendor">{{ a.vendor }}</span>{% endif %}
         {% if a.customer %}<span class="chip chip-cust">{{ a.customer }}</span>{% endif %}
@@ -425,11 +438,13 @@ function applyFilters(){
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
     const vendor = card.dataset.vendor || '';
     const customer = card.dataset.customer || '';
+    const standard = card.dataset.standard || '';
     const techOk = techFilter === 'all' || buckets.includes(techFilter);
     let sideOk = true;
     if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
+    else if (sideFilter.type === 'standard') sideOk = sideFilter.value ? (standard === sideFilter.value) : (standard !== '');
     const show = techOk && sideOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
@@ -438,9 +453,10 @@ function applyFilters(){
   if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
 }
 
-function filterByTech(bucket) {
+function filterByTech(bucket, el) {
   document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
-  if (window.event && window.event.target) window.event.target.classList.add('active');
+  const target = el || (window.event && window.event.target && window.event.target.closest('.tech-tab'));
+  if (target) target.classList.add('active');
   techFilter = bucket;
   applyFilters();
 }
@@ -475,6 +491,7 @@ function escapeHtml(s){
 function cardHtml(a){
   const buckets = a.buckets || [];
   const bucketChips = buckets.map(b => '<span class="chip chip-tech">' + escapeHtml(BUCKET_LABELS[b] || b) + '</span>').join('');
+  const stdChip = a.standard ? '<span class="chip chip-std">' + escapeHtml((BUCKET_LABELS[a.standard] || a.standard)) + ' spec</span>' : '';
   const vendorChip = a.vendor ? '<span class="chip chip-vendor">' + escapeHtml(a.vendor) + '</span>' : '';
   const customerChip = a.customer ? '<span class="chip chip-cust">' + escapeHtml(a.customer) + '</span>' : '';
   const appChip = a.application ? '<span class="chip chip-app">' + escapeHtml(a.application) + '</span>' : '';
@@ -483,10 +500,10 @@ function cardHtml(a){
   if (summary.length > 240) summary = summary.slice(0, 240) + '\u2026';
   const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
   const timeHtml = a.published ? '<span class="dot">\u00b7</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
-  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '">' +
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '" data-standard="' + escapeHtml(a.standard || '') + '">' +
     '<div class="thumb">' + thumb + '</div>' +
     '<div class="body">' +
-      '<div class="meta-row">' + bucketChips + vendorChip + customerChip + appChip + '</div>' +
+      '<div class="meta-row">' + stdChip + bucketChips + vendorChip + customerChip + appChip + '</div>' +
       '<h2 class="title"><a href="' + a.url + '" target="_blank" rel="noopener">' + escapeHtml(a.title) + '</a></h2>' +
       summaryHtml +
       '<div class="meta-row"><span class="source">' + escapeHtml(a.source || '') + '</span>' + timeHtml + '</div>' +
@@ -499,7 +516,7 @@ async function loadNews(){
   if (!grid) return;
   if (!isLocalBackend()) return;
   try {
-    const res = await fetch('/api/news?limit=50');
+    const res = await fetch('/api/news?limit=2000');
     if (!res.ok) return;
     const data = await res.json();
     if (!Array.isArray(data) || !data.length) return;
@@ -1747,6 +1764,7 @@ def _write_news_cache(articles: list[dict]) -> None:
                 "vendor": a.get("vendor") or "",
                 "customer": a.get("customer") or "",
                 "application": a.get("application") or "",
+                "standard": a.get("standard") or "",
                 "published": pub.isoformat() if pub else "",
             })
         (data_dir / "news_cache.json").write_text(
@@ -1754,6 +1772,73 @@ def _write_news_cache(articles: list[dict]) -> None:
         )
     except OSError:
         pass
+
+
+def _curated_standard_cards() -> list[dict]:
+    """Build always-present 'Standards' cards from the curated standards.json
+    watchlist (spec adopted, next version, roadmap features, official link) so
+    every technology family has authoritative spec/roadmap content even when
+    the live standards-body feeds are quiet."""
+    path = Path(__file__).resolve().parents[2] / "data" / "standards.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    entries = data.get("standards", []) or []
+    bt = wifi = combo = uwb = None
+    for e in entries:
+        fam = e.get("family", "")
+        if fam == "Bluetooth":
+            bt = e
+        elif fam == "Wi-Fi":
+            wifi = e
+        elif "802.15.4" in fam or "Thread" in fam or "Matter" in fam:
+            combo = e
+        elif "UWB" in fam or "Aliro" in fam:
+            uwb = e
+    label_map = {slug: label for slug, label in BUCKETS}
+    # (slug, source entry, keyword to filter roadmap features by, or None)
+    plan = [
+        ("bluetooth", bt, None),
+        ("wifi", wifi, None),
+        ("matter", combo, "matter"),
+        ("thread", combo, "thread"),
+        ("ieee15_4", combo, "zigbee"),
+        ("aliro", uwb, None),
+    ]
+    cards: list[dict] = []
+    for slug, e, kw in plan:
+        if not e:
+            continue
+        feats = e.get("in_flight_features", []) or []
+        sel = [f for f in feats if kw in f.lower()] if kw else feats
+        if not sel:
+            sel = feats
+        summary = (
+            f"Current: {e.get('current_version', '')}. "
+            f"Next: {e.get('next_version', '')}. "
+            f"Roadmap: " + " · ".join(sel[:4])
+        )
+        pub = None
+        lv = e.get("last_verified")
+        if lv:
+            try:
+                pub = datetime.fromisoformat(lv).replace(tzinfo=timezone.utc)
+            except ValueError:
+                pub = None
+        cards.append({
+            "title": f"{label_map.get(slug, slug)} standard — spec & roadmap ({e.get('body', 'SDO')})",
+            "url": e.get("url", ""),
+            "source": e.get("body", "Standards body"),
+            "summary": summary,
+            "thumb": "",
+            "buckets": [slug],
+            "vendor": "", "vendor_region": "",
+            "customer": "", "application": "",
+            "standard": slug,
+            "published": pub,
+        })
+    return cards
 
 
 def render(articles: list[dict], output_dir: Path,
@@ -1782,6 +1867,7 @@ def render(articles: list[dict], output_dir: Path,
         c_count = Counter(a["customer"] for a in items if a.get("customer"))
         a_count = Counter(a["application"] for a in items if a.get("application"))
         r_count = Counter(a["vendor_region"] for a in items if a.get("vendor_region"))
+        s_count = Counter(a["standard"] for a in items if a.get("standard"))
 
         vendor_groups = []
         for region_slug, names in region_groups_def:
@@ -1798,31 +1884,47 @@ def render(articles: list[dict], output_dir: Path,
         for n in apps_order:
             if n not in PINNED_APPS and a_count.get(n, 0) > 0:
                 a_tabs.append((n, a_count[n]))
-        return vendor_groups, vendor_total, c_tabs, a_tabs
+        # Standards families always shown in the fixed BUCKETS order.
+        s_tabs: list = [(slug, bucket_labels[slug], s_count.get(slug, 0)) for slug, _ in BUCKETS]
+        s_total = sum(s_count.values())
+        return vendor_groups, vendor_total, c_tabs, a_tabs, s_tabs, s_total
 
     news_template = env.from_string(_NEWS_TEMPLATE)
 
-    # --- All News page (dynamic: shows top 50 by recency, refreshed via /api/news) ---
+    # --- All News page ---
+    # Render ALL articles (not just top 50) so the sidebar customer/competitor
+    # counts match the cards that can actually be filtered/shown. Previously the
+    # page rendered only the top 50 by recency while the sidebar counts were
+    # computed from every article, so clicking a customer/competitor filtered an
+    # incomplete DOM and often showed an empty result set.
     articles_by_recency = sorted(
         articles, key=lambda a: a.get("published") or datetime.min.replace(tzinfo=timezone.utc), reverse=True
     )
-    top_news = articles_by_recency[:50]
-    vg, vt, ct, at = _filters(articles)
+    # Curated standards cards are always shown so every family has spec/roadmap
+    # content; live standards-body news is appended on top.
+    curated_standards = _curated_standard_cards()
+    news_articles = curated_standards + articles_by_recency
+    news_by_recency = sorted(
+        news_articles, key=lambda a: a.get("published") or datetime.min.replace(tzinfo=timezone.utc), reverse=True
+    )
+    vg, vt, ct, at, st, stot = _filters(news_articles)
     (output_dir / "news.html").write_text(news_template.render(
         page_title="All News", page_desc=PAGE_DESCS["news"],
-        articles=top_news, active="news",
-        vendor_groups=vg, vendor_total=vt, customer_tabs=ct, app_tabs=at, **common_ctx,
+        articles=news_by_recency, active="news",
+        vendor_groups=vg, vendor_total=vt, customer_tabs=ct, app_tabs=at,
+        standard_tabs=st, standard_total=stot, **common_ctx,
     ), encoding="utf-8")
-    _write_news_cache(articles_by_recency[:200])
+    _write_news_cache(articles_by_recency)
 
     # --- Per-bucket news pages ---
     for slug, label in BUCKETS:
-        items = [a for a in articles if slug in a["buckets"]]
-        vg, vt, ct, at = _filters(items)
+        items = [a for a in news_articles if slug in a["buckets"]]
+        vg, vt, ct, at, st, stot = _filters(items)
         (output_dir / f"{slug}.html").write_text(news_template.render(
             page_title=label + " News", page_desc=PAGE_DESCS.get(slug, ""),
             articles=items, active=slug,
-            vendor_groups=vg, vendor_total=vt, customer_tabs=ct, app_tabs=at, **common_ctx,
+            vendor_groups=vg, vendor_total=vt, customer_tabs=ct, app_tabs=at,
+            standard_tabs=st, standard_total=stot, **common_ctx,
         ), encoding="utf-8")
 
     # --- Technology page (hand-crafted tutorials, versions merged from standards.json) ---

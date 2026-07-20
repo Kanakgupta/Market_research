@@ -65,10 +65,10 @@ def create_app(docs_dir: Path | str = "docs") -> Flask:
             items = [it for it in items if bucket in (it.get("buckets") or [])]
 
         try:
-            limit = int(request.args.get("limit", 50))
+            limit = int(request.args.get("limit", 2000))
         except ValueError:
-            limit = 50
-        limit = max(1, min(limit, 200))
+            limit = 2000
+        limit = max(1, min(limit, 5000))
 
         return jsonify(items[:limit]), 200
 

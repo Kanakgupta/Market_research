@@ -125,9 +125,10 @@ QUERIES: dict[str, list[str]] = {
 
 # Direct vendor feeds — they are tagged as "general" and routed by classifier.
 RSS_FEEDS: list[dict] = [
-    {"name": "Bluetooth SIG Blog",    "url": "https://www.bluetooth.com/blog/feed/"},
-    {"name": "Bluetooth SIG News",    "url": "https://www.bluetooth.com/news/feed/"},
-    {"name": "CSA / Matter (Zigbee)", "url": "https://csa-iot.org/feed/"},
+    {"name": "Bluetooth SIG Blog",    "url": "https://www.bluetooth.com/blog/feed/", "bucket": "bluetooth"},
+    {"name": "Bluetooth SIG News",    "url": "https://www.bluetooth.com/news/feed/", "bucket": "bluetooth"},
+    {"name": "CSA / Matter (Zigbee)", "url": "https://csa-iot.org/feed/", "bucket": "matter"},
+    {"name": "Thread Group News",     "url": "https://www.threadgroup.org/news-events/blog?format=rss", "bucket": "thread"},
     {"name": "ZDNet",                 "url": "https://www.zdnet.com/news/rss.xml"},
     {"name": "The Verge",             "url": "https://www.theverge.com/rss/index.xml"},
     {"name": "Ars Technica",          "url": "https://feeds.arstechnica.com/arstechnica/index"},
@@ -144,6 +145,29 @@ RSS_FEEDS: list[dict] = [
 # Fetched directly via trafilatura to ensure capture despite potential filter misses.
 FEATURED_ARTICLES: list[str] = [
     "https://www.zdnet.com/article/iphone-enhanced-bluetooth-tracking-with-ios-27-theres-a-catch/",
+]
+
+# ---------------------------------------------------------------------------
+# Standards-development-organisation (SDO) sources. These scrape the OFFICIAL
+# standards bodies (bluetooth.com, wi-fi.org, csa-iot.org, threadgroup.org, ...)
+# so the "Standards" section on the News page can surface spec adoptions,
+# profile/feature roadmaps and official press releases — separate from generic
+# coverage. Articles are tagged with their technology family by URL domain in
+# classifier.classify_standard(). The bucket hint drives the technology tabs.
+# ---------------------------------------------------------------------------
+STANDARDS_SITE_QUERIES: list[tuple[str, str]] = [
+    # (site-restricted query, bucket hint)
+    ("site:bluetooth.com specification OR core OR profile OR feature", "bluetooth"),
+    ("site:bluetooth.com news OR blog OR press OR roadmap", "bluetooth"),
+    ("site:wi-fi.org certified OR specification OR release", "wifi"),
+    ("site:wi-fi.org newsroom OR press OR announcement", "wifi"),
+    ("site:csa-iot.org Matter specification OR release OR certification", "matter"),
+    ("site:csa-iot.org Aliro digital key", "aliro"),
+    ("site:csa-iot.org news OR press OR blog", "matter"),
+    ("site:threadgroup.org specification OR release OR news", "thread"),
+    ("site:openthread.io release OR blog", "thread"),
+    ("site:firaconsortium.org Aliro OR UWB OR certification", "aliro"),
+    ("site:standards.ieee.org 802.15.4", "ieee15_4"),
 ]
 
 # Per-vendor focused queries. Cast a wide net so each competitor surfaces
@@ -463,7 +487,7 @@ def all_feed_urls() -> list[dict]:
                 seen_search_queries.add(key_b)
 
     for f in RSS_FEEDS:
-        feeds.append({**f, "bucket": None})  # bucket inferred by classifier
+        feeds.append({**f, "bucket": f.get("bucket")})  # bucket inferred by classifier when None
     for bucket, queries in QUERIES.items():
         for q in queries:
             add_search_feeds(q, bucket=bucket, include_bing=True)
@@ -473,6 +497,9 @@ def all_feed_urls() -> list[dict]:
         add_search_feeds(q, bucket=None, include_bing=False)
     for q in TRADE_PRESS_QUERIES:
         add_search_feeds(q, bucket=None, include_bing=True)
+    # Official standards bodies (spec adoptions, roadmaps, press releases).
+    for q, bkt in STANDARDS_SITE_QUERIES:
+        add_search_feeds(q, bucket=bkt, include_bing=False)
     # Broad company-name news (no tech filter): competitors + customers.
     for q in dynamic_entity_queries():
         add_search_feeds(q, bucket=None, include_bing=True)
