@@ -269,8 +269,8 @@ _NAV_HTML = """
   <nav>
     <a href="index.html" class="{{ 'active' if active=='index' else '' }}">Overview</a>
     <a href="news.html" class="{{ 'active' if active in news_slugs else '' }}">News</a>
-    <a href="customers.html" class="{{ 'active' if active=='customers' else '' }}">Customers</a>
-    <a href="competitors.html" class="{{ 'active' if active=='competitors' else '' }}">Competitors</a>
+    <a href="customers.html" class="{{ 'active' if active=='customers' else '' }}">Opportunity</a>
+    <a href="competitors.html" class="{{ 'active' if active=='competitors' else '' }}">Threat</a>
     <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
     <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
   </nav>
@@ -348,7 +348,7 @@ _NEWS_TEMPLATE = """<!doctype html>
     </div>
 
     <div class="news-class-block" id="newsClassCustomers">
-      <button class="news-class-title customers" onclick="toggleNewsSection('newsClassCustomers')">Customers <span class="caret">▾</span></button>
+      <button class="news-class-title customers" onclick="toggleNewsSection('newsClassCustomers')">Opportunity <span class="caret">▾</span></button>
       <div class="news-class-body">
         {% for name, cnt in customer_tabs %}
         <button class="news-side-item" data-side-type="customer" data-side-value="{{ name }}" onclick="filterBySideFromButton(this)">{{ name }} <span class="side-count">{{ cnt }}</span></button>
@@ -357,7 +357,7 @@ _NEWS_TEMPLATE = """<!doctype html>
     </div>
 
     <div class="news-class-block" id="newsClassCompetitors">
-      <button class="news-class-title competitors" onclick="toggleNewsSection('newsClassCompetitors')">Competitors <span class="caret">▾</span></button>
+      <button class="news-class-title competitors" onclick="toggleNewsSection('newsClassCompetitors')">Threat <span class="caret">▾</span></button>
       <div class="news-class-body">
         {% for region_slug, region_label, names, region_count in vendor_groups %}
           {% for name, cnt in names %}
@@ -453,11 +453,48 @@ function applyFilters(){
   if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
 }
 
+function updateSidebarCounts(){
+  const cards = document.querySelectorAll('#grid .card');
+  const activeCards = [];
+  cards.forEach(card => {
+    const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
+    if (techFilter === 'all' || buckets.includes(techFilter)) activeCards.push(card);
+  });
+
+  const vendorCounts = Object.create(null);
+  const customerCounts = Object.create(null);
+  const standardCounts = Object.create(null);
+  let standardTotal = 0;
+
+  activeCards.forEach(card => {
+    const vendor = (card.dataset.vendor || '').trim();
+    const customer = (card.dataset.customer || '').trim();
+    const standard = (card.dataset.standard || '').trim();
+    if (vendor) vendorCounts[vendor] = (vendorCounts[vendor] || 0) + 1;
+    if (customer) customerCounts[customer] = (customerCounts[customer] || 0) + 1;
+    if (standard) {
+      standardCounts[standard] = (standardCounts[standard] || 0) + 1;
+      standardTotal += 1;
+    }
+  });
+
+  document.querySelectorAll('.news-side-item[data-side-type]').forEach(btn => {
+    const type = btn.dataset.sideType || '';
+    const value = (btn.dataset.sideValue || '').trim();
+    const badge = btn.querySelector('.side-count');
+    if (!badge) return;
+    if (type === 'vendor') badge.textContent = String(vendorCounts[value] || 0);
+    else if (type === 'customer') badge.textContent = String(customerCounts[value] || 0);
+    else if (type === 'standard') badge.textContent = String(value ? (standardCounts[value] || 0) : standardTotal);
+  });
+}
+
 function filterByTech(bucket, el) {
   document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
   const target = el || (window.event && window.event.target && window.event.target.closest('.tech-tab'));
   if (target) target.classList.add('active');
   techFilter = bucket;
+  updateSidebarCounts();
   applyFilters();
 }
 
@@ -522,6 +559,7 @@ async function loadNews(){
     if (!Array.isArray(data) || !data.length) return;
     grid.innerHTML = data.map(cardHtml).join('');
     document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    updateSidebarCounts();
     applyFilters();
   } catch (e) {
     // No backend available (static hosting) - keep server-rendered cards as-is.
@@ -591,6 +629,7 @@ async function refreshNews(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  updateSidebarCounts();
   const btn = document.getElementById('refreshBtn');
   if (btn && !isLocalBackend()) {
     btn.title = 'GitHub Pages cannot run backend refresh; this reloads the page to pick up latest published content.';
@@ -1025,21 +1064,7 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
 <main class="wrap content">
 
 <!-- ── Anchor Bar ── -->
-<div class="ci-anchor-bar">
-  <div style="flex:1;min-width:220px;">
-    <h2>{{ anchor.vendor }} {{ anchor.family }}</h2>
-    <p>Our wireless connectivity portfolio — the benchmark for every comparison on this page.</p>
-    <a class="ci-anchor-link" href="{{ anchor.site }}" target="_blank" rel="noopener">Product family page \u2197</a>
-  </div>
-  <div>
-    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.07em;opacity:.7;margin-bottom:6px;">Headline SKUs</div>
-    <div class="ci-anchor-skus">
-      {% for s in anchor.headline_skus %}
-      <div class="ci-sku-chip"><strong>{{ s.sku }}</strong>{{ s.blurb }}</div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
+<div class="ci-anchor-bar" style="display:none;"></div>
 
 <!-- ── Stats bar ── -->
 <div class="ci-stats-bar">
@@ -1172,7 +1197,7 @@ a.ci-customer-name:hover { color:#2563eb; text-decoration:underline; }
       </div>
 
       <!-- 6. SWOT -->
-      <div class="ci-section-h" style="margin-bottom:10px;">\u26a1 SWOT vs {{ anchor.family }}</div>
+      <div class="ci-section-h" style="margin-bottom:10px;">\u26a1 Strength/Weakness</div>
       <div class="ci-vs-grid">
         <div class="ci-vs-box ci-vs-strength">
           <h4>\u2714 Strengths: {{ c.vendor }}</h4>
@@ -2136,9 +2161,10 @@ def _neutralize_site_html(text: str) -> str:
     text = text.replace("airoc_unlock_v1", "site_unlock_v1")
     text = text.replace("stack-tag.airoc", "stack-tag.platform")
     replacements = [
-        (re.compile(r'Infineon AIROC(?:™)?', re.IGNORECASE), 'Infineon'),
-        (re.compile(r'\bAIROC(?:™)?\b', re.IGNORECASE), 'Infineon'),
-        (re.compile(r'\bvs\s+Infineon\b', re.IGNORECASE), 'SWOT vs Infineon'),
+      (re.compile(r'Infineon AIROC(?:™)?', re.IGNORECASE), 'Platform'),
+      (re.compile(r'\bAIROC(?:™)?\b', re.IGNORECASE), 'Platform'),
+      (re.compile(r'\bvs\s+Infineon\b', re.IGNORECASE), 'vs platform'),
+      (re.compile(r'\bInfineon\b'), ''),
         (re.compile(r'\bAIROC\s+position\b', re.IGNORECASE), 'Platform position'),
         (re.compile(r'\bAIROC\s+roadmap\b', re.IGNORECASE), 'Platform roadmap'),
         (re.compile(r'\bAIROC\s+Bluetooth\s+stack\b', re.IGNORECASE), 'Bluetooth stack'),
