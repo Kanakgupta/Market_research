@@ -161,7 +161,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-20 08:01 PDT</div>
+  <div class="meta-info">Updated 2026-07-20 14:00 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -194,7 +194,7 @@ a:hover { text-decoration:underline; }
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-20 08:01">2026-07-20 08:01 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-07-20 14:00">2026-07-20 14:00 PDT</span></span>
   </div>
 </section>
 
@@ -271,11 +271,48 @@ function applyFilters(){
   if (countEl) countEl.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
 }
 
+function updateSidebarCounts(){
+  const cards = document.querySelectorAll('#grid .card');
+  const activeCards = [];
+  cards.forEach(card => {
+    const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
+    if (techFilter === 'all' || buckets.includes(techFilter)) activeCards.push(card);
+  });
+
+  const vendorCounts = Object.create(null);
+  const customerCounts = Object.create(null);
+  const standardCounts = Object.create(null);
+  let standardTotal = 0;
+
+  activeCards.forEach(card => {
+    const vendor = (card.dataset.vendor || '').trim();
+    const customer = (card.dataset.customer || '').trim();
+    const standard = (card.dataset.standard || '').trim();
+    if (vendor) vendorCounts[vendor] = (vendorCounts[vendor] || 0) + 1;
+    if (customer) customerCounts[customer] = (customerCounts[customer] || 0) + 1;
+    if (standard) {
+      standardCounts[standard] = (standardCounts[standard] || 0) + 1;
+      standardTotal += 1;
+    }
+  });
+
+  document.querySelectorAll('.news-side-item[data-side-type]').forEach(btn => {
+    const type = btn.dataset.sideType || '';
+    const value = (btn.dataset.sideValue || '').trim();
+    const badge = btn.querySelector('.side-count');
+    if (!badge) return;
+    if (type === 'vendor') badge.textContent = String(vendorCounts[value] || 0);
+    else if (type === 'customer') badge.textContent = String(customerCounts[value] || 0);
+    else if (type === 'standard') badge.textContent = String(value ? (standardCounts[value] || 0) : standardTotal);
+  });
+}
+
 function filterByTech(bucket, el) {
   document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
   const target = el || (window.event && window.event.target && window.event.target.closest('.tech-tab'));
   if (target) target.classList.add('active');
   techFilter = bucket;
+  updateSidebarCounts();
   applyFilters();
 }
 
@@ -340,6 +377,7 @@ async function loadNews(){
     if (!Array.isArray(data) || !data.length) return;
     grid.innerHTML = data.map(cardHtml).join('');
     document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    updateSidebarCounts();
     applyFilters();
   } catch (e) {
     // No backend available (static hosting) - keep server-rendered cards as-is.
@@ -409,6 +447,7 @@ async function refreshNews(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  updateSidebarCounts();
   const btn = document.getElementById('refreshBtn');
   if (btn && !isLocalBackend()) {
     btn.title = 'GitHub Pages cannot run backend refresh; this reloads the page to pick up latest published content.';
@@ -417,4 +456,3 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 </body></html>
-

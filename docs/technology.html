@@ -256,7 +256,7 @@ a:hover { text-decoration:underline; }
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="active">Technology</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-20 08:01 PDT</div>
+  <div class="meta-info">Updated 2026-07-20 14:00 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -457,7 +457,7 @@ a:hover { text-decoration:underline; }
     
     <div class="dev-card"><div class="dt">Standard profiles &amp; services</div><div class="dd">Reuse existing UUIDs where possible: Battery Service, Device Information Service, Heart Rate Service, HID-over-GATT, and the LE Audio profile family (BAP, CAP, TMAP, GMAP, HAP) -- this gets you interoperability for free.</div></div>
     
-    <div class="dev-card"><div class="dt">Platform APIs</div><div class="dd">Android: BluetoothGatt / BluetoothLeScanner. iOS: CoreBluetooth (CBCentralManager / CBPeripheralManager). Linux: BlueZ over D-Bus. Embedded: Zephyr Bluetooth stack, Apache NimBLE, or the silicon vendor&#39;s SoftDevice/stack (Nordic, Silicon Labs, , Espressif).</div></div>
+    <div class="dev-card"><div class="dt">Platform APIs</div><div class="dd">Android: BluetoothGatt / BluetoothLeScanner. iOS: CoreBluetooth (CBCentralManager / CBPeripheralManager). Linux: BlueZ over D-Bus. Embedded: Zephyr Bluetooth stack, Apache NimBLE, or the silicon vendor&#39;s SoftDevice/stack (Nordic, Silicon Labs, Platform, Espressif).</div></div>
     
     <div class="dev-card"><div class="dt">Custom services</div><div class="dd">Define your own 128-bit UUIDs for proprietary data; use Notifications for best-effort streaming and Indications when you need acknowledged delivery.</div></div>
     
@@ -1231,7 +1231,7 @@ a:hover { text-decoration:underline; }
     
     <div class="dev-card"><div class="dt">You mostly use normal networking APIs</div><div class="dd">Because Wi-Fi presents a standard IP link, application code uses ordinary BSD sockets or protocol client libraries (MQTT, HTTP, CoAP) -- the Wi-Fi-specific work (scanning, association, security) is handled by the OS or driver beneath you.</div></div>
     
-    <div class="dev-card"><div class="dt">Platform / driver layer</div><div class="dd">Linux uses wpa_supplicant; Android/iOS have native Wi-Fi stacks; embedded designs use a vendor Wi-Fi Host Driver (e.g. Espressif ESP-IDF&#39;s Wi-Fi driver,  WHD) that exposes scan/connect/provision APIs to your firmware.</div></div>
+    <div class="dev-card"><div class="dt">Platform / driver layer</div><div class="dd">Linux uses wpa_supplicant; Android/iOS have native Wi-Fi stacks; embedded designs use a vendor Wi-Fi Host Driver (e.g. Espressif ESP-IDF&#39;s Wi-Fi driver, Platform WHD) that exposes scan/connect/provision APIs to your firmware.</div></div>
     
     <div class="dev-card"><div class="dt">Provisioning headless devices</div><div class="dd">Since a Wi-Fi IoT device has no keyboard, typical flows are SoftAP + captive portal (device becomes a temporary AP for setup) or BLE-assisted provisioning (as used by Matter) to hand over Wi-Fi credentials securely.</div></div>
     
@@ -1474,7 +1474,7 @@ a:hover { text-decoration:underline; }
 
 
 </main>
-<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-07-20 08:01 PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-07-20 14:00 PDT</div></footer>
 <script>
 (function(){
   var tabs = document.querySelectorAll('.tech-tab');
@@ -1492,4 +1492,3 @@ a:hover { text-decoration:underline; }
 })();
 </script>
 </body></html>
-
