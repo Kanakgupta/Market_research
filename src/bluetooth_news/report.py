@@ -1823,6 +1823,11 @@ _APPLICATIONS_TEMPLATE = """<!doctype html>
 .feat-col ul { margin:0; padding-left:16px; }
 .feat-col li { margin-bottom:8px; font-size:12.3px; line-height:1.5; }
 .feat-col li b { color:#0f172a; display:block; }
+
+.app-h3 { font-size:15px; margin:22px 0 6px; color:#0f172a; }
+.src-list { margin:8px 0 0; padding:0; list-style:none; }
+.src-list li { padding:6px 0; border-bottom:1px dashed var(--border); font-size:12.5px; }
+.src-list li:last-child { border-bottom:none; }
 </style>
 """ + _PASSWORD_GATE_HTML + """
 </head><body>
@@ -1901,6 +1906,11 @@ with a paid syndicated study before citing externally.</div>
         {% endfor %}
         </tbody>
       </table>
+
+      <h3 class="app-h3">\U0001F517 Sources / Verify This Data</h3>
+      <ul class="src-list">
+        {% for s in a.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }} &rarr;</a></li>{% endfor %}
+      </ul>
     </article>
     {% endfor %}
   </div>

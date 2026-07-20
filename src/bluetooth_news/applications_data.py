@@ -73,7 +73,23 @@ def _cagr(v0: float, v1: float, years: int) -> str:
     return f"{rate * 100:.0f}%"
 
 
-def _app(slug, label, category, tagline, overview, diagram, radios, unit, history, forecast, features, vendors):
+def _search_url(query: str) -> str:
+    from urllib.parse import quote_plus
+    return "https://www.google.com/search?q=" + quote_plus(query)
+
+
+def _default_sources(label: str) -> list[dict]:
+    """Live search-engine query links -- always resolve to real, current results
+    (never a guessed/hallucinated report URL). Lets the reader independently
+    pull up-to-date primary sources for any figure on this page."""
+    return [
+        {"label": "Verify market size (Google Search)", "url": _search_url(f"{label} market size forecast billion")},
+        {"label": "Verify on Grand View Research", "url": _search_url(f"{label} market site:grandviewresearch.com")},
+        {"label": "Verify on Fortune Business Insights", "url": _search_url(f"{label} market site:fortunebusinessinsights.com")},
+    ]
+
+
+def _app(slug, label, category, tagline, overview, diagram, radios, unit, history, forecast, features, vendors, sources=None):
     hist_first, hist_last = history[0][1], history[-1][1]
     fc_last = forecast[-1][1]
     return {
@@ -85,6 +101,7 @@ def _app(slug, label, category, tagline, overview, diagram, radios, unit, histor
         "cagr_fwd": _cagr(hist_last, fc_last, forecast[-1][0] - history[-1][0]),
         "chart": market_svg(history, forecast),
         "features": features, "vendors": vendors,
+        "sources": sources if sources is not None else _default_sources(label),
     }
 
 
@@ -145,6 +162,11 @@ APPLICATIONS: list[dict] = [
             {"company": "Nordic Semiconductor", "chip": "nRF54 / nRF52 series", "note": "Dominant in low-cost fitness bands and entry smartwatches on BLE-only designs."},
             {"company": "MediaTek", "chip": "MT2xxx wearable SoC", "note": "Value-tier Android watches, strong in China/India OEM designs."},
             {"company": "Broadcom", "chip": "BCM4xxx combo", "note": "Long-standing combo-chip supplier inside premium smartwatch platforms."},
+        ],
+        sources=[
+            {"label": "Grand View Research — Smartwatch Market", "url": "https://www.grandviewresearch.com/industry-analysis/smartwatches-market"},
+            {"label": "Fortune Business Insights — Smartwatch Market", "url": "https://www.fortunebusinessinsights.com/smartwatch-market-106625"},
+            {"label": "Global Market Insights — Smartwatch Market", "url": "https://www.gminsights.com/industry-analysis/smartwatch-market"},
         ],
     ),
     _app(
