@@ -220,6 +220,31 @@ a:hover { text-decoration:underline; }
 .sap.data { color:#1d4ed8; border-color:#bfdbfe; background:#eff6ff; }
 .sap.iface { color:#0f172a; border-color:#e2e8f0; background:#f8fafc; }
 .arch-cap { font-size:12px; color:#475569; line-height:1.6; margin:14px 2px 0; padding:10px 13px; background:#f8fafc; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; }
+
+/* Hardware / chip support cards */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:10px; margin-top:12px; }
+.hw-card { background:#f0fdfa; border:1px solid #ccfbf1; border-radius:10px; padding:11px 13px; }
+.hw-card .ht { font-weight:700; font-size:13px; color:#115e59; margin-bottom:4px; }
+.hw-card .hd { font-size:12.5px; color:#4b5563; line-height:1.55; }
+.hw-note { font-size:12px; color:#92400e; background:#fffbeb; border:1px solid #fde68a; border-radius:8px; padding:9px 12px; margin-top:10px; line-height:1.55; }
+
+/* Missing / limitations list */
+.gap-list { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.gap-item { display:flex; gap:10px; background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #dc2626; border-radius:8px; padding:9px 13px; }
+.gap-item .gi-mark { flex:none; font-size:15px; }
+.gap-item .gi-body strong { display:block; font-size:12.8px; color:#7f1d1d; margin-bottom:2px; }
+.gap-item .gi-body span { font-size:12.5px; color:#4b5563; line-height:1.55; }
+
+/* Code example block */
+.code-block { margin-top:12px; background:#0f172a; border-radius:10px; overflow:hidden; }
+.code-block .cb-head { display:flex; justify-content:space-between; align-items:center; padding:8px 14px; background:#1e293b; color:#cbd5e1; font-size:12px; font-weight:700; }
+.code-block .cb-head a { color:#93c5fd; font-weight:600; }
+.code-block pre { margin:0; padding:14px; overflow-x:auto; font-size:12.3px; line-height:1.55; }
+.code-block code { color:#e2e8f0; font-family:Consolas,Menlo,Monaco,"Courier New",monospace; white-space:pre; }
+.code-note { font-size:12px; color:#475569; margin:8px 2px 0; line-height:1.6; }
+
+/* Companies / qualification table */
+.co-note { font-size:12.5px; color:#475569; margin:10px 2px 6px; line-height:1.6; }
 </style>
 
 <script id="password-gate-v1">
@@ -257,7 +282,7 @@ a:hover { text-decoration:underline; }
     <a href="technology.html" class="active">Technology</a>
     <a href="applications.html" class="">Applications</a>
   </nav>
-  <div class="meta-info">Updated 2026-07-21 14:30 PDT</div>
+  <div class="meta-info">Updated 2026-07-21 14:48 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -276,7 +301,7 @@ a:hover { text-decoration:underline; }
 
 <div class="tech-tabs" id="techTabs">
   
-  <div class="tech-tab active" data-slug="bluetooth">Bluetooth</div>
+  <div class="tech-tab active" data-slug="bluetooth">Zephyr Bluetooth</div>
   
   <div class="tech-tab " data-slug="ieee15_4">802.15.4</div>
   
@@ -294,7 +319,7 @@ a:hover { text-decoration:underline; }
 
 
 <div class="tech-panel active" id="panel-bluetooth">
-  <p class="tagline">Short-range wireless for control, sensor data, and audio -- the default radio for wearables and accessories.</p>
+  <p class="tagline">The Zephyr RTOS&#39;s in-tree Bluetooth Low Energy Host + Controller stack -- the open-source reference implementation many silicon vendors and product companies build their Bluetooth firmware on.</p>
 
   
   <div class="spec-snapshot">
@@ -305,7 +330,7 @@ a:hover { text-decoration:underline; }
   
 
   <h2 class="tech-h2">📖 Overview</h2>
-  <p class="tech-overview">Bluetooth is a 2.4 GHz short-range wireless standard governed by the Bluetooth SIG. Classic Bluetooth (BR/EDR) still carries streaming audio (A2DP) and legacy peripherals, but almost all new IoT designs use Bluetooth Low Energy (LE) -- a lightweight variant built for battery-powered devices that spend most of their life asleep. LE Audio and Auracast extend Bluetooth into broadcast audio, and Channel Sounding (introduced in Bluetooth 6.0) adds secure distance-ranging for the first time.</p>
+  <p class="tech-overview">Zephyr is a Linux-Foundation-governed, Apache-2.0 real-time OS that ships a complete Bluetooth Low Energy stack -- Host, Controller, and the HCI glue between them -- written from scratch in-tree (not a BlueZ port), plus a growing set of Classic Bluetooth (BR/EDR) Host profiles (SDP, L2CAP, RFCOMM, A2DP, AVRCP, HFP, GOEP/OBEX, BIP). It is Bluetooth v5.3 compliant, portable to every CPU architecture Zephyr supports, highly configurable down to a 16 KB-RAM footprint for Bluetooth Mesh, and ships with a Bluetooth SIG pre-qualified Host listing that product companies can reference to cut their own qualification cost and effort.</p>
 
   
   <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
@@ -313,45 +338,45 @@ a:hover { text-decoration:underline; }
     
     
     <div class="arch-block k-upper">
-      <div class="ab-name">Application &amp; Profiles</div>
-      <div class="ab-sub">GAP roles | GATT-based profiles (LE Audio BAP / CAP / TMAP, HID, custom services)</div>
+      <div class="ab-name">Application &amp; GATT Services</div>
+      <div class="ab-sub">bt_enable() | BT_GATT_SERVICE_DEFINE | advertising / scanning APIs</div>
     </div>
     
     <div class="arch-conn">
-      <span class="sap iface">GATT / GAP API</span>
+      <span class="sap iface">Zephyr Bluetooth API (zephyr/bluetooth/*.h)</span>
       
     </div>
     
     
     <div class="arch-block k-mac">
-      <div class="ab-name">Host</div>
-      <div class="ab-sub">GATT | ATT | SMP (security) | L2CAP | GAP</div>
+      <div class="ab-name">Bluetooth Host</div>
+      <div class="ab-sub">GAP | GATT | ATT | SMP | L2CAP | Mesh | Classic profiles</div>
     </div>
     
     <div class="arch-conn">
-      <span class="sap iface">HCI (Host Controller Interface)</span>
+      <span class="sap iface">HCI (UART / SPI / USB / IPC)</span>
       
     </div>
     
     
     <div class="arch-block k-phy">
-      <div class="ab-name">Controller</div>
-      <div class="ab-sub">Link Layer | scheduling | channel hopping | Channel Sounding</div>
+      <div class="ab-name">Bluetooth Controller</div>
+      <div class="ab-sub">Link Layer (LL_SW) | Ticker scheduler | LLCP procedures</div>
     </div>
     
     <div class="arch-conn">
-      <span class="sap iface">baseband / radio interface</span>
+      <span class="sap iface">radio HAL</span>
       
     </div>
     
     
     <div class="arch-block k-medium">
       <div class="ab-name">Physical Radio</div>
-      <div class="ab-sub">2.4 GHz ISM | LE 1M / 2M / Coded PHY</div>
+      <div class="ab-sub">Nordic nRF52x / nRF53x native, or any HCI-compliant external Controller chip</div>
     </div>
     
     
-    <p class="arch-cap">Bluetooth is split into a Host and a Controller joined by the HCI. Applications sit on top of the Host&#39;s GATT-based profile stack; the Controller owns the Link Layer and the radio. This Host/Controller split is the defining feature of the Bluetooth architecture.</p>
+    <p class="arch-cap">Zephyr can produce three different Bluetooth build types from the same source tree: Combined (Host+Controller on one chip -- the classic single-chip SoC image), Host-only (talks HCI out to an external Controller chip over UART/SPI/USB/IPC), and Controller-only (exposes Zephyr&#39;s own Controller over HCI to any external Host, including Linux BlueZ). Choosing a build type is a Kconfig decision (CONFIG_BT, CONFIG_BT_HCI, CONFIG_BT_HCI_RAW), not a code rewrite.</p>
   </div>
   
 
@@ -359,51 +384,33 @@ a:hover { text-decoration:underline; }
   <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
   <div class="stack">
     
-    <a class="stack-layer" href="#bluetooth-layer-1" title="Jump to Application / Profiles details">
+    <a class="stack-layer" href="#bluetooth-layer-1" title="Jump to Application details">
       <span class="tag">APP</span>
-      <div class="body"><strong>Application / Profiles</strong><span>The behavior your product implements -- either a standard Bluetooth profile (A2DP for audio, HID for input, LE Audio&#39;s BAP/TMAP/HAP) or a custom GATT-based service you define yourself.</span></div>
+      <div class="body"><strong>Application</strong><span>Your Zephyr app: calls bt_enable() to bring up the stack, registers GATT services with BT_GATT_SERVICE_DEFINE, and starts advertising/scanning/connecting -- built with the same west/CMake application flow as any other Zephyr app.</span></div>
     </a>
     <div class="stack-arrow">&#8595;</div>
     
-    <a class="stack-layer" href="#bluetooth-layer-2" title="Jump to Generic Access Profile (GAP) details">
-      <span class="tag">GAP</span>
-      <div class="body"><strong>Generic Access Profile (GAP)</strong><span>Defines device roles (Broadcaster, Observer, Peripheral, Central) and how devices become discoverable, advertise, and form connections.</span></div>
+    <a class="stack-layer" href="#bluetooth-layer-2" title="Jump to Bluetooth Host (subsys/bluetooth/host) details">
+      <span class="tag">HOST</span>
+      <div class="body"><strong>Bluetooth Host (subsys/bluetooth/host)</strong><span>GAP, GATT, ATT, SMP (pairing/bonding) and L2CAP for LE, plus SDP/RFCOMM/A2DP/AVRCP/HFP for Classic -- this is where HCI command/event handling and connection tracking live.</span></div>
     </a>
     <div class="stack-arrow">&#8595;</div>
     
-    <a class="stack-layer" href="#bluetooth-layer-3" title="Jump to Generic Attribute Profile (GATT) details">
-      <span class="tag">GATT</span>
-      <div class="body"><strong>Generic Attribute Profile (GATT)</strong><span>The data model almost every BLE app is built on: a Server exposes Services, each containing Characteristics (a value + read/write/notify/indicate properties) that a Client reads or subscribes to.</span></div>
+    <a class="stack-layer" href="#bluetooth-layer-3" title="Jump to Host Controller Interface details">
+      <span class="tag">HCI</span>
+      <div class="body"><strong>Host Controller Interface</strong><span>The Bluetooth-standard wire protocol between Host and Controller (commands, events, ACL/ISO data). Zephyr carries it over UART (3-wire/5-wire), SPI, USB, or IPC (shared memory on multi-core SoCs).</span></div>
     </a>
     <div class="stack-arrow">&#8595;</div>
     
-    <a class="stack-layer" href="#bluetooth-layer-4" title="Jump to Attribute Protocol (ATT) details">
-      <span class="tag">ATT</span>
-      <div class="body"><strong>Attribute Protocol (ATT)</strong><span>The simple client/server wire protocol underneath GATT -- every GATT operation (read, write, notify) is an ATT request/response carrying attribute handles and UUIDs.</span></div>
+    <a class="stack-layer" href="#bluetooth-layer-4" title="Jump to Bluetooth Controller (subsys/bluetooth/controller) details">
+      <span class="tag">CTLR</span>
+      <div class="body"><strong>Bluetooth Controller (subsys/bluetooth/controller)</strong><span>Zephyr&#39;s own software Link Layer (LL_SW): connection scheduling via the Ticker, advertising/scanning, channel-hopping, encryption, and the LLCP control-procedure state machines -- runs natively on Nordic nRF52x/nRF53x radios today.</span></div>
     </a>
     <div class="stack-arrow">&#8595;</div>
     
-    <a class="stack-layer" href="#bluetooth-layer-5" title="Jump to Security Manager Protocol (SMP) details">
-      <span class="tag">SMP</span>
-      <div class="body"><strong>Security Manager Protocol (SMP)</strong><span>Handles pairing (authentication), key generation/exchange, and bonding (persisting keys) so future reconnections are encrypted without repeating the pairing dialog.</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#bluetooth-layer-6" title="Jump to Logical Link Control &amp; Adaptation (L2CAP) details">
-      <span class="tag">L2CAP</span>
-      <div class="body"><strong>Logical Link Control &amp; Adaptation (L2CAP)</strong><span>Segments and reassembles packets and multiplexes multiple protocols (ATT, SMP, custom L2CAP channels) over the single underlying Link Layer connection.</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#bluetooth-layer-7" title="Jump to Link Layer (LL) details">
-      <span class="tag">LL</span>
-      <div class="body"><strong>Link Layer (LL)</strong><span>Owns advertising, scanning, connection establishment and maintenance, channel-hopping across the 37 data channels, and (as of BT 6.x) Channel Sounding ranging exchanges.</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#bluetooth-layer-8" title="Jump to Physical Layer (PHY) details">
-      <span class="tag">PHY</span>
-      <div class="body"><strong>Physical Layer (PHY)</strong><span>Radio modulation in the 2.4 GHz ISM band: LE 1M (default), LE 2M (higher throughput), and LE Coded S=2/S=8 (long range, lower rate).</span></div>
+    <a class="stack-layer" href="#bluetooth-layer-5" title="Jump to Hardware Abstraction Layer / Radio details">
+      <span class="tag">HAL</span>
+      <div class="body"><strong>Hardware Abstraction Layer / Radio</strong><span>Vendor-specific glue to the 2.4 GHz radio peripheral and supporting blocks (timers, RNG, AES-CCM/ECB crypto, address-resolution accelerator) -- swapped per SoC; this is the layer a new chip port has to implement.</span></div>
     </a>
     
     
@@ -414,57 +421,177 @@ a:hover { text-decoration:underline; }
   <h2 class="tech-h2">📚 Core Concepts</h2>
   <div class="concept-grid">
     
-    <div class="concept-card"><div class="term">Central vs. Peripheral</div><div class="def">The Central initiates connections and typically consumes data (e.g. a phone); the Peripheral advertises and is connected to (e.g. a sensor).</div></div>
+    <div class="concept-card"><div class="term">Build types: Combined / Host-only / Controller-only</div><div class="def">Combined puts Host+Controller in one firmware image (single-chip SoC); Host-only runs the app+Host and drives an external Controller chip over HCI; Controller-only turns a Zephyr board into an HCI radio (hci_uart, hci_usb, hci_spi) for any external Host, Zephyr or otherwise.</div></div>
     
-    <div class="concept-card"><div class="term">GATT Service / Characteristic</div><div class="def">A Service groups related Characteristics (e.g. Heart Rate Service -&gt; Heart Rate Measurement characteristic). Characteristics are identified by 16-bit (standard) or 128-bit (custom) UUIDs.</div></div>
+    <div class="concept-card"><div class="term">Single-chip vs. dual-chip configuration</div><div class="def">Single-chip = one MCU running Host, Controller and app together. Dual-chip = a Host processor (which can even be Linux/BlueZ) paired over HCI with a separate Controller IC -- HCI is what makes any Host/Controller vendor combination interoperable.</div></div>
     
-    <div class="concept-card"><div class="term">Advertising vs. Scanning</div><div class="def">A Peripheral broadcasts advertising packets on 3 primary channels; a Central scans passively (just listens) or actively (sends a scan request for more data).</div></div>
+    <div class="concept-card"><div class="term">Bluetooth Mesh</div><div class="def">Relay, Friend Node, Low-Power Node (LPN) and GATT Proxy roles, both provisioning bearers (PB-ADV &amp; PB-GATT), and the Foundation Models -- fits devices with as little as 16 KB RAM.</div></div>
     
-    <div class="concept-card"><div class="term">Pairing vs. Bonding</div><div class="def">Pairing is the one-time authentication/key-exchange handshake (SMP); bonding is storing those keys so the next connection reconnects securely without re-pairing.</div></div>
+    <div class="concept-card"><div class="term">LE Audio stack</div><div class="def">Built on Isochronous Channels: BAP (Basic Audio Profile), CAP (Common Audio Profile), TMAP (Telephone &amp; Media Audio), HAP (Hearing Access Profile) and PBP (Public Broadcast, i.e. Auracast-style) all ship as separate, composable API modules.</div></div>
     
-    <div class="concept-card"><div class="term">MTU &amp; Connection Parameters</div><div class="def">ATT MTU sets the max packet size per exchange; Connection Interval/Latency/Supervision Timeout control how often devices wake to talk versus sleep to save power.</div></div>
+    <div class="concept-card"><div class="term">SIG qualification via PTS / AutoPTS</div><div class="def">The Host stack is tested against the Bluetooth SIG&#39;s Profile Tuning Suite (PTS), automated with the open-source AutoPTS tool; an ICS file (PICS) declares exactly which features are claimed for qualification.</div></div>
     
-    <div class="concept-card"><div class="term">LE Audio &amp; Auracast</div><div class="def">LE Audio replaces Classic A2DP with lower-power, multi-stream audio; Auracast lets any number of listeners tune into a public broadcast audio stream (transmit-only, no pairing).</div></div>
-    
-    <div class="concept-card"><div class="term">Channel Sounding</div><div class="def">Introduced in Bluetooth 6.0 and refined in 6.3: a Phase-Based Ranging (PBR) and Round-Trip-Time (RTT) exchange between an Initiator and Reflector to securely estimate distance -- used for keyless entry and asset finding without GPS/UWB.</div></div>
+    <div class="concept-card"><div class="term">Simulated hardware (native_sim, QEMU, BabbleSim)</div><div class="def">native_sim runs the Host as a plain Linux executable against a real or virtual external Controller; nrf52_bsim / nrf5340bsim use BabbleSim to simulate the radio environment itself so multi-device Bluetooth scenarios run entirely on a CI server, no boards required.</div></div>
     
   </div>
 
   <h2 class="tech-h2">⚙️ How It Works</h2>
   <div class="steps">
     
-    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Advertising</strong><span>The Peripheral broadcasts small advertising packets (device name, service UUIDs, flags) on the 3 primary advertising channels so nearby Centrals can find it.</span></div></div>
+    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Pick a build type</strong><span>Decide Combined, Host-only, or Controller-only via Kconfig (CONFIG_BT, CONFIG_BT_HCI, CONFIG_BT_HCI_RAW) and, for dual-chip setups, which physical HCI transport (UART/SPI/USB/IPC) connects the two chips.</span></div></div>
     
-    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Scanning &amp; discovery</strong><span>A Central listens (passive scan) or sends scan requests (active scan) to collect advertising data and decide which device to connect to.</span></div></div>
+    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Initialize the stack</strong><span>The app calls bt_enable(), optionally with a completion callback since init can be asynchronous while the Controller and any persisted settings load.</span></div></div>
     
-    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Connection establishment</strong><span>The Central sends a connection request; both radios then hop together across the 37 data channels on a shared, encrypted schedule known only to the two devices.</span></div></div>
+    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Advertise or scan (GAP)</strong><span>A Peripheral calls bt_le_adv_start() with advertising + scan-response data; a Central calls bt_le_scan_start() to discover it -- exactly the GAP Broadcaster/Observer/Peripheral/Central roles from the Bluetooth spec.</span></div></div>
     
-    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Pairing &amp; bonding (optional)</strong><span>SMP negotiates authentication and derives a Long-Term Key, either via Legacy pairing or LE Secure Connections (ECDH-based, resistant to passive eavesdropping); bonded keys are stored for future reconnects.</span></div></div>
+    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Connect &amp; discover GATT</strong><span>On connection, the app registers/enumerates GATT services (BT_GATT_SERVICE_DEFINE on the Server side, bt_gatt_discover() on the Client side) to exchange Characteristics.</span></div></div>
     
-    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Service discovery</strong><span>The Client (usually the Central) queries GATT to enumerate the Server&#39;s Services, Characteristics, and Descriptors -- or reuses a cached database if already bonded (Database Hash).</span></div></div>
+    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Pair &amp; bond (SMP, optional)</strong><span>Legacy or LE Secure Connections pairing negotiates a Long-Term Key; Zephyr&#39;s settings subsystem persists bonds to flash so reconnects skip re-pairing.</span></div></div>
     
-    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Data exchange</strong><span>The app reads/writes Characteristic values, or subscribes to Notifications/Indications for streaming updates -- this is the interface almost every BLE app developer actually codes against.</span></div></div>
+    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Exchange data</strong><span>Reads/writes/notifications flow over ATT/L2CAP; this is the day-to-day interface most Zephyr Bluetooth application code is written against.</span></div></div>
     
-    <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Ranging (Channel Sounding, optional)</strong><span>An Initiator and Reflector exchange PBR tones and/or RTT timing across multiple channels; the Host computes a secure distance estimate resistant to relay attacks.</span></div></div>
+    <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Extend into Mesh or LE Audio (optional)</strong><span>The same Controller/HCI foundation carries Bluetooth Mesh provisioning/relay traffic or LE Audio Isochronous Channels (BAP/CAP/TMAP/HAP) depending on which subsystem the app enables.</span></div></div>
     
-    <div class="step"><span class="num">8</span><div class="st-body"><strong>8. Maintenance &amp; teardown</strong><span>Connection parameters can be renegotiated for power/throughput trade-offs; a Supervision Timeout detects a lost link, and either side can cleanly disconnect.</span></div></div>
+    <div class="step"><span class="num">8</span><div class="st-body"><strong>8. Qualify the product</strong><span>Run PTS/AutoPTS against the claimed ICS features, or inherit coverage from Zephyr&#39;s own pre-qualified Host listing, before submitting an End Product Listing to the Bluetooth SIG.</span></div></div>
     
   </div>
 
   <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
   <div class="dev-grid">
     
-    <div class="dev-card"><div class="dt">GATT Server vs. Client</div><div class="dd">Most sensors/wearables implement a GATT Server (they expose data); most phone apps implement a GATT Client (they read/subscribe). Decide your role first -- it determines which platform APIs you use.</div></div>
+    <div class="dev-card"><div class="dt">Core API entry points</div><div class="dd">bt_enable() to start the stack, bt_le_adv_start() / bt_le_scan_start() for GAP roles, BT_GATT_SERVICE_DEFINE + bt_gatt_notify()/bt_gatt_read()/bt_gatt_write() for GATT -- all declared in the public headers under include/zephyr/bluetooth/.</div></div>
     
-    <div class="dev-card"><div class="dt">Standard profiles &amp; services</div><div class="dd">Reuse existing UUIDs where possible: Battery Service, Device Information Service, Heart Rate Service, HID-over-GATT, and the LE Audio profile family (BAP, CAP, TMAP, GMAP, HAP) -- this gets you interoperability for free.</div></div>
+    <div class="dev-card"><div class="dt">Kconfig &amp; devicetree wiring</div><div class="dd">CONFIG_BT enables the subsystem; CONFIG_BT_HCI plus the zephyr,bt-hci devicetree chosen node selects which Controller (local radio or external HCI transport) the Host talks to; CONFIG_BT_HCI_RAW builds a Controller-only image.</div></div>
     
-    <div class="dev-card"><div class="dt">Platform APIs</div><div class="dd">Android: BluetoothGatt / BluetoothLeScanner. iOS: CoreBluetooth (CBCentralManager / CBPeripheralManager). Linux: BlueZ over D-Bus. Embedded: Zephyr Bluetooth stack, Apache NimBLE, or the silicon vendor&#39;s SoftDevice/stack (Nordic, Silicon Labs, Platform, Espressif).</div></div>
+    <div class="dev-card"><div class="dt">Samples as the fastest way to learn</div><div class="dd">samples/bluetooth/ ships 60+ ready-to-build examples: Peripheral, Central, Mesh, the whole LE Audio (BAP/CAP/TMAP/HAP/PBP) family, Classic A2DP/HFP, and the hci_uart/hci_usb/hci_spi Controller bridges -- clone one and modify it rather than starting from scratch.</div></div>
     
-    <div class="dev-card"><div class="dt">Custom services</div><div class="dd">Define your own 128-bit UUIDs for proprietary data; use Notifications for best-effort streaming and Indications when you need acknowledged delivery.</div></div>
+    <div class="dev-card"><div class="dt">Hardware setups for development</div><div class="dd">Embedded (flash a real board), Host-on-Linux with an external Controller (QEMU or native_sim + a physical/virtual Controller, Linux-only), or fully-simulated nRF5x via BabbleSim (nrf52_bsim / nrf5340bsim) -- pick based on what hardware you have on hand.</div></div>
     
-    <div class="dev-card"><div class="dt">Debugging tools</div><div class="dd">Nordic&#39;s nRF Connect app (mobile GATT browser), Wireshark with a BLE sniffer dongle for over-the-air captures, and vendor SDKs (nRF Connect SDK, ESP-IDF, ModusToolbox) all include BLE-aware logging.</div></div>
+    <div class="dev-card"><div class="dt">Debugging tools</div><div class="dd">HCI snoop logging captures Host&lt;-&gt;Controller traffic even with no physical transport (feed it to Wireshark/btmon); the interactive Bluetooth shell (`bt` commands) exercises GAP/GATT/Mesh without writing app code; nRF Sniffer captures over-the-air packets.</div></div>
     
   </div>
+
+  
+  <h2 class="tech-h2">🔌 Supported Chips &amp; Hardware</h2>
+  <div class="hw-grid">
+    
+    <div class="hw-card"><div class="ht">Nordic Semiconductor nRF52x / nRF53x</div><div class="hd">The only silicon with a native, in-tree Zephyr Controller (Link Layer) today -- documented hardware requirements include the RADIO, RTC, PPI/DPPI, timers, AAR, ECB and CCM crypto blocks. This is the combination most Bluetooth SIG conformance testing runs against.</div></div>
+    
+    <div class="hw-card"><div class="ht">Any Bluetooth-HCI-compliant external Controller</div><div class="hd">Host-only builds talk standard HCI over UART/SPI/USB/IPC to any qualified Controller chip -- the whole point of the Host/Controller split is that a Zephyr Host (or Linux BlueZ) can pair with silicon Zephyr doesn&#39;t natively drive.</div></div>
+    
+    <div class="hw-card"><div class="ht">nRF5340 (dual-core) &amp; similar multi-core SoCs</div><div class="hd">The network core runs a Controller-only HCI-IPC image while the application core runs the Host + app, connected via the IPC subsystem -- two separate Zephyr builds flashed to the same chip.</div></div>
+    
+    <div class="hw-card"><div class="ht">Simulation targets (no hardware required)</div><div class="hd">native_sim builds the Host as a native Linux executable; nrf52_bsim / nrf5340bsim use BabbleSim to simulate the nRF5x radio and modem so full multi-device Bluetooth scenarios can run in CI.</div></div>
+    
+  </div>
+  <p class="hw-note">Caveat: Zephyr&#39;s huge Supported Boards list (docs.zephyrproject.org/latest/boards) is not the same as &#34;chips with a native Combined Bluetooth build.&#34; Most non-Nordic boards run Zephyr as a Bluetooth Host paired with a separate external Controller chip, rather than Zephyr owning both Host and Controller on that silicon.</p>
+  
+
+  
+  <h2 class="tech-h2">🚧 What's Missing / Current Limitations</h2>
+  <div class="gap-list">
+    
+    <div class="gap-item"><span class="gi-mark">⚠️</span><div class="gi-body"><strong>No native Classic (BR/EDR) Controller / Link Layer</strong><span>Zephyr&#39;s own Controller implementation is LE-only. Classic Bluetooth (A2DP, AVRCP, HFP, etc.) always requires pairing the Zephyr Host with an external BR/EDR-capable Controller chip -- there is no in-tree Classic radio/Link-Layer.</span></div></div>
+    
+    <div class="gap-item"><span class="gi-mark">⚠️</span><div class="gi-body"><strong>Classic profiles sit outside the regular qualification cycle</strong><span>The project&#39;s own qualification page states conformance tests run &#34;on all layers (Controller and Host, except BT Classic)&#34; -- Classic Host profiles are functional and growing (A2DP, AVRCP, HFP, GOEP, BIP samples all exist) but aren&#39;t part of the routine PTS/AutoPTS test sweep the LE stack gets.</span></div></div>
+    
+    <div class="gap-item"><span class="gi-mark">⚠️</span><div class="gi-body"><strong>In-tree Controller silicon support is narrow</strong><span>Only Nordic nRF52x/nRF53x get a native, in-tree Link Layer implementation; every other radio vendor needs its own out-of-tree Controller port or an external HCI-connected Controller chip to get a full Combined build.</span></div></div>
+    
+    <div class="gap-item"><span class="gi-mark">⚠️</span><div class="gi-body"><strong>Known third-party Controller interop quirks</strong><span>Documented flow-control issues: some Qualcomm Controllers reject Zephyr&#39;s default Host-to-Controller flow-control parameters, and some Realtek Controllers send no data back to the Host -- both require manually setting CONFIG_BT_HCI_ACL_FLOW_CONTROL=n as a workaround.</span></div></div>
+    
+    <div class="gap-item"><span class="gi-mark">⚠️</span><div class="gi-body"><strong>Dual-chip Linux dev setups are Linux-only</strong><span>Running the Host on QEMU/native_sim against an external Controller, and the BabbleSim-based nrf52_bsim/nrf5340bsim simulators, are documented as GNU/Linux-only -- not available on Windows or macOS development hosts.</span></div></div>
+    
+    <div class="gap-item"><span class="gi-mark">⚠️</span><div class="gi-body"><strong>LE Audio / Isochronous Channels are still fast-moving</strong><span>BAP/CAP/TMAP/HAP/PBP and Channel Sounding are real and shipping in samples, but treat them as &#34;supported but evolving&#34;: Kconfig options, APIs and sample structure have changed materially release to release.</span></div></div>
+    
+  </div>
+  
+
+  
+  <h2 class="tech-h2">💻 Code Example — Minimal Bluetooth LE beacon (Eddystone-URL)</h2>
+  <div class="code-block">
+    <div class="cb-head"><span>main.c</span><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-dev.html#bluetooth-application-example" target="_blank" rel="noopener">source &rarr;</a></div>
+    <pre><code>/* Set Advertisement data (Eddystone-URL spec) */
+static const struct bt_data ad[] = {
+	BT_DATA_BYTES(BT_DATA_FLAGS, BT_LE_AD_NO_BREDR),
+	BT_DATA_BYTES(BT_DATA_UUID16_ALL, 0xaa, 0xfe),
+	BT_DATA_BYTES(BT_DATA_SVC_DATA16,
+		      0xaa, 0xfe,       /* Eddystone UUID */
+		      0x10,             /* Eddystone-URL frame type */
+		      0x00,             /* Calibrated Tx power at 0m */
+		      0x00,             /* URL Scheme http://www. */
+		      &#39;z&#39;,&#39;e&#39;,&#39;p&#39;,&#39;h&#39;,&#39;y&#39;,&#39;r&#39;,&#39;p&#39;,&#39;r&#39;,&#39;o&#39;,&#39;j&#39;,&#39;e&#39;,&#39;c&#39;,&#39;t&#39;,
+		      0x08)             /* .org */
+};
+
+/* Set Scan Response data */
+static const struct bt_data sd[] = {
+	BT_DATA(BT_DATA_NAME_COMPLETE, DEVICE_NAME, DEVICE_NAME_LEN),
+};
+
+static void bt_ready(int err)
+{
+	bt_addr_le_t addr = {0};
+	size_t count = 1;
+
+	if (err) {
+		printk(&#34;Bluetooth init failed (err %d)\n&#34;, err);
+		return;
+	}
+	printk(&#34;Bluetooth initialized\n&#34;);
+
+	/* Start advertising */
+	err = bt_le_adv_start(BT_LE_ADV_NCONN_IDENTITY, ad, ARRAY_SIZE(ad),
+			      sd, ARRAY_SIZE(sd));
+	if (err) {
+		printk(&#34;Advertising failed to start (err %d)\n&#34;, err);
+		return;
+	}
+
+	bt_id_get(&amp;addr, &amp;count);
+	printk(&#34;Beacon started, advertising as %s\n&#34;, bt_addr_le_str(&amp;addr));
+}
+
+int main(void)
+{
+	int err;
+
+	printk(&#34;Starting Beacon Demo\n&#34;);
+
+	/* Initialize the Bluetooth Subsystem */
+	err = bt_enable(bt_ready);
+	if (err) {
+		printk(&#34;Bluetooth init failed (err %d)\n&#34;, err);
+	}
+	return 0;
+}</code></pre>
+  </div>
+  <p class="code-note">The two APIs every Zephyr Bluetooth app starts from: bt_enable() to bring up the stack (Host + Controller, whichever build type you chose) and bt_le_adv_start() to broadcast as a GAP Broadcaster. 60+ more complete samples (Peripheral, Central, Mesh, LE Audio, Classic) live in samples/bluetooth/ in the Zephyr source tree.</p>
+  
+
+  
+  <h2 class="tech-h2">🏢 Companies Shipping It / Qualification</h2>
+  <p class="co-note">Real, publicly documented products shipping on the Zephyr Bluetooth stack (source: zephyrproject.org&#39;s own showcase, linked per row) -- a representative sample, not an exhaustive list.</p>
+  <table class="tbl">
+    <thead><tr><th>Company</th><th>Product</th><th>Bluetooth feature used</th></tr></thead>
+    <tbody>
+    
+    <tr><td>Ezurio (formerly Laird Connectivity)</td><td><a href="https://www.zephyrproject.org/portfolio/sentrius-mg100-gateway/" target="_blank" rel="noopener">Sentrius™ MG100 Gateway</a></td><td>Bluetooth 5 to LTE-M/NB-IoT cellular gateway</td></tr>
+    
+    <tr><td>Ezurio (formerly Laird Connectivity)</td><td><a href="https://www.zephyrproject.org/portfolio/sentrius/" target="_blank" rel="noopener">Sentrius™ BT610 I/O Sensor</a></td><td>Battery-powered BLE sensor-to-cloud node</td></tr>
+    
+    <tr><td>Demant / Oticon</td><td><a href="https://www.zephyrproject.org/portfolio/oticon-more/" target="_blank" rel="noopener">Oticon More™ hearing aid</a></td><td>Rechargeable hearing aid using Bluetooth LE connectivity</td></tr>
+    
+    <tr><td>Bauer NE</td><td><a href="https://www.zephyrproject.org/portfolio/bauer-ne/" target="_blank" rel="noopener">Bauer NE Bluetooth Smart Lock</a></td><td>Keyless BLE entry for RV doors</td></tr>
+    
+    <tr><td>Seeed Studio</td><td><a href="https://www.zephyrproject.org/portfolio/wio-terminal/" target="_blank" rel="noopener">Wio Terminal</a></td><td>Bluetooth + Wi-Fi ARM development board</td></tr>
+    
+    <tr><td>Seeed Studio</td><td><a href="https://www.zephyrproject.org/portfolio/sensecap-t1000-s-lorawan-tracker/" target="_blank" rel="noopener">SenseCAP T1000-S</a></td><td>GNSS / Wi-Fi / Bluetooth LoRaWAN asset tracker</td></tr>
+    
+    <tr><td>(showcased on zephyrproject.org)</td><td><a href="https://www.zephyrproject.org/portfolio/splitr/" target="_blank" rel="noopener">splitR™</a></td><td>Bluetooth receiver/transmitter hub connecting multiple BLE devices simultaneously</td></tr>
+    
+    </tbody>
+  </table>
+  
 
   
 
@@ -472,12 +599,12 @@ a:hover { text-decoration:underline; }
 
   <h2 class="tech-h2">💡 Common Use Cases</h2>
   <div class="usecase-chips">
-    <span>Wearables &amp; fitness trackers</span><span>Smart locks &amp; digital keys</span><span>LE Audio earbuds / hearing aids</span><span>Auracast public broadcast audio</span><span>HID peripherals (keyboards, mice, remotes)</span><span>Asset tags with Channel Sounding ranging</span><span>Medical &amp; health monitoring devices</span>
+    <span>Wearables &amp; hearables (LE Audio hearing aids)</span><span>Cellular-to-BLE sensor gateways</span><span>Bluetooth Mesh lighting &amp; building automation</span><span>Smart locks &amp; digital keys</span><span>Asset &amp; livestock trackers</span><span>Multi-device Bluetooth hubs / dongles</span><span>HID peripherals (keyboards, mice, remotes)</span>
   </div>
 
   <h2 class="tech-h2">🔗 Learn More</h2>
   <ul class="resource-list">
-    <li><a href="https://www.bluetooth.com/specifications/specs/core-specification/" target="_blank" rel="noopener">Bluetooth Core Specification (SIG)</a></li><li><a href="https://www.bluetooth.com/specifications/gatt/" target="_blank" rel="noopener">GATT Specification Supplement</a></li><li><a href="https://www.bluetooth.com/learn-about-bluetooth/recent-enhancements/le-audio/" target="_blank" rel="noopener">LE Audio overview</a></li><li><a href="https://www.bluetooth.com/channel-sounding-tech-overview/" target="_blank" rel="noopener">Channel Sounding technical overview</a></li>
+    <li><a href="https://docs.zephyrproject.org/latest/introduction/index.html" target="_blank" rel="noopener">Zephyr Project Introduction</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/index.html" target="_blank" rel="noopener">Bluetooth section home</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/features.html" target="_blank" rel="noopener">Supported features</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-qual.html" target="_blank" rel="noopener">Qualification (PTS / AutoPTS / QDID)</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-arch.html" target="_blank" rel="noopener">Stack Architecture (Host/Controller/HCI, build types)</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-le-host.html" target="_blank" rel="noopener">LE Host</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/api/audio/bluetooth-le-audio-arch.html" target="_blank" rel="noopener">LE Audio Stack architecture</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-ctlr-arch.html" target="_blank" rel="noopener">LE Controller (Link Layer) architecture</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-dev.html" target="_blank" rel="noopener">Application Development guide</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/api/index.html" target="_blank" rel="noopener">API reference index (GAP, GATT, Mesh, Audio, Classic profiles)</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-tools.html" target="_blank" rel="noopener">Tools (HCI tracing, sniffing)</a></li><li><a href="https://docs.zephyrproject.org/latest/services/connectivity/bluetooth/bluetooth-shell.html" target="_blank" rel="noopener">Bluetooth shell reference</a></li><li><a href="https://docs.zephyrproject.org/latest/samples/bluetooth/bluetooth.html" target="_blank" rel="noopener">All Bluetooth samples (60+ examples)</a></li><li><a href="https://docs.zephyrproject.org/latest/doxygen/html/index.html" target="_blank" rel="noopener">Doxygen API index</a></li><li><a href="https://www.zephyrproject.org/members/" target="_blank" rel="noopener">Zephyr Project members</a></li><li><a href="https://www.zephyrproject.org/products-running-zephyr/" target="_blank" rel="noopener">Products running Zephyr (showcase)</a></li>
   </ul>
 </div>
 
@@ -675,6 +802,14 @@ a:hover { text-decoration:underline; }
     <div class="dev-card"><div class="dt">Field telemetry that matters</div><div class="dd">Track per-node CCA busy rate, MAC retry histograms, parent change events, and average poll interval. These indicators correlate directly with user-visible reliability and battery complaints.</div></div>
     
   </div>
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -901,6 +1036,14 @@ a:hover { text-decoration:underline; }
   </div>
 
   
+
+  
+
+  
+
+  
+
+  
   <h2 class="tech-h2">🧩 Zigbee In Depth</h2>
   <div class="deep-grid">
     
@@ -1110,6 +1253,14 @@ a:hover { text-decoration:underline; }
   
 
   
+
+  
+
+  
+
+  
+
+  
   <h2 class="tech-h2">🧵 OpenThread / Thread In Depth</h2>
   <div class="deep-grid">
     
@@ -1244,6 +1395,14 @@ a:hover { text-decoration:underline; }
 
   
 
+  
+
+  
+
+  
+
+  
+
   <h2 class="tech-h2">💡 Common Use Cases</h2>
   <div class="usecase-chips">
     <span>Home &amp; mesh routers</span><span>Smart cameras &amp; video doorbells</span><span>Matter-over-Wi-Fi smart home devices</span><span>Industrial wireless backhaul</span><span>Wi-Fi HaLow long-range sensor &amp; agriculture IoT</span>
@@ -1358,6 +1517,14 @@ a:hover { text-decoration:underline; }
 
   
 
+  
+
+  
+
+  
+
+  
+
   <h2 class="tech-h2">💡 Common Use Cases</h2>
   <div class="usecase-chips">
     <span>Smart lights, plugs, locks &amp; thermostats</span><span>Sensors that must work across Apple Home, Google Home, Alexa &amp; SmartThings simultaneously</span><span>Multi-vendor smart-home ecosystems requiring true interoperability</span>
@@ -1462,6 +1629,14 @@ a:hover { text-decoration:underline; }
 
   
 
+  
+
+  
+
+  
+
+  
+
   <h2 class="tech-h2">💡 Common Use Cases</h2>
   <div class="usecase-chips">
     <span>Residential smart locks</span><span>Hotel room access</span><span>Corporate badge / building access replacement</span><span>Connected-car digital key</span>
@@ -1475,7 +1650,7 @@ a:hover { text-decoration:underline; }
 
 
 </main>
-<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-07-21 14:30 PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-07-21 14:48 PDT</div></footer>
 <script>
 (function(){
   var tabs = document.querySelectorAll('.tech-tab');

@@ -1610,6 +1610,31 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 .sap.data { color:#1d4ed8; border-color:#bfdbfe; background:#eff6ff; }
 .sap.iface { color:#0f172a; border-color:#e2e8f0; background:#f8fafc; }
 .arch-cap { font-size:12px; color:#475569; line-height:1.6; margin:14px 2px 0; padding:10px 13px; background:#f8fafc; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; }
+
+/* Hardware / chip support cards */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:10px; margin-top:12px; }
+.hw-card { background:#f0fdfa; border:1px solid #ccfbf1; border-radius:10px; padding:11px 13px; }
+.hw-card .ht { font-weight:700; font-size:13px; color:#115e59; margin-bottom:4px; }
+.hw-card .hd { font-size:12.5px; color:#4b5563; line-height:1.55; }
+.hw-note { font-size:12px; color:#92400e; background:#fffbeb; border:1px solid #fde68a; border-radius:8px; padding:9px 12px; margin-top:10px; line-height:1.55; }
+
+/* Missing / limitations list */
+.gap-list { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.gap-item { display:flex; gap:10px; background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #dc2626; border-radius:8px; padding:9px 13px; }
+.gap-item .gi-mark { flex:none; font-size:15px; }
+.gap-item .gi-body strong { display:block; font-size:12.8px; color:#7f1d1d; margin-bottom:2px; }
+.gap-item .gi-body span { font-size:12.5px; color:#4b5563; line-height:1.55; }
+
+/* Code example block */
+.code-block { margin-top:12px; background:#0f172a; border-radius:10px; overflow:hidden; }
+.code-block .cb-head { display:flex; justify-content:space-between; align-items:center; padding:8px 14px; background:#1e293b; color:#cbd5e1; font-size:12px; font-weight:700; }
+.code-block .cb-head a { color:#93c5fd; font-weight:600; }
+.code-block pre { margin:0; padding:14px; overflow-x:auto; font-size:12.3px; line-height:1.55; }
+.code-block code { color:#e2e8f0; font-family:Consolas,Menlo,Monaco,"Courier New",monospace; white-space:pre; }
+.code-note { font-size:12px; color:#475569; margin:8px 2px 0; line-height:1.6; }
+
+/* Companies / qualification table */
+.co-note { font-size:12.5px; color:#475569; margin:10px 2px 6px; line-height:1.6; }
 </style>
 """ + _PASSWORD_GATE_HTML + """
 </head><body>
@@ -1710,6 +1735,47 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
     <div class="dev-card"><div class="dt">{{ d.title }}</div><div class="dd">{{ d.detail }}</div></div>
     {% endfor %}
   </div>
+
+  {% if t.hardware_support %}
+  <h2 class="tech-h2">\U0001F50C Supported Chips &amp; Hardware</h2>
+  <div class="hw-grid">
+    {% for h in t.hardware_support %}
+    <div class="hw-card"><div class="ht">{{ h.name }}</div><div class="hd">{{ h.detail }}</div></div>
+    {% endfor %}
+  </div>
+  {% if t.hardware_note %}<p class="hw-note">{{ t.hardware_note }}</p>{% endif %}
+  {% endif %}
+
+  {% if t.missing_features %}
+  <h2 class="tech-h2">\U0001F6A7 What's Missing / Current Limitations</h2>
+  <div class="gap-list">
+    {% for g in t.missing_features %}
+    <div class="gap-item"><span class="gi-mark">\u26A0\uFE0F</span><div class="gi-body"><strong>{{ g.title }}</strong><span>{{ g.detail }}</span></div></div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if t.code_example %}
+  <h2 class="tech-h2">\U0001F4BB Code Example \u2014 {{ t.code_example.title }}</h2>
+  <div class="code-block">
+    <div class="cb-head"><span>{{ t.code_example.filename or 'main.c' }}</span>{% if t.code_example.source_url %}<a href="{{ t.code_example.source_url }}" target="_blank" rel="noopener">source &rarr;</a>{% endif %}</div>
+    <pre><code>{{ t.code_example.code }}</code></pre>
+  </div>
+  {% if t.code_example.note %}<p class="code-note">{{ t.code_example.note }}</p>{% endif %}
+  {% endif %}
+
+  {% if t.companies %}
+  <h2 class="tech-h2">\U0001F3E2 Companies Shipping It / Qualification</h2>
+  {% if t.companies_note %}<p class="co-note">{{ t.companies_note }}</p>{% endif %}
+  <table class="tbl">
+    <thead><tr><th>Company</th><th>Product</th><th>Bluetooth feature used</th></tr></thead>
+    <tbody>
+    {% for c in t.companies %}
+    <tr><td>{{ c.company }}</td><td>{% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.product }}</a>{% else %}{{ c.product }}{% endif %}</td><td>{{ c.feature }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
 
   {% if t.zigbee_in_depth %}
   <h2 class="tech-h2">\U0001F9E9 Zigbee In Depth</h2>
