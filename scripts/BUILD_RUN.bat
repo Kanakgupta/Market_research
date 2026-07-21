@@ -1,4 +1,4 @@
-@echo off
+@echo on
 REM ============================================================
 REM  BUILD_RUN.bat
 REM  1) Start local server on http://localhost:5005
@@ -27,9 +27,9 @@ cd /d "%ROOT%"
 
 echo.
 echo ============================================================
-echo  STEP 1/4  Start local server on http://localhost:5005
+echo  STEP 1/4  Start local server on http://localhost:5005 SKIPPED
 echo ============================================================
-start "IoT Local Server (5005)" cmd /k %PYTHON% run.py server --host 127.0.0.1 --port 5005 --docs-dir "%ROOT%\docs"
+REM start "IoT Local Server (5005)" cmd /k %PYTHON% run.py server --host 127.0.0.1 --port 5005 --docs-dir "%ROOT%\docs"
 
 echo Waiting a few seconds for the server to come up...
 timeout /t 2 /nobreak >nul
@@ -42,14 +42,14 @@ start "AIROC Update Loop" "%POWERSHELL%" -NoProfile -ExecutionPolicy Bypass -Fil
 
 echo.
 echo ============================================================
-echo  STEP 3/4  Open local website UI at localhost
+echo  STEP 3/4  Open local website UI at localhost SKIPPED
 echo ============================================================
-IF EXIST "%CHROME%" (
-    start "" "%CHROME%" "http://localhost:5005"
-) ELSE (
-    echo [WARN] Chrome not found at "%CHROME%". Opening in default browser...
-    start "" "http://localhost:5005"
-)
+REM IF EXIST "%CHROME%" (
+REM    start "" "%CHROME%" "http://localhost:5005"
+REM ) ELSE (
+REM    echo [WARN] Chrome not found at "%CHROME%". Opening in default browser...
+REM    start "" "http://localhost:5005"
+REM )
 
 echo.
 echo ============================================================
@@ -58,10 +58,10 @@ echo ============================================================
 
 echo.
 echo Done.
-echo   - "IoT Local Server (5005)" serves docs on http://localhost:5005
+echo OFF  - "IoT Local Server (5005)" serves docs on http://localhost:5005
 echo   - "AIROC Update Loop" runs now only if stale ^(older than 8h^), then daily at 6:00 AM Pacific
 echo   - Each update cycle: fetch/build via run.py, then git add/commit/push
-echo Refresh the browser tab after the updater logs "Cycle finished" to see latest HTML.
+echo OFF Refresh the browser tab after the updater logs "Cycle finished" to see latest HTML.
 echo Close the server/update windows to stop the long-running services.
 echo Press any key to exit this launcher.
 pause >nul

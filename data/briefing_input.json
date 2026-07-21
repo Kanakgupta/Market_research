@@ -1,489 +1,484 @@
 {
-  "generated_at": "2026-07-21T13:04:14Z",
+  "generated_at": "2026-07-21T21:30:53Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "I tested iOS 26 Siri against iOS 27 Siri AI in my car",
-      "url": "https://www.zdnet.com/article/ios-26-siri-vs-ios-27-siri-ai-apple-car-iphone-assistant/",
-      "source": "and it wasn't even close",
+      "title": "Apple teams up with Klarna to launch a lease-to-own program for iPhones, iPads, and Macs",
+      "url": "https://techcrunch.com/2026/07/21/apple-teams-up-with-klarna-to-launch-a-lease-to-own-program-for-iphones-ipads-and-macs/",
+      "source": "TechCrunch",
       "date": "2026-07-21",
       "vendor": null,
       "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "With the iOS 27 public beta on my iPhone, I challenged Siri AI to assist me in the car. Here's how it performed over regular Siri."
-    },
-    {
-      "title": "Google is having an incredibly busy year",
-      "url": "https://9to5google.com/2026/07/21/inbox-newsletter-3/",
-      "source": "9to5Google",
-      "date": "2026-07-21",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "Welcome back to Inbox, hope you had a nice weekend, particularly if you were cheering for a certain European football team. Given Argentina\u2019s late-game heroics throughout the World Cup, I\u2019m surprised there were no last-minute goals to tie things up, but I\u2019ll admit that Spain was the better team thro"
-    },
-    {
-      "title": "Avalue RIVAR-1539 is a 15.6-inch fanless industrial panel PC powered by an Intel N150 Twin Lake processor",
-      "url": "https://www.cnx-software.com/2026/07/21/avalue-rivar-1539-is-a-15-6-inch-fanless-industrial-panel-pc-powered-by-an-intel-n150-twin-lake-processor/",
-      "source": "CNX Software",
-      "date": "2026-07-21",
-      "vendor": "Realtek",
-      "customer": "Amazon",
-      "application": "Healthcare",
-      "buckets": [],
-      "summary": "Avalue Technology has introduced the RIVAR-1539, a 15.6-inch industrial fanless panel PC powered by the Intel N150 quad-core Twin Lake processor. The system features a Full HD projected capacitive touch display, dual Gigabit Ethernet, four USB 3.0 ports, and an IP65-rated front panel. The all-in-one"
-    },
-    {
-      "title": "Who\u2019s afraid of the big, bad GPU?",
-      "url": "https://www.theverge.com/cs/features/937356/ai-data-center-gpu-environmental-impact",
-      "source": "The Verge",
-      "date": "2026-07-21",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "How does AI make you feel? Are you excited to \u201cvibe-code\u201d your smart home? Or anxious about all the added pollution and billions of gallons of water used by data centers? Dig a little deeper and you\u2019ll start to question the actual value of the GPUs that underpin all the leaps and promises of generat"
-    },
-    {
-      "title": "ART-Pi II development board features 600 MHz STM32H7R7 Cortex-M7 MCU with NeoChrom GPU",
-      "url": "https://www.cnx-software.com/2026/07/21/art-pi-ii-development-board-features-600-mhz-stm32h7r7-cortex-m7-mcu-with-neochrom-gpu/",
-      "source": "CNX Software",
-      "date": "2026-07-21",
-      "vendor": "STMicro",
-      "customer": "Amazon",
       "application": null,
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "The 600 MHz STM32H7R/S Cortex-M7 microcontroller family with an optional NeoChrom 2.5D GPU and up to 640 KB SRAM and 64 KB flash was introduced in 2024. However, apart from ST&#8217;s own development boards such as the NUCLEO-H7S3L8 and STM32H7S78-DK, we hadn&#8217;t seen any boards based on it. The"
+      "buckets": [],
+      "summary": "The new leasing program is a big change for the hardware company, and comes as it looks to raise prices on many of its products."
     },
     {
-      "title": "Samsung launches \u2018Galaxy Card\u2019 credit card",
-      "url": "https://9to5google.com/2026/07/20/samsung-launches-galaxy-card-credit-card/",
-      "source": "9to5Google",
+      "title": "Samsung Biologics targets $1.8B PolyPeptide buyout to expand in obesity",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMXBrN1RISWg5bFd5MjFua2dHT19HTDlwOFFWbWNyRUUtWDRyclVkS19OOFVodFJxc1o4dTdDN0lNX214SW9RWWpGby1IdHJsRDAtb24yajg5UkdGclFXLXBMa2FoSVFMVDNseDIxRWdtUVF2c2pYeEgxeXlGNWpocG1hVXpWTzk0YzQ4SDBDUkthNVFaaGpFazB6aFpEWUlHdXlPUWJSaw?oc=5",
+      "source": "BioSpace",
       "date": "2026-07-21",
-      "vendor": "Qualcomm",
+      "vendor": null,
       "customer": "Samsung",
-      "application": "Automotive",
+      "application": null,
       "buckets": [],
-      "summary": "Samsung has announced its new credit card, the \u201cGalaxy Card,\u201d which offers up to 5% cashback on Galaxy device purchases."
+      "summary": ""
     },
     {
-      "title": "Google Cloud outage shows it\u2019s still hard to understand hyperscalers\u2019 real resilience regimes",
-      "url": "https://www.theregister.com/off-prem/2026/07/21/google-cloud-outage-shows-its-still-hard-to-understand-hyperscalers-real-resilience-regimes/5275405",
-      "source": "The Register",
+      "title": "Are You Ready to Start Leasing Your iPhone? Apple Is Reportedly Betting You Will",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbjJnNHp0YV9Cd1RodTBjVmFCbXloX0JZQU9BcFlIVVhRaU9CMGt3UlI2WXpBUTRSeWxkUDVoVUlGSDdVNnlHUTdTS1Q0cC1sOC1BWWxwWHlCN0xOd3hZaHRnSUtpYWY3S2haemVkSEtFY0ZqSnlwWHlMbHNERUpya25DLXdFcHhZSFl0TUZGRnhibGlvWEZuRkZrSUU3aEk0T0ZjdFQ0ZHMxWmt1NUZWQ21XSG5OdFMxR01Ed0JFSQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "inc.com",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Anthropic Ode Launch, Google Gemini Pro Delay: AI Roundup",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQU1E4dFZZMjduZlZhX1lfc29lVjYtbTFCSGVTNHJGUmFWMXRTQ2NmQ1FQa1pNZFMyYzE2eVhEUWEwVVVNcVhBT0o1OUNZamc5UnNHdTFlRy0tUmhZWGpxSEtBbzA1OWtHMzBNdHZlNTFjd2NUTTF6cWZhQ3c1MjJfd0JBNUE0aFU?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "DesignRush",
       "date": "2026-07-21",
       "vendor": null,
       "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "Single datacenter and just three services taken down by \u2018upstream\u2019 power problem, while the rest of a zone and region kept humming"
+      "summary": ""
     },
     {
-      "title": "nRF54L Arduino Core project brings Arduino support to Nordic Semi nRF54L wireless SoCs",
-      "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/",
-      "source": "CNX Software",
+      "title": "Google Settles Russian Antitrust Case, Opens Android to Rival Search Services",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSjIza2o5YmtYMmpXcWpjV0xEVHZmZFpiTng0S2FwV2dFaWlOc3VfM0tjSzVfdmRmYWpYQm1MUDMybmJLRXdPZ0pFb0c2UVZfdjZOWEV3VS1JaTVKVGZud1ZXTmIyMTFxaFlBSWNJTUFobW5NUVE1WnpVeEFUNVc4Um1uRFZfUkIzTkNhdXpVLThyaTNoRnV0UTJUMDg1dFRFMVVJRVdYVzlCYTg5Y0hN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "PYMNTS.com",
       "date": "2026-07-21",
-      "vendor": "Nordic",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Garmin Cirqa Hands-On: Everything You Need to Know!",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWGcwTEhxQl9vc1ZYdDhmMS04R3VlRk5QODBYejdnS0xLb25EUnN0T0h5QXlydnJPWVpOaUxNN1hvemR1TWpUb2hJNXBIV0FTaEdvaGpQM0U5Z3B3b3BtMU1pZ3VzY1lkZ3ZWaml3NlhFbXFKUzNlZTEtZmZHZHJFWjNEMlQ2VHBV?oc=5",
+      "source": "DC Rainmaker",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Garmin",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Sony unveiled a trailer for Marvel games from 2026 for PlayStation 5.",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNS3c2OVVDX0pydy1ZeTNnWDBFQWcyUnVJVmxMNndvRnV0WmNrZzdaWV9kbUcyQ0NudW94OTQ4Nm16R0JfT1BaRzljU050blZsN3dKNXFzZk9meDctQWk3b1JXY1d2RV8yQWtJNGlsNXM1azFiNXk0YUUwMmhENnVLTlVwQlNnR24zMmhnZlJwTTExRXh6SjZXWVRBaERFdw?oc=5",
+      "source": "GameGPU",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Sony",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Xbox and Meta are teaming up to offer Game Pass with Quest VR Horizon+ subs",
+      "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxQMDRnZHFRVi02eE4zYzFFV2xGZktXVUxiRFJNY1VwaG93NTBLeVNHQVE5NjlrSVEzSW5yVFZXRUZQbURVaURDbHNTY3JrY1F4YjFOZ1RZTG0xbl9FZzZzakhzaUN4aEhDNTNHck1XODNQbFdFdExhVkU2eGhQclp0dnVxLUpVTWtjME1GYmJRRkUwWVB0eXlKdzh6WldUVWg0WFktZ3VkN21iNmhjVVVROTdxZ3ZmVHpiem1jeHpzaU54Skd4cDlTSVB5bmVCd2xOaUpjeHZxZ0VkWTNVRkhCQmtic2M2UjhXSVgxNGZibHpQaW1qSUZORFUzQ3QzR1V6aS1FZTlXMXU5SUhNbzk5WS1MbXB4d01ELV9GelFKX1I?oc=5",
+      "source": "Windows Central",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "A FINRA for AI? The idea from Google DeepMind CEO Demis Hassabis is gaining momentum. But is it any good?",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQNVRrRzZxQ0hkbHBFMG55SmVWeld4ZFh4S0luRGV6aXFod0I5RXB5UVV6dFVqQ2YwdXRhZm1rcFhydWFYUnY1V3Z4YWR3SUsxeU42QWd0aUROTG1ieUgtUkRoNmhhUnI0VjhUVEhqbG9nYTNMOHdHeFN4clg3UEJHX1pLTk9Ka2pEVTdwaGVxOWt5bkswRmVBV0xpWmhpS1N1VExja2o0a0lHelRaSWxfbXU0X1JjenBXMTI0dUE2bw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Fortune",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Apple TV\u2019s new comedy from Ben Stiller is almost here, and reviews are in",
+      "url": "https://9to5mac.com/2026/07/21/apple-tvs-new-comedy-from-ben-stiller-is-almost-here-and-reviews-are-in/",
+      "source": "9to5Mac",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The Dink is a new film premiering on Apple TV later this week from producer Ben Stiller, and the first reviews have just arrived. Here\u2019s what reviewers are saying."
+    },
+    {
+      "title": "Amazon Organizers Should Study the Fight for 15",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1BMFJrSmlzMElORlYyVmJ6WEpFczFqTFpPdkUyWUtLNUV4eGFqazdXVUdVcWVMQ1h3X1NVUGxYUEphQ1dzRkh6WUI5TnRUbVJjakw1M3c5YnlFMUxZSk5qQzJiZTNZNDZQS0h5RUFXRDVicTVNZ19GQzZB?oc=5",
+      "source": "Jacobin",
+      "date": "2026-07-21",
+      "vendor": null,
       "customer": "Amazon",
       "application": null,
-      "buckets": [
-        "ieee15_4",
-        "bluetooth"
-      ],
-      "summary": "nRF54L Arduino Core is an open-source project designed to bring Arduino support for Nordic Semiconductor nRF54L wireless SoCs, starting with Seeed Studio&#8217;s XIAO nRF54L15 (Sense) and XIAO nRF54LM20A (Sense) boards, as well as compatible Holyiot nRF54L15 modules. Since the launch of the nRF52840"
+      "buckets": [],
+      "summary": ""
     },
     {
-      "title": "STMicroelectronics on Aliro",
-      "url": "https://csa-iot.org/newsroom/stmicroelectronics-on-aliro/",
-      "source": "CSA / Matter (Zigbee)",
+      "title": "Amazon Prime FTC settlement claims deadline July 27, 2026",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBCSE1PVzRxVHRyUVJyN3ZMcXBjYmJLR2V4T1Y1dTRtZkpJVklQWmQ4Z3N0bVA2a2VPSDhuNERiaWFsYUtvdlV3Y2Z4aU1ES1QweWplazJPM0hoSUJ1aXppQ3ByS1RLVDl4OVAyUFR5bHRGdTA?oc=5",
+      "source": "qz.com",
       "date": "2026-07-21",
-      "vendor": "STMicro",
-      "customer": null,
+      "vendor": null,
+      "customer": "Amazon",
       "application": null,
-      "buckets": [
-        "aliro",
-        "matter"
-      ],
-      "summary": "\u201cIt was an amazing journey to work on Aliro and make interoperability between smartphones and readers a reality. Interoperability now means that every reader and user device speaks the same&#8230;"
+      "buckets": [],
+      "summary": ""
     },
     {
-      "title": "I wore Meta's $499 prescription Ray-Bans for 6 weeks: They're stylish but not for me",
-      "url": "https://www.zdnet.com/article/meta-ray-ban-blayzer-optics-gen-2-review/",
-      "source": "ZDNet",
+      "title": "Hide My Email flaw still worked two weeks after Apple's claimed fix",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxON25HZzdYUlg4NkpyNV8zX3FRWXRrZDhsdTJIRmQzamRSZC1IbjlCYnhyRkNKM0ozczJCS0I5RXNmcm41X0k2OUtJZ0FzQ0Juc1lhd3NkRTJpUlFIaVVBalZpYWR6eWhteEtjNGlWNWg2MVVHSHZwejFCSVFhVjEtNzQ3TE1wakZ6Z0tSMXNXZmI4MmNnZ2d2Wk5RZ3hDNDk0RkJHNjlScnppZGFFMFE?oc=5",
+      "source": "AppleInsider",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Tesla spins up robotaxi pilots in Orlando and Tampa ahead of Q2 earnings",
+      "url": "https://techcrunch.com/2026/07/21/tesla-spins-up-robotaxi-pilots-in-orlando-and-tampa-ahead-of-q2-earnings/",
+      "source": "TechCrunch",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": "The company didn't say how many are in each city, and has taken a far more cautious approach to scaling the network than CEO Elon Musk had promised."
+    },
+    {
+      "title": "Tesla's Musk will talk to investors. Here are 5 questions he'll face",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONlFFc2VjWV9ZRm43OXN6a05XYXlzQWprMXRXVDNIMm5DWG5UcHM4TUlUMEVpVktqa2hQeF9UMnFET2ZqYVByR0xuYjV0cHpVTVNNNDAxVk5IYUhGRF9MQW10UWluaGhRa21fLURDM250NnQ0WlNNU0tDWlpUbjBLVGl3ZC1fV2NHX1B5d2RKWFBaV0VxZExNQXB2TnNYUG0xUmc?oc=5",
+      "source": "USA Today",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Amazon plans to build another warehouse in Onondaga County",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcmMzZldzZV9Gb2l3VzZJMnhsaFhVVWJ6al8yLXZ6RGF3UHladXRYTFFwR2RPRVlDeWZvTk5xazBFQlhrN2JFTlRiRUxjRXY3SU8xc0YyVGJlTmFPN21qTmxwYXF6WWtON2g4d3BueEM5M3k2MDRUdW5zdUZ0Y3J5MlBmUDdyblBocEw0RnI2OXVsRGZqc2hLcmkyVUJUQjVTNXBnRTVVMXTSAbwBQVVfeXFMTUtfc2g5UFl1ZjdYazlrU0EzMjFmZ1diLVAyYTZWbG84elM1VzR6b1NwUE45ZllpUURtQ1ZYYWI2c1hSWG4yc0VfVXhJR3k3UGR1NnpHYlh4UU5Fcmx6b0RpX3ZMLWIta25rMnNhcnRTTVIycUNfcVdSM0didlNRMjdubC1uVHJ1MHFFU01LeFUtZ19JZy1NLThoLV9LMTR2WXEwNVlkU1FrdmxQdG41SHN2c2ZibnVFWGF6aVg?oc=5",
+      "source": "Syracuse.com",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Ford, Google, Carhartt and BlackRock promote skilled trades",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOa1NLUFFIOUNnRU1OTlJRMTVIN2NFZm1kZDFORVMtZE9FVWVfZjJiS05jSVl2emtnTThtb2NOQWxFRmFYZzBlaGhMUEM0TVNTdjhBTEdJcWtjOFgyWFQwMkowUF9ENnlpUFlFMTlaSUNORjFfSWRGMGQwRzY2amhqZHd2Z0pIQW02YnNKUURwYzFnZEVLcFFkU3dldmx6RFNkQ1c4V3M1QW9VdnRHSktzYW9hbjhiMUx3anV6dFJIWDJhQzZN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Detroit Free Press",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Apple Upgrade subscription service could change how you buy Macs and iPhones",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9pbkExQ3RvTzN2NU1pNHI4MkdnUEVPanlHYnBBZ25CS2pFUi1BYzUtUmxPaDcxanNHZm9GcWxvS0s0c1dtRlJQQjZpY2d1X0ZqdHBrY1hvekxFMEhOY1VkR1JmVkI0VnpxVERjbDBsckgtcnk3VE16Q0FYcw?oc=5",
+      "source": "Cult of Mac",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Why This Analyst Just Put a $1,000 Price Tag on Meta Stock",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IQ3k2S1ZBczRuSXRMWmdQNEFLRi13WS1rU2FJSkU3VEp5eGtqVUwwa05kX2NlUE9OdHFjZi0wRFotekZxX3UxMjM2aWh3ZlNsWG5hWEZ0NnJHbjR3Z3llUFE4U0hEQkVXQktVdm80Mmg5dw?oc=5",
+      "source": "Barron's",
       "date": "2026-07-21",
       "vendor": null,
       "customer": "Meta",
-      "application": "AR / VR / XR",
-      "buckets": [],
-      "summary": "Meta's Ray-Ban Blayzer Optics are made specifically for prescription eyeglass wearers with a lightweight, stylish design."
-    },
-    {
-      "title": "How advances in Bluetooth\u00ae technology are powering smarter, lower-waste operations",
-      "url": "https://www.bluetooth.com/blog/how-advances-in-bluetooth-technology-are-powering-smarter-lower-waste-operations/",
-      "source": "Bluetooth SIG Blog",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": null,
-      "application": "Asset Tracking",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Sustainability is often framed in terms of reduction \u2014 less energy, fewer materials, and lower emissions. In practice, the most..."
-    },
-    {
-      "title": "What\u2019s new in Android\u2019s July 2026 Google System Updates [U]",
-      "url": "https://9to5google.com/2026/07/20/july-2026-google-system-updates/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The monthly \u201cGoogle System Release Notes\u201d primarily detail what\u2019s new in Play services, Play Store, and Play system update across Android phones/tablets, Wear OS, Google/Android TV, Auto, and PC. Some features apply to end users, while others are aimed at developers."
-    },
-    {
-      "title": "Here are the 30,000 songs Sony is suing Udio&#8217;s AI music generator over",
-      "url": "https://www.theverge.com/tech/968375/sony-udio-lawsuit-songs-ai-copyright",
-      "source": "The Verge",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Sony",
       "application": null,
       "buckets": [],
-      "summary": "Sony Music Entertainment has filed another lawsuit against Udio, accusing the AI music generator of infringing the copyright of more than 30,000 of its songs, ranging from Elvis Presley's Hound Dog to Beyonc&#233;'s Say My Name, and Harry Styles' As It Was. The lawsuit, filed in a New York court on "
+      "summary": ""
     },
     {
-      "title": "Google Photos toggle lets you switch between classic search & Ask Photos",
-      "url": "https://9to5google.com/2026/07/20/google-photos-classic-search-toggle/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
+      "title": "Robotaxi law could ban Tesla in N.J.",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE56TU53a3BnN3JxNTZ2cHdfQzR6Z1RqQjh4Y0JyZF8yVE4wODdTdDlSNlpQZXlGamY3eXgxclB4Z29ObXprdDZPWTI4NnNEemN5czgzZkUzemQ3cnpiazhKZG5RaHNvbUpBUDVSdUJjaGVadlJ6MlJSSG9oNNIBjwFBVV95cUxNMTBiNi1jZ2lZUUJSMHRMLUllTVlMcWxrUjQ1eV9QY2U0WHRBaU5LZkZxUTI0aGpfTHhUbkd5MzFNNmZFcmpxUEJ4SFhoZXd6WG9HNVFuZkxrSVBQSFJKd29CMlFiekw5M1FqbEx5dUdPOVFGYkRqNmQwNjhvNnNoRy0td19SMHZCWnBXbHFndw?oc=5",
+      "source": "NJ.com",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "BMW Starter Recall 2026: 744,234 Vehicles Affected | Full List",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPcGY1eng4QUFRTFRDQnVQeXAwaDNsbk5KQ2pWZlprZjhpcDAzZ0Z3RFVLS3F4VTVOZ0xhTUJfT3dNelRnWUNIbjROeG1LT0VtVGZmMkFvV2g4dEhCaXpTV25xWER2M09TRkZLUUp5bkQwdVR4Slk2V2dmalFpYW1sYQ?oc=5",
+      "source": "bmwblog",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "BMW",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Meta adds parental controls to Threads amid teen safety push",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQanF3cnlUYm5xNlMzVzVvVHVNdjQyU2xacXZ5b2hDRzVVeGJjd2FIVjZxV3QxQWVXUUFqLXlzT3gybC1MSDktbGl5S3pBSnV4RTBzb1VfNGQ5N3E0VWZxWFdaZEwxRjNBSS1uWWZCUjNEWWtnQV8xSnNPOFVFWUJMYmZKYmtwMXlPWHNaREJwR2I5M2NIU0RuLTBiZGJjbGJiLTdxZ0ZxV3VsNlJYOENPN0JRUVpWcjE5QktBQUNBbw?oc=5",
+      "source": "Investing.com",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Majority of Marketers Are Already Optimizing for AI-Generated Search Answers as Google Query Volume Hits an All-Time High, SEO Essex Analysis Finds",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOSmp0R3g5MVdfWTg2UEdSbTBfcGlncHpJdzc5SExTWHVjVUh2V1FhVG9WS3FzUHJ0M0JZYnBzMkRuUGNub3ZMZVpHZG9scE5DVFJONThtMDFkMC11bUtBV0FMVk5tdzZwN3FSeE81TFJ1a3NZNmhfeGY1dWxhNS1Jd3YwSWRNb3JSeTVwQkVwdUZ6d2M?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Yahoo Finance Australia",
+      "date": "2026-07-21",
       "vendor": null,
       "customer": "Google",
-      "application": "Automotive",
+      "application": null,
       "buckets": [],
-      "summary": "Google Photos has rolled out a \u201cclassic search\u201d toggle for Ask Photos that delivers a big quality-of-life improvement."
+      "summary": ""
     },
     {
-      "title": "DA: Cop covered bodycam to snap nude prisoners on his iPhone\u2014but other cams caught him",
-      "url": "https://arstechnica.com/tech-policy/2026/07/cop-charged-with-covering-bodycam-to-photograph-naked-prisoners/",
-      "source": "Ars Technica",
-      "date": "2026-07-20",
+      "title": "Viral Cloud Chair With Hidden Storage $60 Off on Amazon",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBzSGlYbnBiNllfdHVhWlp0bXo4MGtaLWVoT0ZvMU5uYjVOQjBNWGVuaHZLVWVPb1BWSm1DaGNLcmpnRDFya2hxT3hzbG1UakRBUXF6a3dYTWpCMnZzMEpsa2k3bDZ1MG44UFpteXJXY2dFS01hUktiYg?oc=5",
+      "source": "The Inventory",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Samsung 43\" QN90F Neo QLED 4K TV $100 Off at Walmart",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5fVjNCS3E3MGRBckhJWnZqVVNSVmd6R1hHMm9HUDktMkVCcDA0Ui0zMGIzbHdzdzliVlExR2QwX2VvSTYtSE1xeWZjcDhDcHlqdTQ0U09FNXFtd19adXM4MjZJeXRyaEdGSThOTXU2dGFxaDduWUo3MHo0dw?oc=5",
+      "source": "The Inventory",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Why did 30,000 Amazon shoppers buy this steam cleaner last month?",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVFFRYkVyRTNOOS01blg4N0Y5TnRRTVlVUVZ1Sml4MUt2Q1pYZjIwdlRTZUNSUXVfWm9yNjU5bkJhNC1MRnZramR1ME90Y0hfRjZ0VkpYeFE1WjRnSHA2REI4YWFkeGJVbnNFYUtVc0luMlJOZVZORURnZWVLZGY0Q3I1U2dYNlMwTHFCd1BYMmVzVmZiWVRXeFZkSFZYdTdMYTdabnBLNzJoT3VvTU5nNW16OWw?oc=5",
+      "source": "USA Today",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Apple\u2019s new iPhone update includes a hidden, important AI feature",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNQnU5VjU1dzNabmw4XzA5TUhwV1JvU09qNkQyb1N2bE1LbWI4TTdzN3piMk10SFlQNkRObHItbHJkQ0Y4MUJuNmJybkdZbi1iRkFYTDRhOU9sNm93UUpxTmpEYjY0eVR2cDhMUE1WaGhlRDZheVkxejl0U0R3Mmh6TWJjR1BmQWc1LTZ3RUtBcHk?oc=5",
+      "source": "Yahoo Finance UK",
+      "date": "2026-07-21",
       "vendor": null,
       "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "On March 31, 2026, a rather odd complaint arrived at the Bucks County, Pennsylvania District Attorney\u2019s Office.\nIt came from the local sheriff\u2019s office, and it concerned one of their own, Deputy Sheriff Ryan Gaffney. The allegation was unusual: Gaffney had used his iPhone to snap photos of nude pris"
+      "summary": ""
     },
     {
-      "title": "The Sideload 039: Digital landscaping",
-      "url": "https://9to5google.com/2026/07/20/the-sideload-039-digital-landscaping/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
+      "title": "The Grounds Guys of Greenville, SC Reaches 200 Google Reviews; Maintains Impressive 4.7-Star Rating",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNZldFWndqWVpqdklaQVZJa1VrM2RidmJKYml6RmV1R0IybldoTTlqUi1WWHJlRXdzQnE4ZDFSQVppZ01qbU1aWE5XYTJDUjB4eWRHeHNHSC0xa3ZuRWQ4N1B6ZnYzMmVxZ0IzSWFhMW9ZUWJSVElib09pRjlfbmZVVi16UEdERTVicU9ER2xBeDhJbTNMeWhjc1JmZk8zQmxZcmw2OVpvRy1YOUlMN2V6Q3NYekR5cHQ5RG5jREdJTnRKZkVSNF9PdUFNWmktODRiMnlVYzRLX1JJdjdHRWdfNEFRbGlNVDRJVG1fdg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "markets.businessinsider.com",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google AI Chip Could Answer Larry Fink's AI Power Warning - Alphabet (NASDAQ:GOOGL), Alphabet (NASDAQ:GOO",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQa0ROTEF5d0tweVZYeExZUHMtNDZQd2JOX1l2ZHJEUUpDMHYxRkk4T0lPemJSZnVRUEw2SVNTbGdLSGdreW5rck15ZDdtTVVmWnBRMFpoQnozRUNTeFRsdjQxaHE0a0szM28xd2dNTE9rV095bWo1ZjdQNDJfS0w0OHBkN05hUDdVYktVYmtLdVIyNE4tcWdaRWR4ZEw2MjNfd2dtcUtRWkVpLXp6VEhFby1IQ3ItY09TOXVvcHFQczBNYllqT25xOTBEU1Zoam9MbzU1cklid1lfdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Benzinga",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Extreme heat warning affecting Apple and Lucerne Valleys from Thursday to Monday",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE80cXd0bUpsRGxRSWNnRDNja0Y2eTFDN1R1V1NGMlFVRi11VFdTbDFqdEZFUWhRbUkyZ0s0cDhrY3Z4Mm1xNnZsQVVuMGVTZFpiUVNsUmI4QjZiTHUxVHBDSXB0a2JhMEt0ZzgzVFZfYkpLTDA?oc=5",
+      "source": "Fresno Bee",
+      "date": "2026-07-21",
       "vendor": null,
       "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Welcome to episode 39 of The Sideload, a 9to5Google podcast. This week, Will is joined by Chris Wedel of Gadgets &amp; Gravel to discuss the modern internet landscape, finding moments of peace around technology, and the ever-evolving world of robo-lawnmowers. Sponsored by NordVPN: Listeners to The S"
-    },
-    {
-      "title": "Want to add Android Auto to your old car? Here are two ways",
-      "url": "https://www.zdnet.com/article/want-to-add-android-auto-to-an-older-car/",
-      "source": "including one that's under $20",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "If you feel like you're missing out on Android Auto by having a vehicle with no screen, here's your chance to fix that."
-    },
-    {
-      "title": "Samsung is betting big that you\u2019ll want the wide Galaxy Z Fold 8, report details",
-      "url": "https://9to5google.com/2026/07/20/samsung-galaxy-z-fold-8-wide-production-reports/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "A new report reveals Samsung\u2019s plans for the Galaxy Z Fold 8 series and the Galaxy Z Flip 8, with the company betting big on its new wider foldable."
-    },
-    {
-      "title": "The PlayStation replica ornament is an homage to a great, yet fragile console",
-      "url": "https://www.theverge.com/tech/967989/hallmark-keepsake-playstation-ornament-hands-on",
-      "source": "The Verge",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Amazon",
       "application": null,
       "buckets": [],
-      "summary": "You probably know the signature PlayStation boot sound. Did you know that it's technically a multi-part chime? There's the synthy section where \"Sony Computer Entertainment\" shows onscreen with a white background. You only get to the next screen with the echo-y chimes and the color-filled PlayStatio"
+      "summary": ""
     },
     {
-      "title": "Ford&#8217;s $30,000 electric truck: all the news about the company&#8217;s big EV re-do",
-      "url": "https://www.theverge.com/transportation/968205/ford-electric-truck-uev-30000-affordable",
-      "source": "The Verge",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Ford",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The end of the Ford F-150 Lightning was also the start of a new era for the automaker. After failing to capture the market with the electric version of its popular F-Series truck, Ford is going back to the drawing board with its Universal Electric Vehicle Platform. The first offering will be a $30,0"
-    },
-    {
-      "title": "Malicious cloud customers can bring down the power grid",
-      "url": "https://www.theregister.com/ai-and-ml/2026/07/20/malicious-cloud-customers-can-bring-down-the-power-grid/5275193",
-      "source": "The Register",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "Datacenters tax utilities normally, so just imagine what they could do if workloads were designed to destroy"
-    },
-    {
-      "title": "Pixel 6 and 6 Pro will not get Android 17 QPR2",
-      "url": "https://9to5google.com/2026/07/20/pixel-6-no-android-17-qpr2/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
+      "title": "Pixel 11 Series Release Date, Price, Specs, Expectations",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWXVPODNYa0MxN09JdVhoa09XamxhTW5qRnBkVVlNeGJoMm5ZYldNcFRUMk5sX09wOHkzQWR0VGtReDlxOTlXdTJjWWJTLWgtM1RzOV91bEFOdmJwUGdXakphTjJyQkxrOWpKMVdzaTQ1d2RjNFBmaUEwYnQ5dnhFTHp2WkZwWXhhcTkzRXI5eTlReHVBa01tUXNCMlU4TE0?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Droid Life",
+      "date": "2026-07-21",
       "vendor": null,
       "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "With the start of the Android 17 QPR2 Beta today, Google confirmed that the Pixel 6 and 6 Pro will reach End of Life before that December release."
-    },
-    {
-      "title": "The Pixel 11 Pro showed up on one of Google\u2019s websites",
-      "url": "https://9to5google.com/2026/07/20/pixel-11-pro-shows-up-on-one-of-googles-websites/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Images of the Pixel 11 lineup have already surfaced, but those uncovered images didn\u2019t come with loads of confidence. New pictures, though, come straight from Google. Well, Google Fi."
-    },
-    {
-      "title": "Exegin Technologies Limited on Zigbee 4.0",
-      "url": "https://csa-iot.org/newsroom/exegin-technologies-limited-on-zigbee-4-0/",
-      "source": "CSA / Matter (Zigbee)",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": null,
       "application": null,
-      "buckets": [
-        "ieee15_4",
-        "matter"
-      ],
-      "summary": "\u201cZigbee has been around for twenty-plus years. It started with the idea that devices could communicate with each other to work collaboratively and create an ecosystem where they work cooperatively&#8230;"
-    },
-    {
-      "title": "Google releases Android 17 QPR2 Beta 1 for Pixel",
-      "url": "https://9to5google.com/2026/07/20/android-17-qpr2-beta-1-pixel/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
       "buckets": [],
-      "summary": "With the QPR1 preview winding down, Google today is rolling out Android 17 QPR2 Beta 1 for Pixel devices."
+      "summary": ""
     },
     {
-      "title": "RIP bargain bin: The price impact of Sony's disc-free PlayStation plan",
-      "url": "https://arstechnica.com/gaming/2026/07/our-playstation-price-analysis-shows-why-physical-games-still-matter/",
-      "source": "Ars Technica",
-      "date": "2026-07-20",
+      "title": "tesla-summer-update-2026",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNM3pFNmh2NXFvVjBvYnF3d3ozMzVnblM0eDRTSTVhYzkxRkFrVFpfYTk5MG5Nd1hnelgzazh5RXlvZUVYMFUtTHlFclE1WVF0bGhwRXNiUmY3YUhjUXRvb1gtczhOcFkzSW5rb2EyVDNZSFpDWmp5bGNzZWR6MTlDMEVfN1BJaHl5U1ZzZGFwbXBrazlaNTUya0gtajVNV3Z1dEZjYVJDLWw?oc=5",
+      "source": "Teslarati",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "tesla-starlink-integration-cybercab",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTUg5SXl4WEFXS21tbTd1d3NfN3V2alVUZWZKcGI2ZlFqay14SFdURFltWjQzWUZxNER4TFBsTTRxNzZJNWNScVV3M2RyQUJFc3JUelJqdERONkhkb1UwNWoya3VIQTZfVlRBTEo2b2hxaHBCRGJPWU5uYURUZ01YM0lRWnphSXRfM0F4MzVmTjFOcjZHTHZ1cmlINHBNdC1IRVpSMlA1UkhmbFA3T08ycDZRRmk4Z3Z2X3hBZElHa3NyaU5uaDRCb2lDU0Y?oc=5",
+      "source": "Teslarati",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "tesla-cybercab-starlink-integration",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOTWVvb3IxdWJEajFQZ1hhYjFBdDVNOGdKQnZJMWYwRV9HZVJnR3pTQmQ2SmkxVlE0VmJtNDZ5dzBaZGdNUmFaUXgta2RFRDdjaWI3LUYtSWFVdXltN004VGdWYUV1SXktNVYweGo5NEVfbGJFMXNJdEY3WHZZbDMwdlVGN0FTbmlNYzFZb1BFT3U5U2JCT3FUT0JvR1cyZ3Y4NFc1blUzLTZTd2dnV3c?oc=5",
+      "source": "Teslarati",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Apple to launch 'Apple Upgrade' leasing service for iPhones, Macs and iPads",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPUy1VRFFRLVdwX3NuanZfcC1DN0xWSG1nNFpUUWxNdnp3WXdQbXZqQVJOSGNPNFBBcWo2ak45QktYM1R4UDU2a2d4Rnd0WUpfbkh6WDBzdjZPTUtxUlYwU2Y0clg0Yk1tVE5aQVF5VnRaY0pFWk1MeDloRmhrRnNaUzN3Nzg5VU1aMWZTbFV5T0dYQTluQTF3S01jWml5ZjNxWnBUUmN0QmlZYVJVc2xmYzk2aUtyejhFczkyTFBMU1c2dFQ1a1lwMkxDTjRpY2szOTlR0gHmAUFVX3lxTE9FTFRtdVphMFBQSjZhdDFpTVZDMnNoWFlqOEdCSEVIQVp0cjRham42TVAzaG4yWWZSX3NDWEN2Rk9IRW8xaEEzZ01qcHpqTmV1VWwtSVNZaEdMQzJKSmI0cW5SWjJKSURUdGZEX1RZamhHNVVsWlZPTTVyeXBXeDZ1b2lZUGxLdW9JdVZWck5xMFBwRDBoTC1COHNnNFhJcEJhVXpEUFhnMWsxaGxva0VWN21jaTJZOFNseVNqX3RfNl9hZTI3c0czblYzbVY3dlhMMmNDSHVjMGNxb2xVOUhyNjhoZE5R?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Gulf News",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "'Spider-Man': Sony is Selling 'Brand New Day' as The Opposite of a Blockbuster",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUUJLY0Q0aUpOcmRvZGdtdXUyRHhvYjVYaDZSQk5Dd1Y0amc5Q0kxVl9jdGdmS3VxVzFIU1VOdzBrS0pMU0NZWEdMU2xnS1pUaldlS0J6Zl9Sb041REpQem1ueDNUVVUwRm1lR0RsRzJLcXoyVndUZm16MkM2T2ZXcHhPWG5MdG00UGx3c2xmYXNtc2JHMW0xcjZPSVFTLTRDaXdxZ0ZSSlQwODg1YVJoOWJFSHBoY0xXUGpaU0FqSlZVUQ?oc=5",
+      "source": "The Outside Scoop | Scott Mendelson",
+      "date": "2026-07-21",
       "vendor": null,
       "customer": "Sony",
       "application": null,
       "buckets": [],
-      "summary": "Since Sony announced that it was planning to stop producing physical PlayStation discs in 2028, many people have been justifiably worried about how they will maintain ownership and long-term game access in a disc-free world. But halting production of PlayStation discs also means eliminating the mark"
+      "summary": ""
     },
     {
-      "title": "IEEE Program Helps Girls In India See a Future In STEM",
-      "url": "https://spectrum.ieee.org/ieee-program-girls-india-stem",
-      "source": "IEEE Spectrum",
-      "date": "2026-07-20",
+      "title": "Tesla launches Robotaxi service in Tampa",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5leEttRnR0WkRpU3NtYmRIWFZqY0dncEZlLUF1X2tKSnlzUXVLNXJKQ09kVm9uN0xWVFVlem9qMW13bjgwTWdISUgtaXZjNUcyai1uX0RfejBjVXh4RjRMYmVB?oc=5",
+      "source": "Tampa Bay Business & Wealth",
+      "date": "2026-07-21",
       "vendor": null,
-      "customer": null,
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Roughly half the world\u2019s population is female, but the STEM fields don\u2019t reflect that. The 2024 U.N. Global Education Monitoring Report on gender found that about 35 percent of STEM college graduates were women. The proportion hasn\u2019t increased much in more than a decade.When it comes to STEM careers"
-    },
-    {
-      "title": "Monday\u2019s Android iOS app deals and freebies: LIMBO, Super Dark Deception, WINCH IT OUT, Box Head, more",
-      "url": "https://9to5toys.com/2026/07/20/monday-android-ios-app-deals-free/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Your Monday afternoon lineup of the best Android game and app deals is now ready to roll, including titles like WINCH IT OUT, LIMBO, Super Dark Deception, Undead Slayer: Offline Premium, Paign \u2013 RPG, Box Head: Roguelike Premium, and more. Be sure to dive into the now live Best Buy Black Friday in Ju"
-    },
-    {
-      "title": "The Document Foundation says Microsoft's file formats keep users on a short leash",
-      "url": "https://www.theregister.com/applications/2026/07/20/the-document-foundation-says-microsofts-file-formats-keep-users-on-a-short-leash/5274960",
-      "source": "The Register",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Microsoft",
+      "customer": "Tesla",
       "application": null,
       "buckets": [],
-      "summary": "OOXML may carry an ISO certificate, but only Office can be trusted to render it properly"
+      "summary": ""
     },
     {
-      "title": "Nisshinbo Micro Devices Expands High-Voltage IC Lineup for Next-Gen Automotive 48 V Systems",
-      "url": "https://www.eetimes.com/nisshinbo-micro-devices-expands-high-voltage-ic-lineup-for-next-gen-automotive-48-v-systems/",
-      "source": "EE Times",
-      "date": "2026-07-20",
-      "vendor": null,
+      "title": "NXP Semiconductors stock trades near record territory as revenue grows and automotive chips drive ma - Ad-hoc-news.de",
+      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/nxp-semiconductors-stock-trades-near-record-territory-as-revenue-grows-and/69825437",
+      "source": "Ad-hoc-news.de",
+      "date": "2026-07-21",
+      "vendor": "NXP",
       "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "Addressing the new challenges posed by the shift to 48 V automotive power supplies with Nisshinbo Micro Devices The post Nisshinbo Micro Devices Expands High-Voltage IC Lineup for Next-Gen Automotive 48 V Systems appeared first on EE Times."
+      "summary": "NXP Semiconductors stock trades near record territory as revenue grows and automotive chips drive margins\nPublished on 07/21/2026 at 19:42 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSNXP Semiconductors N.V. (ISIN NL0009538779) is a major supplier of automotive and industria"
     },
     {
-      "title": "Deals: Black Friday in July sale, Galaxy Tab S11 Ultra up to $430 off, NXTPAPER tabs from $160, Pixel Watch 4, more",
-      "url": "https://9to5google.com/2026/07/20/deals-black-friday-in-july-tab-s11-ultra-nxtpaper/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Be sure to score your FREE credit at Samsung ahead of this week\u2019s Galaxy Z Fold 8 and Watch 9/Ultra launch, but today\u2019s 9to5Toys Lunch Break is headlined by the Best Buy Black Friday in July sale with $200 off Galaxy Tab S11 Ultra (open-box units now up to $430 off). We also have TCL Android tablets"
-    },
-    {
-      "title": "The latest and biggest Galaxy Watch Ultra 2 image leak comes two days before launch",
-      "url": "https://9to5google.com/2026/07/20/galaxy-watch-ultra-2-leaks-days-before-launch/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "Samsung has a scheduled event set for July 22, which is where the company is expected to announce the Galaxy Z Fold 8 series, Flip 8, the Galaxy Watch Ultra 2, and Watch 9. That list is exhaustive, and so is the latest leak full of marketing images for the rugged smartwatch."
-    },
-    {
-      "title": "Samsung Cuts 62% Off the 870 EVO 2TB SSD on Amazon, Offering Relief From Rising Storage Prices",
-      "url": "https://gizmodo.com/samsung-cuts-62-off-the-870-evo-2tb-ssd-on-amazon-offering-relief-from-rising-storage-prices-2000788085",
-      "source": "Bing: Samsung",
-      "date": "2026-07-20",
+      "title": "Did Apple raise iCloud+ prices? Yes, but only in certain places",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNV2tVdHM0ZVoxNENwRFBJN1hKMi1rVmpBbFUtak5HWHBla1NfRUlzbUJWX3NVZ3NCYmNWWm00dlJRVHNkSFVrZE1aemR5R3lNMU96aHNsRmlLekZnZXp6MjdubHJyNHNfNk9kc3c3NnNhckNQSmd5bGF4RVdwb19oamhGOHZaYUlkbjhvR1E1YXIyVnA2bXhEV3pUZzB3SXJkZkhYRjZn0gG6AUFVX3lxTE1KbVpHaFg2Z1lCbnpEQ1lSTVlPMXo5U1pDVUtHcUllSnFWdHlSSXBtNzBmemlnMGRWUm9DdEd5VEdYUG5RWUl0eXA3c1FOU29RaW12YXdiSVB2azhkYzZoN19RRnZtczFZSURCcXZicnVtX3pSbGRRYl9HSzdQa1BvYm83clpPaGxER2dCZVJLQVlJaG53U3NiWnJQWG5rbWY4Nmt5SnF3dHN6SW9pN1I2eS1fZW9aUFVNUQ?oc=5",
+      "source": "PennLive.com",
+      "date": "2026-07-21",
       "vendor": null,
-      "customer": "Amazon",
+      "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "The Samsung Electronics 870 EVO 2TB SSD is a 2.5-inch SATA drive. It fits into a laptop or desktop\u2019s existing hard drive bay. Two terabytes can hold your Windows installation al"
+      "summary": ""
     },
     {
-      "title": "Microsoft 365 calendars become spy drop boxes in HOLLOWGRAPH campaign",
-      "url": "https://www.theregister.com/security/2026/07/20/microsoft-365-calendars-become-spy-drop-boxes-in-hollowgraph-campaign/5274982",
-      "source": "The Register",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Malware hides commands in appointments set for 2050 and uses Redmond's own cloud to phone home"
-    },
-    {
-      "title": "Windows Server Update Services buckle under Microsoft's metadata mountain",
-      "url": "https://www.theregister.com/systems/2026/07/20/windows-server-update-services-buckle-under-microsofts-metadata-mountain/5274843",
-      "source": "The Register",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Redmond has stabilized new installations, but existing deployments remain stuck in sync purgatory"
-    },
-    {
-      "title": "Powering the Automotive Revolution: From Zonal Architecture to 48V",
-      "url": "https://www.eetimes.com/powering-the-automotive-revolution-from-zonal-architecture-to-48v/",
-      "source": "EE Times",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Explore how Monolithic Power Systems 48V automotive solutions, including the MPQ5884-AEC1, support safer, smarter, and more efficient zonal architecture. The post Powering the Automotive Revolution: From Zonal Architecture to 48V appeared first on EE Times."
-    },
-    {
-      "title": "I tested 3 blood pressure trackers for a month",
-      "url": "https://www.zdnet.com/article/blood-pressure-watches-samsung-amazfit-yhe/",
-      "source": "only one rivaled my Garmin Index BP Monitor",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "I wore Samsung, Amazfit, and Doctor Fit blood pressure watches for weeks, and this one was the most accurate."
-    },
-    {
-      "title": "We\u2019re Squandering LEDs\u2019 Potential to Save Our Night Skies",
-      "url": "https://spectrum.ieee.org/led-light-pollution",
-      "source": "IEEE Spectrum",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "In the chill of a London spring night, under overcast skies, iconic Trafalgar Square opens around me. Admiral Nelson rises on his pedestal, the National Gallery rests behind, the church of St Martin-in-the-Fields sits nearby. From the 13th century, the site served as the Royal Mews for hawks and the"
-    },
-    {
-      "title": "Do you prefer Google\u2019s 3D emoji or the classic style? [Poll]",
-      "url": "https://9to5google.com/2026/07/20/do-you-prefer-googles-3d-emoji-or-the-classic-style-poll/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
+      "title": "Google releases two new Gemini models, but still no Gemini 3.5 Pro",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE95V014TVBXODh3T2o5WEt1d0FtOFdmT2VBc01tTzg2Mnl3T3FGNTc4VFR4bFlQbnpWSXctSmtEeEZPaTR0QWNSOUVGNXIwSGhJWFA1UkY1SnExR2hVckdCb1EwQ19MZUhLLS1vcUlZTnlJQ3AtcDZzOGRTaw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Mashable",
+      "date": "2026-07-21",
       "vendor": null,
       "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "In the wake of World Emoji Day \u2013 yes, that is a thing \u2013 Google gave us some insight into why we\u2019re switching over to the \u201cNoto 3D\u201d collection, but we\u2019re wondering how people feel about the new designs."
-    },
-    {
-      "title": "Microsoft rushes out Windows fix for Dell's hot and bothered PCs",
-      "url": "https://www.theregister.com/os-platforms/2026/07/20/microsoft-rushes-out-windows-fix-for-dells-hot-and-bothered-pcs/5274810",
-      "source": "The Register",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Microsoft",
       "application": null,
       "buckets": [],
-      "summary": "With a wave of the wand, affected models will go to the Patch Tuesday ball after all"
+      "summary": ""
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 14,
-    "Espressif": 7,
-    "MediaTek": 6,
-    "Microchip": 3,
-    "Realtek": 2,
-    "STMicro": 2,
-    "Nordic": 2,
-    "Onsemi": 1,
-    "Infineon": 1,
-    "NXP": 1,
-    "Qorvo": 1,
-    "Silicon Labs": 1
+    "Broadcom": 18,
+    "Qualcomm": 15,
+    "Microchip": 11,
+    "NXP": 10,
+    "STMicro": 7,
+    "Synaptics": 5,
+    "MediaTek": 5,
+    "Onsemi": 4,
+    "TI": 2,
+    "Skyworks": 2,
+    "Infineon": 2,
+    "Sequans": 1,
+    "Silicon Labs": 1,
+    "Renesas": 1,
+    "Nordic": 1,
+    "Apple": 1,
+    "Goodix": 1
   },
   "customer_news_30d": {
-    "Google": 67,
-    "Amazon": 23,
-    "Samsung": 21,
-    "Apple": 18,
-    "Microsoft": 12,
-    "Sony": 3,
-    "Meta": 1,
-    "Ford": 1,
-    "Motorola": 1,
-    "Philips Hue": 1,
-    "BMW": 1,
-    "Tesla": 1
+    "Apple": 154,
+    "Samsung": 122,
+    "Google": 121,
+    "Amazon": 98,
+    "Tesla": 96,
+    "Microsoft": 90,
+    "Meta": 62,
+    "Sony": 54,
+    "Garmin": 45,
+    "BMW": 30,
+    "Bose": 10,
+    "Arlo": 2,
+    "Motorola": 2,
+    "Xiaomi": 2,
+    "HKMC": 1,
+    "Marshall": 1
   },
   "github_pulse": [
     {
@@ -497,7 +492,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1650,
+      "issues_open": 1649,
       "prs_open": 0,
       "releases": [
         {
@@ -519,8 +514,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18582,
-      "pushed_at": "2026-07-21T06:37:51Z"
+      "stars": 18588,
+      "pushed_at": "2026-07-21T20:40:55Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -531,7 +526,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3920,
+      "issues_open": 3884,
       "prs_open": 0,
       "releases": [
         {
@@ -553,8 +548,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15953,
-      "pushed_at": "2026-07-21T11:38:40Z"
+      "stars": 15958,
+      "pushed_at": "2026-07-21T18:10:19Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240056,
+      "pushed_at": "2026-07-21T17:06:19Z"
     },
     {
       "name": "Matter SDK",
@@ -565,7 +575,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2722,
+      "issues_open": 2731,
       "prs_open": 0,
       "releases": [
         {
@@ -587,23 +597,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8832,
-      "pushed_at": "2026-07-21T12:55:08Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240011,
-      "pushed_at": "2026-07-20T20:06:35Z"
+      "stars": 8830,
+      "pushed_at": "2026-07-21T21:14:37Z"
     },
     {
       "name": "OpenThread",
@@ -613,8 +608,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 77,
-      "issues_open": 164,
+      "commits_30d": 82,
+      "issues_open": 162,
       "prs_open": 0,
       "releases": [
         {
@@ -637,7 +632,7 @@
         }
       ],
       "stars": 3989,
-      "pushed_at": "2026-07-21T01:12:10Z"
+      "pushed_at": "2026-07-21T19:32:51Z"
     },
     {
       "name": "BlueZ",
@@ -648,7 +643,7 @@
         "bluetooth"
       ],
       "commits_30d": 40,
-      "issues_open": 106,
+      "issues_open": 103,
       "prs_open": 0,
       "releases": [
         {
@@ -671,7 +666,7 @@
         }
       ],
       "stars": 1105,
-      "pushed_at": "2026-07-21T09:15:55Z"
+      "pushed_at": "2026-07-21T20:09:05Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -681,8 +676,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 26,
-      "issues_open": 467,
+      "commits_30d": 27,
+      "issues_open": 463,
       "prs_open": 0,
       "releases": [
         {
@@ -704,8 +699,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15324,
-      "pushed_at": "2026-07-20T21:25:06Z"
+      "stars": 15325,
+      "pushed_at": "2026-07-21T19:58:41Z"
     },
     {
       "name": "NimBLE",
@@ -816,18 +811,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
-      "vendor": "Broadcom",
-      "ticker": "AVGO",
-      "form": "8-K",
-      "date": "2026-06-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
-    },
-    {
       "vendor": "Marvell",
       "ticker": "MRVL",
       "form": "8-K",
       "date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
+    },
+    {
+      "vendor": "Broadcom",
+      "ticker": "AVGO",
+      "form": "8-K",
+      "date": "2026-06-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -970,18 +965,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
-    },
-    {
       "vendor": "Microchip",
       "ticker": "MCHP",
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1047,13 +1042,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526201058/ter-20260329.htm"
     },
     {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -1066,6 +1054,13 @@
       "form": "8-K",
       "date": "2026-05-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000025/lyb-20260501.htm"
+    },
+    {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
     },
     {
       "vendor": "Silicon Labs",
