@@ -1,7 +1,205 @@
 {
-  "generated_at": "2026-07-20T22:33:49Z",
+  "generated_at": "2026-07-21T11:53:29Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
+    {
+      "title": "More bad news for Apple pricing as TSMC increases chip costs",
+      "url": "https://9to5mac.com/2026/07/21/more-bad-news-for-apple-pricing-as-tsmc-increases-chip-costs/",
+      "source": "9to5Mac",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple has already increased the prices of most of its products very significantly after it said it could no longer absorb far high memory costs. iPhone price rises are also expected when this year\u2019s models launch in September. The majority already took the pessimistic view that these rises will be p"
+    },
+    {
+      "title": "Largest ever iPhone screen arriving next year, suggests leaker",
+      "url": "https://9to5mac.com/2026/07/21/largest-ever-iphone-screen-arriving-next-year-suggests-leaker/",
+      "source": "9to5Mac",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Next year could see the introduction of the largest ever iPhone screen, according to a leaker with a decent track record. Supply chain sources indicate Apple is trialing a new display, which may be destined for a new iPhone whose name remains a mystery for now \u2026"
+    },
+    {
+      "title": "Avalue RIVAR-1539 is a 15.6-inch fanless industrial panel PC powered by an Intel N150 Twin Lake processor",
+      "url": "https://www.cnx-software.com/2026/07/21/avalue-rivar-1539-is-a-15-6-inch-fanless-industrial-panel-pc-powered-by-an-intel-n150-twin-lake-processor/",
+      "source": "CNX Software",
+      "date": "2026-07-21",
+      "vendor": "Realtek",
+      "customer": "Amazon",
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "Avalue Technology has introduced the RIVAR-1539, a 15.6-inch industrial fanless panel PC powered by the Intel N150 quad-core Twin Lake processor. The system features a Full HD projected capacitive touch display, dual Gigabit Ethernet, four USB 3.0 ports, and an IP65-rated front panel. The all-in-one"
+    },
+    {
+      "title": "Who\u2019s afraid of the big, bad GPU?",
+      "url": "https://www.theverge.com/cs/features/937356/ai-data-center-gpu-environmental-impact",
+      "source": "The Verge",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "How does AI make you feel? Are you excited to \u201cvibe-code\u201d your smart home? Or anxious about all the added pollution and billions of gallons of water used by data centers? Dig a little deeper and you\u2019ll start to question the actual value of the GPUs that underpin all the leaps and promises of generat"
+    },
+    {
+      "title": "Gritt exits stealth with $34 million for robots to build solar plants\u2014then, everything else",
+      "url": "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/",
+      "source": "TechCrunch",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": null,
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "Gritt is coming out of stealth with $34 million and plan to automate the hardest tasks on construction sites."
+    },
+    {
+      "title": "Apple @ Work Podcast: Forget 90 day patch windows",
+      "url": "https://9to5mac.com/2026/07/21/apple-work-podcast-forget-90-day-patch-windows/",
+      "source": "9to5Mac",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Asset Tracking",
+      "buckets": [],
+      "summary": "Apple @ Work is exclusively brought to you by Mosyle, the only Apple Unified Platform. Mosyle is the only solution that integrates in a single professional-grade platform all the solutions necessary to seamlessly and automatically deploy, manage &amp; protect Apple devices at work. Over 45,000 organ"
+    },
+    {
+      "title": "ART-Pi II development board features 600 MHz STM32H7R7 Cortex-M7 MCU with NeoChrom GPU",
+      "url": "https://www.cnx-software.com/2026/07/21/art-pi-ii-development-board-features-600-mhz-stm32h7r7-cortex-m7-mcu-with-neochrom-gpu/",
+      "source": "CNX Software",
+      "date": "2026-07-21",
+      "vendor": "STMicro",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [
+        "bluetooth",
+        "wifi"
+      ],
+      "summary": "The 600 MHz STM32H7R/S Cortex-M7 microcontroller family with an optional NeoChrom 2.5D GPU and up to 640 KB SRAM and 64 KB flash was introduced in 2024. However, apart from ST&#8217;s own development boards such as the NUCLEO-H7S3L8 and STM32H7S78-DK, we hadn&#8217;t seen any boards based on it. The"
+    },
+    {
+      "title": "Samsung launches \u2018Galaxy Card\u2019 credit card",
+      "url": "https://9to5google.com/2026/07/20/samsung-launches-galaxy-card-credit-card/",
+      "source": "9to5Google",
+      "date": "2026-07-21",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Samsung has announced its new credit card, the \u201cGalaxy Card,\u201d which offers up to 5% cashback on Galaxy device purchases."
+    },
+    {
+      "title": "Google Cloud outage shows it\u2019s still hard to understand hyperscalers\u2019 real resilience regimes",
+      "url": "https://www.theregister.com/off-prem/2026/07/21/google-cloud-outage-shows-its-still-hard-to-understand-hyperscalers-real-resilience-regimes/5275405",
+      "source": "The Register",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Single datacenter and just three services taken down by \u2018upstream\u2019 power problem, while the rest of a zone and region kept humming"
+    },
+    {
+      "title": "Apple Chipmaker TSMC Plans Price Hikes of Up to 10% in 2027",
+      "url": "https://www.macrumors.com/2026/07/21/apple-tsmc-price-hikes-2027/",
+      "source": "Bing: Apple",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Apple's principal chipmaker TSMC plans to raise prices by as much as 10 percent starting in 2027, according to a new report from Nikkei Asia. The Taiwan-based foundry has reportedly held talks with clients about base price increases of 5 to 10 percent,"
+    },
+    {
+      "title": "Apple Quietly Drops AirTag 2 4-Pack to Its Lowest Price, With Each Tracker Cheaper Than Buying the 1-Pack",
+      "url": "https://gizmodo.com/apple-quietly-drops-airtag-2-4-pack-to-its-lowest-price-with-each-tracker-cheaper-than-buying-the-1-pack-2000788190",
+      "source": "Bing: Apple",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Asset Tracking",
+      "buckets": [],
+      "summary": "Reading time 2 minutes It\u2019s not the end of the Summer yet, and that means a fair few of us still have a holiday on the horizon. We\u2019re counting any time off as a holiday at this point. If you\u2019re staying at home and playing Stardew Valley again,"
+    },
+    {
+      "title": "nRF54L Arduino Core project brings Arduino support to Nordic Semi nRF54L wireless SoCs",
+      "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/",
+      "source": "CNX Software",
+      "date": "2026-07-21",
+      "vendor": "Nordic",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [
+        "ieee15_4",
+        "bluetooth"
+      ],
+      "summary": "nRF54L Arduino Core is an open-source project designed to bring Arduino support for Nordic Semiconductor nRF54L wireless SoCs, starting with Seeed Studio&#8217;s XIAO nRF54L15 (Sense) and XIAO nRF54LM20A (Sense) boards, as well as compatible Holyiot nRF54L15 modules. Since the launch of the nRF52840"
+    },
+    {
+      "title": "iOS 27 beta 4 adds a useful Apple TV app feature, here\u2019s how it works",
+      "url": "https://9to5mac.com/2026/07/20/ios-27-beta-4-adds-a-useful-apple-tv-app-feature-heres-how-it-works/",
+      "source": "9to5Mac",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple released iOS 27 beta 4 today, and it comes with a useful new \u201cAutomatic Downloads\u201d feature in the Apple TV app. Here\u2019s how it works."
+    },
+    {
+      "title": "STMicroelectronics on Aliro",
+      "url": "https://csa-iot.org/newsroom/stmicroelectronics-on-aliro/",
+      "source": "CSA / Matter (Zigbee)",
+      "date": "2026-07-21",
+      "vendor": "STMicro",
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "aliro",
+        "matter"
+      ],
+      "summary": "\u201cIt was an amazing journey to work on Aliro and make interoperability between smartphones and readers a reality. Interoperability now means that every reader and user device speaks the same&#8230;"
+    },
+    {
+      "title": "I wore Meta's $499 prescription Ray-Bans for 6 weeks: They're stylish but not for me",
+      "url": "https://www.zdnet.com/article/meta-ray-ban-blayzer-optics-gen-2-review/",
+      "source": "ZDNet",
+      "date": "2026-07-21",
+      "vendor": null,
+      "customer": "Meta",
+      "application": "AR / VR / XR",
+      "buckets": [],
+      "summary": "Meta's Ray-Ban Blayzer Optics are made specifically for prescription eyeglass wearers with a lightweight, stylish design."
+    },
+    {
+      "title": "How advances in Bluetooth\u00ae technology are powering smarter, lower-waste operations",
+      "url": "https://www.bluetooth.com/blog/how-advances-in-bluetooth-technology-are-powering-smarter-lower-waste-operations/",
+      "source": "Bluetooth SIG Blog",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": null,
+      "application": "Asset Tracking",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Sustainability is often framed in terms of reduction \u2014 less energy, fewer materials, and lower emissions. In practice, the most..."
+    },
+    {
+      "title": "What\u2019s new in Android\u2019s July 2026 Google System Updates [U]",
+      "url": "https://9to5google.com/2026/07/20/july-2026-google-system-updates/",
+      "source": "9to5Google",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The monthly \u201cGoogle System Release Notes\u201d primarily detail what\u2019s new in Play services, Play Store, and Play system update across Android phones/tablets, Wear OS, Google/Android TV, Auto, and PC. Some features apply to end users, while others are aimed at developers."
+    },
     {
       "title": "Here are the 30,000 songs Sony is suing Udio&#8217;s AI music generator over",
       "url": "https://www.theverge.com/tech/968375/sony-udio-lawsuit-songs-ai-copyright",
@@ -23,6 +221,17 @@
       "application": "Automotive",
       "buckets": [],
       "summary": "Google Photos has rolled out a \u201cclassic search\u201d toggle for Ask Photos that delivers a big quality-of-life improvement."
+    },
+    {
+      "title": "DA: Cop covered bodycam to snap nude prisoners on his iPhone\u2014but other cams caught him",
+      "url": "https://arstechnica.com/tech-policy/2026/07/cop-charged-with-covering-bodycam-to-photograph-naked-prisoners/",
+      "source": "Ars Technica",
+      "date": "2026-07-20",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "On March 31, 2026, a rather odd complaint arrived at the Bucks County, Pennsylvania District Attorney\u2019s Office.\nIt came from the local sheriff\u2019s office, and it concerned one of their own, Deputy Sheriff Ryan Gaffney. The allegation was unusual: Gaffney had used his iPhone to snap photos of nude pris"
     },
     {
       "title": "The Sideload 039: Digital landscaping",
@@ -246,272 +455,38 @@
       "application": null,
       "buckets": [],
       "summary": "Since Sony announced that it was planning to stop producing physical PlayStation discs in 2028, many people have been justifiably worried about how they will maintain ownership and long-term game access in a disc-free world. But halting production of PlayStation discs also means eliminating the mark"
-    },
-    {
-      "title": "Here\u2019s what\u2019s new with iOS 27 beta 4",
-      "url": "https://9to5mac.com/2026/07/20/heres-whats-new-with-ios-27-beta-4/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple released iOS 27 beta 4 today, giving developers the next preview update since iOS 27 debuted at WWDC. Developers can download the new beta now. iOS 27 is a major iPhone update centered around Siri AI, Apple Intelligence, Liquid Glass refinements, and a long list of quality-of-life changes. Her"
-    },
-    {
-      "title": "IEEE Program Helps Girls In India See a Future In STEM",
-      "url": "https://spectrum.ieee.org/ieee-program-girls-india-stem",
-      "source": "IEEE Spectrum",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": null,
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Roughly half the world\u2019s population is female, but the STEM fields don\u2019t reflect that. The 2024 U.N. Global Education Monitoring Report on gender found that about 35 percent of STEM college graduates were women. The proportion hasn\u2019t increased much in more than a decade.When it comes to STEM careers"
-    },
-    {
-      "title": "Monday\u2019s Android iOS app deals and freebies: LIMBO, Super Dark Deception, WINCH IT OUT, Box Head, more",
-      "url": "https://9to5toys.com/2026/07/20/monday-android-ios-app-deals-free/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Your Monday afternoon lineup of the best Android game and app deals is now ready to roll, including titles like WINCH IT OUT, LIMBO, Super Dark Deception, Undead Slayer: Offline Premium, Paign \u2013 RPG, Box Head: Roguelike Premium, and more. Be sure to dive into the now live Best Buy Black Friday in Ju"
-    },
-    {
-      "title": "iOS 26.6 includes key feature that prepares your iPhone for iOS 27",
-      "url": "https://9to5mac.com/2026/07/20/ios-26-6-includes-key-feature-that-prepares-your-iphone-for-ios-27/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple has just debuted the RC version of iOS 26.6 and its companion updates, and the company\u2019s official release notes confirm the inclusion of a feature meant to prepare your iPhone for iOS 27."
-    },
-    {
-      "title": "macOS 26.6 RC now available, here\u2019s what\u2019s coming",
-      "url": "https://9to5mac.com/2026/07/20/macos-26-6-rc-now-available-heres-whats-coming/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple is rolling out the first developer and public release candidates for macOS 26.6, ahead of the system\u2019s official release. Here\u2019s what\u2019s new."
-    },
-    {
-      "title": "9to5Mac Daily: July 20, 2026 \u2013 Apple Music and Apple One price increases",
-      "url": "https://9to5mac.com/2026/07/20/daily-july-20-2026/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple\u2019s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overcast and other podcast players. Sponsored by Backblaze: Backup you can rely on. Save 20% with code 9to"
-    },
-    {
-      "title": "Apple releases beta 4 for iPadOS 27, tvOS 27, and more",
-      "url": "https://9to5mac.com/2026/07/20/apple-releases-beta-4-for-ipados-27-tvos-27-and-more/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Apple has just released developer beta 4 for iPadOS 27, tvOS 27, watchOS 27, and several more forthcoming software updates."
-    },
-    {
-      "title": "Apple releases iPadOS 26.6 RC, plus watchOS 26.6 and more",
-      "url": "https://9to5mac.com/2026/07/20/apple-releases-ipados-26-6-rc-plus-watchos-26-6-and-more/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Apple is rolling out RC (release candidate) versions of its next wave of software updates, including iPadOS 26.6, watchOS 26.6, and more. Here\u2019s what to expect."
-    },
-    {
-      "title": "Sixth release candidates for macOS Sonoma 14.8.8 and macOS Sequoia 15.7.8 now rolling out",
-      "url": "https://9to5mac.com/2026/07/20/sixth-release-candidates-for-macos-sonoma-14-8-8-and-macos-sequoia-15-7-8-now-rolling-out/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "In what must be a record, Apple is now rolling out a sixth round of develope and public release candidates for macOS Sonoma 14.8.8 and macOS Sequoia 15.7.8. Here are the details."
-    },
-    {
-      "title": "Apple releases first iOS 26.6 RC for iPhone",
-      "url": "https://9to5mac.com/2026/07/20/apple-releases-first-ios-26-6-rc-for-iphone/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "While iOS 27 is very much the new focus for pre-release software, Apple is still preparing iOS 26.6 as the next iPhone update. Apple has released the first release candidate for iOS 26.6. iOS 26.6 beta has been in testing since the end of May."
-    },
-    {
-      "title": "macOS 27 Golden Gate beta 4 now available to developers, here\u2019s what\u2019s new",
-      "url": "https://9to5mac.com/2026/07/20/macos-27-golden-gate-beta-4-now-available-to-developers-heres-whats-new/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Just a few days after kicking off the public beta season and releasing a revised version of macOS 27 developer beta 3, Apple is now rolling out macOS 27 developer beta 4. Here are the details."
-    },
-    {
-      "title": "iOS 27 beta 4 now available as Apple tests major Siri AI upgrade",
-      "url": "https://9to5mac.com/2026/07/20/ios-27-beta-4/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple has released the fourth iOS 27 beta for developer testing. The build number is 23G71. iOS 27 beta 4 replaces the third iOS 27 beta, which had two release versions, and continues Apple\u2019s summer beta cycle ahead of a public release this fall. We\u2019ll update our devices and share what we discover."
-    },
-    {
-      "title": "LG&#8217;s glossy OLED gaming monitor is rare to find under $400",
-      "url": "https://www.theverge.com/gadgets/967993/lg-27-inch-ultragear-glossy-oled-gaming-monitor-deal-sale",
-      "source": "The Verge",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "If you&#8217;ve been thinking about upgrading your gaming monitor, LG&#8217;s 27-inch 27GX704A-B pairs a glossy WOLED panel with a fast refresh rate, and it\u2019s currently on sale for $379.99 (about $70 off) at Amazon and directly from LG, marking a new low price.&#160;It originally launched at $799.99"
-    },
-    {
-      "title": "New iPad mini coming soon with these major changes",
-      "url": "https://9to5mac.com/2026/07/20/new-ipad-mini-coming-soon-with-these-major-changes/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple is about to release a new iPad mini. This will mark the first update to the device in two years, and it\u2019s expected to be a big one. Here\u2019s everything we know so far about the new iPad mini coming soon."
-    },
-    {
-      "title": "The Document Foundation says Microsoft's file formats keep users on a short leash",
-      "url": "https://www.theregister.com/applications/2026/07/20/the-document-foundation-says-microsofts-file-formats-keep-users-on-a-short-leash/5274960",
-      "source": "The Register",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "OOXML may carry an ISO certificate, but only Office can be trusted to render it properly"
-    },
-    {
-      "title": "Nisshinbo Micro Devices Expands High-Voltage IC Lineup for Next-Gen Automotive 48 V Systems",
-      "url": "https://www.eetimes.com/nisshinbo-micro-devices-expands-high-voltage-ic-lineup-for-next-gen-automotive-48-v-systems/",
-      "source": "EE Times",
-      "date": "2026-07-20",
-      "vendor": null,
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Addressing the new challenges posed by the shift to 48 V automotive power supplies with Nisshinbo Micro Devices The post Nisshinbo Micro Devices Expands High-Voltage IC Lineup for Next-Gen Automotive 48 V Systems appeared first on EE Times."
-    },
-    {
-      "title": "Deals: Black Friday in July sale, Galaxy Tab S11 Ultra up to $430 off, NXTPAPER tabs from $160, Pixel Watch 4, more",
-      "url": "https://9to5google.com/2026/07/20/deals-black-friday-in-july-tab-s11-ultra-nxtpaper/",
-      "source": "9to5Google",
-      "date": "2026-07-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Be sure to score your FREE credit at Samsung ahead of this week\u2019s Galaxy Z Fold 8 and Watch 9/Ultra launch, but today\u2019s 9to5Toys Lunch Break is headlined by the Best Buy Black Friday in July sale with $200 off Galaxy Tab S11 Ultra (open-box units now up to $430 off). We also have TCL Android tablets"
-    },
-    {
-      "title": "Deals: AirPods Pro 3, AirPods Max 2 $100 off, AirTag 2 all-time low, M5 MacBook Pro $400 off, iPhone Air, more",
-      "url": "https://9to5mac.com/2026/07/20/deals-airpods-pro-3-airpods-max-2-airtag-2-iphone-air/",
-      "source": "9to5Mac",
-      "date": "2026-07-20",
-      "vendor": "Apple",
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Joining the ongoing AirPods Pro 3 deal at $50 off, today\u2019s 9to5Toys Lunch Break is headlined by Amazon now offering Apple\u2019s AirTag 2 at $22 each today. We also have this 48GB 14-inch M5 Pro MacBook Pro at $400 off, iPhone Air hits all-time lows at $159 off, and the giant Best Buy Black Friday in Jul"
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 13,
-    "Espressif": 8,
+    "Qualcomm": 14,
+    "Espressif": 7,
     "MediaTek": 6,
     "Apple": 4,
     "Microchip": 3,
-    "Silicon Labs": 2,
-    "Realtek": 1,
+    "Realtek": 2,
+    "STMicro": 2,
+    "Nordic": 2,
     "Onsemi": 1,
     "Infineon": 1,
     "NXP": 1,
     "Qorvo": 1,
-    "Nordic": 1,
-    "STMicro": 1
+    "Silicon Labs": 1
   },
   "customer_news_30d": {
-    "Apple": 101,
-    "Google": 69,
+    "Apple": 110,
+    "Google": 68,
     "Amazon": 23,
-    "Samsung": 20,
-    "Microsoft": 14,
+    "Samsung": 21,
+    "Microsoft": 12,
     "Sony": 3,
+    "Meta": 2,
     "Ford": 1,
     "Motorola": 1,
-    "Meta": 1,
     "Philips Hue": 1,
-    "Huawei": 1,
     "BMW": 1,
-    "Mercedes": 1,
     "Tesla": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3889,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15945,
-      "pushed_at": "2026-07-20T22:30:38Z"
-    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -523,7 +498,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1648,
+      "issues_open": 1650,
       "prs_open": 0,
       "releases": [
         {
@@ -545,8 +520,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18578,
-      "pushed_at": "2026-07-20T22:01:59Z"
+      "stars": 18583,
+      "pushed_at": "2026-07-21T06:37:51Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3916,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15953,
+      "pushed_at": "2026-07-21T11:38:40Z"
     },
     {
       "name": "Matter SDK",
@@ -557,7 +566,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2718,
+      "issues_open": 2725,
       "prs_open": 0,
       "releases": [
         {
@@ -579,8 +588,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8831,
-      "pushed_at": "2026-07-20T21:54:54Z"
+      "stars": 8832,
+      "pushed_at": "2026-07-21T10:19:32Z"
     },
     {
       "name": "Linux mac80211",
@@ -594,7 +603,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239940,
+      "stars": 240006,
       "pushed_at": "2026-07-20T20:06:35Z"
     },
     {
@@ -605,8 +614,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 75,
-      "issues_open": 162,
+      "commits_30d": 77,
+      "issues_open": 164,
       "prs_open": 0,
       "releases": [
         {
@@ -629,7 +638,7 @@
         }
       ],
       "stars": 3989,
-      "pushed_at": "2026-07-20T22:04:20Z"
+      "pushed_at": "2026-07-21T01:12:10Z"
     },
     {
       "name": "BlueZ",
@@ -640,7 +649,7 @@
         "bluetooth"
       ],
       "commits_30d": 40,
-      "issues_open": 104,
+      "issues_open": 106,
       "prs_open": 0,
       "releases": [
         {
@@ -662,8 +671,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1104,
-      "pushed_at": "2026-07-20T19:56:57Z"
+      "stars": 1105,
+      "pushed_at": "2026-07-21T09:15:55Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -673,8 +682,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 28,
-      "issues_open": 468,
+      "commits_30d": 26,
+      "issues_open": 467,
       "prs_open": 0,
       "releases": [
         {
@@ -696,7 +705,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15320,
+      "stars": 15324,
       "pushed_at": "2026-07-20T21:25:06Z"
     },
     {
@@ -707,12 +716,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 16,
+      "commits_30d": 17,
       "issues_open": 274,
       "prs_open": 0,
       "releases": [],
-      "stars": 878,
-      "pushed_at": "2026-07-10T15:55:08Z"
+      "stars": 879,
+      "pushed_at": "2026-07-21T08:38:57Z"
     },
     {
       "name": "hostap",
@@ -766,18 +775,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -955,6 +964,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
+    },
+    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -967,13 +983,6 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1039,6 +1048,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526201058/ter-20260329.htm"
     },
     {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -1051,13 +1067,6 @@
       "form": "8-K",
       "date": "2026-05-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000025/lyb-20260501.htm"
-    },
-    {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -1100,13 +1109,6 @@
       "form": "8-K",
       "date": "2026-04-24",
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000012/slab-20260423.htm"
-    },
-    {
-      "vendor": "Broadcom",
-      "ticker": "AVGO",
-      "form": "8-K",
-      "date": "2026-04-21",
-      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000039/avgo-20260420.htm"
     }
   ],
   "tracked_competitors": [
@@ -1248,6 +1250,11 @@
           "url": "https://www.cnx-software.com/2026/07/09/norik-systems-introduces-nrf9151-based-usb-dongle-for-dect-nr-deployments/"
         },
         {
+          "title": "nRF54L Arduino Core Project Brings Arduino Support to Nordic Semi nRF54L Wireless SoCs",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
+        },
+        {
           "title": "nRF54L15 Tag Prototyping Platform Launched",
           "date": "Jun 2026",
           "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag"
@@ -1256,11 +1263,6 @@
           "title": "Nordic Semiconductor Launches nRF54L15 Prototyping Tag",
           "date": "Jun 2026",
           "url": "https://www.electronicsweekly.com/news/products/rf-microwave-optoelectronics/nordic-finds-dual-antenna-nrf54l15-prototyping-tag-2026-06/"
-        },
-        {
-          "title": "Nordic launches nRF54L15 Tag to support Bluetooth Channel Sounding development",
-          "date": "Jun 2026",
-          "url": "https://www.newelectronics.co.uk/content/product-launches/nordic-launches-nrf54l15-tag-to-support-bluetooth-channel-sounding-development"
         }
       ],
       "events": [
@@ -3156,6 +3158,11 @@
           "url": "https://www.electronicsmedia.info/2026/07/17/turning-light-into-trusted-data-stmicroelectronics-is-powering-the-future-of-ai-imaging-and-machine-vision/"
         },
         {
+          "title": "ART-Pi II development board features 600 MHz STM32H7R7 Cortex-M7 MCU with NeoChrom GPU",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/21/art-pi-ii-development-board-features-600-mhz-stm32h7r7-cortex-m7-mcu-with-neochrom-gpu/"
+        },
+        {
           "title": "STMicroelectronics Unveils New Vibration Sensor for Industrial Monitoring",
           "date": "Jun 2026",
           "url": "https://www.newelectronics.co.uk/content/product-launches/stmicroelectronics-unveils-vibration-sensor-for-industrial-monitoring"
@@ -3174,11 +3181,6 @@
           "title": "STMicroelectronics Announces US$1.5 Billion Convertible Bonds Offering and Early Redemption",
           "date": "Jun 2026",
           "url": "https://www.globenewswire.com/news-release/2026/06/16/3312264/0/en/stmicroelectronics-announces-i-a-us-1-5-billion-dual-tranche-offering-of-new-convertible-bonds-and-ii-the-early-redemption-of-its-2027-convertible-bonds.html"
-        },
-        {
-          "title": "STMicroelectronics High-Performance Vibration Sensor with In-Sensor AI Offers Alternative to Piezo Sensors",
-          "date": "Jun 2026",
-          "url": "https://www.globenewswire.com/news-release/2026/06/03/3305779/0/en/stmicroelectronics-high-performance-vibration-sensor-with-in-sensor-ai-offers-a-compelling-alternative-to-piezosensor-to-fast-growing-industrial-condition-monitoring-market.html"
         }
       ],
       "events": [

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T22:33:49Z",
+  "generated_at": "2026-07-21T11:53:29Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -163,6 +163,11 @@
           "url": "https://www.cnx-software.com/2026/07/09/norik-systems-introduces-nrf9151-based-usb-dongle-for-dect-nr-deployments/"
         },
         {
+          "title": "nRF54L Arduino Core Project Brings Arduino Support to Nordic Semi nRF54L Wireless SoCs",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
+        },
+        {
           "title": "nRF54L15 Tag Prototyping Platform Launched",
           "date": "Jun 2026",
           "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag"
@@ -171,11 +176,6 @@
           "title": "Nordic Semiconductor Launches nRF54L15 Prototyping Tag",
           "date": "Jun 2026",
           "url": "https://www.electronicsweekly.com/news/products/rf-microwave-optoelectronics/nordic-finds-dual-antenna-nrf54l15-prototyping-tag-2026-06/"
-        },
-        {
-          "title": "Nordic launches nRF54L15 Tag to support Bluetooth Channel Sounding development",
-          "date": "Jun 2026",
-          "url": "https://www.newelectronics.co.uk/content/product-launches/nordic-launches-nrf54l15-tag-to-support-bluetooth-channel-sounding-development"
         }
       ],
       "events": [
@@ -2071,6 +2071,11 @@
           "url": "https://www.electronicsmedia.info/2026/07/17/turning-light-into-trusted-data-stmicroelectronics-is-powering-the-future-of-ai-imaging-and-machine-vision/"
         },
         {
+          "title": "ART-Pi II development board features 600 MHz STM32H7R7 Cortex-M7 MCU with NeoChrom GPU",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/21/art-pi-ii-development-board-features-600-mhz-stm32h7r7-cortex-m7-mcu-with-neochrom-gpu/"
+        },
+        {
           "title": "STMicroelectronics Unveils New Vibration Sensor for Industrial Monitoring",
           "date": "Jun 2026",
           "url": "https://www.newelectronics.co.uk/content/product-launches/stmicroelectronics-unveils-vibration-sensor-for-industrial-monitoring"
@@ -2089,11 +2094,6 @@
           "title": "STMicroelectronics Announces US$1.5 Billion Convertible Bonds Offering and Early Redemption",
           "date": "Jun 2026",
           "url": "https://www.globenewswire.com/news-release/2026/06/16/3312264/0/en/stmicroelectronics-announces-i-a-us-1-5-billion-dual-tranche-offering-of-new-convertible-bonds-and-ii-the-early-redemption-of-its-2027-convertible-bonds.html"
-        },
-        {
-          "title": "STMicroelectronics High-Performance Vibration Sensor with In-Sensor AI Offers Alternative to Piezo Sensors",
-          "date": "Jun 2026",
-          "url": "https://www.globenewswire.com/news-release/2026/06/03/3305779/0/en/stmicroelectronics-high-performance-vibration-sensor-with-in-sensor-ai-offers-a-compelling-alternative-to-piezosensor-to-fast-growing-industrial-condition-monitoring-market.html"
         }
       ],
       "events": [
@@ -3709,19 +3709,19 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 13,
-    "Espressif": 8,
+    "Qualcomm": 14,
+    "Espressif": 7,
     "MediaTek": 6,
     "Apple": 4,
     "Microchip": 3,
-    "Silicon Labs": 2,
-    "Realtek": 1,
+    "Realtek": 2,
+    "STMicro": 2,
+    "Nordic": 2,
     "Onsemi": 1,
     "Infineon": 1,
     "NXP": 1,
     "Qorvo": 1,
-    "Nordic": 1,
-    "STMicro": 1
+    "Silicon Labs": 1
   },
   "standards_in_flight": [
     {
@@ -3794,40 +3794,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3889,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15945,
-      "pushed_at": "2026-07-20T22:30:38Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3838,7 +3804,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1648,
+      "issues_open": 1650,
       "prs_open": 0,
       "releases": [
         {
@@ -3860,8 +3826,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18578,
-      "pushed_at": "2026-07-20T22:01:59Z"
+      "stars": 18583,
+      "pushed_at": "2026-07-21T06:37:51Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3916,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15953,
+      "pushed_at": "2026-07-21T11:38:40Z"
     },
     {
       "name": "Matter SDK",
@@ -3872,7 +3872,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2718,
+      "issues_open": 2725,
       "prs_open": 0,
       "releases": [
         {
@@ -3894,8 +3894,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8831,
-      "pushed_at": "2026-07-20T21:54:54Z"
+      "stars": 8832,
+      "pushed_at": "2026-07-21T10:19:32Z"
     },
     {
       "name": "Linux mac80211",
@@ -3909,7 +3909,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 239940,
+      "stars": 240006,
       "pushed_at": "2026-07-20T20:06:35Z"
     },
     {
@@ -3920,8 +3920,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 75,
-      "issues_open": 162,
+      "commits_30d": 77,
+      "issues_open": 164,
       "prs_open": 0,
       "releases": [
         {
@@ -3944,7 +3944,7 @@
         }
       ],
       "stars": 3989,
-      "pushed_at": "2026-07-20T22:04:20Z"
+      "pushed_at": "2026-07-21T01:12:10Z"
     },
     {
       "name": "BlueZ",
@@ -3955,7 +3955,7 @@
         "bluetooth"
       ],
       "commits_30d": 40,
-      "issues_open": 104,
+      "issues_open": 106,
       "prs_open": 0,
       "releases": [
         {
@@ -3977,8 +3977,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1104,
-      "pushed_at": "2026-07-20T19:56:57Z"
+      "stars": 1105,
+      "pushed_at": "2026-07-21T09:15:55Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3988,8 +3988,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 28,
-      "issues_open": 468,
+      "commits_30d": 26,
+      "issues_open": 467,
       "prs_open": 0,
       "releases": [
         {
@@ -4011,7 +4011,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15320,
+      "stars": 15324,
       "pushed_at": "2026-07-20T21:25:06Z"
     },
     {
@@ -4022,12 +4022,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 16,
+      "commits_30d": 17,
       "issues_open": 274,
       "prs_open": 0,
       "releases": [],
-      "stars": 878,
-      "pushed_at": "2026-07-10T15:55:08Z"
+      "stars": 879,
+      "pushed_at": "2026-07-21T08:38:57Z"
     },
     {
       "name": "hostap",
