@@ -6,6 +6,7 @@ import hashlib
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, urlunparse
 from difflib import SequenceMatcher
+from collections import defaultdict
 
 from .classifier import classify_buckets, detect_vendor, detect_customer, detect_application, classify_standard
 
@@ -72,6 +73,22 @@ def _content_similarity(text1: str, text2: str) -> float:
     intersection = len(tokens1 & tokens2)
     union = len(tokens1 | tokens2)
     return intersection / union if union > 0 else 0.0
+
+
+def _title_block_keys(norm_title: str, vendor: str | None, customer: str | None) -> set[tuple]:
+    """Build lightweight blocking keys to limit fuzzy comparisons."""
+    tokens = norm_title.split()
+    keys: set[tuple] = set()
+    if tokens:
+        keys.add(("t1", tokens[0]))
+        if len(tokens) > 1:
+            keys.add(("t2", tokens[0], tokens[1]))
+        keys.add(("len", len(tokens) // 3))
+    if vendor:
+        keys.add(("vendor", vendor.lower()))
+    if customer:
+        keys.add(("customer", customer.lower()))
+    return keys
 
 
 def process(
@@ -157,11 +174,15 @@ def process(
         })
     
     # Second pass: semantic/content-based dedup (fuzzy matching)
-    # Keep newer/better articles when near-duplicates are found
+    # Keep newer/better articles when near-duplicates are found.
+    # Use blocking keys to avoid O(n^2) full-scan matching on large feeds.
     cleaned: list[dict] = []
+    block_index: dict[tuple, list[int]] = defaultdict(list)
     for candidate in candidates:
         title = candidate["title"]
         summary = candidate["summary"]
+        norm_title = _normalize_title(title)
+        title_tokens = set(norm_title.split())
         
         # Check content fingerprint (catches rewrites of same news)
         fp = _content_fingerprint(title, summary)
@@ -172,7 +193,31 @@ def process(
         # Fuzzy match against existing articles: if >75% title match OR >75% content match
         # with a more recent/better source, skip
         duplicate_found = False
-        for existing in cleaned:
+        keys = _title_block_keys(norm_title, candidate.get("vendor"), candidate.get("customer"))
+        compare_indices: set[int] = set()
+        for k in keys:
+            compare_indices.update(block_index.get(k, []))
+
+        # If no block hit, compare only with a small recent window as fallback.
+        if compare_indices:
+            pool = sorted(compare_indices)
+        else:
+            start = max(0, len(cleaned) - 30)
+            pool = list(range(start, len(cleaned)))
+
+        for idx in pool:
+            existing = cleaned[idx]
+            existing_norm = existing.get("_norm_title") or _normalize_title(existing["title"])
+            existing_tokens = existing.get("_title_tokens") or set(existing_norm.split())
+
+            # Fast pre-check: skip expensive fuzzy match when token overlap is minimal.
+            if title_tokens and existing_tokens:
+                inter = len(title_tokens & existing_tokens)
+                union = len(title_tokens | existing_tokens)
+                token_overlap = inter / union if union else 0.0
+                if token_overlap < 0.15:
+                    continue
+
             title_sim = _title_similarity(title, existing["title"])
             # If same vendor and customer, be stricter (>85% match = duplicate)
             if (candidate.get("vendor") == existing.get("vendor") and
@@ -205,9 +250,19 @@ def process(
         
         if not duplicate_found:
             seen_fingerprints.add(fp)
+            candidate["_norm_title"] = norm_title
+            candidate["_title_tokens"] = title_tokens
             cleaned.append(candidate)
+            new_idx = len(cleaned) - 1
+            for k in keys:
+                block_index[k].append(new_idx)
         else:
             filtered_count["semantic_dup"] += 1
+
+    # Remove internal helper fields before returning.
+    for a in cleaned:
+        a.pop("_norm_title", None)
+        a.pop("_title_tokens", None)
     
     # Decode Google News tracking URLs to direct source URLs BEFORE classifying
     # standards / applying the cap. Official standards-body links arrive as
