@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T13:32:42Z",
+  "generated_at": "2026-07-22T13:33:39Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,18 +3709,21 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 40,
-    "Renesas": 22,
-    "Qualcomm": 10,
-    "Espressif": 9,
+    "Microchip": 65,
+    "Onsemi": 31,
+    "Synaptics": 25,
+    "Murata": 12,
+    "Espressif": 10,
+    "Qualcomm": 7,
+    "STMicro": 6,
+    "Realtek": 4,
     "MediaTek": 3,
     "NXP": 3,
-    "Microchip": 3,
-    "Realtek": 2,
-    "STMicro": 2,
-    "Infineon": 2,
+    "Broadcom": 3,
+    "TI": 2,
     "Nordic": 1,
-    "u-blox": 1
+    "Infineon": 1,
+    "Airoha": 1
   },
   "standards_in_flight": [
     {
@@ -3801,30 +3804,9 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3832,
+      "issues_open": 0,
       "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15965,
-      "pushed_at": "2026-07-22T13:16:39Z"
+      "releases": []
     },
     {
       "name": "ESP-IDF",
@@ -3837,113 +3819,9 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1647,
+      "issues_open": 0,
       "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18593,
-      "pushed_at": "2026-07-22T13:08:59Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2731,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        },
-        {
-          "tag": "v1.5.0.0",
-          "name": "v1.5.0.0 Release",
-          "published_at": "2025-11-17T22:07:57Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
-        }
-      ],
-      "stars": 8832,
-      "pushed_at": "2026-07-22T13:25:02Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240112,
-      "pushed_at": "2026-07-21T17:06:19Z"
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 84,
-      "issues_open": 166,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v2026.07.0",
-          "name": "OpenThread v2026.07.0",
-          "published_at": "2026-07-01T00:58:53Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
-        },
-        {
-          "tag": "v2026.06.0",
-          "name": "OpenThread v2026.06.0",
-          "published_at": "2026-06-01T01:01:04Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
-        },
-        {
-          "tag": "thread-reference-20250612",
-          "name": "Thread Reference 2025-06-12",
-          "published_at": "2025-09-16T18:13:38Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
-        }
-      ],
-      "stars": 3989,
-      "pushed_at": "2026-07-22T02:25:31Z"
+      "releases": []
     },
     {
       "name": "BlueZ",
@@ -3956,62 +3834,9 @@
       "commits_30d": 39,
       "issues_open": 105,
       "prs_open": 0,
-      "releases": [
-        {
-          "tag": "5.87",
-          "name": "5.87",
-          "published_at": "2026-07-07T16:41:14Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
-        },
-        {
-          "tag": "5.86",
-          "name": "5.86",
-          "published_at": "2026-02-09T21:27:33Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
-        }
-      ],
+      "releases": [],
       "stars": 1106,
       "pushed_at": "2026-07-21T20:09:05Z"
-    },
-    {
-      "name": "Zigbee2MQTT",
-      "owner": "Koenkk",
-      "repo": "zigbee2mqtt",
-      "label": "Zigbee gateway",
-      "tech": [
-        "ieee15_4"
-      ],
-      "commits_30d": 27,
-      "issues_open": 463,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "2.12.1",
-          "name": "2.12.1",
-          "published_at": "2026-07-01T06:04:12Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
-        },
-        {
-          "tag": "2.12.0",
-          "name": "2.12.0",
-          "published_at": "2026-06-09T19:08:29Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
-        },
-        {
-          "tag": "2.11.0",
-          "name": "2.11.0",
-          "published_at": "2026-06-01T18:41:53Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
-        }
-      ],
-      "stars": 15326,
-      "pushed_at": "2026-07-22T12:15:41Z"
     },
     {
       "name": "NimBLE",
@@ -4029,12 +3854,64 @@
       "pushed_at": "2026-07-21T08:38:57Z"
     },
     {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
       "name": "hostap",
       "owner": "ihewitt",
       "repo": "hostap",
       "label": "wpa_supplicant / hostapd Wi-Fi",
       "tech": [
         "wifi"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
+      "name": "Zigbee2MQTT",
+      "owner": "Koenkk",
+      "repo": "zigbee2mqtt",
+      "label": "Zigbee gateway",
+      "tech": [
+        "ieee15_4"
       ],
       "commits_30d": 0,
       "issues_open": 0,
