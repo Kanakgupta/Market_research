@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T13:28:50Z",
+  "generated_at": "2026-07-22T13:32:42Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,18 +3709,18 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 17,
-    "Broadcom": 13,
-    "Microchip": 11,
-    "NXP": 11,
-    "STMicro": 7,
-    "Synaptics": 7,
-    "TI": 4,
-    "Silicon Labs": 2,
-    "Onsemi": 2,
-    "Murata": 2,
-    "MediaTek": 1,
-    "Realtek": 1
+    "Broadcom": 40,
+    "Renesas": 22,
+    "Qualcomm": 10,
+    "Espressif": 9,
+    "MediaTek": 3,
+    "NXP": 3,
+    "Microchip": 3,
+    "Realtek": 2,
+    "STMicro": 2,
+    "Infineon": 2,
+    "Nordic": 1,
+    "u-blox": 1
   },
   "standards_in_flight": [
     {
@@ -3863,21 +3863,6 @@
       "pushed_at": "2026-07-22T13:08:59Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240112,
-      "pushed_at": "2026-07-21T17:06:19Z"
-    },
-    {
       "name": "Matter SDK",
       "owner": "project-chip",
       "repo": "connectedhomeip",
@@ -3910,6 +3895,21 @@
       ],
       "stars": 8832,
       "pushed_at": "2026-07-22T13:25:02Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240112,
+      "pushed_at": "2026-07-21T17:06:19Z"
     },
     {
       "name": "OpenThread",
