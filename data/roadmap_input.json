@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T13:33:39Z",
+  "generated_at": "2026-07-22T16:27:43Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,21 +3709,17 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Microchip": 65,
-    "Onsemi": 31,
-    "Synaptics": 25,
-    "Murata": 12,
-    "Espressif": 10,
-    "Qualcomm": 7,
-    "STMicro": 6,
-    "Realtek": 4,
-    "MediaTek": 3,
-    "NXP": 3,
-    "Broadcom": 3,
-    "TI": 2,
+    "Qualcomm": 38,
+    "Espressif": 7,
+    "MediaTek": 6,
+    "Apple": 3,
+    "Microchip": 3,
+    "Realtek": 2,
+    "STMicro": 2,
     "Nordic": 1,
     "Infineon": 1,
-    "Airoha": 1
+    "NXP": 1,
+    "Silicon Labs": 1
   },
   "standards_in_flight": [
     {
@@ -3796,6 +3792,19 @@
   ],
   "github_stack_activity": [
     {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3803,7 +3812,20 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 100,
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
+    },
+    {
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 0,
       "issues_open": 0,
       "prs_open": 0,
       "releases": []
@@ -3818,40 +3840,10 @@
         "bluetooth",
         "ieee15_4"
       ],
-      "commits_30d": 100,
+      "commits_30d": 0,
       "issues_open": 0,
       "prs_open": 0,
       "releases": []
-    },
-    {
-      "name": "BlueZ",
-      "owner": "bluez",
-      "repo": "bluez",
-      "label": "Linux BT stack",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 39,
-      "issues_open": 105,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 1106,
-      "pushed_at": "2026-07-21T20:09:05Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 17,
-      "issues_open": 274,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 879,
-      "pushed_at": "2026-07-21T08:38:57Z"
     },
     {
       "name": "OpenThread",
@@ -3880,10 +3872,10 @@
       "releases": []
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
+      "name": "hostap",
+      "owner": "ihewitt",
+      "repo": "hostap",
+      "label": "wpa_supplicant / hostapd Wi-Fi",
       "tech": [
         "wifi"
       ],
@@ -3893,10 +3885,10 @@
       "releases": []
     },
     {
-      "name": "hostap",
-      "owner": "ihewitt",
-      "repo": "hostap",
-      "label": "wpa_supplicant / hostapd Wi-Fi",
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
       "tech": [
         "wifi"
       ],
