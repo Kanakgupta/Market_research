@@ -13,6 +13,7 @@
 #>
 param(
     [int]$RunHourPacific = 6,
+    [int]$IntervalHours = 0,
     [switch]$RunNow,
     [switch]$RunNowIfStale,
     [int]$StaleHours = 8
@@ -77,6 +78,7 @@ function Write-StateSuccess {
         last_success_local = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss')
         stale_hours        = $StaleHours
         run_hour_pacific   = $RunHourPacific
+        interval_hours     = $IntervalHours
     }
     try {
         $state | ConvertTo-Json | Set-Content -Path $StateFile -Encoding UTF8
@@ -150,6 +152,12 @@ function Invoke-UpdateCycle {
 }
 
 Write-Log "update_loop started (daily at ${RunHourPacific}:00 Pacific). Root=$Root Python=$Python"
+if ($IntervalHours -gt 0) {
+    Write-Log "Interval mode enabled: run every ${IntervalHours} hour(s)."
+}
+else {
+    Write-Log "Schedule mode enabled: run daily at ${RunHourPacific}:00 Pacific."
+}
 
 if ($RunNow) {
     Write-Log 'RunNow requested - running one cycle immediately.'
@@ -167,9 +175,16 @@ if ($RunNowIfStale) {
 }
 
 while ($true) {
-    $secs = Get-SecondsUntilNextRun -hour $RunHourPacific
-    $when = (Get-Date).AddSeconds($secs)
-    Write-Log ('Next update at {0:yyyy-MM-dd HH:mm} local ({1:N1} h away, = {2}:00 Pacific).' -f $when, ($secs / 3600), $RunHourPacific)
+    if ($IntervalHours -gt 0) {
+        $secs = [int][math]::Max(60, $IntervalHours * 3600)
+        $when = (Get-Date).AddSeconds($secs)
+        Write-Log ('Next update at {0:yyyy-MM-dd HH:mm} local ({1:N1} h away, every {2}h mode).' -f $when, ($secs / 3600), $IntervalHours)
+    }
+    else {
+        $secs = Get-SecondsUntilNextRun -hour $RunHourPacific
+        $when = (Get-Date).AddSeconds($secs)
+        Write-Log ('Next update at {0:yyyy-MM-dd HH:mm} local ({1:N1} h away, = {2}:00 Pacific).' -f $when, ($secs / 3600), $RunHourPacific)
+    }
     Start-Sleep -Seconds $secs
     Invoke-UpdateCycle
 }

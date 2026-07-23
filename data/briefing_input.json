@@ -1,483 +1,478 @@
 {
-  "generated_at": "2026-07-23T13:10:25Z",
+  "generated_at": "2026-07-23T18:52:28Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Galaxy Watch 9 and Ultra 2 are the first Wear OS watches with 5 years of updates",
-      "url": "https://9to5google.com/2026/07/23/samsung-galaxy-watch-9-five-years-wear-os-updates/",
-      "source": "9to5Google",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Samsung is expanding the support timeline for its latest Galaxy Watch models, with Galaxy Watch 9 and Watch Ultra 2 getting 5 years of Wear OS updates."
-    },
-    {
-      "title": "Qualcomm Just Signed Deals With 3 Major Hyperscalers for AI Chips. Is This the \"Hidden\" AI Stock Wall Street Keeps Overlooking?",
-      "url": "https://www.fool.com/investing/2026/07/23/qualcomm-just-signed-deals-with-3-major-hyperscale/",
-      "source": "The Motley Fool",
-      "date": "2026-07-23",
-      "vendor": "Qualcomm",
-      "customer": "Microsoft",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Since the advent of modern-day artificial intelligence platforms, Nvidia (NVDA +2.39%) has been the chip provider of choice thanks to its dominance in data center graphics processing units (GPUs). Even computing powerhouses like Intel and Advanced Micro Devices were on the fringe of the market. Mobi"
-    },
-    {
-      "title": "Is Apple Stock a Buy Right Now?",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE11UGFBZV9melJDWWR3UmhRMjFkbE1EMWl3el8xVXNiQUlReFJjbTY0WHdrbG5WRElYMGU2Sm1ydGhYU2Z5SjRRc1d4N2owenZFN2toVk9hZFoxeUppODRBMHJsNmJfbWg4R0VyUnZuQURjMEFXYzRnZFhYTkNlZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "The Motley Fool",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Sony FX5 Cinema Camera Launched With 5K Open Gate, Internal RAW Recording and AI Autofocus",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9nM052clFOSUJGMF8tWUd4M2NkbDI5dG0zbURVZW5pbktVQ2hpZHU2UVNKOTV6RjYxQzZNTjZ1RXY5T0w0NjZhMXhmVUJFS0R1cWdoU0RZdXdMc25FVGVCODFB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Techgenyz",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Google Just Revealed the Cost of Winning the AI Race",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPS3BzYWZHeVRNRXZiQ3NVUFB3VkhtNmlMVnphYjgtODdwb2NBQ2RFZTd2NWNqa08zLUp5ek1BMEQ0eWVXVDk5TGx6Sm16ZlA5c0lGTHZ1dlVtRUtVMXZTWkJSSFBNZ3RMM3hZSDVfalFCVFM4cGstQjVvQjd6SlFRZWYtZ2VvcUJkUmZlYndNZVhPUktYa05tRkJ4eVI1S1p2TmdSa1plaldNaXoyb0N6MmJR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "inc.com",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "AI takes centre stage at Microsoft partner event",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObzFabDZMWGJZLXUyZUR3dUlxOEpoVHBzQ1VySnJkM3RtV2dwQ1F3VVR2ZDh5QXA4X0diaWhySkFVTkY1My1zM201QWQyVGM2SGdIWjliRXdXeHo3UVZETk9TWlB6Ni0tcmNRQldGbXV4OVVKSlQxejluQThReFJjN0RoZWFlajBWR2tRNVA0YUhtOWRwenBHQmRPNlR6VjBfTkczTFQ5V3o?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Computer Weekly",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Apple defied a global PC sales slump in Q2 2026 thanks to MacBook Neo",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPYThCcmtFWkJiQWxoSXdibjlma2h6c0pZLTNnYkRHOGs3V1RIS1FFWFJ6aFFxQnpiS3NFcnNPdGpBTndQYVlMWlJOMk9XTnZ4Vnl0bUoxYkRkT2M1emluekxpazk4RjgwczVaUm13UGxfSUtCMmRYMUVQX0lPdndEbUx6LTRCRWdTN2dvQXczR2hqdkZ5MTlyMWZEcmlXUmJfMTJVc0M5dDVOWEFiU000ZE5B?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "AppleInsider",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Google fined \u20ac460M for preferencing own services by European regulator",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQSkJqRlJuMUJZc1UzMTVEQV9tajB2b0s2NkRuMWRLbEFUQUpQY0ZFbUVXMGYtSnBfYWJIaHhNVXFCeHp1aGQ0Zkd2MkVtVkxfWXljNTU1NVY2ZDlxbm5QcFJyV3c4SllxUUhydXhUeWdnVmpVS2cta1JmQ3JkUkxEUnBlbEVjc1lRVEJ4WDZfMkl1cnc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "PhocusWire",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Google will now let users sign into accounts with a selfie video",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVzdLUi1CSUtsMnZMSEtETzlmR1pLYjFJaVJRRmp5UEF2dnhhZEdLM1o2LXU1TVQ0UHV0aTdRUVFNNlhUaUtPYVdTVWFBbWlUOEkyTWg5aDhHLUw4SXZOMUxIWHNNNzRDd0RFY3FHZlFqNWhsWUIyUHBNbXA2U2k3blJnTHl1UTV1YW9HX2p5b2VnVzZhS2s4cy1nSDUzeElWNG0zVWdR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "The Seattle Times",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Google Review Not Posted - Content Not Posted Email Notice",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB2UEdqYVVfb05xT0QtbDRwQ3VHYkRyRXZ0SWMyWndqTm44UlZmb2gwVmd3a3VHM1lRTnRwUkxrRTFYVlZ0XzFmeGZrSWwzaXp1YUlOVjlkSG9Pemg2RUtMRkhLaU5OTWZxQTNNeTh5aFJDVzlHRDRHTld3?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Search Engine Roundtable",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Google hit with $1B fine over Play Store, search",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNOFNPSkgwVWtxejl3UkNrSzRrcVhQdzVkU1lrOHoxZ2dMT0ttbUU4THVwdWF4Y1NQZUhGM3p6SDg0T2lkX2dYelN6WTVzcERLSGZoeWFDVHBlQ3JpZEJ0LUx4TE82azY1eVRPeWVnNTg5b05qZllpb1g1VEFZQWNsQ3F3U2RxWnBCQm9TYmpBM2prTmRWUUFVazJndVJMeEtHdWpJYXgzNy1CRlNldlY1cHlFLUZ6MHh00gHMAUFVX3lxTFBmN2J1LW9kbm1PU19BZnM5U2FmcmFCRDBYZWlnVkYwWXRKLVcxOVBld0pITnJacDdJRDlDZi1jUG5NVndvMFJsejlPUjJ2dmVPSXVPMTd4Zm5tZmRHaEk4MjY0SmU0MWExbXRleFJma2lidzB4Q0ZaQTNpS2RPSzdLa2pyUDdjYk1tX1d5UHp0dWtEOXZwM2VTQl9CVV9BamZGLXMwTkpHbE1fX3VTSG00cWdLeFJwNW1OUnJTOFdvQXF3T0tRc184NGZlYg?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Boston 25 News",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Alphabet and Tesla shares slide in extended trading following results",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPeXMxSHJSbXRRUVB2ZjJGOW96bGZ1TWpGOWxtRkhNYjNqd1FIWmpVTlZ0ZDhKRG5tUFV1WlBhUE1KRmJEUjdqbVBBVEhjYUtRS1dyM3ZkWXJFN2JuMG5PQ1FYUzBaUXhxS1VJejJUbGUzY21sV28wU1Q4NU9yRkFmV2hTQ2haVVJhaFNSRlROWUwxNFEwOVNwOThSX2UydVFmZ1Z4RlhERTBlaEU1TnBSMUt3?oc=5",
-      "source": "CNBC",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "EU slaps Google with a $1 billion antitrust fine",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZ3I0cEVyQncwTklfcmU5VlAyQVBfYUIwdUVrV3pVVi1ORHhKTW1CR1h0c1ZpT0NWNFZxX1dNLWlVTFZ0NDU0WDFQbDZDVFEyUmxnWGk2MWNsZjFDZzVKUDR2UmxvZUxLRjM1YW1WYTZ4NjJvZUpoUXFVUDY1TURWR1pYMUNPUUxkSUREM3JGcUhiVVlH?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "AppleInsider",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Android Auto rolling out upgraded WhatsApp support",
-      "url": "https://9to5google.com/2026/07/23/whatsapp-android-auto-upgrades/",
-      "source": "9to5Google",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Meta",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Meta has confirmed a revamped experience for WhatsApp on Android Auto and CarPlay, delivering better support for drivers behind the wheel."
-    },
-    {
-      "title": "Oppenheimer Issues Stark Message on Microsoft Stock Ahead of Ear",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOelY2bDFRUlJmNFZWc1J4YmlCcHJKZnVPWHU4YzU2MHpBMVJYNHdtb1hsU0tTbW1BSllmSWRkS05DMW51eXg4eWN3Q0Z2dUNtdEFVWWZJV2NLTjlKVnZNb1h0NkVHeW5fZHNaZUo5RDhCOFlNU1dTWTZVLWg4MnYyd1dkcU5YeGZxM1FRYjFsVjlVOWtobE5JWVNOMDMxOWFUQlJhNVE3SkVrTzVV?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "GuruFocus",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Sony Knew Killing Discs Would Be 'An Enormous PR Issue' and Had 'Strictest' Guidelines to Gag Staff From Commenting on Controversy, Former God of War Dev Claims",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQS21JelpyYnRycmhaR1lPY3ZHY1lGc1MycGhFR05tdEJ1RWY5Rm5oaEU5aGhTN25qeGJsczBDdDM2U2dqb0VKalVQZWhvRUU2RGlDenFfWTNZeTBpNnhEa3pnbXNQdW96ZS10QUFzZk1nMEtYQ0szdDVnQldoaXZDOFRiZmVNeDBGMzhNbHp2dG9VZzVnUG55VGtxdFhQVTF1UmtTSGdsNWg2ZWtKeUljVnNvbWUtQzRWMHhqVzRLUXkzbWZ3SFhjNW1zMGdCVFM1VFc0UnZNcFZza2JHN05Ua3Zn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "IGN Nordic",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Solver Earns Certified Software Designation for Non-Profit AI from Microsoft",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOV2o5S2oxV0pqX2tqN3hEMjE2azJSYlNHZV84V3M4MkpIQTJWSGhZRTFTOVhJOTdCb1NqekhMbmw1MmVNblA2VFphTU1qeUwtQl82SHREVDhYakpwY0o2ZDlQZ1pmakktc2VqQlhBQWo4blhteEpZOXVJcDBscDRtTktYQ0ptUFZ6anAwQjRrWjlSWXZBbjNz?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Yahoo Finance Singapore",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Bad News for Google and Tesla Is Good News for Chips and Data Centers",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOVZRRUNSRVhGRzQ3cmNjVkltZndvYTYzaEZCaFYwRXZjdEZRdElFc3FZbkJXVWNOYUE5RlB2bWZHNXBVRVR1M0hZVGdKQVBnTDdQVWpfdnA0X3Zzcm9pYk5sMzNGczd0WFpmbmZLbzEtdGJEMGZVQ0Y2aEtLU2dyTS1TUEs1R2dNdDFSWTg1elZMZjVGN0FUa0h0V0lDLW9ITEtsb3NIYVNQOTlCcXlXR0psaw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "TheStreet Pro",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Google Ads API Version 25 Now Out",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE53LWpuVWF4VFkzb1lKLWZhTHA4OW90VnZmUjIxeFZIak9vTXo1V1BUdjdJTTNHbm9PMVR2NkY4VU0tU1pYM1RicHk2SEcxOHI5OWZsNGRzci13MmxTa0ZfbVQ3a3JMNldXVlh3?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Search Engine Roundtable",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "BYD, Tesla Close First Half of 2026 with Same European Market Share - eletric-vehicles.com",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNekY2OGNHamNacmxHbnAycWNpOVQ2cl9XZGpSUjRqZXQ5YmdHLTl3WmFXRDg3Yk1qRVJqNHpCc0E1MkIzZnp0SmJFQ0JkOXJpSkRqaXJYOEkzajhJenhjV2MySzA1OGFkVVY3SHRwMXR1YkhtOXVnbUtJel9BQ1VZTy1Ody1QM2M1YjJEeHVGeDdMdE5PS1hNbXhwMHc3bTk4TGc?oc=5",
-      "source": "eletric-vehicles.com",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Tesla",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Amazon has Apple\u2019s most affordable 2TB M5 Pro MacBook Pro at $300 off right now, more",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYUFqblIxRVcxU2lCSG1qYS1PMmk4TE13RFZmODA4ZnRneVdseXRMbDNfNVE3SFQwY09pbnRvYVNDYThmbkluUUd1OG5XN0NCaXZhZnRJZEs0bU5oSGxsYTNEbmNwWkp2S1MtcmZXNjM0Wnc3NEZFaEE3STdLOUxVNXFXZlBHY3ZrVzd4dQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "9to5Toys",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Wetour Robotics joins Qualcomm partner network program By Investing.com",
-      "url": "https://ca.investing.com/news/stock-market-news/wetour-robotics-joins-qualcomm-partner-network-program-93CH-4748782",
-      "source": "Investing.com Canada",
-      "date": "2026-07-23",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "STMicroelectronics Posts Strong Q2 FY26 Results",
-      "url": "https://themachinemaker.com/news/stmicroelectronics-posts-strong-q2-fy26-results/",
-      "source": "Machine Maker",
-      "date": "2026-07-23",
-      "vendor": "STMicro",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "STMicroelectronics (NYSE: STM), a global semiconductor company, reported strong financial results for the second quarter of 2026, supported by improving demand across key markets and continued momentum in automotive, consumer electronics, and artificial intelligence (AI) infrastructure. The company "
-    },
-    {
-      "title": "\"Sony already knew everyone would be pissed off,\" former God of War Laufey dev says, so it started enforcing the \"strictest social media guidelines\" after announcing the end of PlayStation discs",
-      "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxOWVJ5b3VKMk9BR0hsd3JKdVREeE5qY3F0b1BKOU4ybkNubHJ6YkdGeTRWSEIwRXdLRzJYbGpxNmZlaGUzQk5hV3dyMThwWEc4cGFpZXhDY2lxNlhjRTJ5MlBha1lmRkNvVkg1Tkxrd1JTVXJza2hVaGRWRUVnR0xuYzNEWnBBcm10R1dSZ013NHU5aWUwZ2FFcWNNekpaenM0RmY3Y3pybU91WDIzaUs3cjlzLTFXWXNVSGtmT3ZzUDR5SHlVQ0tPZS1xY1B5ZGliZnRvbmxjT19RenJUby1zbnF1d1YyeEh0WjllQTJ5cXVlNFF6NG8xdlIwRXlJYWtrRlVPTDNKa0hqeWVTdG5tT2ozZEVteWRNbG9zYXpDczVJTTMyVlFBN3hROTNEY2tXeWVTWnpXaTJnUUt0RXl2THNPOVY?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "GamesRadar+",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Google\u2019s AI Spending, Rising Oil Prices Spell Trouble for Stocks",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1hR1liR1VjcnJDYkt0UFNwVm10cGpZV2pkc0NZaFpBSnVHQ2M2MkhaRG01U1k5Y2hLbURVWmVCVzNwbW5VTHlFUk9Fd1k1V0g3Um5jdU1yQTFjZGFkRTZTYjcwanE2T3A4TDN2SzJJUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Barron's",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Andy Jassy's Amazon Trades at $244. The Stock Is Down 11% From Its 52-Week-High, Despite AWS Growing 28% in Q1.",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNazBpNXdEcFJXZ3JFVmVUWVpsc0x1R3lXb1FFNVdxcWJEaXJSYjdybHpTUVhGSU1QSlI2NkpMZklLMDdYT2dpNy1lZE8xNlFtMVl6eHV5QTNvbEhvZkJSeVRaVVRxbDduNlpjV1E1QzB5M3RkVlppaW1DRHJQV2tlcUZFdldPTnpHWndpYVNTWkdjX3VWS2RSeUZR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Yahoo Finance",
+      "title": "These 3 Fire TV Sticks are on sale at Best Buy",
+      "url": "https://www.zdnet.com/article/fire-tv-stick-deals-best-buy-black-friday-in-july/",
+      "source": "here's the one I recommend (and why)",
       "date": "2026-07-23",
       "vendor": null,
       "customer": "Amazon",
-      "application": null,
+      "application": "Smart Home",
       "buckets": [],
-      "summary": ""
+      "summary": "Fire TV Sticks are back down to all-time low prices for Best Buy's Black Friday in July sale. We'll break down just how good of a deal you can get."
     },
     {
-      "title": "Alphabet, Tesla, IBM, Texas Instruments, and More Stocks That Explain Today\u2019s Market",
-      "url": "https://www.barrons.com/articles/stock-movers-1532f3cd",
-      "source": "Barron's",
+      "title": "AegisAI, founded by former Google security execs, lands $36M to stop AI-driven spear phishing",
+      "url": "https://techcrunch.com/2026/07/23/aegisai-founded-by-former-google-security-execs-lands-36m-to-stop-ai-driven-spear-phishing/",
+      "source": "TechCrunch",
       "date": "2026-07-23",
-      "vendor": "TI",
+      "vendor": null,
       "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "The Series A was led by Battery Ventures, bringing AegisAI total funding to $49 million."
     },
     {
-      "title": "Apple Quietly Drops AirPods 4 Back to Prime Day Level Pricing on Amazon, No Need to Buy Budget Earbuds",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNdWQwZFVVYUpnNkZFLV91N0ZuNFB1ZXNwend4LW45SEl6d0dxTE1hSUMyYWQ1a0RhN0otWmdIdFdYaUkxOFhoQ3kyOGF3c0FwWGFHNDRQOHVKR1dWLWxNdVZiX2pZOER3UndzeGVwdnFvZ0h6eC0zdzNWTUZJREE3aWQ0YTVXdGlmV1BMWnBCcVVKOVBGLU1ZdEZxY3FkM21PbkI2WHFCS25ZYVFUR256WGtFZU5kQ2RITnh1a1d5VmVxc3EzdkdTclY4Zw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Kotaku",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Collision expands Apple campaign as it appeals denial of Samsung injunction",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMVMwazVJMjFBVHRQa21hWGZFUmNPQl9hVzI0RXhDWXBtbHRUUkpSUTZKeklEMEtidDhONmpVdEdtQUFIUnlKUHpHWWwwbUVMVUJET08xUzRaTllxYkdsZWhnai1RREVWT1ZHN3JCNjZsZnJZY3B0eFdmUUZ6R1hYRmZmZWVkVU9jNFdocWlmclI2QkhIZHZtQ1F1Uy16ajE2NDN6VkNXYkxGdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "IAM Media",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "BMW iX3 \u2013 Clean sheet",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0yT3NHNlJ4VzFROWJzdjJ1NkFXNnd2MnhvZHkzZExnQzdjUzN4ZERRbUg2RTFHdVFJemNfQ1dybUJDemEzeE4td0M0MWR0ZWxmWnhDZUUtVTB5RVdYeFoxZnZlVQ?oc=5",
-      "source": "Portugal Resident",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "BMW",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Tesla Accelerates in Europe to Fund its Costly AI Push",
-      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNdE1hdWFTaXpPa3hRNng2LUt5VGluNkRGanltZkdoUGY2OC1wMnpJak5oRnEyT3hId0lENHJqemUtMTQ2aktkcHh1SnhTR3FWbWFZS0tpdHZGZ1dla0V4V0FsTmczOHgzOGR5OXFNekdBUUFwbkFZUzNoSTMxbG04MUhiblFXMzV2VFVvOEItcWNFX1NoeFZ6cWhmdFNTdUo4WENVWjRqeXIzWjNsdFFpdVRVMDBxNjRmV1JHLTRhU2ZwSmRtcTA3VndNblF6akFoMUNjQjBHbzRhNmhyaG92M25zR09CajRsajZhbTB2ZTdHUUE?oc=5",
-      "source": "WSJ",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "Tesla",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "BMW iX1/iX2 Qualify for UK Electric Car Grant",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5IbFdULUdpRVpIMXE0Tk1GZDJsLUg5ZTg3UERPcy1Dc2dsaUdrQmN0aUw1cHZaQUhsZlJjeWNzNkpSeWdxeF8wZHdVcm50SXQzc194YldlTWhEbEs2dEh5MlphcFc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "The EV Report",
-      "date": "2026-07-23",
-      "vendor": null,
-      "customer": "BMW",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Do we need to worry about burn-in as Macs transition to OLED screens?",
-      "url": "https://9to5mac.com/2026/07/23/do-we-need-to-worry-about-burn-in-as-macs-transition-to-oled-screens/",
+      "title": "iOS 27\u2019s new Siri delivers in every single way I\u2019d hoped for",
+      "url": "https://9to5mac.com/2026/07/23/ios-27s-new-siri-delivers-in-every-single-way-id-hoped-for/",
       "source": "9to5Mac",
       "date": "2026-07-23",
       "vendor": null,
       "customer": "Apple",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Apple devices were long known for having some of the highest-quality LCD screens in the business, and that remains the case for today\u2019s MacBooks. The company upped the ante first through retina displays and then mini-LED backlighting. This is the reason Apple has been in no great hurry to adopt OLED"
+      "summary": "Siri AI launches this fall in iOS 27, and after more than a month using the beta, I can happily say the new Siri delivers in every way I\u2019d hoped for."
     },
     {
-      "title": "Wetour Robotics Joins Qualcomm Partner Network to Evaluate Dragonwing Technologies for Industrial and Embedded IoT Applications",
-      "url": "https://www.quiverquant.com/news/Wetour+Robotics+Joins+Qualcomm+Partner+Network+to+Evaluate+Dragonwing+Technologies+for+Industrial+and+Embedded+IoT+Applications",
-      "source": "Quiver Quantitative",
-      "date": "2026-07-23",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Wetour Robotics joins Qualcomm Partner Network to evaluate Dragonwing technologies for future industrial IoT applications using its Orchestra platform.\nQuiver AI Summary\nWetour Robotics Limited has joined the Qualcomm Partner Network\u2019s Industrial and Embedded IoT Track, which will allow the company "
-    },
-    {
-      "title": "Microsoft\u2019s original Xbox games on PC reportedly run through the Xbox 360\u2019s XeFu emulator",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdE5yUlphRFpPXy11MjJOejMxT3hIbExiV09SSTU5N2tSRXJ2Q0dXNTJoNV9ZaGVzNHR4clExQjlTWERLWnlnNGFWMzV6bjNWc2U0d2pDX2htS1lmMFAxa2t1dm5pb2h3SmptUTNydjNFejB4WUVKOVcxbjk4YlhPbkxYWE1PeXVnNXFBalRXbjUzRS15eWFnTnhDTnJsQ0RXSHNxOUlFSDVzMFdZTkVveUR0MTYxUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "VideoCardz.com",
+      "title": "Today\u2019s Android app deals and freebies: Can You Escape, Seoul Exorcist 1111, Unbroken Soul, more",
+      "url": "https://9to5toys.com/2026/07/23/today-android-app-deals-free-escape-seoul-exorcist-1111/",
+      "source": "9to5Google",
       "date": "2026-07-23",
       "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
+      "customer": "Samsung",
+      "application": "Automotive",
       "buckets": [],
-      "summary": ""
+      "summary": "Alongside the ongoing pre-order deals on Galaxy Z Fold 8, Fold 8 Ultra, and Flip 8 at up to $100 off with code PAYPAL, alongside FREE $200 credits, up to $1,230 off with trade-ins, we are now ready to collect all of today\u2019s best Android game and app deals. Highlights include Can You Escape: The Coll"
     },
     {
-      "title": "Money Matters | Amazon Prime, Novo Nordisk sues Eli Lilly, Paramount approval",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNcDVhaFlCVk5FTVdCMHh2OWgyYWpTZDdNTUpXSmdkSzZLWE9mbUxrZEpoMXJvWm5aUTZEMks0SlNlQ3k4cGg1UTNsOHdBR21fYm45OVM4QWM5Wm50a0NTb1ZmVENEZTRtN0Z0cjFTRV9wcEM2M3ZqV2hGMzdsMHJYTTZuUVpyelhmYjJCTnI0T0kzZzE1bFczbFpvOVIxbVp5SjRYNmpRdmRhcXQydWI3ejc4Q1Z0dHN5SnNDZ0NLRzZvYVZSdVROM0NOclhraXFHdEgzMUVhN3E4by1Ya1BaaUgyQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "KCENTV.com",
+      "title": "OpenAI relaunches Apple Health-connected ChatGPT feature with expanded access",
+      "url": "https://9to5mac.com/2026/07/23/openai-relaunches-apple-health-connected-chatgpt-feature-with-expanded-access/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "OpenAI is relaunching Health in ChatGPT, the AI-powered feature that connects to Apple Health on iPhone. The relaunch comes with expanded access and a big step forward in results."
+    },
+    {
+      "title": "Corsair\u2019s PC case with a panoramic glass design is $70 off",
+      "url": "https://www.theverge.com/gadgets/960331/corsair-frame-4500x-deal-pc-case-sale",
+      "source": "The Verge",
       "date": "2026-07-23",
       "vendor": null,
       "customer": "Amazon",
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "On the hunt for a PC case that\u2019s loaded with features and has a unique look? Amazon, Best Buy, and Corsair are selling the Corsair Frame 4500X RS for $119.99, a $70 discount from the usual price. The versatile case supports motherboards up to EATX, GPUs up to 460mm in length, and has a seamless [&#8"
     },
     {
-      "title": "Google Pixel 10 Pro Fold Immediately Drops by Hundreds to a Record Low After the Samsung Galaxy Z Fold 8 Launch",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNZ3FlNVhxQzA0S1dMSllTUXlNM1pzNk04WWNRaE1hZHo2NXlabXVMbzNCelJGbjJUZmZkSGVNWUdjTnNiRXd4VWVHdjFUYU82V0NlTTZPWm9MTzAwR2taSjhTZlhKX0wwNHhVd1hnSEc3VEpjVEdjVGgwcUdyM0pkT3hlb0tQQUZXblZ5UWZGWUR6bXZpRThYMmFDLUNJNHFQQWdlRzY3MVNGRFlwTGlEd0dVMEhSNkNCYTJib3pBdXRDUWZaN3YtUzlpZVpPM2h6alFoTFZEYndOQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Gizmodo",
+      "title": "Tesla\u2019s robotaxi promises are clashing with reality",
+      "url": "https://www.theverge.com/transportation/970003/tesla-robotaxi-mileage-waymo-cities-earnings-musk",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "In an earnings call yesterday, Tesla CEO Elon Musk did his best to paint a positive portrait of the company's robotaxi program. New cities are being added, more miles are being driven, and more people are experiencing Tesla's unsupervised vehicles. But Musk's typical bullishness seemed to be absent "
+    },
+    {
+      "title": "Google reduced Chrome for Android scroll jank by 48%",
+      "url": "https://9to5google.com/2026/07/23/chrome-android-scroll-jank/",
+      "source": "9to5Google",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Google today detailed how it reduced scroll jank in Chrome for Android by 48% between 2023 and 2026."
+    },
+    {
+      "title": "OpenAI is making big claims as it rolls out ChatGPT Health to everyone",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/970115/openai-chatgpt-health-launch-claims",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "OpenAI is rolling out ChatGPT Health to everyone in the US on Thursday, allowing more people to connect their medical records and health-tracking information to the chatbot. During a briefing, Ashley Alexander, OpenAI's vice president of health product, says the company's models \"are now capable of "
+    },
+    {
+      "title": "OpenAI makes ChatGPT Health available to all US users",
+      "url": "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/",
+      "source": "TechCrunch",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "Users can also integrate their personal data from services like Apple Health, Function, and MyFitnessPal."
+    },
+    {
+      "title": "Google hit with $1 billion in fines as EU braces for Trump battle",
+      "url": "https://arstechnica.com/tech-policy/2026/07/google-hit-with-1-billion-in-fines-as-eu-braces-for-trump-battle/",
+      "source": "Ars Technica",
       "date": "2026-07-23",
       "vendor": null,
       "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "Google becomes third tech giant to face huge fines under the Digital Markets Act."
     },
     {
-      "title": "Predicting Microvascular Invasion in HCC: What a New Meta-Analysis Reveals About MRI and Ultrasound",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQU081eEk5UVhBYk00VkUtMVBKamY0TU1WR2R3dmpBdmh0VzlXYThnQnpMN3Z3MTlsSlc1Y0k4bHYzRkZmdHNQT1pPQm1oYkZ6eDIxSFd1RHlYX09EaVgyUm5vMF9FMTJoV1RWc0VqblliM3QwaU9HX0dqWTRINGs4SWZ1UEVTTmt3RFFZRndDTEJadEdqdzZPX1JfT2gzT09FdnJabUw4dHByeTdUV0E?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "diagnosticimaging.com",
+      "title": "Amazon puts Luna cloud-streamed games like Fallout 4 inside Prime Video",
+      "url": "https://www.theverge.com/streaming/970099/amazon-prime-video-luna-gaming",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "The new strategy that Amazon gaming exec Jeff Gattis talked to The Verge about last month is getting clearer now that Prime Video has added a new Games tab on Fire TV devices. With Prime Gaming, Amazon Game Studios, and Luna now combined into one organization, it's aiming at the more casual audience"
+    },
+    {
+      "title": "Tesla\u2019s robotaxis are moving in reverse",
+      "url": "https://techcrunch.com/2026/07/23/teslas-robotaxis-are-moving-in-reverse/",
+      "source": "TechCrunch",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The number of paid robotaxi miles traveled fell 36% in the second quarter, despite expanding to new cities, according to Tesla's own figures."
+    },
+    {
+      "title": "Meta launched a new AI optimism ad set to a song about human extinction",
+      "url": "https://techcrunch.com/2026/07/23/meta-launched-a-new-ai-optimism-ad-set-to-a-song-about-human-extinction/",
+      "source": "TechCrunch",
       "date": "2026-07-23",
       "vendor": null,
       "customer": "Meta",
-      "application": null,
+      "application": "AR / VR / XR",
       "buckets": [],
-      "summary": ""
+      "summary": "David Bowie's song \"Five Years,\" which Meta used in a supposedly inspiring advertisement, is about humans learning that they have five years left to live before the apocalypse."
     },
     {
-      "title": "The Video Diaries: Arlo Parks",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORmZWc2trUkJXclFHQnRaVGZZazRJUGNQblZKUlpOM2kwd251bkt6WmFkSXZiZkNFNjZrNjBxaHVtZmwyUGZWVE1FNUE0Y3lyTzdVRUYtcVpZUmgydE5uMldfaWFrMEF4QVB0dHJGdmhSdHZoZ1FmS0xtengyU3RaeGxqNV9yQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Ticketmaster Discover",
+      "title": "Sony's decision to ditch discs was practically inevitable, data shows",
+      "url": "https://arstechnica.com/gaming/2026/07/the-playstation-game-disc-was-dying-long-before-sony-pulled-the-plug/",
+      "source": "Ars Technica",
       "date": "2026-07-23",
       "vendor": null,
-      "customer": "Arlo",
+      "customer": "Sony",
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "Many gamers have been lamenting Sony\u2019s recently announced decision to halt sales of physical game discs in 2028. However, new data revealed by Circana analyst Mat Piscatella highlights how years of stark economic trends helped lead Sony to that decision.\nIn a social media thread Thursday morning, Pi"
     },
     {
-      "title": "Taiwanese tech giant tied to Apple plots $72M Houston expansion",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWkpmU0x4TFpEdW5uRi0zNXNrS3NUSG5vUXE1OG1uM2tlaTVpU3I0ZUs1blBpOFpTa2h5eU1ZWmtNeVlSbVBGUjd6c3VZQktVbU9rOE1fdGZIZ3E0enA5WlRDY1ViOTBJS0tyMFpRaTJsSGNHWlFtTG93N01zWk9uNU55MzAwSUpKbFNVVHN3d0x3emN0UHFHeA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Chron",
+      "title": "Apple announces The Morning Show is ending after season 5",
+      "url": "https://9to5mac.com/2026/07/23/apple-announces-the-morning-show-is-ending-after-season-5/",
+      "source": "9to5Mac",
       "date": "2026-07-23",
       "vendor": null,
       "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple just announced that one of Apple TV\u2019s first ever original series, The Morning Show, will be ending after season 5. Here are the details on the final season of The Morning Show."
+    },
+    {
+      "title": "Millions of California-bought cars can be hijacked via Bluetooth",
+      "url": "https://www.theregister.com/security/2026/07/23/millions-of-california-bought-cars-can-be-hijacked-via-bluetooth/5277315",
+      "source": "The Register",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": "Robotics",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Aftermarket dealer-installed KARR/SWDS security systems all use the same secure key, say UCSD researchers"
+    },
+    {
+      "title": "Samsung Galaxy Z Flip 8 vs. Z Flip 7: Is the new flip phone worth the upgrade?",
+      "url": "https://www.zdnet.com/article/samsung-galaxy-z-flip-8-vs-z-flip-7-unpacked-2026/",
+      "source": "ZDNet",
+      "date": "2026-07-23",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Smart Glasses",
+      "buckets": [],
+      "summary": "Comparing the Samsung Galaxy Z Flip 8 to the Z Flip 7 will largely come down to refinement and value for money."
+    },
+    {
+      "title": "Google just had its first negative cash flow quarter due to massive AI spending",
+      "url": "https://arstechnica.com/google/2026/07/google-just-had-its-first-negative-cash-flow-quarter-ever-due-to-massive-ai-spending/",
+      "source": "Ars Technica",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "Google continues to report big quarterly revenue, but its AI spending has skyrocketed."
+    },
+    {
+      "title": "iOS 27 gives Apple Photos a very useful feature I\u2019ve wanted for years",
+      "url": "https://9to5mac.com/2026/07/23/ios-27-gives-apple-photos-a-very-useful-feature-ive-wanted-for-years/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple Photos gets a variety of exciting upgrades in iOS 27, including a new feature that\u2019s long been on my wishlist: the ability to save a video frame as a photo."
+    },
+    {
+      "title": "Google will now let you sign in to your account with a selfie video",
+      "url": "https://techcrunch.com/2026/07/23/google-will-now-let-you-sign-in-to-your-account-with-a-selfie-video/",
+      "source": "TechCrunch",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "The tech giant says selfie videos give users more options to sign in if they're ever locked out or don't have access to their usual phone or computer."
+    },
+    {
+      "title": "Microsoft is testing free, ad-supported cloud gaming for Xbox Insiders",
+      "url": "https://www.theverge.com/games/969969/xbox-testing-ad-supported-streaming",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "Xbox Insiders can stream games from their libraries for free in ad-supported streaming sessions starting today. The free streaming sessions are limited to games you already own, and sessions are capped at one hour. However, ads will only play \"before sessions begin.\" It's also optional - you won't n"
+    },
+    {
+      "title": "Deals: Galaxy Fold 8/Ultra extra $100 off + FREE buds, Galaxy Watch 9 $230 off + Google Pixel Flex Dual charger 45% off, more",
+      "url": "https://9to5google.com/2026/07/23/deals-galaxy-fold-8-galaxy-watch-9-google-flex-charge/",
+      "source": "9to5Google",
+      "date": "2026-07-23",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "The Galaxy Z Fold 8, Fold 8 Ultra, and Flip 8 pre-order deals roll on today and you\u2019ll want to get in there while you can still score $100 cash discounts, plus up to $200 in FREE credit, or as much as $1,230 off with trade-ins. We have detailed how to score FREE $250 set of Galaxy Buds 4 Pro with yo"
+    },
+    {
+      "title": "I briefly tried Gemini Intelligence, and I\u2019m still not sure who it\u2019s for [Video]",
+      "url": "https://9to5google.com/2026/07/23/i-briefly-tried-gemini-intelligence-and-im-still-not-sure-who-its-for/",
+      "source": "9to5Google",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "With the launch of the Galaxy Z Fold 8, Samsung is also shipping the first phones with Gemini Intelligence. I managed to get it working briefly, but I can\u2019t see why it solves for most people."
+    },
+    {
+      "title": "Deals: M5 Pro MacBook Pro $320 off, Series 11 from $299, AirPods Pro 3, Satechi 25W MagSafe stand 40% off, more",
+      "url": "https://9to5mac.com/2026/07/23/deals-macbook-pro-series-11-airpods-25w-magsafe/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Audio / Speaker",
+      "buckets": [],
+      "summary": "The Black Friday in July Apple deals roll on with discounts on AirPods Pro 3 and $100 off AirPods Max 2, as well as the lowest price to date on the new AirTag 2 \u2013 we have collected everything for you right here. But 9to5Toys Lunch Break is headlined by Apple\u2019s most affordable 2TB M5 Pro MacBook Pro "
+    },
+    {
+      "title": "Google introduces new \u2018selfie video\u2019 sign-in method",
+      "url": "https://9to5google.com/2026/07/23/google-account-selfie-video/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Google Accounts are gaining a new \u201cselfie video\u201d sign-in method that can be handy if you lose your phone or passkeys."
+    },
+    {
+      "title": "9to5Mac Daily: July 23, 2026 \u2013 \u2018Apple Upgrade\u2019 program coming soon",
+      "url": "https://9to5mac.com/2026/07/23/daily-july-23-2026/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple\u2019s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overcast and other podcast players. Sponsored by Backblaze: Backup you can rely on. Save 20% with code 9to"
+    },
+    {
+      "title": "The new Halo remake is a reminder of what Xbox used to be",
+      "url": "https://www.theverge.com/entertainment/969563/halo-campaign-evolved-review-xbox-ps5-pc",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "It's impossible to talk about a new Xbox game without also talking about the state of Xbox. Microsoft's gaming division is in freefall: Recent headlines are dominated by extensive layoffs, decimated studios, and confusing strategies, most of which stem from years of bad decisions and expensive acqui"
+    },
+    {
+      "title": "Amazon\u2019s best 4K streaming sticks are up to 40 percent off",
+      "url": "https://www.theverge.com/gadgets/969615/amazon-fire-tv-stick-4k-plus-4k-max-anker-zolo-deal-sale",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "There&#8217;s no shortage of great shows and movies to watch, but discovering something new isn&#8217;t always easy. Amazon&#8217;s Fire TV Stick 4K Plus and Fire TV Stick 4K Max come with redesigned software that aims to make it easier to finding something you\u2019ll like, and both 4K-ready streaming s"
+    },
+    {
+      "title": "Google\u2019s Gemini nears billion-user milestone",
+      "url": "https://techcrunch.com/2026/07/23/google-closes-in-on-another-billion-user-product-with-gemini/",
+      "source": "TechCrunch",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Google is about to add another name to its long list of products with more than a billion users, a list that already includes Search, Gmail, Drive, Android, YouTube, and Chrome. The company said during its Q2 2026 call that the AI assistant Gemini now has over 950 million monthly users.\nThe company "
+    },
+    {
+      "title": "Amazon is bringing games to Prime Video",
+      "url": "https://techcrunch.com/2026/07/23/amazon-is-bringing-games-to-prime-video/",
+      "source": "TechCrunch",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Amazon is hoping the addition of games can turn Prime Video into a one-stop entertainment destination, borrowing a strategy from Netflix, which has increasingly embraced party games over the past several years."
+    },
+    {
+      "title": "Apple TV announces new dating series: \u2018The Last Person on Earth\u2019",
+      "url": "https://9to5mac.com/2026/07/23/apple-tv-announces-its-first-dating-series-the-last-person-on-earth/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Dating reality shows are a popular genre Apple TV has entirely avoided. And while its newly announced series, The Last Person on Earth, is being billed as a \u201cdocumentary series\u201d rather than \u201creality,\u201d it\u2019s the streamer\u2019s first dating show nonetheless."
+    },
+    {
+      "title": "Amazon Luna lives on with dedicated tab in Prime Video app",
+      "url": "https://9to5google.com/2026/07/23/amazon-luna-added-to-prime-video-app/",
+      "source": "9to5Google",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "After gutting the system that let players stream their own titles, Amazon is moving the Luna streaming service into Prime Video\u2019s residence."
+    },
+    {
+      "title": "Augmental MouthPad is a tongue-controlled touchpad/trackpad",
+      "url": "https://www.cnx-software.com/2026/07/23/augmental-mouthpad-tongue-controlled-touchpad-trackpad/",
+      "source": "CNX Software",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Wearable",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Check your calendar, everyone! It&#8217;s definitely not April 1st. Now that we have that out of the way, we can start with the main topic of this article. Ready? Augmental MouthPad is a Bluetooth HID device you put into your mouth and control like a touchpad or trackpad, but with your tongue (and h"
+    },
+    {
+      "title": "Google\u2019s official Pixel 67W charger is nearly half off right now, its best price ever",
+      "url": "https://9to5google.com/2026/07/23/googles-pixel-67w-charger-half-off-right-now/",
+      "source": "9to5Google",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "You don\u2019t have to hold off on grabbing Google\u2019s 67W dual-port USB-C charger anymore, because it\u2019s dropped to nearly $30."
+    },
+    {
+      "title": "How to use themes in Google Messages so you never text the wrong person again",
+      "url": "https://www.zdnet.com/article/how-to-use-themes-in-google-messages-so-you-never-send-the-wrong-person-the-wrong-text-again/",
+      "source": "ZDNet",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "You've probably had an occasion where you've sent the wrong response to the wrong person. I've found a way to avoid this problem."
+    },
+    {
+      "title": "Ford bets on Apple for its next-generation of EVs",
+      "url": "https://techcrunch.com/2026/07/23/ford-bets-on-apple-for-its-next-generation-of-evs/",
+      "source": "TechCrunch",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Ford is the first automaker to use a new set of developer tools that will let it embed Apple Maps navigation and mapping directly into its vehicles' infotainment systems."
+    },
+    {
+      "title": "Tesla burns through a billion as Musk bets the farm on chips and bots",
+      "url": "https://www.theregister.com/offbeat/2026/07/23/tesla-burns-through-a-billion-as-musk-bets-the-farm-on-chips-and-bots/5276944",
+      "source": "The Register",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "MOST POPULAR\nAI\n-\nSystems\nAMD attacks the rack with Helios systems that rival Nvidia's\nSpec for spec, the House of Zen's first rack-scale AI compute platform is bigger and faster than Nvidia's Vera Rubin by nearly every metric, but that's only on paper\n-\nDEVOPS\nModel Context Protocol prepares to bre"
+    },
+    {
+      "title": "iPhone Ultra timing remains unclear as \u2018final production adjustments\u2019 made",
+      "url": "https://9to5mac.com/2026/07/23/iphone-ultra-timing-remains-unclear-as-final-production-adjustments-made/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The exact launch timings of the iPhone Ultra remain unclear as a new supply chain report says that Foxconn is making \u201cfinal adjustments\u201d to the manufacturing process. It follows an earlier report stating that mass production had begun. Recent reports indicate that Apple will unveil the new folding i"
+    },
+    {
+      "title": "Apple Maps is becoming Ford\u2019s new navigation mode for select vehicles",
+      "url": "https://9to5mac.com/2026/07/23/apple-maps-is-becoming-fords-new-navigation-mode-for-select-vehicles/",
+      "source": "9to5Mac",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Today Apple announced a unique partnership with automaker Ford, which will bake Apple Maps into its upcoming Universal Electric Vehicle (UEV) Platform for navigation. Here are the details."
     }
   ],
   "vendor_news_30d": {
-    "STMicro": 45,
-    "Qualcomm": 29,
-    "Microchip": 13,
-    "Broadcom": 12,
-    "TI": 9,
-    "NXP": 6,
-    "MediaTek": 4,
-    "Renesas": 2,
-    "Bosch": 2,
-    "Synaptics": 1,
-    "Nordic": 1,
-    "Espressif": 1,
-    "Murata": 1
+    "Qualcomm": 27,
+    "Espressif": 6,
+    "MediaTek": 5,
+    "Microchip": 3,
+    "Nordic": 2,
+    "Realtek": 2,
+    "STMicro": 2,
+    "Apple": 2,
+    "Broadcom": 1,
+    "Infineon": 1,
+    "NXP": 1,
+    "Silicon Labs": 1
   },
   "customer_news_30d": {
-    "Samsung": 157,
-    "Google": 133,
-    "Apple": 109,
-    "Amazon": 90,
-    "Sony": 86,
-    "Tesla": 85,
-    "Microsoft": 69,
-    "Meta": 65,
-    "Garmin": 45,
-    "BMW": 33,
-    "Bose": 10,
-    "Xiaomi": 3,
-    "Arlo": 2,
-    "Aqara": 1,
-    "Sonos": 1,
-    "Volkswagen": 1,
-    "Huawei": 1,
-    "LG": 1,
-    "HKMC": 1
+    "Apple": 103,
+    "Google": 75,
+    "Samsung": 38,
+    "Amazon": 31,
+    "Microsoft": 11,
+    "Tesla": 6,
+    "Meta": 2,
+    "Sony": 2,
+    "Motorola": 2,
+    "HKMC": 1,
+    "BMW": 1
   },
   "github_pulse": [
     {
@@ -491,9 +486,30 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 0,
+      "issues_open": 1648,
       "prs_open": 0,
-      "releases": []
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18603,
+      "pushed_at": "2026-07-23T13:17:58Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -504,11 +520,113 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3856,
+      "issues_open": 3820,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15980,
+      "pushed_at": "2026-07-23T18:47:07Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 15977,
-      "pushed_at": "2026-07-23T09:53:41Z"
+      "stars": 240223,
+      "pushed_at": "2026-07-22T20:52:52Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2739,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        },
+        {
+          "tag": "v1.5.0.0",
+          "name": "v1.5.0.0 Release",
+          "published_at": "2025-11-17T22:07:57Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+        }
+      ],
+      "stars": 8837,
+      "pushed_at": "2026-07-23T18:52:05Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 85,
+      "issues_open": 157,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.07.0",
+          "name": "OpenThread v2026.07.0",
+          "published_at": "2026-07-01T00:58:53Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+        },
+        {
+          "tag": "v2026.06.0",
+          "name": "OpenThread v2026.06.0",
+          "published_at": "2026-06-01T01:01:04Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+        },
+        {
+          "tag": "thread-reference-20250612",
+          "name": "Thread Reference 2025-06-12",
+          "published_at": "2025-09-16T18:13:38Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
+        }
+      ],
+      "stars": 3990,
+      "pushed_at": "2026-07-23T18:23:57Z"
     },
     {
       "name": "BlueZ",
@@ -519,9 +637,64 @@
         "bluetooth"
       ],
       "commits_30d": 42,
-      "issues_open": 0,
+      "issues_open": 108,
       "prs_open": 0,
-      "releases": []
+      "releases": [
+        {
+          "tag": "5.87",
+          "name": "5.87",
+          "published_at": "2026-07-07T16:41:14Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
+        },
+        {
+          "tag": "5.86",
+          "name": "5.86",
+          "published_at": "2026-02-09T21:27:33Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
+        },
+        {
+          "tag": "5.85",
+          "name": "5.85",
+          "published_at": "2025-11-26T16:00:07Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
+        }
+      ],
+      "stars": 1108,
+      "pushed_at": "2026-07-23T16:17:43Z"
+    },
+    {
+      "name": "Zigbee2MQTT",
+      "owner": "Koenkk",
+      "repo": "zigbee2mqtt",
+      "label": "Zigbee gateway",
+      "tech": [
+        "ieee15_4"
+      ],
+      "commits_30d": 16,
+      "issues_open": 466,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "2.12.1",
+          "name": "2.12.1",
+          "published_at": "2026-07-01T06:04:12Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
+        },
+        {
+          "tag": "2.12.0",
+          "name": "2.12.0",
+          "published_at": "2026-06-09T19:08:29Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
+        },
+        {
+          "tag": "2.11.0",
+          "name": "2.11.0",
+          "published_at": "2026-06-01T18:41:53Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
+        }
+      ],
+      "stars": 15327,
+      "pushed_at": "2026-07-23T17:04:59Z"
     },
     {
       "name": "NimBLE",
@@ -532,37 +705,11 @@
         "bluetooth"
       ],
       "commits_30d": 13,
-      "issues_open": 272,
+      "issues_open": 273,
       "prs_open": 0,
       "releases": [],
       "stars": 879,
       "pushed_at": "2026-07-22T15:01:19Z"
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
     },
     {
       "name": "hostap",
@@ -571,32 +718,6 @@
       "label": "wpa_supplicant / hostapd Wi-Fi",
       "tech": [
         "wifi"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
-    },
-    {
-      "name": "Zigbee2MQTT",
-      "owner": "Koenkk",
-      "repo": "zigbee2mqtt",
-      "label": "Zigbee gateway",
-      "tech": [
-        "ieee15_4"
       ],
       "commits_30d": 0,
       "issues_open": 0,

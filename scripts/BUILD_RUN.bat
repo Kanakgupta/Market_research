@@ -4,7 +4,7 @@ REM  BUILD_RUN.bat
 REM  1) Start local server on http://localhost:5005
 REM  2) Start background updater:
 REM        - if last successful update is older than 8h, run now
-REM        - then run daily at 6 AM Pacific
+REM        - then run every 6 hours
 REM  3) Open local website UI in browser
 REM  4) Updater keeps looping forever and does:
 REM        - fetches the latest data
@@ -36,9 +36,9 @@ timeout /t 2 /nobreak >nul
 
 echo.
 echo ============================================================
-echo  STEP 2/4  Start background updater (8h stale check + daily 6 AM Pacific)
+echo  STEP 2/4  Start background updater (8h stale check + every 6 hours)
 echo ============================================================
-start "AIROC Update Loop" "%POWERSHELL%" -NoProfile -ExecutionPolicy Bypass -File "%ROOT%\scripts\update_loop.ps1" -RunHourPacific 6 -RunNowIfStale -StaleHours 8
+start "AIROC Update Loop" "%POWERSHELL%" -NoProfile -ExecutionPolicy Bypass -File "%ROOT%\scripts\update_loop.ps1" -IntervalHours 6 -RunNowIfStale -StaleHours 8
 
 echo.
 echo ============================================================
@@ -59,7 +59,7 @@ echo ============================================================
 echo.
 echo Done.
 echo OFF  - "IoT Local Server (5005)" serves docs on http://localhost:5005
-echo   - "AIROC Update Loop" runs now only if stale ^(older than 8h^), then daily at 6:00 AM Pacific
+echo   - "AIROC Update Loop" runs now only if stale ^(older than 8h^), then every 6 hours
 echo   - Each update cycle: fetch/build via run.py, then git add/commit/push
 echo OFF Refresh the browser tab after the updater logs "Cycle finished" to see latest HTML.
 echo Close the server/update windows to stop the long-running services.

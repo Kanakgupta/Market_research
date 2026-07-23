@@ -3,11 +3,12 @@ from __future__ import annotations
 
 import logging
 import os
+import random
 import re
+import time
 from datetime import datetime, timezone
 
 import feedparser
-import re
 import requests
 from dateutil import parser as dateparser
 
@@ -15,8 +16,17 @@ from .sources import all_feed_urls
 
 log = logging.getLogger(__name__)
 
-USER_AGENT = "IoTNewsAggregator/0.2 (+https://example.local)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/126.0.0.0 Safari/537.36"
+)
 REQUEST_TIMEOUT = 20
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+
+DEFAULT_MAX_WORKERS = 16
+DEFAULT_GOOGLE_MAX_WORKERS = 2
+DEFAULT_OTHER_MAX_WORKERS = 12
 
 _IMG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
 
@@ -69,54 +79,129 @@ def _extract_thumb(entry) -> str:
     return ""
 
 
-def fetch_rss() -> list[dict]:
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    
-    feeds = all_feed_urls()
-    articles: list[dict] = []
-    
-    def fetch_one(feed: dict) -> list[dict]:
-        name, url, bucket_hint = feed["name"], feed["url"], feed.get("bucket")
-        feed_articles = []
-        try:
-            resp = requests.get(url, timeout=REQUEST_TIMEOUT, headers={"User-Agent": USER_AGENT})
-            resp.raise_for_status()
-            parsed = feedparser.parse(resp.content)
-            for entry in parsed.entries:
-                published = _parse_date(
-                    entry.get("published") or entry.get("updated") or entry.get("published_parsed")
-                )
-                raw_title = (entry.get("title") or "").strip()
-                # Google News RSS: entry.source.title = real publisher (e.g. "The Verge")
-                src_obj = entry.get("source") or {}
-                publisher = (src_obj.get("title") or "").strip()
-                # Fallback: extract " - Publisher" suffix from title
-                if not publisher:
-                    m_pub = re.search(r" - ([^-]{3,60})$", raw_title)
-                    if m_pub:
-                        publisher = m_pub.group(1).strip()
-                display_source = publisher if publisher else name
-                feed_articles.append({
-                    "title":     raw_title,
-                    "url":       (entry.get("link") or "").strip(),
-                    "source":    display_source,
-                    "feed_name": name,
-                    "published": published,
-                    "summary":   (entry.get("summary") or "").strip(),
-                    "thumb":     _extract_thumb(entry),
-                    "bucket_hint": bucket_hint,
-                })
-            log.info("Fetched %d entries from %s", len(parsed.entries), name)
-        except Exception as exc:
-            log.warning("Failed to fetch %s: %s", name, exc)
-        return feed_articles
+def _is_google_feed(url: str) -> bool:
+    return "news.google.com" in (url or "").lower()
 
-    MAX_WORKERS = 30
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(fetch_one, feed): feed for feed in feeds}
+
+def _sleep_with_jitter(seconds: float) -> None:
+    jitter = random.uniform(0.0, 0.4)
+    time.sleep(seconds + jitter)
+
+
+def _fetch_url_with_retries(url: str, name: str) -> bytes:
+    is_google = _is_google_feed(url)
+    max_attempts = 5 if is_google else 3
+    base_backoff = 1.0 if is_google else 0.6
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
+    }
+
+    last_exc: Exception | None = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            resp = requests.get(url, timeout=REQUEST_TIMEOUT, headers=headers)
+            if resp.status_code in RETRYABLE_STATUS:
+                raise requests.HTTPError(
+                    f"{resp.status_code} Server Error for url: {url}", response=resp
+                )
+            resp.raise_for_status()
+            return resp.content
+        except (requests.Timeout, requests.ConnectionError, requests.HTTPError) as exc:
+            last_exc = exc
+            if attempt >= max_attempts:
+                break
+            # Exponential backoff reduces repeated rate-limited hits.
+            _sleep_with_jitter(base_backoff * (2 ** (attempt - 1)))
+
+    assert last_exc is not None
+    raise last_exc
+
+
+def _safe_int_env(name: str, default: int, minimum: int = 1) -> int:
+    raw = (os.getenv(name) or "").strip()
+    if not raw:
+        return default
+    try:
+        return max(minimum, int(raw))
+    except ValueError:
+        log.warning("Invalid integer for %s=%r; using default=%d", name, raw, default)
+        return default
+
+
+def _fetch_feed_articles(feed: dict) -> list[dict]:
+    name, url, bucket_hint = feed["name"], feed["url"], feed.get("bucket")
+    feed_articles = []
+    try:
+        content = _fetch_url_with_retries(url, name)
+        parsed = feedparser.parse(content)
+        for entry in parsed.entries:
+            published = _parse_date(
+                entry.get("published") or entry.get("updated") or entry.get("published_parsed")
+            )
+            raw_title = (entry.get("title") or "").strip()
+            # Google News RSS: entry.source.title = real publisher (e.g. "The Verge")
+            src_obj = entry.get("source") or {}
+            publisher = (src_obj.get("title") or "").strip()
+            # Fallback: extract " - Publisher" suffix from title
+            if not publisher:
+                m_pub = re.search(r" - ([^-]{3,60})$", raw_title)
+                if m_pub:
+                    publisher = m_pub.group(1).strip()
+            display_source = publisher if publisher else name
+            feed_articles.append({
+                "title": raw_title,
+                "url": (entry.get("link") or "").strip(),
+                "source": display_source,
+                "feed_name": name,
+                "published": published,
+                "summary": (entry.get("summary") or "").strip(),
+                "thumb": _extract_thumb(entry),
+                "bucket_hint": bucket_hint,
+            })
+        log.info("Fetched %d entries from %s", len(parsed.entries), name)
+    except Exception as exc:
+        log.warning("Failed to fetch %s: %s", name, exc)
+    return feed_articles
+
+
+def _fetch_concurrent(feeds: list[dict], max_workers: int) -> list[dict]:
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    if not feeds:
+        return []
+
+    articles: list[dict] = []
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(_fetch_feed_articles, feed): feed for feed in feeds}
         for fut in as_completed(futures):
             articles.extend(fut.result())
-            
+    return articles
+
+
+def fetch_rss() -> list[dict]:
+    feeds = all_feed_urls()
+    if not feeds:
+        return []
+
+    google_feeds = [f for f in feeds if _is_google_feed(f.get("url", ""))]
+    other_feeds = [f for f in feeds if not _is_google_feed(f.get("url", ""))]
+
+    max_workers = _safe_int_env("FETCH_MAX_WORKERS", DEFAULT_MAX_WORKERS)
+    google_workers = _safe_int_env("FETCH_GOOGLE_MAX_WORKERS", DEFAULT_GOOGLE_MAX_WORKERS)
+    other_workers = _safe_int_env("FETCH_OTHER_MAX_WORKERS", DEFAULT_OTHER_MAX_WORKERS)
+    # Ensure subgroup workers never exceed the global worker ceiling.
+    google_workers = min(google_workers, max_workers)
+    other_workers = min(other_workers, max_workers)
+
+    log.info(
+        "Fetching RSS feeds: total=%d google=%d other=%d workers(g=%d,o=%d)",
+        len(feeds), len(google_feeds), len(other_feeds), google_workers, other_workers
+    )
+
+    articles: list[dict] = []
+    articles.extend(_fetch_concurrent(other_feeds, other_workers))
+    articles.extend(_fetch_concurrent(google_feeds, google_workers))
     return articles
 
 
