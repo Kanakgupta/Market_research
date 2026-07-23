@@ -1,83 +1,326 @@
 {
-  "generated_at": "2026-07-22T18:15:50Z",
+  "generated_at": "2026-07-23T13:04:54Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "macOS 27 public beta 2 now available, here\u2019s how to install it",
-      "url": "https://9to5mac.com/2026/07/22/macos-27-public-beta-2-now-available-heres-how-to-install-it/",
-      "source": "9to5Mac",
+      "title": "If you get knocked on the head and get all your devices stolen and have amnesia, Google will let you back in with a selfie",
+      "url": "https://www.theregister.com/security/2026/07/23/if-you-get-knocked-on-the-head-and-get-all-your-devices-stolen-and-have-amnesia-google-will-let-you-back-in-with-a-selfie/5276669",
+      "source": "The Register",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "You'll need to be able to move your head side to side to make sure you're not a deepfake"
+    },
+    {
+      "title": "The best Wi-Fi routers of 2026: Expert tested and reviewed",
+      "url": "https://www.zdnet.com/article/best-wifi-router/",
+      "source": "ZDNet",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "The best Wi-Fi routers provide a strong internet connection, rapid speeds, and plenty of coverage for working, streaming, gaming, and more."
+    },
+    {
+      "title": "Should you replace a traditional Wi-Fi router with mesh? I compared the two, and here's my verdict",
+      "url": "https://www.zdnet.com/article/wifi-router-vs-mesh/",
+      "source": "ZDNet",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "Choosing between one access point and full-home internet coverage? Here's the verdict after extended testing."
+    },
+    {
+      "title": "We tested 15 Wi-Fi 7 routers in our lab",
+      "url": "https://www.zdnet.com/article/widest-coverage-wi-fi-7-routers-lab-tested/",
+      "source": "this one had the best coverage",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "'ZDNET Recommends': What exactly does it mean?\nZDNET's recommendations are based on many hours of testing, research, and comparison shopping. We gather data from the best available sources, including vendor and retailer listings as well as other relevant and independent reviews sites. And we pore ov"
+    },
+    {
+      "title": "Google hit with $1 billion fine for breaking EU antitrust rules",
+      "url": "https://www.theverge.com/tech/943866/google-alphabet-eu-dma-fine-search-services-play-store-steering",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "The European Union has fined Google's parent company Alphabet &#8364;890 million (about $1 billion) for two separate violations of the bloc's Digital Markets Act (DMA). One penalty is for giving its own products preferential treatment in search results, while the other is for blocking Android develo"
+    },
+    {
+      "title": "AIS-1000 AI Surveillance Station \u2013 A $3,640 NDAA and TAA-compliant AI box based on Raspberry Pi 5 and Hailo-8L",
+      "url": "https://www.cnx-software.com/2026/07/23/ais-1000-ai-surveillance-station-a-3640-ndaa-and-taa-compliant-ai-box-based-on-raspberry-pi-5-and-hailo-8l/",
+      "source": "CNX Software",
+      "date": "2026-07-23",
+      "vendor": "Broadcom",
+      "customer": "Amazon",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "If you feel like a cheapskate when purchasing a Raspberry Pi 5 16GB for only $305, there&#8217;s now a solution to avoid embarrassment. Meet the $3,640 AIS-1000 AI Surveillance Station, pairing a Raspberry Pi 5 with a Hailo-8L AI accelerator and a 1TB NVMe SSD, all housed in a metal enclosure. Jokes"
+    },
+    {
+      "title": "Google will let you upload a video selfie to recover your account",
+      "url": "https://www.zdnet.com/article/google-wants-you-to-upload-your-face-to-recover-your-account-but-should-you/",
+      "source": "but should you?",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Google's new account recovery option prompts users to upload a selfie to prove their identity. Here's what to know."
+    },
+    {
+      "title": "Google now lets you sign in to your account using a selfie video",
+      "url": "https://www.theverge.com/tech/969361/google-account-sign-in-selfie-video-security",
+      "source": "The Verge",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Google announced yet another way to gain access to your account if you get locked out, forget your password, or don't have access to the phone, computer, or two-factor authentication apps you typically use. As the name implies, selfie video lets you capture a short video of your face on a mobile dev"
+    },
+    {
+      "title": "Amazon's AGI department finds humans are optional",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/23/amazons-agi-department-finds-humans-are-optional/5276874",
+      "source": "The Register",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "AI remains its biggest bet, Bezos brigade tells El Reg, even as another round of layoffs reaches the teams building it"
+    },
+    {
+      "title": "UK pumps \u00a3708 million into its future fighter jet",
+      "url": "https://www.theregister.com/offbeat/2026/07/23/uk-pumps-708-million-into-its-future-fighter-jet/5276449",
+      "source": "The Register",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Tempest cash lands alongside hypersonic target contract and BAE's 'loyal wingman' drone reveal"
+    },
+    {
+      "title": "Icy Electronics nRF54L15 Discovery devboard integrates a snappable nRF52820 CMSIS-DAP debugger",
+      "url": "https://www.cnx-software.com/2026/07/23/icy-electronics-nrf54l15-discovery-devboard-integrates-a-snappable-nrf52820-cmsis-dap-debugger/",
+      "source": "CNX Software",
+      "date": "2026-07-23",
+      "vendor": "Nordic",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [
+        "ieee15_4",
+        "bluetooth"
+      ],
+      "summary": "The nRF54L15 Discovery is a compact wireless devboard with an onboard nRF52820 CMSIS-DAP debugger/programmer for Bluetooth LE, Thread, Zigbee, Matter, NFC, and other 2.4 GHz IoT applications. Its snap-apart design allows the target and interface MCUs to be used as two standalone boards. In the past,"
+    },
+    {
+      "title": "Talking smack about a doctor got him access to private medical files",
+      "url": "https://www.theregister.com/security/2026/07/23/talking-smack-about-a-doctor-got-him-access-to-private-medical-files/5276604",
+      "source": "The Register",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "Who needs a working security badge when you know how to talk your way into the records room?"
+    },
+    {
+      "title": "Tesla earnings, Amazon layoffs, Kevin Warsh's favorite phrases and more in Morning Squawk",
+      "url": "https://www.msn.com/en-us/money/top-stocks/tesla-earnings-amazon-layoffs-kevin-warsh-s-favorite-phrases-and-more-in-morning-squawk/ar-AA28wNOB?ocid=BingNewsVerp",
+      "source": "Bing: Tesla",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Here are five key things investors need to know to start the trading day."
+    },
+    {
+      "title": "$99 Xteink X4 Pro 4.3-inch touchscreen eReader to support CrossPoint Reader open-source firmware",
+      "url": "https://www.cnx-software.com/2026/07/23/99-xteink-x4-pro-4-3-inch-touchscreen-ereader-to-support-crosspoint-reader-open-source-firmware/",
+      "source": "CNX Software",
+      "date": "2026-07-23",
+      "vendor": "Espressif",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [
+        "bluetooth",
+        "wifi"
+      ],
+      "summary": "Xteink X4 Pro is a pocket-sized eReader with a 4.3-inch touchscreen E Ink display, a 16GB microSD card, 2.4 GHz WiFi and Bluetooth wireless connectivity, and a 1100 mAh battery. Previous models like the X3 and X4 e-readers were based on the ESP32-C3 RISC-V microcontroller, but the company has not di"
+    },
+    {
+      "title": "Musk keeps Tesla-SpaceX merger speculation alive, cites growing overlap",
+      "url": "https://www.msn.com/en-us/money/companies/musk-keeps-tesla-spacex-merger-speculation-alive-cites-growing-overlap/ar-AA28vVmB?ocid=BingNewsVerp",
+      "source": "Bing: Tesla",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "By Akash Sriram and Chris Kirkham July 22 (Reuters) - Tesla CEO Elon Musk on Wednesday left the door open to the EV maker merging with his other trillion-dollar-plus-valued firm SpaceX, declining to dismiss the possibility and citing growing overlap between the companies."
+    },
+    {
+      "title": "Google is hoarding TPUs to chase artificial general intelligence",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/23/google-is-hoarding-tpus-to-chase-artificial-general-intelligence/5276755",
+      "source": "The Register",
+      "date": "2026-07-23",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "Yet the Chocolate Factory is also buying more third-party compute capacity to handle demand for the G-Cloud"
+    },
+    {
+      "title": "Lego\u2019s Donkey Kong arcade machine lets Mario jump endless barrels \u2014 Miyamoto is reportedly happy",
+      "url": "https://www.theverge.com/gadgets/969668/lego-donkey-kong-arcade-machine",
+      "source": "The Verge",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Carl Merriam has designed some of my favorite nostalgia-inducing Lego sets, including the Lego Nintendo Game Boy and Piranha Plant. He's assisted on the incredible Lion Knights' Castle, Galaxy Explorer, and Pirates of Barracuda Bay. Now, he's helped the company create a $200 Donkey Kong arcade machi"
+    },
+    {
+      "title": "Meta won\u2019t have to face the next planned social media addiction trial",
+      "url": "https://www.theverge.com/policy/969644/meta-social-media-addiction-trial-dropped",
+      "source": "The Verge",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": "Less than a week before Meta's lawyers were set to return to a Los Angeles courtroom, the plaintiff accusing the platform of inflicting harm dropped the case. Brought by 15-year-old Florida plaintiff going by initials R.K.C., the case was set to be the second in a set of bellwether trials meant to t"
+    },
+    {
+      "title": "Sales were up at Tesla but so were costs and spending",
+      "url": "https://arstechnica.com/cars/2026/07/teslas-revenues-are-up-but-profits-squeezed-as-musk-spends-on-ai/",
+      "source": "Ars Technica",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Tesla posted its financial statement for the second quarter of the year this afternoon. Earlier in July, we learned that the American automaker had had a good quarter in terms of sales, growing 25 percent year over year. Fans hoping that sales increase would result in a plenty profitable Tesla may b"
+    },
+    {
+      "title": "Google Cloud is killing it",
+      "url": "https://www.theregister.com/paas-and-iaas/2026/07/22/google-cloud-is-killing-it/5276632",
+      "source": "The Register",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "It's Alphabet's fastest-growing business and now makes up more than a fifth of the juggernaut's revenue and operating profit"
+    },
+    {
+      "title": "Microsoft brings original Xbox backward compatibility to Windows PCs",
+      "url": "https://arstechnica.com/gaming/2026/07/microsoft-brings-original-xbox-backward-compatibility-to-windows-pcs/",
+      "source": "Ars Technica",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "For years, Microsoft has leaned heavily into extensive backward compatibility across multiple generations of Xbox hardware as a major selling point for its consoles. Today, that effort expands past the console ecosystem, making select original Xbox titles officially playable (and purchasable) on Win"
+    },
+    {
+      "title": "Samsung Galaxy Z Flip 8 vs. Moto Razr Ultra: I've spent time with both, here's what I prefer",
+      "url": "https://www.zdnet.com/article/samsung-galaxy-z-flip-8-vs-moto-razr-ultra/",
+      "source": "ZDNet",
+      "date": "2026-07-22",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Wearable",
+      "buckets": [],
+      "summary": "The Moto Razr Ultra has some of the best software on a phone, but how does it compare to the new Samsung Z Flip 8?"
+    },
+    {
+      "title": "Tesla\u2019s revenues are bouncing back, but profits are still weak",
+      "url": "https://www.theverge.com/transportation/969311/tesla-q2-2026-earnings-revenue-profit-sales",
+      "source": "The Verge",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "After a dismal two years of weakening demand, falling sales, and damage to its brand by Elon Musk's political activities, Tesla's road to recovery continues apace. On the heels of an impressive delivery report, the company released its earnings for the second quarter of 2026 - giving us the latest g"
+    },
+    {
+      "title": "I lost 100 pounds in 7 months: How a smart scale and an Apple Watch helped track my progress",
+      "url": "https://www.zdnet.com/article/i-lost-100-pounds-in-7-months-smart-scale-apple-watch-tracked-my-progress/",
+      "source": "ZDNet",
       "date": "2026-07-22",
       "vendor": null,
       "customer": "Apple",
-      "application": "Automotive",
+      "application": "Healthcare",
       "buckets": [],
-      "summary": "Just a few days after releasing macOS 27 Golden Gate developer beta 4, Apple is now rolling out the second public beta of macOS 27. Here\u2019s how to install it."
+      "summary": "While my iPhone and Apple Watch were core to my weight loss journey, I also have Android recommendations."
     },
     {
-      "title": "iOS 27 public beta 2 is here with Siri AI, iPhone speed upgrades, and more",
-      "url": "https://9to5mac.com/2026/07/22/ios-27-public-beta-2-is-here-with-siri-ai-iphone-speed-upgrades-and-more/",
-      "source": "9to5Mac",
+      "title": "Price-hiked iPads are a little cheaper right now",
+      "url": "https://www.theverge.com/gadgets/969003/apple-ipad-air-pro-airtag-deal-sale",
+      "source": "The Verge",
       "date": "2026-07-22",
       "vendor": null,
       "customer": "Apple",
       "application": "Audio / Speaker",
       "buckets": [],
-      "summary": "The second iOS 27 public beta is now available for iPhone. It gives users an early chance to try Apple\u2019s biggest software update of the year. Siri AI is the headline feature. The release also includes a redesigned Screen Time experience, Liquid Glass refinements, performance upgrades, and dozens of "
+      "summary": "A number of Apple products got more expensive last month, so we\u2019re happy to find deals wherever and whenever we can. If you\u2019re searching for a high-end iPad, one of the more notable deals currently happening is on the 13-inch iPad Pro M5 with 512GB of storage. Normally $1,699, it\u2019s $150 off at Amazo"
     },
     {
-      "title": "Public beta 2 for iPadOS 27 and more arrives with these new features",
-      "url": "https://9to5mac.com/2026/07/22/public-beta-2-for-ipados-27-and-more-arrives-with-these-new-features/",
-      "source": "9to5Mac",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple has just released public beta 2 for its forthcoming fall software updates, including iPadOS 27 and more. Here\u2019s what\u2019s new."
-    },
-    {
-      "title": "Apple TV announces two high-profile new shows, here\u2019s what\u2019s coming",
-      "url": "https://9to5mac.com/2026/07/22/apple-tv-announces-two-high-profile-new-shows-heres-whats-coming/",
-      "source": "9to5Mac",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple TV announced two high-profile new shows today that are in the works. One is a comedy with big talent attached, while the other adapts a popular author\u2019s new romance novel."
-    },
-    {
-      "title": "Google Health 5.04 rolls out: Custom food logging, more fixes [U]",
-      "url": "https://9to5google.com/2026/07/22/google-health-5-04-release-notes/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Google Health 5.04 is rolling out today with a focus on nutrition updates \u2014 a big complaint of the initial redesign \u2014 and other bug fixes."
-    },
-    {
-      "title": "The Galaxy Z Fold 8\u2019s new shape isn\u2019t really better for videos, and it makes me a little sad [Gallery]",
-      "url": "https://9to5google.com/2026/07/22/samsung-galaxy-z-fold-8-video-comparison/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The wider Galaxy Z Fold 8 is Samsung\u2019s first new foldable form factor in years and, at first glance, it seems like it\u2019d solve a huge problem from past models, the lack of useful space for video. But, sadly, there\u2019s technically no real improvement here."
-    },
-    {
-      "title": "Google is making it easier to switch from iPhone to Android",
-      "url": "https://techcrunch.com/2026/07/22/google-is-making-it-easier-to-switch-from-iphone-to-android/",
-      "source": "TechCrunch",
+      "title": "iOS code could reportedly let Apple cut off apps when users miss iPhone payments",
+      "url": "https://www.theverge.com/tech/969596/apple-restricted-mode-ios-27",
+      "source": "The Verge",
       "date": "2026-07-22",
       "vendor": null,
       "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "The new feature lets users wirelessly transfer more data types from an iPhone without needing to download a separate app."
+      "summary": "Code found in an iOS 27 beta would allow Apple to put a financed iPhone in \"Restricted Mode\" if it detects any missed payments, 9to5Mac reports. The finding follows a story from Bloomberg earlier this week claiming Apple is preparing to launch a new \"Apple Upgrade\" financing program for leasing new "
+    },
+    {
+      "title": "Alphabet and Tesla test Wall Street's patience as AI spending overshadows growth",
+      "url": "https://www.cnbc.com/2026/07/22/alphabet-tesla-test-investor-patience-ai-spending-overshadows-growth.html",
+      "source": "Bing: Tesla",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Shares of Alphabet and Tesla dipped after the companies reported massive spending increases in their quarterly earnings reports."
+    },
+    {
+      "title": "Hyundai claims humanoid robot plan is not part of talks with striking workers",
+      "url": "https://arstechnica.com/ai/2026/07/hyundai-claims-humanoid-robot-plan-is-not-part-of-talks-with-striking-workers/",
+      "source": "Ars Technica",
+      "date": "2026-07-22",
+      "vendor": null,
+      "customer": "HKMC",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Hyundai Motor Company\u2019s plan to put humanoid robots to work by 2028 is not part of current negotiations with striking South Korean autoworkers, according to the company.\nThe automaker is disputing news reports that partial labor strikes by the Hyundai Motor union at the world\u2019s largest automotive pl"
     },
     {
       "title": "The best Samsung Galaxy Z Flip 8 cases: Expert recommended",
@@ -91,17 +334,6 @@
       "summary": "Samsung's new Galaxy Z Flip 8 phones have arrived, and we found the best phone cases from brands like Torras, Spigen, Pitaka, and more to protect your new device."
     },
     {
-      "title": "Mid-week Android game and app deals: 20 Minutes Till Dawn, ARIDA Backland\u2019s Awakening, Legacy 3, more",
-      "url": "https://9to5toys.com/2026/07/22/fold-8-android-game-app-deals/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The new Galaxy Z Fold 8, Fold 8 Ultra, and Flip 8 are now up for pre-order at up to $100 off with code PAYPAL, alongside FREE $200 credits, up to $1,230 off with trade-ins, and you can even score a FREE pair of Galaxy Buds, but for right now we are taking a look at the best deals on Android games an"
-    },
-    {
       "title": "Apple is reportedly testing a MacBook Neo with more RAM",
       "url": "https://www.theverge.com/tech/969434/apple-macbook-neo-a19-pro-ram-upgrade",
       "source": "The Verge",
@@ -111,17 +343,6 @@
       "application": null,
       "buckets": [],
       "summary": "Following the MacBook Neo's huge popularity so far, Apple is reportedly developing an updated version of its budget laptop with a new processor and more memory, and even has plans to refresh the model with new colors. Following a similar report from analyst Tim Culpan earlier this year, Bloomberg's "
-    },
-    {
-      "title": "Here&#8217;s what Samsung&#8217;s smart glasses actually look like",
-      "url": "https://www.theverge.com/tech/969382/samsung-google-smart-glasses-gentle-monster-warby-parker",
-      "source": "The Verge",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Smart Glasses",
-      "buckets": [],
-      "summary": "Samsung has given us our first chance to check out its upcoming smart glasses in person, revealing two new designs and the first specs in the process, including an impressive 9-hour battery life. The glasses, developed in collaboration with Google and the eyewear brands Gentle Monster and Warby Park"
     },
     {
       "title": "The best Samsung Galaxy Z Fold 8 and Fold 8 Ultra cases of 2026: Expert recommended",
@@ -168,17 +389,6 @@
       "summary": "Mobile carriers aren't the only ones offering deals on Samsung's new Galaxy phone lineup. Preorder at Amazon and get a free digital gift card."
     },
     {
-      "title": "iOS 27 adds convenient new iPhone feature you\u2019ll use all the time",
-      "url": "https://9to5mac.com/2026/07/22/ios-27-adds-convenient-new-iphone-feature-youll-use-all-the-time/",
-      "source": "9to5Mac",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "iOS 27\u2019s tentpole additions include Siri AI and new Apple Intelligence features. But one of my favorite features so far is a convenient addition for quickly pasting items from your iPhone\u2019s clipboard. Here\u2019s how it works."
-    },
-    {
       "title": "3 ways Samsung deeply integrates Gemini AI into its new Galaxy devices",
       "url": "https://www.zdnet.com/article/samsung-unpacked-gemini-ai-google-intelligence-integration/",
       "source": "ZDNet",
@@ -190,15 +400,15 @@
       "summary": "3 ways Samsung deeply integrates Gemini AI into its new Galaxy devices\nFollow ZDNET: Add us as a preferred source on Google.\nZDNET's key takeaways\n- Samsung unveiled foldables, a smartwatch, and smart glasses.\n- The devices support several Gemini-powered features.\n- Gemini's hardware permissions rem"
     },
     {
-      "title": "How the Galaxy Z Fold 8 and Z Flip 8 phones compare",
-      "url": "https://www.theverge.com/gadgets/968682/samsung-galaxy-z-fold-flip-8-specs-features-hardware-comparison",
-      "source": "The Verge",
+      "title": "Tesla earnings recap: Stock drops 4% after EV maker misses big on profit",
+      "url": "https://www.businessinsider.com/tesla-q2-earnings-updates-tsla-stock-elon-musk-spacex-2026-7",
+      "source": "Bing: Tesla",
       "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": null,
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "Samsung's latest round of folding Galaxy Z phones and updated smartwatches were announced at its July 2026 Unpacked event and are set to launch on August 7th. The Galaxy Z Flip 8, Fold 8, and Fold 8 Ultra don't seem geared toward people who bought last year's model; aside from a few design updates a"
+      "summary": "Tesla reported earnings after the closing bell on Wednesday. TSLA stock is down 14% in 2026. The earnings call will begin around 5:30 p.m. ET."
     },
     {
       "title": "Samsung Galaxy Z Fold 8 Ultra vs. Motorola Razr Fold: Which premium foldable should you get?",
@@ -212,70 +422,15 @@
       "summary": "Samsung's new Galaxy Z Fold 8 Ultra is one of the best foldables out there, but the Motorola Razr Fold competes with it in several areas."
     },
     {
-      "title": "Preorders for Samsung\u2019s new Z Fold and Flip 8 come with up to $350 in gift cards",
-      "url": "https://www.theverge.com/gadgets/968716/samsung-galaxy-z-flip-fold-8-ultra-how-to-buy-preorder-price-release-date",
-      "source": "The Verge",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung's newest foldables are here. At Galaxy Unpacked, the company announced the Galaxy Z Flip 8, Galaxy Z Fold 8, and Galaxy Z Fold 8 Ultra. All three devices will be available on August 7th, but you can preorder them now starting at $1,199.99, $1,899.99, and $2,099.99, respectively. You probably"
-    },
-    {
-      "title": "Samsung & Google\u2019s first Android XR glasses have 9-hour battery life",
-      "url": "https://9to5google.com/2026/07/22/samsung-first-android-xr-glasses-battery-life/",
-      "source": "9to5Google",
+      "title": "Elon Musk Says This Will Be Tesla\u2019s \u2018Biggest Product Ever\u2019\u2014If It Can Solve the Supply Chain Issue",
+      "url": "https://www.inc.com/georgia-fearn/elon-musk-says-this-will-be-teslas-biggest-product-ever-if-it-can-solve-the-supply-chain-issue/91378137",
+      "source": "Bing: Tesla",
       "date": "2026-07-22",
       "vendor": null,
-      "customer": "Google",
-      "application": "AR / VR / XR",
+      "customer": "Tesla",
+      "application": "Robotics",
       "buckets": [],
-      "summary": "Samsung says the new Android XR smart glasses it\u2019s developing with Google will have a 9-hour battery life on a single charge."
-    },
-    {
-      "title": "Deals: AirTag 2, M5 Pro MacBook Pro $400 off, iPhone 17 Pro $220 off, AirPods Pro 3, Find My EDC gear, more",
-      "url": "https://9to5mac.com/2026/07/22/deals-airtag-2-macbook-pro-iphone-17-pro-airpods-pro-3/",
-      "source": "9to5Mac",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Alongside the $50 off AirPods Pro 3 this week, as well as $100 off all AirPods Max 2 and the return all-time lows on AirTag 2, today\u2019s 9to5Toys Lunch Break is headlined by more than a few notable MacBook Pro deals \u2013 M5 up to $320 off, M5 Pro $400 off, and more. We also have a particularly notable de"
-    },
-    {
-      "title": "Galaxy Z Fold 8 Ultra, Fold 8, and Flip 8 pre-order deals: where to buy",
-      "url": "https://9to5google.com/2026/07/22/galaxy-z-fold-8-ultra-fold-8-flip-8-pre-order-guide/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The newly announced Galaxy Z Fold 8, Galaxy Z Fold 8 Ultra, and Galaxy Z Flip 8 are all available to pre-order, so we\u2019ve broken down some of the best deals you can find right now. Spoiler: [Store] is offering [$] off for a limited time."
-    },
-    {
-      "title": "Built for every Fold: Spigen\u2019s Galaxy Z Fold 8 lineup is the best yet",
-      "url": "https://9to5google.com/2026/07/22/built-for-every-fold-spigens-galaxy-z-fold-8-lineup-is-the-best-yet/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Drop and everyday protection for a Galaxy Z Fold 8 requires an extra level of case engineering because it\u2019s such a unique form factor. Spigen already has you covered with its new Galaxy Z Fold 8 collection, now available."
-    },
-    {
-      "title": "Microsoft is bringing original Xbox games to PC",
-      "url": "https://www.theverge.com/news/969117/microsoft-xbox-games-pc-backward-compatibility",
-      "source": "The Verge",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Microsoft is expanding its Xbox backward compatibility efforts today by bringing original Xbox games to PC. An early preview release will see four classic Xbox games available on PC today, as part of a bigger effort to bring more Xbox console games to PC in the future. The first four games are Blinx"
+      "summary": "Elon Musk said Tesla\u2019s humanoid robot, Optimus, will be its \u201cbiggest product ever.\u201d But first, the company must build nearly the entire supply chain needed to make it. \u201cThis is going to be the hardest product to scale manufacturing that we\u2019ve ever made at Tesla because everything on the robot is new"
     },
     {
       "title": "Latest Musk merch drop runs entirely on child labor",
@@ -289,94 +444,6 @@
       "summary": "MOST POPULAR\nAI\n-\nAI and ML\nOpenAI tries the consulting path with 'Presence', charging enterprises boots-on-the-ground prices to deploy agents\nAs AI models become commoditized, maybe there's margin in the plumbing\n-\nSecurity\nSneaky Windows stealer targets 300+ apps, gives crims an AI profiler to max"
     },
     {
-      "title": "Apple\u2019s huge Mac roadmap revealed in new report",
-      "url": "https://9to5mac.com/2026/07/22/apples-huge-mac-roadmap-revealed-in-new-report/",
-      "source": "9to5Mac",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "A new report from Bloomberg today offers an in-depth look at Apple\u2019s Mac pipeline. The report details updates coming to the MacBook Pro, MacBook Air, iMac, and much more over the next several years."
-    },
-    {
-      "title": "Deals: Galaxy Fold 8/Ultra up to $1,230 off, FREE $200 credit, FREE buds, Galaxy Watch Ultra 2 $300 off, more",
-      "url": "https://9to5google.com/2026/07/22/best-galaxy-fold-8-ultra-preorder-deals/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "Today\u2019s 9to5Toys Lunch Break is headlined by the the best pre-order deals now live on Galaxy Z Fold 8, Fold 8 Ultra, and Flip 8 \u2013 straight up $100 cash discounts, plus up to $200 in FREE credit, or as much as $1,230 off with trade-ins. You can literally land yourself a FREE pair of Galaxy buds, or a"
-    },
-    {
-      "title": "Samsung\u2019s trade-in values can save up to $250 on Galaxy Watch 9 or Watch Ultra 2",
-      "url": "https://9to5google.com/2026/07/22/samsungs-trade-in-values-can-save-up-to-250-on-galaxy-watch-9-or-watch-ultra-2/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "It\u2019s a tough time to be in the market for any type of gadget, and that includes practically everything Samsung announced today. While its refreshed lineup of foldables and smartwatches all look excellent, they\u2019re also more expensive than their predecessors across the board. That makes Samsung\u2019s typi"
-    },
-    {
-      "title": "Preorder the new Samsung Galaxy Z Fold 8 or Z Flip 8 at Verizon with no fees",
-      "url": "https://www.zdnet.com/article/verizon-samsung-galaxy-z-fold-deal-2026/",
-      "source": "here's how",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung just dropped its newest foldable phone at its Unpacked event. Here's how to save on preorders at Verizon with no activation or upgrade fees."
-    },
-    {
-      "title": "AT&T will let you preorder the Galaxy Z Fold 8 for free with trade-in",
-      "url": "https://www.zdnet.com/article/at-t-samsung-galaxy-z-fold-8-deal/",
-      "source": "what to know",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "'ZDNET Recommends': What exactly does it mean?\nZDNET's recommendations are based on many hours of testing, research, and comparison shopping. We gather data from the best available sources, including vendor and retailer listings as well as other relevant and independent reviews sites. And we pore ov"
-    },
-    {
-      "title": "How to preorder everything announced at Samsung Unpacked: Galaxy Z Flip 8, Z Fold 8, and more",
-      "url": "https://www.zdnet.com/article/how-to-preorder-everything-announced-at-samsung-unpacked-july-2026/",
-      "source": "ZDNet",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "We've got the scoop on where you can preorder the newest Samsung devices announced today, including the Galaxy Watch Ultra 2 and Galaxy Watch 9."
-    },
-    {
-      "title": "The Galaxy Z Fold 8\u2019s display crease is a huge improvement [Gallery]",
-      "url": "https://9to5google.com/2026/07/22/yes-the-galaxy-z-fold-8s-display-crease-is-a-huge-improvement/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The display crease on Samsung foldables has seemingly gone from tolerable to nearly nonexistent with the recently released Galaxy Z Fold 8 and Galaxy Z Fold 8 Ultra."
-    },
-    {
-      "title": "WhatsApp launches Apple Music sharing, plus more",
-      "url": "https://9to5mac.com/2026/07/22/whatsapp-launches-apple-music-sharing-plus-more/",
-      "source": "9to5Mac",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "WhatsApp has announced a variety of new features today on its blog, including support for sharing Apple Music and Spotify activity to your WhatsApp Status, an iPad-focused account change, and more."
-    },
-    {
       "title": "Samsung unveils new Galaxy Z8 foldables and Galaxy Watches, available August 7",
       "url": "https://arstechnica.com/gadgets/2026/07/samsung-unveils-new-galaxy-z8-foldables-and-galaxy-watches-available-august-7/",
       "source": "Ars Technica",
@@ -386,126 +453,34 @@
       "application": null,
       "buckets": [],
       "summary": "The rumors haven\u2019t left much to the imagination, but Samsung has unfurled its 2026 foldable lineup today. There are three models for the first time in Samsung\u2019s eight-gen foldable family, including the top-of-the-line Z Fold 8 Ultra. That phone is the successor to last year\u2019s Galaxy Z Fold 7, but th"
-    },
-    {
-      "title": "Samsung\u2019s Galaxy Z Fold 8 series finally have anti-reflective displays [Gallery]",
-      "url": "https://9to5google.com/2026/07/22/samsung-galaxy-z-fold-8-anti-reflective-display/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Looking back on the past few years of foldables, one of the biggest things I\u2019ve felt Samsung\u2019s entrants have been missing has been an anti-reflective display on the inside. Finally, that\u2019s arriving with the Galaxy Z Fold 8 series, and the results are excellent."
-    },
-    {
-      "title": "I went hands-on with the Samsung Galaxy Z Flip 8, but it's not the upgrade I expected",
-      "url": "https://www.zdnet.com/article/samsung-galaxy-z-flip-8-hands-on/",
-      "source": "ZDNet",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "The Samsung Galaxy Z Flip 8 received the much-needed battery upgrade, but not much else."
-    },
-    {
-      "title": "New iPhone screen sizes are launching this fall, here\u2019s what\u2019s coming",
-      "url": "https://9to5mac.com/2026/07/22/new-iphone-screen-sizes-are-launching-this-fall-heres-whats-coming/",
-      "source": "9to5Mac",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "It\u2019s not often that Apple debuts new iPhone screen sizes, but this fall the iPhone Ultra will introduce two displays in shapes and sizes never before used in iPhone. Here\u2019s what to expect."
-    },
-    {
-      "title": "T-Mobile will give you the new Samsung Galaxy Z Flip for under $100",
-      "url": "https://www.zdnet.com/article/t-mobile-samsung-galaxy-z-flip-deal/",
-      "source": "here's how to preorder",
-      "date": "2026-07-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "New and existing T-Mobile customers can save up to $1,100 on Samsung's latest flip phone now (including the pink color). Here's how."
-    },
-    {
-      "title": "Galaxy Z Fold 8 vs Fold 8 Ultra: A question of your priorities, and it\u2019s a tough call [Gallery]",
-      "url": "https://9to5google.com/2026/07/22/galaxy-z-fold-8-ultra-hands-on/",
-      "source": "9to5Google",
-      "date": "2026-07-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Samsung\u2019s new Galaxy Z Fold 8 series is here and, after trying both, I\u2019m pretty conflicted. These phones really ask you what you value most out of a foldable, and I\u2019m not sure which one I want to use long-term yet."
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 37,
-    "Espressif": 7,
-    "MediaTek": 6,
+    "Espressif": 6,
+    "Qualcomm": 5,
+    "MediaTek": 4,
     "Microchip": 3,
+    "Nordic": 2,
     "Realtek": 2,
     "STMicro": 2,
-    "Apple": 2,
-    "Nordic": 1,
+    "Broadcom": 1,
     "Infineon": 1,
     "NXP": 1,
     "Silicon Labs": 1
   },
   "customer_news_30d": {
-    "Apple": 113,
-    "Google": 59,
-    "Samsung": 50,
-    "Amazon": 22,
-    "Microsoft": 13,
-    "Tesla": 2,
+    "Amazon": 25,
+    "Google": 18,
+    "Apple": 10,
+    "Samsung": 9,
+    "Tesla": 8,
+    "Microsoft": 8,
     "Sony": 2,
-    "Motorola": 2,
-    "BMW": 2,
     "Meta": 1,
-    "HKMC": 1
+    "HKMC": 1,
+    "BMW": 1
   },
   "github_pulse": [
-    {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1647,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18595,
-      "pushed_at": "2026-07-22T13:08:59Z"
-    },
     {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
@@ -515,7 +490,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3838,
+      "issues_open": 3856,
       "prs_open": 0,
       "releases": [
         {
@@ -537,23 +512,44 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15965,
-      "pushed_at": "2026-07-22T18:08:04Z"
+      "stars": 15977,
+      "pushed_at": "2026-07-23T09:53:41Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
       "tech": [
-        "wifi"
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 3,
+      "issues_open": 1648,
       "prs_open": 0,
-      "releases": [],
-      "stars": 240125,
-      "pushed_at": "2026-07-21T17:06:19Z"
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18602,
+      "pushed_at": "2026-07-23T10:22:17Z"
     },
     {
       "name": "Matter SDK",
@@ -564,7 +560,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2736,
+      "issues_open": 2740,
       "prs_open": 0,
       "releases": [
         {
@@ -586,8 +582,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8833,
-      "pushed_at": "2026-07-22T17:57:58Z"
+      "stars": 8837,
+      "pushed_at": "2026-07-23T01:01:59Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240188,
+      "pushed_at": "2026-07-22T20:52:52Z"
     },
     {
       "name": "OpenThread",
@@ -597,8 +608,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 82,
-      "issues_open": 167,
+      "commits_30d": 81,
+      "issues_open": 168,
       "prs_open": 0,
       "releases": [
         {
@@ -621,7 +632,7 @@
         }
       ],
       "stars": 3990,
-      "pushed_at": "2026-07-22T02:25:31Z"
+      "pushed_at": "2026-07-22T20:48:18Z"
     },
     {
       "name": "BlueZ",
@@ -631,8 +642,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 38,
-      "issues_open": 106,
+      "commits_30d": 42,
+      "issues_open": 108,
       "prs_open": 0,
       "releases": [
         {
@@ -654,8 +665,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1106,
-      "pushed_at": "2026-07-21T20:09:05Z"
+      "stars": 1108,
+      "pushed_at": "2026-07-23T09:14:12Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -665,7 +676,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 27,
+      "commits_30d": 21,
       "issues_open": 465,
       "prs_open": 0,
       "releases": [
@@ -689,7 +700,7 @@
         }
       ],
       "stars": 15327,
-      "pushed_at": "2026-07-22T12:15:41Z"
+      "pushed_at": "2026-07-22T22:43:57Z"
     },
     {
       "name": "NimBLE",
@@ -699,7 +710,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 21,
+      "commits_30d": 13,
       "issues_open": 272,
       "prs_open": 0,
       "releases": [],
@@ -800,18 +811,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
-      "vendor": "Marvell",
-      "ticker": "MRVL",
-      "form": "8-K",
-      "date": "2026-06-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
-    },
-    {
       "vendor": "Broadcom",
       "ticker": "AVGO",
       "form": "8-K",
       "date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
+    },
+    {
+      "vendor": "Marvell",
+      "ticker": "MRVL",
+      "form": "8-K",
+      "date": "2026-06-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -1066,6 +1077,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1078,13 +1096,6 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
-    },
-    {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     },
     {
       "vendor": "Silicon Labs",
@@ -1238,14 +1249,14 @@
           "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
         },
         {
+          "title": "Arduino Core Project Brings Support to Nordic nRF54L Wireless SoCs",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
+        },
+        {
           "title": "nRF54L15 Tag Prototyping Platform Launched",
           "date": "Jun 2026",
           "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag"
-        },
-        {
-          "title": "Nordic Semiconductor Launches nRF54L15 Prototyping Tag",
-          "date": "Jun 2026",
-          "url": "https://www.electronicsweekly.com/news/products/rf-microwave-optoelectronics/nordic-finds-dual-antenna-nrf54l15-prototyping-tag-2026-06/"
         }
       ],
       "events": [

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T18:15:50Z",
+  "generated_at": "2026-07-23T13:04:54Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -168,14 +168,14 @@
           "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
         },
         {
+          "title": "Arduino Core Project Brings Support to Nordic nRF54L Wireless SoCs",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
+        },
+        {
           "title": "nRF54L15 Tag Prototyping Platform Launched",
           "date": "Jun 2026",
           "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag"
-        },
-        {
-          "title": "Nordic Semiconductor Launches nRF54L15 Prototyping Tag",
-          "date": "Jun 2026",
-          "url": "https://www.electronicsweekly.com/news/products/rf-microwave-optoelectronics/nordic-finds-dual-antenna-nrf54l15-prototyping-tag-2026-06/"
         }
       ],
       "events": [
@@ -3709,14 +3709,14 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 37,
-    "Espressif": 7,
-    "MediaTek": 6,
+    "Espressif": 6,
+    "Qualcomm": 5,
+    "MediaTek": 4,
     "Microchip": 3,
+    "Nordic": 2,
     "Realtek": 2,
     "STMicro": 2,
-    "Apple": 2,
-    "Nordic": 1,
+    "Broadcom": 1,
     "Infineon": 1,
     "NXP": 1,
     "Silicon Labs": 1
@@ -3792,42 +3792,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1647,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18595,
-      "pushed_at": "2026-07-22T13:08:59Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3836,7 +3800,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3838,
+      "issues_open": 3856,
       "prs_open": 0,
       "releases": [
         {
@@ -3858,23 +3822,44 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15965,
-      "pushed_at": "2026-07-22T18:08:04Z"
+      "stars": 15977,
+      "pushed_at": "2026-07-23T09:53:41Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
       "tech": [
-        "wifi"
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 3,
+      "issues_open": 1648,
       "prs_open": 0,
-      "releases": [],
-      "stars": 240125,
-      "pushed_at": "2026-07-21T17:06:19Z"
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18602,
+      "pushed_at": "2026-07-23T10:22:17Z"
     },
     {
       "name": "Matter SDK",
@@ -3885,7 +3870,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2736,
+      "issues_open": 2740,
       "prs_open": 0,
       "releases": [
         {
@@ -3907,8 +3892,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8833,
-      "pushed_at": "2026-07-22T17:57:58Z"
+      "stars": 8837,
+      "pushed_at": "2026-07-23T01:01:59Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240188,
+      "pushed_at": "2026-07-22T20:52:52Z"
     },
     {
       "name": "OpenThread",
@@ -3918,8 +3918,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 82,
-      "issues_open": 167,
+      "commits_30d": 81,
+      "issues_open": 168,
       "prs_open": 0,
       "releases": [
         {
@@ -3942,7 +3942,7 @@
         }
       ],
       "stars": 3990,
-      "pushed_at": "2026-07-22T02:25:31Z"
+      "pushed_at": "2026-07-22T20:48:18Z"
     },
     {
       "name": "BlueZ",
@@ -3952,8 +3952,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 38,
-      "issues_open": 106,
+      "commits_30d": 42,
+      "issues_open": 108,
       "prs_open": 0,
       "releases": [
         {
@@ -3975,8 +3975,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1106,
-      "pushed_at": "2026-07-21T20:09:05Z"
+      "stars": 1108,
+      "pushed_at": "2026-07-23T09:14:12Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3986,7 +3986,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 27,
+      "commits_30d": 21,
       "issues_open": 465,
       "prs_open": 0,
       "releases": [
@@ -4010,7 +4010,7 @@
         }
       ],
       "stars": 15327,
-      "pushed_at": "2026-07-22T12:15:41Z"
+      "pushed_at": "2026-07-22T22:43:57Z"
     },
     {
       "name": "NimBLE",
@@ -4020,7 +4020,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 21,
+      "commits_30d": 13,
       "issues_open": 272,
       "prs_open": 0,
       "releases": [],
