@@ -16,9 +16,9 @@ Write-Host "=== Daily refresh started $(Get-Date -Format o) ==="
 # Rebuild the multi-tab report with fresh news/customers/competitors/research
 # pulled from the web (default mode = with --external + --enrich).
 Write-Host '--- step 1/1: regenerate report (web pull) ---'
-& $pythonCmd run.py
+& $pythonCmd run.py --max-age-days 10
 if ($LASTEXITCODE -ne 0) {
-    throw "step 1 failed (exit $LASTEXITCODE): $pythonCmd run.py"
+    throw "step 1 failed (exit $LASTEXITCODE): $pythonCmd run.py --max-age-days 10"
 }
 
 Write-Host '--- step 2/3: stage generated data + docs only ---'

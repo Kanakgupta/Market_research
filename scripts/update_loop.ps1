@@ -1,11 +1,13 @@
 <#
     update_loop.ps1
     ------------------------------------------------------------
-    Daily background updater for IoT Wireless Intel.
+        Background updater for IoT Wireless Intel.
 
     Behavior:
       - Optional immediate cycle if data is stale (default threshold: 8 hours)
-      - Then runs one cycle daily at configured Pacific hour (default: 6 AM)
+            - Then runs either:
+                    * every N hours (when -IntervalHours > 0), or
+                    * daily at configured Pacific hour (default: 6 AM)
 
     Each cycle does:
       1) Fetch/update data + rebuild local site (python run.py)
@@ -36,14 +38,39 @@ function Write-Log([string]$msg) {
     Write-Host $line
 }
 
+function Write-Fail([string]$msg) {
+    $line = '[{0}] {1}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $msg
+    Write-Host $line -ForegroundColor Red
+}
+
+function Write-Success([string]$msg) {
+    $line = '[{0}] {1}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $msg
+    Write-Host $line -ForegroundColor Green
+}
+
 function Invoke-LoggedCommand([string]$stepMsg, [string]$cmdText, [scriptblock]$cmdBlock) {
     Write-Log $stepMsg
     Write-Log ("CMD> " + $cmdText)
-    & $cmdBlock
-    if ($LASTEXITCODE -ne 0) {
-        Write-Log ("Command failed with exit code $LASTEXITCODE")
+    # Capture all streams from native commands so informational stderr output
+    # (for example python logging) does not get treated as a PowerShell failure.
+    $output = & $cmdBlock *>&1
+    $exitCode = $LASTEXITCODE
+
+    if ($output) {
+        foreach ($line in @($output)) {
+            Write-Log ("OUT> " + ($line.ToString().TrimEnd()))
+        }
     }
-    return $LASTEXITCODE
+
+    if ($exitCode -ne 0) {
+        Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        Write-Fail ("FAIL: Command failed with exit code $exitCode")
+        Write-Fail ("FAIL: " + $cmdText)
+        Write-Fail "Updater halted so the failure is visible and can be fixed."
+        Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        throw "Command failed with exit code $exitCode"
+    }
+    return $exitCode
 }
 
 function Get-PacificTimeZone {
@@ -111,47 +138,37 @@ function Test-IsStale([int]$hours) {
 
 function Invoke-UpdateCycle {
     $cycleStart = Get-Date
-    try {
-        Invoke-LoggedCommand 'STEP 1/3  Fetch latest data + rebuild local site (run.py)' "$Python run.py" { & $Python run.py } | Out-Null
+    Invoke-LoggedCommand 'STEP 1/3  Fetch latest data + rebuild local site (run.py --max-age-days 10 -v)' "$Python -u run.py --max-age-days 10 -v" { & $Python -u run.py --max-age-days 10 -v } | Out-Null
 
-        Invoke-LoggedCommand 'STEP 2/3  Stage changes (git add -A)' 'git add -A' { git add -A } | Out-Null
+    Invoke-LoggedCommand 'STEP 2/3  Stage changes (git add -A)' 'git add -A' { git add -A } | Out-Null
 
-        Write-Log 'Checking pending changes before commit...'
-        Write-Log 'CMD> git status --porcelain'
-        $changes = git status --porcelain
-        if (-not [string]::IsNullOrWhiteSpace($changes)) {
-            $changes | ForEach-Object { Write-Host $_ }
-        }
-
-        if ([string]::IsNullOrWhiteSpace($changes)) {
-            Write-Log 'No changes to push this cycle.'
-        }
-        else {
-            $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm'
-            Invoke-LoggedCommand 'STEP 3/3  Commit changes' ('git commit -m "auto update ' + $stamp + '"') { git commit -m "auto update $stamp" } | Out-Null
-            Invoke-LoggedCommand 'Push changes to remote (origin/main)...' 'git push origin main' { git push origin main } | Out-Null
-
-            if ($LASTEXITCODE -eq 0) {
-                Write-Log 'Pushed update to GitHub.'
-            }
-            else {
-                Write-Log "git push failed (exit $LASTEXITCODE) - check credentials. Will retry next cycle."
-            }
-        }
-
-        if ($LASTEXITCODE -eq 0) {
-            Write-StateSuccess
-        }
+    Write-Log 'Checking pending changes before commit...'
+    Write-Log 'CMD> git status --porcelain'
+    $changes = git status --porcelain
+    if (-not [string]::IsNullOrWhiteSpace($changes)) {
+        $changes | ForEach-Object { Write-Log ("OUT> " + $_) }
     }
-    catch {
-        Write-Log ('ERROR: ' + $_.Exception.Message)
+
+    if ([string]::IsNullOrWhiteSpace($changes)) {
+        Write-Log 'No changes to push this cycle.'
     }
+    else {
+        $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm'
+        Invoke-LoggedCommand 'STEP 3/3  Commit changes' ('git commit -m "auto update ' + $stamp + '"') { git commit -m "auto update $stamp" } | Out-Null
+        Invoke-LoggedCommand 'Push changes to remote (origin/main)...' 'git push origin main' { git push origin main } | Out-Null
+        Write-Log 'Pushed update to GitHub.'
+    }
+
+    Write-StateSuccess
 
     $elapsed = (Get-Date) - $cycleStart
     Write-Log ('Cycle finished in {0:N1} min.' -f $elapsed.TotalMinutes)
+    Write-Success "============================================================"
+    Write-Success "SUCCESS: Fetch/build/push cycle completed cleanly."
+    Write-Success "============================================================"
 }
 
-Write-Log "update_loop started (daily at ${RunHourPacific}:00 Pacific). Root=$Root Python=$Python"
+Write-Log "update_loop started. Root=$Root Python=$Python"
 if ($IntervalHours -gt 0) {
     Write-Log "Interval mode enabled: run every ${IntervalHours} hour(s)."
 }
@@ -161,13 +178,29 @@ else {
 
 if ($RunNow) {
     Write-Log 'RunNow requested - running one cycle immediately.'
-    Invoke-UpdateCycle
+    try {
+        Invoke-UpdateCycle
+    }
+    catch {
+        Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        Write-Fail ('HALT: updater stopped during startup run: ' + $_.Exception.Message)
+        Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        exit 1
+    }
 }
 
 if ($RunNowIfStale) {
     if (Test-IsStale -hours $StaleHours) {
         Write-Log "RunNowIfStale requested - data is stale (>= ${StaleHours}h). Running one cycle now."
-        Invoke-UpdateCycle
+        try {
+            Invoke-UpdateCycle
+        }
+        catch {
+            Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            Write-Fail ('HALT: updater stopped during stale-start run: ' + $_.Exception.Message)
+            Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            exit 1
+        }
     }
     else {
         Write-Log "RunNowIfStale requested - data is fresh (< ${StaleHours}h). Skipping immediate cycle."
@@ -186,5 +219,13 @@ while ($true) {
         Write-Log ('Next update at {0:yyyy-MM-dd HH:mm} local ({1:N1} h away, = {2}:00 Pacific).' -f $when, ($secs / 3600), $RunHourPacific)
     }
     Start-Sleep -Seconds $secs
-    Invoke-UpdateCycle
+    try {
+        Invoke-UpdateCycle
+    }
+    catch {
+        Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        Write-Fail ('HALT: updater stopped due to failure: ' + $_.Exception.Message)
+        Write-Fail "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        exit 1
+    }
 }

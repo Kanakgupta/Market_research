@@ -32,8 +32,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--max-age-days",
         type=int,
-        default=int(os.getenv("NEWS_LOOKBACK_DAYS", "60")),
-        help="Max age for kept articles (default 60 days; override with NEWS_LOOKBACK_DAYS)",
+        default=int(os.getenv("NEWS_LOOKBACK_DAYS", "10")),
+        help="Max age for kept articles (default 10 days; override with NEWS_LOOKBACK_DAYS)",
     )
     parser.add_argument("--limit", type=int, default=1000)
     parser.add_argument("--output-dir", type=Path, default=Path("docs"))

@@ -51,7 +51,7 @@ else {
     Write-Log 'SkipGitPull enabled. Proceeding with local branch state.'
 }
 
-Invoke-Step 'Running full pipeline: latest fetch + build (python run.py)...' { & $Python run.py }
+Invoke-Step 'Running full pipeline: latest fetch + build (python run.py --max-age-days 10)...' { & $Python run.py --max-age-days 10 }
 
 Invoke-Step 'Staging changes (git add -A)...' { git add -A }
 

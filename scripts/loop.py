@@ -133,7 +133,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--no-browser", action="store_true")
     parser.add_argument("--build-at-start", action="store_true", 
                         help="Rebuild the site at startup (default: skip and serve cached site)")
-    parser.add_argument("--max-age-days", type=int, default=7)
+    parser.add_argument("--max-age-days", type=int, default=10)
     parser.add_argument("--limit", type=int, default=1000)
     parser.add_argument("--no-enrich", action="store_true")
     parser.add_argument("--no-external", action="store_true")

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T18:52:28Z",
+  "generated_at": "2026-07-24T00:13:35Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3712,15 +3712,14 @@
     "Qualcomm": 27,
     "Espressif": 6,
     "MediaTek": 5,
-    "Microchip": 3,
     "Nordic": 2,
     "Realtek": 2,
     "STMicro": 2,
-    "Apple": 2,
     "Broadcom": 1,
+    "Apple": 1,
     "Infineon": 1,
     "NXP": 1,
-    "Silicon Labs": 1
+    "Microchip": 1
   },
   "standards_in_flight": [
     {
@@ -3803,7 +3802,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1648,
+      "issues_open": 1634,
       "prs_open": 0,
       "releases": [
         {
@@ -3825,8 +3824,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18603,
-      "pushed_at": "2026-07-23T13:17:58Z"
+      "stars": 18606,
+      "pushed_at": "2026-07-23T21:45:12Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3837,7 +3836,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3820,
+      "issues_open": 3825,
       "prs_open": 0,
       "releases": [
         {
@@ -3859,8 +3858,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15980,
-      "pushed_at": "2026-07-23T18:47:07Z"
+      "stars": 15981,
+      "pushed_at": "2026-07-23T22:02:44Z"
     },
     {
       "name": "Linux mac80211",
@@ -3874,8 +3873,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 240223,
-      "pushed_at": "2026-07-22T20:52:52Z"
+      "stars": 240239,
+      "pushed_at": "2026-07-23T20:53:07Z"
     },
     {
       "name": "Matter SDK",
@@ -3886,7 +3885,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2739,
+      "issues_open": 2740,
       "prs_open": 0,
       "releases": [
         {
@@ -3909,7 +3908,7 @@
         }
       ],
       "stars": 8837,
-      "pushed_at": "2026-07-23T18:52:05Z"
+      "pushed_at": "2026-07-23T22:10:02Z"
     },
     {
       "name": "OpenThread",
@@ -3919,8 +3918,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 85,
-      "issues_open": 157,
+      "commits_30d": 86,
+      "issues_open": 156,
       "prs_open": 0,
       "releases": [
         {
@@ -3943,7 +3942,7 @@
         }
       ],
       "stars": 3990,
-      "pushed_at": "2026-07-23T18:23:57Z"
+      "pushed_at": "2026-07-23T22:58:14Z"
     },
     {
       "name": "BlueZ",
@@ -3988,7 +3987,7 @@
         "ieee15_4"
       ],
       "commits_30d": 16,
-      "issues_open": 466,
+      "issues_open": 467,
       "prs_open": 0,
       "releases": [
         {
@@ -4010,7 +4009,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15327,
+      "stars": 15328,
       "pushed_at": "2026-07-23T17:04:59Z"
     },
     {

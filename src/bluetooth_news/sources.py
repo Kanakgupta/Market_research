@@ -11,6 +11,16 @@ from urllib.parse import urlparse
 
 from .data_loader import load_customers, load_competitors
 
+
+def _safe_int_env(name: str, default: int, minimum: int = 0) -> int:
+    raw = (os.getenv(name) or "").strip()
+    if not raw:
+        return default
+    try:
+        return max(minimum, int(raw))
+    except ValueError:
+        return default
+
 # Tab order in the generated site.
 BUCKETS: list[tuple[str, str]] = [
     ("wifi",      "Wi-Fi"),
@@ -380,10 +390,15 @@ def dynamic_site_queries() -> list[str]:
     """
     queries: list[str] = []
     seen: set[str] = set()
+    max_queries = _safe_int_env("SOURCE_MAX_DYNAMIC_SITE_QUERIES", 80)
+    max_competitor_domains = _safe_int_env("SOURCE_MAX_COMPETITOR_DOMAINS", 2)
+    max_customer_domains = _safe_int_env("SOURCE_MAX_CUSTOMER_DOMAINS", 2)
 
     def add(q: str) -> None:
         q = (q or "").strip()
         if not q or q in seen:
+            return
+        if max_queries and len(queries) >= max_queries:
             return
         seen.add(q)
         queries.append(q)
@@ -405,7 +420,7 @@ def dynamic_site_queries() -> list[str]:
             d = _domain_from_url(pr.get("url") or "")
             if d:
                 domains.add(d)
-        for d in list(domains)[:3]:
+        for d in list(domains)[:max_competitor_domains]:
             add(f"site:{d} ({vendor} OR newsroom OR press release OR announcement) {wireless_terms}")
             add(f"site:{d} ({vendor} OR product launch OR new chip OR new module) {wireless_terms}")
 
@@ -421,7 +436,7 @@ def dynamic_site_queries() -> list[str]:
             d = _domain_from_url(p.get("url") or "")
             if d:
                 domains.add(d)
-        for d in list(domains)[:4]:
+        for d in list(domains)[:max_customer_domains]:
             add(f"site:{d} ({name} OR launch OR announced OR release) {wireless_terms}")
             add(f"site:{d} ({name} OR iot OR smart home OR wearable) {wireless_terms}")
 
@@ -436,10 +451,13 @@ def dynamic_entity_queries() -> list[str]:
     """
     queries: list[str] = []
     seen: set[str] = set()
+    max_queries = _safe_int_env("SOURCE_MAX_ENTITY_QUERIES", 60)
 
     def add(q: str) -> None:
         q = (q or "").strip()
         if not q or q in seen:
+            return
+        if max_queries and len(queries) >= max_queries:
             return
         seen.add(q)
         queries.append(q)
@@ -471,20 +489,27 @@ def all_feed_urls() -> list[dict]:
     """Return list of {name, url, bucket} entries for every feed to fetch."""
     feeds: list[dict] = []
     seen_search_queries: set[tuple[str, str]] = set()
+    max_google = _safe_int_env("SOURCE_MAX_GOOGLE_FEEDS", 220)
+    max_bing = _safe_int_env("SOURCE_MAX_BING_FEEDS", 180)
+    google_count = 0
+    bing_count = 0
 
     def add_search_feeds(query: str, bucket: str | None = None, include_bing: bool = True) -> None:
+        nonlocal google_count, bing_count
         q = (query or "").strip()
         if not q:
             return
         key_g = ("google", q.lower())
-        if key_g not in seen_search_queries:
+        if key_g not in seen_search_queries and (max_google == 0 or google_count < max_google):
             feeds.append({"name": f"Google: {q}", "url": google_news_rss(q), "bucket": bucket})
             seen_search_queries.add(key_g)
+            google_count += 1
         if include_bing:
             key_b = ("bing", q.lower())
-            if key_b not in seen_search_queries:
+            if key_b not in seen_search_queries and (max_bing == 0 or bing_count < max_bing):
                 feeds.append({"name": f"Bing: {q}", "url": bing_news_rss(q), "bucket": bucket})
                 seen_search_queries.add(key_b)
+                bing_count += 1
 
     for f in RSS_FEEDS:
         feeds.append({**f, "bucket": f.get("bucket")})  # bucket inferred by classifier when None

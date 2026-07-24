@@ -5,8 +5,11 @@ import logging
 import os
 import random
 import re
+import json
 import time
+import threading
 from datetime import datetime, timezone
+from pathlib import Path
 
 import feedparser
 import requests
@@ -27,6 +30,11 @@ RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 DEFAULT_MAX_WORKERS = 16
 DEFAULT_GOOGLE_MAX_WORKERS = 2
 DEFAULT_OTHER_MAX_WORKERS = 12
+
+_GOOGLE_FAIL_STATE_PATH = Path(__file__).resolve().parent.parent.parent / "data" / "google_feed_failures.json"
+_google_fail_lock = threading.Lock()
+_google_fail_state_loaded = False
+_google_fail_state: dict[str, dict] = {}
 
 _IMG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
 
@@ -88,6 +96,31 @@ def _sleep_with_jitter(seconds: float) -> None:
     time.sleep(seconds + jitter)
 
 
+def _load_google_fail_state_locked() -> None:
+    global _google_fail_state_loaded, _google_fail_state
+    if _google_fail_state_loaded:
+        return
+    _google_fail_state_loaded = True
+    if not _GOOGLE_FAIL_STATE_PATH.exists():
+        _google_fail_state = {}
+        return
+    try:
+        payload = json.loads(_GOOGLE_FAIL_STATE_PATH.read_text(encoding="utf-8"))
+        feeds = payload.get("feeds") if isinstance(payload, dict) else {}
+        _google_fail_state = feeds if isinstance(feeds, dict) else {}
+    except Exception:
+        _google_fail_state = {}
+
+
+def _save_google_fail_state_locked() -> None:
+    _GOOGLE_FAIL_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "feeds": _google_fail_state,
+    }
+    _GOOGLE_FAIL_STATE_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+
 def _fetch_url_with_retries(url: str, name: str) -> bytes:
     is_google = _is_google_feed(url)
     max_attempts = 5 if is_google else 3
@@ -129,9 +162,75 @@ def _safe_int_env(name: str, default: int, minimum: int = 1) -> int:
         return default
 
 
+def _google_cooldown_minutes() -> int:
+    raw = (os.getenv("GOOGLE_FEED_FAIL_COOLDOWN_MINUTES") or "").strip()
+    if not raw:
+        return 180
+    try:
+        return max(0, int(raw))
+    except ValueError:
+        log.warning("Invalid integer for GOOGLE_FEED_FAIL_COOLDOWN_MINUTES=%r; using default=180", raw)
+        return 180
+
+
+def _google_fail_threshold() -> int:
+    raw = (os.getenv("GOOGLE_FEED_FAIL_THRESHOLD") or "").strip()
+    if not raw:
+        return 2
+    try:
+        return max(1, int(raw))
+    except ValueError:
+        log.warning("Invalid integer for GOOGLE_FEED_FAIL_THRESHOLD=%r; using default=2", raw)
+        return 2
+
+
+def _is_google_feed_on_cooldown(url: str) -> bool:
+    now = time.time()
+    with _google_fail_lock:
+        _load_google_fail_state_locked()
+        rec = _google_fail_state.get(url) or {}
+        cooldown_until = float(rec.get("cooldown_until", 0) or 0)
+        if cooldown_until > now:
+            return True
+        # Purge stale records once cooldown has elapsed.
+        if rec:
+            _google_fail_state.pop(url, None)
+            _save_google_fail_state_locked()
+    return False
+
+
+def _record_google_feed_failure(url: str) -> None:
+    now = time.time()
+    threshold = _google_fail_threshold()
+    cooldown_minutes = _google_cooldown_minutes()
+    with _google_fail_lock:
+        _load_google_fail_state_locked()
+        rec = _google_fail_state.get(url) or {}
+        failures = int(rec.get("failures", 0) or 0) + 1
+        next_rec = {
+            "failures": failures,
+            "last_fail_at": now,
+        }
+        if failures >= threshold and cooldown_minutes > 0:
+            next_rec["cooldown_until"] = now + cooldown_minutes * 60
+        _google_fail_state[url] = next_rec
+        _save_google_fail_state_locked()
+
+
+def _record_google_feed_success(url: str) -> None:
+    with _google_fail_lock:
+        _load_google_fail_state_locked()
+        if url in _google_fail_state:
+            _google_fail_state.pop(url, None)
+            _save_google_fail_state_locked()
+
+
 def _fetch_feed_articles(feed: dict) -> list[dict]:
     name, url, bucket_hint = feed["name"], feed["url"], feed.get("bucket")
     feed_articles = []
+    if _is_google_feed(url) and _is_google_feed_on_cooldown(url):
+        log.warning("Skipping %s due to recent repeated failures (cooldown active)", name)
+        return feed_articles
     try:
         content = _fetch_url_with_retries(url, name)
         parsed = feedparser.parse(content)
@@ -159,8 +258,12 @@ def _fetch_feed_articles(feed: dict) -> list[dict]:
                 "thumb": _extract_thumb(entry),
                 "bucket_hint": bucket_hint,
             })
+        if _is_google_feed(url):
+            _record_google_feed_success(url)
         log.info("Fetched %d entries from %s", len(parsed.entries), name)
     except Exception as exc:
+        if _is_google_feed(url):
+            _record_google_feed_failure(url)
         log.warning("Failed to fetch %s: %s", name, exc)
     return feed_articles
 

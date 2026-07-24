@@ -20,9 +20,9 @@ logger = logging.getLogger(__name__)
 def _lookback_days() -> int:
     """Read processing horizon from env with safe fallback."""
     try:
-        return max(7, int(os.getenv("NEWS_LOOKBACK_DAYS", "60")))
+        return max(7, int(os.getenv("NEWS_LOOKBACK_DAYS", "10")))
     except ValueError:
-        return 60
+        return 10
 
 
 def _load_cached_non_news_inputs(root: Path) -> tuple[list, list, list]:

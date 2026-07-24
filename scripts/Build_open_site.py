@@ -71,7 +71,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--port", type=int, default=8888)
     parser.add_argument("--page", default="index.html", help="Page to open after serving (for example customers.html)")
     parser.add_argument("--no-browser", action="store_true")
-    parser.add_argument("--max-age-days", type=int, default=550)
+    parser.add_argument("--max-age-days", type=int, default=10)
     parser.add_argument("--limit", type=int, default=1000)
     parser.add_argument("--no-enrich", action="store_true")
     parser.add_argument("--no-external", action="store_true")
