@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T00:13:35Z",
+  "generated_at": "2026-07-24T08:45:00Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -173,9 +173,9 @@
           "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
         },
         {
-          "title": "nRF54L15 Tag Prototyping Platform Launched",
-          "date": "Jun 2026",
-          "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF54L15-Tag"
+          "title": "Icy Electronics nRF54L15 Discovery devboard integrates a snappable nRF52820 CMSIS-DAP debugger",
+          "date": "Jul 2026",
+          "url": "https://www.cnx-software.com/2026/07/23/icy-electronics-nrf54l15-discovery-devboard-integrates-a-snappable-nrf52820-cmsis-dap-debugger/"
         }
       ],
       "events": [
@@ -3710,16 +3710,14 @@
   ],
   "vendor_news_momentum_30d": {
     "Qualcomm": 27,
-    "Espressif": 6,
+    "Espressif": 5,
     "MediaTek": 5,
     "Nordic": 2,
     "Realtek": 2,
     "STMicro": 2,
     "Broadcom": 1,
-    "Apple": 1,
     "Infineon": 1,
-    "NXP": 1,
-    "Microchip": 1
+    "NXP": 1
   },
   "standards_in_flight": [
     {
@@ -3802,7 +3800,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1634,
+      "issues_open": 1627,
       "prs_open": 0,
       "releases": [
         {
@@ -3824,8 +3822,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18606,
-      "pushed_at": "2026-07-23T21:45:12Z"
+      "stars": 18609,
+      "pushed_at": "2026-07-24T08:42:42Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3836,7 +3834,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3825,
+      "issues_open": 3824,
       "prs_open": 0,
       "releases": [
         {
@@ -3858,8 +3856,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15981,
-      "pushed_at": "2026-07-23T22:02:44Z"
+      "stars": 15984,
+      "pushed_at": "2026-07-24T07:46:12Z"
     },
     {
       "name": "Linux mac80211",
@@ -3873,7 +3871,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 240239,
+      "stars": 240279,
       "pushed_at": "2026-07-23T20:53:07Z"
     },
     {
@@ -3885,7 +3883,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2740,
+      "issues_open": 2742,
       "prs_open": 0,
       "releases": [
         {
@@ -3908,7 +3906,7 @@
         }
       ],
       "stars": 8837,
-      "pushed_at": "2026-07-23T22:10:02Z"
+      "pushed_at": "2026-07-24T06:13:04Z"
     },
     {
       "name": "OpenThread",
@@ -3918,8 +3916,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 86,
-      "issues_open": 156,
+      "commits_30d": 88,
+      "issues_open": 155,
       "prs_open": 0,
       "releases": [
         {
@@ -3942,7 +3940,7 @@
         }
       ],
       "stars": 3990,
-      "pushed_at": "2026-07-23T22:58:14Z"
+      "pushed_at": "2026-07-24T04:48:43Z"
     },
     {
       "name": "BlueZ",
@@ -3953,7 +3951,7 @@
         "bluetooth"
       ],
       "commits_30d": 42,
-      "issues_open": 108,
+      "issues_open": 109,
       "prs_open": 0,
       "releases": [
         {
@@ -3987,7 +3985,7 @@
         "ieee15_4"
       ],
       "commits_30d": 16,
-      "issues_open": 467,
+      "issues_open": 468,
       "prs_open": 0,
       "releases": [
         {
