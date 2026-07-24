@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T13:25:43Z",
+  "generated_at": "2026-07-24T13:25:49Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,20 +3709,29 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 90,
-    "STMicro": 76,
+    "Qualcomm": 107,
+    "STMicro": 77,
     "Broadcom": 56,
     "Microchip": 47,
-    "NXP": 38,
+    "NXP": 39,
     "MediaTek": 20,
     "Synaptics": 16,
     "TI": 12,
-    "Espressif": 6,
+    "Espressif": 7,
+    "Skyworks": 6,
     "Renesas": 5,
+    "Bosch": 4,
+    "Silicon Labs": 4,
+    "Qorvo": 2,
     "Nordic": 2,
-    "Silicon Labs": 2,
     "Realtek": 2,
-    "Infineon": 1
+    "Marvell": 1,
+    "Telink": 1,
+    "Sequans": 1,
+    "Apple": 1,
+    "Goodix": 1,
+    "Infineon": 1,
+    "Murata": 1
   },
   "standards_in_flight": [
     {
