@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T13:28:08Z",
+  "generated_at": "2026-07-25T07:12:02Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -974,6 +974,11 @@
           "url": "https://finance.yahoo.com/technology/articles/silicon-labs-slab-demonstrates-large-121017444.html"
         },
         {
+          "title": "Silicon Labs stock trades near yearly high as IoT revenue and margins strengthen",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
+        },
+        {
           "title": "Silicon Labs Advances Large-Scale Matter Deployments with 200-Node Matter-over-Thread Validation Network",
           "date": "Jun 2026",
           "url": "https://www.prnewswire.com/news-releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network-302801809.html"
@@ -992,11 +997,6 @@
           "title": "Silicon Labs Expands India Presence as Smart Infrastructure Demand Grows",
           "date": "Jun 2026",
           "url": "https://www.digitimes.com/news/a20260612VL204/silicon-labs-acquisition-infrastructure-texas-instruments-demand.html"
-        },
-        {
-          "title": "Acer TravelLite TL24-54M Announced With Wi-Fi 7 Support",
-          "date": "Jun 2026",
-          "url": "https://www.thetechoutlook.com/new-release/gadgets-release/laptop/acer-travellite-tl24-54m-with-intel-core-series-3-processor-wi-fi-7-mil-std-810h-durability-announced-in-india/"
         }
       ],
       "events": [
@@ -2336,6 +2336,11 @@
           "url": "https://www.gurufocus.com/news/8961462/renesas-electronics-america-inc-acquires-significant-stake-in-sitime-corp?mobile=true"
         },
         {
+          "title": "Renesas RZ/V2N Powers New AI Vision Systems",
+          "date": "Jul 2026",
+          "url": "https://www.startuphub.ai/ai-news/ai/2026/renesas-rz-v2n-powers-new-ai-vision-systems"
+        },
+        {
           "title": "Renesas Acquires Pictorus to Simplify and Accelerate Embedded Application Software Development",
           "date": "Jun 2026",
           "url": "https://www.renesas.com/en/about/newsroom/renesas-acquires-pictorus-simplify-and-accelerate-embedded-application-software-development"
@@ -2364,11 +2369,6 @@
           "title": "Renesas Introduces Advanced Wireless Products for Locationing 2.0",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Renesas+Introduces+Advanced+Wireless+Products+for+Locationing+2.0+Renesas"
-        },
-        {
-          "title": "Renesas 365 Launches",
-          "date": "Apr 2026",
-          "url": "https://www.renesas.com/en/blogs/renesas-365-launches-inspired-vision-reality"
         }
       ],
       "events": [
@@ -2599,6 +2599,16 @@
           "url": "https://finance.yahoo.com/markets/stocks/articles/synaptics-ceo-filing-signals-investors-001219102.html"
         },
         {
+          "title": "Synaptics to Release Fourth Quarter and Full Year Fiscal 2026 Results",
+          "date": "Jul 2026",
+          "url": "https://www.manilatimes.net/2026/07/16/tmt-newswire/globenewswire/synaptics-to-release-fourth-quarter-and-full-year-fiscal-2026-results-on-august-6-2026/2385492"
+        },
+        {
+          "title": "Synaptics Announces Pending Acquisition by ON Semiconductor",
+          "date": "Jul 2026",
+          "url": "https://www.stocktitan.net/news/SYNA/synaptics-to-release-fourth-quarter-and-full-year-fiscal-2026-199c2da8pnhr.html"
+        },
+        {
           "title": "Synaptics Unveils Wi-Fi 7-Connected Astra\u2122 AI Microcontroller to Accelerate Edge AI",
           "date": "Jun 2026",
           "url": "https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/"
@@ -2610,16 +2620,6 @@
         },
         {
           "title": "onsemi Announces Agreement to Acquire Synaptics for $7 Billion to Expand Edge AI Capabilities",
-          "date": "Jun 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
-        },
-        {
-          "title": "Synaptics Launches Astra SRW1500 Series of AI-Native Edge AI MCUs with Wi-Fi 7 Connectivity",
-          "date": "Jun 2026",
-          "url": "https://www.cnx-software.com/2026/06/10/synaptics-astra-srw1500-cortex-m52-edge-ai-mcu-features-ethos-u55-npu-wi-fi-6-7-bluetooth-6-0-802-15-4-connectivity/"
-        },
-        {
-          "title": "Onsemi to Acquire Synaptics in $7 Billion All-Stock Deal",
           "date": "Jun 2026",
           "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
         }
@@ -2801,24 +2801,24 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/realtek-stock-trades-steady-as-recent-earnings-highlight-margin-resilience/69827856"
         },
         {
-          "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio and 8K Gaming HID Solutions at COMPUTEX 2026",
-          "date": "Jun 2026",
-          "url": ""
+          "title": "Realtek Stock Trades Steady as Recent Earnings Highlight Margin Resilience",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/realtek-stock-trades-steady-as-recent-earnings-highlight-margin-resilience/69827856"
         },
         {
-          "title": "Realtek Releases RTL8773J, a Next-Generation Bluetooth HDT Audio SoC",
-          "date": "Jun 2026",
-          "url": ""
+          "title": "Realtek, MediaTek Drop Case Alleging Bogus Patent Litigation",
+          "date": "Jul 2026",
+          "url": "https://www.law360.com/articles/2501820/realtek-mediatek-drop-case-alleging-bogus-patent-litigation"
         },
         {
-          "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio SoC (RTL8773J) and 8K Gaming HID Solutions at COMPUTEX 2026",
-          "date": "Jun 2026",
-          "url": ""
+          "title": "Realtek Drops Suit Against MediaTek Targeting Patent Bounty Deal",
+          "date": "Jul 2026",
+          "url": "https://news.bloomberglaw.com/antitrust/realtek-drops-suit-against-mediatek-targeting-patent-bounty-deal?utm_source=rss&utm_medium=ATNW&utm_campaign=0000019f-6b0d-d6ba-a3bf-6fad3ade0001"
         },
         {
-          "title": "Realtek Demonstrates Next-Generation Bluetooth HDT Audio and 8K Gaming HID Solutions, Featuring RTL8773J SoC, at COMPUTEX 2026",
-          "date": "Jun 2026",
-          "url": ""
+          "title": "Realtek Drops US Antitrust Claims Against MediaTek, Future Link",
+          "date": "Jul 2026",
+          "url": "https://www.mlex.com/mlex/articles/2502126/realtek-drops-us-antitrust-claims-against-mediatek-future-link"
         }
       ]
     },
@@ -3709,29 +3709,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 107,
-    "STMicro": 77,
-    "Broadcom": 56,
-    "Microchip": 47,
-    "NXP": 39,
+    "Qualcomm": 99,
+    "STMicro": 75,
+    "Broadcom": 60,
+    "Microchip": 57,
+    "NXP": 40,
     "MediaTek": 20,
-    "Synaptics": 16,
-    "TI": 12,
-    "Espressif": 7,
+    "Synaptics": 15,
+    "TI": 14,
+    "Espressif": 9,
+    "Renesas": 7,
     "Skyworks": 6,
-    "Renesas": 5,
-    "Bosch": 4,
-    "Silicon Labs": 4,
-    "Qorvo": 2,
+    "Bosch": 5,
+    "Marvell": 2,
     "Nordic": 2,
     "Realtek": 2,
-    "Marvell": 1,
+    "u-blox": 1,
+    "Qorvo": 1,
     "Telink": 1,
+    "Silicon Labs": 1,
     "Sequans": 1,
-    "Apple": 1,
     "Goodix": 1,
-    "Infineon": 1,
-    "Murata": 1
+    "Infineon": 1
   },
   "standards_in_flight": [
     {
@@ -3804,6 +3803,40 @@
   ],
   "github_stack_activity": [
     {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3830,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15986,
+      "pushed_at": "2026-07-25T05:33:16Z"
+    },
+    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3814,91 +3847,30 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 0,
+      "issues_open": 1630,
       "prs_open": 0,
-      "releases": []
-    },
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
       ],
-      "commits_30d": 100,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
-    },
-    {
-      "name": "BlueZ",
-      "owner": "bluez",
-      "repo": "bluez",
-      "label": "Linux BT stack",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 42,
-      "issues_open": 109,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 1108,
-      "pushed_at": "2026-07-24T10:36:51Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 12,
-      "issues_open": 273,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 879,
-      "pushed_at": "2026-07-22T15:01:19Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
-    },
-    {
-      "name": "hostap",
-      "owner": "ihewitt",
-      "repo": "hostap",
-      "label": "wpa_supplicant / hostapd Wi-Fi",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
+      "stars": 18613,
+      "pushed_at": "2026-07-24T11:01:51Z"
     },
     {
       "name": "Linux mac80211",
@@ -3908,10 +3880,114 @@
       "tech": [
         "wifi"
       ],
-      "commits_30d": 0,
-      "issues_open": 0,
+      "commits_30d": 100,
+      "issues_open": 3,
       "prs_open": 0,
-      "releases": []
+      "releases": [],
+      "stars": 240369,
+      "pushed_at": "2026-07-25T03:11:34Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2744,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        },
+        {
+          "tag": "v1.5.0.0",
+          "name": "v1.5.0.0 Release",
+          "published_at": "2025-11-17T22:07:57Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+        }
+      ],
+      "stars": 8837,
+      "pushed_at": "2026-07-25T06:59:45Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 93,
+      "issues_open": 167,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.07.0",
+          "name": "OpenThread v2026.07.0",
+          "published_at": "2026-07-01T00:58:53Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+        },
+        {
+          "tag": "v2026.06.0",
+          "name": "OpenThread v2026.06.0",
+          "published_at": "2026-06-01T01:01:04Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+        },
+        {
+          "tag": "thread-reference-20250612",
+          "name": "Thread Reference 2025-06-12",
+          "published_at": "2025-09-16T18:13:38Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
+        }
+      ],
+      "stars": 3990,
+      "pushed_at": "2026-07-25T03:14:40Z"
+    },
+    {
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 39,
+      "issues_open": 109,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "5.87",
+          "name": "5.87",
+          "published_at": "2026-07-07T16:41:14Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
+        },
+        {
+          "tag": "5.86",
+          "name": "5.86",
+          "published_at": "2026-02-09T21:27:33Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
+        },
+        {
+          "tag": "5.85",
+          "name": "5.85",
+          "published_at": "2025-11-26T16:00:07Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
+        }
+      ],
+      "stars": 1109,
+      "pushed_at": "2026-07-24T20:00:49Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3920,6 +3996,55 @@
       "label": "Zigbee gateway",
       "tech": [
         "ieee15_4"
+      ],
+      "commits_30d": 16,
+      "issues_open": 456,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "2.12.1",
+          "name": "2.12.1",
+          "published_at": "2026-07-01T06:04:12Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
+        },
+        {
+          "tag": "2.12.0",
+          "name": "2.12.0",
+          "published_at": "2026-06-09T19:08:29Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
+        },
+        {
+          "tag": "2.11.0",
+          "name": "2.11.0",
+          "published_at": "2026-06-01T18:41:53Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
+        }
+      ],
+      "stars": 15331,
+      "pushed_at": "2026-07-24T19:51:41Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 11,
+      "issues_open": 273,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 879,
+      "pushed_at": "2026-07-22T15:01:19Z"
+    },
+    {
+      "name": "hostap",
+      "owner": "ihewitt",
+      "repo": "hostap",
+      "label": "wpa_supplicant / hostapd Wi-Fi",
+      "tech": [
+        "wifi"
       ],
       "commits_30d": 0,
       "issues_open": 0,
