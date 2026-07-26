@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T11:54:19Z",
+  "generated_at": "2026-07-26T13:09:45Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3711,11 +3711,11 @@
   "vendor_news_momentum_30d": {
     "Qualcomm": 85,
     "STMicro": 64,
-    "Broadcom": 58,
-    "Microchip": 46,
-    "NXP": 42,
-    "TI": 16,
+    "Broadcom": 57,
+    "Microchip": 45,
+    "NXP": 43,
     "MediaTek": 16,
+    "TI": 15,
     "Synaptics": 12,
     "Skyworks": 6,
     "Espressif": 6,
@@ -3803,6 +3803,40 @@
   ],
   "github_stack_activity": [
     {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3816,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 15997,
+      "pushed_at": "2026-07-26T12:17:10Z"
+    },
+    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3835,42 +3869,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18620,
+      "stars": 18621,
       "pushed_at": "2026-07-24T11:01:51Z"
-    },
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3823,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 15997,
-      "pushed_at": "2026-07-25T18:54:58Z"
     },
     {
       "name": "Linux mac80211",
@@ -3884,7 +3884,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 240559,
+      "stars": 240570,
       "pushed_at": "2026-07-25T17:24:39Z"
     },
     {
@@ -3896,7 +3896,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2743,
+      "issues_open": 2744,
       "prs_open": 0,
       "releases": [
         {
@@ -3998,7 +3998,7 @@
         "ieee15_4"
       ],
       "commits_30d": 10,
-      "issues_open": 457,
+      "issues_open": 458,
       "prs_open": 0,
       "releases": [
         {
