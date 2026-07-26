@@ -155,6 +155,9 @@ function Invoke-UpdateCycle {
     else {
         $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm'
         Invoke-LoggedCommand 'STEP 3/3  Commit changes' ('git commit -m "auto update ' + $stamp + '"') { git commit -m "auto update $stamp" } | Out-Null
+        # Pull any remote commits that arrived during the build, preferring local (ours) for conflicts.
+        # This prevents non-fast-forward push failures when someone pushes to remote between cycles.
+        Invoke-LoggedCommand 'Syncing with remote before push (git pull -X ours)...' 'git pull -X ours origin main' { git pull -X ours origin main } | Out-Null
         Invoke-LoggedCommand 'Push changes to remote (origin/main)...' 'git push origin main' { git push origin main } | Out-Null
         Write-Log 'Pushed update to GitHub.'
     }
