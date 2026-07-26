@@ -385,7 +385,7 @@ _NEWS_TEMPLATE = """<!doctype html>
 
 <div class="grid" id="grid">
   {% for a in articles %}
-  <article class="card" data-buckets="{{ a.buckets|join(',') }}" data-vendor="{{ a.vendor or '' }}" data-customer="{{ a.customer or '' }}" data-standard="{{ a.standard or '' }}">
+  <article class="card" data-buckets="{{ a.buckets|join(',') }}" data-vendor="{{ a.vendor or '' }}" data-customer="{{ a.customer or '' }}" data-standard="{{ a.standard or '' }}" data-published="{{ a.published.isoformat() if a.published else '' }}">
     <div class="thumb">
       {% if a.thumb %}<img src="{{ a.thumb }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">{% endif %}
     </div>
@@ -432,6 +432,32 @@ document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(
 
 let techFilter = 'all';
 let sideFilter = { type: 'all', value: '' };
+const STANDARDS_BODY_DAYS = 180;
+const STANDARDS_TECH_DAYS = 15;
+
+function isWithinDays(iso, days){
+  if (!iso) return false;
+  const d = new Date(iso);
+  if (isNaN(d)) return false;
+  const ageMs = Date.now() - d.getTime();
+  return ageMs >= 0 && ageMs <= (days * 86400000);
+}
+
+function matchesStandardsScope(card, slug){
+  const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
+  const standard = (card.dataset.standard || '').trim();
+  const published = (card.dataset.published || '').trim();
+  const isStandardsBody = !!standard;
+
+  if (slug) {
+    if (isStandardsBody && standard === slug) return isWithinDays(published, STANDARDS_BODY_DAYS);
+    if (!isStandardsBody && buckets.includes(slug)) return isWithinDays(published, STANDARDS_TECH_DAYS);
+    return false;
+  }
+
+  if (isStandardsBody) return isWithinDays(published, STANDARDS_BODY_DAYS);
+  return buckets.length > 0 && isWithinDays(published, STANDARDS_TECH_DAYS);
+}
 
 function applyFilters(){
   const cards = document.querySelectorAll('#grid .card');
@@ -440,13 +466,12 @@ function applyFilters(){
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
     const vendor = card.dataset.vendor || '';
     const customer = card.dataset.customer || '';
-    const standard = card.dataset.standard || '';
     const techOk = techFilter === 'all' || buckets.includes(techFilter);
     let sideOk = true;
     if (sideFilter.type === 'vendor') sideOk = vendor === sideFilter.value;
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
-    else if (sideFilter.type === 'standard') sideOk = sideFilter.value ? (standard === sideFilter.value) : (standard !== '');
+    else if (sideFilter.type === 'standard') sideOk = matchesStandardsScope(card, sideFilter.value || '');
     const show = techOk && sideOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
@@ -466,18 +491,22 @@ function updateSidebarCounts(){
   const vendorCounts = Object.create(null);
   const customerCounts = Object.create(null);
   const standardCounts = Object.create(null);
+  const standardSlugs = Object.keys(BUCKET_LABELS || {});
   let standardTotal = 0;
 
   activeCards.forEach(card => {
     const vendor = (card.dataset.vendor || '').trim();
     const customer = (card.dataset.customer || '').trim();
-    const standard = (card.dataset.standard || '').trim();
     if (vendor) vendorCounts[vendor] = (vendorCounts[vendor] || 0) + 1;
     if (customer) customerCounts[customer] = (customerCounts[customer] || 0) + 1;
-    if (standard) {
-      standardCounts[standard] = (standardCounts[standard] || 0) + 1;
+    if (matchesStandardsScope(card, '')) {
       standardTotal += 1;
     }
+    standardSlugs.forEach(slug => {
+      if (matchesStandardsScope(card, slug)) {
+        standardCounts[slug] = (standardCounts[slug] || 0) + 1;
+      }
+    });
   });
 
   document.querySelectorAll('.news-side-item[data-side-type]').forEach(btn => {
@@ -539,7 +568,7 @@ function cardHtml(a){
   if (summary.length > 240) summary = summary.slice(0, 240) + '\u2026';
   const summaryHtml = summary ? '<p class="summary">' + escapeHtml(summary) + '</p>' : '';
   const timeHtml = a.published ? '<span class="dot">\u00b7</span><span class="time" data-ts="' + a.published + '">' + a.published.slice(0, 10) + '</span>' : '';
-  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '" data-standard="' + escapeHtml(a.standard || '') + '">' +
+  return '<article class="card" data-buckets="' + buckets.join(',') + '" data-vendor="' + escapeHtml(a.vendor || '') + '" data-customer="' + escapeHtml(a.customer || '') + '" data-standard="' + escapeHtml(a.standard || '') + '" data-published="' + escapeHtml(a.published || '') + '">' +
     '<div class="thumb">' + thumb + '</div>' +
     '<div class="body">' +
       '<div class="meta-row">' + stdChip + bucketChips + vendorChip + customerChip + appChip + '</div>' +
@@ -2134,12 +2163,37 @@ def render(articles: list[dict], output_dir: Path,
         region_labels=REGION_LABELS,
     )
 
+    standards_body_window = timedelta(days=180)
+    standards_tech_window = timedelta(days=15)
+
+    def _within(pub: datetime | None, window: timedelta) -> bool:
+      if not pub:
+        return False
+      return (now_pdt - pub.astimezone(PDT)) <= window
+
+    def _matches_standard_scope(a: dict, slug: str | None) -> bool:
+      standard = (a.get("standard") or "").strip()
+      buckets = [b for b in (a.get("buckets") or []) if b]
+      pub = a.get("published")
+      is_standards_body = bool(standard)
+
+      if slug:
+        if is_standards_body and standard == slug:
+          return _within(pub, standards_body_window)
+        if (not is_standards_body) and (slug in buckets):
+          return _within(pub, standards_tech_window)
+        return False
+
+      if is_standards_body:
+        return _within(pub, standards_body_window)
+      return bool(buckets) and _within(pub, standards_tech_window)
+
     def _filters(items: list[dict]):
         v_count = Counter(a["vendor"] for a in items if a.get("vendor"))
         c_count = Counter(a["customer"] for a in items if a.get("customer"))
         a_count = Counter(a["application"] for a in items if a.get("application"))
         r_count = Counter(a["vendor_region"] for a in items if a.get("vendor_region"))
-        s_count = Counter(a["standard"] for a in items if a.get("standard"))
+        s_count = {slug: sum(1 for a in items if _matches_standard_scope(a, slug)) for slug, _ in BUCKETS}
 
         vendor_groups = []
         for region_slug, names in region_groups_def:
@@ -2158,7 +2212,7 @@ def render(articles: list[dict], output_dir: Path,
                 a_tabs.append((n, a_count[n]))
         # Standards families always shown in the fixed BUCKETS order.
         s_tabs: list = [(slug, bucket_labels[slug], s_count.get(slug, 0)) for slug, _ in BUCKETS]
-        s_total = sum(s_count.values())
+        s_total = sum(1 for a in items if _matches_standard_scope(a, None))
         return vendor_groups, vendor_total, c_tabs, a_tabs, s_tabs, s_total
 
     news_template = env.from_string(_NEWS_TEMPLATE)
