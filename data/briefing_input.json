@@ -1,67 +1,223 @@
 {
-  "generated_at": "2026-07-25T13:10:22Z",
+  "generated_at": "2026-07-26T11:54:19Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "AirTags are the best Home Assistant accessory you've overlooked\u2014here's 5 ways I'm using them - How-To Geek",
-      "url": "https://www.howtogeek.com/airtags-are-the-best-home-assistant-accessory-youve-overlooked/",
-      "source": "How-To Geek",
-      "date": "2026-07-25",
-      "vendor": null,
+      "title": "Creality Pika review \u2013 An affordable, portable 3D scanner with infrared and blue laser modes",
+      "url": "https://www.cnx-software.com/2026/07/26/creality-pika-review-an-affordable-portable-3d-scanner-with-infrared-and-blue-laser-modes/",
+      "source": "CNX Software",
+      "date": "2026-07-26",
+      "vendor": "Qualcomm",
       "customer": "Apple",
-      "application": "Smart Home",
+      "application": "Retail",
       "buckets": [
-        "bluetooth"
+        "wifi"
       ],
-      "summary": "You've likely been sitting on automation potential right in your pocket or attached to your keys. While Apple AirTags started out as a way to find lost luggage or misplaced wallets, they've quietly evolved into the coolest and most versatile Home Assistant accessory out there right now. They are dev"
+      "summary": "Creality has sent us a sample of the Pika portable 3D scanner for review. In some ways, it shares some of the features of the high-end Sermoon S1 3D scanner, like blue laser and NIR structured light scanning modes, but it&#8217;s more affordable and compact, works out of the box through USB or WiFi,"
     },
     {
-      "title": "How Samsung\u2019s US$200 Billion Chip Deal Will Impact Broadcom (AVGO) Investors",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-avgo/broadcom/news/how-samsungs-us200-billion-chip-deal-will-impact-broadcom-av",
-      "source": "simplywall.st",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
+      "title": "Realtek RTL8723B/RTL8723BS Trying To Be Tacked On To The RTW88 Linux Driver",
+      "url": "https://www.phoronix.com/news/Realtek-RTL8723B-RTW88-Patches",
+      "source": "Phoronix",
+      "date": "2026-07-26",
+      "vendor": "Realtek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Realtek RTL8723B/RTL8723BS Trying To Be Tacked On To The RTW88 Linux Driver\nSince 2017 in Linux 4.12 has been the Realtek rtl8723bs WiFi driver where it was introduced into the staging area and remains there nearly a decade later. The rtl8723bs driver for this Realtek 802.11n WiFi SDIO driver has se"
+    },
+    {
+      "title": "Valve can't catch a break: Qualcomm announces Snapdragon price hike before Steam Frame release",
+      "url": "https://videocardz.com/newz/valve-cant-catch-a-break-qualcomm-announces-snapdragon-price-hike-before-steam-frame-release",
+      "source": "VideoCardz.com",
+      "date": "2026-07-26",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Healthcare of Ontario Pension Plan Trust Fund Has $82.50 Million Holdings in NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-healthcare-of-ontario-pension-plan-trust-fund-has-8250-million-holdings-in-nxp-semiconductors-nv-nxpi-2026-07-26/",
+      "source": "MarketBeat",
+      "date": "2026-07-26",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "Healthcare of Ontario Pension Plan Trust Fund grew its holdings in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) by 146.5% in the 1st quarter, according to its most recent disclosure with the SEC. The fund owned 419,077 shares of the semiconductor provider's stock after acquiring an "
+    },
+    {
+      "title": "Lido Advisors LLC Decreases Stock Holdings in NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-lido-advisors-llc-decreases-stock-holdings-in-nxp-semiconductors-nv-nxpi-2026-07-26/",
+      "source": "MarketBeat",
+      "date": "2026-07-26",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Lido Advisors LLC reduced its position in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) by 50.0% during the first quarter, according to its most recent 13F filing with the SEC. The institutional investor owned 15,771 shares of the semiconductor provider's stock after selling 15,780 shares duri"
+    },
+    {
+      "title": "Microchip buys Israeli edge AI chipmaker Hailo - Globes",
+      "url": "https://en.globes.co.il/en/article-microchip-acquires-israeli-edge-ai-chipmaker-hailo-1001550424",
+      "source": "Globes - Israel Business News",
+      "date": "2026-07-26",
+      "vendor": "Microchip",
+      "customer": "HKMC",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Microchip buys Israeli edge AI chipmaker Hailo&nbsp;&nbsp;Globes - Israel Business News"
+    },
+    {
+      "title": "Questions Linger Over Math Behind Samsung, SK\u2019s $950B AI Deals",
+      "url": "https://www.chosun.com/english/industry-en/2026/07/26/PJ7STJI62RDLBI2ZUO55UT73H4/",
+      "source": "\uc870\uc120\uc77c\ubcf4",
+      "date": "2026-07-26",
+      "vendor": null,
       "customer": "Samsung",
       "application": null,
       "buckets": [],
-      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:AVGO\nHow Samsung\u2019s US$200 Billion Chip Deal Will Impact Broadcom (AVGO) Investors\n- Earlier this week, South Korean officials said Samsung Electronics secured a more than US$200.00 billion, five\u2011year contract to manufacture Broadcom chips on its ad"
+      "summary": ""
     },
     {
-      "title": "Samsung and SK Hynix Lock In AI Chip Supply Through 2030 With $950B in US Deals",
-      "url": "https://www.techtimes.com/articles/321554/20260725/samsung-sk-hynix-lock-ai-chip-supply-through-2030-950b-us-deals.htm",
-      "source": "Tech Times",
-      "date": "2026-07-25",
+      "title": "NXP Semiconductors N.V. $NXPI Shares Sold by PNC Financial Services Group Inc.",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-nxp-semiconductors-nv-nxpi-shares-sold-by-pnc-financial-services-group-inc-2026-07-26/",
+      "source": "MarketBeat",
+      "date": "2026-07-26",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "PNC Financial Services Group Inc. trimmed its position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) by 10.1% in the 1st quarter, according to the company in its most recent filing with the Securities and Exchange Commission (SEC). The institutional investor owned 60,379 shares of"
+    },
+    {
+      "title": "Qualcomm Signals Double-Digit Chip Price Hike",
+      "url": "https://en.sedaily.com/international/2026/07/26/qualcomm-signals-double-digit-chip-price-hike",
+      "source": "Seoul Economic Daily",
+      "date": "2026-07-26",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "Wearable",
+      "buckets": [],
+      "summary": "Qualcomm, a manufacturer of smartphone application processors (APs), is expected to raise prices by more than 10%. Observers say increases in the costs of smartphones and various body-worn wearable devices will be unavoidable.\nBloomberg reported on the 25th (local time) that it had obtained a copy o"
+    },
+    {
+      "title": "Samsung, SK cement Korea's AI supply-chain role",
+      "url": "https://www.theinvestor.co.kr/article/10820562",
+      "source": "theinvestor.co.kr",
+      "date": "2026-07-26",
       "vendor": "Broadcom",
       "customer": "Samsung",
       "application": "Industrial",
       "buckets": [],
-      "summary": "The world's two dominant memory chipmakers have contractually locked in the high-bandwidth memory supply for the two most powerful AI accelerator platforms through the end of the decade \u2014 and companies not covered by those agreements now face years without a path to the same chips. South Korean Pres"
+      "summary": "Partnerships with Broadcom, Nvidia and other US tech leaders underscore Seoul's ambition to become global AI infrastructure hub\nSouth Korea moved to cement its role in the global artificial intelligence supply chain Friday as Samsung Electronics and SK Group unveiled massive AI infrastructure partne"
     },
     {
-      "title": "Samsung's new Ultra foldable is impressive, but I'd pay close attention to this model",
-      "url": "https://www.zdnet.com/article/samsung-galaxy-z-fold-8-ultra-hands-on/",
+      "title": "Entropy Technologies LP Acquires 23,161 Shares of NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-entropy-technologies-lp-acquires-23161-shares-of-nxp-semiconductors-nv-nxpi-2026-07-26/",
+      "source": "MarketBeat",
+      "date": "2026-07-26",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Entropy Technologies LP raised its holdings in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) by 622.9% in the 1st quarter, according to the company in its most recent filing with the SEC. The firm owned 26,879 shares of the semiconductor provider's stock after acquiring an additional 23,161 sh"
+    },
+    {
+      "title": "Samsung Galaxy Z Fold 8 Ultra vs. Motorola Razr Ultra: How Samsung fares against its foldable rival",
+      "url": "https://www.zdnet.com/article/galaxy-z-fold-8-ultra-vs-motorola-razr-ultra-comparison/",
       "source": "ZDNet",
-      "date": "2026-07-25",
-      "vendor": null,
+      "date": "2026-07-26",
+      "vendor": "Qualcomm",
       "customer": "Samsung",
       "application": null,
       "buckets": [],
-      "summary": "The Galaxy Z Fold 8 Ultra is sure to impress power users, but Samsung took a risk with the Galaxy Z Fold 8, and it could pay off."
+      "summary": "Samsung isn't the only brand with flagship foldables. Here's how it compares to Motorola's Razr Ultra - one of my favorite phones of the year."
     },
     {
-      "title": "Apple weekend deals:\u00a0MacBook Pro $500 off, AirPods Pro 3, AirTag 2, iPhone Air, Series 11, more",
-      "url": "https://9to5mac.com/2026/07/25/apple-weekend-deals-macbook-pro-airpods-airtag-2/",
+      "title": "NXP Semiconductors stock trades firm as automotive and industrial demand supports earnings",
+      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/nxp-semiconductors-stock-trades-firm-as-automotive-and-industrial-demand/69875291",
+      "source": "AD HOC NEWS",
+      "date": "2026-07-26",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NXP Semiconductors stock trades firm as automotive and industrial demand supports earnings\nPublished on 07/26/2026 at 08:51 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSNXP Semiconductors N.V. (ISIN NL0009538779) stock is backed by steady demand for automotive and industrial"
+    },
+    {
+      "title": "Samsung, Broadcom Ink $200 Billion AI Chip Pact Through 2030 as Foundry Race With TSMC Heats Up",
+      "url": "https://www.benzinga.com/markets/tech/26/07/60685628/samsung-broadcom-ink-200-billion-ai-chip-pact-through-2030-as-foundry-race-with-tsmc-heats-up",
+      "source": "Benzinga",
+      "date": "2026-07-26",
+      "vendor": "Broadcom",
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Custom AI Chips Drive Deal\nThe five-year agreement combines Broadcom\u2019s expertise in designing application-specific integrated circuits with Samsung\u2019s chip manufacturing capabilities. Under the deal, Broadcom\u2019s next-generation communication chips will be produced using Samsung\u2019s sub-2-nanometer proce"
+    },
+    {
+      "title": "Broadcom stock holds firm on AI chip demand",
+      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-stock-holds-firm-on-ai-chip-demand/69874688",
+      "source": "AD HOC NEWS",
+      "date": "2026-07-26",
+      "vendor": "Broadcom",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Broadcom stock holds firm on AI chip demand\nPublished on 07/26/2026 at 07:46 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSBroadcom stock has a clear earnings base to lean on: in fiscal 2025, Broadcom reported revenue of $51.6 billion, up from $35.8 billion in fiscal 2024, wh"
+    },
+    {
+      "title": "Samsung Electronics, Broadcom sign AI chip partnership",
+      "url": "https://www.techinasia.com/news/samsung-broadcom-sign-ai-chip-partnership",
+      "source": "Tech in Asia",
+      "date": "2026-07-26",
+      "vendor": "Broadcom",
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "US chipmaker Microchip acquires Israeli AI firm Hailo",
+      "url": "https://www.techinasia.com/news/chipmaker-microchip-acquires-israeli-ai-firm-hailo",
+      "source": "Tech in Asia",
+      "date": "2026-07-26",
+      "vendor": "Microchip",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Here are the best MacBook deals right now: July 2026 Buyer\u2019s Guide",
+      "url": "https://9to5mac.com/2026/07/25/best-macbook-deals-currently-july-2026/",
       "source": "9to5Mac",
-      "date": "2026-07-25",
+      "date": "2026-07-26",
       "vendor": null,
       "customer": "Apple",
-      "application": "Audio / Speaker",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "It\u2019s time for your weekend edition of 9to5Toys Lunch Break, and this week it\u2019s a Black Friday in July edition as sale events at Amazon, Best Buy, and elsewhere carry through Sunday. Alongside the ongoing price drop on AirPods Pro 3 and $100 off AirPods Pro Max, we also have up to $500 off M5 Pro Mac"
+      "summary": "In recent years, Macs had been getting more and more affordable. Cheaper starting points, more memory and storage per dollar, and the introduction of MacBook Neo. For the first time, Apple had started to become one of the best values on the market. Unfortunately, Apple just drastically increased its"
+    },
+    {
+      "title": "Nanoleaf Announces Modular Monitor Stand With Matter over Thread",
+      "url": "https://homekitnews.com/2026/07/26/nanoleaf-announces-modular-monitor-stand-with-matter-over-thread/",
+      "source": "Homekit News and Reviews",
+      "date": "2026-07-26",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Nanoleaf Announces Modular Monitor Stand With Matter over Thread\nNanoleaf has unveiled its latest desktop-focused smart lighting product, the Smart Modular Monitor Stand, a collaboration with FANTAQI that combines ergonomic design, premium materials, and dynamic smart lighting in a single desktop ac"
     },
     {
       "title": "Microchip Technology (MCHP) Announces Departure of Chief Operati",
-      "url": "https://www.gurufocus.com/news/8979273/microchip-technology-mchp-announces-departure-of-chief-operating-officer",
+      "url": "https://www.gurufocus.com/news/8979273/microchip-technology-mchp-announces-departure-of-chief-operating-officer?mobile=true",
       "source": "GuruFocus",
       "date": "2026-07-25",
       "vendor": "Microchip",
@@ -71,423 +227,269 @@
       "summary": ""
     },
     {
-      "title": "Folding and flipping phones are getting seriously good",
-      "url": "https://www.theverge.com/tech/971004/z-fold8-xteink-x4-light-flip-installer",
-      "source": "The Verge",
+      "title": "How Investors May Respond To NXP Semiconductors (NXPI) Ahead of Upgraded Earnings and Revenue Expectations",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-nxpi/nxp-semiconductors/news/470f2995e2d52b27",
+      "source": "simplywall.st",
       "date": "2026-07-25",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
+      "vendor": "NXP",
+      "customer": "Microsoft",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "Hi, friends! Welcome to Installer No. 137, your guide to the best and Verge-iest stuff in the world. (If you're new here, welcome, happy phone season, and also you can read all the old editions at the Installer homepage.) This week, I've been reading about Google Zero and armored cars for rich peopl"
+      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:NXPI\nHow Investors May Respond To NXP Semiconductors (NXPI) Ahead of Upgraded Earnings and Revenue Expectations\n- NXP Semiconductors\u2019 upcoming quarterly report, now just ahead of release, is expected to show earnings of US$3.54 per share on revenue"
     },
     {
-      "title": "AI chip race heats up: NVIDIA-SK Group unveil $500 billion alliance as Samsung, Broadcom expand $200 billion partnership",
-      "url": "https://openthemagazine.com/business/ai-chip-race-heats-up-nvidia-sk-group-unveil-500-billion-alliance-as-samsung-broadcom-expand-200-billion-partnership",
-      "source": "Open Magazine",
+      "title": "How Investors Are Reacting To QUALCOMM (QCOM) Chip Price Hikes Amid Supply Chain Pressures",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-qcom/qualcomm/news/how-investors-are-reacting-to-qualcomm-qcom-chip-price-hikes",
+      "source": "simplywall.st",
+      "date": "2026-07-25",
+      "vendor": "Qualcomm",
+      "customer": "Microsoft",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:QCOM\nHow Investors Are Reacting To QUALCOMM (QCOM) Chip Price Hikes Amid Supply Chain Pressures\n- Earlier this month, Qualcomm informed customers it will implement double-digit percentage price increases on its chips for products shipped after Sept"
+    },
+    {
+      "title": "Samsung Secures Stunning $200B Broadcom Chip Deal",
+      "url": "https://yellow.com/news/samsung-broadcom-200-billion-chip-deal-ai",
+      "source": "Yellow.com",
       "date": "2026-07-25",
       "vendor": "Broadcom",
       "customer": "Samsung",
       "application": "Industrial",
       "buckets": [],
-      "summary": "AI chip race heats up: NVIDIA-SK Group unveil $500 billion alliance as Samsung, Broadcom expand $200 billion partnership\nThe global race to dominate artificial intelligence infrastructure gathered fresh momentum on Saturday as NVIDIA and South Korea's SK Group announced a semiconductor and AI partne"
+      "summary": "Samsung Electronics won a contract worth more than $200 billion to supply chips to Broadcom in the largest publicly known foundry supply agreement of the AI buildout era.\nThe Broadcom Chip Deal covers 2-nanometer AI accelerator chips and advanced packaging through 2030, and it arrives as both compan"
     },
     {
-      "title": "Broadcom stock consolidates after strong AI and networking demand lifts revenue and earnings",
-      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/broadcom-stock-consolidates-after-strong-ai-and-networking-demand-lifts/69868640",
-      "source": "AD HOC NEWS",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Broadcom stock consolidates after strong AI and networking demand lifts revenue and earnings\nPublished on 07/25/2026 at 13:31 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSBroadcom Inc. (ISIN US11135F1012) stock is backed by a series of robust recent financial results, with t"
-    },
-    {
-      "title": "Qualcomm Price Hike May Make Android Phones Costlier",
-      "url": "https://www.gulte.com/shorts/422869/qualcomm-price-hike-may-make-android-phones-costlier",
-      "source": "Gulte",
+      "title": "Qualcomm is set to ratchet up chip prices in September, and your next gadget upgrade could bear the brunt",
+      "url": "https://www.digitaltrends.com/computing/qualcomm-is-set-to-ratchet-up-chip-prices-in-september-and-your-next-gadget-upgrade-could-bear-the-brunt/",
+      "source": "Digital Trends",
       "date": "2026-07-25",
       "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
+      "customer": "Apple",
+      "application": "Smart Glasses",
       "buckets": [],
-      "summary": "Buying a new Android phone could soon become more expensive. Qualcomm has reportedly informed customers that it will raise chip prices by a double digit percentage for shipments after September 1, citing rising supplier costs and ongoing component shortages. The increase could push up prices of smar"
+      "summary": "I want you to sit with this for a second. Qualcomm, the company whose Snapdragon chips sit inside your Android phone and tablet, your Windows laptop, your Meta smart glasses, your Galaxy Watch, and your wireless earbuds, reportedly sent a letter to every major customer telling them prices are going "
     },
     {
-      "title": "A Complete Guide to IoT Connectivity Technologies",
-      "url": "https://www.bisinfotech.com/a-complete-guide-to-iot-connectivity-technologies/",
-      "source": "Bisinfotech",
-      "date": "2026-07-25",
-      "vendor": null,
-      "customer": null,
-      "application": "Smart Home",
-      "buckets": [
-        "ieee15_4"
-      ],
-      "summary": "A Complete Guide to IoT Connectivity Technologies\nTechnological world of the present age depends on IoT connectivity technologies for enabling communication among smart devices, sensors, and equipment. Choosing the appropriate IoT Connectivity Technologies is important for providing efficient data t"
-    },
-    {
-      "title": "Samsung Galaxy Z Fold 8 Ultra vs. Z Fold 7: How the first 'Ultra' foldable compares to last year's model",
-      "url": "https://www.zdnet.com/article/samsung-galaxy-z-fold-8-ultra-vs-z-fold-7/",
-      "source": "ZDNet",
-      "date": "2026-07-25",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Samsung's new Z Fold 8 Ultra brings design and software changes geared toward power users and enthusiasts."
-    },
-    {
-      "title": "Big Tech accused of stonewalling European social media researchers",
-      "url": "https://arstechnica.com/tech-policy/2026/07/big-tech-accused-of-stonewalling-european-social-media-researchers/",
-      "source": "Ars Technica",
-      "date": "2026-07-25",
-      "vendor": null,
-      "customer": "Meta",
-      "application": null,
-      "buckets": [],
-      "summary": "Researchers say TikTok, X, and Meta aren't providing data they're legally required to."
-    },
-    {
-      "title": "Unisphere Establishment Purchases Shares of 191,500 Microchip Technology Incorporated $MCHP",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-unisphere-establishment-purchases-shares-of-191500-microchip-technology-incorporated-mchp-2026-07-25/",
-      "source": "MarketBeat",
-      "date": "2026-07-25",
-      "vendor": "Microchip",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Unisphere Establishment purchased a new position in Microchip Technology Incorporated (NASDAQ:MCHP - Free Report) in the first quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The institutional investor purchased 191,500 shares of the semiconductor comp"
-    },
-    {
-      "title": "Senvest Management LLC Purchases New Position in Microchip Technology Incorporated $MCHP",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-senvest-management-llc-purchases-new-position-in-microchip-technology-incorporated-mchp-2026-07-25/",
-      "source": "MarketBeat",
-      "date": "2026-07-25",
-      "vendor": "Microchip",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Senvest Management LLC acquired a new position in Microchip Technology Incorporated (NASDAQ:MCHP - Free Report) during the first quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission (SEC). The institutional investor acquired 516,200 shares of th"
-    },
-    {
-      "title": "Healthcare of Ontario Pension Plan Trust Fund Grows Position in Microchip Technology Incorporated $MCHP",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-healthcare-of-ontario-pension-plan-trust-fund-grows-position-in-microchip-technology-incorporated-mchp-2026-07-25/",
-      "source": "MarketBeat",
-      "date": "2026-07-25",
-      "vendor": "Microchip",
-      "customer": null,
-      "application": "Healthcare",
-      "buckets": [],
-      "summary": "Healthcare of Ontario Pension Plan Trust Fund increased its holdings in shares of Microchip Technology Incorporated (NASDAQ:MCHP - Free Report) by 52.8% in the first quarter, according to its most recent 13F filing with the Securities and Exchange Commission. The fund owned 2,601,121 shares of the s"
-    },
-    {
-      "title": "Analysts Offer Insights on Technology Companies: STMicroelectronics (STM), RingCentral (RNG) and Intel (INTC)",
-      "url": "https://www.theglobeandmail.com/investing/markets/stocks/INTC-Q/pressreleases/3460613/analysts-offer-insights-on-technology-companies-stmicroelectronics-stm-ringcentral-rng-and-intel-intc/",
-      "source": "The Globe and Mail",
-      "date": "2026-07-25",
-      "vendor": "STMicro",
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Analysts Offer Insights on Technology Companies: STMicroelectronics (STM), RingCentral (RNG) and Intel (INTC)\nCompanies in the Technology sector have received a lot of coverage today as analysts weigh in on STMicroelectronics (STM), RingCentral (RNG) and Intel (INTC).\nClaim 55% Off TipRanks\n- Unlock"
-    },
-    {
-      "title": "Apple @ Work: Apple TV proves to be more reliable than Android in new digital signage report",
-      "url": "https://9to5mac.com/2026/07/25/apple-tv-proves-to-be-more-reliable-than-android-in-new-digital-signage-report/",
+      "title": "Apple TV announces streaming date for its epic Neuromancer adaptation, new Dark Matter and Matchbox trailers",
+      "url": "https://9to5mac.com/2026/07/25/apple-tv-neuromancer-adaptation-trailers/",
       "source": "9to5Mac",
       "date": "2026-07-25",
       "vendor": null,
       "customer": "Apple",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Apple @ Work is exclusively brought to you by Mosyle, the only Apple Unified Platform. Mosyle is the only solution that integrates in a single professional grade platform all the solutions necessary to seamlessly and automatically deploy, manage, and protect Apple devices at work. Over 45,000 organi"
-    },
-    {
-      "title": "How Samsung Electronics $200 billion Broadcom deal could reshape the AI chip market",
-      "url": "https://www.thenews.com.pk/latest/1410197-how-samsung-electronics-200-billion-broadcom-deal-could-reshape-the-ai-chip-market",
-      "source": "The News International",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "How Samsung Electronics $200 billion Broadcom deal could reshape the AI chip market\n\u2018The expanded collaboration reflects Samsung\u2019s focus on supporting customers with end-to-end semiconductor technologies, said Samsung\u2019\nSamsung Electronics has reportedly signed a major $200 billion strategic partners"
-    },
-    {
-      "title": "Samsung Elec wins $200 billion Broadcom AI chip partnership, boosting foundry push",
-      "url": "https://www.reuters.com/business/autos-transportation/samsung-elec-wins-200-billion-broadcom-ai-chip-partnership-boosting-foundry-push-2026-07-25/",
-      "source": "Reuters",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Systematic Financial Management LP Acquires 3,850 Shares of NXP Semiconductors N.V. $NXPI",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-systematic-financial-management-lp-acquires-3850-shares-of-nxp-semiconductors-nv-nxpi-2026-07-25/",
-      "source": "MarketBeat",
-      "date": "2026-07-25",
-      "vendor": "NXP",
-      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "Systematic Financial Management LP grew its holdings in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) by 102.8% in the 1st quarter, according to the company in its most recent filing with the SEC. The firm owned 7,595 shares of the semiconductor provider's stock after buying an additional 3,85"
+      "summary": "Apple TV prepared a slew of announcements for its main stage Hall H appearance at San Diego Comic Con this weekend. Leading the charge, its new sci-fi epic Neuromancer (based on the genre-defining William Gibson novel) has finally got a release date: the series will premiere on January 22. The strea"
     },
     {
-      "title": "Microchip Technology Incorporated $MCHP Shares Sold by Epoch Investment Partners Inc.",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-microchip-technology-incorporated-mchp-shares-sold-by-epoch-investment-partners-inc-2026-07-25/",
-      "source": "MarketBeat",
+      "title": "Samsung Electronics wins $200 billion Broadcom AI chip partnership, boosting foundry push",
+      "url": "https://www.cnbc.com/2026/07/25/samsung-electronics-wins-200-billion-broadcom-ai-chip-partnership.html",
+      "source": "CNBC",
       "date": "2026-07-25",
-      "vendor": "Microchip",
-      "customer": null,
+      "vendor": "Broadcom",
+      "customer": "Samsung",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Epoch Investment Partners Inc. decreased its stake in shares of Microchip Technology Incorporated (NASDAQ:MCHP - Free Report) by 1.9% during the 1st quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission. The firm owned 1,323,736 shares of the sem"
+      "summary": "Samsung Electronics said on Saturday it struck a pact with U.S. chip designer Broadcom to widen cooperation across memory chips, contract chip making and advanced packaging envisaged to exceed $200 billion until 2030.\nWinning long-term production commitments from Broadcom, one of the world's leading"
     },
     {
-      "title": "Rescue deal for Hailo: Microchip acquires the Israeli AI chip company",
-      "url": "https://www.calcalistech.com/ctechnews/article/sje9qxgrgg",
-      "source": "calcalistech.com",
+      "title": "Warner Bros. lawsuit accuses Amazon of illegally poaching executives",
+      "url": "https://techcrunch.com/2026/07/25/warner-bros-lawsuit-accuses-amazon-of-illegally-poaching-executives/",
+      "source": "TechCrunch",
       "date": "2026-07-25",
-      "vendor": "Microchip",
-      "customer": null,
+      "vendor": null,
+      "customer": "Amazon",
       "application": null,
       "buckets": [],
-      "summary": "Rescue deal for Hailo: Microchip acquires the Israeli AI chip company\nMicrochip expands its edge AI portfolio with the acquisition of Hailo, stepping in as the troubled startup faces heavy investor write-downs\nAmerican semiconductor giant Microchip Technology announced the signing of an agreement to"
+      "summary": "The lawsuit will likely renew debates about whether term employment agreements are enforceable under California. law"
     },
     {
-      "title": "Samsung Electronics, Broadcom Forge $200 Billion AI Semiconductor Alliance",
-      "url": "https://www.chosun.com/english/industry-en/2026/07/25/CTCAQPRIQNDNXOTJCLZ4BHUOBE/",
-      "source": "\uc870\uc120\uc77c\ubcf4",
+      "title": "Samsung Galaxy A57 - Full phone specifications",
+      "url": "https://www.gsmarena.com/samsung_galaxy_a57_5g-14379.php",
+      "source": "GSMArena.com",
+      "date": "2026-07-25",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Login\nAlso known as Samsung Galaxy A57 5G\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nThe annual refresh of the Galaxy A series has kicked off with the new A57 and A37 models. Today we are going to meet the Galaxy A57, which is now thinner and lighte"
+    },
+    {
+      "title": "Samsung Electronics And Broadcom Sign $200+ Billion Strategic Collaboration",
+      "url": "https://pulse2.com/samsung-electronics-and-broadcom-sign-200-billion-strategic-collaboration/",
+      "source": "Pulse 2.0",
       "date": "2026-07-25",
       "vendor": "Broadcom",
       "customer": "Samsung",
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "Samsung Electronics and Broadcom announced a memorandum of understanding to expand their strategic collaboration in memory and foundry technologies to support next-generation AI infrastructure. The MOU was announced during the AI Summit at The Midway in San Francisco, with the companies expecting th"
     },
     {
-      "title": "Everything announced at Galaxy Unpacked 2026: Can Samsung compete with the rumored foldable iPhone?",
-      "url": "https://www.zdnet.com/article/everything-announced-samsung-unpacked-2026/",
-      "source": "ZDNet",
+      "title": "Broadcom (AVGO) Q2 2026 Earnings Call Transcript",
+      "url": "https://fortune.com/company/broadcom/earnings/q2-2026/",
+      "source": "Fortune",
+      "date": "2026-07-25",
+      "vendor": "Broadcom",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Search\nHome\nLatest\nNews\nNorth America\nEurope\nAsia\nMiddle East\nGlobal\nFortune 500\nFortune 500 U.S.\nFortune Global 500\nFortune 500 Europe\nFortune China 500\nFortune SEA 500\nFinance\nEconomy\nBanking\nPersonal Finance\nInvesting\nReal Estate\nEnergy\nCrypto\nTech\nBig Tech\nStartups & Venture\nAI\nInnovation\nCybers"
+    },
+    {
+      "title": "Steam Frame price increase looms with rising cost of VR headset's Qualcomm chip",
+      "url": "https://www.notebookcheck.net/Steam-Frame-price-increase-looms-with-rising-cost-of-VR-headset-s-Qualcomm-chip.1351952.0.html",
+      "source": "Notebookcheck",
+      "date": "2026-07-25",
+      "vendor": "Qualcomm",
+      "customer": "Meta",
+      "application": "Wearable",
+      "buckets": [],
+      "summary": "Steam Frame price increase looms with rising cost of VR headset's Qualcomm chip\nAnticipation for the new Valve VR headset is growing, as the company accepts suspected shipments of the wearable. Buyers are still waiting for a confirmed Steam Frame price and release date. However, Qualcomm may have co"
+    },
+    {
+      "title": "Indie App Spotlight: \u2018NeoCam\u2019 brings a retro video game style look to your iPhone photos",
+      "url": "https://9to5mac.com/2026/07/25/indie-app-spotlight-neocam-brings-a-retro-video-game-style-look-to-your-iphone-photos/",
+      "source": "9to5Mac",
+      "date": "2026-07-25",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Welcome to Indie App Spotlight. This is a weekly 9to5Mac series where we showcase the latest apps in the indie app world. If you\u2019re a developer and would like your app featured, get in contact. NeoCam is a fun, new camera app for iPhone and iPad that brings a Game Boy camera style look to all of you"
+    },
+    {
+      "title": "9to5Mac Overtime 074: Apple\u2019s foldable iPhone",
+      "url": "https://9to5mac.com/2026/07/25/9to5mac-overtime-074-apples-foldable-iphone/",
+      "source": "9to5Mac",
+      "date": "2026-07-25",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Fernando and Jeff discuss Samsung\u2019s Galaxy Z Fold8 event in depth, including hands-on experience with Samsung\u2019s newest foldable form factor, the pros and cons of the new 4:3 aspect ratio, efforts to address the crease issue, and what this all means for Apple\u2019s upcoming foldable iPhone. Sponsored by "
+    },
+    {
+      "title": "HomeKit Weekly: The Amazon Basics Matter plug delivers Apple Home support for under $10",
+      "url": "https://9to5mac.com/2026/07/25/the-amazon-basics-matter-plug-delivers-apple-home-control-for-under-10/",
+      "source": "9to5Mac",
+      "date": "2026-07-25",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "The price increase in technology is exhausting. With the recent price increases across the Apple lineup, seeing items go down in price is becoming rare. The Amazon Basics smart plug is one of the rare exceptions that seems to be holding the line. With Matter support and a price under $10, it may be "
+    },
+    {
+      "title": "Samsung Inks Landmark $200 Billion Chip Deal With Broadcom, Challenging TSMC's Foundry Dominance",
+      "url": "https://finance.biggo.com/news/a63de402-1ace-41fc-b9f8-82fd501093b8",
+      "source": "finance.biggo.com",
+      "date": "2026-07-25",
+      "vendor": "Broadcom",
+      "customer": "Samsung",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Samsung Inks Landmark $200 Billion Chip Deal With Broadcom, Challenging TSMC's Foundry Dominance\nSamsung Electronics has secured a monumental five-year chip manufacturing partnership with Broadcom, valued at more than $200 billion, a move that significantly intensifies the battle for dominance in th"
+    },
+    {
+      "title": "Google basically confirms the Pixel 11 is getting a price hike",
+      "url": "https://www.theverge.com/tech/971041/google-confirms-pixel-11-price-hike",
+      "source": "The Verge",
+      "date": "2026-07-25",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Google's Vice President of Devices and Services, Shakil Barkat, all but confirmed in an interview with 9to5 Google that its next Pixel phone would cost more than the Pixel 10. Considering the ongoing RAM supply issues due to the explosion of AI data centers, the rumored price hike is not a complete "
+    },
+    {
+      "title": "iPhone 18 won\u2019t debut this fall, here\u2019s why",
+      "url": "https://9to5mac.com/2026/07/25/heres-why-iphone-18-wont-launch-in-september/",
+      "source": "9to5Mac",
+      "date": "2026-07-25",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "We\u2019re about two months away from Apple\u2019s annual iPhone debut in September. This year, though, will be a bit different. Instead of the entire iPhone lineup debuting at once, only the iPhone 18 Pro, iPhone 18 Pro Max, and all-new foldable iPhone will launch this September. Here\u2019s why."
+    },
+    {
+      "title": "Qualcomm's chip price hikes could make phones, wearables, and laptops even pricier",
+      "url": "https://www.techspot.com/news/113235-qualcomm-chip-price-hikes-could-make-phones-wearables.html",
+      "source": "TechSpot",
       "date": "2026-07-25",
       "vendor": "Qualcomm",
       "customer": "Apple",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Samsung took a risk with its latest-gen foldables and smartwatches at Unpacked. We were on the ground in London - here's our analysis."
+      "summary": "Ripple effect: As rising memory costs push up the prices of everything from PCs and smartphones to game consoles, one key hardware supplier after another has announced that it can no longer delay price hikes. This time it's Qualcomm, with a fast-approaching adjustment that could make smartphones, ta"
     },
     {
-      "title": "Samsung and Broadcom Ink $200B AI Chip Deal Through 2030",
-      "url": "https://www.techbuzz.ai/articles/samsung-and-broadcom-ink-200b-ai-chip-deal-through-2030",
-      "source": "The Tech Buzz",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung and Broadcom just dropped a bombshell at San Francisco's AI Summit - a strategic collaboration worth over $200 billion through 2030 that spans cutting-edge memory and foundry technologies. The memorandum of understanding signals one of the semiconductor industry's largest partnerships as bot"
-    },
-    {
-      "title": "Beaconlight Capital LLC Makes New Investment in STMicroelectronics N.V. $STM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-beaconlight-capital-llc-makes-new-investment-in-stmicroelectronics-nv-stm-2026-07-25/",
-      "source": "MarketBeat",
-      "date": "2026-07-25",
-      "vendor": "STMicro",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Beaconlight Capital LLC bought a new stake in STMicroelectronics N.V. (NYSE:STM - Free Report) in the first quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission. The firm bought 384,477 shares of the semiconductor producer's stock, valued at app"
-    },
-    {
-      "title": "RAMageddon: Qualcomm planning 'double-digit' price increases",
-      "url": "https://mashable.com/tech/qualcomm-double-prices-chips-ramageddon",
+      "title": "Find your lost items with the best Prime Day Bluetooth tracker deals",
+      "url": "https://mashable.com/tech/prime-day-bluetooth-tracker-deals-2026",
       "source": "Mashable",
       "date": "2026-07-25",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Uh-oh, Qualcomm is hiking prices for its clients amidst RAMageddon, report says\nThe general perception of RAMageddon has been, for a while now, that it will get worse before it gets better. Qualcomm is seemingly confirming that.\nBloomberg reported on Friday that the chip maker, whose chips can be fo"
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Asset Tracking",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Find your lost items with the best Prime Day Bluetooth tracker deals\nIf you're ready to start shopping for Amazon Prime Day deals, here's some good news: you don't have to wait for the sale to begin. You can begin tagging your keys, bags, and luggage before summer travel with some of the best early "
     },
     {
-      "title": "Microchip Technology Incorporated $MCHP Shares Sold by Aristotle Capital Management LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-microchip-technology-incorporated-mchp-shares-sold-by-aristotle-capital-management-llc-2026-07-25/",
-      "source": "MarketBeat",
+      "title": "Google Maps rolling out Immersive Navigation, speedometer in Android Auto to more users",
+      "url": "https://9to5google.com/2026/07/25/google-maps-immersive-navigation-android-auto-speedometer-rollout-more/",
+      "source": "9to5Google",
       "date": "2026-07-25",
-      "vendor": "Microchip",
-      "customer": null,
+      "vendor": null,
+      "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Aristotle Capital Management LLC lowered its stake in Microchip Technology Incorporated (NASDAQ:MCHP - Free Report) by 6.4% during the first quarter, according to the company in its most recent filing with the SEC. The institutional investor owned 11,641,968 shares of the semiconductor company's sto"
-    },
-    {
-      "title": "Key facts: Microchip COO to Leave for Menlo; to Acquire Hailo by Sept. 30",
-      "url": "https://www.tradingview.com/news/tradingview:1bc7535527a36:0-key-facts-microchip-coo-to-leave-for-menlo-to-acquire-hailo-by-sept-30/",
-      "source": "TradingView",
-      "date": "2026-07-25",
-      "vendor": "Microchip",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Key facts: Microchip COO to Leave for Menlo; to Acquire Hailo by Sept. 30\nLess than 1 min read\n- Microchip (MCHP) said COO Richard Simoncic will resign effective Aug 17, 2026 to become CEO at Menlo Microsystems; filing gives date and new role but no successor or transition details. 1 2\n- Microchip ("
-    },
-    {
-      "title": "Samsung, SK Ink $950B Semiconductor Agreements With Global Tech",
-      "url": "https://www.chosun.com/english/national-en/2026/07/25/44LBJSKG4FFFHPQF66HAVQQWHE/",
-      "source": "\uc870\uc120\uc77c\ubcf4",
-      "date": "2026-07-25",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Forget expensive sleepbuds. Buy this pillow instead",
-      "url": "https://www.theverge.com/tech/970473/forget-expensive-sleepbuds-buy-this-pillow-instead",
-      "source": "The Verge",
-      "date": "2026-07-25",
-      "vendor": null,
-      "customer": "Eufy/Anker",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Tech companies love to sell us expensive gadgets to solve all of life's little problems. Sleepbuds sold by the likes of Anker and Ozlo are a good example. These miniature marvels of engineering sit flush in the ear, and allow side-sleepers to doze off listening to podcasts, audiobooks, music, or whi"
-    },
-    {
-      "title": "Mets vs. Dodgers: Lineups, broadcast info, and open thread, 7/24/2026",
-      "url": "https://www.amazinavenue.com/new-york-mets-discussion/98430/new-york-mets-los-angeles-dodgers-lineups-broadcast-info-open-thread-mlb-manaea-sasaki",
-      "source": "Amazin' Avenue",
-      "date": "2026-07-25",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Mets vs. Dodgers: Lineups, broadcast info, and open thread, 7/24/2026\nThe Mets open a series with the NL West leading Dodgers at Citi Field with Sean Manaea on the mound.\n- A.J. Ewing - LF\n- Juan Soto - DH\n- Bo Bichette - 3B\n- Francisco Lindor - SS\n- Carson Benge - RF\n- Luis Robert - CF\n- Jared Youn"
-    },
-    {
-      "title": "Samsung, Broadcom Forge $200 Billion AI Alliance with One-Stop Memory and Foundry Deal",
-      "url": "https://finance.biggo.com/news/188947c2-80ed-4de0-8a93-369397415fa3",
-      "source": "finance.biggo.com",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung, Broadcom Forge $200 Billion AI Alliance with One-Stop Memory and Foundry Deal\nSamsung Electronics (005930) has entered into a massive strategic partnership with Broadcom, a leading U.S. AI semiconductor design firm, valued at $200 billion (approximately 292.4 trillion won) over five years. "
-    },
-    {
-      "title": "Down 34% From Its Highs, Is Marvell Technology a Buy on the Dip?",
-      "url": "https://www.theglobeandmail.com/investing/markets/stocks/AVGO/pressreleases/3459439/down-34-from-its-highs-is-marvell-technology-a-buy-on-the-dip/",
-      "source": "The Globe and Mail",
-      "date": "2026-07-25",
-      "vendor": "Marvell",
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Key Points\nIts growth projections trail Broadcom's.\nMarvell's stock is still expensive following its sell-off.\nInvestors in Marvell Technology (NASDAQ: MRVL) have seen quite the volatility over the past few months. It is currently trending downward and it's is off about 34% from its all-time high, a"
-    },
-    {
-      "title": "Samsung Wins $200 Billion Order to Supply Chips to Broadcom",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-25/samsung-inks-200-billion-chip-supply-with-broadcom",
-      "source": "Bloomberg.com",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Samsung, Broadcom ink $200\u2011billion AI chip pact while world faces memory crunch",
-      "url": "https://www.theweek.in/news/biz-tech/2026/07/25/samsung-broadcom-ai-partnership.html",
-      "source": "theweek.in",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung and Broadcom have signed a memorandum of understanding in San Francisco to deepen their partnership across high\u2011bandwidth memory (HBM), leading\u2011edge foundry processes and advanced packaging for next\u2011generation AI infrastructure.\nThe Korean government has framed the deal as part of a broader,"
-    },
-    {
-      "title": "Lee Jae-yong urges Korea\u2013US AI partnership, seals $200b Broadcom deal - CHOSUNBIZ",
-      "url": "https://biz.chosun.com/en/en-industry/2026/07/25/PXAMNC6UFVCMPEZFNN7VJSP6FI/",
-      "source": "Chosunbiz",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Samsung, Broadcom Sign $200 Billion AI Chip and Memory Pact Through 2030",
-      "url": "https://en.bloomingbit.io/feed/news/116987",
-      "source": "bloomingbit",
-      "date": "2026-07-25",
-      "vendor": "Broadcom",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung, Broadcom Sign $200 Billion AI Chip and Memory Pact Through 2030\nSummary\n- Samsung Electronics said it will pursue a more than $200 billion partnership with Broadcom to supply advanced memory semiconductors and support production of AI chips through 2030.\n- Samsung said the partnership will "
-    },
-    {
-      "title": "Wall Street Zen Upgrades STMicroelectronics (NYSE:STM) to \"Buy\"",
-      "url": "https://www.marketbeat.com/instant-alerts/wall-street-zen-upgrades-stmicroelectronics-nysestm-to-buy-2026-07-25/",
-      "source": "MarketBeat",
-      "date": "2026-07-25",
-      "vendor": "STMicro",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "STMicroelectronics (NYSE:STM - Get Free Report) was upgraded by research analysts at Wall Street Zen from a \"hold\" rating to a \"buy\" rating in a research note issued on Saturday.\nOther research analysts also recently issued reports about the stock. Robert W. Baird set a $90.00 price objective on sha"
+      "summary": "Google Maps appears to be opening the floodgates on the rollout of Immersive Navigation and support for a speedometer in Android Auto right now, as both features are showing up more broadly."
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 92,
-    "STMicro": 73,
-    "Microchip": 60,
-    "Broadcom": 57,
+    "Qualcomm": 85,
+    "STMicro": 64,
+    "Broadcom": 58,
+    "Microchip": 46,
     "NXP": 42,
-    "MediaTek": 19,
-    "Synaptics": 14,
-    "TI": 14,
-    "Espressif": 9,
-    "Skyworks": 7,
-    "Renesas": 7,
+    "TI": 16,
+    "MediaTek": 16,
+    "Synaptics": 12,
+    "Skyworks": 6,
+    "Espressif": 6,
     "Bosch": 5,
+    "Realtek": 3,
+    "Renesas": 3,
     "Marvell": 3,
     "Apple": 2,
     "u-blox": 2,
     "Nordic": 2,
-    "Realtek": 2,
+    "Silicon Labs": 2,
     "Qorvo": 1,
     "Telink": 1,
-    "Silicon Labs": 1,
     "Sequans": 1,
-    "Goodix": 1,
-    "Infineon": 1
+    "Goodix": 1
   },
   "customer_news_30d": {
-    "Apple": 134,
-    "Samsung": 92,
-    "Google": 82,
+    "Apple": 136,
+    "Samsung": 93,
+    "Google": 80,
     "Amazon": 18,
-    "Microsoft": 12,
+    "Microsoft": 14,
     "Meta": 9,
-    "Xiaomi": 2,
-    "Huawei": 2,
-    "Sony": 2,
+    "Motorola": 2,
+    "HKMC": 1,
     "Eufy/Anker": 1,
     "Volkswagen": 1,
+    "Huawei": 1,
+    "Sony": 1,
     "Tesla": 1,
-    "Motorola": 1
+    "Aqara": 1,
+    "Xiaomi": 1,
+    "SwitchBot": 1
   },
   "github_pulse": [
     {
@@ -501,7 +503,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1629,
+      "issues_open": 1634,
       "prs_open": 0,
       "releases": [
         {
@@ -523,7 +525,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18615,
+      "stars": 18620,
       "pushed_at": "2026-07-24T11:01:51Z"
     },
     {
@@ -535,7 +537,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3840,
+      "issues_open": 3823,
       "prs_open": 0,
       "releases": [
         {
@@ -557,8 +559,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15987,
-      "pushed_at": "2026-07-25T05:33:16Z"
+      "stars": 15997,
+      "pushed_at": "2026-07-25T18:54:58Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240559,
+      "pushed_at": "2026-07-25T17:24:39Z"
     },
     {
       "name": "Matter SDK",
@@ -569,7 +586,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2745,
+      "issues_open": 2743,
       "prs_open": 0,
       "releases": [
         {
@@ -591,23 +608,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8837,
-      "pushed_at": "2026-07-25T12:12:45Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240405,
-      "pushed_at": "2026-07-25T03:11:34Z"
+      "stars": 8839,
+      "pushed_at": "2026-07-26T01:03:41Z"
     },
     {
       "name": "OpenThread",
@@ -617,8 +619,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 93,
-      "issues_open": 167,
+      "commits_30d": 94,
+      "issues_open": 170,
       "prs_open": 0,
       "releases": [
         {
@@ -640,8 +642,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
         }
       ],
-      "stars": 3990,
-      "pushed_at": "2026-07-25T03:14:40Z"
+      "stars": 3991,
+      "pushed_at": "2026-07-25T17:32:26Z"
     },
     {
       "name": "BlueZ",
@@ -675,7 +677,7 @@
         }
       ],
       "stars": 1109,
-      "pushed_at": "2026-07-24T20:00:49Z"
+      "pushed_at": "2026-07-25T20:33:00Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -685,7 +687,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 16,
+      "commits_30d": 10,
       "issues_open": 457,
       "prs_open": 0,
       "releases": [
@@ -708,8 +710,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15331,
-      "pushed_at": "2026-07-24T19:51:41Z"
+      "stars": 15330,
+      "pushed_at": "2026-07-26T06:24:18Z"
     },
     {
       "name": "NimBLE",
@@ -719,7 +721,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 11,
+      "commits_30d": 9,
       "issues_open": 273,
       "prs_open": 0,
       "releases": [],
@@ -785,18 +787,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -813,13 +815,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
-    },
-    {
       "vendor": "Qorvo",
       "ticker": "QRVO",
       "form": "8-K",
@@ -827,11 +822,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
-      "vendor": "Broadcom",
-      "ticker": "AVGO",
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
       "form": "8-K",
-      "date": "2026-06-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -839,6 +834,13 @@
       "form": "8-K",
       "date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
+    },
+    {
+      "vendor": "Broadcom",
+      "ticker": "AVGO",
+      "form": "8-K",
+      "date": "2026-06-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -974,6 +976,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
+    },
+    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -986,13 +995,6 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1016,6 +1018,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000103807426000018/slab-20260505.htm"
     },
     {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-05-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
+    },
+    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1028,13 +1037,6 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-05-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026030523/rfmd-20260505.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1093,13 +1095,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-04-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
-    },
-    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1112,6 +1107,13 @@
       "form": "8-K",
       "date": "2026-04-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000060/qcom-20260429.htm"
+    },
+    {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526188706/ter-20260428.htm"
     }
   ],
   "tracked_competitors": [
@@ -2069,24 +2071,24 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
         },
         {
+          "title": "Texas Instruments Plans $7.5 Billion Acquisition of Silicon Labs",
+          "date": "Jul 2026",
+          "url": "https://www.stocktitan.net/sec-filings/TXN/10-q-texas-instruments-inc-quarterly-earnings-report-980a9829781e.html"
+        },
+        {
+          "title": "Romania Approves Texas Instruments' Acquisition of Silicon Labs",
+          "date": "Jul 2026",
+          "url": "https://www.romaniajournal.ro/business/romania-clears-texas-instruments-silicon-labs-deal/"
+        },
+        {
+          "title": "Silicon Labs Reports Strengthening IoT Revenue and Margins",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
+        },
+        {
           "title": "Silicon Labs Advances Large-Scale Matter Deployments with 200-Node Matter-over-Thread Validation Network",
           "date": "Jun 2026",
           "url": "https://www.prnewswire.com/news-releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network-302801809.html"
-        },
-        {
-          "title": "Silicon Labs Validates 200-Node Matter-over-Thread IoT Network",
-          "date": "Jun 2026",
-          "url": "https://iottechnews.com/news/silicon-labs-200-node-matter-over-thread-iot-network/"
-        },
-        {
-          "title": "Signify Enhances Philips Hue Matter Support Through Collaboration with Silicon Labs",
-          "date": "Jun 2026",
-          "url": "https://www.prnewswire.com/news-releases/signify-enhances-philips-hue-matter-support-through-collaboration-with-silicon-labs-302806896.html"
-        },
-        {
-          "title": "Silicon Labs Expands India Presence as Smart Infrastructure Demand Grows",
-          "date": "Jun 2026",
-          "url": "https://www.digitimes.com/news/a20260612VL204/silicon-labs-acquisition-infrastructure-texas-instruments-demand.html"
         }
       ],
       "events": [
@@ -3431,6 +3433,21 @@
           "url": "https://www.startuphub.ai/ai-news/ai/2026/renesas-rz-v2n-powers-new-ai-vision-systems"
         },
         {
+          "title": "Renesas Electronics Corporation (RNECF) Q2 2025 Earnings Report",
+          "date": "Jul 2026",
+          "url": "https://www.tipranks.com/stocks/rnecf/earnings/q2-2025-report"
+        },
+        {
+          "title": "Renesas Electronics: A 'Buy' On Business Sale And Investor Event",
+          "date": "Jul 2026",
+          "url": "https://seekingalpha.com/article/4924501-renesas-electronics-a-buy-on-business-sale-and-investor-event-rating-upgrade"
+        },
+        {
+          "title": "Chipmaker Renesas sues rival Navitas for stealing trade secrets",
+          "date": "Jul 2026",
+          "url": "https://www.reuters.com/legal/litigation/chipmaker-renesas-sues-rival-navitas-stealing-trade-secrets-2026-07-22/"
+        },
+        {
           "title": "Renesas Acquires Pictorus to Simplify and Accelerate Embedded Application Software Development",
           "date": "Jun 2026",
           "url": "https://www.renesas.com/en/about/newsroom/renesas-acquires-pictorus-simplify-and-accelerate-embedded-application-software-development"
@@ -3444,21 +3461,6 @@
           "title": "Renesas Completes Acquisition of Irida Labs to Expand Vision AI Software Capabilities and Accelerates System-Level Vision Solutions",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Renesas+Completes+Acquisition+of+Irida+Labs+to+Expand+Vision+AI+Software+Capabilities+and+Accelerates+System-Level+Vision+Solutions+Renesas"
-        },
-        {
-          "title": "Renesas Introduces Simple and Affordable Compiler Annual License",
-          "date": "May 2026",
-          "url": "https://www.renesas.com/en/document/tnf/notification-simple-and-affordable-introducing-renesas-compiler-annual-license"
-        },
-        {
-          "title": "Renesas Unveils Advanced Wireless Locationing for Asset Tracking",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=Renesas+Unveils+Advanced+Wireless+Locationing+for+Asset+Tracking+Renesas"
-        },
-        {
-          "title": "Renesas Introduces Advanced Wireless Products for Locationing 2.0",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=Renesas+Introduces+Advanced+Wireless+Products+for+Locationing+2.0+Renesas"
         }
       ],
       "events": [
@@ -3699,19 +3701,19 @@
           "url": "https://www.stocktitan.net/news/SYNA/synaptics-to-release-fourth-quarter-and-full-year-fiscal-2026-199c2da8pnhr.html"
         },
         {
-          "title": "Synaptics Unveils Wi-Fi 7-Connected Astra\u2122 AI Microcontroller to Accelerate Edge AI",
-          "date": "Jun 2026",
-          "url": "https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/"
+          "title": "Synaptics Has 35-Plus Robotics Customers",
+          "date": "Jul 2026",
+          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-has-35-plus-robotics-customers-its-product-chief-just-held-his-stake/"
         },
         {
-          "title": "Synaptics Launches Astra\u2122 AI Microcontroller with Wi-Fi 7 Connectivity",
-          "date": "Jun 2026",
-          "url": "https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/"
+          "title": "Synaptics Is Leaning Into IoT",
+          "date": "Jul 2026",
+          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-is-leaning-into-iot-its-strategy-officer-kept-usd7-million-in-stock/"
         },
         {
-          "title": "onsemi Announces Agreement to Acquire Synaptics for $7 Billion to Expand Edge AI Capabilities",
-          "date": "Jun 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
+          "title": "Synaptics CEO Filing Signals to Investors as Core IoT Sales Grow 31%",
+          "date": "Jul 2026",
+          "url": "https://www.fool.com/coverage/filings/2026/07/21/what-this-synaptics-ceo-filing-signals-to-investors-as-core-iot-sales-grow-31/"
         }
       ],
       "events": [

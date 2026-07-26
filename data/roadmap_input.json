@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T13:10:22Z",
+  "generated_at": "2026-07-26T11:54:19Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -979,24 +979,24 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
         },
         {
+          "title": "Texas Instruments Plans $7.5 Billion Acquisition of Silicon Labs",
+          "date": "Jul 2026",
+          "url": "https://www.stocktitan.net/sec-filings/TXN/10-q-texas-instruments-inc-quarterly-earnings-report-980a9829781e.html"
+        },
+        {
+          "title": "Romania Approves Texas Instruments' Acquisition of Silicon Labs",
+          "date": "Jul 2026",
+          "url": "https://www.romaniajournal.ro/business/romania-clears-texas-instruments-silicon-labs-deal/"
+        },
+        {
+          "title": "Silicon Labs Reports Strengthening IoT Revenue and Margins",
+          "date": "Jul 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
+        },
+        {
           "title": "Silicon Labs Advances Large-Scale Matter Deployments with 200-Node Matter-over-Thread Validation Network",
           "date": "Jun 2026",
           "url": "https://www.prnewswire.com/news-releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network-302801809.html"
-        },
-        {
-          "title": "Silicon Labs Validates 200-Node Matter-over-Thread IoT Network",
-          "date": "Jun 2026",
-          "url": "https://iottechnews.com/news/silicon-labs-200-node-matter-over-thread-iot-network/"
-        },
-        {
-          "title": "Signify Enhances Philips Hue Matter Support Through Collaboration with Silicon Labs",
-          "date": "Jun 2026",
-          "url": "https://www.prnewswire.com/news-releases/signify-enhances-philips-hue-matter-support-through-collaboration-with-silicon-labs-302806896.html"
-        },
-        {
-          "title": "Silicon Labs Expands India Presence as Smart Infrastructure Demand Grows",
-          "date": "Jun 2026",
-          "url": "https://www.digitimes.com/news/a20260612VL204/silicon-labs-acquisition-infrastructure-texas-instruments-demand.html"
         }
       ],
       "events": [
@@ -2341,6 +2341,21 @@
           "url": "https://www.startuphub.ai/ai-news/ai/2026/renesas-rz-v2n-powers-new-ai-vision-systems"
         },
         {
+          "title": "Renesas Electronics Corporation (RNECF) Q2 2025 Earnings Report",
+          "date": "Jul 2026",
+          "url": "https://www.tipranks.com/stocks/rnecf/earnings/q2-2025-report"
+        },
+        {
+          "title": "Renesas Electronics: A 'Buy' On Business Sale And Investor Event",
+          "date": "Jul 2026",
+          "url": "https://seekingalpha.com/article/4924501-renesas-electronics-a-buy-on-business-sale-and-investor-event-rating-upgrade"
+        },
+        {
+          "title": "Chipmaker Renesas sues rival Navitas for stealing trade secrets",
+          "date": "Jul 2026",
+          "url": "https://www.reuters.com/legal/litigation/chipmaker-renesas-sues-rival-navitas-stealing-trade-secrets-2026-07-22/"
+        },
+        {
           "title": "Renesas Acquires Pictorus to Simplify and Accelerate Embedded Application Software Development",
           "date": "Jun 2026",
           "url": "https://www.renesas.com/en/about/newsroom/renesas-acquires-pictorus-simplify-and-accelerate-embedded-application-software-development"
@@ -2354,21 +2369,6 @@
           "title": "Renesas Completes Acquisition of Irida Labs to Expand Vision AI Software Capabilities and Accelerates System-Level Vision Solutions",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Renesas+Completes+Acquisition+of+Irida+Labs+to+Expand+Vision+AI+Software+Capabilities+and+Accelerates+System-Level+Vision+Solutions+Renesas"
-        },
-        {
-          "title": "Renesas Introduces Simple and Affordable Compiler Annual License",
-          "date": "May 2026",
-          "url": "https://www.renesas.com/en/document/tnf/notification-simple-and-affordable-introducing-renesas-compiler-annual-license"
-        },
-        {
-          "title": "Renesas Unveils Advanced Wireless Locationing for Asset Tracking",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=Renesas+Unveils+Advanced+Wireless+Locationing+for+Asset+Tracking+Renesas"
-        },
-        {
-          "title": "Renesas Introduces Advanced Wireless Products for Locationing 2.0",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=Renesas+Introduces+Advanced+Wireless+Products+for+Locationing+2.0+Renesas"
         }
       ],
       "events": [
@@ -2609,19 +2609,19 @@
           "url": "https://www.stocktitan.net/news/SYNA/synaptics-to-release-fourth-quarter-and-full-year-fiscal-2026-199c2da8pnhr.html"
         },
         {
-          "title": "Synaptics Unveils Wi-Fi 7-Connected Astra\u2122 AI Microcontroller to Accelerate Edge AI",
-          "date": "Jun 2026",
-          "url": "https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/"
+          "title": "Synaptics Has 35-Plus Robotics Customers",
+          "date": "Jul 2026",
+          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-has-35-plus-robotics-customers-its-product-chief-just-held-his-stake/"
         },
         {
-          "title": "Synaptics Launches Astra\u2122 AI Microcontroller with Wi-Fi 7 Connectivity",
-          "date": "Jun 2026",
-          "url": "https://wifinowglobal.com/news-blog/synaptics-strengthens-the-case-for-ai-at-the-edge-with-new-single-chip-wi-fi-7-connected-astra-ai-microcontroller/"
+          "title": "Synaptics Is Leaning Into IoT",
+          "date": "Jul 2026",
+          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-is-leaning-into-iot-its-strategy-officer-kept-usd7-million-in-stock/"
         },
         {
-          "title": "onsemi Announces Agreement to Acquire Synaptics for $7 Billion to Expand Edge AI Capabilities",
-          "date": "Jun 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
+          "title": "Synaptics CEO Filing Signals to Investors as Core IoT Sales Grow 31%",
+          "date": "Jul 2026",
+          "url": "https://www.fool.com/coverage/filings/2026/07/21/what-this-synaptics-ceo-filing-signals-to-investors-as-core-iot-sales-grow-31/"
         }
       ],
       "events": [
@@ -3709,29 +3709,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 92,
-    "STMicro": 73,
-    "Microchip": 60,
-    "Broadcom": 57,
+    "Qualcomm": 85,
+    "STMicro": 64,
+    "Broadcom": 58,
+    "Microchip": 46,
     "NXP": 42,
-    "MediaTek": 19,
-    "Synaptics": 14,
-    "TI": 14,
-    "Espressif": 9,
-    "Skyworks": 7,
-    "Renesas": 7,
+    "TI": 16,
+    "MediaTek": 16,
+    "Synaptics": 12,
+    "Skyworks": 6,
+    "Espressif": 6,
     "Bosch": 5,
+    "Realtek": 3,
+    "Renesas": 3,
     "Marvell": 3,
     "Apple": 2,
     "u-blox": 2,
     "Nordic": 2,
-    "Realtek": 2,
+    "Silicon Labs": 2,
     "Qorvo": 1,
     "Telink": 1,
-    "Silicon Labs": 1,
     "Sequans": 1,
-    "Goodix": 1,
-    "Infineon": 1
+    "Goodix": 1
   },
   "standards_in_flight": [
     {
@@ -3814,7 +3813,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1629,
+      "issues_open": 1634,
       "prs_open": 0,
       "releases": [
         {
@@ -3836,7 +3835,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18615,
+      "stars": 18620,
       "pushed_at": "2026-07-24T11:01:51Z"
     },
     {
@@ -3848,7 +3847,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3840,
+      "issues_open": 3823,
       "prs_open": 0,
       "releases": [
         {
@@ -3870,8 +3869,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15987,
-      "pushed_at": "2026-07-25T05:33:16Z"
+      "stars": 15997,
+      "pushed_at": "2026-07-25T18:54:58Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240559,
+      "pushed_at": "2026-07-25T17:24:39Z"
     },
     {
       "name": "Matter SDK",
@@ -3882,7 +3896,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2745,
+      "issues_open": 2743,
       "prs_open": 0,
       "releases": [
         {
@@ -3904,23 +3918,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8837,
-      "pushed_at": "2026-07-25T12:12:45Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240405,
-      "pushed_at": "2026-07-25T03:11:34Z"
+      "stars": 8839,
+      "pushed_at": "2026-07-26T01:03:41Z"
     },
     {
       "name": "OpenThread",
@@ -3930,8 +3929,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 93,
-      "issues_open": 167,
+      "commits_30d": 94,
+      "issues_open": 170,
       "prs_open": 0,
       "releases": [
         {
@@ -3953,8 +3952,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
         }
       ],
-      "stars": 3990,
-      "pushed_at": "2026-07-25T03:14:40Z"
+      "stars": 3991,
+      "pushed_at": "2026-07-25T17:32:26Z"
     },
     {
       "name": "BlueZ",
@@ -3988,7 +3987,7 @@
         }
       ],
       "stars": 1109,
-      "pushed_at": "2026-07-24T20:00:49Z"
+      "pushed_at": "2026-07-25T20:33:00Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3998,7 +3997,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 16,
+      "commits_30d": 10,
       "issues_open": 457,
       "prs_open": 0,
       "releases": [
@@ -4021,8 +4020,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15331,
-      "pushed_at": "2026-07-24T19:51:41Z"
+      "stars": 15330,
+      "pushed_at": "2026-07-26T06:24:18Z"
     },
     {
       "name": "NimBLE",
@@ -4032,7 +4031,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 11,
+      "commits_30d": 9,
       "issues_open": 273,
       "prs_open": 0,
       "releases": [],
