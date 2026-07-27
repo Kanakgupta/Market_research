@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T13:09:45Z",
+  "generated_at": "2026-07-27T14:19:29Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -994,9 +994,9 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
         },
         {
-          "title": "Silicon Labs Advances Large-Scale Matter Deployments with 200-Node Matter-over-Thread Validation Network",
-          "date": "Jun 2026",
-          "url": "https://www.prnewswire.com/news-releases/silicon-labs-advances-large-scale-matter-deployments-with-200-node-matter-over-thread-validation-network-302801809.html"
+          "title": "Romania Clears Texas Instruments' Silicon Labs Deal",
+          "date": "Jul 2026",
+          "url": "https://www.romaniajournal.ro/business/romania-clears-texas-instruments-silicon-labs-deal/"
         }
       ],
       "events": [
@@ -2356,6 +2356,11 @@
           "url": "https://www.reuters.com/legal/litigation/chipmaker-renesas-sues-rival-navitas-stealing-trade-secrets-2026-07-22/"
         },
         {
+          "title": "Renesas acquires Pictorus to accelerate embedded application software development",
+          "date": "Jul 2026",
+          "url": "https://engineerlive.com/renesas-acquires-pictorus-accelerate-embedded-application-software-development/"
+        },
+        {
           "title": "Renesas Acquires Pictorus to Simplify and Accelerate Embedded Application Software Development",
           "date": "Jun 2026",
           "url": "https://www.renesas.com/en/about/newsroom/renesas-acquires-pictorus-simplify-and-accelerate-embedded-application-software-development"
@@ -2364,11 +2369,6 @@
           "title": "Renesas Completes Acquisition of Irida Labs",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Renesas+Completes+Acquisition+of+Irida+Labs+Renesas"
-        },
-        {
-          "title": "Renesas Completes Acquisition of Irida Labs to Expand Vision AI Software Capabilities and Accelerates System-Level Vision Solutions",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Renesas+Completes+Acquisition+of+Irida+Labs+to+Expand+Vision+AI+Software+Capabilities+and+Accelerates+System-Level+Vision+Solutions+Renesas"
         }
       ],
       "events": [
@@ -3710,25 +3710,26 @@
   ],
   "vendor_news_momentum_30d": {
     "Qualcomm": 85,
-    "STMicro": 64,
-    "Broadcom": 57,
-    "Microchip": 45,
-    "NXP": 43,
-    "MediaTek": 16,
-    "TI": 15,
-    "Synaptics": 12,
+    "Broadcom": 78,
+    "STMicro": 76,
+    "Microchip": 46,
+    "NXP": 41,
+    "MediaTek": 15,
+    "Synaptics": 13,
+    "TI": 12,
     "Skyworks": 6,
-    "Espressif": 6,
+    "Espressif": 5,
+    "Silicon Labs": 5,
     "Bosch": 5,
-    "Realtek": 3,
-    "Renesas": 3,
+    "Realtek": 4,
+    "Renesas": 4,
     "Marvell": 3,
-    "Apple": 2,
     "u-blox": 2,
     "Nordic": 2,
-    "Silicon Labs": 2,
-    "Qorvo": 1,
-    "Telink": 1,
+    "Infineon": 1,
+    "HiSilicon": 1,
+    "Apple": 1,
+    "LG Innotek": 1,
     "Sequans": 1,
     "Goodix": 1
   },
@@ -3811,7 +3812,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3816,
+      "issues_open": 3891,
       "prs_open": 0,
       "releases": [
         {
@@ -3833,8 +3834,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 15997,
-      "pushed_at": "2026-07-26T12:17:10Z"
+      "stars": 16006,
+      "pushed_at": "2026-07-27T14:09:30Z"
     },
     {
       "name": "ESP-IDF",
@@ -3847,7 +3848,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1634,
+      "issues_open": 1633,
       "prs_open": 0,
       "releases": [
         {
@@ -3869,23 +3870,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18621,
+      "stars": 18622,
       "pushed_at": "2026-07-24T11:01:51Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240570,
-      "pushed_at": "2026-07-25T17:24:39Z"
     },
     {
       "name": "Matter SDK",
@@ -3896,7 +3882,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2744,
+      "issues_open": 2748,
       "prs_open": 0,
       "releases": [
         {
@@ -3918,8 +3904,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8839,
-      "pushed_at": "2026-07-26T01:03:41Z"
+      "stars": 8843,
+      "pushed_at": "2026-07-27T11:51:37Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240735,
+      "pushed_at": "2026-07-26T21:50:29Z"
     },
     {
       "name": "OpenThread",
@@ -3930,7 +3931,7 @@
         "thread"
       ],
       "commits_30d": 94,
-      "issues_open": 170,
+      "issues_open": 175,
       "prs_open": 0,
       "releases": [
         {
@@ -3953,7 +3954,7 @@
         }
       ],
       "stars": 3991,
-      "pushed_at": "2026-07-25T17:32:26Z"
+      "pushed_at": "2026-07-27T09:33:50Z"
     },
     {
       "name": "BlueZ",
@@ -3964,7 +3965,7 @@
         "bluetooth"
       ],
       "commits_30d": 39,
-      "issues_open": 109,
+      "issues_open": 108,
       "prs_open": 0,
       "releases": [
         {
@@ -3986,8 +3987,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1109,
-      "pushed_at": "2026-07-25T20:33:00Z"
+      "stars": 1111,
+      "pushed_at": "2026-07-27T08:06:50Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3998,7 +3999,7 @@
         "ieee15_4"
       ],
       "commits_30d": 10,
-      "issues_open": 458,
+      "issues_open": 462,
       "prs_open": 0,
       "releases": [
         {
@@ -4020,8 +4021,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15330,
-      "pushed_at": "2026-07-26T06:24:18Z"
+      "stars": 15335,
+      "pushed_at": "2026-07-27T05:26:21Z"
     },
     {
       "name": "NimBLE",
@@ -4035,7 +4036,7 @@
       "issues_open": 273,
       "prs_open": 0,
       "releases": [],
-      "stars": 879,
+      "stars": 880,
       "pushed_at": "2026-07-22T15:01:19Z"
     },
     {
