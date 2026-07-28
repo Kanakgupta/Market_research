@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T11:56:33Z",
+  "generated_at": "2026-07-28T13:10:19Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,20 +3709,20 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 96,
-    "Broadcom": 81,
-    "STMicro": 78,
-    "Microchip": 48,
-    "NXP": 43,
+    "Qualcomm": 95,
+    "Broadcom": 84,
+    "STMicro": 77,
+    "Microchip": 47,
+    "NXP": 44,
     "Synaptics": 15,
-    "MediaTek": 13,
-    "TI": 12,
+    "MediaTek": 14,
+    "TI": 10,
     "Espressif": 6,
     "Skyworks": 5,
     "Renesas": 5,
+    "Marvell": 4,
     "Silicon Labs": 4,
     "Realtek": 3,
-    "Marvell": 3,
     "Bosch": 3,
     "Goodix": 2,
     "Apple": 2,
@@ -3835,7 +3835,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18631,
+      "stars": 18633,
       "pushed_at": "2026-07-24T11:01:51Z"
     },
     {
@@ -3847,7 +3847,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3884,
+      "issues_open": 3894,
       "prs_open": 0,
       "releases": [
         {
@@ -3871,6 +3871,55 @@
       ],
       "stars": 16015,
       "pushed_at": "2026-07-28T10:37:21Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2764,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        },
+        {
+          "tag": "v1.5.0.0",
+          "name": "v1.5.0.0 Release",
+          "published_at": "2025-11-17T22:07:57Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+        }
+      ],
+      "stars": 8844,
+      "pushed_at": "2026-07-28T11:43:24Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240826,
+      "pushed_at": "2026-07-27T21:50:18Z"
     },
     {
       "name": "OpenThread",
@@ -3905,55 +3954,6 @@
       ],
       "stars": 3992,
       "pushed_at": "2026-07-28T04:32:31Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2765,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        },
-        {
-          "tag": "v1.5.0.0",
-          "name": "v1.5.0.0 Release",
-          "published_at": "2025-11-17T22:07:57Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
-        }
-      ],
-      "stars": 8843,
-      "pushed_at": "2026-07-28T11:43:24Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240817,
-      "pushed_at": "2026-07-27T21:50:18Z"
     },
     {
       "name": "BlueZ",
