@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T13:10:19Z",
+  "generated_at": "2026-07-28T17:33:26Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,19 +3709,19 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 95,
+    "Qualcomm": 93,
     "Broadcom": 84,
-    "STMicro": 77,
-    "Microchip": 47,
+    "STMicro": 76,
+    "Microchip": 48,
     "NXP": 44,
     "Synaptics": 15,
-    "MediaTek": 14,
-    "TI": 10,
-    "Espressif": 6,
-    "Skyworks": 5,
+    "MediaTek": 12,
+    "TI": 8,
+    "Espressif": 7,
+    "Silicon Labs": 6,
     "Renesas": 5,
     "Marvell": 4,
-    "Silicon Labs": 4,
+    "Skyworks": 4,
     "Realtek": 3,
     "Bosch": 3,
     "Goodix": 2,
@@ -3813,7 +3813,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1633,
+      "issues_open": 1634,
       "prs_open": 0,
       "releases": [
         {
@@ -3835,8 +3835,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18633,
-      "pushed_at": "2026-07-24T11:01:51Z"
+      "stars": 18636,
+      "pushed_at": "2026-07-28T17:09:13Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3847,7 +3847,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3894,
+      "issues_open": 3900,
       "prs_open": 0,
       "releases": [
         {
@@ -3869,57 +3869,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 16015,
-      "pushed_at": "2026-07-28T10:37:21Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2764,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        },
-        {
-          "tag": "v1.5.0.0",
-          "name": "v1.5.0.0 Release",
-          "published_at": "2025-11-17T22:07:57Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
-        }
-      ],
-      "stars": 8844,
-      "pushed_at": "2026-07-28T11:43:24Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240826,
-      "pushed_at": "2026-07-27T21:50:18Z"
+      "stars": 16019,
+      "pushed_at": "2026-07-28T16:06:43Z"
     },
     {
       "name": "OpenThread",
@@ -3930,7 +3881,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 162,
+      "issues_open": 160,
       "prs_open": 0,
       "releases": [
         {
@@ -3953,7 +3904,56 @@
         }
       ],
       "stars": 3992,
-      "pushed_at": "2026-07-28T04:32:31Z"
+      "pushed_at": "2026-07-28T15:38:04Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240843,
+      "pushed_at": "2026-07-28T17:27:14Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2765,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        },
+        {
+          "tag": "v1.5.0.0",
+          "name": "v1.5.0.0 Release",
+          "published_at": "2025-11-17T22:07:57Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+        }
+      ],
+      "stars": 8844,
+      "pushed_at": "2026-07-28T16:43:07Z"
     },
     {
       "name": "BlueZ",
@@ -3963,8 +3963,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 39,
-      "issues_open": 110,
+      "commits_30d": 41,
+      "issues_open": 108,
       "prs_open": 0,
       "releases": [
         {
@@ -3987,7 +3987,7 @@
         }
       ],
       "stars": 1112,
-      "pushed_at": "2026-07-27T08:06:50Z"
+      "pushed_at": "2026-07-28T15:29:55Z"
     },
     {
       "name": "NimBLE",
@@ -4013,7 +4013,7 @@
         "ieee15_4"
       ],
       "commits_30d": 7,
-      "issues_open": 457,
+      "issues_open": 454,
       "prs_open": 0,
       "releases": [
         {
@@ -4036,7 +4036,7 @@
         }
       ],
       "stars": 15342,
-      "pushed_at": "2026-07-27T18:44:55Z"
+      "pushed_at": "2026-07-28T16:28:06Z"
     },
     {
       "name": "hostap",
