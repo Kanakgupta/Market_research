@@ -2119,6 +2119,19 @@ _BT_STACK_TEMPLATE = """<!doctype html>
 .g-chip .tag-pill { font-size:9px; font-weight:800; text-transform:uppercase; opacity:.7; }
 
 .bts-bestfit { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 14px; font-size:13px; color:#1e3a8a; line-height:1.55; }
+.bts-detailbox { background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:11px 14px; font-size:12.9px; line-height:1.6; color:#1f2937; }
+.bts-swot { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:640px) { .bts-swot { grid-template-columns:1fr; } }
+.swot-col { border-radius:10px; padding:10px 14px 10px 14px; }
+.swot-col h4 { margin:0 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
+.swot-col ul { margin:0; padding-left:16px; }
+.swot-col li { font-size:12.5px; line-height:1.55; margin-bottom:6px; }
+.swot-col.strengths { background:#f0fdf4; border:1px solid #bbf7d0; }
+.swot-col.strengths h4 { color:#166534; }
+.swot-col.strengths li { color:#14532d; }
+.swot-col.weaknesses { background:#fff7ed; border:1px solid #fed7aa; }
+.swot-col.weaknesses h4 { color:#9a3412; }
+.swot-col.weaknesses li { color:#7c2d12; }
 .bts-links { margin-top:14px; }
 .bts-links a { font-size:12.5px; font-weight:600; margin-right:16px; }
 
@@ -2189,6 +2202,16 @@ verify the exact qualified listing on the Bluetooth SIG Qualification site befor
       <p class="bts-tagline">{{ s.tagline }}</p>
       <p class="bts-overview">{{ s.overview }}</p>
 
+      {% if s.chips %}
+      <h3 class="bts-h3">\U0001F4BE Representative Silicon &amp; Modules</h3>
+      <div class="bts-detailbox">{{ s.chips }}</div>
+      {% endif %}
+
+      {% if s.footprint %}
+      <h3 class="bts-h3">\U0001F527 Footprint &amp; Integration</h3>
+      <div class="bts-detailbox">{{ s.footprint }}</div>
+      {% endif %}
+
       <h3 class="bts-h3">\u2705 Qualification / Certification</h3>
       <div class="bts-cert">
         <div class="cs">{{ s.certification.status }}</div>
@@ -2230,6 +2253,25 @@ verify the exact qualified listing on the Bluetooth SIG Qualification site befor
         <span class="g-chip prof-no" data-key="{{ p }}" data-kind="profile">{{ profile_glossary[p].name }}</span>
         {% endif %}{% endfor %}
       </div>
+      {% endif %}
+
+      {% if s.strengths or s.weaknesses %}
+      <h3 class="bts-h3">\u2696\uFE0F Competitive Positioning</h3>
+      <div class="bts-swot">
+        <div class="swot-col strengths">
+          <h4>Strengths</h4>
+          <ul>{% for x in s.strengths %}<li>{{ x }}</li>{% endfor %}</ul>
+        </div>
+        <div class="swot-col weaknesses">
+          <h4>Watch-outs / Gaps</h4>
+          <ul>{% for x in s.weaknesses %}<li>{{ x }}</li>{% endfor %}</ul>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if s.commercial %}
+      <h3 class="bts-h3">\U0001F4BC Commercial, Licensing &amp; Support</h3>
+      <div class="bts-detailbox">{{ s.commercial }}</div>
       {% endif %}
 
       <h3 class="bts-h3">\U0001F3AF Best Fit</h3>
@@ -2765,19 +2807,11 @@ def _rewrite_broken_links(output_dir: Path) -> None:
  
 
 def _neutralize_site_html(text: str) -> str:
+    # NOTE: Infineon/AIROC branding is intentionally NOT stripped anymore -- the site
+    # now shows Infineon as a normal vendor alongside competitors (like any company you
+    # would find on the web). Only the two cosmetic token/CSS renames are kept.
     text = text.replace("airoc_unlock_v1", "site_unlock_v1")
     text = text.replace("stack-tag.airoc", "stack-tag.platform")
-    replacements = [
-      (re.compile(r'Infineon AIROC(?:™)?', re.IGNORECASE), 'Platform'),
-      (re.compile(r'\bAIROC(?:™)?\b', re.IGNORECASE), 'Platform'),
-      (re.compile(r'\bvs\s+Infineon\b', re.IGNORECASE), 'vs platform'),
-      (re.compile(r'\bInfineon\b'), ''),
-        (re.compile(r'\bAIROC\s+position\b', re.IGNORECASE), 'Platform position'),
-        (re.compile(r'\bAIROC\s+roadmap\b', re.IGNORECASE), 'Platform roadmap'),
-        (re.compile(r'\bAIROC\s+Bluetooth\s+stack\b', re.IGNORECASE), 'Bluetooth stack'),
-    ]
-    for pattern, replacement in replacements:
-        text = pattern.sub(replacement, text)
     return text
 
 

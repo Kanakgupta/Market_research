@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T18:54:09Z",
+  "generated_at": "2026-07-28T19:41:54Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3710,16 +3710,16 @@
   ],
   "vendor_news_momentum_30d": {
     "Qualcomm": 93,
-    "Broadcom": 83,
-    "STMicro": 76,
-    "Microchip": 49,
+    "Broadcom": 84,
+    "STMicro": 77,
+    "Microchip": 48,
     "NXP": 45,
     "Synaptics": 15,
     "MediaTek": 12,
+    "Espressif": 8,
     "TI": 8,
-    "Espressif": 7,
+    "Renesas": 6,
     "Silicon Labs": 6,
-    "Renesas": 5,
     "Nordic": 4,
     "Marvell": 4,
     "Skyworks": 4,
@@ -3729,7 +3729,6 @@
     "u-blox": 2,
     "Infineon": 1,
     "HiSilicon": 1,
-    "Apple": 1,
     "Sequans": 1
   },
   "standards_in_flight": [
@@ -3813,7 +3812,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1634,
+      "issues_open": 1635,
       "prs_open": 0,
       "releases": [
         {
@@ -3835,7 +3834,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18637,
+      "stars": 18636,
       "pushed_at": "2026-07-28T17:52:08Z"
     },
     {
@@ -3847,7 +3846,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3901,
+      "issues_open": 3873,
       "prs_open": 0,
       "releases": [
         {
@@ -3869,8 +3868,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 16021,
-      "pushed_at": "2026-07-28T18:41:40Z"
+      "stars": 16024,
+      "pushed_at": "2026-07-28T19:40:26Z"
     },
     {
       "name": "OpenThread",
@@ -3915,7 +3914,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2761,
+      "issues_open": 2759,
       "prs_open": 0,
       "releases": [
         {
@@ -3938,7 +3937,7 @@
         }
       ],
       "stars": 8845,
-      "pushed_at": "2026-07-28T18:32:56Z"
+      "pushed_at": "2026-07-28T19:34:19Z"
     },
     {
       "name": "Linux mac80211",
@@ -3952,7 +3951,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 240849,
+      "stars": 240852,
       "pushed_at": "2026-07-28T17:27:14Z"
     },
     {
