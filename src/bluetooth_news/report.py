@@ -18,6 +18,9 @@ from .relationships import build_links
 from .predictive_model import predict_customer_releases
 from .tech_tutorials import TECH_TUTORIALS
 from .applications_data import APPLICATIONS, APP_CATEGORIES
+from .bt_stacks_data import (
+    BT_STACKS, STACK_CATEGORIES, FEATURE_GLOSSARY, PROFILE_GLOSSARY, LATEST_SPEC,
+)
 
 PDT = timezone(timedelta(hours=-7), name="PDT")
 
@@ -275,6 +278,7 @@ _NAV_HTML = """
     <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
     <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
     <a href="applications.html" class="{{ 'active' if active=='applications' else '' }}">Applications</a>
+    <a href="bt_stack.html" class="{{ 'active' if active=='bt_stack' else '' }}">BT Stack</a>
   </nav>
   <div class="meta-info">Updated {{ generated_at }} PDT</div>
 </div></header>
@@ -2037,6 +2041,246 @@ with a paid syndicated study before citing externally.</div>
 """
 
 
+_BT_STACK_TEMPLATE = """<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BT Stack \u00b7 IoT Wireless Intel</title>
+<style>{{ css }}
+.bts-hero { background:linear-gradient(120deg,#4338ca,#2563eb 55%,#0ea5e9); color:#fff; border-radius:16px; padding:26px 28px; margin:14px 0 6px; box-shadow:0 18px 40px rgba(37,99,235,.18); }
+.bts-hero h1 { margin:0 0 6px; font-size:27px; letter-spacing:-.01em; color:#fff; }
+.bts-hero p { margin:0; font-size:14px; line-height:1.6; color:#eaf2ff; max-width:960px; }
+.bts-hero .spec-pill { display:inline-block; margin-top:12px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35); color:#fff; border-radius:999px; padding:4px 14px; font-size:12.5px; font-weight:600; }
+
+.bts-layout { display:grid; grid-template-columns:288px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:960px) { .bts-layout { grid-template-columns:1fr; } }
+.bts-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.bts-search { padding:10px; border-bottom:1px solid var(--border); }
+.bts-search input { width:100%; border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:13px; }
+.bts-cat-hdr { padding:9px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; color:#3730a3; background:#eef2ff; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.bts-cat-hdr:first-child { border-top:none; }
+.bts-item { display:flex; align-items:center; gap:8px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:9px 14px; font-size:12.7px; color:#334155; cursor:pointer; }
+.bts-item:hover { background:var(--hover); color:var(--accent); }
+.bts-item.active { background:#eef2ff; color:var(--accent); font-weight:700; border-left:3px solid var(--accent); }
+.bts-item .bts-dot { width:8px; height:8px; border-radius:50%; flex:0 0 auto; }
+.bts-dot.k-prop { background:#f59e0b; } .bts-dot.k-oss { background:#10b981; } .bts-dot.k-os { background:#6366f1; } .bts-dot.k-lic { background:#ec4899; }
+
+.bts-main { min-width:0; }
+.bts-panel { display:none; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:22px 24px; }
+.bts-panel.active { display:block; }
+.bts-title { margin:0 0 2px; font-size:22px; color:#0f172a; }
+.bts-badges { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 12px; }
+.bts-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 10px; }
+.bts-badge.vendor { background:#eef2ff; color:#3730a3; }
+.bts-badge.kind-prop { background:#fef3c7; color:#92400e; }
+.bts-badge.kind-oss { background:#dcfce7; color:#166534; }
+.bts-badge.kind-os { background:#e0e7ff; color:#3730a3; }
+.bts-badge.kind-lic { background:#fce7f3; color:#9d174d; }
+.bts-badge.spec { background:#e0f2fe; color:#075985; }
+.bts-badge.lic { background:#f1f5f9; color:#334155; }
+.bts-tagline { color:var(--muted); font-size:13.5px; margin:0 0 12px; }
+.bts-overview { font-size:13.5px; line-height:1.65; color:#1f2937; margin:0 0 4px; }
+
+.bts-h3 { font-size:14px; margin:22px 0 8px; padding-top:14px; border-top:1px solid var(--border); text-transform:uppercase; letter-spacing:.04em; color:#334155; }
+.bts-h3:first-of-type { border-top:none; padding-top:0; margin-top:8px; }
+
+.bts-cert { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:12px 14px; font-size:12.7px; }
+.bts-cert .cs { font-weight:800; color:#166534; }
+.bts-cert .cn { color:#3f6212; margin-top:4px; line-height:1.55; }
+.bts-cert a { font-weight:600; }
+
+.bts-missing { background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; padding:10px 14px 10px 30px; margin:0; }
+.bts-missing li { font-size:12.7px; line-height:1.55; color:#7c2d12; margin-bottom:6px; }
+
+.chip-grid { display:flex; flex-wrap:wrap; gap:7px; margin-top:4px; }
+.g-chip { display:inline-flex; align-items:center; gap:5px; border-radius:999px; padding:4px 11px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid transparent; transition:transform .08s, box-shadow .12s; }
+.g-chip:hover { transform:translateY(-1px); box-shadow:0 4px 12px rgba(15,23,42,.12); }
+.g-chip::after { content:"\\24D8"; font-size:11px; opacity:.5; }
+.g-chip.feat { background:#eef2ff; color:#3730a3; }
+.g-chip.prof-yes { background:#dcfce7; color:#166534; }
+.g-chip.prof-no { background:#f8fafc; color:#94a3b8; border:1px dashed #cbd5e1; text-decoration:line-through; }
+.g-chip .tag-pill { font-size:9px; font-weight:800; text-transform:uppercase; opacity:.7; }
+
+.bts-bestfit { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 14px; font-size:13px; color:#1e3a8a; line-height:1.55; }
+.bts-links { margin-top:14px; }
+.bts-links a { font-size:12.5px; font-weight:600; margin-right:16px; }
+
+/* Detail fly-out for clicked feature/profile */
+.bts-detail { position:fixed; right:20px; bottom:20px; width:340px; max-width:calc(100vw - 40px); background:#0f172a; color:#e2e8f0; border-radius:14px; box-shadow:0 24px 60px rgba(2,6,23,.45); padding:16px 18px; z-index:200; transform:translateY(16px); opacity:0; visibility:hidden; transition:opacity .18s, transform .18s, visibility .18s; }
+.bts-detail.show { opacity:1; visibility:visible; transform:translateY(0); }
+.bts-detail .bd-tag { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:#93c5fd; }
+.bts-detail .bd-name { font-size:16px; font-weight:800; margin:3px 0 8px; color:#fff; }
+.bts-detail .bd-brief { font-size:13px; line-height:1.6; color:#cbd5e1; }
+.bts-detail .bd-close { position:absolute; top:10px; right:12px; cursor:pointer; color:#64748b; font-size:18px; border:none; background:none; }
+.bts-detail .bd-close:hover { color:#fff; }
+</style>
+""" + _PASSWORD_GATE_HTML + """
+</head><body>
+""" + _NAV_HTML + """
+<main class="wrap content">
+<section class="bts-hero">
+  <h1>BT Stack \u2014 Bluetooth Stack Market Map</h1>
+  <p>Every Bluetooth stack that ships in real products \u2014 silicon-vendor SDKs, independently licensable stacks,
+  open-source projects and OS-native platform stacks. Pick a stack on the left to see its supported features and
+  profiles, qualification posture, and exactly what is missing versus the latest Bluetooth specification. Click any
+  feature or profile to learn what problem it solves and why it matters.</p>
+  <span class="spec-pill">Reference spec: {{ latest_spec }}</span>
+</section>
+
+<div class="disclaimer">Feature and profile coverage is compiled from public vendor documentation and the Bluetooth
+specification, and varies by silicon part and SDK release. QDID / Declaration IDs are assigned per release \u2014 always
+verify the exact qualified listing on the Bluetooth SIG Qualification site before making certification claims.</div>
+
+<div class="bts-layout">
+  <nav class="bts-sidebar" id="btsSidebar">
+    <div class="bts-search"><input type="text" id="btsSearch" placeholder="Filter stacks\u2026" autocomplete="off"></div>
+    {% for cat in categories %}
+    <div class="bts-cat-hdr" data-cat="1">{{ cat }}</div>
+    {% for s in stacks %}{% if s.category == cat %}
+    <button type="button" class="bts-item {{ 'active' if s.slug == stacks[0].slug else '' }}" data-slug="{{ s.slug }}" data-name="{{ s.name|lower }} {{ s.vendor|lower }}">
+      <span class="bts-dot {{ 'k-prop' if 'Proprietary' in s.license else ('k-lic' if 'license' in s.license and 'Proprietary' not in s.license else ('k-os' if s.category == 'OS-Native Stacks' else 'k-oss')) }}"></span>
+      <span>{{ s.name }}</span>
+    </button>
+    {% endif %}{% endfor %}
+    {% endfor %}
+  </nav>
+
+  <div class="bts-main">
+    {% for s in stacks %}
+    <article class="bts-panel {{ 'active' if loop.first else '' }}" id="bts-panel-{{ s.slug }}">
+      <h2 class="bts-title">{{ s.name }}</h2>
+      <div class="bts-badges">
+        <span class="bts-badge vendor">{{ s.vendor }}</span>
+        {% if s.category == 'Open-Source Stacks' %}<span class="bts-badge kind-oss">Open Source</span>
+        {% elif s.category == 'OS-Native Stacks' %}<span class="bts-badge kind-os">OS-Native</span>
+        {% elif s.category == 'Independent / Licensable Stacks' %}<span class="bts-badge kind-lic">Licensable</span>
+        {% else %}<span class="bts-badge kind-prop">Vendor SDK</span>{% endif %}
+        <span class="bts-badge spec">{{ s.spec }}</span>
+        <span class="bts-badge lic">{{ s.license }}</span>
+      </div>
+      <p class="bts-tagline">{{ s.tagline }}</p>
+      <p class="bts-overview">{{ s.overview }}</p>
+
+      <h3 class="bts-h3">\u2705 Qualification / Certification</h3>
+      <div class="bts-cert">
+        <div class="cs">{{ s.certification.status }}</div>
+        <div class="cn">{{ s.certification.note }} {% if s.certification.verify %}&middot; <a href="{{ s.certification.verify }}" target="_blank" rel="noopener">Verify qualified listing &rarr;</a>{% endif %}</div>
+      </div>
+
+      <h3 class="bts-h3">\u26A0\uFE0F Missing vs. {{ latest_spec }}</h3>
+      <ul class="bts-missing">
+        {% for m in s.missing_vs_spec %}<li>{{ m }}</li>{% endfor %}
+      </ul>
+
+      <h3 class="bts-h3">\U0001F9E9 Supported Features <span style="font-weight:400;text-transform:none;color:var(--muted)">(click to learn why it matters)</span></h3>
+      <div class="chip-grid">
+        {% for f in s.features %}{% if f in feature_glossary %}
+        <span class="g-chip feat" data-key="{{ f }}" data-kind="feature">{{ feature_glossary[f].name }}</span>
+        {% endif %}{% endfor %}
+      </div>
+
+      <h3 class="bts-h3">\U0001F517 Profiles Supported</h3>
+      <div class="chip-grid">
+        {% for p in s.profiles_supported %}{% if p in profile_glossary %}
+        <span class="g-chip prof-yes" data-key="{{ p }}" data-kind="profile">{{ profile_glossary[p].name }}</span>
+        {% endif %}{% endfor %}
+      </div>
+
+      {% if s.profiles_not %}
+      <h3 class="bts-h3">\U0001F6AB Profiles Not Supported</h3>
+      <div class="chip-grid">
+        {% for p in s.profiles_not %}{% if p in profile_glossary %}
+        <span class="g-chip prof-no" data-key="{{ p }}" data-kind="profile">{{ profile_glossary[p].name }}</span>
+        {% endif %}{% endfor %}
+      </div>
+      {% endif %}
+
+      <h3 class="bts-h3">\U0001F3AF Best Fit</h3>
+      <div class="bts-bestfit">{{ s.best_fit }}</div>
+
+      {% if s.links %}
+      <div class="bts-links">
+        {% for l in s.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} &rarr;</a>{% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="bts-detail" id="btsDetail">
+  <button type="button" class="bd-close" id="btsDetailClose">&times;</button>
+  <div class="bd-tag" id="btsDetailTag"></div>
+  <div class="bd-name" id="btsDetailName"></div>
+  <div class="bd-brief" id="btsDetailBrief"></div>
+</div>
+
+</main>
+<footer class="footer"><div class="wrap">Bluetooth stack market map \u00b7 hand-curated \u00b7 verify qualification per release \u00b7 generated {{ generated_at }} PDT</div></footer>
+<script>
+var BTS_GLOSSARY = {{ glossary_json | safe }};
+(function(){
+  var items = document.querySelectorAll('.bts-item');
+  var panels = document.querySelectorAll('.bts-panel');
+  function activate(slug){
+    var found = false;
+    items.forEach(function(t){ var on = t.dataset.slug === slug; t.classList.toggle('active', on); if(on) found = true; });
+    panels.forEach(function(p){ p.classList.toggle('active', p.id === 'bts-panel-' + slug); });
+    return found;
+  }
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      activate(this.dataset.slug);
+      history.replaceState(null, '', '#' + this.dataset.slug);
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  });
+  if (location.hash) {
+    var slug = location.hash.replace('#', '');
+    if (document.getElementById('bts-panel-' + slug)) activate(slug);
+  }
+
+  // Sidebar filter
+  var search = document.getElementById('btsSearch');
+  if (search) {
+    search.addEventListener('input', function(){
+      var q = this.value.trim().toLowerCase();
+      items.forEach(function(it){
+        var match = !q || (it.dataset.name || '').indexOf(q) !== -1;
+        it.style.display = match ? '' : 'none';
+      });
+      document.querySelectorAll('.bts-cat-hdr').forEach(function(h){
+        var n = h.nextElementSibling, anyVisible = false;
+        while (n && n.classList.contains('bts-item')) { if (n.style.display !== 'none') anyVisible = true; n = n.nextElementSibling; }
+        h.style.display = anyVisible ? '' : 'none';
+      });
+    });
+  }
+
+  // Feature/profile detail fly-out
+  var detail = document.getElementById('btsDetail');
+  var dTag = document.getElementById('btsDetailTag');
+  var dName = document.getElementById('btsDetailName');
+  var dBrief = document.getElementById('btsDetailBrief');
+  function showDetail(key, kind){
+    var g = BTS_GLOSSARY[key];
+    if (!g) return;
+    dTag.textContent = (kind === 'profile' ? 'Profile' : 'Feature') + (g.tag ? ' \u00b7 ' + g.tag : '');
+    dName.textContent = g.name;
+    dBrief.textContent = g.brief;
+    detail.classList.add('show');
+  }
+  document.addEventListener('click', function(e){
+    var chip = e.target.closest ? e.target.closest('.g-chip') : null;
+    if (chip && chip.dataset.key) { showDetail(chip.dataset.key, chip.dataset.kind); return; }
+  });
+  document.getElementById('btsDetailClose').addEventListener('click', function(){ detail.classList.remove('show'); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') detail.classList.remove('show'); });
+})();
+</script>
+</body></html>
+"""
+
+
 PINNED_CUSTOMERS = ["Google", "Amazon", "Apple", "Microsoft", "Meta", "Samsung",
                     "Sony", "LG", "Motorola", "Bose", "Sonos", "Sennheiser", "Bang & Olufsen",
                     "Marshall", "Ultimate Ears", "Harman Kardon",
@@ -2284,6 +2528,18 @@ def render(articles: list[dict], output_dir: Path,
     # --- Applications page (hand-crafted market-research content per end-device) ---
     (output_dir / "applications.html").write_text(env.from_string(_APPLICATIONS_TEMPLATE).render(
       applications=APPLICATIONS, categories=APP_CATEGORIES, active="applications", **common_ctx
+    ), encoding="utf-8")
+
+    # --- BT Stack page (Bluetooth stack market map) ---
+    _bts_glossary = {
+      **{k: {"name": v["name"], "tag": v.get("tag", ""), "brief": v["brief"]} for k, v in FEATURE_GLOSSARY.items()},
+      **{k: {"name": v["name"], "tag": v.get("tag", ""), "brief": v["brief"]} for k, v in PROFILE_GLOSSARY.items()},
+    }
+    (output_dir / "bt_stack.html").write_text(env.from_string(_BT_STACK_TEMPLATE).render(
+      stacks=BT_STACKS, categories=STACK_CATEGORIES,
+      feature_glossary=FEATURE_GLOSSARY, profile_glossary=PROFILE_GLOSSARY,
+      glossary_json=json.dumps(_bts_glossary), latest_spec=LATEST_SPEC,
+      active="bt_stack", **common_ctx
     ), encoding="utf-8")
 
     # --- Customers page ---
@@ -2780,38 +3036,6 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>Bluetooth Stack Positioning &amp; Full Coverage</h2>
-  </div>
-  <p class="section-sub">Complete tracked customer/competitor coverage plus explicit Infineon Bluetooth stack positioning against Zephyr and BlueZ.</p>
-
-  <table class="stack-table">
-    <thead>
-      <tr>
-        <th>Stack</th>
-        <th>Primary Targets</th>
-        <th>Positioning Strength</th>
-        <th>Trade-off / Gap</th>
-        <th>Missing Features</th>
-        <th>Best Fit</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for r in stack_positioning %}
-      <tr>
-        <td>{{ r.stack }}{% if r.kind == 'Platform' %}<span class="stack-tag platform">Infineon</span>{% else %}<span class="stack-tag oss">Open Source</span>{% endif %}</td>
-        <td>{{ r.targets }}</td>
-        <td>{{ r.strength }}</td>
-        <td>{{ r.tradeoff }}</td>
-        <td>{{ r.missing_features }}</td>
-        <td>{{ r.best_fit }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-
-<div class="section">
-  <div class="section-head">
     <h2>Technology &amp; Standards Radar</h2>
   </div>
   <p class="section-sub">Current vs. next spec version and in-flight features per domain &mdash; direct input for roadmap planning.</p>
@@ -2878,6 +3102,7 @@ _INDEX_TEMPLATE = """<!doctype html>
     <a class="jump-card" href="threat.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
     <a class="jump-card" href="relationships.html"><h3>Relationships \u2192</h3><p>Sankey map of which vendor sells to which customer.</p></a>
     <a class="jump-card" href="applications.html"><h3>Applications \u2192</h3><p>Market research per end-device: architecture, market trend, feature requirements and chip vendor positioning.</p></a>
+    <a class="jump-card" href="bt_stack.html"><h3>BT Stack \u2192</h3><p>Market map of every Bluetooth stack \u2014 features, profiles, certification and gaps vs. the latest spec.</p></a>
   </div>
 </section>
 
@@ -3152,64 +3377,6 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
             "page": domain["page"],
         })
 
-    # --- Stack positioning (platform vs Zephyr/BlueZ)
-    stack_positioning = [
-        {
-            "stack": "Infineon Bluetooth Stack",
-            "kind": "Platform",
-            "targets": "Infineon SoCs/modules, embedded MCU and Linux gateway designs",
-            "strength": "Tight silicon + stack integration, low-power tuning, and vendor-backed lifecycle/support",
-            "tradeoff": "Less portable outside Infineon ecosystem than fully open host stacks",
-            "missing_features": "No native cross-vendor portability layer for non-Infineon silicon",
-            "best_fit": "Commercial products prioritizing time-to-market, qualification, and long-term support",
-        },
-        {
-            "stack": "Zephyr Bluetooth Host",
-            "kind": "OSS",
-            "targets": "RTOS-based embedded IoT devices across many MCU vendors",
-            "strength": "Portable open-source stack, broad board support, high customization flexibility",
-            "tradeoff": "More integration/maintenance ownership for product teams",
-            "missing_features": "No single-vendor production support SLA and less turnkey certification assistance",
-            "best_fit": "Teams optimizing for cross-vendor firmware reuse and deep embedded customization",
-        },
-        {
-            "stack": "BlueZ",
-            "kind": "OSS",
-            "targets": "Linux hosts/gateways, edge computers, and application processors",
-            "strength": "Mature Linux ecosystem integration with strong host-side interoperability",
-            "tradeoff": "Not an RTOS device stack; typically needs Linux-class host footprint",
-            "missing_features": "Limited direct fit for tiny MCU-only endpoints without a Linux host",
-            "best_fit": "Gateway/host products where Linux is already the system baseline",
-        },
-        {
-            "stack": "Apache NimBLE",
-            "kind": "OSS",
-            "targets": "Resource-constrained MCU products and embedded RTOS environments",
-            "strength": "Small memory footprint and widely reused BLE host for constrained systems",
-            "tradeoff": "Feature integration breadth depends on chosen platform/vendor SDK",
-            "missing_features": "No unified full-stack toolchain across all MCU vendors",
-            "best_fit": "Ultra-low-resource BLE endpoints prioritizing compact implementation",
-        },
-        {
-            "stack": "BTstack",
-            "kind": "OSS",
-            "targets": "Embedded devices, prototyping platforms, and custom Bluetooth firmware",
-            "strength": "Clean architecture and flexibility for custom protocol/application work",
-            "tradeoff": "Requires stronger in-house Bluetooth expertise for production hardening",
-            "missing_features": "Smaller ecosystem and fewer out-of-box vertical integrations than mainstream stacks",
-            "best_fit": "Engineering-led products needing highly tailored stack behavior",
-        },
-        {
-            "stack": "Android Fluoride Stack",
-            "kind": "OSS",
-            "targets": "Android phones/tablets and Android-based consumer devices",
-            "strength": "Deep integration with Android framework and large deployed device base",
-            "tradeoff": "Tightly coupled to Android platform release and vendor customization layers",
-            "missing_features": "Not suitable as a drop-in RTOS stack for standalone MCU peripherals",
-            "best_fit": "Products with Android as the primary OS and app-facing Bluetooth requirements",
-        },
-    ]
-
     # --- Recent headline pools (still used for the compact Market Signal Feed)
     comp_7d = [a for a in arts_7d if a.get("vendor")]
     cust_7d = [a for a in arts_7d if a.get("customer")]
@@ -3262,7 +3429,6 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         opportunity_wins=opportunity_wins,
         opportunity_watch=opportunity_watch,
         customer_radar=customer_radar,
-        stack_positioning=stack_positioning,
         standards_radar=standards_radar,
         freshness_7d=len(arts_7d),
         freshness_30d=len(arts_30d),
