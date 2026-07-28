@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T14:19:29Z",
+  "generated_at": "2026-07-28T11:56:33Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2361,14 +2361,14 @@
           "url": "https://engineerlive.com/renesas-acquires-pictorus-accelerate-embedded-application-software-development/"
         },
         {
-          "title": "Renesas Acquires Pictorus to Simplify and Accelerate Embedded Application Software Development",
-          "date": "Jun 2026",
-          "url": "https://www.renesas.com/en/about/newsroom/renesas-acquires-pictorus-simplify-and-accelerate-embedded-application-software-development"
+          "title": "Renesas Electronics Announces Q2 2025 Financial Results",
+          "date": "Jul 2026",
+          "url": "https://www.tipranks.com/stocks/rnecf/earnings/q2-2025-report"
         },
         {
-          "title": "Renesas Completes Acquisition of Irida Labs",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Renesas+Completes+Acquisition+of+Irida+Labs+Renesas"
+          "title": "Renesas Launches RoX Development Platform for R-Car Processors",
+          "date": "Jul 2026",
+          "url": "https://www.techinsights.com/blog/renesas-rox-development-platform-r-car-processors"
         }
       ],
       "events": [
@@ -3709,29 +3709,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 85,
-    "Broadcom": 78,
-    "STMicro": 76,
-    "Microchip": 46,
-    "NXP": 41,
-    "MediaTek": 15,
-    "Synaptics": 13,
+    "Qualcomm": 96,
+    "Broadcom": 81,
+    "STMicro": 78,
+    "Microchip": 48,
+    "NXP": 43,
+    "Synaptics": 15,
+    "MediaTek": 13,
     "TI": 12,
-    "Skyworks": 6,
-    "Espressif": 5,
-    "Silicon Labs": 5,
-    "Bosch": 5,
-    "Realtek": 4,
-    "Renesas": 4,
+    "Espressif": 6,
+    "Skyworks": 5,
+    "Renesas": 5,
+    "Silicon Labs": 4,
+    "Realtek": 3,
     "Marvell": 3,
+    "Bosch": 3,
+    "Goodix": 2,
+    "Apple": 2,
     "u-blox": 2,
     "Nordic": 2,
     "Infineon": 1,
     "HiSilicon": 1,
-    "Apple": 1,
-    "LG Innotek": 1,
-    "Sequans": 1,
-    "Goodix": 1
+    "Sequans": 1
   },
   "standards_in_flight": [
     {
@@ -3804,40 +3803,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3891,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        },
-        {
-          "tag": "v4.4.1",
-          "name": "Zephyr v4.4.1",
-          "published_at": "2026-06-10T18:06:45Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
-        }
-      ],
-      "stars": 16006,
-      "pushed_at": "2026-07-27T14:09:30Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3870,8 +3835,76 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18622,
+      "stars": 18631,
       "pushed_at": "2026-07-24T11:01:51Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3884,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        },
+        {
+          "tag": "v4.4.1",
+          "name": "Zephyr v4.4.1",
+          "published_at": "2026-06-10T18:06:45Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
+        }
+      ],
+      "stars": 16015,
+      "pushed_at": "2026-07-28T10:37:21Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 100,
+      "issues_open": 162,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.07.0",
+          "name": "OpenThread v2026.07.0",
+          "published_at": "2026-07-01T00:58:53Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+        },
+        {
+          "tag": "v2026.06.0",
+          "name": "OpenThread v2026.06.0",
+          "published_at": "2026-06-01T01:01:04Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+        },
+        {
+          "tag": "thread-reference-20250612",
+          "name": "Thread Reference 2025-06-12",
+          "published_at": "2025-09-16T18:13:38Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
+        }
+      ],
+      "stars": 3992,
+      "pushed_at": "2026-07-28T04:32:31Z"
     },
     {
       "name": "Matter SDK",
@@ -3882,7 +3915,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2748,
+      "issues_open": 2765,
       "prs_open": 0,
       "releases": [
         {
@@ -3905,7 +3938,7 @@
         }
       ],
       "stars": 8843,
-      "pushed_at": "2026-07-27T11:51:37Z"
+      "pushed_at": "2026-07-28T11:43:24Z"
     },
     {
       "name": "Linux mac80211",
@@ -3919,42 +3952,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 240735,
-      "pushed_at": "2026-07-26T21:50:29Z"
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 94,
-      "issues_open": 175,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v2026.07.0",
-          "name": "OpenThread v2026.07.0",
-          "published_at": "2026-07-01T00:58:53Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
-        },
-        {
-          "tag": "v2026.06.0",
-          "name": "OpenThread v2026.06.0",
-          "published_at": "2026-06-01T01:01:04Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
-        },
-        {
-          "tag": "thread-reference-20250612",
-          "name": "Thread Reference 2025-06-12",
-          "published_at": "2025-09-16T18:13:38Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
-        }
-      ],
-      "stars": 3991,
-      "pushed_at": "2026-07-27T09:33:50Z"
+      "stars": 240817,
+      "pushed_at": "2026-07-27T21:50:18Z"
     },
     {
       "name": "BlueZ",
@@ -3965,7 +3964,7 @@
         "bluetooth"
       ],
       "commits_30d": 39,
-      "issues_open": 108,
+      "issues_open": 110,
       "prs_open": 0,
       "releases": [
         {
@@ -3987,8 +3986,23 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1111,
+      "stars": 1112,
       "pushed_at": "2026-07-27T08:06:50Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 11,
+      "issues_open": 271,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 880,
+      "pushed_at": "2026-07-28T08:49:49Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3998,8 +4012,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 10,
-      "issues_open": 462,
+      "commits_30d": 7,
+      "issues_open": 457,
       "prs_open": 0,
       "releases": [
         {
@@ -4021,23 +4035,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15335,
-      "pushed_at": "2026-07-27T05:26:21Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 9,
-      "issues_open": 273,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 880,
-      "pushed_at": "2026-07-22T15:01:19Z"
+      "stars": 15342,
+      "pushed_at": "2026-07-27T18:44:55Z"
     },
     {
       "name": "hostap",
