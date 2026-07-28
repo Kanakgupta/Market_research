@@ -129,7 +129,7 @@ a:hover { text-decoration:underline; }
 
 <script id="password-gate-v1">
 (function(){
-  var KEY='airoc_unlock_v1';
+  var KEY='site_unlock_v1';
   var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
   function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
@@ -342,7 +342,7 @@ a:hover { text-decoration:underline; }
           
           <button class="news-side-item" data-side-type="vendor" data-side-value="NXP" onclick="filterBySideFromButton(this)">NXP <span class="side-count">44</span></button>
           
-          <button class="news-side-item" data-side-type="vendor" data-side-value="Infineon" onclick="filterBySideFromButton(this)">Infineon <span class="side-count">1</span></button>
+          <button class="news-side-item" data-side-type="vendor" data-side-value="" onclick="filterBySideFromButton(this)"> <span class="side-count">1</span></button>
           
           <button class="news-side-item" data-side-type="vendor" data-side-value="STMicro" onclick="filterBySideFromButton(this)">STMicro <span class="side-count">77</span></button>
           
@@ -5124,7 +5124,7 @@ QUALCOMM (QCOM) recently affirmed a quar…</p>
     </div>
   </article>
   
-  <article class="card" data-buckets="bluetooth,wifi" data-vendor="Infineon" data-customer="Amazon" data-standard="" data-published="2026-07-27T09:06:25+00:00">
+  <article class="card" data-buckets="bluetooth,wifi" data-vendor="" data-customer="Amazon" data-standard="" data-published="2026-07-27T09:06:25+00:00">
     <div class="thumb">
       <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/Orange-Pi-5B-Ubuntu-WiFi-Bluetooth-Fix-720x509.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
     </div>
@@ -5132,7 +5132,7 @@ QUALCOMM (QCOM) recently affirmed a quar…</p>
       <div class="meta-row">
         
         <span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Infineon</span>
+        <span class="chip chip-vendor"></span>
         <span class="chip chip-cust">Amazon</span>
         
       </div>
