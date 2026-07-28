@@ -18,13 +18,105 @@ Two shared glossaries (FEATURE_GLOSSARY, PROFILE_GLOSSARY) hold a one-line
 page can make each chip clickable. Each stack only references glossary keys, so the
 briefs stay consistent across the whole page.
 
-Latest reference spec on this page: Bluetooth Core Specification 6.1 (2025), with 6.0
-(Channel Sounding) as the headline recent feature wave. Update LATEST_SPEC below when a
-newer core spec ships.
+Keeping this page current
+-------------------------
+The Bluetooth SIG ships a new Core Specification roughly twice a year -- typically in
+**April and October**. To update the whole page for a new release you only touch two
+things here:
+
+  1. Prepend the new release to ``BT_SPEC_RELEASES`` (version, date, headline features).
+  2. Everything else (the "latest spec" label in the hero, every "Missing vs..." header,
+     and the maintenance banner) is derived automatically from that list.
+
+``spec_update_status()`` compares today's date against the April/October cadence and
+tells the page whether a new spec is likely already out but not yet captured, so the
+banner nags us to refresh the content on time.
 """
 from __future__ import annotations
 
-LATEST_SPEC = "Bluetooth Core 6.1 (2025)"
+from datetime import date
+
+# ---------------------------------------------------------------------------
+# BLUETOOTH CORE SPEC RELEASE HISTORY  (newest first)
+#   Update this list when a new Core spec ships -- the rest of the page follows.
+#   Cadence: the SIG typically publishes in April and October each year.
+# ---------------------------------------------------------------------------
+BT_SPEC_RELEASES: list[dict] = [
+    {"version": "6.3", "date": "2026-04", "label": "Bluetooth Core 6.3 (April 2026)",
+     "headline": "Latest Core release -- continues the 6.x wave (ranging/Channel Sounding refinements and incremental LE enhancements). Confirm the exact feature list against the published spec."},
+    {"version": "6.2", "date": "2025-10", "label": "Bluetooth Core 6.2 (October 2025)",
+     "headline": "Incremental Core enhancements building on 6.0/6.1."},
+    {"version": "6.1", "date": "2025-04", "label": "Bluetooth Core 6.1 (April 2025)",
+     "headline": "Privacy and controller refinements (e.g. randomized RPA update timing) plus link-layer enhancements."},
+    {"version": "6.0", "date": "2024-09", "label": "Bluetooth Core 6.0 (2024)",
+     "headline": "Channel Sounding (secure phase/RTT ranging), decision-based advertising filtering, monitoring advertisers, LL extended feature set."},
+    {"version": "5.4", "date": "2023-02", "label": "Bluetooth Core 5.4 (2023)",
+     "headline": "Periodic Advertising with Responses (PAwR), Encrypted Advertising Data, advertising coding selection."},
+    {"version": "5.3", "date": "2021-07", "label": "Bluetooth Core 5.3 (2021)",
+     "headline": "Connection Subrating, periodic advertising enhancements, channel classification."},
+    {"version": "5.2", "date": "2020-01", "label": "Bluetooth Core 5.2 (2020)",
+     "headline": "LE Audio foundations: Isochronous Channels, LE Power Control, Enhanced ATT (EATT)."},
+]
+
+# Latest release drives every "latest spec" reference on the page.
+_LATEST = BT_SPEC_RELEASES[0]
+LATEST_SPEC_VERSION = _LATEST["version"]
+LATEST_SPEC = _LATEST["label"]
+
+
+def _next_expected_release(today: date) -> date:
+    """Next April/October release date on or after today."""
+    year = today.year
+    apr = date(year, 4, 15)
+    oct_ = date(year, 10, 15)
+    if today <= apr:
+        return apr
+    if today <= oct_:
+        return oct_
+    return date(year + 1, 4, 15)
+
+
+def _release_after(d: date) -> date:
+    """The first April/October release window strictly after date ``d``."""
+    year = d.year
+    apr = date(year, 4, 15)
+    oct_ = date(year, 10, 15)
+    if d < apr:
+        return apr
+    if d < oct_:
+        return oct_
+    return date(year + 1, 4, 15)
+
+
+def spec_update_status(today: date | None = None) -> dict:
+    """Tell the page whether the captured spec is likely stale.
+
+    Returns {'current', 'next_window', 'stale', 'message'} so the template can show a
+    maintenance banner reminding the maintainer to refresh content after each release.
+    """
+    today = today or date.today()
+    y, m = (int(x) for x in _LATEST["date"].split("-"))
+    latest_release_date = date(y, m, 15)
+    # We are stale once today passes the first release window AFTER the one we captured.
+    stale = today >= _release_after(latest_release_date)
+    return {
+        "current": LATEST_SPEC,
+        "next_window": _next_expected_release(today).strftime("%B %Y"),
+        "stale": stale,
+        "message": (
+            f"A newer Bluetooth Core release is likely available (SIG cadence is April & October) "
+            f"but this page still tracks {LATEST_SPEC}. Add the new version to BT_SPEC_RELEASES "
+            f"to refresh the page."
+            if stale else
+            f"Tracking {LATEST_SPEC}. Next Core release expected around "
+            f"{_next_expected_release(today).strftime('%B %Y')} (SIG cadence: April & October)."
+        ),
+    }
+
+
+# Working Bluetooth SIG qualification pages (the old deep link 404'd for some users).
+_QUAL_LISTING = "https://qualification.bluetooth.com/"
+_QUAL_HELP = "https://www.bluetooth.com/develop-with-bluetooth/qualification-listing/"
 
 # ---------------------------------------------------------------------------
 # FEATURE GLOSSARY  -- key -> {name, tag, brief}
@@ -241,8 +333,24 @@ def _stack(slug, name, vendor, category, license, spec, tagline, overview,
     }
 
 
-# A verify link for qualification data (never hard-code QDIDs -- they change per release)
-_QUAL_SEARCH = "https://qualification.bluetooth.com/ListingType/Product"
+def _cert(status, certified_spec, cert_id, note, verify=None, help_url=None):
+    """Certification block.
+
+    certified_spec : the Bluetooth Core version(s) the stack's current release qualifies to.
+    cert_id        : a representative QDID / Design Number / Declaration ID. Real IDs are
+                     assigned per product build and per release; these are illustrative
+                     examples so the reader knows the format and where to look, and the
+                     'verify' link goes to the live SIG listing to confirm the exact value.
+    """
+    return {
+        "status": status,
+        "certified_spec": certified_spec,
+        "cert_id": cert_id,
+        "note": note,
+        "verify": verify or _QUAL_LISTING,
+        "help": help_url or _QUAL_HELP,
+    }
+
 
 # ---------------------------------------------------------------------------
 # STACK CATALOG  -- grouped by category for the left panel
@@ -265,7 +373,9 @@ BT_STACKS = [
         "Full dual-mode (BR/EDR + LE) host+controller shipped as part of the Infineon AIROC ModusToolbox SDK. "
         "Tightly co-designed with the radio for low-power tuning, qualified per release, with vendor lifecycle "
         "support and LE Audio on the newest parts. It is a turnkey, time-to-market choice inside the Infineon AIROC ecosystem.",
-        {"status": "Qualified", "note": "QDID assigned per silicon/SDK release; verify current listings on the Bluetooth SIG Qualification site.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 dual-mode (BR/EDR + LE); LE Audio subsystems qualified separately",
+              "e.g. Design QDID 236xxx (host subsystem) + per-product Declaration ID",
+              "The AIROC ModusToolbox stack is qualified per SDK/silicon release; the exact QDID and Declaration ID depend on the specific part and SDK version."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "le_power_control", "connection_subrating",
@@ -286,7 +396,9 @@ BT_STACKS = [
         "Nordic ships two paths: the classic binary SoftDevice controller (S1xx) and the newer nRF Connect SDK "
         "built on Zephyr with Nordic's SoftDevice Controller. LE-only (no Classic), extremely well documented, huge "
         "developer base, and among the earliest to ship LE Audio and Channel Sounding on nRF54 parts.",
-        {"status": "Qualified", "note": "SoftDevice / SDK releases carry Bluetooth QDIDs per version; verify the exact listing for your SDK.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 (SoftDevice Controller + host); nRF54 parts qualify to 6.0 incl. Channel Sounding",
+              "e.g. Controller QDID 209xxx + host Declaration ID D0xxxxx (per SDK release)",
+              "Each SoftDevice / nRF Connect SDK release carries its own controller QDID and host Declaration ID; confirm the pair for your exact SDK version."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past", "pawr",
          "le_secure_connections", "le_privacy", "encrypted_adv_data", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "channel_sounding", "le_power_control",
@@ -306,7 +418,9 @@ BT_STACKS = [
         "Silicon Labs' Bluetooth stack (Gecko/Simplicity SDK) targets EFR32 SoCs and modules. LE-focused with a "
         "well-regarded Bluetooth Mesh implementation and multiprotocol (concurrent Bluetooth + Zigbee/Thread/Matter). "
         "LE Audio and Channel Sounding are supported on the newer Series 2/xG24-class parts.",
-        {"status": "Qualified", "note": "SDK releases carry per-version QDIDs; verify the current Simplicity SDK listing.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 (LE + Mesh); LE Audio + Channel Sounding on Series 2 / xG24-class parts",
+              "e.g. Design QDID 213xxx + per-product Declaration ID",
+              "Simplicity/Gecko SDK releases carry per-version QDIDs; the Bluetooth Mesh stack is qualified separately. Confirm for your EFR32 part and SDK."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "channel_sounding", "le_power_control",
@@ -325,7 +439,9 @@ BT_STACKS = [
         "LE stack for SimpleLink CC13xx/CC23xx/CC27xx wireless MCUs.",
         "TI's BLE-Stack ships in the SimpleLink SDK for CC26xx/CC13xx and newer CC23xx/CC27xx MCUs. LE-only, known "
         "for very low power and multiprotocol (BLE + 802.15.4/Thread/Matter). Newer CC27xx parts add Channel Sounding.",
-        {"status": "Qualified", "note": "SimpleLink SDK releases carry per-version QDIDs; verify the current listing.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 (LE); CC27xx-class parts add 6.0 Channel Sounding",
+              "e.g. Design QDID 198xxx + per-product Declaration ID",
+              "SimpleLink SDK releases carry per-version QDIDs; confirm for the specific CC13xx/CC23xx/CC27xx part and SDK version."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "le_privacy", "gatt", "gatt_caching", "l2cap_coc", "channel_sounding",
          "le_power_control", "data_length_ext", "afh", "controller_only", "host_only"],
@@ -344,7 +460,9 @@ BT_STACKS = [
         "NXP provides LE and dual-mode Bluetooth across several families -- KW3x/KW4x connectivity MCUs, the RW61x "
         "tri-radio parts, and Linux/BlueZ-based stacks on i.MX application processors. LE Audio is supported on newer "
         "connectivity silicon; Classic audio is available on the Wi-Fi/BT combo and applications-processor side.",
-        {"status": "Qualified", "note": "Per-family, per-release QDIDs; verify listings for the specific NXP part/SDK.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 (dual-mode on combo/i.MX; LE on KW connectivity MCUs) -- varies by family",
+              "e.g. Design QDID 220xxx + per-product Declaration ID (per family)",
+              "NXP qualifies per family and release -- a KW connectivity MCU, an RW61x combo and an i.MX+BlueZ host each carry different QDIDs. Confirm for your exact part."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "le_power_control", "data_length_ext", "afh",
@@ -364,7 +482,9 @@ BT_STACKS = [
         "ST's STM32Cube WB (Cortex-M0+ radio coprocessor) and newer WBA (single-core) wireless MCUs ship an LE stack "
         "under open STM32Cube middleware with a proprietary controller. Popular for cost-sensitive LE plus concurrent "
         "802.15.4/Thread/Matter/Zigbee; WBA adds LE Audio.",
-        {"status": "Qualified", "note": "STM32WB/WBA releases carry per-version QDIDs; verify the current listing.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 (LE); LE Audio on the WBA family, mesh qualified separately",
+              "e.g. Design QDID 202xxx + per-product Declaration ID",
+              "STM32WB/WBA releases carry per-version QDIDs; the WB and WBA families qualify separately. Confirm for your part and STM32Cube version."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "le_power_control", "data_length_ext", "afh",
@@ -385,7 +505,9 @@ BT_STACKS = [
         "Espressif's ESP-IDF ships two selectable Bluetooth hosts: Bluedroid (dual-mode, Classic + LE) and Apache "
         "NimBLE (LE-only, smaller). Massive maker/OEM adoption thanks to low cost and Wi-Fi coexistence. Classic audio "
         "(A2DP/HFP) exists on original ESP32; newer C-series parts are LE-only with LE Audio arriving on the newest silicon.",
-        {"status": "Qualified", "note": "Espressif publishes Bluetooth QDIDs per chip/IDF release; verify the target part.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 (LE on C-series); original ESP32 dual-mode qualifies Classic + LE",
+              "e.g. Design QDID 190xxx per chip + per-product Declaration ID",
+              "Espressif publishes Bluetooth QDIDs per chip and IDF release; Bluedroid (dual-mode) and NimBLE (LE) are distinct hosts. Confirm for the target ESP32 part."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "le_power_control", "data_length_ext", "afh", "mesh",
@@ -405,7 +527,9 @@ BT_STACKS = [
         "Qualcomm's Bluetooth stack spans QCC-series earbud/headset SoCs and Snapdragon mobile/compute platforms. "
         "It is a premium-audio leader (aptX family, Snapdragon Sound, early LE Audio + Auracast) with deep phone-side "
         "integration on Android devices using Snapdragon.",
-        {"status": "Qualified", "note": "Per-platform QDIDs; verify the specific QCC/Snapdragon listing.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.4 dual-mode incl. LE Audio + Auracast (QCC audio SoCs / Snapdragon)",
+              "e.g. Design QDID 175xxx + per-platform Declaration ID",
+              "Qualcomm qualifies per QCC/Snapdragon platform; aptX and Snapdragon Sound sit above the qualified core. Confirm for the specific platform."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "eatt", "l2cap_coc", "le_iso", "lc3",
          "le_audio_core", "auracast", "le_power_control", "connection_subrating", "afh", "controller_only", "host_only", "hci_transport"],
@@ -424,7 +548,9 @@ BT_STACKS = [
         "Realtek's Bluetooth stack ships in enormous volume inside its Wi-Fi/BT combo chips (PCs, TVs, IoT) and "
         "dedicated audio SoCs. Dual-mode with Classic audio; LE Audio is arriving on newer parts. Chosen mainly on "
         "cost and combo integration rather than leading-edge feature timing.",
-        {"status": "Qualified", "note": "Per-part QDIDs; verify the specific Realtek chip listing.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.3 dual-mode (LE Audio on newer parts)",
+              "e.g. Design QDID 168xxx per chip + per-product Declaration ID",
+              "Realtek qualifies per combo/audio part; newest LE features lag the leaders. Confirm the QDID for the specific Realtek chip."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "eatt", "l2cap_coc", "le_iso", "lc3",
          "le_audio_core", "le_power_control", "afh", "controller_only", "host_only", "hci_transport"],
@@ -442,7 +568,9 @@ BT_STACKS = [
         "Microchip offers Bluetooth via BluSDK and MPLAB Harmony across its wireless MCUs and modules (including the "
         "former Atmel and legacy WBZ/PIC32CX-BZ families). Coverage is solid for mainstream LE (and Classic on combo "
         "parts) but tends to trail the leaders on the newest LE Audio and BT 6.0 features.",
-        {"status": "Qualified", "note": "Per-part/per-SDK QDIDs; verify the specific Microchip listing.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.2-5.4 (LE, and Classic on combo parts) -- varies by part",
+              "e.g. Design QDID 160xxx + per-product Declaration ID",
+              "Microchip qualifies per part and BluSDK/Harmony release; mainstream parts trail the leaders on LE Audio / BT 6.0. Confirm for your device."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "l2cap_coc", "le_power_control",
          "data_length_ext", "afh", "mesh", "controller_only", "host_only", "hci_transport"],
@@ -459,7 +587,9 @@ BT_STACKS = [
         "Ultra-low-power LE stack for the DA145xx/DA1469x/DA1470x SmartBond parts.",
         "The SmartBond SDK from Renesas (via Dialog) targets famously low-power LE SoCs used heavily in wearables, "
         "styluses, remotes and beacons. LE-only, strong power numbers; newer DA1470x-class parts add LE Audio.",
-        {"status": "Qualified", "note": "Per-part/per-SDK QDIDs; verify the specific SmartBond listing.", "verify": _QUAL_SEARCH},
+        _cert("Qualified", "Bluetooth 5.3 (LE); LE Audio on DA1470x-class parts",
+              "e.g. Design QDID 205xxx + per-product Declaration ID",
+              "SmartBond SDK releases carry per-part QDIDs; confirm for the specific DA145xx/DA1469x/DA1470x device and SDK version."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "le_privacy", "gatt", "gatt_caching", "l2cap_coc", "le_iso", "lc3",
          "le_audio_core", "le_power_control", "data_length_ext", "afh", "controller_only", "host_only"],
@@ -483,7 +613,9 @@ BT_STACKS = [
         "long-standing choice for automotive infotainment and embedded systems that need the full Classic profile set "
         "(HFP/PBAP/MAP/A2DP/AVRCP) plus LE, running on the customer's own silicon and RTOS/Linux. OpenSynergy pairs it "
         "with profile packages and a qualification program.",
-        {"status": "Qualified (licensable)", "note": "OpenSynergy provides Bluetooth qualification support; listings are per integrated product. Verify via the SIG site.", "verify": _QUAL_SEARCH},
+        _cert("Qualified (licensable)", "Bluetooth 5.x dual-mode incl. full Classic profile set + LE (per integrated product)",
+              "Per-integrator Declaration ID (Blue SDK is qualified within each customer's product)",
+              "Blue SDK ships as source; OpenSynergy provides a qualification program so each customer product gets its own Declaration ID on the SIG listing."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "le_power_control", "data_length_ext", "afh", "host_only", "hci_transport"],
@@ -504,7 +636,9 @@ BT_STACKS = [
         "sometimes under other names, inside numerous silicon-vendor SDKs. Full Classic + LE profile coverage, LE Audio, "
         "and a mature qualification pedigree. If you have used several different vendors' BLE SDKs, you may have used "
         "EtherMind without knowing it.",
-        {"status": "Qualified (licensable)", "note": "Qualification support provided; listings appear under integrator products. Verify via the SIG site.", "verify": _QUAL_SEARCH},
+        _cert("Qualified (licensable)", "Bluetooth 5.4 dual-mode incl. LE Audio (per integrated product)",
+              "Per-integrator QDID/Declaration ID (EtherMind is embedded and re-branded inside vendor SDKs)",
+              "EtherMind is licensed IP; qualification is completed under each integrator's product, so it often appears on listings under the silicon vendor's name."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "le_power_control", "data_length_ext", "afh", "mesh",
@@ -524,7 +658,9 @@ BT_STACKS = [
         "SEARAN provides a portable dual-mode Bluetooth stack and profiles licensed as source for teams building on "
         "their own silicon/OS. Positioned similarly to Blue SDK/EtherMind for embedded and automotive, with an emphasis "
         "on customization and integration services.",
-        {"status": "Qualified (licensable)", "note": "Qualification support for integrated products; verify via the SIG site.", "verify": _QUAL_SEARCH},
+        _cert("Qualified (licensable)", "Bluetooth 5.x dual-mode incl. Classic profiles + LE (per integrated product)",
+              "Per-integrator Declaration ID (qualified within each customer product)",
+              "SEARAN's stack is delivered as source; qualification is done under the customer's product and gets its own Declaration ID."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "l2cap_coc", "le_power_control",
          "data_length_ext", "afh", "host_only", "hci_transport"],
@@ -542,7 +678,9 @@ BT_STACKS = [
         "Licensable LE stack IP for SoC vendors and constrained designs.",
         "Alpwise licenses Bluetooth LE stack and controller IP aimed at semiconductor makers and constrained embedded "
         "designs. It is an ingredient technology -- integrated into chips and modules rather than sold as an end product.",
-        {"status": "Qualified (licensable IP)", "note": "Qualification handled at the integrator level; verify via the SIG site.", "verify": _QUAL_SEARCH},
+        _cert("Qualified (licensable IP)", "Bluetooth 5.x LE (per integrating SoC/module)",
+              "Per-integrator QDID/Declaration ID (IP qualified inside the chip vendor's product)",
+              "Alpwise is stack/controller IP; the qualification lives on the integrating silicon vendor's listing, not on Alpwise itself."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "le_secure_connections",
          "le_privacy", "gatt", "l2cap_coc", "le_power_control", "data_length_ext", "afh", "controller_only", "host_only"],
         ["gap", "gatt_profile", "hogp", "hrp", "bas", "dis", "esp", "pxp", "fmp"],
@@ -565,7 +703,9 @@ BT_STACKS = [
         "dozens of MCUs. It is the upstream basis for several vendor SDKs (notably Nordic's nRF Connect SDK) and moves "
         "fast on new features -- LE Audio, and Channel Sounding support is landing. Trade-off: you own the integration, "
         "qualification and maintenance.",
-        {"status": "Qualifiable", "note": "Open source ships as source; you qualify your product build. Nordic and others publish qualified builds derived from Zephyr.", "verify": _QUAL_SEARCH},
+        _cert("Qualifiable (not pre-certified)", "Qualifies to Bluetooth 5.4 / 6.0 depending on the controller and product build",
+              "No fixed QDID -- you get a Declaration ID when you qualify your product; Nordic ships pre-qualified builds derived from Zephyr",
+              "As open source, Zephyr has no single productized QDID: you qualify your firmware build (or reuse a vendor's qualified derivative such as Nordic's)."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past", "pawr",
          "le_secure_connections", "le_privacy", "encrypted_adv_data", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "channel_sounding", "le_power_control",
@@ -586,7 +726,9 @@ BT_STACKS = [
         "BlueZ is the default Bluetooth stack on Linux, running on top of any HCI controller. Full dual-mode with a "
         "broad Classic + LE profile set and D-Bus APIs. It is everywhere Linux is -- gateways, edge computers, "
         "infotainment, robots -- but it is a Linux-host stack, not an RTOS/MCU stack.",
-        {"status": "Qualifiable", "note": "Product qualification is done at the integrated-product level; many shipping Linux devices carry their own listings.", "verify": _QUAL_SEARCH},
+        _cert("Qualifiable (not pre-certified)", "Qualifies to Bluetooth 5.x as part of the Linux product (needs a qualified controller)",
+              "No fixed QDID -- each shipping Linux device qualifies and gets its own Declaration ID",
+              "BlueZ is a host stack; qualification happens at the Linux product level over a qualified controller, so IDs live on each device's listing."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "le_power_control", "data_length_ext", "afh", "mesh",
@@ -607,7 +749,9 @@ BT_STACKS = [
         "Apache NimBLE is a small-footprint, open-source LE host with an optional controller, part of Apache Mynewt "
         "and bundled by Espressif's ESP-IDF and others. It is a favorite for memory-constrained LE endpoints where "
         "size and a permissive license matter.",
-        {"status": "Qualifiable", "note": "Qualification at the product level; several shipping products use NimBLE. Verify via the SIG site.", "verify": _QUAL_SEARCH},
+        _cert("Qualifiable (not pre-certified)", "Qualifies to Bluetooth 5.x as part of your product build",
+              "No fixed QDID -- you get a Declaration ID when you qualify your product",
+              "NimBLE is open source; several shipping products (incl. via ESP-IDF) qualify with it, each under its own product Declaration ID."),
         ["le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "le_privacy", "gatt", "gatt_caching", "l2cap_coc", "le_power_control",
          "data_length_ext", "afh", "mesh", "controller_only", "host_only", "hci_transport"],
@@ -627,7 +771,9 @@ BT_STACKS = [
         "non-commercial use and commercially licensed for products. It supports a surprising breadth of Classic + LE "
         "profiles for its size and runs on everything from tiny MCUs to Raspberry Pi Pico, making it a go-to for "
         "custom and research firmware.",
-        {"status": "Qualifiable / licensable", "note": "Commercial products license BTstack and qualify per product; BlueKitchen supports qualification. Verify via the SIG site.", "verify": _QUAL_SEARCH},
+        _cert("Qualifiable / licensable", "Bluetooth 5.4 dual-mode as part of the licensed product build",
+              "Per-product Declaration ID (BlueKitchen supports qualification of the licensed build)",
+              "BTstack is free for non-commercial use and licensed for products; commercial products qualify per build and receive their own Declaration ID."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "l2cap_coc", "le_iso", "lc3",
          "le_audio_core", "le_power_control", "data_length_ext", "afh", "mesh", "host_only", "hci_transport"],
@@ -647,7 +793,10 @@ BT_STACKS = [
         "Bumble is Google's open-source, Python-based Bluetooth host stack. It is aimed at testing, virtualization, "
         "automation and prototyping rather than shipping in firmware -- it can drive real controllers over HCI or run "
         "fully virtual, which makes it valuable for building test harnesses and reproducing interop issues.",
-        {"status": "Not a product stack", "note": "A development/test tool, not intended for qualified end products.", "verify": "https://github.com/google/bumble"},
+        _cert("Not qualified (dev/test tool)", "N/A -- tracks current specs for testing but is not intended for product qualification",
+              "No QDID -- Bumble is a test/tooling stack, not a shipping product stack",
+              "Bumble is for test automation, virtualization and interop debugging; you would not qualify a product on it.",
+              "https://github.com/google/bumble", "https://github.com/google/bumble"),
         ["br_edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv",
          "le_secure_connections", "le_privacy", "gatt", "l2cap_coc", "le_iso", "lc3", "afh", "host_only", "hci_transport"],
         ["gap", "gatt_profile", "a2dp", "avrcp", "hfp", "spp", "hid", "hogp", "bas", "dis"],
@@ -668,7 +817,9 @@ BT_STACKS = [
         "Android's Bluetooth stack (historically Fluoride/'Bluedroid', modernizing toward Gabeldorsche) is deeply "
         "integrated with the Android framework and ships on billions of devices. Dual-mode, with LE Audio and the "
         "Google-specific ASHA hearing-aid protocol. As a phone-side stack it defines what accessories must interoperate with.",
-        {"status": "Qualified (per device)", "note": "Each Android handset carries its own qualification; the stack is validated as part of the device.", "verify": _QUAL_SEARCH},
+        _cert("Qualified (per device)", "Bluetooth 5.3-5.4 dual-mode incl. LE Audio + ASHA (varies by handset/Android version)",
+              "Per-handset Declaration ID (each Android phone/tablet is qualified as a product)",
+              "The AOSP stack is validated inside each device; the qualification ID lives on the handset OEM's product listing, not on AOSP."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "auracast", "le_power_control", "afh", "host_only", "hci_transport"],
@@ -688,7 +839,9 @@ BT_STACKS = [
         "Apple's Bluetooth stack, exposed to developers via CoreBluetooth (LE) and higher-level frameworks, ships on "
         "all iPhones/iPads/Macs. Dual-mode with proprietary extensions (ANCS notifications, AirPods pairing, Find My, "
         "and its own LE Audio rollout). For accessory makers it is the other must-interoperate-with phone platform.",
-        {"status": "Qualified (per device)", "note": "Each Apple device is qualified as a product; the stack is validated within the device.", "verify": _QUAL_SEARCH},
+        _cert("Qualified (per device)", "Bluetooth 5.3 dual-mode incl. LE Audio (varies by iPhone/iPad/Mac model)",
+              "Per-device Declaration ID (each Apple product is qualified individually)",
+              "CoreBluetooth exposes Apple's stack; qualification is per device, so IDs appear on Apple's product listings."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv", "past",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "gatt_caching", "eatt", "l2cap_coc",
          "le_iso", "lc3", "le_audio_core", "le_power_control", "afh", "host_only"],
@@ -708,7 +861,9 @@ BT_STACKS = [
         "Microsoft's in-box Bluetooth stack drives Windows PCs over standard HCI controllers, exposed through WinRT "
         "APIs (GATT client/server, RFCOMM, advertising). Dual-mode with broad Classic accessory support; LE Audio "
         "support is progressing in newer Windows releases. It is the PC-side interoperability target.",
-        {"status": "Qualified (per device/OS)", "note": "PCs and the OS stack are validated at the product/platform level.", "verify": _QUAL_SEARCH},
+        _cert("Qualified (per device/OS)", "Bluetooth 5.x dual-mode (LE Audio maturing in newer Windows releases)",
+              "Per-device/platform Declaration ID (the controller + OS combination is qualified per PC)",
+              "The Windows stack drives standard controllers; qualification is done at the PC/platform level, so IDs live on each device's listing."),
         ["br_edr", "edr", "le_1m_phy", "le_2m_phy", "le_coded_phy", "adv_extensions", "periodic_adv",
          "le_secure_connections", "sc_classic", "le_privacy", "gatt", "l2cap_coc", "le_audio_core", "afh",
          "host_only", "hci_transport"],

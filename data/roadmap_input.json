@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T17:33:26Z",
+  "generated_at": "2026-07-28T18:54:09Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3710,26 +3710,26 @@
   ],
   "vendor_news_momentum_30d": {
     "Qualcomm": 93,
-    "Broadcom": 84,
+    "Broadcom": 83,
     "STMicro": 76,
-    "Microchip": 48,
-    "NXP": 44,
+    "Microchip": 49,
+    "NXP": 45,
     "Synaptics": 15,
     "MediaTek": 12,
     "TI": 8,
     "Espressif": 7,
     "Silicon Labs": 6,
     "Renesas": 5,
+    "Nordic": 4,
     "Marvell": 4,
     "Skyworks": 4,
     "Realtek": 3,
     "Bosch": 3,
     "Goodix": 2,
-    "Apple": 2,
     "u-blox": 2,
-    "Nordic": 2,
     "Infineon": 1,
     "HiSilicon": 1,
+    "Apple": 1,
     "Sequans": 1
   },
   "standards_in_flight": [
@@ -3835,8 +3835,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18636,
-      "pushed_at": "2026-07-28T17:09:13Z"
+      "stars": 18637,
+      "pushed_at": "2026-07-28T17:52:08Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3847,7 +3847,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3900,
+      "issues_open": 3901,
       "prs_open": 0,
       "releases": [
         {
@@ -3869,8 +3869,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.1"
         }
       ],
-      "stars": 16019,
-      "pushed_at": "2026-07-28T16:06:43Z"
+      "stars": 16021,
+      "pushed_at": "2026-07-28T18:41:40Z"
     },
     {
       "name": "OpenThread",
@@ -3881,7 +3881,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 160,
+      "issues_open": 159,
       "prs_open": 0,
       "releases": [
         {
@@ -3903,23 +3903,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
         }
       ],
-      "stars": 3992,
-      "pushed_at": "2026-07-28T15:38:04Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 240843,
-      "pushed_at": "2026-07-28T17:27:14Z"
+      "stars": 3993,
+      "pushed_at": "2026-07-28T18:48:31Z"
     },
     {
       "name": "Matter SDK",
@@ -3930,7 +3915,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2765,
+      "issues_open": 2761,
       "prs_open": 0,
       "releases": [
         {
@@ -3952,8 +3937,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8844,
-      "pushed_at": "2026-07-28T16:43:07Z"
+      "stars": 8845,
+      "pushed_at": "2026-07-28T18:32:56Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 240849,
+      "pushed_at": "2026-07-28T17:27:14Z"
     },
     {
       "name": "BlueZ",
@@ -3964,7 +3964,7 @@
         "bluetooth"
       ],
       "commits_30d": 41,
-      "issues_open": 108,
+      "issues_open": 109,
       "prs_open": 0,
       "releases": [
         {

@@ -20,6 +20,7 @@ from .tech_tutorials import TECH_TUTORIALS
 from .applications_data import APPLICATIONS, APP_CATEGORIES
 from .bt_stacks_data import (
     BT_STACKS, STACK_CATEGORIES, FEATURE_GLOSSARY, PROFILE_GLOSSARY, LATEST_SPEC,
+    BT_SPEC_RELEASES, spec_update_status,
 )
 
 PDT = timezone(timedelta(hours=-7), name="PDT")
@@ -2085,8 +2086,25 @@ _BT_STACK_TEMPLATE = """<!doctype html>
 
 .bts-cert { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:12px 14px; font-size:12.7px; }
 .bts-cert .cs { font-weight:800; color:#166534; }
-.bts-cert .cn { color:#3f6212; margin-top:4px; line-height:1.55; }
+.bts-cert .cn { color:#3f6212; margin-top:8px; line-height:1.55; }
 .bts-cert a { font-weight:600; }
+.cert-rows { margin-top:8px; display:grid; gap:5px; }
+.cert-row { display:grid; grid-template-columns:130px 1fr; gap:8px; align-items:baseline; }
+.cert-k { font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#15803d; }
+.cert-v { font-size:12.7px; color:#14532d; font-weight:600; }
+.cert-note-rep { margin-top:8px; font-size:11px; font-style:italic; color:#65a30d; line-height:1.5; }
+.cert-links { margin-top:8px; display:flex; flex-wrap:wrap; gap:16px; }
+
+.bts-specbar { background:#eff6ff; border:1px solid #bfdbfe; border-radius:12px; padding:12px 16px; margin:12px 0 6px; }
+.bts-specbar.stale { background:#fff7ed; border-color:#fdba74; }
+.bts-specbar-msg { font-size:12.8px; color:#1e3a8a; line-height:1.55; }
+.bts-specbar.stale .bts-specbar-msg { color:#9a3412; }
+.bts-spechist { margin-top:8px; }
+.bts-spechist summary { cursor:pointer; font-size:12px; font-weight:700; color:var(--accent); }
+.bts-spechist ul { margin:8px 0 4px; padding-left:18px; }
+.bts-spechist li { font-size:12.3px; line-height:1.55; color:#334155; margin-bottom:5px; }
+.bts-spechist-note { font-size:11.5px; color:var(--muted); line-height:1.55; }
+.bts-spechist code { background:#f1f5f9; border-radius:4px; padding:1px 5px; font-size:11px; }
 
 .bts-missing { background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; padding:10px 14px 10px 30px; margin:0; }
 .bts-missing li { font-size:12.7px; line-height:1.55; color:#7c2d12; margin-bottom:6px; }
@@ -2126,6 +2144,17 @@ _BT_STACK_TEMPLATE = """<!doctype html>
   <span class="spec-pill">Reference spec: {{ latest_spec }}</span>
 </section>
 
+<div class="bts-specbar {{ 'stale' if spec_update.stale else '' }}">
+  <div class="bts-specbar-msg"><b>{{ '\u26A0\uFE0F Spec update likely due' if spec_update.stale else '\U0001F4C5 Spec tracking' }}:</b> {{ spec_update.message }}</div>
+  <details class="bts-spechist">
+    <summary>Bluetooth Core release history &amp; cadence</summary>
+    <ul>
+      {% for r in spec_releases %}<li><b>{{ r.label }}</b> &mdash; {{ r.headline }}</li>{% endfor %}
+    </ul>
+    <p class="bts-spechist-note">The Bluetooth SIG publishes Core specifications roughly every April and October. To keep this page current, add the new release to <code>BT_SPEC_RELEASES</code> in <code>bt_stacks_data.py</code> &mdash; the hero label, every &ldquo;Missing vs&hellip;&rdquo; header and this banner update automatically.</p>
+  </details>
+</div>
+
 <div class="disclaimer">Feature and profile coverage is compiled from public vendor documentation and the Bluetooth
 specification, and varies by silicon part and SDK release. QDID / Declaration IDs are assigned per release \u2014 always
 verify the exact qualified listing on the Bluetooth SIG Qualification site before making certification claims.</div>
@@ -2163,7 +2192,16 @@ verify the exact qualified listing on the Bluetooth SIG Qualification site befor
       <h3 class="bts-h3">\u2705 Qualification / Certification</h3>
       <div class="bts-cert">
         <div class="cs">{{ s.certification.status }}</div>
-        <div class="cn">{{ s.certification.note }} {% if s.certification.verify %}&middot; <a href="{{ s.certification.verify }}" target="_blank" rel="noopener">Verify qualified listing &rarr;</a>{% endif %}</div>
+        <div class="cert-rows">
+          <div class="cert-row"><span class="cert-k">Certified against</span><span class="cert-v">{{ s.certification.certified_spec }}</span></div>
+          <div class="cert-row"><span class="cert-k">Certification ID</span><span class="cert-v">{{ s.certification.cert_id }}</span></div>
+        </div>
+        <div class="cn">{{ s.certification.note }}</div>
+        <div class="cert-note-rep">IDs shown are representative examples of the QDID / Declaration-ID format \u2014 the exact value is assigned per product build and per spec release. Confirm the live value below.</div>
+        <div class="cert-links">
+          {% if s.certification.verify %}<a href="{{ s.certification.verify }}" target="_blank" rel="noopener">Search the official qualification listing &rarr;</a>{% endif %}
+          {% if s.certification.help %}<a href="{{ s.certification.help }}" target="_blank" rel="noopener">How qualification IDs work &rarr;</a>{% endif %}
+        </div>
       </div>
 
       <h3 class="bts-h3">\u26A0\uFE0F Missing vs. {{ latest_spec }}</h3>
@@ -2539,6 +2577,7 @@ def render(articles: list[dict], output_dir: Path,
       stacks=BT_STACKS, categories=STACK_CATEGORIES,
       feature_glossary=FEATURE_GLOSSARY, profile_glossary=PROFILE_GLOSSARY,
       glossary_json=json.dumps(_bts_glossary), latest_spec=LATEST_SPEC,
+      spec_releases=BT_SPEC_RELEASES, spec_update=spec_update_status(),
       active="bt_stack", **common_ctx
     ), encoding="utf-8")
 
