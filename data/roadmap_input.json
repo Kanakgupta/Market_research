@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T12:02:50Z",
+  "generated_at": "2026-07-31T13:11:34Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,13 +3709,13 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 123,
-    "NXP": 94,
-    "Broadcom": 77,
-    "STMicro": 52,
+    "Qualcomm": 121,
+    "NXP": 95,
+    "Broadcom": 75,
+    "STMicro": 50,
     "Microchip": 44,
     "Renesas": 28,
-    "MediaTek": 26,
+    "MediaTek": 20,
     "Espressif": 16,
     "Synaptics": 12,
     "Realtek": 10,
@@ -3846,7 +3846,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3857,
+      "issues_open": 3862,
       "prs_open": 0,
       "releases": [
         {
@@ -3870,6 +3870,40 @@
       ],
       "stars": 16070,
       "pushed_at": "2026-07-31T07:53:20Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2747,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        },
+        {
+          "tag": "v1.5.0.0",
+          "name": "v1.5.0.0 Release",
+          "published_at": "2025-11-17T22:07:57Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+        }
+      ],
+      "stars": 8847,
+      "pushed_at": "2026-07-31T11:42:44Z"
     },
     {
       "name": "OpenThread",
@@ -3917,42 +3951,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 241230,
+      "stars": 241228,
       "pushed_at": "2026-07-31T00:44:30Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2747,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        },
-        {
-          "tag": "v1.5.0.0",
-          "name": "v1.5.0.0 Release",
-          "published_at": "2025-11-17T22:07:57Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
-        }
-      ],
-      "stars": 8847,
-      "pushed_at": "2026-07-31T11:42:44Z"
     },
     {
       "name": "BlueZ",
@@ -4034,7 +4034,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15381,
+      "stars": 15389,
       "pushed_at": "2026-07-30T19:06:53Z"
     },
     {
