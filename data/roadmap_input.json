@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T13:12:58Z",
+  "generated_at": "2026-08-01T11:56:50Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -1505,6 +1505,36 @@
       ],
       "press_releases": [
         {
+          "title": "MediaTek Reports Financial Results for Q2 2026",
+          "date": "Aug 2026",
+          "url": "https://ximitime.com/mediatek-reports-12-6-drop-in-net-profit-for-q2-2026-99171/"
+        },
+        {
+          "title": "MediaTek Approves $5 Billion Financing Framework for AI Chips",
+          "date": "Aug 2026",
+          "url": "https://www.techinasia.com/mediatek-approves-5b-budget-including-ai-chips"
+        },
+        {
+          "title": "MediaTek Eyes High-Single-Digit Revenue Growth and 20% ASIC Share by 2027",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260731PD239/mediatek-asic-pmic-revenue-growth-2026.html"
+        },
+        {
+          "title": "MediaTek Reports Q2 2026 Earnings: Mobile Revenue Falls 20%, Approves $5 Billion AI Investment",
+          "date": "Aug 2026",
+          "url": "https://www.techtimes.com/articles/322505/20260731/mediatek-q2-mobile-revenue-falls-20-5b-ai-bet-targets-broadcom-dominance.htm"
+        },
+        {
+          "title": "MediaTek Aims to Capture 20% of the Customized AI Market",
+          "date": "Aug 2026",
+          "url": "https://www.taipeitimes.com/News/biz/archives/2026/08/01/2003861726"
+        },
+        {
+          "title": "MediaTek Inc. Reports Earnings Results for Q2 and Six Months Ended June 30, 2026",
+          "date": "Aug 2026",
+          "url": "https://www.marketscreener.com/news/mediatek-inc-reports-earnings-results-for-the-second-quarter-and-six-months-ended-june-30-2026-ce7f50d8d98ffe26"
+        },
+        {
           "title": "MediaTek Launches Filogic 860 for Wi-Fi 7 Home Routers",
           "date": "Jul 2026",
           "url": ""
@@ -1523,36 +1553,6 @@
           "title": "MediaTek Filogic 860 Chipset Powers New Wi-Fi 7 Home Routers",
           "date": "Jul 2026",
           "url": ""
-        },
-        {
-          "title": "MediaTek Filogic 860 Chip for Wi-Fi 7 Home Routers Announced",
-          "date": "Jul 2026",
-          "url": ""
-        },
-        {
-          "title": "Bigme Launches Hibreak Dual 2 Smartphone Powered by MediaTek Dimensity 8300",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/15/bigme-hibreak-dual-2-an-android-16-smartphone-with-6-13-inch-80fps-e-ink-and-5-inch-lcd-display/"
-        },
-        {
-          "title": "MediaTek Introduces Filogic 860 Wi-Fi 7 Solution for US Home Routers",
-          "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/the-filogic-860-mediatek-leans-into-wi-fi-7-for-us-home-routers/69710016"
-        },
-        {
-          "title": "Asus Pad announced with MediaTek Dimensity 8300 processor",
-          "date": "Jul 2026",
-          "url": "https://timesofindia.indiatimes.com/technology/mobiles-tabs/asus-pad-announced-with-12-2-inch-oled-display-and-mediatek-dimensity-8300-processor/articleshow/132457278.cms"
-        },
-        {
-          "title": "MediaTek Dimensity 7450X Processor - Benchmarks and Specs",
-          "date": "Jul 2026",
-          "url": "https://www.notebookcheck.net/MediaTek-Dimensity-7450X-Processor-Benchmarks-and-Specs.1308574.0.html"
-        },
-        {
-          "title": "Bigme Hibreak Dual 2 Smartphone Features MediaTek Dimensity 8300 Processor",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/15/bigme-hibreak-dual-2-an-android-16-smartphone-with-6-13-inch-80fps-e-ink-and-5-inch-lcd-display/"
         }
       ],
       "events": [
@@ -3709,27 +3709,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 121,
-    "NXP": 95,
-    "Broadcom": 75,
-    "STMicro": 50,
-    "Microchip": 44,
-    "Renesas": 28,
-    "MediaTek": 20,
-    "Espressif": 16,
-    "Synaptics": 12,
-    "Realtek": 10,
+    "Qualcomm": 119,
+    "NXP": 93,
+    "Broadcom": 74,
+    "Microchip": 39,
+    "STMicro": 32,
+    "Renesas": 30,
+    "MediaTek": 27,
+    "Espressif": 20,
+    "Realtek": 11,
+    "Synaptics": 7,
     "Skyworks": 7,
-    "TI": 6,
-    "Silicon Labs": 6,
+    "TI": 5,
+    "Silicon Labs": 5,
     "Bosch": 4,
     "Apple": 3,
     "Nordic": 3,
+    "u-blox": 3,
     "Infineon": 3,
-    "Marvell": 3,
-    "u-blox": 2,
-    "Murata": 1,
-    "Goodix": 1
+    "Goodix": 2,
+    "Marvell": 2
   },
   "standards_in_flight": [
     {
@@ -3812,7 +3811,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1643,
+      "issues_open": 1647,
       "prs_open": 0,
       "releases": [
         {
@@ -3834,8 +3833,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18662,
-      "pushed_at": "2026-07-31T08:08:10Z"
+      "stars": 18670,
+      "pushed_at": "2026-07-31T21:46:53Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3846,7 +3845,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3862,
+      "issues_open": 3836,
       "prs_open": 0,
       "releases": [
         {
@@ -3868,8 +3867,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
         }
       ],
-      "stars": 16070,
-      "pushed_at": "2026-07-31T07:53:20Z"
+      "stars": 16077,
+      "pushed_at": "2026-08-01T00:09:25Z"
     },
     {
       "name": "OpenThread",
@@ -3884,6 +3883,12 @@
       "prs_open": 0,
       "releases": [
         {
+          "tag": "v2026.08.0",
+          "name": "OpenThread v2026.08.0",
+          "published_at": "2026-08-01T00:40:26Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
+        },
+        {
           "tag": "v2026.07.0",
           "name": "OpenThread v2026.07.0",
           "published_at": "2026-07-01T00:58:53Z",
@@ -3894,16 +3899,10 @@
           "name": "OpenThread v2026.06.0",
           "published_at": "2026-06-01T01:01:04Z",
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
-        },
-        {
-          "tag": "thread-reference-20250612",
-          "name": "Thread Reference 2025-06-12",
-          "published_at": "2025-09-16T18:13:38Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/thread-reference-20250612"
         }
       ],
       "stars": 3999,
-      "pushed_at": "2026-07-31T03:01:47Z"
+      "pushed_at": "2026-08-01T04:19:54Z"
     },
     {
       "name": "Linux mac80211",
@@ -3917,8 +3916,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 241228,
-      "pushed_at": "2026-07-31T00:44:30Z"
+      "stars": 241312,
+      "pushed_at": "2026-08-01T04:13:15Z"
     },
     {
       "name": "Matter SDK",
@@ -3929,7 +3928,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2747,
+      "issues_open": 2744,
       "prs_open": 0,
       "releases": [
         {
@@ -3951,8 +3950,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8847,
-      "pushed_at": "2026-07-31T11:42:44Z"
+      "stars": 8849,
+      "pushed_at": "2026-08-01T07:46:08Z"
     },
     {
       "name": "BlueZ",
@@ -3985,23 +3984,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1118,
-      "pushed_at": "2026-07-31T07:23:07Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 11,
-      "issues_open": 271,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 880,
-      "pushed_at": "2026-07-28T08:49:49Z"
+      "stars": 1120,
+      "pushed_at": "2026-08-01T10:18:32Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4011,10 +3995,16 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 2,
-      "issues_open": 456,
+      "commits_30d": 48,
+      "issues_open": 460,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "2.13.0",
+          "name": "2.13.0",
+          "published_at": "2026-08-01T05:54:06Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
+        },
         {
           "tag": "2.12.1",
           "name": "2.12.1",
@@ -4026,16 +4016,25 @@
           "name": "2.12.0",
           "published_at": "2026-06-09T19:08:29Z",
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
-        },
-        {
-          "tag": "2.11.0",
-          "name": "2.11.0",
-          "published_at": "2026-06-01T18:41:53Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.11.0"
         }
       ],
-      "stars": 15390,
-      "pushed_at": "2026-07-30T19:06:53Z"
+      "stars": 15454,
+      "pushed_at": "2026-08-01T06:14:57Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 11,
+      "issues_open": 273,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 880,
+      "pushed_at": "2026-08-01T06:48:18Z"
     },
     {
       "name": "hostap",
