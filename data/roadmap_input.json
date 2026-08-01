@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T11:56:50Z",
+  "generated_at": "2026-08-01T13:14:16Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3709,10 +3709,10 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 119,
-    "NXP": 93,
+    "Qualcomm": 117,
+    "NXP": 94,
     "Broadcom": 74,
-    "Microchip": 39,
+    "Microchip": 43,
     "STMicro": 32,
     "Renesas": 30,
     "MediaTek": 27,
@@ -3720,15 +3720,15 @@
     "Realtek": 11,
     "Synaptics": 7,
     "Skyworks": 7,
-    "TI": 5,
-    "Silicon Labs": 5,
     "Bosch": 4,
+    "Silicon Labs": 4,
     "Apple": 3,
     "Nordic": 3,
+    "TI": 3,
     "u-blox": 3,
     "Infineon": 3,
-    "Goodix": 2,
-    "Marvell": 2
+    "Marvell": 3,
+    "Goodix": 2
   },
   "standards_in_flight": [
     {
@@ -3868,7 +3868,7 @@
         }
       ],
       "stars": 16077,
-      "pushed_at": "2026-08-01T00:09:25Z"
+      "pushed_at": "2026-08-01T12:16:03Z"
     },
     {
       "name": "OpenThread",
@@ -3916,7 +3916,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 241312,
+      "stars": 241318,
       "pushed_at": "2026-08-01T04:13:15Z"
     },
     {
@@ -3928,7 +3928,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2744,
+      "issues_open": 2743,
       "prs_open": 0,
       "releases": [
         {
@@ -3951,7 +3951,7 @@
         }
       ],
       "stars": 8849,
-      "pushed_at": "2026-08-01T07:46:08Z"
+      "pushed_at": "2026-08-01T12:25:23Z"
     },
     {
       "name": "BlueZ",
@@ -3996,7 +3996,7 @@
         "ieee15_4"
       ],
       "commits_30d": 48,
-      "issues_open": 460,
+      "issues_open": 461,
       "prs_open": 0,
       "releases": [
         {
@@ -4018,7 +4018,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15454,
+      "stars": 15455,
       "pushed_at": "2026-08-01T06:14:57Z"
     },
     {
