@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T13:14:16Z",
+  "generated_at": "2026-08-02T11:55:26Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2579,6 +2579,11 @@
           "url": "https://www.marketbeat.com/instant-alerts/synaptics-syna-expected-to-post-quarterly-earnings-on-thursday-2026-07-30/"
         },
         {
+          "title": "Synaptics Incorporated to Post Quarterly Earnings on Thursday",
+          "date": "Aug 2026",
+          "url": "https://www.marketbeat.com/instant-alerts/synaptics-syna-expected-to-post-quarterly-earnings-on-thursday-2026-07-30/"
+        },
+        {
           "title": "Synaptics Schedules Q4 and FY26 Financial Results Conference Call",
           "date": "Jul 2026",
           "url": "https://scanx.trade/stock-market-news/companies/synaptics-to-report-q4-and-fy26-results-on-august-6/45702649"
@@ -2617,11 +2622,6 @@
           "title": "Synaptics Has 35-Plus Robotics Customers",
           "date": "Jul 2026",
           "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-has-35-plus-robotics-customers-its-product-chief-just-held-his-stake/"
-        },
-        {
-          "title": "Synaptics Is Leaning Into IoT",
-          "date": "Jul 2026",
-          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-is-leaning-into-iot-its-strategy-officer-kept-usd7-million-in-stock/"
         }
       ],
       "events": [
@@ -3709,25 +3709,24 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 117,
-    "NXP": 94,
-    "Broadcom": 74,
-    "Microchip": 43,
-    "STMicro": 32,
+    "Qualcomm": 114,
+    "NXP": 88,
+    "Broadcom": 67,
     "Renesas": 30,
-    "MediaTek": 27,
-    "Espressif": 20,
-    "Realtek": 11,
-    "Synaptics": 7,
+    "Microchip": 30,
+    "MediaTek": 28,
+    "Espressif": 19,
+    "STMicro": 17,
+    "Realtek": 12,
+    "Synaptics": 8,
     "Skyworks": 7,
-    "Bosch": 4,
     "Silicon Labs": 4,
-    "Apple": 3,
-    "Nordic": 3,
     "TI": 3,
+    "Apple": 3,
     "u-blox": 3,
     "Infineon": 3,
-    "Marvell": 3,
+    "Nordic": 2,
+    "Bosch": 2,
     "Goodix": 2
   },
   "standards_in_flight": [
@@ -3801,42 +3800,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1647,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18670,
-      "pushed_at": "2026-07-31T21:46:53Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3845,7 +3808,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3836,
+      "issues_open": 3852,
       "prs_open": 0,
       "releases": [
         {
@@ -3867,8 +3830,44 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
         }
       ],
-      "stars": 16077,
+      "stars": 16079,
       "pushed_at": "2026-08-01T12:16:03Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1651,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18680,
+      "pushed_at": "2026-07-31T21:46:53Z"
     },
     {
       "name": "OpenThread",
@@ -3901,23 +3900,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 3999,
+      "stars": 4000,
       "pushed_at": "2026-08-01T04:19:54Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 241318,
-      "pushed_at": "2026-08-01T04:13:15Z"
     },
     {
       "name": "Matter SDK",
@@ -3928,7 +3912,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2743,
+      "issues_open": 2742,
       "prs_open": 0,
       "releases": [
         {
@@ -3951,7 +3935,22 @@
         }
       ],
       "stars": 8849,
-      "pushed_at": "2026-08-01T12:25:23Z"
+      "pushed_at": "2026-08-02T01:01:32Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 241410,
+      "pushed_at": "2026-08-01T17:03:33Z"
     },
     {
       "name": "BlueZ",
@@ -3984,8 +3983,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1120,
-      "pushed_at": "2026-08-01T10:18:32Z"
+      "stars": 1122,
+      "pushed_at": "2026-08-02T08:39:31Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3996,7 +3995,7 @@
         "ieee15_4"
       ],
       "commits_30d": 48,
-      "issues_open": 461,
+      "issues_open": 459,
       "prs_open": 0,
       "releases": [
         {
@@ -4018,7 +4017,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15455,
+      "stars": 15461,
       "pushed_at": "2026-08-01T06:14:57Z"
     },
     {
