@@ -278,10 +278,10 @@ _NAV_HTML = """
   <nav>
     <a href="index.html" class="{{ 'active' if active=='index' else '' }}">Overview</a>
     <div class="nav-dd">
-      <a href="opportunity.html" class="nav-dd-trigger {{ 'active' if active in ['customers','opportunity','competitors','threat','relationships'] else '' }}">Companies <span class="dd-caret">▾</span></a>
+      <a href="oems.html" class="nav-dd-trigger {{ 'active' if active in ['customers','opportunity','oems','competitors','threat','vendors','relationships'] else '' }}">Companies <span class="dd-caret">▾</span></a>
       <div class="nav-dd-menu">
-        <a href="opportunity.html" class="{{ 'active' if active in ['customers','opportunity'] else '' }}">OEMs</a>
-        <a href="threat.html" class="{{ 'active' if active in ['competitors','threat'] else '' }}">Vendors</a>
+        <a href="oems.html" class="{{ 'active' if active in ['customers','opportunity','oems'] else '' }}">OEMs</a>
+        <a href="vendors.html" class="{{ 'active' if active in ['competitors','threat','vendors'] else '' }}">Vendors</a>
         <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
       </div>
     </div>
@@ -300,6 +300,21 @@ _NAV_HTML = """
   if(redirected !== location.href) location.replace(redirected);
 })();
 </script>
+"""
+
+
+def _redirect_page(target: str, title: str) -> str:
+  # Keep old URLs working while moving to clearer canonical slugs.
+  return f"""<!doctype html>
+<html lang=\"en\"><head>
+<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
+<title>{title}</title>
+<meta http-equiv=\"refresh\" content=\"0; url={target}\">
+<link rel=\"canonical\" href=\"{target}\">
+<script>location.replace('{target}');</script>
+</head><body>
+<p>Redirecting to <a href=\"{target}\">{target}</a>...</p>
+</body></html>
 """
 
 # ---------------------------------------------------------------- news template
@@ -2670,11 +2685,12 @@ def render(articles: list[dict], output_dir: Path,
     customers_html = env.from_string(_CUSTOMERS_TEMPLATE).render(
       customers=customers, customer_live=customer_live,
       predictions=predictions,
-      news_counts=cust_news_counts, active="opportunity", **common_ctx,
+      news_counts=cust_news_counts, active="oems", **common_ctx,
     )
-    (output_dir / "opportunity.html").write_text(customers_html, encoding="utf-8")
-    # Keep legacy URL for backward compatibility.
-    (output_dir / "customers.html").write_text(customers_html, encoding="utf-8")
+    (output_dir / "oems.html").write_text(customers_html, encoding="utf-8")
+    # Keep legacy URLs for backward compatibility.
+    (output_dir / "opportunity.html").write_text(_redirect_page("oems.html", "Redirecting to OEMs"), encoding="utf-8")
+    (output_dir / "customers.html").write_text(_redirect_page("oems.html", "Redirecting to OEMs"), encoding="utf-8")
 
     # --- Competitors page ---
     comp = load_competitors()
@@ -2751,11 +2767,12 @@ def render(articles: list[dict], output_dir: Path,
     competitors_html = env.from_string(_COMPETITORS_TEMPLATE).render(
         anchor=comp.get("anchor", {}), competitors=comp.get("competitors", []),
         news_counts=vendor_news_counts, vendor_news=vendor_news,
-      active="threat", **common_ctx,
+      active="vendors", **common_ctx,
     )
-    (output_dir / "threat.html").write_text(competitors_html, encoding="utf-8")
-    # Keep legacy URL for backward compatibility.
-    (output_dir / "competitors.html").write_text(competitors_html, encoding="utf-8")
+    (output_dir / "vendors.html").write_text(competitors_html, encoding="utf-8")
+    # Keep legacy URLs for backward compatibility.
+    (output_dir / "threat.html").write_text(_redirect_page("vendors.html", "Redirecting to Vendors"), encoding="utf-8")
+    (output_dir / "competitors.html").write_text(_redirect_page("vendors.html", "Redirecting to Vendors"), encoding="utf-8")
 
     # --- Relationships page ---
     links = build_links(articles, iot_only=True)
@@ -3050,7 +3067,7 @@ _INDEX_TEMPLATE = """<!doctype html>
         {% endfor %}
       </div>
       {% endif %}
-      <a class="battle-link" href="threat.html">Full profile &rarr;</a>
+      <a class="battle-link" href="vendors.html">Full profile &rarr;</a>
     </article>
     {% endfor %}
   </div>
@@ -3113,7 +3130,7 @@ _INDEX_TEMPLATE = """<!doctype html>
     {% endfor %}
   </div>
   {% if not customer_radar %}<p class="muted">Not enough signal yet to project next launches &mdash; check back after the next data refresh.</p>{% endif %}
-  <p style="margin-top:12px;"><a href="opportunity.html">All customer profiles &amp; full roadmap table &rarr;</a></p>
+  <p style="margin-top:12px;"><a href="oems.html">All customer profiles &amp; full roadmap table &rarr;</a></p>
 </div>
 
 <div class="section">
@@ -3180,8 +3197,8 @@ _INDEX_TEMPLATE = """<!doctype html>
   <h2>Where do you want to go?</h2>
   <div class="jump-row">
     <a class="jump-card" href="news.html"><h3>News \u2192</h3><p>All recent articles by technology, vendor, customer and application.</p></a>
-    <a class="jump-card" href="opportunity.html"><h3>Customers \u2192</h3><p>OEM profiles \u2014 recent products and forward roadmap signals.</p></a>
-    <a class="jump-card" href="threat.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
+    <a class="jump-card" href="oems.html"><h3>Customers \u2192</h3><p>OEM profiles \u2014 recent products and forward roadmap signals.</p></a>
+    <a class="jump-card" href="vendors.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
     <a class="jump-card" href="relationships.html"><h3>Relationships \u2192</h3><p>Sankey map of which vendor sells to which customer.</p></a>
     <a class="jump-card" href="applications.html"><h3>Applications \u2192</h3><p>Market research per end-device: architecture, market trend, feature requirements and chip vendor positioning.</p></a>
     <a class="jump-card" href="bt_stack.html"><h3>BT Stack \u2192</h3><p>Market map of every Bluetooth stack \u2014 features, profiles, certification and gaps vs. the latest spec.</p></a>
@@ -3308,7 +3325,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         row = dict(by_customer[name])
         row["recent_signals_30d"] = recent_signals_30d
         row["evidence_links"] = evidence_links
-        row["customer_page"] = "opportunity.html"
+        row["customer_page"] = "oems.html"
         row["news_page"] = "news.html"
         customer_radar.append(row)
         continue
@@ -3325,7 +3342,7 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         "based_on": ["Coverage entry: limited recent launch signal in current news window"],
         "recent_signals_30d": recent_signals_30d,
         "evidence_links": evidence_links,
-        "customer_page": "opportunity.html",
+        "customer_page": "oems.html",
         "news_page": "news.html",
       })
 
