@@ -152,6 +152,8 @@ a:hover { text-decoration:underline; }
 .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
 .nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
 .nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.nav-dd-group { padding:8px 12px 4px; font-size:11px; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
+.nav-dd-menu a.nav-dd-sub { padding-left:24px; font-size:13px; }
 .nav-news-last { margin-left:auto; }
 .topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
 
@@ -285,9 +287,22 @@ _NAV_HTML = """
         <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
       </div>
     </div>
-    <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
+    <div class="nav-dd">
+      <a href="technology.html" class="nav-dd-trigger {{ 'active' if active in ['technology','bluetooth','ieee15_4','zigbee','thread','wifi','matter','aliro','bt_stack'] else '' }}">Technology <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="bluetooth.html" class="{{ 'active' if active=='bluetooth' else '' }}">Zephyr Bluetooth</a>
+        <a href="ieee15_4.html" class="{{ 'active' if active=='ieee15_4' else '' }}">802.15.4</a>
+        <a href="zigbee.html" class="{{ 'active' if active=='zigbee' else '' }}">Zigbee</a>
+        <a href="thread.html" class="{{ 'active' if active=='thread' else '' }}">Thread</a>
+        <a href="wifi.html" class="{{ 'active' if active=='wifi' else '' }}">Wi-Fi</a>
+        <a href="matter.html" class="{{ 'active' if active=='matter' else '' }}">Matter</a>
+        <a href="aliro.html" class="{{ 'active' if active=='aliro' else '' }}">Aliro</a>
+        <div class="nav-dd-group">Bluetooth</div>
+        <a href="bt_stack.html" class="nav-dd-sub {{ 'active' if active=='bt_stack' else '' }}">BT Stack</a>
+        <a href="zephyr_stack.html" class="nav-dd-sub">Zephyr Stack</a>
+      </div>
+    </div>
     <a href="applications.html" class="{{ 'active' if active=='applications' else '' }}">Applications</a>
-    <a href="bt_stack.html" class="{{ 'active' if active=='bt_stack' else '' }}">BT Stack</a>
     <a href="news.html" class="nav-news-last {{ 'active' if active in news_slugs else '' }}">News</a>
   </nav>
   <div class="meta-info">Updated {{ generated_at }} PDT</div>
@@ -1836,7 +1851,7 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
   {% endif %}
 
   {% if t.zigbee_in_depth %}
-  <h2 class="tech-h2">\U0001F9E9 Zigbee In Depth</h2>
+  <h2 class="tech-h2" id="zigbee-in-depth">\U0001F9E9 Zigbee In Depth</h2>
   <div class="deep-grid">
     {% for z in t.zigbee_in_depth %}
     <article class="deep-card"><h3>{{ z.title }}</h3><p>{{ z.detail }}</p></article>
@@ -2646,6 +2661,14 @@ def render(articles: list[dict], output_dir: Path,
       spec_releases=BT_SPEC_RELEASES, spec_update=spec_update_status(),
       active="bt_stack", **common_ctx
     ), encoding="utf-8")
+    (output_dir / "zigbee.html").write_text(
+      _redirect_page("ieee15_4.html#zigbee-in-depth", "Zigbee Redirect"),
+      encoding="utf-8",
+    )
+    (output_dir / "zephyr_stack.html").write_text(
+      _redirect_page("bt_stack.html", "Zephyr Stack Redirect"),
+      encoding="utf-8",
+    )
 
     # --- Customers page ---
     customers = load_customers()
