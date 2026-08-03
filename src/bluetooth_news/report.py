@@ -290,7 +290,6 @@ _NAV_HTML = """
     <div class="nav-dd">
       <a href="technology.html" class="nav-dd-trigger {{ 'active' if active in ['technology','bluetooth','ieee15_4','zigbee','thread','wifi','matter','aliro','bt_stack'] else '' }}">Technology <span class="dd-caret">▾</span></a>
       <div class="nav-dd-menu">
-        <a href="bluetooth.html" class="{{ 'active' if active=='bluetooth' else '' }}">Zephyr Bluetooth</a>
         <a href="ieee15_4.html" class="{{ 'active' if active=='ieee15_4' else '' }}">802.15.4</a>
         <a href="zigbee.html" class="{{ 'active' if active=='zigbee' else '' }}">Zigbee</a>
         <a href="thread.html" class="{{ 'active' if active=='thread' else '' }}">Thread</a>
