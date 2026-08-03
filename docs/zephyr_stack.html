@@ -1,10 +1,769 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Zephyr Stack Redirect</title>
-<meta http-equiv="refresh" content="0; url=bt_stack.html">
-<link rel="canonical" href="bt_stack.html">
-<script>location.replace('bt_stack.html');</script>
+<title>Zephyr BT Stack &middot; IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.topnav nav .nav-dd-trigger { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav .nav-dd-trigger:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav .nav-dd-trigger.active { color:#fff; background:var(--accent); }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.nav-dd-group { padding:8px 12px 4px; font-size:11px; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
+.nav-dd-menu a.nav-dd-sub { padding-left:24px; font-size:13px; }
+.nav-news-last { margin-left:auto; }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
+
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
+
+.zx-hero { background:linear-gradient(125deg,#0b1220 0%,#123 30%,#1e3a8a 65%,#0ea5e9 100%); color:#fff; border-radius:18px; padding:34px 32px; margin:14px 0 10px; box-shadow:0 24px 60px rgba(15,23,42,.35); position:relative; overflow:hidden; }
+.zx-hero::after { content:""; position:absolute; inset:0; background:radial-gradient(600px 200px at 85% 10%, rgba(56,189,248,.35), transparent 60%); pointer-events:none; }
+.zx-hero .eyebrow { font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#7dd3fc; }
+.zx-hero h1 { margin:8px 0 8px; font-size:34px; line-height:1.1; letter-spacing:-.02em; color:#fff; }
+.zx-hero p { margin:0; max-width:940px; font-size:14.5px; line-height:1.7; color:#dbeafe; }
+.zx-hero .pills { margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; }
+.zx-hero .pill2 { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28); color:#fff; border-radius:999px; padding:5px 14px; font-size:12.5px; font-weight:600; backdrop-filter:blur(4px); }
+
+.zx-statbar { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:12px 0 8px; }
+.zx-stat { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; }
+.zx-stat .n { font-size:26px; font-weight:800; background:linear-gradient(90deg,#2563eb,#7c3aed); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.zx-stat .l { font-size:12px; color:var(--muted); margin-top:2px; font-weight:600; }
+
+.zx-subnav { position:sticky; top:60px; z-index:40; background:rgba(247,249,252,.92); backdrop-filter:blur(8px); border:1px solid var(--border); border-radius:12px; padding:8px; margin:14px 0; display:flex; gap:6px; flex-wrap:wrap; }
+.zx-subnav a { font-size:12.5px; font-weight:700; color:#334155; background:#f1f5f9; padding:6px 12px; border-radius:8px; }
+.zx-subnav a:hover { background:var(--accent); color:#fff; text-decoration:none; }
+
+.zx-sec { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px 26px; margin:16px 0; scroll-margin-top:120px; }
+.zx-sec > h2 { margin:0 0 4px; font-size:21px; letter-spacing:-.01em; display:flex; align-items:center; gap:10px; }
+.zx-sec > h2 .ic { font-size:22px; }
+.zx-sec > .lead { color:var(--muted); font-size:13.5px; line-height:1.65; margin:6px 0 18px; max-width:960px; }
+.zx-sec h3 { font-size:15px; margin:22px 0 10px; color:#0f172a; }
+.zx-sec p { font-size:13.6px; line-height:1.7; color:#1f2937; }
+.zx-tag-strip { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
+.zx-tag-strip span { font-size:11.5px; font-weight:700; background:#eef2ff; color:#3730a3; border-radius:999px; padding:3px 10px; }
+
+.zx-grid { display:grid; gap:14px; }
+.zx-grid.c2 { grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+.zx-grid.c3 { grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+.zx-grid.c4 { grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); }
+.zx-card { border:1px solid var(--border); border-radius:12px; padding:16px 18px; background:#fbfdff; transition:transform .12s, box-shadow .15s; }
+.zx-card:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(15,23,42,.10); }
+.zx-card .ct { font-size:14px; font-weight:800; color:#0f172a; margin:0 0 6px; display:flex; align-items:center; gap:8px; }
+.zx-card .ct .dot { width:9px; height:9px; border-radius:50%; }
+.zx-card .cd { font-size:12.8px; line-height:1.6; color:#334155; margin:0; }
+.zx-card code { background:#eef2ff; color:#3730a3; border-radius:5px; padding:1px 6px; font-size:11.5px; }
+
+/* Architecture diagram */
+.zx-arch { display:grid; grid-template-columns:1fr; gap:0; border-radius:14px; overflow:hidden; border:1px solid var(--border); }
+.zx-layer { padding:14px 18px; border-bottom:1px solid rgba(255,255,255,.25); }
+.zx-layer:last-child { border-bottom:none; }
+.zx-layer .ln { font-size:13.5px; font-weight:800; }
+.zx-layer .ld { font-size:12px; line-height:1.55; opacity:.92; margin-top:3px; }
+.zx-l-app { background:#ede9fe; color:#4c1d95; }
+.zx-l-host { background:#dbeafe; color:#1e3a8a; }
+.zx-l-hci { background:#0f172a; color:#e2e8f0; }
+.zx-l-ctlr { background:#dcfce7; color:#14532d; }
+.zx-l-radio { background:#fef3c7; color:#78350f; }
+.zx-arch-split { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:14px; }
+@media (max-width:760px){ .zx-arch-split { grid-template-columns:1fr; } }
+.zx-split-card { border:1px dashed var(--border); border-radius:12px; padding:12px 14px; background:#f8fafc; }
+.zx-split-card h4 { margin:0 0 6px; font-size:12.5px; color:#0f172a; }
+.zx-split-card p { margin:0; font-size:12px; line-height:1.55; color:#475569; }
+
+.zx-badges { display:flex; flex-wrap:wrap; gap:7px; }
+.zx-b { font-size:11.5px; font-weight:700; border-radius:8px; padding:4px 10px; border:1px solid transparent; }
+.zx-b.yes { background:#dcfce7; color:#166534; }
+.zx-b.dev { background:#fef9c3; color:#854d0e; }
+.zx-b.core { background:#e0e7ff; color:#3730a3; }
+
+.zx-table { width:100%; border-collapse:separate; border-spacing:0; font-size:12.8px; margin-top:8px; }
+.zx-table th, .zx-table td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.zx-table th { background:#f9fafc; font-weight:800; color:#374151; font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; }
+.zx-table tr:hover td { background:var(--hover); }
+.zx-table code { background:#f1f5f9; border-radius:4px; padding:1px 6px; font-size:11px; }
+
+.zx-members { display:grid; gap:14px; }
+.zx-tier { border-radius:14px; padding:16px 18px; }
+.zx-tier h3 { margin:0 0 4px; font-size:14px; display:flex; align-items:center; gap:8px; }
+.zx-tier .desc { font-size:12px; margin:0 0 10px; }
+.zx-tier .logos { display:flex; flex-wrap:wrap; gap:7px; }
+.zx-tier .logos span { background:#fff; border:1px solid var(--border); border-radius:8px; padding:5px 11px; font-size:12px; font-weight:600; color:#334155; }
+.zx-tier.platinum { background:linear-gradient(120deg,#f8fafc,#eef2ff); border:1px solid #c7d2fe; }
+.zx-tier.platinum h3 { color:#3730a3; }
+.zx-tier.silver { background:linear-gradient(120deg,#f8fafc,#f1f5f9); border:1px solid #e2e8f0; }
+.zx-tier.silver h3 { color:#475569; }
+.zx-tier.associate { background:#fbfdff; border:1px solid var(--border); }
+.zx-tier.associate h3 { color:#0f172a; }
+
+.zx-flow { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:stretch; }
+@media (max-width:760px){ .zx-flow { grid-template-columns:1fr; } .zx-flow .zx-flow-mid { text-align:center; } }
+.zx-flow-col { border:1px solid var(--border); border-radius:12px; padding:14px 16px; background:#fbfdff; }
+.zx-flow-col h4 { margin:0 0 8px; font-size:12.5px; text-transform:uppercase; letter-spacing:.04em; color:#0f172a; }
+.zx-flow-col ul { margin:0; padding-left:16px; }
+.zx-flow-col li { font-size:12.4px; line-height:1.6; color:#334155; margin-bottom:6px; }
+.zx-flow-mid { display:flex; align-items:center; justify-content:center; font-size:26px; color:var(--accent); font-weight:800; }
+.zx-flow-col.up { border-top:3px solid #7c3aed; }
+.zx-flow-col.core { border-top:3px solid #2563eb; }
+.zx-flow-col.down { border-top:3px solid #10b981; }
+
+.zx-strat { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+.zx-strat-card { border-radius:14px; padding:16px 18px; border:1px solid var(--border); }
+.zx-strat-card h4 { margin:0 0 8px; font-size:13.5px; display:flex; align-items:center; gap:8px; }
+.zx-strat-card ul { margin:0; padding-left:16px; }
+.zx-strat-card li { font-size:12.6px; line-height:1.6; margin-bottom:7px; color:#334155; }
+.zx-strat-card.pm { background:#eff6ff; border-color:#bfdbfe; }
+.zx-strat-card.pm h4 { color:#1e40af; }
+.zx-strat-card.am { background:#f0fdf4; border-color:#bbf7d0; }
+.zx-strat-card.am h4 { color:#166534; }
+.zx-strat-card.eng { background:#faf5ff; border-color:#e9d5ff; }
+.zx-strat-card.eng h4 { color:#6b21a8; }
+.zx-strat-card.risk { background:#fff7ed; border-color:#fed7aa; }
+.zx-strat-card.risk h4 { color:#9a3412; }
+
+.zx-timeline { position:relative; margin:10px 0 0; padding-left:22px; }
+.zx-timeline::before { content:""; position:absolute; left:6px; top:4px; bottom:4px; width:2px; background:linear-gradient(#2563eb,#7c3aed); }
+.zx-tl-item { position:relative; margin-bottom:14px; }
+.zx-tl-item::before { content:""; position:absolute; left:-20px; top:4px; width:10px; height:10px; border-radius:50%; background:#2563eb; border:2px solid #fff; box-shadow:0 0 0 2px #bfdbfe; }
+.zx-tl-item .tt { font-size:13px; font-weight:800; color:#0f172a; }
+.zx-tl-item .td { font-size:12.5px; color:#475569; line-height:1.6; }
+
+.zx-code { background:#0f172a; border-radius:12px; padding:14px 16px; overflow:auto; margin-top:10px; }
+.zx-code pre { margin:0; font-size:12px; line-height:1.6; color:#e2e8f0; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+.zx-code .cmt { color:#64748b; }
+.zx-code .kw { color:#93c5fd; }
+
+.zx-callout { border-left:4px solid var(--accent); background:#eff6ff; border-radius:0 10px 10px 0; padding:12px 16px; font-size:12.8px; line-height:1.6; color:#1e3a8a; margin:12px 0; }
+.zx-links2 { display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:8px; }
+.zx-links2 a { font-size:12.8px; font-weight:700; }
+.zx-note { font-size:11.5px; color:var(--muted); font-style:italic; line-height:1.55; margin-top:10px; }
+</style>
+
+<script id="password-gate-v1">
+(function(){
+  var KEY='site_unlock_v1';
+  var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
+  function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
+  function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
+  if (sessionStorage.getItem(KEY)==='1') { return; }
+  document.documentElement.style.display='none';
+  (async function(){
+    while(true){
+      var p=prompt('Enter password to access this site');
+      if (p===null){ location.replace('about:blank'); return; }
+      try {
+        var h=await sha256(p);
+        if (h===HASH){ sessionStorage.setItem(KEY,'1'); document.documentElement.style.display=''; return; }
+      } catch (e) {}
+      alert('Wrong password');
+    }
+  })();
+})();
+</script>
+
 </head><body>
-<p>Redirecting to <a href="bt_stack.html">bt_stack.html</a>...</p>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a href="oems.html" class="nav-dd-trigger ">Companies <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="oems.html" class="">OEMs</a>
+        <a href="vendors.html" class="">Vendors</a>
+        <a href="relationships.html" class="">Relationships</a>
+      </div>
+    </div>
+    <div class="nav-dd">
+      <a href="technology.html" class="nav-dd-trigger active">Technology <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="ieee15_4.html" class="">802.15.4</a>
+        <a href="zigbee.html" class="">Zigbee</a>
+        <a href="thread.html" class="">Thread</a>
+        <a href="wifi.html" class="">Wi-Fi</a>
+        <a href="matter.html" class="">Matter</a>
+        <a href="aliro.html" class="">Aliro</a>
+        <div class="nav-dd-group">Bluetooth</div>
+        <a href="bt_stack.html" class="nav-dd-sub ">BT Stack</a>
+        <a href="zephyr_stack.html" class="nav-dd-sub active">Zephyr Stack</a>
+      </div>
+    </div>
+    <a href="applications.html" class="">Applications</a>
+    <a href="news.html" class="nav-news-last ">News</a>
+  </nav>
+  <div class="meta-info">Updated 2026-08-03 11:28 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="wrap content">
+
+<section class="zx-hero">
+  <div class="eyebrow">Open-Source Bluetooth &middot; Linux Foundation</div>
+  <h1>Zephyr Bluetooth Stack</h1>
+  <p>A production-grade, fully open-source Bluetooth Low Energy stack maintained inside the Zephyr RTOS
+  under the Linux Foundation. It ships a complete, Bluetooth-qualified <strong>Host</strong> and a from-scratch
+  open-source <strong>Controller (Link Layer)</strong>, plus Bluetooth Mesh and the full LE Audio generic audio
+  framework &mdash; all under a permissive Apache-2.0 license. This page is a hand-built strategic teardown of the
+  <code>subsys/bluetooth</code> tree for product marketing, application marketing and engineering strategy.</p>
+  <div class="pills">
+    <span class="pill2">License: Apache-2.0</span>
+    <span class="pill2">Host + Controller</span>
+    <span class="pill2">Bluetooth 5.4 / 6.0 features</span>
+    <span class="pill2">LE Audio (LC3, Auracast&trade;)</span>
+    <span class="pill2">Bluetooth Mesh 1.1</span>
+    <span class="pill2">Current release: v4.4.0</span>
+    <span class="pill2">LTS3: v3.7.0</span>
+  </div>
+</section>
+
+<div class="zx-statbar">
+  <div class="zx-stat"><div class="n">8</div><div class="l">Core subsystems in subsys/bluetooth</div></div>
+  <div class="zx-stat"><div class="n">3</div><div class="l">Build topologies (host / controller / combined)</div></div>
+  <div class="zx-stat"><div class="n">60+</div><div class="l">Bluetooth reference samples</div></div>
+  <div class="zx-stat"><div class="n">14</div><div class="l">Platinum member backers</div></div>
+  <div class="zx-stat"><div class="n">Apache&#8209;2.0</div><div class="l">Permissive, royalty-free license</div></div>
+</div>
+
+<nav class="zx-subnav">
+  <a href="#overview">Overview</a>
+  <a href="#architecture">Architecture</a>
+  <a href="#subsystems">Subsystems</a>
+  <a href="#features">Features</a>
+  <a href="#audio">LE Audio</a>
+  <a href="#mesh">Mesh</a>
+  <a href="#profiles">Profiles &amp; Services</a>
+  <a href="#certification">Certification</a>
+  <a href="#samples">Reference Samples</a>
+  <a href="#platforms">Platforms</a>
+  <a href="#members">Members &amp; Tiers</a>
+  <a href="#contributors">Contributors</a>
+  <a href="#chain">Upstream / Downstream</a>
+  <a href="#strategy">Strategy</a>
+  <a href="#contribute">Build &amp; Contribute</a>
+</nav>
+
+<section class="zx-sec" id="overview">
+  <h2><span class="ic">🧭</span> Technical Overview</h2>
+  <p class="lead">The Zephyr Bluetooth subsystem is one of the most complete open-source Bluetooth implementations in
+  existence. Unlike a bare HCI shim, it delivers the whole vertical: application APIs, the full Host protocol stack,
+  a standards-compliant open Controller, and optional Mesh and LE Audio frameworks. It is designed to scale from a
+  tiny single-core SoC (combined build) up to a multi-core or dual-chip design where Host and Controller run on
+  separate processors and talk over HCI.</p>
+
+  <div class="zx-grid c3">
+    <div class="zx-card"><div class="ct"><span class="dot" style="background:#2563eb"></span>Complete &amp; Qualified</div><p class="cd">A Bluetooth-qualified Host and Controller with maintained QDIDs, so a chip vendor can inherit qualification rather than build a stack from zero.</p></div>
+    <div class="zx-card"><div class="ct"><span class="dot" style="background:#7c3aed"></span>Modular via Kconfig</div><p class="cd">Every layer, profile and service is a Kconfig option. Builds are tailored to flash/RAM budget &mdash; from a beacon in a few KB to a full LE Audio hearing aid.</p></div>
+    <div class="zx-card"><div class="ct"><span class="dot" style="background:#10b981"></span>Vendor-Neutral</div><p class="cd">Not tied to any silicon vendor. The same API runs on Nordic, NXP, TI, Silicon Labs, ST, Renesas, Ambiq and simulation targets.</p></div>
+    <div class="zx-card"><div class="ct"><span class="dot" style="background:#f59e0b"></span>Permissive License</div><p class="cd">Apache-2.0 across the tree &mdash; royalty-free, no copyleft obligations on product firmware, friendly to commercial productization.</p></div>
+    <div class="zx-card"><div class="ct"><span class="dot" style="background:#ec4899"></span>Test-First</div><p class="cd">Extensive CI: unit tests, the BabbleSim (bsim) radio simulator for full end-to-end link testing, and Auto-PTS integration for SIG test suites.</p></div>
+    <div class="zx-card"><div class="ct"><span class="dot" style="background:#0ea5e9"></span>Leading-Edge Spec</div><p class="cd">Tracks the newest Core features &mdash; Extended/Periodic Advertising, LE Coded PHY, Isochronous Channels (ISO), Connection Subrating and Channel Sounding work in progress.</p></div>
+  </div>
+
+  <div class="zx-callout"><strong>Why it matters for a chip provider:</strong> Zephyr lets a silicon team ship a
+  credible, upgradable, standards-tracking Bluetooth solution without funding a full proprietary stack team &mdash;
+  while still differentiating through their own Controller/radio, power optimizations and value-add profiles.</div>
+</section>
+
+<section class="zx-sec" id="architecture">
+  <h2><span class="ic">🏗️</span> Architecture &amp; Build Topologies</h2>
+  <p class="lead">Bluetooth is split by the specification into a <em>Host</em> and a <em>Controller</em>, connected
+  by the Host Controller Interface (HCI). Zephyr implements both sides and lets you place the HCI boundary wherever
+  your hardware design needs it.</p>
+
+  <div class="zx-arch">
+    <div class="zx-layer zx-l-app"><div class="ln">Application &amp; Profiles</div><div class="ld">Your firmware + GATT-based profiles/services, Mesh models, or LE Audio use-cases built on the public <code>&lt;zephyr/bluetooth/*.h&gt;</code> APIs.</div></div>
+    <div class="zx-layer zx-l-host"><div class="ln">Host &mdash; subsys/bluetooth/host</div><div class="ld">GAP, GATT/ATT, L2CAP (incl. LE Credit-Based Channels), SMP (pairing, bonding, LE Secure Connections), ISO, key management and the HCI core driver.</div></div>
+    <div class="zx-layer zx-l-hci"><div class="ln">HCI &mdash; Host Controller Interface</div><div class="ld">Standard command/event/data boundary. Can be in-process (combined build) or over a physical transport (UART / SPI / USB / IPC between cores).</div></div>
+    <div class="zx-layer zx-l-ctlr"><div class="ln">Controller (Link Layer) &mdash; subsys/bluetooth/controller</div><div class="ld">Open-source LL: advertising, scanning, connections, channel selection, encryption, extended/periodic adv, ISO streams. Also runs as an HCI controller for external hosts.</div></div>
+    <div class="zx-layer zx-l-radio"><div class="ln">Radio Hardware Abstraction / PHY</div><div class="ld">Vendor radio drivers below the LL; on simulation this is BabbleSim&rsquo;s virtual 2.4 GHz medium.</div></div>
+  </div>
+
+  <div class="zx-arch-split">
+    <div class="zx-split-card"><h4>1. Combined (single-chip)</h4><p>Host + open Controller on one SoC. Smallest BOM, most common for wearables/sensors. HCI is an internal software interface.</p></div>
+    <div class="zx-split-card"><h4>2. Host-only (HCI over transport)</h4><p>Zephyr Host talks to an <em>external</em> Bluetooth controller over UART/SPI/USB. Lets you pair the Zephyr Host with a vendor radio.</p></div>
+    <div class="zx-split-card"><h4>3. Controller-only (network co-processor)</h4><p>Zephyr open Controller exposed via <code>hci_uart</code>/<code>hci_usb</code> so another host (Linux/BlueZ, another MCU) drives the radio.</p></div>
+  </div>
+  <p class="zx-note">This split is the single most strategically important property: it decouples the value-add software (Host, profiles) from the differentiated silicon (Controller, radio, power), and it is exactly how downstream vendor SDKs are built.</p>
+</section>
+
+<section class="zx-sec" id="subsystems">
+  <h2><span class="ic">🧩</span> Subsystem Breakdown &mdash; <code>subsys/bluetooth/</code></h2>
+  <p class="lead">The eight directories that make up the Bluetooth tree, mapped to what they deliver and who consumes them.</p>
+  <table class="zx-table">
+    <thead><tr><th>Directory</th><th>Responsibility</th><th>Key building blocks</th></tr></thead>
+    <tbody>
+      <tr><td><code>host/</code></td><td>The full Bluetooth Host protocol stack above HCI.</td><td>GAP, GATT/ATT, L2CAP + LE CoC, SMP (LE Secure Connections, bonding), ISO, HCI core, key/identity management, ECC.</td></tr>
+      <tr><td><code>controller/</code></td><td>From-scratch open-source Link Layer + HCI controller.</td><td>Advertising/scanning, connections, LL encryption, Extended &amp; Periodic Advertising, ISO, software-defined LL (<code>ll_sw</code>), radio HAL hooks.</td></tr>
+      <tr><td><code>audio/</code></td><td>The LE Audio Generic Audio Framework (GAF) and top-level profiles.</td><td>BAP, CAP, VCP, MICP, CSIP, MCP/MCS, TBS/CCP, HAS/HAP, TMAP, PBP, GMAP, Broadcast Audio Scan (BASS), LC3 integration.</td></tr>
+      <tr><td><code>mesh/</code></td><td>Full Bluetooth Mesh networking node.</td><td>Provisioning (PB-ADV/PB-GATT), Foundation &amp; models, Friend/LPN, Relay, GATT Proxy, Mesh DFU + BLOB transfer.</td></tr>
+      <tr><td><code>services/</code></td><td>Ready-made GATT service implementations.</td><td>Battery (BAS), Device Info (DIS), Heart Rate (HRS), Current Time (CTS), Immediate Alert (IAS), Object Transfer (OTS), Environmental Sensing and more.</td></tr>
+      <tr><td><code>crypto/</code></td><td>Bluetooth crypto primitives / toolbox.</td><td>AES-CMAC, ECC (P-256) key exchange, encryption helpers backed by mbedTLS / PSA.</td></tr>
+      <tr><td><code>lib/</code></td><td>Shared helper libraries used across host/controller.</td><td>Data structures and utilities consumed by the stack layers.</td></tr>
+      <tr><td><code>common/</code></td><td>Code shared between Host and Controller.</td><td>Common defines, HCI types, logging glue, timing helpers.</td></tr>
+    </tbody>
+  </table>
+  <p class="zx-note">Top-level <code>Kconfig</code>, <code>Kconfig.adv</code>, <code>Kconfig.logging</code> and <code>CMakeLists.txt</code> wire these directories into the Zephyr build so features can be toggled independently.</p>
+</section>
+
+<section class="zx-sec" id="features">
+  <h2><span class="ic">⚡</span> Features &amp; Capabilities Supported</h2>
+  <p class="lead">Coverage spans classic BLE connectivity through the newest isochronous and audio features. Legend:
+  <span class="zx-b core">core/stable</span> <span class="zx-b yes">supported</span> <span class="zx-b dev">emerging / in progress</span>.</p>
+
+  <h3>Link &amp; connectivity</h3>
+  <div class="zx-badges">
+    <span class="zx-b yes">GAP roles: Broadcaster / Observer / Peripheral / Central</span>
+    <span class="zx-b yes">Legacy &amp; Extended Advertising</span>
+    <span class="zx-b yes">Periodic Advertising + PAST</span>
+    <span class="zx-b yes">2M PHY</span>
+    <span class="zx-b yes">LE Coded PHY (long range)</span>
+    <span class="zx-b yes">Data Length Extension</span>
+    <span class="zx-b yes">Connection parameter update</span>
+    <span class="zx-b yes">LE Power Control</span>
+    <span class="zx-b dev">Connection Subrating</span>
+    <span class="zx-b dev">Channel Sounding (ranging)</span>
+  </div>
+
+  <h3>GATT / data</h3>
+  <div class="zx-badges">
+    <span class="zx-b yes">GATT Server &amp; Client</span>
+    <span class="zx-b yes">Enhanced ATT (EATT)</span>
+    <span class="zx-b yes">L2CAP LE Credit-Based Channels</span>
+    <span class="zx-b yes">Notifications / Indications</span>
+    <span class="zx-b yes">Robust Caching</span>
+    <span class="zx-b yes">GATT DB dynamic registration</span>
+  </div>
+
+  <h3>Security</h3>
+  <div class="zx-badges">
+    <span class="zx-b yes">LE Secure Connections (P-256 ECDH)</span>
+    <span class="zx-b yes">Legacy pairing</span>
+    <span class="zx-b yes">Bonding &amp; key storage (settings)</span>
+    <span class="zx-b yes">Privacy (RPA) &amp; identity resolving</span>
+    <span class="zx-b yes">Numeric comparison / passkey / OOB</span>
+    <span class="zx-b yes">Cross-Transport Key Derivation</span>
+  </div>
+
+  <h3>Isochronous &amp; audio transport</h3>
+  <div class="zx-badges">
+    <span class="zx-b yes">Connected Isochronous Streams (CIS)</span>
+    <span class="zx-b yes">Broadcast Isochronous Streams (BIS)</span>
+    <span class="zx-b yes">ISO data path</span>
+    <span class="zx-b yes">LC3 codec integration</span>
+    <span class="zx-b yes">Auracast&trade; broadcast audio</span>
+  </div>
+
+  <h3>Classic Bluetooth (BR/EDR)</h3>
+  <div class="zx-badges">
+    <span class="zx-b yes">BR/EDR GAP</span>
+    <span class="zx-b yes">L2CAP (BR/EDR)</span>
+    <span class="zx-b yes">RFCOMM</span>
+    <span class="zx-b yes">SDP</span>
+    <span class="zx-b dev">A2DP / AVDTP</span>
+    <span class="zx-b dev">HFP</span>
+  </div>
+</section>
+
+<section class="zx-sec" id="audio">
+  <h2><span class="ic">🎧</span> LE Audio &mdash; Generic Audio Framework</h2>
+  <p class="lead">The <code>audio/</code> subsystem is a full implementation of the LE Audio profile stack on top of
+  ISO + LC3, enabling hearing aids, earbuds, TV/broadcast audio and Auracast&trade; assistants. Each acronym below is a
+  real profile/service directory in the tree.</p>
+  <div class="zx-grid c3">
+    <div class="zx-card"><div class="ct">BAP</div><p class="cd">Basic Audio Profile &mdash; unicast &amp; broadcast stream establishment, codec/QoS config, the foundation of LE Audio.</p></div>
+    <div class="zx-card"><div class="ct">CAP</div><p class="cd">Common Audio Profile &mdash; coordinated procedures across a set of devices (e.g. left+right earbuds) for interoperable behavior.</p></div>
+    <div class="zx-card"><div class="ct">VCP / MICP</div><p class="cd">Volume Control &amp; Microphone Control profiles &mdash; synchronized volume/mute across a device set.</p></div>
+    <div class="zx-card"><div class="ct">CSIP</div><p class="cd">Coordinated Set Identification &mdash; how a phone discovers that two earbuds are one logical set.</p></div>
+    <div class="zx-card"><div class="ct">MCP / MCS</div><p class="cd">Media Control &mdash; play/pause/track control of a media player from a headset.</p></div>
+    <div class="zx-card"><div class="ct">TBS / CCP</div><p class="cd">Telephone Bearer &amp; Call Control &mdash; answer/hang-up call control for headsets.</p></div>
+    <div class="zx-card"><div class="ct">HAS / HAP</div><p class="cd">Hearing Access Service &amp; Profile &mdash; presets and behavior specific to hearing aids.</p></div>
+    <div class="zx-card"><div class="ct">TMAP</div><p class="cd">Telephony &amp; Media Audio Profile &mdash; the end-to-end phone-call + media use-case bundle.</p></div>
+    <div class="zx-card"><div class="ct">PBP</div><p class="cd">Public Broadcast Profile &mdash; the Auracast&trade; public broadcast layer on top of broadcast BAP.</p></div>
+    <div class="zx-card"><div class="ct">GMAP</div><p class="cd">Gaming Audio Profile &mdash; low-latency bidirectional audio for gaming headsets.</p></div>
+    <div class="zx-card"><div class="ct">BASS</div><p class="cd">Broadcast Audio Scan Service &mdash; the Broadcast Assistant that steers a device to a broadcast source.</p></div>
+    <div class="zx-card"><div class="ct">LC3</div><p class="cd">Low Complexity Communications Codec integration &mdash; the mandatory LE Audio codec.</p></div>
+  </div>
+</section>
+
+<section class="zx-sec" id="mesh">
+  <h2><span class="ic">🕸️</span> Bluetooth Mesh</h2>
+  <p class="lead">The <code>mesh/</code> subsystem is a complete, qualified Bluetooth Mesh node implementation for
+  large-scale lighting, sensor and building-automation networks.</p>
+  <div class="zx-grid c2">
+    <div class="zx-card"><div class="ct">Provisioning</div><p class="cd">Both PB-ADV and PB-GATT bearers; OOB authentication; the full node onboarding flow.</p></div>
+    <div class="zx-card"><div class="ct">Foundation &amp; models</div><p class="cd">Configuration &amp; Health server/client, plus support for standard and vendor models (sensor, generic on/off, level).</p></div>
+    <div class="zx-card"><div class="ct">Roles &amp; power</div><p class="cd">Relay, Proxy, Friend and Low Power Node (LPN) features for battery-operated mesh devices.</p></div>
+    <div class="zx-card"><div class="ct">Mesh DFU + BLOB</div><p class="cd">BLOB Transfer and Device Firmware Update models for firmware distribution over the mesh.</p></div>
+  </div>
+</section>
+
+<section class="zx-sec" id="profiles">
+  <h2><span class="ic">📇</span> Profiles &amp; GATT Services Shipped</h2>
+  <p class="lead">Ready-to-use GATT services in <code>services/</code> let product teams stand up standard profiles
+  without re-implementing them. A representative set:</p>
+  <div class="zx-tag-strip">
+    <span>BAS &mdash; Battery</span><span>DIS &mdash; Device Information</span><span>HRS &mdash; Heart Rate</span>
+    <span>CTS &mdash; Current Time</span><span>IAS &mdash; Immediate Alert</span><span>TPS &mdash; TX Power</span>
+    <span>OTS &mdash; Object Transfer</span><span>ESS/HTS &mdash; Environmental / Health Temp</span>
+    <span>BMS &mdash; Bond Management</span><span>NUS &mdash; Nordic UART (sample)</span>
+  </div>
+  <div class="zx-callout">Because services are plain GATT registrations, a vendor can ship additional differentiated
+  profiles (e.g. a proprietary DFU or sensor service) beside the standard ones using the same public API.</div>
+</section>
+
+<section class="zx-sec" id="certification">
+  <h2><span class="ic">✅</span> Certification &amp; Qualification</h2>
+  <p class="lead">Zephyr&rsquo;s Bluetooth Host and Controller are qualified with the Bluetooth SIG, and the project
+  maintains the test infrastructure needed to keep that qualification current.</p>
+  <div class="zx-grid c2">
+    <div class="zx-card"><div class="ct">Bluetooth SIG Qualification</div><p class="cd">The Host and Controller carry maintained QDIDs/Design listings. A product using the Zephyr subsystem can reference the component qualification and complete its own end-product listing, dramatically reducing certification cost and time.</p></div>
+    <div class="zx-card"><div class="ct">Auto-PTS</div><p class="cd">Automated integration with the SIG Profile Tuning Suite (PTS) so profile/host behavior is continuously validated against official test cases.</p></div>
+    <div class="zx-card"><div class="ct">BabbleSim (bsim)</div><p class="cd">A physical-layer simulator that runs real Host+Controller firmware against a virtual radio medium &mdash; enabling full multi-device link, ISO and mesh test scenarios in CI without hardware.</p></div>
+    <div class="zx-card"><div class="ct">Conformance &amp; CI</div><p class="cd">Unit tests, integration tests and hardware-in-the-loop runs gate every change; regressions in the stack are caught before merge.</p></div>
+  </div>
+  <p class="zx-note">Qualification specifics (QDID numbers, listed features) change per release &mdash; always confirm the exact listing on the Bluetooth SIG Qualification Workspace for the Zephyr version you ship.</p>
+</section>
+
+<section class="zx-sec" id="samples">
+  <h2><span class="ic">📦</span> Reference Samples &amp; Examples</h2>
+  <p class="lead">Over 60 buildable samples live under <code>samples/bluetooth/</code> &mdash; the fastest path from
+  evaluation to prototype. Highlights:</p>
+  <div class="zx-grid c3">
+    <div class="zx-card"><div class="ct">Connectivity basics</div><p class="cd"><code>peripheral</code>, <code>central</code>, <code>peripheral_hr</code>, <code>central_hr</code>, <code>peripheral_esp</code> &mdash; GAP roles + GATT.</p></div>
+    <div class="zx-card"><div class="ct">Beacons</div><p class="cd"><code>beacon</code>, <code>ibeacon</code>, <code>eddystone</code> &mdash; broadcaster-only advertising demos.</p></div>
+    <div class="zx-card"><div class="ct">HCI controller</div><p class="cd"><code>hci_uart</code>, <code>hci_usb</code>, <code>hci_spi</code> &mdash; expose the open Controller to an external host.</p></div>
+    <div class="zx-card"><div class="ct">LE Audio</div><p class="cd"><code>broadcast_audio_source/sink</code>, <code>unicast_audio_client/server</code>, <code>hap_ha</code> &mdash; full LE Audio use-cases.</p></div>
+    <div class="zx-card"><div class="ct">Isochronous</div><p class="cd"><code>iso_broadcast</code>, <code>iso_receive</code>, <code>iso_connected_benchmark</code> &mdash; CIS/BIS data paths.</p></div>
+    <div class="zx-card"><div class="ct">Mesh</div><p class="cd"><code>mesh</code>, <code>mesh_demo</code>, <code>mesh_provisioner</code> &mdash; provisioning + models.</p></div>
+    <div class="zx-card"><div class="ct">Throughput &amp; tooling</div><p class="cd"><code>throughput</code>, <code>periodic_adv</code>/<code>periodic_sync</code>, <code>direction_finding</code> (AoA/AoD).</p></div>
+    <div class="zx-card"><div class="ct">Shell</div><p class="cd">The Bluetooth <code>shell</code> exposes nearly every API interactively &mdash; ideal for bring-up and demos.</p></div>
+  </div>
+</section>
+
+<section class="zx-sec" id="platforms">
+  <h2><span class="ic">🔌</span> Registered Platforms &amp; Silicon</h2>
+  <p class="lead">The stack runs across a broad, vendor-neutral hardware base. Controllers below are either the
+  Zephyr open Controller on that silicon or the silicon&rsquo;s own controller driven by the Zephyr Host.</p>
+  <table class="zx-table">
+    <thead><tr><th>Vendor</th><th>Representative families</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Nordic Semiconductor</td><td>nRF52, nRF53, nRF54L / nRF54H</td><td>Open Controller + Host (reference platform)</td></tr>
+      <tr><td>STMicroelectronics</td><td>STM32WB / STM32WBA</td><td>Host + vendor/open controller</td></tr>
+      <tr><td>NXP</td><td>KW / RW61x, i.MX RT</td><td>Host + controller</td></tr>
+      <tr><td>Texas Instruments</td><td>CC13xx / CC26xx</td><td>Host + controller</td></tr>
+      <tr><td>Silicon Labs</td><td>EFR32 series</td><td>Host + controller</td></tr>
+      <tr><td>Renesas</td><td>DA1469x</td><td>Host + controller</td></tr>
+      <tr><td>Espressif</td><td>ESP32 series</td><td>Host over HCI to on-chip controller</td></tr>
+      <tr><td>Ambiq</td><td>Apollo series</td><td>Host + controller</td></tr>
+      <tr><td>Simulation</td><td>native_sim + BabbleSim</td><td>Full stack on a virtual radio for CI/dev</td></tr>
+    </tbody>
+  </table>
+  <p class="zx-note">Board support is continuously added upstream; the authoritative list is the Zephyr Supported Boards catalog.</p>
+</section>
+
+<section class="zx-sec" id="members">
+  <h2><span class="ic">🏛️</span> Members &amp; Membership Tiers</h2>
+  <p class="lead">The Zephyr Project is a Linux Foundation project funded through a three-tier membership model.
+  Bluetooth direction is shaped disproportionately by member companies that maintain the stack.</p>
+  <div class="zx-members">
+    <div class="zx-tier platinum">
+      <h3>💎 Platinum Members</h3>
+      <p class="desc">Top funding tier with Governing Board seats; set overall project strategy and resourcing.</p>
+      <div class="logos">
+        <span>Analog Devices</span><span>Antmicro</span><span>CARIAD (VW Group)</span><span>Carl Zeiss</span>
+        <span>Google</span><span>Intel</span><span>Meta</span><span>Nordic Semiconductor</span>
+        <span>NXP</span><span>Qualcomm</span><span>Renesas</span><span>Silicon Labs</span>
+        <span>Texas Instruments</span><span>Wind River</span>
+      </div>
+    </div>
+    <div class="zx-tier silver">
+      <h3>🥈 Silver Members</h3>
+      <p class="desc">Broad ecosystem of silicon, tooling, module and services companies. A representative subset:</p>
+      <div class="logos">
+        <span>Arm</span><span>Alif Semiconductor</span><span>Arduino</span><span>BayLibre</span>
+        <span>Ezurio</span><span>Canonical</span><span>Blues</span><span>Honda</span>
+        <span>Hubble Network</span><span>IAR</span><span>Ac6</span><span>Baumer</span><span>&hellip; and many more</span>
+      </div>
+    </div>
+    <div class="zx-tier associate">
+      <h3>🎓 Associate Members</h3>
+      <p class="desc">Non-profits, universities and standards bodies.</p>
+      <div class="logos">
+        <span>Eclipse Foundation</span><span>RISC-V International</span><span>BeagleBoard.org</span>
+        <span>FIWARE</span><span>Northeastern University</span><span>RISE (Sweden)</span><span>&hellip;</span>
+      </div>
+    </div>
+  </div>
+  <p class="zx-note">Membership lists change over time &mdash; the live source of truth is zephyrproject.org/project-members.</p>
+</section>
+
+<section class="zx-sec" id="contributors">
+  <h2><span class="ic">👥</span> Contributors &amp; Their Contributions</h2>
+  <p class="lead">The Bluetooth subsystem is one of the most actively maintained areas of Zephyr. Ownership is
+  formalized in <code>MAINTAINERS.yml</code> with named maintainers and collaborators per area.</p>
+  <table class="zx-table">
+    <thead><tr><th>Contributor / Org</th><th>Primary area</th><th>Contribution focus</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nordic Semiconductor</strong></td><td>Host, Controller, LE Audio, Mesh</td><td>The dominant maintainer of the Bluetooth subsystem &mdash; funds most of the Host and open Controller development and the LE Audio stack.</td></tr>
+      <tr><td><strong>Intel</strong></td><td>Host, BlueZ alignment</td><td>Long-standing Bluetooth architecture and Host maintenance; alignment with the Linux BlueZ ecosystem.</td></tr>
+      <tr><td><strong>Meta</strong></td><td>Host, LE Audio, tooling</td><td>Contributions across host features and audio for wearables/AR use-cases.</td></tr>
+      <tr><td><strong>NXP / TI / Silicon Labs / ST</strong></td><td>Controllers, platform bring-up</td><td>Radio HAL, controller drivers and board support for their silicon.</td></tr>
+      <tr><td>Host maintainers</td><td><code>subsys/bluetooth/host</code></td><td>GAP/GATT/L2CAP/SMP evolution, API stability, spec conformance.</td></tr>
+      <tr><td>Controller maintainers</td><td><code>subsys/bluetooth/controller</code></td><td>Open Link Layer, ISO, extended/periodic advertising, timing and radio abstraction.</td></tr>
+      <tr><td>LE Audio maintainers</td><td><code>subsys/bluetooth/audio</code></td><td>BAP/CAP and the full GAF profile set, LC3 integration.</td></tr>
+      <tr><td>Simulation maintainers</td><td>BabbleSim / bsim</td><td>The virtual-radio test harness that makes hardware-free conformance testing possible.</td></tr>
+    </tbody>
+  </table>
+  <p class="zx-note">For exact current names and GitHub handles, see <code>MAINTAINERS.yml</code> and the git history of each directory &mdash; ownership is public and enforced by CI code-owner review.</p>
+</section>
+
+<section class="zx-sec" id="chain">
+  <h2><span class="ic">🔗</span> Upstream &amp; Downstream Links</h2>
+  <p class="lead">Understanding what feeds the stack and what the stack feeds is essential for strategy: it shows
+  where standards pressure comes from and where your product inherits from.</p>
+  <div class="zx-flow">
+    <div class="zx-flow-col up">
+      <h4>⬆️ Upstream (feeds in)</h4>
+      <ul>
+        <li>Bluetooth SIG Core &amp; profile specifications (GAP, GATT, LE Audio, Mesh)</li>
+        <li>Bluetooth SIG qualification test suites (PTS)</li>
+        <li>Zephyr RTOS kernel, drivers, settings/NVS, logging</li>
+        <li>mbedTLS / PSA Crypto for security primitives</li>
+        <li>LC3 codec, BabbleSim simulator</li>
+      </ul>
+    </div>
+    <div class="zx-flow-mid">→</div>
+    <div class="zx-flow-col core">
+      <h4>🎯 Zephyr Bluetooth</h4>
+      <ul>
+        <li>Host + open Controller</li>
+        <li>Mesh + LE Audio (GAF)</li>
+        <li>GATT services &amp; samples</li>
+        <li>Public <code>&lt;zephyr/bluetooth/*.h&gt;</code> API</li>
+        <li>Qualified components (QDIDs)</li>
+      </ul>
+    </div>
+    <div class="zx-flow-col down">
+      <h4>⬇️ Downstream (consumes)</h4>
+      <ul>
+        <li>Nordic nRF Connect SDK (sdk-nrf)</li>
+        <li>NXP MCUXpresso / vendor Zephyr SDKs</li>
+        <li>Telink, Silabs, TI, ST, Renesas distributions</li>
+        <li>Commercial products: wearables, hearables, sensors, medical, industrial</li>
+        <li>Linux/BlueFruit hosts driving the Zephyr controller</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="zx-sec" id="strategy">
+  <h2><span class="ic">♟️</span> Strategy Playbook for a Chip Provider</h2>
+  <p class="lead">How different teams should read the Zephyr Bluetooth stack when building a silicon go-to-market and
+  developer-support strategy.</p>
+  <div class="zx-strat">
+    <div class="zx-strat-card pm">
+      <h4>📈 Product Marketing</h4>
+      <ul>
+        <li>Position Zephyr support as &ldquo;standards-tracking, royalty-free, future-proof&rdquo; to reduce customer lock-in fears.</li>
+        <li>Inherited SIG qualification is a hard cost/time saving &mdash; quantify it in the value prop.</li>
+        <li>LE Audio + Auracast&trade; readiness is a premium differentiator for audio SoCs.</li>
+        <li>Membership tier (Platinum vs Silver) signals influence over the roadmap &mdash; use it as a trust marker.</li>
+      </ul>
+    </div>
+    <div class="zx-strat-card am">
+      <h4>🛠️ Application / Developer Marketing</h4>
+      <ul>
+        <li>Lead with the 60+ samples and the Bluetooth shell &mdash; time-to-first-blink is a conversion metric.</li>
+        <li>Publish board-specific getting-started guides mapped to Zephyr sample names.</li>
+        <li>Contribute your board/driver upstream so evaluators find you in the supported-boards catalog.</li>
+        <li>BabbleSim lets developers evaluate before hardware arrives &mdash; promote hardware-free trials.</li>
+      </ul>
+    </div>
+    <div class="zx-strat-card eng">
+      <h4>🔬 Engineering / Ecosystem</h4>
+      <ul>
+        <li>Decide the HCI split: open Controller on your radio vs Zephyr Host over your controller.</li>
+        <li>Fund maintainer time to earn code-owner status in the areas you depend on.</li>
+        <li>Track ISO / Channel Sounding / Subrating work to time feature announcements.</li>
+        <li>Keep your downstream SDK rebased on LTS (v3.7.0) for stability, main for leading edge.</li>
+      </ul>
+    </div>
+    <div class="zx-strat-card risk">
+      <h4>⚠️ Risks &amp; Watch-items</h4>
+      <ul>
+        <li>Some Classic (BR/EDR) profiles are less mature than BLE &mdash; verify per use-case.</li>
+        <li>Qualification is per-release; a version bump can require re-confirming the listing.</li>
+        <li>Open Controller quality depends on the radio HAL you provide &mdash; budget for it.</li>
+        <li>Roadmap influence correlates with contribution &mdash; passive consumers get less say.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="zx-sec" id="contribute">
+  <h2><span class="ic">🚀</span> Build, Evaluate &amp; Contribute</h2>
+  <p class="lead">The end-to-end path from clone to upstream contribution.</p>
+  <div class="zx-timeline">
+    <div class="zx-tl-item"><div class="tt">1. Get the tree</div><div class="td">Install <code>west</code>, run <code>west init</code> + <code>west update</code> to pull Zephyr and modules.</div></div>
+    <div class="zx-tl-item"><div class="tt">2. Build a sample</div><div class="td">Flash <code>samples/bluetooth/peripheral</code> to a supported board, or run it on <code>native_sim</code> with BabbleSim.</div></div>
+    <div class="zx-tl-item"><div class="tt">3. Configure via Kconfig</div><div class="td">Toggle <code>CONFIG_BT_*</code> options to enable exactly the roles, profiles and services you need.</div></div>
+    <div class="zx-tl-item"><div class="tt">4. Validate</div><div class="td">Run bsim tests and, for profiles, Auto-PTS against the SIG test suites.</div></div>
+    <div class="zx-tl-item"><div class="tt">5. Contribute</div><div class="td">Follow the contribution guidelines, sign off (DCO), pass CI + code-owner review, land upstream.</div></div>
+  </div>
+  <div class="zx-code"><pre><span class="cmt"># build the peripheral sample for a board</span>
+west build -b <span class="kw">your_board</span> samples/bluetooth/peripheral
+west flash
+
+<span class="cmt"># or run the full stack on a virtual radio (no hardware)</span>
+west build -b native_sim samples/bluetooth/peripheral</pre></div>
+
+  <h3>Key resources</h3>
+  <div class="zx-links2">
+    <a href="https://github.com/zephyrproject-rtos/zephyr/tree/main/subsys/bluetooth" target="_blank" rel="noopener">subsys/bluetooth source →</a>
+    <a href="https://docs.zephyrproject.org/latest/connectivity/bluetooth/index.html" target="_blank" rel="noopener">Bluetooth documentation →</a>
+    <a href="https://docs.zephyrproject.org/latest/connectivity/bluetooth/bluetooth-arch.html" target="_blank" rel="noopener">Architecture guide →</a>
+    <a href="https://github.com/zephyrproject-rtos/zephyr/tree/main/samples/bluetooth" target="_blank" rel="noopener">Bluetooth samples →</a>
+    <a href="https://www.zephyrproject.org/project-members/" target="_blank" rel="noopener">Project members →</a>
+    <a href="https://docs.zephyrproject.org/latest/contribute/index.html" target="_blank" rel="noopener">Contribution guide →</a>
+    <a href="https://docs.zephyrproject.org/latest/boards/index.html" target="_blank" rel="noopener">Supported boards →</a>
+  </div>
+</section>
+
+</main>
+<footer class="footer"><div class="wrap">Zephyr Bluetooth Stack &mdash; hand-authored strategic teardown of <code>subsys/bluetooth</code> &middot; not affiliated with the Zephyr Project &middot; verify qualification &amp; membership on official sources &middot; generated 2026-08-03 11:28 PDT</div></footer>
+<script>
+(function(){
+  var links = document.querySelectorAll('.zx-subnav a');
+  links.forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = this.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if (el){ e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); history.replaceState(null,'','#'+id); }
+    });
+  });
+})();
+</script>
 </body></html>
