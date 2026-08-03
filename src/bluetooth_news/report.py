@@ -3607,6 +3607,46 @@ _INDEX_TEMPLATE = """<!doctype html>
 .decision-card h3 { margin:0 0 6px; font-size:14.5px; color:#0f172a; }
 .decision-card p { margin:0; font-size:12.8px; color:#475569; line-height:1.55; }
 .decision-card .q { font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:#2563eb; margin-bottom:6px; }
+
+body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; background:radial-gradient(1200px 500px at 80% -10%, #dbeafe 0%, transparent 55%),radial-gradient(1000px 400px at 0% 0%, #fef3c7 0%, transparent 45%),var(--bg); }
+.hero { background:linear-gradient(120deg,#0b1220 0%,#1d4ed8 55%,#0ea5e9 100%); border-radius:18px; padding:28px 30px; color:#fff; box-shadow:0 22px 50px rgba(15,23,42,.3); }
+.hero h1 { color:#fff; font-size:34px; letter-spacing:-.02em; margin:0 0 10px; }
+.hero p { color:#dbeafe; max-width:980px; font-size:14px; line-height:1.7; }
+.hero-kicker { color:#0f172a; background:#fef08a; }
+
+.cockpit-row { display:grid; grid-template-columns:2fr 1fr; gap:14px; margin-top:12px; }
+@media (max-width:980px){ .cockpit-row { grid-template-columns:1fr; } }
+.cockpit-panel { background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
+.cockpit-panel h3 { margin:0 0 6px; font-size:14.5px; }
+.cockpit-panel p { margin:0; color:#475569; font-size:12.6px; line-height:1.55; }
+.cockpit-chips { margin-top:10px; display:flex; flex-wrap:wrap; gap:7px; }
+.cockpit-chips span { font-size:11px; font-weight:700; color:#0f172a; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:999px; padding:3px 9px; }
+
+.action-stack { display:grid; gap:8px; }
+.action-pill { border-radius:10px; padding:10px 12px; border:1px solid var(--border); }
+.action-pill .n { font-size:24px; font-weight:800; line-height:1; }
+.action-pill .l { font-size:11px; color:#475569; margin-top:2px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+.action-pill.decide { background:#ecfdf5; border-color:#bbf7d0; }
+.action-pill.decide .n { color:#166534; }
+.action-pill.investigate { background:#fffbeb; border-color:#fde68a; }
+.action-pill.investigate .n { color:#92400e; }
+.action-pill.monitor { background:#f8fafc; border-color:#cbd5e1; }
+.action-pill.monitor .n { color:#334155; }
+
+.score-table { width:100%; border-collapse:separate; border-spacing:0; margin-top:10px; font-size:12.6px; }
+.score-table th, .score-table td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:middle; }
+.score-table th { background:#f8fafc; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:#64748b; font-weight:800; }
+.score-table td.vendor { font-weight:800; color:#0f172a; }
+.score-metric { min-width:95px; }
+.score-bar { height:7px; background:#e2e8f0; border-radius:999px; overflow:hidden; margin-top:4px; }
+.score-bar i { display:block; height:100%; background:linear-gradient(90deg,#1d4ed8,#0ea5e9); }
+.score-num { font-variant-numeric:tabular-nums; font-weight:700; color:#1e293b; font-size:11.5px; }
+.score-total { font-size:18px; font-weight:800; color:#1d4ed8; }
+.score-action { display:inline-block; font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; border-radius:999px; padding:3px 9px; }
+.score-action.decide { background:#dcfce7; color:#166534; }
+.score-action.investigate { background:#fef3c7; color:#92400e; }
+.score-action.monitor { background:#e2e8f0; color:#334155; }
+.score-reason { color:#64748b; font-size:11px; margin-top:2px; }
 </style>
 """ + _PASSWORD_GATE_HTML + """
 </head><body>
@@ -3620,35 +3660,102 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>What This Page Should Answer</h2>
+    <h2>Buyer Cockpit</h2>
   </div>
-  <p class="section-sub">The five questions a product manager asks before committing to a wireless silicon platform.</p>
-  <div class="decision-grid">
-    <article class="decision-card">
-      <div class="q">Question 1</div>
-      <h3>Does the chip fit the product and protocol mix?</h3>
-      <p>Start with protocol fit: Bluetooth, Wi-Fi, Thread, Zigbee, Matter, 802.15.4 or Aliro. The wrong connectivity foundation forces expensive board and software rework later.</p>
+  <p class="section-sub">Use this sequence to make a chip-selection call quickly: filter by product fit, score likely winners, then decide where to spend validation effort.</p>
+  <div class="cockpit-row">
+    <article class="cockpit-panel">
+      <h3>What This Page Should Answer</h3>
+      <div class="decision-grid">
+        <article class="decision-card">
+          <div class="q">Question 1</div>
+          <h3>Does the chip fit the product and protocol mix?</h3>
+          <p>Start with protocol fit: Bluetooth, Wi-Fi, Thread, Zigbee, Matter, 802.15.4 or Aliro. The wrong connectivity foundation forces expensive board and software rework later.</p>
+        </article>
+        <article class="decision-card">
+          <div class="q">Question 2</div>
+          <h3>Can we win against the incumbent vendor?</h3>
+          <p>Look at which competitors are strongest in the exact application you care about, what they claim as strengths, and which gaps they are still exposed on.</p>
+        </article>
+        <article class="decision-card">
+          <div class="q">Question 3</div>
+          <h3>Are OEM requirements moving under us?</h3>
+          <p>Customer launch signals tell you what features will matter next: LE Audio, mesh robustness, low power, coexistence, security certifications, range, or software portability.</p>
+        </article>
+        <article class="decision-card">
+          <div class="q">Question 4</div>
+          <h3>Will the software stack shorten time-to-launch?</h3>
+          <p>Protocol support alone is not enough. PMs should test whether the stack, examples, certifications, partner ecosystem and developer tooling reduce execution risk.</p>
+        </article>
+        <article class="decision-card">
+          <div class="q">Question 5</div>
+          <h3>Is the roadmap aligned with the next two years?</h3>
+          <p>Standards timing matters. If the chip roadmap misses the next meaningful protocol features, the design can age out before volume ramps.</p>
+        </article>
+      </div>
+      <div class="cockpit-chips">
+        <span>Smart Home</span><span>Audio</span><span>Industrial</span><span>Automotive</span><span>Wearables</span><span>Medical</span>
+      </div>
     </article>
-    <article class="decision-card">
-      <div class="q">Question 2</div>
-      <h3>Can we win against the incumbent vendor?</h3>
-      <p>Look at which competitors are strongest in the exact application you care about, what they claim as strengths, and which gaps they are still exposed on.</p>
-    </article>
-    <article class="decision-card">
-      <div class="q">Question 3</div>
-      <h3>Are OEM requirements moving under us?</h3>
-      <p>Customer launch signals tell you what features will matter next: LE Audio, mesh robustness, low power, coexistence, security certifications, range, or software portability.</p>
-    </article>
-    <article class="decision-card">
-      <div class="q">Question 4</div>
-      <h3>Will the software stack shorten time-to-launch?</h3>
-      <p>Protocol support alone is not enough. PMs should test whether the stack, examples, certifications, partner ecosystem and developer tooling reduce execution risk.</p>
-    </article>
-    <article class="decision-card">
-      <div class="q">Question 5</div>
-      <h3>Is the roadmap aligned with the next two years?</h3>
-      <p>Standards timing matters. If the chip roadmap misses the next meaningful protocol features, the design can age out before volume ramps.</p>
-    </article>
+    <aside class="cockpit-panel">
+      <h3>Action Queue</h3>
+      <p>Weighted shortlist status based on protocol coverage, recent momentum, OEM pull, and execution strength.</p>
+      <div class="action-stack">
+        <div class="action-pill decide"><div class="n">{{ action_summary.decide }}</div><div class="l">Decide Now</div></div>
+        <div class="action-pill investigate"><div class="n">{{ action_summary.investigate }}</div><div class="l">Investigate</div></div>
+        <div class="action-pill monitor"><div class="n">{{ action_summary.monitor }}</div><div class="l">Monitor</div></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head">
+    <h2>Wireless Chip Shortlist Scorecard</h2>
+    <span class="pill">Weighted Rank</span>
+  </div>
+  <p class="section-sub">Score = 30% protocol fit + 25% market momentum + 25% OEM pull + 20% execution strength. Use this as triage, then deep-dive before final supplier lock.</p>
+  <table class="score-table">
+    <thead>
+      <tr>
+        <th>Vendor</th>
+        <th class="score-metric">Protocol Fit</th>
+        <th class="score-metric">Momentum (30d)</th>
+        <th class="score-metric">OEM Pull</th>
+        <th class="score-metric">Execution</th>
+        <th>Total</th>
+        <th>Recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in shortlist_scorecard %}
+      <tr>
+        <td class="vendor">{{ row.vendor }}<div class="score-reason">{{ row.recent_count }} recent signals &middot; {{ row.bucket_count }} protocol buckets</div></td>
+        <td>
+          <div class="score-num">{{ row.protocol_fit }}</div>
+          <div class="score-bar"><i style="width: {{ row.protocol_fit }}%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">{{ row.momentum }}</div>
+          <div class="score-bar"><i style="width: {{ row.momentum }}%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">{{ row.oem_pull }}</div>
+          <div class="score-bar"><i style="width: {{ row.oem_pull }}%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">{{ row.execution }}</div>
+          <div class="score-bar"><i style="width: {{ row.execution }}%"></i></div>
+        </td>
+        <td class="score-total">{{ row.weighted }}</td>
+        <td>
+          <span class="score-action {{ row.action_class }}">{{ row.action }}</span>
+          <div class="score-reason">{{ row.action_reason }}</div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
   </div>
 </div>
 
@@ -4165,6 +4272,74 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
             if n > heatmap_max: heatmap_max = n
         heatmap_rows.append((v, row))
 
+        # Buyer cockpit shortlist: weighted vendor score for PM triage.
+        comp_by_vendor = {
+          (c.get("vendor") or "").strip(): c
+          for c in (competitors_list or [])
+          if (c.get("vendor") or "").strip()
+        }
+        shortlist_scorecard = []
+        shortlist_vendors = top_vendors_for_map[:6]
+        if not shortlist_vendors:
+          shortlist_vendors = list(comp_by_vendor.keys())[:6]
+
+        for vendor in shortlist_vendors:
+          vendor_articles = [a for a in articles if (a.get("vendor") or "").strip() == vendor]
+          recent_vendor_articles = [a for a in arts_30d if (a.get("vendor") or "").strip() == vendor]
+          protocol_coverage = len({b for a in vendor_articles for b in (a.get("buckets") or [])})
+          protocol_fit = int((protocol_coverage / max(1, total_buckets)) * 100)
+          momentum = min(100, len(recent_vendor_articles) * 8)
+          oem_pull = min(
+            100,
+            len({(a.get("customer") or "").strip() for a in recent_vendor_articles if (a.get("customer") or "").strip()}) * 18,
+          )
+
+          comp_entry = comp_by_vendor.get(vendor, {})
+          strengths_n = len(comp_entry.get("vs_airoc_strengths") or [])
+          weaknesses_n = len(comp_entry.get("vs_airoc_weaknesses") or [])
+          execution = max(20, min(100, 55 + (strengths_n * 10) - (weaknesses_n * 8)))
+
+          weighted = int(round(
+            protocol_fit * 0.30 +
+            momentum * 0.25 +
+            oem_pull * 0.25 +
+            execution * 0.20
+          ))
+
+          if weighted >= 72:
+            action = "Decide Now"
+            action_class = "decide"
+            action_reason = "Strong fit + momentum in current window"
+          elif weighted >= 52:
+            action = "Investigate"
+            action_class = "investigate"
+            action_reason = "Potential fit, but gaps need validation"
+          else:
+            action = "Monitor"
+            action_class = "monitor"
+            action_reason = "Insufficient market pull or weak fit signals"
+
+          shortlist_scorecard.append({
+            "vendor": vendor,
+            "weighted": weighted,
+            "protocol_fit": protocol_fit,
+            "momentum": momentum,
+            "oem_pull": oem_pull,
+            "execution": execution,
+            "action": action,
+            "action_class": action_class,
+            "action_reason": action_reason,
+            "recent_count": len(recent_vendor_articles),
+            "bucket_count": protocol_coverage,
+          })
+
+        shortlist_scorecard.sort(key=lambda r: (r["weighted"], r["momentum"]), reverse=True)
+        action_summary = {
+          "decide": sum(1 for r in shortlist_scorecard if r["action_class"] == "decide"),
+          "investigate": sum(1 for r in shortlist_scorecard if r["action_class"] == "investigate"),
+          "monitor": sum(1 for r in shortlist_scorecard if r["action_class"] == "monitor"),
+        }
+
     return env.from_string(_INDEX_TEMPLATE).render(
         articles=articles, customers=customers,
         competitors=comp.get("competitors", []), links=links,
@@ -4188,6 +4363,8 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         total_buckets=total_buckets,
         lookback_span_days=lookback_span_days,
         latest_article_label=latest_article_label,
+        shortlist_scorecard=shortlist_scorecard,
+        action_summary=action_summary,
         top_movers=top_movers,
         heatmap=heatmap_rows, heatmap_max=heatmap_max,
         active="index", **ctx,
