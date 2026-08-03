@@ -3600,25 +3600,67 @@ _INDEX_TEMPLATE = """<!doctype html>
 .mini-list { margin:0; padding-left:16px; }
 .mini-list li { margin:5px 0; font-size:13px; }
 .mini-meta { font-size:11.5px; color:var(--muted); }
+
+.hero-kicker { display:inline-block; margin-bottom:8px; font-size:11.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#1d4ed8; background:#dbeafe; border-radius:999px; padding:5px 10px; }
+.decision-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin-top:12px; }
+.decision-card { background:#fafbfd; border:1px solid var(--border); border-top:3px solid #2563eb; border-radius:10px; padding:14px 16px; }
+.decision-card h3 { margin:0 0 6px; font-size:14.5px; color:#0f172a; }
+.decision-card p { margin:0; font-size:12.8px; color:#475569; line-height:1.55; }
+.decision-card .q { font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:#2563eb; margin-bottom:6px; }
 </style>
 """ + _PASSWORD_GATE_HTML + """
 </head><body>
 """ + _NAV_HTML + """
 <main class="wrap content">
 <section class="hero">
-  <h1>IoT Wireless Intelligence</h1>
-  <p>Product-marketing command center for the Infineon wireless platform \u2014 competitor positioning, customer signals, and technology roadmap in one view. Built to help define features, prioritize the roadmap, and find openings against the competition.</p>
+  <span class="hero-kicker">Wireless Chip Buying Brief</span>
+  <h1>Which Wireless Chip Should A Product Manager Bet On?</h1>
+  <p>This homepage should answer the real buying questions behind wireless chip selection: which protocols matter for the target product, which competitors are strongest in that segment, which OEM requirements are forming next, how fast standards are moving, and whether the software stack and ecosystem are strong enough to reduce launch risk. Use this page as the front door for shortlist creation, positioning, roadmap pressure-testing, and executive discussion.</p>
 </section>
 
 <div class="section">
   <div class="section-head">
-    <h2>Data Freshness &amp; Coverage</h2>
+    <h2>What This Page Should Answer</h2>
   </div>
-  <p class="section-sub">Current ingestion depth and signal spread powering this view.</p>
+  <p class="section-sub">The five questions a product manager asks before committing to a wireless silicon platform.</p>
+  <div class="decision-grid">
+    <article class="decision-card">
+      <div class="q">Question 1</div>
+      <h3>Does the chip fit the product and protocol mix?</h3>
+      <p>Start with protocol fit: Bluetooth, Wi-Fi, Thread, Zigbee, Matter, 802.15.4 or Aliro. The wrong connectivity foundation forces expensive board and software rework later.</p>
+    </article>
+    <article class="decision-card">
+      <div class="q">Question 2</div>
+      <h3>Can we win against the incumbent vendor?</h3>
+      <p>Look at which competitors are strongest in the exact application you care about, what they claim as strengths, and which gaps they are still exposed on.</p>
+    </article>
+    <article class="decision-card">
+      <div class="q">Question 3</div>
+      <h3>Are OEM requirements moving under us?</h3>
+      <p>Customer launch signals tell you what features will matter next: LE Audio, mesh robustness, low power, coexistence, security certifications, range, or software portability.</p>
+    </article>
+    <article class="decision-card">
+      <div class="q">Question 4</div>
+      <h3>Will the software stack shorten time-to-launch?</h3>
+      <p>Protocol support alone is not enough. PMs should test whether the stack, examples, certifications, partner ecosystem and developer tooling reduce execution risk.</p>
+    </article>
+    <article class="decision-card">
+      <div class="q">Question 5</div>
+      <h3>Is the roadmap aligned with the next two years?</h3>
+      <p>Standards timing matters. If the chip roadmap misses the next meaningful protocol features, the design can age out before volume ramps.</p>
+    </article>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head">
+    <h2>Coverage Snapshot</h2>
+  </div>
+  <p class="section-sub">How much current market evidence is behind the recommendations on this page.</p>
   <div class="mini-grid">
     <article class="mini-card">
-      <h3>Ingestion Horizon</h3>
-      <p>Article volume by recency window.</p>
+      <h3>Signal Recency</h3>
+      <p>How fresh the market evidence is.</p>
       <ul class="mini-list">
         <li><b>{{ freshness_7d }}</b> articles in last 7 days</li>
         <li><b>{{ freshness_30d }}</b> articles in last 30 days</li>
@@ -3626,8 +3668,8 @@ _INDEX_TEMPLATE = """<!doctype html>
       </ul>
     </article>
     <article class="mini-card">
-      <h3>Source Breadth</h3>
-      <p>How diverse the collected signal is.</p>
+      <h3>Market Breadth</h3>
+      <p>How broad the evidence base is across technologies and sources.</p>
       <ul class="mini-list">
         <li><b>{{ unique_sources }}</b> unique publishers/sources</li>
         <li><b>{{ bucket_coverage }}</b>/{{ total_buckets }} technology buckets represented</li>
@@ -3635,8 +3677,8 @@ _INDEX_TEMPLATE = """<!doctype html>
       </ul>
     </article>
     <article class="mini-card">
-      <h3>Market Signal Depth</h3>
-      <p>How many entities are backed by recent evidence.</p>
+      <h3>Buyer-Relevant Depth</h3>
+      <p>How much recent evidence exists across vendors and OEMs.</p>
       <ul class="mini-list">
         <li><b>{{ vendors_with_news }}</b> vendors with linked news</li>
         <li><b>{{ customers_with_news }}</b> customers with linked news</li>
@@ -3648,10 +3690,10 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>Competitive Battlecard</h2>
-    <span class="pill">SWOT</span>
+    <h2>Who You Are Really Up Against</h2>
+    <span class="pill">Competition</span>
   </div>
-  <p class="section-sub">Where we are strongest today and where each rival leads &mdash; use this to sharpen messaging and spot feature gaps.</p>
+  <p class="section-sub">A PM shortlist should never be vendor-neutral. Use this section to see which suppliers are strongest, where they still have holes, and what proof they are putting into the market.</p>
   <div class="battle-grid">
     {% for c in battlecard %}
     <article class="battle-card">
@@ -3681,20 +3723,20 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>Strength/Weakness Radar</h2>
+    <h2>Where To Win Vs. Where To Invest</h2>
   </div>
-  <p class="section-sub">Aggregated across tracked competitors &mdash; where to lean into messaging, and where to close the gap.</p>
+  <p class="section-sub">This is the portfolio-level view: where to lean in during evaluation and where roadmap, software or certification work is needed before a design win is defensible.</p>
   <div class="opp-grid">
     <div class="opp-col win">
-      <h3>\u2713 Strengths</h3>
-      <p class="section-sub">Lead with these in positioning &amp; sales collateral.</p>
+      <h3>\u2713 Win Themes</h3>
+      <p class="section-sub">Lead with these in positioning, field messaging and customer-facing evaluation kits.</p>
       {% for o in opportunity_wins %}
       <div class="opp-item"><b>{{ o.vendor }}:</b> {{ o.text }}</div>
       {% endfor %}
     </div>
     <div class="opp-col watch">
-      <h3>\u26a0 Weaknesses</h3>
-      <p class="section-sub">Feature gaps competitors use against us &mdash; candidates for the roadmap.</p>
+      <h3>\u26a0 Investment Areas</h3>
+      <p class="section-sub">These are the holes that turn into roadmap asks, partner asks, or software-stack investment.</p>
       {% for o in opportunity_watch %}
       <div class="opp-item"><b>{{ o.vendor }}:</b> {{ o.text }}</div>
       {% endfor %}
@@ -3704,9 +3746,9 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>Customer Radar</h2>
+    <h2>What OEMs Are Likely To Need Next</h2>
   </div>
-  <p class="section-sub">Model-predicted next launches per OEM, with expected features &mdash; a window into what customers will need next.</p>
+  <p class="section-sub">A good chip decision is anchored in future customer requirements, not just current attach rates. These launch predictions and recent customer signals help PMs decide which features belong in the next silicon and software plan.</p>
   <div class="cust-grid">
     {% for r in customer_radar %}
     <article class="cust-card">
@@ -3736,14 +3778,14 @@ _INDEX_TEMPLATE = """<!doctype html>
     {% endfor %}
   </div>
   {% if not customer_radar %}<p class="muted">Not enough signal yet to project next launches &mdash; check back after the next data refresh.</p>{% endif %}
-  <p style="margin-top:12px;"><a href="oems.html">All customer profiles &amp; full roadmap table &rarr;</a></p>
+  <p style="margin-top:12px;"><a href="oems.html">Open the full OEM requirement view &rarr;</a></p>
 </div>
 
 <div class="section">
   <div class="section-head">
-    <h2>Technology &amp; Standards Radar</h2>
+    <h2>Which Protocol Roadmaps Matter</h2>
   </div>
-  <p class="section-sub">Current vs. next spec version and in-flight features per domain &mdash; direct input for roadmap planning.</p>
+  <p class="section-sub">This section tells PMs whether the chip roadmap is aligned with the next standards wave or whether the portfolio risks being one spec cycle late.</p>
   <div class="std-grid">
     {% for s in standards_radar %}
     <article class="std-card">
@@ -3766,10 +3808,10 @@ _INDEX_TEMPLATE = """<!doctype html>
 
 <div class="section">
   <div class="section-head">
-    <h2>Market Signal Feed</h2>
+    <h2>Evidence Behind The Recommendation</h2>
     <span class="pill">{{ competitor_window_label }}</span>
   </div>
-  <p class="section-sub">Latest competitor and customer headlines &mdash; supporting evidence for the sections above.</p>
+  <p class="section-sub">The most recent competitor and OEM headlines that explain why the views above are moving.</p>
   <div class="signal-feed">
     <div class="signal-col">
       <h3>Competitor signals</h3>
@@ -3800,14 +3842,15 @@ _INDEX_TEMPLATE = """<!doctype html>
 </div>
 
 <section class="section">
-  <h2>Where do you want to go?</h2>
+  <h2>Recommended Decision Workflow</h2>
+  <p class="section-sub">If you are shopping for a wireless chip, this is the shortest path through the site.</p>
   <div class="jump-row">
-    <a class="jump-card" href="news.html"><h3>News \u2192</h3><p>All recent articles by technology, vendor, customer and application.</p></a>
-    <a class="jump-card" href="oems.html"><h3>Customers \u2192</h3><p>OEM profiles \u2014 recent products and forward roadmap signals.</p></a>
-    <a class="jump-card" href="vendors.html"><h3>Strength/Weakness \u2192</h3><p>Side-by-side SWOT comparison \u2014 SKUs, strengths, weaknesses.</p></a>
-    <a class="jump-card" href="relationships.html"><h3>Relationships \u2192</h3><p>Sankey map of which vendor sells to which customer.</p></a>
-    <a class="jump-card" href="applications.html"><h3>Applications \u2192</h3><p>Market research per end-device: architecture, market trend, feature requirements and chip vendor positioning.</p></a>
-    <a class="jump-card" href="bt_stack.html"><h3>BT Stack \u2192</h3><p>Market map of every Bluetooth stack \u2014 features, profiles, certification and gaps vs. the latest spec.</p></a>
+    <a class="jump-card" href="applications.html"><h3>1. Start With The Device \u2192</h3><p>See application-by-application feature requirements, architecture expectations and likely winning chip attributes.</p></a>
+    <a class="jump-card" href="oems.html"><h3>2. Check OEM Pull \u2192</h3><p>Open the OEM view to understand what customers are launching and what they are likely to ask for next.</p></a>
+    <a class="jump-card" href="vendors.html"><h3>3. Compare Vendors \u2192</h3><p>Use vendor profiles to compare SKUs, positioning, strengths, weaknesses and recent momentum.</p></a>
+    <a class="jump-card" href="technology.html"><h3>4. Validate Protocol Fit \u2192</h3><p>Study protocol stacks, standards direction and implementation complexity before locking architecture.</p></a>
+    <a class="jump-card" href="bt_stack.html"><h3>5. Stress-Test Bluetooth Software \u2192</h3><p>Review Bluetooth stack maturity, features, profiles, certification posture and open-source options.</p></a>
+    <a class="jump-card" href="news.html"><h3>6. Verify With Live Signals \u2192</h3><p>Use the raw news stream to confirm whether the strategic story still matches what the market is doing now.</p></a>
   </div>
 </section>
 
