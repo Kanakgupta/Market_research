@@ -1,195 +1,201 @@
 {
-  "generated_at": "2026-08-02T13:13:23Z",
+  "generated_at": "2026-08-03T11:57:31Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "The Pixel 11 will be a perfect storm of bad timing",
-      "url": "https://9to5google.com/2026/08/02/the-pixel-11-will-be-a-perfect-storm-of-bad-timing/",
-      "source": "9to5Google",
-      "date": "2026-08-02",
+      "title": "An Nvidia RTX 5060 Ti survives a car crash and lives to tell the tale",
+      "url": "https://www.club386.com/an-nvidia-rtx-5060-ti-survives-a-car-crash-and-lives-to-tell-the-tale/",
+      "source": "Club386",
+      "date": "2026-08-03",
       "vendor": null,
-      "customer": "Google",
+      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "It\u2019s all leaked at this point. We know just about everything the Pixel 11 is bringing to the table, and, well, it feels a bit underwhelming, doesn\u2019t it? This issue of 9to5Google Weekender is a part of our newsletter that highlights the biggest Google stories with added commentary and more. Sign up h"
+      "summary": "A Chinese repair shop has received an Nvidia RTX 5060 Ti that was surprisingly still partially functional despite a severely bent cooler. Apparently, the card was stored in a car that got rear-ended and survived thanks to its small PCB, which only got slightly bent.\nThe card was received by repair t"
     },
     {
-      "title": "Foldables are sort of boring now \u2014 and that\u2019s great news for Apple",
-      "url": "https://www.theverge.com/column/972937/foldable-phones-boring-apple",
-      "source": "The Verge",
-      "date": "2026-08-02",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on smartphones and Android, follow Dominic Preston. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started Believe it or not, it didn'"
-    },
-    {
-      "title": "Linux 7.3 To Support The Qualcomm Adreno 704 & Adreno 722 GPUs",
-      "url": "https://www.phoronix.com/news/Linux-7.3-MSM-DRM-Driver",
-      "source": "phoronix.com",
-      "date": "2026-08-02",
+      "title": "Retroid Pocket Nova becomes one of first handheld hit by new Qualcomm chipset costs",
+      "url": "https://videocardz.com/newz/retroid-pocket-nova-becomes-one-of-first-handheld-hit-by-new-qualcomm-chipset-costs",
+      "source": "VideoCardz.com",
+      "date": "2026-08-03",
       "vendor": "Qualcomm",
       "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "Linux 7.3 To Support The Qualcomm Adreno 704 & Adreno 722 GPUs\nSent out on Saturday were the Qualcomm MSM DRM kernel graphics/display driver updates to land for the upcoming Linux 7.3 merge window.\nThis MSM driver feature pull going to DRM-Next adds support for the Adreno 704 and Adreno 722 GPUs. Th"
+      "summary": ""
     },
     {
-      "title": "I went running with the Galaxy Watch 9 in London, and it taught me something new",
-      "url": "https://www.zdnet.com/article/galaxy-watch-9-first-look/",
-      "source": "ZDNet",
-      "date": "2026-08-02",
+      "title": "Heavy Siri AI usage could cost more than we expected, given Cook\u2019s comment",
+      "url": "https://9to5mac.com/2026/08/03/heavy-siri-ai-usage-could-cost-more-than-we-expected-given-cooks-comment/",
+      "source": "9to5Mac",
+      "date": "2026-08-03",
       "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "What seems like a deliberately vague comment by outgoing Apple CEO Tim Cook during the earnings call suggests that heavy Siri AI usage could be more expensive than we\u2019ve so far expected. While it had always seemed clear that we wouldn\u2019t be able to make unlimited use of Siri AI without paying for it "
+    },
+    {
+      "title": "Microsoft joins, Broadcom exits Goldman\u2019s top-stocks list",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-joins-broadcom-exits-goldman-110015714.html",
+      "source": "Yahoo Finance",
+      "date": "2026-08-03",
+      "vendor": "Broadcom",
+      "customer": "Microsoft",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Investing.com -- Goldman Sachs reshuffled its U.S. Conviction List in its August update, adding Microsoft and five other names while removing Broadcom and three others.\nIn a note to clients, the firm highlighted what it sees as \"Stocks for a broadening market,\" adding Applied Materials, Delta Air Li"
+    },
+    {
+      "title": "28.9M-parameter LLM runs locally on ESP32-S3 at 9 tokens/s",
+      "url": "https://www.cnx-software.com/2026/08/03/28-9m-parameter-llm-runs-locally-on-esp32-s3-at-9-tokens-s/",
+      "source": "CNX Software",
+      "date": "2026-08-03",
+      "vendor": "Espressif",
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Slava S. (slvDev) has optimized a 28.9M-parameter LLM running locally on an ESP32-S3 development board at around 9 tokens/s while generating text, or more exactly, telling short stories. We&#8217;ve written about LLMs and ESP32 in the past, but usually the boards are used as low-power gateways to in"
+    },
+    {
+      "title": "Samsung is once again betting on MediaTek to power its flagship tablet",
+      "url": "https://www.digitaltrends.com/tablets/samsung-is-once-again-betting-on-mediatek-to-power-its-flagship-tablet/",
+      "source": "Digital Trends",
+      "date": "2026-08-03",
+      "vendor": "MediaTek",
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Samsung appears ready to place another major bet on MediaTek for its most expensive Android tablet. After using the Dimensity 9300+ inside the Galaxy Tab S10 Ultra and the Dimensity 9400+ in last year\u2019s Tab S11 Ultra, the company may stick with the chipmaker for a third consecutive generation.\nA new"
+    },
+    {
+      "title": "NXP explores acquisition of US edge AI firm Ambarella",
+      "url": "https://bits-chips.com/article/nxp-explores-acquisition-of-us-edge-ai-firm-ambarella/",
+      "source": "Bits&Chips",
+      "date": "2026-08-03",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NXP Semiconductors is in talks to acquire California-based automotive chip designer Ambarella in a deal that could be worth more than 3 billion dollars, according to a Financial Times report. No agreement has been reached and the discussions could still end without a transaction. Neither company has"
+    },
+    {
+      "title": "Linux 7.3 To Support Realtek RTL8261C & RTL8261D",
+      "url": "https://www.phoronix.com/news/Linux-7.3-RTL8261C-RTL8261D",
+      "source": "Phoronix",
+      "date": "2026-08-03",
+      "vendor": "Realtek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Linux 7.3 To Support Realtek RTL8261C & RTL8261D\nQueued into net-next ahead of the Linux 7.3 merge window is adding support for the Realtek RTL8261C and RTL8261D 10 Gigabit PHYs that launched last year.\nThe Realtek RTL8261C is an offshoot of the RTL8127 that is power-optimized at 1.65W and designed "
+    },
+    {
+      "title": "5 smartwatches you should buy instead of the Samsung Galaxy Watch 9",
+      "url": "https://www.androidauthority.com/samsung-galaxy-watch-9-alternatives-3692792/",
+      "source": "Android Authority",
+      "date": "2026-08-03",
+      "vendor": "Qualcomm",
       "customer": "Samsung",
       "application": "Wearable",
       "buckets": [],
-      "summary": "I appreciate the light and comfortable build on Samsung's Galaxy Watch 9, with a range of helpful tracking features and nudges."
+      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\n5 smartwatches you should buy instead of the Samsung Galaxy Watch 9\nAug 3, 2026 \u2014 5:30 AM ET\nSamsung launched its latest Galaxy Watches alongside its new foldable phones in July 2026. The Samsung Galaxy Watch 9 is now the lat"
     },
     {
-      "title": "Roundup: Wi-Fi Alliance & Bluetooth SIG collaborate, Plume's new CRO, Extreme's multi-beam solution, & validating Wi-Fi 8 - Wi-Fi NOW Global",
-      "url": "https://wifinowglobal.com/news-and-blog/roundup-wi-fi-alliance-bluetooth-sig-collaborate-plumes-new-cro-extremes-multi-beam-solution-validating-wi-fi-8/",
-      "source": "Wi-Fi NOW Global",
-      "date": "2026-08-02",
+      "title": "Google Trails NVIDIA in AI Chip Sales, yet a Broadcom-Backed Pivot Could Unlock $252 Billion",
+      "url": "https://wccftech.com/google-trails-nvidia-in-ai-chip-sales-yet-a-broadcom-backed-pivot-could-unlock-252-billion/",
+      "source": "Wccftech",
+      "date": "2026-08-03",
+      "vendor": "Broadcom",
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "In a fresh report, Barclays claims that Google can earn as much as $252 billion in sales of its tensor processing units (TPUs) by shifting its business model. Google's TPUs are among the most widely used custom AI chips in the industry, and Barclays believes that the firm can further expand its plat"
+    },
+    {
+      "title": "EU launches \u20ac30bn AI Gigafactory plan with AMD, Nvidia & Qualcomm backing",
+      "url": "https://www.mobileeurope.co.uk/eu-ai-gigafactory-nvidia/",
+      "source": "Mobile Europe",
+      "date": "2026-08-03",
       "vendor": "Qualcomm",
       "customer": null,
-      "application": "Healthcare",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "By Claus Hetting, WiFi NOW CEO & Chairman\nWi-Fi Alliance and Bluetooth SIG join forces to resolve 6 GHz coexistence\nBluetooth SIG wants to use the 6 GHz band for future Bluetooth services \u2013 and that puts Bluetooth and Wi-Fi on a collision course. As of July 19, the Wi-Fi Alliance Bluetooth SIG are i"
+      "application": null,
+      "buckets": [],
+      "summary": "The European Union has called for proposals to build up to seven AI Gigafactories across Europe.\nIn a bid to expand its computing power, the move is backed by up to \u20ac10 billion in EU and national funding, the project is expected to attract more than \u20ac30 billion in total public and private investment"
     },
     {
-      "title": "Is Qualcomm\u2019s (QCOM) Q3 Results-And-Guidance Mix Reframing Its AI-First Investment Narrative?",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-qcom/qualcomm/news/is-qualcomms-qcom-q3-results-and-guidance-mix-reframing-its",
-      "source": "simplywall.st",
-      "date": "2026-08-02",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
+      "title": "NXP Ambarella Acquisition Talks: ADAS, Edge AI, and Strategic Fit - News and Statistics",
+      "url": "https://www.indexbox.io/blog/nxp-in-talks-to-acquire-ambarella-what-it-means-for-adas-and-edge-ai/",
+      "source": "IndexBox",
+      "date": "2026-08-03",
+      "vendor": "NXP",
+      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:QCOM\nIs Qualcomm\u2019s (QCOM) Q3 Results-And-Guidance Mix Reframing Its AI-First Investment Narrative?\n- Qualcomm recently reported fiscal third-quarter 2026 results showing revenue of US$9,947 million and net income of US$2,002 million, alongside a ne"
+      "summary": "NXP in Talks to Acquire Ambarella: What It Means for ADAS and Edge AI\nNXP Semiconductors, a leading automotive chipmaker, is reportedly in talks to acquire Ambarella, a company known for its advanced driver assistance system (ADAS) designs, according to a Financial Times report. The potential deal w"
     },
     {
-      "title": "AVGO Stock: Why Broadcom Fell 15% on a Record Quarter",
-      "url": "https://www.top1markets.com/news/broadcom-avgo-stock-analysis",
-      "source": "top1markets.com",
-      "date": "2026-08-02",
+      "title": "Is Broadcom (AVGO) Undervalued On AI Demand And Software Growth?",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-avgo/broadcom/news/is-broadcom-avgo-undervalued-on-ai-demand-and-software-growt",
+      "source": "simplywall.st",
+      "date": "2026-08-03",
+      "vendor": "Broadcom",
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:AVGO\nIs Broadcom (AVGO) Undervalued On AI Demand And Software Growth?\nFresh attention on Broadcom (AVGO) has been sparked by reports of strong AI related demand for its accelerators and networking gear, together with rapid growth in its infrastruct"
+    },
+    {
+      "title": "Why NXP Is Eyeing Ambarella?",
+      "url": "https://www.eetimes.com/nxp-eying-ambarella-is-it-about-automotive-or-edge-ai/",
+      "source": "EE Times",
+      "date": "2026-08-03",
+      "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "NXP Eying Ambarella: Is It About Automotive or Edge AI?",
+      "url": "https://www.eetimes.com/nxp-eying-ambarella-is-it-about-automotive-or-edge-ai/",
+      "source": "EE Times",
+      "date": "2026-08-03",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Ambarella has quietly transformed its automotive computer-vision technology to serve edge AI applications. The post NXP Eying Ambarella: Is It About Automotive or Edge AI? appeared first on EE Times."
+    },
+    {
+      "title": "Wireless industrial automation IoT device shipments rise sharply",
+      "url": "https://www.computerweekly.com/news/366646821/Wireless-industrial-automation-IoT-device-shipments-rise-sharply",
+      "source": "Computer Weekly",
+      "date": "2026-08-03",
+      "vendor": "Qualcomm",
+      "customer": "Microsoft",
+      "application": "Industrial",
+      "buckets": [
+        "ieee15_4"
+      ],
+      "summary": "zapp2photo - stock.adobe.com\nWireless industrial automation IoT device shipments rise sharply\nStudy from Berg Insight points to solid growth for industrial automation tech as standardised wireless technologies expand into critical industrial applications\nIn an environment where users increasingly ex"
+    },
+    {
+      "title": "Apple & Broadcom: A Strong US Supply Chain Agreement",
+      "url": "https://supplychaindigital.com/news/apple-broadcom-a-strong-us-supply-chain-agreement",
+      "source": "Supply Chain Digital",
+      "date": "2026-08-03",
       "vendor": "Broadcom",
       "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "AVGO Stock: Why Broadcom Fell 15% on a Record Quarter\nWhere AVGO stock stands right now\nBroadcom trades near $389.28 (July 31, 2026 close) with a market capitalization of roughly $1.85 trillion across about 4.76 billion shares \u2014 up meaningfully over the past year but well below its high, a combinati"
+      "summary": "Apple & Broadcom: A Strong US Supply Chain Agreement\nApple has committed to purchasing more than 15 billion custom chips from Broadcom under a multi-year deal agreement valued at more than US$30bn. The arrangement forms part of Apple's American Manufacturing Program and represents one of the largest"
     },
     {
-      "title": "The Pixel 6 was a glorious mess, and Google is better for it",
-      "url": "https://www.androidauthority.com/google-pixel-6-revisit-2026-3692192/",
-      "source": "Android Authority",
-      "date": "2026-08-02",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\nThe Pixel 6 was a glorious mess, and Google is better for it\nAug 2, 2026 \u2014 5:30 AM ET\nI have a complicated relationship with the Google Pixel 6, but I still find news of its demise to be bittersweet. I appreciate that Google "
-    },
-    {
-      "title": "1 Incredible Reason to Buy Qualcomm Stock Right Now",
-      "url": "https://www.fool.com/investing/2026/08/02/1-incredible-reason-buy-qualcomm-stock-right-now/",
-      "source": "fool.com",
-      "date": "2026-08-02",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Qualcomm (QCOM -2.63%) stock is down about 14% year to date following the recent tech sell-off. But the best reason to buy it is the 2.5% forward dividend yield, which also comes with significant upside potential as Qualcomm targets massive growth in the data center market.\nIt's rare to find a top t"
-    },
-    {
-      "title": "Apple Plans Smart Home Expansion With New Siri AI Features",
-      "url": "https://chshyd.in/tech/apple-plans-smart-home-expansion-with-new-siri-ai-features/",
-      "source": "chshyd.in",
-      "date": "2026-08-02",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "Apple Plans Smart Home Expansion With New Siri AI Features\nNew Siri AI capabilities underscore Apple\u2019s preparedness for a major push into the smart home arena, with a fresh emphasis on connected displays, home automation and voice-activated devices. Better conversational skills, stronger device awar"
-    },
-    {
-      "title": "Meet the 'internet radical' who helped Microsoft get email and AT&T get online",
-      "url": "https://www.theregister.com/offbeat/2026/08/02/meet-the-internet-radical-who-helped-microsoft-get-email-and-att-get-online/5281281",
-      "source": "The Register",
-      "date": "2026-08-02",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "Tom Evslin on Bill Gates, the birth of Exchange, and dragging Ma Bell onto the web"
-    },
-    {
-      "title": "Play games with your brain signals using Octopus 16 wireless EEG device",
-      "url": "https://www.cnx-software.com/2026/08/02/play-games-with-your-brain-signals-using-octopus-16-wireless-eeg-device/",
-      "source": "CNX Software",
-      "date": "2026-08-02",
-      "vendor": "TI",
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "Octopus 16 is a wireless biosignal HID device for the XIAO ESP32-S3 board designed to let users play computer games using brain signals (EEG) with no hands (or implants) needed. The board packs 16 electrodes to measure biosignals, including EEG (electroencephalography), EMG (electromyography), and E"
-    },
-    {
-      "title": "Xiaomi raises smartphone prices by up to 13% in China",
-      "url": "https://www.notebookcheck.net/Xiaomi-raises-smartphone-prices-by-up-to-13-in-China.1358061.0.html",
-      "source": "Notebookcheck",
-      "date": "2026-08-02",
-      "vendor": "Qualcomm",
-      "customer": "Xiaomi",
-      "application": null,
-      "buckets": [],
-      "summary": "Xiaomi raises smartphone prices by up to 13% in China\nREDMI Turbo 5, Turbo 5 Max, K90, K90 Max, K90 Pro Max, and K90 Ultra just received official price hikes in China, effective August 2. Prices for some of the Xiaomi 17 series phones also increased, with the Pro Max rising by up to 500 yuan.\nNotabl"
-    },
-    {
-      "title": "Qualcomm Stock: Buy or Sell?",
-      "url": "https://www.fool.com/investing/2026/08/02/qualcomm-stock-buy-or-sell/",
-      "source": "fool.com",
-      "date": "2026-08-02",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Qualcomm (QCOM -2.63%) reported revenue declines as the smartphone industry faces headwinds.\n*Stock prices used were the afternoon prices of July 30, 2026. The video was published on Aug.1, 2026.\nInvest better with The Motley Fool. Get stock recommendations, portfolio guidance, and more from The Mot"
-    },
-    {
-      "title": "Qualcomm is raising chip prices from September 1, and Android phones could get more expensive",
-      "url": "https://www.tweaktown.com/news/112965/qualcomm-is-raising-chip-prices-from-september-1-and-android-phones-could-get-more-expensive/index.html",
-      "source": "TweakTown",
-      "date": "2026-08-02",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Like the Apple Watch? Check Out These 5 Affordable Alternatives Under Rs 5,000",
-      "url": "https://www.news18.com/photogallery/tech/best-apple-watch-alternatives-under-rs-5000-amazon-india-ws-l-10247258.html",
-      "source": "News18",
-      "date": "2026-08-02",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Wearable",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Like the Apple Watch? Check Out These 5 Affordable Alternatives Under Rs 5,000\nLast Updated:\nShop five affordable Apple Watch alternatives offering AMOLED displays, Bluetooth calling, fitness tracking and long battery life for under Rs 5,000.\n1/7\nThe Apple Watch may not suit every budget, but severa"
-    },
-    {
-      "title": "Home - NXP Community",
-      "url": "https://community.nxp.com/",
-      "source": "NXP Community",
-      "date": "2026-08-02",
+      "title": "UBS downgrades NXP Semiconductors stock rating on China risks By Investing.com",
+      "url": "https://ca.investing.com/news/stock-market-news/ubs-downgrades-nxp-semiconductors-stock-rating-on-china-risks-93CH-4769935",
+      "source": "Investing.com Canada",
+      "date": "2026-08-03",
       "vendor": "NXP",
       "customer": null,
       "application": null,
@@ -197,32 +203,10 @@
       "summary": ""
     },
     {
-      "title": "NXP is chasing Ambarella for $3.3 billion because it needs eyes, not just brains",
-      "url": "https://startupfortune.com/nxp-is-chasing-ambarella-for-33-billion-because-it-needs-eyes-not-just-brains/",
-      "source": "Startup Fortune",
-      "date": "2026-08-02",
-      "vendor": "NXP",
-      "customer": "Microsoft",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "NXP wants Ambarella because cameras are becoming decision-making hardware, and the reported price shows how expensive that layer has become.\nNXP Semiconductors is in talks to buy Ambarella in a deal worth more than $3 billion, according to the Financial Times. That's real money. It is also a plain a"
-    },
-    {
-      "title": "Ambarella (AMBA) Is Reportedly In Acquisition Talks With NXP Semiconductors",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-amba/ambarella/news/ambarella-amba-is-reportedly-in-acquisition-talks-with-nxp-s",
-      "source": "simplywall.st",
-      "date": "2026-08-02",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:AMBA\nAmbarella (AMBA) Is Reportedly In Acquisition Talks With NXP Semiconductors\n- Ambarella, listed as NasdaqGS:AMBA, is reportedly in acquisition discussions with NXP Semiconductors.\n- The talks relate to a potential deal within the AI chip and a"
-    },
-    {
-      "title": "TWSE Foreign Holding Weekly (Jul 31st): TSMC, MediaTek, Delta Electronics, Chroma ATE",
-      "url": "https://www.smartkarma.com/insights/twse-foreign-holding-weekly-jul-31st-tsmc-mediatek-delta-electronics-chroma-ate",
-      "source": "Smartkarma",
-      "date": "2026-08-02",
+      "title": "MediaTek Prospects Improve Further With AI Capital Spending Strength and Potential Customer Wins",
+      "url": "https://www.morningstar.com/company-reports/1492918-mediatek-prospects-improve-further-with-ai-capital-spending-strength-and-potential-customer-wins",
+      "source": "Morningstar",
+      "date": "2026-08-03",
       "vendor": "MediaTek",
       "customer": null,
       "application": null,
@@ -230,303 +214,281 @@
       "summary": ""
     },
     {
-      "title": "NXP Is Circling Ambarella in a $3.3 Billion Bet on AI Vision Chips",
-      "url": "https://startupfortune.com/nxp-is-circling-ambarella-in-a-33-billion-bet-on-ai-vision-chips/",
-      "source": "Startup Fortune",
-      "date": "2026-08-02",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Automotive",
+      "title": "Gasgoo Weekly | Tao Hailong Appointed General Manager of Hasco; Qualcomm Wins Major Order from BMW",
+      "url": "https://autonews.gasgoo.com/articles/news/gasgoo-weekly-tao-hailong-appointed-general-manager-of-hasco-qualcomm-wins-major-order-from-bmw-2084182328262762497",
+      "source": "Gasgoo",
+      "date": "2026-08-03",
+      "vendor": "Qualcomm",
+      "customer": "BMW",
+      "application": "Industrial",
       "buckets": [],
-      "summary": "NXP's interest in Ambarella isn't just another chip deal rumor. It's a plain signal that automotive AI is moving from radar and control systems into cameras that have to make decisions at the edge.\nThe Financial Times reported this weekend that NXP Semiconductors is in discussions to buy Ambarella, "
+      "summary": "What were the major headlines in the global automotive industry this week?\n20 Journalists Invited to Monitor Payment Terms in Auto Industry\nGasgoo has learned that the Ministry of Industry and Information Technology (MIIT) recently convened a media briefing to outline efforts to shorten payment term"
     },
     {
-      "title": "Is Ambarella (AMBA) Cheap After Rumored NXP Takeover Talks?",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/ambarella-amba-cheap-rumored-nxp-002002501.html",
-      "source": "Yahoo Finance",
-      "date": "2026-08-02",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.\nRumored NXP Deal Puts Ambarella Stock in the M&A Spotlight\nReports that NXP Semiconductors is in talks to acquire Ambarella (NasdaqGS:AMBA) have pushed the st"
-    },
-    {
-      "title": "Renesas Electronics (TSE:6723) Stock Rebounds On Strong Margins As Cost Questions Linger",
-      "url": "https://simplywall.st/stocks/jp/semiconductors/tse-6723/renesas-electronics-shares/news/renesas-electronics-tse6723-stock-rebounds-on-strong-margins",
-      "source": "simplywall.st",
-      "date": "2026-08-01",
+      "title": "Renesas launches third-generation MRDIMM chipset solutions for DDR5 server memory",
+      "url": "https://www.newelectronics.co.uk/content/product-launches/renesas-launches-third-generation-mrdimm-chipset-solutions-for-ddr5-server-memory",
+      "source": "New Electronics",
+      "date": "2026-08-03",
       "vendor": "Renesas",
       "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "- Japan\n- /\n- Semiconductors\n- /\n- TSE:6723\nRenesas Electronics (TSE:6723) Stock Rebounds On Strong Margins As Cost Questions Linger\nRenesas Electronics stock went into this earnings print on the back foot, down about 29% over the past month, yet the latest quarter read more like a relief rally case"
-    },
-    {
-      "title": "Apple Upgrade might\u2019ve provided our first hint for what could change with Apple Card",
-      "url": "https://9to5mac.com/2026/08/01/apple-upgrade-will-it-replace-apple-card-monhtly-installments/",
-      "source": "9to5Mac",
-      "date": "2026-08-01",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "This week, Apple launched Apple Upgrade, its new leasing program for most Apple products. It replaces the iPhone Upgrade Program entirely, and for the most part, it\u2019s an incredible deal. The deal is so good that largely, there isn\u2019t a great reason to use Apple Card Monthly Installments (ACMI) anymor"
-    },
-    {
-      "title": "Pixel 11 specs and price leak with no surprises",
-      "url": "https://www.theverge.com/tech/974238/pixel-11-specs-and-price-leak",
-      "source": "The Verge",
-      "date": "2026-08-01",
-      "vendor": null,
-      "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "Android Headlines claims to have the specs and price for the entire Pixel 11 lineup. What the site shared basically lines up with everything else that we've heard in the lead-up to the August 12th event. The Pixel 11 is expected to get a $100 price hike, starting at $899, but will come with 256GB [&"
+      "summary": ""
     },
     {
-      "title": "Saturday Night Open Thread: Time keeps on slipping, slipping, slipping\u2026",
-      "url": "https://sports.yahoo.com/articles/saturday-night-open-thread-time-213000151.html",
-      "source": "sports.yahoo.com",
-      "date": "2026-08-01",
-      "vendor": null,
+      "title": "Phoenix Software staff win Broadcom VCF Knight status",
+      "url": "https://itbrief.co.uk/story/phoenix-software-staff-win-broadcom-vcf-knight-status",
+      "source": "IT Brief UK",
+      "date": "2026-08-03",
+      "vendor": "Broadcom",
       "customer": null,
       "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google Just Leaked Its AirTag Killer, It's Not What We'd Expect",
+      "url": "https://memeburn.com/google-pixel-tag-android-airtag-rival/",
+      "source": "Memeburn",
+      "date": "2026-08-03",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Asset Tracking",
       "buckets": [
-        "thread"
+        "bluetooth"
       ],
-      "summary": "Saturday Night Open Thread: Time keeps on slipping, slipping, slipping\u2026\nLive from Delaware, it\u2019s Saturday Night! I, NAS204PSU, am here at BTSC to bring you this Saturday Night Open Thread (aka SNOT).\n2026 training camp is underway and it feels and looks a lot different under Big Mike. The new era co"
+      "summary": "TL;DR\n- The Google Pixel Tag leaked via European retail listings and a product image obtained by 9to5Google, revealing a pill-shaped Bluetooth tracker priced around $34.\n- It integrates with Find Hub, Google's crowdsourced tracker network built into every Android phone \u2014 but UWB precision finding ha"
     },
     {
-      "title": "Apple @ Work: Apple says MacBook Neo is pulling schools away from Windows and Chromebooks",
-      "url": "https://9to5mac.com/2026/08/01/apple-says-macbook-neo-is-pulling-schools-away-from-windows-and-chromebooks/",
-      "source": "9to5Mac",
-      "date": "2026-08-01",
-      "vendor": "Apple",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple @ Work is exclusively brought to you by Mosyle, the only Apple Unified Platform. Mosyle is the only solution that integrates in a single professional grade platform all the solutions necessary to seamlessly and automatically deploy, manage, and protect Apple devices at work. Over 45,000 organi"
-    },
-    {
-      "title": "Indie App Spotlight: \u2018Overflight\u2019 lets you glance at what planes are flying above you",
-      "url": "https://9to5mac.com/2026/08/01/indie-app-spotlight-overflight-lets-you-glance-at-what-planes-are-flying-above-you/",
-      "source": "9to5Mac",
-      "date": "2026-08-01",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Welcome to Indie App Spotlight. This is a weekly 9to5Mac series where we showcase the latest apps in the indie app world. If you\u2019re a developer and would like your app featured, get in contact. If you\u2019re an aviation geek, Overflight is a fun new app for iPhone, iPad, and Apple TV that shows you exac"
-    },
-    {
-      "title": "Should you still buy your next smartphone \u2014 or subscribe to it instead?",
-      "url": "https://techcrunch.com/2026/08/01/should-you-still-buy-your-next-smartphone-or-subscribe-to-it-instead/",
-      "source": "TechCrunch",
-      "date": "2026-08-01",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "Apple's new Upgrade program is the latest sign that smartphone ownership is changing."
-    },
-    {
-      "title": "Apple Revenue from Qualcomm Dropping Faster than Predicted",
-      "url": "https://www.ilounge.com/news/apple/apple-revenue-from-qualcomm-dropping-faster-than-predicted",
-      "source": "ilounge.com",
-      "date": "2026-08-01",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "Cristiano Amon, the CEO of Qualcomm, states that their Apple revenue is expected to drop faster than predicted due to supply constraints, reducing the Qualcomm component share used in the next iPhone.\nThe drop is expected to hit at the start of Q4. On September 1, Qualcomm will be increasing its pri"
-    },
-    {
-      "title": "I\u2019m not convinced the 20th anniversary iPhone will be what we think, here\u2019s why",
-      "url": "https://9to5mac.com/2026/08/01/heres-why-iphone-20-could-actually-be-iphone-air-3/",
-      "source": "9to5Mac",
-      "date": "2026-08-01",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Next year, the iPhone will be turning 20 \u2013 and Apple is heavily rumored to be working on a radical new design to celebrate. Many have expected this to come in the form of iPhone 19 Pro (more likely to be called iPhone 20 to align with the anniversary), but I think there\u2019s one solid reason that it ma"
-    },
-    {
-      "title": "This GeForce RTX 5060 Ti was bent in half in a car crash, but it still works after memory fix",
-      "url": "https://videocardz.com/newz/this-geforce-rtx-5060-ti-was-bent-in-half-in-a-car-crash-but-it-still-works-after-memory-fix",
-      "source": "VideoCardz.com",
-      "date": "2026-08-01",
-      "vendor": null,
+      "title": "NXP aims for AI expertise for the automotive industry through the acquisition of Ambarella",
+      "url": "https://www.techzine.eu/news/infrastructure/143350/nxp-aims-for-ai-expertise-for-the-automotive-industry-through-the-acquisition-of-ambarella/",
+      "source": "Techzine Global",
+      "date": "2026-08-03",
+      "vendor": "NXP",
       "customer": null,
       "application": "Automotive",
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "Xbox May Walk Away From Steam, As It Reportedly Prepares PC Strategy Shift Amid 2026 Reset",
-      "url": "https://wccftech.com/xbox-walk-away-steam-pc-strategy-shift/",
-      "source": "Wccftech",
-      "date": "2026-08-01",
+      "title": "NXP Weighs Takeover of Chip Designer Ambarella",
+      "url": "https://www.marketscreener.com/quote/stock/NXP-SEMICONDUCTORS-N-V-6467512/news/NXP-Weighs-Takeover-of-Chip-Designer-Ambarella-53922222/",
+      "source": "marketscreener.com",
+      "date": "2026-08-03",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NXP Semiconductors is in talks to acquire Ambarella, according to the Financial Times, citing people familiar with the matter. Following the report, Ambarella shares surged nearly 18%, while NXP stock fell more than 3%. Ambarella's market cap stands at about $3.25bn. The talks are ongoing and may no"
+    },
+    {
+      "title": "Nordic Air Defence Demonstrates Radio-Silent K100XR Drone Interceptor",
+      "url": "https://quwa.org/europe/defence-news-eu/nordic-air-defence-demonstrates-radio-silent-k100xr-drone-interceptor/",
+      "source": "quwa.org",
+      "date": "2026-08-03",
       "vendor": null,
       "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "- 0-20%: Unlikely - Lacks credible sources\n- 21-40%: Questionable - Some concerns remain\n- 41-60%: Plausible - Reasonable evidence\n- 61-80%: Probable - Strong evidence\n- 81-100%: Highly Likely - Multiple reliable sources\n60%\nPlausible\nFollowing the acquisition spree spearheaded by former head Phil S"
-    },
-    {
-      "title": "Honor Robot Phone - Full phone specifications",
-      "url": "https://www.gsmarena.com/honor_robot_phone_5g-14827.php",
-      "source": "GSMArena.com",
-      "date": "2026-08-01",
-      "vendor": null,
-      "customer": "Xiaomi",
       "application": "Robotics",
       "buckets": [],
-      "summary": "Login\nUnofficial preliminary specifications\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\n120W charger, 6k mAh, LTPO Amoled, robotic camera... now this is a phone that made S26U look like a tolddler, pretty sure it will - at some point - make a flying "
+      "summary": "Nordic Air Defence, a Stockholm startup, held the first public demonstration of its K100XR counter-drone interceptor, with press observing a live engagement against target drones in reporting that appeared on 5 July 2026.\nThe company said on its own account that the system detected and engaged targe"
     },
     {
-      "title": "Oklahoma animal welfare group highlights dog's reunion with owners as reason to microchip pets",
-      "url": "https://www.koco.com/article/microchipping-of-pets-encouraged-village-animal-welfare/73323785",
-      "source": "KOCO",
-      "date": "2026-08-01",
-      "vendor": "Microchip",
+      "title": "MediaTek board approves $5 billion investment to expand AI data centre ASIC business",
+      "url": "https://tele.net.in/national-news/mediatek-board-approves-5-billion-investment-to-expand-ai-data-centre-asic-business-12222695",
+      "source": "tele.net.in",
+      "date": "2026-08-03",
+      "vendor": "MediaTek",
       "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "Dog reunited with family after going missing for a year, microchipping of pets encouraged\nA local animal welfare group is urging pet owners to microchip their pets, sharing the story of Foxy, a stray dog who was reunited with her family after being missing for a year\nA local animal welfare group is "
+      "summary": "MediaTek has approved a discretionary financing budget of $5 billion to support its long-term expansion into artificial intelligence (AI) application-specific integrated circuits (ASICs) for data centres, as the company looks to diversify beyond the smartphone market.\nThe company said the investment"
     },
     {
-      "title": "Mac Studio: Here\u2019s what Apple has in store for this fall and beyond",
-      "url": "https://9to5mac.com/2026/08/01/heres-what-to-come-with-the-next-apple-mac-studio-refresh/",
-      "source": "9to5Mac",
-      "date": "2026-08-01",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
+      "title": "Renesas plans to phase out Takasaki factory production and expand R&D focus",
+      "url": "https://www.digitimes.com/news/a20260803PR202/renesas-production-development-manufacturing-growth.html",
+      "source": "digitimes",
+      "date": "2026-08-03",
+      "vendor": "Renesas",
+      "customer": null,
+      "application": "Industrial",
       "buckets": [],
-      "summary": "Later this fall, Apple will be updating the Mac Studio for the first time since early 2025. That may be just over a year ago, but it\u2019s significant for one main reason: the highest end Mac Studio is still M3 based, as Apple never made an Ultra version of the M4 chipset. Here\u2019s what to expect with the"
+      "summary": "Renesas Electronics plans to gradually end production at its Takasaki factory in Japan over the next two to three years while strengthening research and development there...\nThe article requires paid subscription.\nSubscribe Now\nRenesas Electronics plans to gradually end production at its Takasaki fa"
     },
     {
-      "title": "Broadcom\u2019s Big AI Bets: Can the Stock Still Run?",
-      "url": "https://www.tipranks.com/news/weekend-updates/broadcoms-big-ai-bets-can-the-stock-still-run",
-      "source": "TipRanks",
-      "date": "2026-08-01",
+      "title": "Microsoft says 8 GB of RAM should be enough for anyone running Windows 11",
+      "url": "https://www.theregister.com/os-platforms/2026/08/03/microsoft-says-8-gb-of-ram-should-be-enough-for-anyone-running-windows-11/5282153",
+      "source": "The Register",
+      "date": "2026-08-03",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "MOST POPULAR\nAI\n-\nSYSTEMS\nA deep dive into Nvidia's Vera CPU and the Olympus cores that power it\n88 custom cores, 176 funky threads, 1.5 TB of laptop RAM, and 1.8 TB/s of NVLink connectivity \u2014 this isn't your typical datacenter chip\n-\nOFF-PREM\nEnterprise cloud infrastructure uptake shows no sign of "
+    },
+    {
+      "title": "Standard Chartered picks Broadcom for secure, always-on global banking services - frontier-enterprise.com",
+      "url": "https://www.frontier-enterprise.com/standard-chartered-picks-broadcom-for-secure-always-on-global-banking-services/",
+      "source": "frontier-enterprise.com",
+      "date": "2026-08-03",
       "vendor": "Broadcom",
-      "customer": "Samsung",
+      "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "Broadcom ( (AVGO) ) has been popular among investors this week. Here is a recap of the key news on this stock.\nClaim 55% Off TipRanks\n- Unlock powerful investing tools with TipRanks Premium to make smarter, more confident investment decisions\n- Subscribe to TipRanks Smart Investor Newsletter, and di"
+      "summary": "Standard Chartered and Broadcom are joining forces to accelerate the bank\u2019s global infrastructure modernization by establishing a secure, resilient private cloud foundation to seamlessly support critical banking services across 54 global markets.\nAs an international bank, Standard Chartered requires"
     },
     {
-      "title": "Uber is building an autonomous vehicle empire, and here\u2019s every company it\u2019s using to do it",
-      "url": "https://techcrunch.com/2026/08/01/ubers-autonomous-vehicle-deal-tracker/",
-      "source": "TechCrunch",
-      "date": "2026-08-01",
+      "title": "MediaTek Arm Commits Investments of Up To $100 Million in Two Funds; Shares Jump 10%",
+      "url": "https://www.marketscreener.com/news/mediatek-arm-commits-investments-of-up-to-100-million-in-two-funds-shares-jump-10-ce7f50d8de8ff32c",
+      "source": "marketscreener.com",
+      "date": "2026-08-03",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "MediaTek Arm Commits Investments of Up To $100 Million in Two Funds; Shares Jump 10%MediaTek 's wholly-owned subsidiary, Digimoc Holdings, has committed to acquiring an investment stake in the private equity fund Achi Capital Partners Global Fund II with a maximum capital cap of..."
+    },
+    {
+      "title": "Japan Earnings Wrap: Renesas, Kioxia Rise; Fanuc, Toto Declines",
+      "url": "https://www.marketscreener.com/news/japan-earnings-wrap-renesas-kioxia-rise-fanuc-toto-declines-ce7f50d8de8cfe21",
+      "source": "marketscreener.com",
+      "date": "2026-08-03",
+      "vendor": "Renesas",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Japan Earnings Wrap: Renesas, Kioxia Rise; Fanuc, Toto Declines Published on 08/02/2026 at 11:19 pm EDT MT Newswires This article is reserved for our members.Log in to continueLog inCreate an account Continue with Google Continue with Apple Continue with LinkedIn or by emailContinue with an email. C"
+    },
+    {
+      "title": "Google Pixel Tag: First Images Show Google\u2019s AirTag Alternative",
+      "url": "https://basic-tutorials.com/news/google-pixel-tag-first-images-show-googles-airtag-alternative/",
+      "source": "Basic Tutorials",
+      "date": "2026-08-03",
       "vendor": null,
+      "customer": "Apple",
+      "application": "Asset Tracking",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Google appears to be on the verge of releasing its first in-house Bluetooth tracker: The Google Pixel Tag has appeared in initial images and retailer listings and is expected to be unveiled on August 12, 2026, alongside the Pixel 11. Years after Apple introduced the AirTag, the Android camp is final"
+    },
+    {
+      "title": "Intel EMIB yields hit target, MediaTek eyes 2028 ASIC ramp",
+      "url": "https://www.digitimes.com/news/a20260803PD210/mediatek-asic-2028-intel-production.html",
+      "source": "digitimes",
+      "date": "2026-08-03",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "MediaTek said at its latest earnings call that its second-generation data-center ASIC product remains on schedule for mass production in 2028, and that the Intel embedded multi-die interconnect bridge (EMIB) advanced packaging process it uses has already...\nThe article requires paid subscription.\nSu"
+    },
+    {
+      "title": "Nordic Semiconductor: The Question Now Is CRA Enforcement Appeal (Rating Upgrade)",
+      "url": "https://seekingalpha.com/article/4929339-nordic-semiconductor-stock-question-cra-enforcement-appeal",
+      "source": "Seeking Alpha",
+      "date": "2026-08-03",
+      "vendor": "Nordic",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Taiwan Stocks Rebound to Close Up 266 Points as MediaTek, ASE Technology Lead Charge with Limit-Up Gains",
+      "url": "https://finance.biggo.com/news/76253818-5ff8-44b8-bc37-d0cc3920f865",
+      "source": "finance.biggo.com",
+      "date": "2026-08-03",
+      "vendor": "MediaTek",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Taiwan Stocks Rebound to Close Up 266 Points as MediaTek, ASE Technology Lead Charge with Limit-Up Gains\nTaiwan stocks rode a rollercoaster today, plunging more than 300 points in early trading on weakness across Asian markets before reversing sharply higher, led by limit-up gains in MediaTek (2454)"
+    },
+    {
+      "title": "Home - NXP Community",
+      "url": "https://community.nxp.com/",
+      "source": "NXP Community",
+      "date": "2026-08-03",
+      "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Meta straps on a \u2018Kick Me\u2019 sign by mistakenly taking down video by India\u2019s prime minister",
+      "url": "https://www.theregister.com/public-sector/2026/08/03/meta-straps-on-a-kick-me-sign-by-mistakenly-taking-down-video-by-indias-prime-minister/5282130",
+      "source": "The Register",
+      "date": "2026-08-03",
+      "vendor": null,
+      "customer": "Meta",
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "PLUS: DeepSeek to double peak hour prices for new model; Australia hikes fines for Big Tech; Japan\u2019s next moonshot to ride local rocket; and more!"
+    },
+    {
+      "title": "Qualcomm's Dividend Yield and AI Ambitions Make It a Compelling Buy",
+      "url": "https://finance.biggo.com/news/4c1a8ade-8084-450c-9fa3-ab12e96d8d7d",
+      "source": "finance.biggo.com",
+      "date": "2026-08-03",
+      "vendor": "Qualcomm",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Uber has partnered with \u2014 and in some cases made direct investments in \u2014 about 30 autonomous vehicle companies over the past two years. Here's the list and the latest on the partnerships."
+      "summary": "Qualcomm's Dividend Yield and AI Ambitions Make It a Compelling Buy\nQualcomm (QCOM) has taken a beating in the recent tech sell-off, with shares down about 14% year to date. But for investors looking for a rare combination of income and growth, the semiconductor giant offers a compelling case: a for"
     },
     {
-      "title": "Why Investors Shouldn\u2019t Sweat the Dip in Qualcomm\u2019s Handset Revenue, According to Experts",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-investors-shouldn-t-sweat-150002057.html",
-      "source": "Yahoo Finance",
-      "date": "2026-08-01",
+      "title": "Weekly news roundup: Intel revives DDR4, Samsung challenges TSMC at 2nm, Qualcomm raises chip prices",
+      "url": "https://www.digitimes.com/news/a20260803VL206/intel-tsmc-2nm-ddr4-samsung.html",
+      "source": "digitimes",
+      "date": "2026-08-03",
       "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The earnings season is in full swing, with tech giants unveiling their quarterly results one after another. This time, however, the market has been highly selective. Even companies posting blockbuster earnings have struggled to impress investors as concerns over heavy artificial intelligence (AI) sp"
-    },
-    {
-      "title": "Broadcom Stock Forecast: Why Did AVGO Fall After $13.5B Earnings and What's Next?",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261948103-avgo-stock-forecast-why-broadcom-fell-despite-strong-earnings-tradingkey",
-      "source": "TradingKey",
-      "date": "2026-08-01",
-      "vendor": "Broadcom",
-      "customer": null,
+      "customer": "Samsung",
       "application": null,
       "buckets": [],
-      "summary": "Broadcom Stock Forecast: Why Did AVGO Fall After $13.5B Earnings and What's Next?\nBroadcom's stock has corrected 17% from its high due to multiple compression, not fundamental weakness. Q2 FY2026 revenue reached $13.5 billion, driven by strong AI and Data Center growth. Despite positive fundamentals"
+      "summary": "AI-driven chip shortages, rising memory costs and intensifying foundry competition dominated the technology sector, with Intel reviving DDR4 platforms, Qualcomm raising prices, Samsung challenging TSMC at 2nm and Beijing accelerating domestic chip adoption. Below are the most-read DIGITIMES stories "
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 119,
-    "NXP": 87,
-    "Broadcom": 66,
-    "Microchip": 32,
-    "Renesas": 30,
-    "MediaTek": 27,
+    "Qualcomm": 113,
+    "NXP": 92,
+    "Broadcom": 57,
+    "Renesas": 35,
+    "MediaTek": 34,
+    "Microchip": 27,
     "Espressif": 19,
-    "STMicro": 16,
-    "Realtek": 12,
+    "STMicro": 18,
+    "Realtek": 15,
     "Synaptics": 8,
-    "Skyworks": 6,
-    "Silicon Labs": 4,
+    "Skyworks": 4,
+    "Nordic": 3,
     "TI": 3,
     "Apple": 3,
-    "u-blox": 3,
     "Infineon": 3,
-    "Nordic": 2,
+    "Silicon Labs": 3,
+    "Murata": 2,
     "Bosch": 2,
+    "u-blox": 2,
     "Goodix": 2,
-    "Murata": 1
+    "Beken": 1,
+    "Bestechnic": 1
   },
   "customer_news_30d": {
-    "Apple": 179,
+    "Apple": 180,
     "Google": 69,
-    "Samsung": 62,
-    "Microsoft": 31,
-    "Amazon": 26,
-    "BMW": 12,
-    "Meta": 9,
+    "Samsung": 59,
+    "Microsoft": 36,
+    "Amazon": 22,
+    "BMW": 11,
+    "Meta": 7,
     "Sony": 3,
-    "SwitchBot": 3,
-    "Xiaomi": 2,
     "Motorola": 2,
     "Huawei": 2,
+    "Xiaomi": 1,
     "Toyota": 1,
-    "Bose": 1
+    "SwitchBot": 1
   },
   "github_pulse": [
-    {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1651,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18680,
-      "pushed_at": "2026-07-31T21:46:53Z"
-    },
     {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
@@ -536,7 +498,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3852,
+      "issues_open": 3870,
       "prs_open": 0,
       "releases": [
         {
@@ -558,8 +520,44 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
         }
       ],
-      "stars": 16079,
-      "pushed_at": "2026-08-02T12:22:07Z"
+      "stars": 16089,
+      "pushed_at": "2026-08-02T18:00:57Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1652,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18690,
+      "pushed_at": "2026-08-03T05:35:06Z"
     },
     {
       "name": "OpenThread",
@@ -592,8 +590,23 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4000,
-      "pushed_at": "2026-08-01T04:19:54Z"
+      "stars": 4001,
+      "pushed_at": "2026-08-03T09:33:01Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 241569,
+      "pushed_at": "2026-08-02T23:25:22Z"
     },
     {
       "name": "Matter SDK",
@@ -604,7 +617,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2742,
+      "issues_open": 2757,
       "prs_open": 0,
       "releases": [
         {
@@ -626,23 +639,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8849,
-      "pushed_at": "2026-08-02T01:01:32Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 241414,
-      "pushed_at": "2026-08-01T17:03:33Z"
+      "stars": 8850,
+      "pushed_at": "2026-08-03T11:18:47Z"
     },
     {
       "name": "BlueZ",
@@ -652,7 +650,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 53,
+      "commits_30d": 52,
       "issues_open": 111,
       "prs_open": 0,
       "releases": [
@@ -675,7 +673,7 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1122,
+      "stars": 1123,
       "pushed_at": "2026-08-02T08:39:31Z"
     },
     {
@@ -687,7 +685,7 @@
         "ieee15_4"
       ],
       "commits_30d": 48,
-      "issues_open": 459,
+      "issues_open": 462,
       "prs_open": 0,
       "releases": [
         {
@@ -709,7 +707,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15463,
+      "stars": 15470,
       "pushed_at": "2026-08-01T06:14:57Z"
     },
     {
@@ -721,7 +719,7 @@
         "bluetooth"
       ],
       "commits_30d": 11,
-      "issues_open": 273,
+      "issues_open": 275,
       "prs_open": 0,
       "releases": [],
       "stars": 880,
@@ -744,6 +742,20 @@
   "recent_patents": [],
   "sec_filings_90d": [
     {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089397/tm2621905d1_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "8-K",
@@ -758,13 +770,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
     },
     {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
-    },
-    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -777,6 +782,13 @@
       "form": "8-K",
       "date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000057/lyb-20260731.htm"
+    },
+    {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-07-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
     },
     {
       "vendor": "Apple",
@@ -884,18 +896,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -1073,13 +1085,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-Q",
@@ -1092,6 +1097,13 @@
       "form": "8-K",
       "date": "2026-05-07",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-05-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
     },
     {
       "vendor": "Onsemi",
@@ -1134,20 +1146,6 @@
       "form": "8-K",
       "date": "2026-05-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000014/swks-20260505.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "10-Q",
-      "date": "2026-05-04",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000109786426000014/on-20260403.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-05-04",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126018868/ef20072220_8k.htm"
     }
   ],
   "tracked_competitors": [
@@ -2661,22 +2659,22 @@
           "url": "https://www.marketscreener.com/news/mediatek-inc-reports-earnings-results-for-the-second-quarter-and-six-months-ended-june-30-2026-ce7f50d8d98ffe26"
         },
         {
+          "title": "Samsung Selects MediaTek to Power Upcoming Flagship Tablet",
+          "date": "Aug 2026",
+          "url": "https://www.digitaltrends.com/tablets/samsung-is-once-again-betting-on-mediatek-to-power-its-flagship-tablet/"
+        },
+        {
+          "title": "MediaTek Subsidiary Digimoc Holdings Commits Up To $100 Million in Two Funds",
+          "date": "Aug 2026",
+          "url": "https://www.marketscreener.com/news/mediatek-arm-commits-investments-of-up-to-100-million-in-two-funds-shares-jump-10-ce7f50d8de8ff32c"
+        },
+        {
+          "title": "MediaTek's Second-Generation Data Center ASIC Product On Track for 2028 Mass Production",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260803PD210/mediatek-asic-2028-intel-production.html"
+        },
+        {
           "title": "MediaTek Launches Filogic 860 for Wi-Fi 7 Home Routers",
-          "date": "Jul 2026",
-          "url": ""
-        },
-        {
-          "title": "MediaTek Launches Filogic 860 Wi-Fi 7 Chip for US Home Routers",
-          "date": "Jul 2026",
-          "url": ""
-        },
-        {
-          "title": "MediaTek Launches Filogic 860 Wi-Fi 7 Solution for US Home Routers",
-          "date": "Jul 2026",
-          "url": ""
-        },
-        {
-          "title": "MediaTek Filogic 860 Chipset Powers New Wi-Fi 7 Home Routers",
           "date": "Jul 2026",
           "url": ""
         }
