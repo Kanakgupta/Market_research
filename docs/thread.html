@@ -29,11 +29,15 @@ a:hover { text-decoration:underline; }
 .topnav nav a.active { color:#fff; background:var(--accent); }
 .nav-dd { position:relative; }
 .nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.topnav nav .nav-dd-trigger { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav .nav-dd-trigger:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav .nav-dd-trigger.active { color:#fff; background:var(--accent); }
 .dd-caret { font-size:10px; }
 .nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
 .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
 .nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
 .nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.nav-news-last { margin-left:auto; }
 .topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
 
 .content { padding:24px 20px 60px; }
@@ -155,15 +159,20 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <a href="news.html" class="active">News</a>
-    <a href="opportunity.html" class="">Opportunity</a>
-    <a href="threat.html" class="">Threat</a>
+    <div class="nav-dd">
+      <a href="opportunity.html" class="nav-dd-trigger ">Companies <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="opportunity.html" class="">OEMs</a>
+        <a href="threat.html" class="">Vendors</a>
+      </div>
+    </div>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
     <a href="applications.html" class="">Applications</a>
     <a href="bt_stack.html" class="">BT Stack</a>
+    <a href="news.html" class="nav-news-last active">News</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-03 06:10 PDT</div>
+  <div class="meta-info">Updated 2026-08-03 10:28 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -191,12 +200,12 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">18 articles</span>
-    <span class="pill">1 vendors</span>
+    <span class="pill">1 articles</span>
+    <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-03 06:10">2026-08-03 06:10 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-03 10:28">2026-08-03 10:28 PDT</span></span>
   </div>
 </section>
 
@@ -223,374 +232,6 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="source">IEEE / Thread Group / CSA</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-07T00:00:00+00:00">2026-07-07</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="Apple" data-standard="" data-published="2026-08-02T11:00:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.poundingtherock.com/spurs-discussion-threads/106665/open-thread-jeremy-sochan-signed-with-the-portland-trail-blazers" target="_blank" rel="noopener">Open Thread: Jeremy Sochan signed with the Portland Trail Blazers</a></h2>
-      <p class="summary">Jeremy Sochan has had a strange NBA ride. Originally drafted ninth overall in 2022, he was a bit of a mismatch for the San Antonio Spurs. With his bright-colored hair and intimidating on-court nature, he harkened back to the mid-90s when th…</p>
-      <div class="meta-row">
-        <span class="source">poundingtherock.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-08-02T11:00:00+00:00">2026-08-02</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-08-01T21:30:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/saturday-night-open-thread-time-213000151.html" target="_blank" rel="noopener">Saturday Night Open Thread: Time keeps on slipping, slipping, slipping…</a></h2>
-      <p class="summary">Saturday Night Open Thread: Time keeps on slipping, slipping, slipping…
-Live from Delaware, it’s Saturday Night! I, NAS204PSU, am here at BTSC to bring you this Saturday Night Open Thread (aka SNOT).
-2026 training camp is underway and it fe…</p>
-      <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-08-01T21:30:00+00:00">2026-08-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-08-01T13:05:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/461513/open-thread-august-1-2026-any-big-plans-for-this-month" target="_blank" rel="noopener">Open Thread, August 1, 2026: Any big plans for this month?</a></h2>
-      <p class="summary">Here’s your open thread for Saturday (fight day)!
-Open Thread, August 1, 2026: Any big plans for this month?
-Your daily source for off topic chatter with the MMA Mania faithful.
-MMA ADJACENT
-Looking a little uncanny valley.
-In Japan these g…</p>
-      <div class="meta-row">
-        <span class="source">MMA Mania</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-08-01T13:05:00+00:00">2026-08-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-08-01T11:00:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.poundingtherock.com/spurs-discussion-threads/106649/open-thread-wemby-signs-a-new-deal-with-nike" target="_blank" rel="noopener">Open Thread: Wemby signs a new deal with Nike</a></h2>
-      <p class="summary">There is a lot going on this off season for Victor Wembanyama. Earlier this week he was in France cutting ribbon on the refurbished Nanterre court. Yesterday it was announced he signed a long-term contract with Nike.
-Open Thread: Wemby sign…</p>
-      <div class="meta-row">
-        <span class="source">poundingtherock.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-08-01T11:00:00+00:00">2026-08-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-08-01T00:29:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/2026-mlb-trade-deadline-open-002906822.html" target="_blank" rel="noopener">2026 MLB Trade Deadline: Open Thread</a></h2>
-      <p class="summary">2026 MLB Trade Deadline: Open Thread
-For many people, the trade deadline is one of the most exciting times in the baseball season, right up there with Opening Day and the playoffs. I am not one of these people, but I acknowledge and respect…</p>
-      <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-08-01T00:29:00+00:00">2026-08-01</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="thread" data-published="2026-07-31T14:30:52+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-std">Thread spec</span>
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://threadgroup.org/Portals/0/ConnectingIoTMeshNetworkswithBroadbandInfrastructureANewPathforServiceProviders.pdf" target="_blank" rel="noopener">Connecting IoT Mesh Networks with Broadband Infrastructure: A New Path for Service Providers</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Thread Group</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-31T14:30:52+00:00">2026-07-31</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-30T15:59:20+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.bluebirdbanter.com/general/63008/off-day-open-thread" target="_blank" rel="noopener">Off-Day Open Thread</a></h2>
-      <p class="summary">The Jays have the day off and then play 17 days in a row. One of those fun parts about being a baseball player is that there are often long stretches between weekends and, generally, weekends are just one day long.
-Off-Day Open Thread
-I’m u…</p>
-      <div class="meta-row">
-        <span class="source">Bluebird Banter</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-30T15:59:20+00:00">2026-07-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="Apple" data-standard="" data-published="2026-07-29T16:42:30+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        <span class="chip chip-cust">Apple</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.techtimes.com/articles/322053/20260729/homepod-mini-refresh-confirmed-fall-smarter-siri-ai-stays-cloud.htm" target="_blank" rel="noopener">HomePod mini Refresh Confirmed for Fall: Smarter Siri, but AI Stays in the Cloud</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Tech Times</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-29T16:42:30+00:00">2026-07-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-29T15:06:17+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.amazinavenue.com/new-york-mets-discussion/98624/mets-vs-braves-game-1-lineups-broadcast-info-and-open-thread-7-29-26" target="_blank" rel="noopener">Mets vs. Braves Game 1: Lineups, broadcast info, and open thread, 7/29/26</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">amazinavenue.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-29T15:06:17+00:00">2026-07-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-29T13:05:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/460820/open-thread-july-29-2026-what-do-you-want-to-talk-about" target="_blank" rel="noopener">Open Thread, July 29, 2026: What do you want to talk about?</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MMA Mania</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-29T13:05:00+00:00">2026-07-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="thread" data-published="2026-07-28T17:49:03+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-std">Thread spec</span>
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://threadgroup.org/Newsroom/PgrID/1804/PageID/15/ID/647" target="_blank" rel="noopener">Newsroom and Events</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Thread Group</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-28T17:49:03+00:00">2026-07-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-28T13:26:58+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-7-27/" target="_blank" rel="noopener">Buffalo Sabres Open Thread, Wk of 7/27</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Die by the Blade</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-28T13:26:58+00:00">2026-07-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-28T13:05:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.mmamania.com/daily_mania_ufc_mma/460486/open-thread-july-28-2026-tanks-muay-thai-and-chickpeas" target="_blank" rel="noopener">Open Thread, July 28, 2026: Tanks, Muay Thai and Chickpeas!</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">MMA Mania</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-28T13:05:00+00:00">2026-07-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-28T11:00:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.poundingtherock.com/spurs-discussion-threads/106549/open-thread-victor-wembanyama-wont-endorse-soda-brands" target="_blank" rel="noopener">Open Thread: Victor Wembanyama won’t endorse soda brands</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">poundingtherock.com</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-28T11:00:00+00:00">2026-07-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="matter,thread,ieee15_4,bluetooth,wifi" data-vendor="Espressif" data-customer="" data-standard="" data-published="2026-07-28T04:53:40+00:00">
-    <div class="thumb">
-      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/LILYGO-T-Display-C5-720x601.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Espressif</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/28/lilygo-t-display-c5-board-features-1-9-inch-ips-color-lcd-battery-support-qwiic-expansion-connectors/" target="_blank" rel="noopener">LILYGO T-Display C5 board features 1.9-inch IPS color LCD, battery support, Qwiic expansion connectors</a></h2>
-      <p class="summary">LILYGO T-Display C5 is an ESP32-C5 board with a 1.9-inch IPS color LCD, a USB-C port for power and programming, Lithium battery support, and GPIO expansion via headers and two Qwiic expansion connectors. The main benefit of using an ESP32-C…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-28T04:53:40+00:00">2026-07-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-27T11:00:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/open-thread-pau-gasol-rational-110000152.html" target="_blank" rel="noopener">Open Thread: The reason Pau Gasol joined the Spurs</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-27T11:00:00+00:00">2026-07-27</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="thread" data-vendor="" data-customer="" data-standard="" data-published="2026-07-26T07:00:00+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Thread</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://sports.yahoo.com/articles/open-thread-bleacher-reports-50-110000967.html" target="_blank" rel="noopener">Open Thread: Bleacher Reports 50 top trash-talkers</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Yahoo Sports</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-26T07:00:00+00:00">2026-07-26</span>
       </div>
     </div>
   </article>

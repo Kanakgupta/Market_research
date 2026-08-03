@@ -144,11 +144,15 @@ a:hover { text-decoration:underline; }
 .topnav nav a.active { color:#fff; background:var(--accent); }
 .nav-dd { position:relative; }
 .nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.topnav nav .nav-dd-trigger { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav .nav-dd-trigger:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav .nav-dd-trigger.active { color:#fff; background:var(--accent); }
 .dd-caret { font-size:10px; }
 .nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
 .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
 .nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
 .nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.nav-news-last { margin-left:auto; }
 .topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
 
 .content { padding:24px 20px 60px; }
@@ -273,13 +277,18 @@ _NAV_HTML = """
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="{{ 'active' if active=='index' else '' }}">Overview</a>
-    <a href="news.html" class="{{ 'active' if active in news_slugs else '' }}">News</a>
-    <a href="opportunity.html" class="{{ 'active' if active in ['customers','opportunity'] else '' }}">Opportunity</a>
-    <a href="threat.html" class="{{ 'active' if active in ['competitors','threat'] else '' }}">Threat</a>
+    <div class="nav-dd">
+      <a href="opportunity.html" class="nav-dd-trigger {{ 'active' if active in ['customers','opportunity','competitors','threat'] else '' }}">Companies <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="opportunity.html" class="{{ 'active' if active in ['customers','opportunity'] else '' }}">OEMs</a>
+        <a href="threat.html" class="{{ 'active' if active in ['competitors','threat'] else '' }}">Vendors</a>
+      </div>
+    </div>
     <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
     <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
     <a href="applications.html" class="{{ 'active' if active=='applications' else '' }}">Applications</a>
     <a href="bt_stack.html" class="{{ 'active' if active=='bt_stack' else '' }}">BT Stack</a>
+    <a href="news.html" class="nav-news-last {{ 'active' if active in news_slugs else '' }}">News</a>
   </nav>
   <div class="meta-info">Updated {{ generated_at }} PDT</div>
 </div></header>

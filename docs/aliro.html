@@ -29,11 +29,15 @@ a:hover { text-decoration:underline; }
 .topnav nav a.active { color:#fff; background:var(--accent); }
 .nav-dd { position:relative; }
 .nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.topnav nav .nav-dd-trigger { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav .nav-dd-trigger:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav .nav-dd-trigger.active { color:#fff; background:var(--accent); }
 .dd-caret { font-size:10px; }
 .nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
 .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
 .nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
 .nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.nav-news-last { margin-left:auto; }
 .topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
 
 .content { padding:24px 20px 60px; }
@@ -155,15 +159,20 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <a href="news.html" class="active">News</a>
-    <a href="opportunity.html" class="">Opportunity</a>
-    <a href="threat.html" class="">Threat</a>
+    <div class="nav-dd">
+      <a href="opportunity.html" class="nav-dd-trigger ">Companies <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="opportunity.html" class="">OEMs</a>
+        <a href="threat.html" class="">Vendors</a>
+      </div>
+    </div>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
     <a href="applications.html" class="">Applications</a>
     <a href="bt_stack.html" class="">BT Stack</a>
+    <a href="news.html" class="nav-news-last active">News</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-03 06:10 PDT</div>
+  <div class="meta-info">Updated 2026-08-03 10:28 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -191,12 +200,12 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">4 articles</span>
-    <span class="pill">2 vendors</span>
+    <span class="pill">1 articles</span>
+    <span class="pill">0 vendors</span>
     <span class="pill">33 customers</span>
     <span class="pill">7 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-03 06:10">2026-08-03 06:10 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-03 10:28">2026-08-03 10:28 PDT</span></span>
   </div>
 </section>
 
@@ -223,69 +232,6 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="source">FiRa Consortium / Aliro</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-07T00:00:00+00:00">2026-07-07</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="aliro,matter" data-vendor="Infineon" data-customer="" data-standard="aliro" data-published="2026-07-29T16:26:32+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-std">Aliro spec</span>
-        <span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Matter</span>
-        <span class="chip chip-vendor">Infineon</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://csa-iot.org/newsroom/infineon-technologies-on-aliro/" target="_blank" rel="noopener">Infineon Technologies on Aliro - csa-iot.org</a></h2>
-      <p class="summary">Infineon Technologies on Aliro&amp;nbsp;&amp;nbsp;csa-iot.org</p>
-      <div class="meta-row">
-        <span class="source">csa-iot.org</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-29T16:26:32+00:00">2026-07-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="aliro,matter" data-vendor="Infineon" data-customer="" data-standard="aliro" data-published="2026-07-29T16:12:50+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-std">Aliro spec</span>
-        <span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Matter</span>
-        <span class="chip chip-vendor">Infineon</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://csa-iot.org/newsroom/infineon-technologies-on-aliro/" target="_blank" rel="noopener">Infineon Technologies on Aliro</a></h2>
-      <p class="summary">“Before Aliro, lock manufacturers needed to work with every smartphone and user device manufacturer to achieve interoperability. Now, with the Aliro standard, all of this is much more seamless.” Promoter&amp;#8230;</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-29T16:12:50+00:00">2026-07-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="aliro,matter" data-vendor="STMicro" data-customer="" data-standard="aliro" data-published="2026-07-21T00:18:13+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-std">Aliro spec</span>
-        <span class="chip chip-tech">Aliro</span><span class="chip chip-tech">Matter</span>
-        <span class="chip chip-vendor">STMicro</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://csa-iot.org/newsroom/stmicroelectronics-on-aliro/" target="_blank" rel="noopener">STMicroelectronics on Aliro</a></h2>
-      <p class="summary">“It was an amazing journey to work on Aliro and make interoperability between smartphones and readers a reality. Interoperability now means that every reader and user device speaks the same&amp;#8230;</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-21T00:18:13+00:00">2026-07-21</span>
       </div>
     </div>
   </article>

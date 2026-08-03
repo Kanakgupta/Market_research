@@ -29,11 +29,15 @@ a:hover { text-decoration:underline; }
 .topnav nav a.active { color:#fff; background:var(--accent); }
 .nav-dd { position:relative; }
 .nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.topnav nav .nav-dd-trigger { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav .nav-dd-trigger:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav .nav-dd-trigger.active { color:#fff; background:var(--accent); }
 .dd-caret { font-size:10px; }
 .nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
 .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
 .nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
 .nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.nav-news-last { margin-left:auto; }
 .topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
 
 .content { padding:24px 20px 60px; }
@@ -155,15 +159,20 @@ a:hover { text-decoration:underline; }
   <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
   <nav>
     <a href="index.html" class="">Overview</a>
-    <a href="news.html" class="active">News</a>
-    <a href="opportunity.html" class="">Opportunity</a>
-    <a href="threat.html" class="">Threat</a>
+    <div class="nav-dd">
+      <a href="opportunity.html" class="nav-dd-trigger ">Companies <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="opportunity.html" class="">OEMs</a>
+        <a href="threat.html" class="">Vendors</a>
+      </div>
+    </div>
     <a href="relationships.html" class="">Relationships</a>
     <a href="technology.html" class="">Technology</a>
     <a href="applications.html" class="">Applications</a>
     <a href="bt_stack.html" class="">BT Stack</a>
+    <a href="news.html" class="nav-news-last active">News</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-03 06:10 PDT</div>
+  <div class="meta-info">Updated 2026-08-03 10:28 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -191,12 +200,12 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">10 articles</span>
-    <span class="pill">4 vendors</span>
+    <span class="pill">2 articles</span>
+    <span class="pill">1 vendors</span>
     <span class="pill">33 customers</span>
-    <span class="pill">8 applications</span>
+    <span class="pill">7 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-03 06:10">2026-08-03 06:10 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-03 10:28">2026-08-03 10:28 PDT</span></span>
   </div>
 </section>
 
@@ -227,7 +236,7 @@ a:hover { text-decoration:underline; }
     </div>
   </article>
   
-  <article class="card" data-buckets="ieee15_4" data-vendor="Qualcomm" data-customer="Microsoft" data-standard="" data-published="2026-08-03T08:19:24+00:00">
+  <article class="card" data-buckets="ieee15_4" data-vendor="Qualcomm" data-customer="Microsoft" data-standard="" data-published="">
     <div class="thumb">
       
     </div>
@@ -245,175 +254,7 @@ Wireless industrial automation IoT device shipments rise sharply
 Study from Berg Insight points to solid growth for industrial automation tech as standardised wireless technologies expand into critical industria…</p>
       <div class="meta-row">
         <span class="source">Computer Weekly</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-08-03T08:19:24+00:00">2026-08-03</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4,bluetooth,wifi" data-vendor="Espressif" data-customer="Amazon" data-standard="" data-published="2026-07-31T05:24:41+00:00">
-    <div class="thumb">
-      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/MakerGo-ESP32-C5-EVB-720x574.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
         
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Espressif</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/31/maker-go-esp32-c5-evb-board-features-rs-485-interface-four-relays-four-opto-isolated-inputs/" target="_blank" rel="noopener">Maker Go ESP32-C5-EVB board features RS-485 interface, four relays, four opto-isolated inputs</a></h2>
-      <p class="summary">Maker Go ESP32-C5-EVB is an ESP32-C5 board with four relays, four opto-isolated inputs, RS-485 communication, and support for Wi-Fi 6, Bluetooth Low Energy 5.0, and Thread/Zigbee connectivity. It&amp;#8217;s a variant of the Maker Go ESP32-C6-E…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-31T05:24:41+00:00">2026-07-31</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4,bluetooth,wifi" data-vendor="" data-customer="" data-standard="" data-published="2026-07-30T13:31:05+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.telecompaper.com/news/quectel-introduces-high-end-wi-fi-7-modules-with-built-in-bluetooth-zigbee-support--1578637" target="_blank" rel="noopener">Quectel introduces high-end Wi-Fi 7 modules with built in Bluetooth, Zigbee support</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Telecompaper</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-30T13:31:05+00:00">2026-07-30</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4,bluetooth,wifi" data-vendor="NXP" data-customer="Microsoft" data-standard="" data-published="2026-07-29T14:39:39+00:00">
-    <div class="thumb">
-      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/NXP-RW610FML-Scalable-Wi-Fi-6-and-Bluetooth-LE-Combo-Module-720x480.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">NXP</span>
-        <span class="chip chip-cust">Microsoft</span>
-        <span class="chip chip-app">Smart Home</span>
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/29/nxp-rw610fml-wi-fi-6-and-ble-5-4-module-features-rw610-cortex-m33-wireless-mcu/" target="_blank" rel="noopener">NXP RW610FML Wi-Fi 6 and BLE 5.4 module features RW610 Cortex-M33 wireless MCU</a></h2>
-      <p class="summary">NXP has introduced the RW610FML, a compact, low-power, certified Wi-Fi 6 and Bluetooth Low Energy (BLE) 5.4 wireless module based on the company&amp;#8217;s RW610 Cortex-M33 microcontroller, the little brother of the RW612 without an 802.15.4 r…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-29T14:39:39+00:00">2026-07-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4,bluetooth" data-vendor="Nordic" data-customer="Amazon" data-standard="" data-published="2026-07-29T04:26:46+00:00">
-    <div class="thumb">
-      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/SensWear-nRF54L15-wearables-development-platform-720x486.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
-        <span class="chip chip-vendor">Nordic</span>
-        <span class="chip chip-cust">Amazon</span>
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/29/senswear-an-open-source-modular-nordic-nrf54l15-development-platform-for-wearables/" target="_blank" rel="noopener">SensWear – An open-source modular Nordic nRF54L15 development platform for wearables</a></h2>
-      <p class="summary">SensWear is an open-source hardware development platform for wearables based on Nordic nRF54L15 Bluetooth LE SoC and a range of sensors designed for researchers, developers, and companies building smart rings, wristbands, patches, and other…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-29T04:26:46+00:00">2026-07-29</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="matter,thread,ieee15_4,bluetooth,wifi" data-vendor="Espressif" data-customer="" data-standard="" data-published="2026-07-28T04:53:40+00:00">
-    <div class="thumb">
-      <img src="https://www.cnx-software.com/wp-content/uploads/2026/07/LILYGO-T-Display-C5-720x601.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">Matter</span><span class="chip chip-tech">Thread</span><span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span><span class="chip chip-tech">Wi-Fi</span>
-        <span class="chip chip-vendor">Espressif</span>
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/07/28/lilygo-t-display-c5-board-features-1-9-inch-ips-color-lcd-battery-support-qwiic-expansion-connectors/" target="_blank" rel="noopener">LILYGO T-Display C5 board features 1.9-inch IPS color LCD, battery support, Qwiic expansion connectors</a></h2>
-      <p class="summary">LILYGO T-Display C5 is an ESP32-C5 board with a 1.9-inch IPS color LCD, a USB-C port for power and programming, Lithium battery support, and GPIO expansion via headers and two Qwiic expansion connectors. The main benefit of using an ESP32-C…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-28T04:53:40+00:00">2026-07-28</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4" data-vendor="" data-customer="" data-standard="" data-published="2026-07-25T10:55:53+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">802.15.4</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://www.bisinfotech.com/a-complete-guide-to-iot-connectivity-technologies/" target="_blank" rel="noopener">A Complete Guide to IoT Connectivity Technologies</a></h2>
-      
-      <div class="meta-row">
-        <span class="source">Bisinfotech</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-25T10:55:53+00:00">2026-07-25</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4,matter" data-vendor="" data-customer="" data-standard="ieee15_4" data-published="2026-07-20T18:35:42+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-std">802.15.4 spec</span>
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Matter</span>
-        
-        
-        
-      </div>
-      <h2 class="title"><a href="https://csa-iot.org/newsroom/exegin-technologies-limited-on-zigbee-4-0/" target="_blank" rel="noopener">Exegin Technologies Limited on Zigbee 4.0</a></h2>
-      <p class="summary">“Zigbee has been around for twenty-plus years. It started with the idea that devices could communicate with each other to work collaboratively and create an ecosystem where they work cooperatively&amp;#8230;</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-20T18:35:42+00:00">2026-07-20</span>
-      </div>
-    </div>
-  </article>
-  
-  <article class="card" data-buckets="ieee15_4,matter" data-vendor="" data-customer="" data-standard="ieee15_4" data-published="2026-07-16T20:20:13+00:00">
-    <div class="thumb">
-      
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        <span class="chip chip-std">802.15.4 spec</span>
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Matter</span>
-        
-        
-        <span class="chip chip-app">Energy/Utility</span>
-      </div>
-      <h2 class="title"><a href="https://csa-iot.org/newsroom/edf-on-zigbee-4-0/" target="_blank" rel="noopener">EDF on Zigbee 4.0</a></h2>
-      <p class="summary">How is an electricity utility putting Zigbee 4.0 to work? In this interview, Vincent, an engineer at EDF&amp;#8217;s R&amp;#38;D Centre, shares how the latest evolution of the standard is shaping&amp;#8230;</p>
-      <div class="meta-row">
-        <span class="source">CSA / Matter (Zigbee)</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-07-16T20:20:13+00:00">2026-07-16</span>
       </div>
     </div>
   </article>
