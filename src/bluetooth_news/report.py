@@ -278,13 +278,13 @@ _NAV_HTML = """
   <nav>
     <a href="index.html" class="{{ 'active' if active=='index' else '' }}">Overview</a>
     <div class="nav-dd">
-      <a href="opportunity.html" class="nav-dd-trigger {{ 'active' if active in ['customers','opportunity','competitors','threat'] else '' }}">Companies <span class="dd-caret">▾</span></a>
+      <a href="opportunity.html" class="nav-dd-trigger {{ 'active' if active in ['customers','opportunity','competitors','threat','relationships'] else '' }}">Companies <span class="dd-caret">▾</span></a>
       <div class="nav-dd-menu">
         <a href="opportunity.html" class="{{ 'active' if active in ['customers','opportunity'] else '' }}">OEMs</a>
         <a href="threat.html" class="{{ 'active' if active in ['competitors','threat'] else '' }}">Vendors</a>
+        <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
       </div>
     </div>
-    <a href="relationships.html" class="{{ 'active' if active=='relationships' else '' }}">Relationships</a>
     <a href="technology.html" class="{{ 'active' if active=='technology' else '' }}">Technology</a>
     <a href="applications.html" class="{{ 'active' if active=='applications' else '' }}">Applications</a>
     <a href="bt_stack.html" class="{{ 'active' if active=='bt_stack' else '' }}">BT Stack</a>
