@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:10:45Z",
+  "generated_at": "2026-08-04T13:14:37Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -128,6 +128,11 @@
       ],
       "press_releases": [
         {
+          "title": "Nordic Semiconductor: The Question Now Is CRA Enforcement Appeal (Rating Upgrade)",
+          "date": "Aug 2026",
+          "url": "https://seekingalpha.com/article/4929339-nordic-semiconductor-stock-question-cra-enforcement-appeal"
+        },
+        {
           "title": "Nordic Semiconductor Introduces Prototyping Tag to Simplify 'Find My' and Asset Tag Development",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
@@ -171,11 +176,6 @@
           "title": "Arduino Core Project Brings Support to Nordic nRF54L Wireless SoCs",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
-        },
-        {
-          "title": "Icy Electronics nRF54L15 Discovery devboard integrates a snappable nRF52820 CMSIS-DAP debugger",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/23/icy-electronics-nrf54l15-discovery-devboard-integrates-a-snappable-nrf52820-cmsis-dap-debugger/"
         }
       ],
       "events": [
@@ -680,6 +680,36 @@
       ],
       "press_releases": [
         {
+          "title": "Qualcomm Appoints Wassim Chourbaji as SVP and President, Qualcomm EMEA",
+          "date": "Aug 2026",
+          "url": "https://www.zawya.com/en/press-release/people-in-the-news/qualcomm-appoints-wassim-chourbaji-as-svp-and-president-qualcomm-emea-420322"
+        },
+        {
+          "title": "Qualcomm (NASDAQ: QCOM) Bets On AI-Native Architecture To Define 6G Mobile Networks",
+          "date": "Aug 2026",
+          "url": "https://www.foreignpolicyjournal.com/2026/08/03/qualcomm-nasdaq-qcom-bets-on-ai-native-architecture-to-define-6g-mobile-networks/"
+        },
+        {
+          "title": "Qualcomm (NASDAQ:QCOM) Shares Steady as Broader Portfolio Cushions 61% Handset Decline",
+          "date": "Aug 2026",
+          "url": "https://ts2.tech/en/qualcomm-nasdaqqcom-shares-steady-as-broader-portfolio-cushions-61-handset-decline/"
+        },
+        {
+          "title": "Qualcomm Q3 FY 2026: Automotive Growth Offsets Handset Weakness",
+          "date": "Aug 2026",
+          "url": "https://futurumgroup.com/insights/qualcomm-q3-fy-2026-automotive-growth-offsets-handset-weakness/"
+        },
+        {
+          "title": "Qualcomm Chip Price Hikes Confirmed as Q3 Revenue Drops 20%",
+          "date": "Aug 2026",
+          "url": "https://techgenyz.com/qualcomm-chip-price-hikes/"
+        },
+        {
+          "title": "Qualcomm Will Raise Snapdragon Chip Prices by Double Digits on September 1",
+          "date": "Aug 2026",
+          "url": "https://startupfortune.com/qualcomm-will-raise-snapdragon-chip-prices-by-double-digits-on-september-1/"
+        },
+        {
           "title": "iQOO Z11i debuts with a 6,500mAh battery, Snapdragon 4 Gen 2 SoC",
           "date": "Jul 2026",
           "url": "https://www.gsmarena.com/iqoo_z11i_debuts_with_a_6500mah_battery_snapdragon_4_gen_2_soc-news-73557.php"
@@ -698,36 +728,6 @@
           "title": "iQOO Z11i Launches Featuring Qualcomm Snapdragon 4 Gen 2 SoC",
           "date": "Jul 2026",
           "url": "https://www.gsmarena.com/iqoo_z11i_debuts_with_a_6500mah_battery_snapdragon_4_gen_2_soc-news-73557.php"
-        },
-        {
-          "title": "Vivo Launches New Mid-Range Tablet Featuring Qualcomm Snapdragon 8-Series Chipset",
-          "date": "Jul 2026",
-          "url": "https://www.notebookcheck.net/Vivo-launches-mid-range-tablet-with-Snapdragon-8-series-chipset-and-144Hz-display.1332535.0.html"
-        },
-        {
-          "title": "Qualcomm Snapdragon 6 Gen 4 Chip Powers Nothing Phone (4b)",
-          "date": "Jul 2026",
-          "url": "https://www.gsmarena.com/the_nothing_phone_4b_has_a_longlasting_battery_snapdragon_6_gen_4_chip_and_a_glyph_bar-news-73609.php"
-        },
-        {
-          "title": "Qualcomm Snapdragon 4 Gen 2 SoC Debuts in iQOO Z11i",
-          "date": "Jul 2026",
-          "url": "https://www.gsmarena.com/iqoo_z11i_debuts_with_a_6500mah_battery_snapdragon_4_gen_2_soc-news-73557.php"
-        },
-        {
-          "title": "Qualcomm Modems Expected to Power US iPhone 18 Pro Models",
-          "date": "Jul 2026",
-          "url": ""
-        },
-        {
-          "title": "Microsoft Surface Pro OLED 2026 Features Qualcomm Snapdragon X2 Elite Processor",
-          "date": "Jul 2026",
-          "url": "https://www.notebookcheck.net/Flagship-convertible-with-Snapdragon-X2-Elite-Microsoft-Surface-Pro-OLED-2026-Review.1335724.0.html"
-        },
-        {
-          "title": "Nothing Phone (4b) Launches Featuring Qualcomm Snapdragon 6 Gen 4 Chip",
-          "date": "Jul 2026",
-          "url": "https://www.gsmarena.com/the_nothing_phone_4b_has_a_longlasting_battery_snapdragon_6_gen_4_chip_and_a_glyph_bar-news-73609.php"
         }
       ],
       "events": [
@@ -949,6 +949,26 @@
       ],
       "press_releases": [
         {
+          "title": "Silicon Labs Unveils BG2B, Its Lowest-Power Bluetooth LE SoC",
+          "date": "Aug 2026",
+          "url": "https://www.prnewswire.com/news-releases/silicon-labs-unveils-bg2b-its-lowest-power-bluetooth-le-soc-with-industry-leading-power-efficiency-security-and-integration-302841762.html"
+        },
+        {
+          "title": "Silicon Labs Launches BG2B Bluetooth LE SoC Targeting Low-Power IoT Applications",
+          "date": "Aug 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/silicon-labs-launches-bg2b-bluetooth-le-soc-targeting-low-power-iot-applications"
+        },
+        {
+          "title": "Silicon Labs Adds BG2B Bluetooth LE SoC With Focus on Lower-Power IoT Endpoints",
+          "date": "Aug 2026",
+          "url": "https://iotbusinessnews.com/2026/08/04/silicon-labs-adds-bg2b-bluetooth-le-soc-with-focus-on-lower-power-iot-endpoints/"
+        },
+        {
+          "title": "BG2B is the lowest-power Bluetooth LE SoC from Silicon Labs so far",
+          "date": "Aug 2026",
+          "url": "https://www.cnx-software.com/2026/08/04/bg2b-lowest-power-bluetooth-le-soc-from-silicon-labs/"
+        },
+        {
           "title": "Silicon Labs Foresees Accelerated Smart Home Growth with Matter 1.6",
           "date": "Jul 2026",
           "url": "https://www.digitimes.com/news/a20260707PD230/silicon-labs-smart-home-growth-market-2026.html"
@@ -977,26 +997,6 @@
           "title": "Silicon Labs stock trades near yearly high as IoT revenue and margins strengthen",
           "date": "Jul 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
-        },
-        {
-          "title": "Texas Instruments Plans $7.5 Billion Acquisition of Silicon Labs",
-          "date": "Jul 2026",
-          "url": "https://www.stocktitan.net/sec-filings/TXN/10-q-texas-instruments-inc-quarterly-earnings-report-980a9829781e.html"
-        },
-        {
-          "title": "Romania Approves Texas Instruments' Acquisition of Silicon Labs",
-          "date": "Jul 2026",
-          "url": "https://www.romaniajournal.ro/business/romania-clears-texas-instruments-silicon-labs-deal/"
-        },
-        {
-          "title": "Silicon Labs Reports Strengthening IoT Revenue and Margins",
-          "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/silicon-labs-stock-trades-near-yearly-high-as-iot-revenue-and-margins/69828209"
-        },
-        {
-          "title": "Romania Clears Texas Instruments' Silicon Labs Deal",
-          "date": "Jul 2026",
-          "url": "https://www.romaniajournal.ro/business/romania-clears-texas-instruments-silicon-labs-deal/"
         }
       ],
       "events": [
@@ -1235,6 +1235,36 @@
       ],
       "press_releases": [
         {
+          "title": "GE Appliances teams with Texas Instruments to power smart laundry machines",
+          "date": "Aug 2026",
+          "url": "https://www.wave3.com/2026/08/04/ge-appliances-teams-with-texas-instruments-power-smart-laundry-machines/"
+        },
+        {
+          "title": "Microchip Technology, in Collaboration With Micron Technology, Demonstrates High-Performance PCIe Gen 6 Storage Architecture for AI and Data Center Infrastructure",
+          "date": "Aug 2026",
+          "url": "https://www.globenewswire.com/news-release/2026/08/04/3338174/0/en/microchip-technology-in-collaboration-with-micron-technology-demonstrates-high-performance-pcie-gen-6-storage-architecture-for-ai-and-data-center-infrastructure.html"
+        },
+        {
+          "title": "Silicon Labs launches BG2B Bluetooth LE SoC targeting low-power IoT applications",
+          "date": "Aug 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/silicon-labs-launches-bg2b-bluetooth-le-soc-targeting-low-power-iot-applications"
+        },
+        {
+          "title": "Silicon Labs Unveils BG2B, Its Lowest-Power Bluetooth LE SoC with Industry-Leading Power Efficiency, Security, and Integration",
+          "date": "Aug 2026",
+          "url": "https://www.prnewswire.com/news-releases/silicon-labs-unveils-bg2b-its-lowest-power-bluetooth-le-soc-with-industry-leading-power-efficiency-security-and-integration-302841762.html"
+        },
+        {
+          "title": "Micron, MediaTek back ChipAgents as agentic AI startup extends series A to US$134 million",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260803VL217/startup-micron-design-mediatek-financing.html"
+        },
+        {
+          "title": "Citi Turns Bullish on AMD, Texas Instruments, Applied Materials After Chip Selloff",
+          "date": "Aug 2026",
+          "url": "https://finance.biggo.com/news/d9293ce9-8864-44c3-a799-836e1d0bf421"
+        },
+        {
           "title": "onsemi to Acquire Synaptics to Enable the Next Generation of Intelligent Systems for Physical AI",
           "date": "Jul 2026",
           "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
@@ -1253,36 +1283,6 @@
           "title": "Nanoleaf launches Smart Multicolour Ceiling Light with Matter",
           "date": "Jul 2026",
           "url": "https://homekitnews.com/2026/07/01/nanoleaf-launches-smart-multicolour-ceiling-light-with-matter/"
-        },
-        {
-          "title": "Sony's WH-1000XM6 headphones just became more tempting for gamers who hate gaming headsets",
-          "date": "Jul 2026",
-          "url": "https://www.digitaltrends.com/home-theater/sonys-wh-1000xm6-headphones-just-became-more-tempting-for-gamers-who-hate-gaming-headsets/"
-        },
-        {
-          "title": "Sony's WH-1000XM6 update adds a feature gamers have been waiting for",
-          "date": "Jul 2026",
-          "url": "https://www.soundguys.com/sony-wh-1000xm6-gmap-update-159353/"
-        },
-        {
-          "title": "Broadcom extends Apple chip partnership through 2031, strengthening long-term supply ties",
-          "date": "Jul 2026",
-          "url": "https://www.electronicsforyou.biz/industry-buzz/broadcom-extends-apple-chip-partnership-through-2031-strengthening-long-term-supply-ties/"
-        },
-        {
-          "title": "U-blox Unwraps Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs",
-          "date": "Jul 2026",
-          "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
-        },
-        {
-          "title": "Broadcom and Apple Extend Custom Chip Alliance Through 2031, Targeting AI Servers",
-          "date": "Jul 2026",
-          "url": "https://finance.biggo.com/news/57073133-0645-45e2-9207-f289e7f3f2b8"
-        },
-        {
-          "title": "Apple Signs Broadcom Deal Until 2031, Full Switch to In-House Chips Delayed",
-          "date": "Jul 2026",
-          "url": "https://www.macobserver.com/news/apple-signs-broadcom-deal-until-2031-full-switch-to-in-house-chips-delayed/"
         }
       ],
       "events": [
@@ -1550,9 +1550,9 @@
           "url": "https://www.digitimes.com/news/a20260803PD210/mediatek-asic-2028-intel-production.html"
         },
         {
-          "title": "MediaTek Launches Filogic 860 for Wi-Fi 7 Home Routers",
-          "date": "Jul 2026",
-          "url": ""
+          "title": "MediaTek Plans $5 Billion AI Chip Push for Data Center Growth",
+          "date": "Aug 2026",
+          "url": "https://www.asiabusinessoutlook.com/news/mediatek-plans-5-billion-ai-chip-push-for-data-center-growth-nwid-12252.html"
         }
       ],
       "events": [
@@ -1768,6 +1768,11 @@
       ],
       "press_releases": [
         {
+          "title": "Espressif Launches ESP32-C61-MINI-1/1U Wi-Fi 6 and BLE IoT Module",
+          "date": "Aug 2026",
+          "url": "https://www.cnx-software.com/2026/08/04/espressif-esp32-c61-mini-1-1u-wi-fi-6-and-ble-iot-module-2-dollars/"
+        },
+        {
           "title": "ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/"
@@ -1811,11 +1816,6 @@
           "title": "Open Book Touch: ESP32-S3-based E-reader Launched via Crowdfunding",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/10/open-book-touch-a-drm-free-wifi-connected-4-26-inch-open-source-hardware-e-reader/"
-        },
-        {
-          "title": "PocketMage: ESP32-S3 Personal Digital Assistant Launched via Crowdfunding",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/07/pocketmage-esp32-s3-personal-digital-assistant/"
         }
       ],
       "events": [
@@ -2321,6 +2321,11 @@
       ],
       "press_releases": [
         {
+          "title": "Renesas Resumes Production at Nishiki Factory to Pre-Earthquake Capacity",
+          "date": "Aug 2026",
+          "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N43Y01R:0-renesas-production-resumed-at-nishiki-factory-specifying-factory-in-phases-beginning-on-evening-of-july-29-and-returned-to-pre-earthquake-production-capacity-friday-morning/"
+        },
+        {
           "title": "Renesas Launches Starter Kits for RX113, RX140, and RX231 Microcontrollers",
           "date": "Jul 2026",
           "url": "https://www.renesas.com/en/document/tnn/notes-notes-sample-project-renesas-starter-kit"
@@ -2364,11 +2369,6 @@
           "title": "Renesas Electronics Announces Q2 2025 Financial Results",
           "date": "Jul 2026",
           "url": "https://www.tipranks.com/stocks/rnecf/earnings/q2-2025-report"
-        },
-        {
-          "title": "Renesas Launches RoX Development Platform for R-Car Processors",
-          "date": "Jul 2026",
-          "url": "https://www.techinsights.com/blog/renesas-rox-development-platform-r-car-processors"
         }
       ],
       "events": [
@@ -2584,6 +2584,11 @@
           "url": "https://www.marketbeat.com/instant-alerts/synaptics-syna-expected-to-post-quarterly-earnings-on-thursday-2026-07-30/"
         },
         {
+          "title": "Synaptics Incorporated Revenue Breakdown",
+          "date": "Aug 2026",
+          "url": "https://www.tradingview.com/symbols/NASDAQ-SYNA/financials-segments/"
+        },
+        {
           "title": "Synaptics Schedules Q4 and FY26 Financial Results Conference Call",
           "date": "Jul 2026",
           "url": "https://scanx.trade/stock-market-news/companies/synaptics-to-report-q4-and-fy26-results-on-august-6/45702649"
@@ -2617,11 +2622,6 @@
           "title": "Synaptics Announces Pending Acquisition by ON Semiconductor",
           "date": "Jul 2026",
           "url": "https://www.stocktitan.net/news/SYNA/synaptics-to-release-fourth-quarter-and-full-year-fiscal-2026-199c2da8pnhr.html"
-        },
-        {
-          "title": "Synaptics Has 35-Plus Robotics Customers",
-          "date": "Jul 2026",
-          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-has-35-plus-robotics-customers-its-product-chief-just-held-his-stake/"
         }
       ],
       "events": [
@@ -2845,6 +2845,31 @@
       ],
       "press_releases": [
         {
+          "title": "Broadcom Joins Nvidia Open Secure AI Alliance",
+          "date": "Aug 2026",
+          "url": "https://www.sdxcentral.com/news/broadcom-joins-nvidia-ai-security-alliance-we-havent-forgotten-open-source/"
+        },
+        {
+          "title": "Samsung Electronics and Broadcom Expand Strategic Collaboration Across Memory and Foundry Technologies",
+          "date": "Aug 2026",
+          "url": "https://www.storagenewsletter.com/2026/08/03/samsung-electronics-and-broadcom-expand-strategic-collaboration-across-memory-and-foundry-technologies/"
+        },
+        {
+          "title": "Broadcom Inc. to Announce Third Quarter Fiscal Year 2026 Financial Results",
+          "date": "Aug 2026",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-inc-announce-third-quarter-120000388.html"
+        },
+        {
+          "title": "Apple Commits Over $30 Billion to Broadcom for Multi-Year Custom Chip Supply",
+          "date": "Aug 2026",
+          "url": "https://supplychaindigital.com/news/apple-broadcom-a-strong-us-supply-chain-agreement"
+        },
+        {
+          "title": "Standard Chartered Selects Broadcom for Global Banking Infrastructure Modernization",
+          "date": "Aug 2026",
+          "url": "https://www.frontier-enterprise.com/standard-chartered-picks-broadcom-for-secure-always-on-global-banking-services/"
+        },
+        {
           "title": "Broadcom and Apple Extend Strategic Custom Chip Partnership Through 2031",
           "date": "Jul 2026",
           "url": "https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/"
@@ -2868,31 +2893,6 @@
           "title": "Broadcom Extends Multi-Year Strategic Partnership with Apple for Custom Silicon and Wireless Technologies, Valued Over $30 Billion",
           "date": "Jul 2026",
           "url": "https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/"
-        },
-        {
-          "title": "Broadcom Extends Chip Supply Agreement With Apple to 2031",
-          "date": "Jul 2026",
-          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262013221-broadcom-avgo-apple-aapl-tradingkey"
-        },
-        {
-          "title": "Apple and Broadcom Extend Chip Supply Partnership Through 2031",
-          "date": "Jul 2026",
-          "url": "https://www.mactrast.com/2026/07/apple-and-broadcom-extend-chip-supply-partnership-through-2031/"
-        },
-        {
-          "title": "Apple and Broadcom Extend Chip Supply Deal to 2031",
-          "date": "Jul 2026",
-          "url": "https://www.macrumors.com/2026/07/06/apple-and-broadcom-extend-deal/"
-        },
-        {
-          "title": "Apple and Broadcom renew partnership through 2031",
-          "date": "Jul 2026",
-          "url": "https://appleinsider.com/articles/26/07/06/apple-broadcom-renew-partnership-through-2031"
-        },
-        {
-          "title": "Broadcom and Apple extend custom chip partnership",
-          "date": "Jul 2026",
-          "url": "https://www.mobileworldlive.com/apple/broadcom-apple-extend-custom-chip-partnership/"
         }
       ]
     },
@@ -3017,6 +3017,21 @@
       ],
       "press_releases": [
         {
+          "title": "Microchip Technology Demonstrates PCIe Gen 6 Storage Architecture with Micron",
+          "date": "Aug 2026",
+          "url": "https://www.globenewswire.com/news-release/2026/08/04/3338174/0/en/microchip-technology-in-collaboration-with-micron-technology-demonstrates-high-performance-pcie-gen-6-storage-architecture-for-ai-and-data-center-infrastructure.html"
+        },
+        {
+          "title": "Microchip Launches Industrial Midspan for PoE in Legacy Networks",
+          "date": "Aug 2026",
+          "url": "https://www.allaboutcircuits.com/news/microchips-industrial-midspan-unlocks-poe-for-legacy-networks/"
+        },
+        {
+          "title": "Microchip Secures \u00a31.5M Contract with European Satellite Manufacturer",
+          "date": "Aug 2026",
+          "url": "https://www.insidermedia.com/news/south-east/microchip-maker-secures-1.5m-contract-with-european-satellite-manufacturer"
+        },
+        {
           "title": "Microchip Makes MPLAB XC Pro Compilers and MPLAB Machine Learning Development Suite Free for Developers",
           "date": "Jul 2026",
           "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
@@ -3050,21 +3065,6 @@
           "title": "Microchip Makes MPLAB XC Pro Compilers and ML Development Suite Free",
           "date": "Jul 2026",
           "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
-        },
-        {
-          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Suite Free for Developers",
-          "date": "Jul 2026",
-          "url": "https://www.stocktitan.net/news/MCHP/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-q4cawbx05q2b.html"
-        },
-        {
-          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Development Suite Free for Developers",
-          "date": "Jul 2026",
-          "url": "https://www.manilatimes.net/2026/07/08/tmt-newswire/globenewswire/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-machine-learning-development-suite/2380670"
-        },
-        {
-          "title": "Microchip Launches Industrial-Grade 90W PoE Midspan",
-          "date": "Jul 2026",
-          "url": "https://pluang.com/en/news-feed/solusi-poe-90w-microchip-mudahkan-penerapan-iot-industri"
         }
       ]
     },
@@ -3455,6 +3455,11 @@
       ],
       "press_releases": [
         {
+          "title": "onsemi Reports Strong Second Quarter 2026 Financial Results",
+          "date": "Aug 2026",
+          "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-second-quarter-2026-results/"
+        },
+        {
           "title": "onsemi to Acquire Synaptics to Enable the Next Generation of Intelligent Systems for Physical AI",
           "date": "Jul 2026",
           "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
@@ -3498,11 +3503,6 @@
           "title": "onsemi and Penn State Sign MOU to Boost Silicon Carbide Research and Establish SiC Crystal Center",
           "date": "Jun 2026",
           "url": "https://www.onsemi.com/company/newsroom/news-and-insights/penn-state-and-onsemi-sign-mou-to-boost-silicon-carbide-research-in-the-u-s"
-        },
-        {
-          "title": "onsemi to Announce Third Quarter Financial Results",
-          "date": "Jun 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-announce-third-quarter-financial-results"
         }
       ]
     },
@@ -3709,28 +3709,30 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 111,
-    "NXP": 90,
-    "Broadcom": 58,
-    "Renesas": 35,
-    "MediaTek": 34,
-    "Microchip": 27,
-    "Espressif": 18,
-    "STMicro": 18,
-    "Realtek": 15,
-    "Synaptics": 8,
+    "Qualcomm": 102,
+    "NXP": 87,
+    "Broadcom": 52,
+    "MediaTek": 40,
+    "Renesas": 40,
+    "Microchip": 26,
+    "Espressif": 17,
+    "STMicro": 16,
+    "Realtek": 14,
+    "Synaptics": 12,
+    "Silicon Labs": 10,
+    "TI": 5,
     "Skyworks": 4,
-    "Nordic": 3,
-    "Apple": 3,
-    "Infineon": 3,
-    "Silicon Labs": 3,
-    "TI": 2,
-    "Murata": 2,
-    "Bosch": 2,
-    "u-blox": 2,
-    "Goodix": 2,
+    "Nordic": 2,
+    "Apple": 2,
+    "Infineon": 2,
+    "Telink": 1,
+    "Onsemi": 1,
+    "Marvell": 1,
+    "Bosch": 1,
+    "u-blox": 1,
     "Beken": 1,
-    "Bestechnic": 1
+    "Bestechnic": 1,
+    "Goodix": 1
   },
   "standards_in_flight": [
     {
@@ -3803,40 +3805,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3844,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        },
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
-        }
-      ],
-      "stars": 16090,
-      "pushed_at": "2026-08-03T12:51:38Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3847,7 +3815,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1652,
+      "issues_open": 1651,
       "prs_open": 0,
       "releases": [
         {
@@ -3869,8 +3837,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18690,
-      "pushed_at": "2026-08-03T05:35:06Z"
+      "stars": 18692,
+      "pushed_at": "2026-08-04T04:25:40Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3828,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+        },
+        {
+          "tag": "v4.3.1",
+          "name": "Zephyr v4.3.1",
+          "published_at": "2026-06-23T12:27:28Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
+        },
+        {
+          "tag": "v4.3.1-rc1",
+          "name": "Zephyr v4.3.1-rc1",
+          "published_at": "2026-06-13T07:08:30Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
+        }
+      ],
+      "stars": 16099,
+      "pushed_at": "2026-08-04T13:10:56Z"
     },
     {
       "name": "OpenThread",
@@ -3881,7 +3883,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 158,
+      "issues_open": 160,
       "prs_open": 0,
       "releases": [
         {
@@ -3904,7 +3906,7 @@
         }
       ],
       "stars": 4001,
-      "pushed_at": "2026-08-03T09:33:01Z"
+      "pushed_at": "2026-08-04T04:55:06Z"
     },
     {
       "name": "Matter SDK",
@@ -3915,7 +3917,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2756,
+      "issues_open": 2766,
       "prs_open": 0,
       "releases": [
         {
@@ -3937,8 +3939,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8850,
-      "pushed_at": "2026-08-03T13:08:02Z"
+      "stars": 8851,
+      "pushed_at": "2026-08-04T12:41:52Z"
     },
     {
       "name": "Linux mac80211",
@@ -3952,8 +3954,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 241574,
-      "pushed_at": "2026-08-02T23:25:22Z"
+      "stars": 241601,
+      "pushed_at": "2026-08-03T19:29:05Z"
     },
     {
       "name": "BlueZ",
@@ -3964,7 +3966,7 @@
         "bluetooth"
       ],
       "commits_30d": 52,
-      "issues_open": 111,
+      "issues_open": 114,
       "prs_open": 0,
       "releases": [
         {
@@ -3987,7 +3989,7 @@
         }
       ],
       "stars": 1123,
-      "pushed_at": "2026-08-02T08:39:31Z"
+      "pushed_at": "2026-08-04T11:38:22Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -3997,7 +3999,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 48,
+      "commits_30d": 46,
       "issues_open": 462,
       "prs_open": 0,
       "releases": [
@@ -4020,8 +4022,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15470,
-      "pushed_at": "2026-08-01T06:14:57Z"
+      "stars": 15474,
+      "pushed_at": "2026-08-03T19:26:37Z"
     },
     {
       "name": "NimBLE",
@@ -4032,7 +4034,7 @@
         "bluetooth"
       ],
       "commits_30d": 11,
-      "issues_open": 275,
+      "issues_open": 276,
       "prs_open": 0,
       "releases": [],
       "stars": 880,
