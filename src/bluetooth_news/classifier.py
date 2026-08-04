@@ -109,6 +109,7 @@ VENDORS: list[tuple[str, str, re.Pattern]] = [
     ("MediaTek",     "asia",     re.compile(r"\b(mediatek|filogic ?\d{2,3}|mt[\d]{3,4}|mt76\d{2}|mt78\d{2}|mt27\d{2}|mt259\d|dimensity)\b", re.I)),
     ("Realtek",      "asia",     re.compile(r"\b(realtek|rtl8\d{3}[a-z]{0,3}|rtl87\d{2}|rtl88\d{2}|rtl89\d{2})\b", re.I)),
     ("Espressif",    "asia",     re.compile(r"\b(espressif|esp32(-[a-z\d]+)?|esp-?h\d|esp-?c\d|esp-?s\d|esp-?p\d|esp8266)\b", re.I)),
+    ("Quectel",      "asia",     re.compile(r"\b(quectel|fce\d{3,4}[a-z]?|fme\d{3,4}[a-z]?|eg9\d{2}|ec2\d{2}|rg5\d{2})\b", re.I)),
     ("Telink",       "asia",     re.compile(r"\b(telink|tlsr\d{4}|tlsr8\d{3}|tlsr9\d{3})\b", re.I)),
     ("Bouffalo Lab", "asia",     re.compile(r"\b(bouffalo|bl60\d|bl61\d|bl70\d|bl80\d|bl61[68]|bl616|bl618|bl808)\b", re.I)),
     ("Beken",        "asia",     re.compile(r"\b(beken|bk72\d{2}|bk32\d{2}|bk78\d{2})\b", re.I)),

@@ -3995,14 +3995,28 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
     )
 
     def _is_technical_product_article(a: dict) -> bool:
+      url = (a.get("url") or "").strip()
       blob = " ".join([
         (a.get("title") or ""),
         (a.get("summary") or ""),
         (a.get("source") or ""),
+        url,
       ]).strip()
       if not blob:
         return False
-      return bool(technical_include.search(blob)) and not bool(technical_exclude.search(blob))
+      has_include = bool(technical_include.search(blob))
+      has_bucket = bool(a.get("buckets"))
+      has_wireless_news_url = bool(re.search(r"/news/(details|article|press|release)", url, re.I))
+
+      if not (has_include or has_bucket or has_wireless_news_url):
+        return False
+
+      # Exclusion terms are advisory; keep items when other strong technical
+      # signals exist (bucket tags or explicit technical news URLs).
+      if technical_exclude.search(blob) and not (has_bucket or has_wireless_news_url):
+        return False
+
+      return True
 
     arts_7d = [a for a in articles if _pub(a) and _pub(a) >= cutoff_7d]
     arts_prev_7d = [a for a in articles if _pub(a) and cutoff_14d <= _pub(a) < cutoff_7d]
