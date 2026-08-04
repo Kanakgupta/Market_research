@@ -165,12 +165,12 @@ def _safe_int_env(name: str, default: int, minimum: int = 1) -> int:
 def _google_cooldown_minutes() -> int:
     raw = (os.getenv("GOOGLE_FEED_FAIL_COOLDOWN_MINUTES") or "").strip()
     if not raw:
-        return 180
+        return 30
     try:
         return max(0, int(raw))
     except ValueError:
-        log.warning("Invalid integer for GOOGLE_FEED_FAIL_COOLDOWN_MINUTES=%r; using default=180", raw)
-        return 180
+        log.warning("Invalid integer for GOOGLE_FEED_FAIL_COOLDOWN_MINUTES=%r; using default=30", raw)
+        return 30
 
 
 def _google_fail_threshold() -> int:

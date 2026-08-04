@@ -37,6 +37,8 @@ QUERIES: dict[str, list[str]] = {
         "Wi-Fi 7 chip",
         "Wi-Fi 7 release announcement",
         "Wi-Fi 8 IEEE 802.11bn",
+        "Broadcom tri-band Wi-Fi 8 SoC enterprise access points",
+        "Quectel tri-band Wi-Fi 7 modules smart devices",
         "Wi-Fi 6E 6 GHz",
         "Wi-Fi MLO multi-link operation",
         "Wi-Fi HaLow 802.11ah",
@@ -265,6 +267,25 @@ VENDOR_PRESS_SITES: list[str] = [
 
 # Trade press + reviewer queries — broad coverage the news bots index.
 TRADE_PRESS_QUERIES: list[str] = [
+    # Must-catch RF/semiconductor technical publishers
+    "site:everythingrf.com/news/details wireless OR bluetooth OR wifi OR module OR soc",
+    "site:everythingrf.com wireless chip",
+    "site:allaboutcircuits.com news wireless",
+    "site:iot-now.com wireless",
+    "site:iotbusinessnews.com wireless",
+    "site:embeddedcomputing.com wireless",
+    "site:design-reuse.com wireless",
+    "site:electronicdesign.com wireless",
+    "site:semiwiki.com wireless",
+    "site:eejournal.com wireless",
+    "site:electronicweekly.com wireless chip",
+    "site:electronicsforu.com wireless",
+    "site:eenewseurope.com semiconductor wireless",
+    "site:electronicspecifier.com wireless",
+    "site:insidegnss.com bluetooth OR wifi",
+    "site:rcrwireless.com wifi OR bluetooth",
+    "site:fierceelectronics.com wireless",
+    "site:siliconangle.com wireless chip",
     # Wireless / IoT trade
     "site:eetimes.com wireless",
     "site:edn.com wireless connectivity",
@@ -303,6 +324,16 @@ TRADE_PRESS_QUERIES: list[str] = [
     "site:prnewswire.com wireless chip bluetooth",
     "site:businesswire.com wireless chip",
     "site:globenewswire.com wireless chip",
+]
+
+# Priority technical launch queries added first so they are not dropped by feed caps.
+PRIORITY_TECH_QUERIES: list[str] = [
+    "Broadcom introduces tri-band Wi-Fi 8 SoC enterprise access points",
+    "Quectel introduces tri-band Wi-Fi 7 modules",
+    "site:everythingrf.com Broadcom Wi-Fi 8 SoC",
+    "site:everythingrf.com Quectel Wi-Fi 7 modules",
+    "wireless SoC launch Bluetooth Wi-Fi Thread Matter",
+    "IoT module launch Wi-Fi 7 Bluetooth LE",
 ]
 
 
@@ -489,8 +520,8 @@ def all_feed_urls() -> list[dict]:
     """Return list of {name, url, bucket} entries for every feed to fetch."""
     feeds: list[dict] = []
     seen_search_queries: set[tuple[str, str]] = set()
-    max_google = _safe_int_env("SOURCE_MAX_GOOGLE_FEEDS", 220)
-    max_bing = _safe_int_env("SOURCE_MAX_BING_FEEDS", 180)
+    max_google = _safe_int_env("SOURCE_MAX_GOOGLE_FEEDS", 360)
+    max_bing = _safe_int_env("SOURCE_MAX_BING_FEEDS", 300)
     google_count = 0
     bing_count = 0
 
@@ -513,6 +544,8 @@ def all_feed_urls() -> list[dict]:
 
     for f in RSS_FEEDS:
         feeds.append({**f, "bucket": f.get("bucket")})  # bucket inferred by classifier when None
+    for q in PRIORITY_TECH_QUERIES:
+        add_search_feeds(q, bucket=None, include_bing=True)
     for bucket, queries in QUERIES.items():
         for q in queries:
             add_search_feeds(q, bucket=bucket, include_bing=True)

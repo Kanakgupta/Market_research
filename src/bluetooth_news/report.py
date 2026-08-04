@@ -3982,6 +3982,28 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         cutoff = now - timedelta(days=days)
         return [a for a in items if _pub(a) and _pub(a) >= cutoff]
 
+    technical_include = re.compile(
+      r"\b(wi[- ]?fi(?:\s?[67]|\s?8)?|802\.11|bluetooth|ble\b|thread|matter|zigbee|802\.15\.4|"
+      r"soc\b|chip(set)?\b|module\b|mcu\b|silicon|rf\b|transceiver|auracast|le audio|hci|mesh|"
+      r"border router|commissioning|sdk\b|firmware|certif(?:y|ication))\b",
+      re.I,
+    )
+    technical_exclude = re.compile(
+      r"\b(stock|shares?|earnings|quarterly|guidance|lawsuit|acquisition|merger|funding|market cap|"
+      r"opinion|review roundup|gaming sale|deal of the day)\b",
+      re.I,
+    )
+
+    def _is_technical_product_article(a: dict) -> bool:
+      blob = " ".join([
+        (a.get("title") or ""),
+        (a.get("summary") or ""),
+        (a.get("source") or ""),
+      ]).strip()
+      if not blob:
+        return False
+      return bool(technical_include.search(blob)) and not bool(technical_exclude.search(blob))
+
     arts_7d = [a for a in articles if _pub(a) and _pub(a) >= cutoff_7d]
     arts_prev_7d = [a for a in articles if _pub(a) and cutoff_14d <= _pub(a) < cutoff_7d]
     arts_30d = _recent(articles, 30)
@@ -4233,22 +4255,22 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
         })
 
     # --- Recent headline pools (still used for the compact Market Signal Feed)
-    comp_7d = [a for a in arts_7d if a.get("vendor")]
-    cust_7d = [a for a in arts_7d if a.get("customer")]
-    comp_window = "7d"
-    cust_window = "7d"
-    if len(comp_7d) < 4:
-        comp_7d = [a for a in _recent(articles, 14) if a.get("vendor")]
-        comp_window = "14d fallback"
-    if len(cust_7d) < 4:
-        cust_7d = [a for a in _recent(articles, 14) if a.get("customer")]
-        cust_window = "14d fallback"
+    comp_30d = [a for a in _recent(articles, 30) if a.get("vendor") and _is_technical_product_article(a)]
+    cust_30d = [a for a in _recent(articles, 30) if a.get("customer") and _is_technical_product_article(a)]
+    comp_window = "30d"
+    cust_window = "30d"
+    if len(comp_30d) < 6:
+      comp_30d = [a for a in _recent(articles, 45) if a.get("vendor") and _is_technical_product_article(a)]
+      comp_window = "45d fallback"
+    if len(cust_30d) < 6:
+      cust_30d = [a for a in _recent(articles, 45) if a.get("customer") and _is_technical_product_article(a)]
+      cust_window = "45d fallback"
 
     competitor_headlines = _unique_by_url(
-        sorted(comp_7d, key=lambda x: _pub(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
+      sorted(comp_30d, key=lambda x: _pub(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
     )[:12]
     customer_headlines = _unique_by_url(
-        sorted(cust_7d, key=lambda x: _pub(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
+      sorted(cust_30d, key=lambda x: _pub(x) or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
     )[:12]
 
     cust_counts_7d = Counter(a["customer"] for a in arts_7d if a.get("customer"))
@@ -4284,8 +4306,14 @@ def _render_index(env, ctx, articles, customers, comp, links) -> str:
           shortlist_vendors = list(comp_by_vendor.keys())[:6]
 
         for vendor in shortlist_vendors:
-          vendor_articles = [a for a in articles if (a.get("vendor") or "").strip() == vendor]
-          recent_vendor_articles = [a for a in arts_30d if (a.get("vendor") or "").strip() == vendor]
+          vendor_articles = [
+            a for a in articles
+            if (a.get("vendor") or "").strip() == vendor and _is_technical_product_article(a)
+          ]
+          recent_vendor_articles = [
+            a for a in arts_30d
+            if (a.get("vendor") or "").strip() == vendor and _is_technical_product_article(a)
+          ]
           protocol_coverage = len({b for a in vendor_articles for b in (a.get("buckets") or [])})
           protocol_fit = int((protocol_coverage / max(1, total_buckets)) * 100)
           momentum = min(100, len(recent_vendor_articles) * 8)
