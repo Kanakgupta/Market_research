@@ -3,8 +3,8 @@
 
 [CmdletBinding()]
 param(
-    [string]$TaskName = 'AIROC_Daily_Refresh',
-    [string]$StartTime = '04:45'
+    [string]$TaskName = 'AI_Marketing_Daily_6AM_PT',
+    [string]$StartTime = '06:00'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -40,6 +40,18 @@ $createArgs = @(
 & schtasks.exe @createArgs | Out-Null
 if ($LASTEXITCODE -ne 0) {
     throw "Failed to create/update task '$TaskName'"
+}
+
+# Disable legacy duplicate daily tasks so only one daily updater runs.
+$legacyTasks = @('AIROC_Daily_Refresh', 'AIROC_Daily_Refresh_6AM')
+foreach ($legacy in $legacyTasks) {
+    & schtasks.exe /Query /TN $legacy > $null 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        & schtasks.exe /Change /TN $legacy /DISABLE > $null 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Disabled legacy task '$legacy'."
+        }
+    }
 }
 
 Write-Host "Task '$TaskName' ensured at $StartTime daily."
