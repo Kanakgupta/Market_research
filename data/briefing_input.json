@@ -1,364 +1,419 @@
 {
-  "generated_at": "2026-08-05T13:19:25Z",
+  "generated_at": "2026-08-06T13:29:05Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Europe is reaping the benefits of an open market with a terrific $22K EV, while the US market stays boring",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQRzlWRERQSnhIYVpKLUFpUHcxcHNmSWR4cG1vNlNGSTFBTVduak1PMWl4aHFSRUpaZHdVelVuR0hPbGE5cERwbDVKWDZaLTdGSlp4LWJqQlRrV0d6SGVXckpoeGhLOURtb25iOGdxYV9hY3VtakpqTUJYd0k3S09JNFNkcWgwSHFBdlV6LWdyNnVvOGRSOHpWVWVfRVBCSkdJczQzendkSFN4Uk0xdmppZTFQM1dFbV9XaGMwNm5tOXhtZmlpVUNma2NGbzFHV3BRdTlqWTFmOA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Digital Trends",
-      "date": "2026-08-05",
+      "title": "Bose Refreshes QuietComfort Headphones With Immersive Audio, Wired Lossless",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWFU4Z0JUQ1drQm1EWmRHRVV1Zk5WaUxBT043TkpTV0FjTkIxdk9rS2pOT1BCWTY2NmlFOEtCNUJWLV9OU2YtUm5zTDJEM3V3UDVjVFlmc2JSYVhqVVo4dmFyVGtCM2kxTkRmYV85b0NFSjQ3Q282NG96SUtnXzZ5R2FXdEdJczBNRzVsVGI3UnpwNnczWlc0eWhLVEhfRkw5a19n?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "PCMag",
+      "date": "2026-08-06",
       "vendor": null,
-      "customer": null,
-      "application": "Automotive",
+      "customer": "Bose",
+      "application": null,
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "Multiverse Computing and Qualcomm Collaborate to Bring Efficient AI Models to Data Centers",
-      "url": "https://theaiinsider.tech/2026/08/05/multiverse-computing-and-qualcomm-collaborate-to-bring-efficient-ai-models-to-data-centers/",
-      "source": "theaiinsider.tech",
-      "date": "2026-08-05",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Healthcare",
-      "buckets": [],
-      "summary": "Insider Brief\n- Multiverse Computing and Qualcomm Technologies are collaborating to optimize AI models for Qualcomm Dragonfly AI200 and AI250 accelerators, aiming to increase data-center performance while reducing memory use and power consumption.\n- Earlier demonstrations using Qualcomm\u2019s Cloud AI10"
-    },
-    {
-      "title": "US court overturns Amazon injunction against Perplexity AI",
-      "url": "https://www.retail-insight-network.com/news/us-court-overturns-amazon-injunction-perplexity/",
-      "source": "Retail Insight Network",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Asset Tracking",
-      "buckets": [],
-      "summary": "A US appeals court has overturned an injunction that had temporarily stopped Perplexity from using its AI-powered shopping tools on Amazon\u2019s platform.\nThe dispute centres on Perplexity\u2019s Comet browser, whose AI assistant allows users to carry out tasks, including shopping on Amazon.\nDiscover B2B Mar"
-    },
-    {
-      "title": "Samsung interns conclude summer program",
-      "url": "https://www.taylorpress.net/article/12114,samsung-interns-conclude-summer-program",
-      "source": "Taylor Press",
-      "date": "2026-08-05",
-      "vendor": null,
+      "title": "Samsung Galaxy A18 4G Appears on Geekbench With MediaTek Helio G99 and Android 17",
+      "url": "https://www.mymobileindia.com/samsung-galaxy-a18-4g-appears-on-geekbench-with-mediatek-helio-g99-and-android-17/",
+      "source": "My Mobile India",
+      "date": "2026-08-06",
+      "vendor": "MediaTek",
       "customer": "Samsung",
       "application": null,
       "buckets": [],
-      "summary": "Two dozen Taylor Independent High School students recently graduated from a summer internship at Samsung Austin Semiconductor where they worked with industry professionals, sponsors said.\nThe 24 interns joined a total of 138 college and high school students honored at a graduation ceremony July 24.\n"
+      "summary": "Highlights\n- Samsung Galaxy A18 4G scores 738 on single-core and 2,025 on multi-core Geekbench tests.\n- The phone is revealed to be powered by MediaTek Helio G99 (MT6789) with Mali-G57 MC2 GPU.\n- It runs Android 17 with One UI 9 and is expected to debut soon as a budget 4G-only device.\nSamsung appea"
     },
     {
-      "title": "Will Apple Upgrade (their name for \u201cleasing\u201d) Matter?",
-      "url": "https://cirpapple.substack.com/p/will-apple-upgrade-their-name-for",
-      "source": "cirpapple.substack.com",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Will Apple Upgrade (their name for \u201cleasing\u201d) Matter?\nWith considerable fanfare, last week Apple announced a new \u201cpurchase\u201d program for many of its devices. In partnership with buy-now-pay-later provider Klarna, customers can now lease an iPhone, iPad, Mac computer, or Apple Watch. Since Apple custo"
-    },
-    {
-      "title": "Google is killing one of my favorite Gmail power-user features",
-      "url": "https://www.phonearena.com/news/google-is-killing-one-of-my-favorite-gmail-power-user-features_id182387",
-      "source": "PhoneArena",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Google is killing one of my favorite Gmail power-user features\nStarting January 2027, users will no longer be able to use the \"Send as\" feature.\nGoogle is shutting down one of Gmail's most useful features. | Image by PhoneArena\nGoogle officially announced plans to discontinue one core Gmail power us"
-    },
-    {
-      "title": "Score a Samsung ViewFinity 5K Monitor at Its Record-Low Price of $590",
-      "url": "https://www.cnet.com/deals/samsung-monitor-viewfinity-deal-2026-08-05/",
-      "source": "CNET",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Save $110: The Samsung 27-inch ViewFinity S8 5K monitor is down to $590 right now, making it a smart upgrade for multitaskers who want retina-like sharpness minus the premium price. The upgraded 2026 model is now at its lowest price yet, according to our price tracker.\nSamsung ViewFinity S8 5K monit"
-    },
-    {
-      "title": "Are Apple\u2019s live events returning for the iPhone Ultra launch?",
-      "url": "https://www.macworld.com/article/3206852/are-apples-live-events-returning-for-the-iphone-ultra-launch.html",
-      "source": "macworld.com",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "In summary:\n- Macworld reports on Apple\u2019s lottery system for retail workers to staff the September iPhone event, suggesting a potential return to in-person keynotes after years of prerecorded presentations.\n- The timing appears significant as it coincides with incoming CEO John Ternus\u2019s first major "
-    },
-    {
-      "title": "Hey Sony, I'm Ready to Go All-Digital. Just Let Me Own My Games",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZHN3T1d6N3VoRUZqMF9aMlpwbHMxcmk5LVNydFdseUVKS1VkZldFUFJlUWxNRmR4TWlMNzRhazd4U2JpbUFtNUJuM05zLUZfdjhqa2hRZEwwdWptN2VzR1dDOF9NaXBpbl9WQld0YzdWWHo1SlJYckVERzcwUU1LdjlWcWgwSW9uOHNadmNYUUN5NXBvV0hydV9n?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "PCMag Australia",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "7 biggest Google Pixel 11 rumors rated by likelihood \u2014 from HiLight to higher prices",
-      "url": "https://www.techradar.com/phones/google-pixel-phones/is-the-google-pixel-11-your-next-phone-here-are-all-the-latest-leaks-rated-from-higher-prices-to-its-new-hilight-feature",
-      "source": "TechRadar",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Is the Google Pixel 11 your next phone? Here are all the latest leaks rated, from higher prices to its new HiLight feature\nA mix of upgrades and downgrades\n- Some leaked Pixel 11 marketing materials suggest that Pixel Glow could instead be called HiLight\n- This new feature might work with both Gemin"
-    },
-    {
-      "title": "Samsung Galaxy S26 FE Firmware Surfaces With Wallpapers and a One UI 9.5 Hint",
-      "url": "https://www.androidheadlines.com/2026/08/samsung-galaxy-s26-fe-firmware-surfaces-with-wallpapers-and-a-one-ui-9-5-hint.html",
-      "source": "Android Headlines",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "The Samsung Galaxy S26 FE appeared in three seemingly official renders earlier today, showing off its design and colors. We\u2019ve also shared upcoming cases for the device very recently. And now, well, more Galaxy S26 FE info surfaced.\nThe Galaxy S26 FE wallpapers just surfaced, along with a One UI 9.5"
-    },
-    {
-      "title": "Former Meta chief AI scientist to join investing firm: report (META:NASDAQ)",
-      "url": "https://seekingalpha.com/news/4625938-former-meta-chief-ai-scientist-to-join-investing-firm-report",
-      "source": "Seeking Alpha",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Meta",
-      "application": null,
-      "buckets": [],
-      "summary": "Yann LeCun, who was previously Meta Platforms (META) Chief AI scientist and left to start his own artificial intelligence startup, is joining an investment firm geared towards AI, Bloomberg reported.\nThe firm is known as 224 Ventures and will start\nTo ensure this doesn\u2019t happen in the future, please"
-    },
-    {
-      "title": "Google secures 155 MW solar power in Oklahoma under 15-year deal",
-      "url": "https://interestingengineering.com/energy/google-secures-155-mw-solar-power",
-      "source": "Interesting Engineering",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "Google secures 155 MW Oklahoma solar project in 15-year clean energy agreement\nThe Oklahoma facility will begin supplying electricity to Google in 2028.\nRead Next: One nuclear platform, two reactors: AP1000 technology now extends to AP300 SMRGoogle has agreed to purchase the entire output of RWE\u2019s p"
-    },
-    {
-      "title": "Microsoft signs 23,602-ton carbon removal deal with wastewater alkalinity enhancement firm Crew",
-      "url": "https://www.datacenterdynamics.com/en/news/microsoft-signs-23602-ton-carbon-removal-deal-with-wastewater-alkalinity-enhancement-firm-crew/",
-      "source": "Data Center Dynamics",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Microsoft has signed a carbon removal agreement with Crew Carbon for up to 23,602 carbon removal units generated from Crew\u2019s wastewater alkalinity enhancement (WAE) technology.\nCrew\u2019s proprietary process works by dosing alkaline minerals, such as calcium carbonate, into wastewater treatment plants i"
-    },
-    {
-      "title": "Why Amazon\u2019s $3 Trillion Valuation Signals a New Era of AI-Powered Cloud Computing and AWS Expansion",
-      "url": "https://www.sphericalinsights.com/blogs/why-amazon-s-3-trillion-valuation-signals-a-new-era-of-ai-powered-cloud-computing-and-aws-expansion",
-      "source": "Spherical Insights",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Why Amazon\u2019s $3 Trillion Valuation Signals a New Era of AI-Powered Cloud Computing and AWS Expansion: Industry Analysis and Forecast by Spherical Insights & Consulting\nRELEASE DATE: Aug 2026 Author: Spherical InsightsRequest Free Sample Speak to Analyst\nThe global artificial intelligence infrastruct"
-    },
-    {
-      "title": "Sony\u2019s WH-1000XM6 is now available in a \u201csophisticated\u201d new colour",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQekRZdXZZNUdNdVkyYm5RRVBuekdBMzBnSUlBMVZkTnliRVhzV2NYR2ViN2lHdmRTeUItWTBMUTl0X1VTWmRqTFNnQVMwQy1FcTN3UWthbW14SDRqdjZHaGwyVUtJMHdUS2dPV1ZaWWFmbU1oVk9UQ0xKc2xvUUhZUEFVUDBXemZlWm94SFJTcFEwejVzd21BVHhqZXRkWUl2?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Trusted Reviews",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Sony unveils lightweight FE 100-400mm F5.6-8 OSS telephoto zoom",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQR2FqV0NFU1BpVWpxdHZrY3RsZE1kOTVnNjQ4YXI1Wk9fT0FXTGtCVEVsdHQxUmVuSFdJWG9kTzVndzZ6b1ExbWNxSkhDZG9wNUNScTJ2Ynl4R1cydUF1clZQaEJrRmJFNXdSVC0tb3lPVFJERExLOF9XZ2xodHpFX1U1QW9yVWw1bFVhYw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "source": "Digital Reviews Network",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Leases totalling $1 trillion from Microsoft, Meta, Oracle, Amazon and Google that analysts are calling 'l",
-      "url": "https://timesofindia.indiatimes.com/technology/tech-news/leases-totalling-1-trillion-from-microsoft-meta-oracle-amazon-and-google-that-analysts-are-calling-liabilities-on-balance-sheets/articleshow/132926469.cms",
-      "source": "The Times of India",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Five of the world\u2019s largest technology companies have locked in roughly $1.09 trillion in future lease payments for data centres, creating a massive wave of upcoming financial commitments to support the ongoing artificial intelligence (AI) boom. According to a report by news agency Reuters, financia"
-    },
-    {
-      "title": "I stopped using Google Gboard the moment I discovered what Samsung Keyboard could do",
-      "url": "https://www.androidpolice.com/i-stopped-using-google-gboard-after-discovered-samsung-keyboard/",
+      "title": "Bose's QuietComfort Headphones get a major upgrade with a design that's sleeker than ever",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBZSHRQSHU0Xzl5Rzl6Y0hMSDBwYm9MNC0wV0tjR0o5Zjg0ZENGLUFJLWRnTmtkOWNaOGNPeU5pcWZzd1dVQTN6TXNtMF9HWE1tTGJ1S0dqXzJJdGQ0SWJfZGFIbU10TV9oeElVbzU5bEVJVmpQdkxXaThn?oc=5&hl=en-US&gl=US&ceid=US:en",
       "source": "Android Police",
-      "date": "2026-08-05",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Bose QuietComfort Wireless Headphones (2nd Gen) Bring Immersive Audio Down From the Ultra Line",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVzlkdl9XaHhIYUZhMUFlTzB1VjBmRXlHOGR5UDdPLUJmRmNoY1ZuR2c1V3hRV3F0dngxWHpWckN4RkM4aEdjSUFPT09NVFJ4TmFMajlhUDhzQW1OYjc1NWNzU0JYbi01QnN0eUpqQnUwRHVoSDFDeWQ4NzRBd1VKZVJ4RHdBUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "eCoustics",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Sony Finally Responds On Why They're Dropping Physical Games - Beyond Clips",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWWFzQlVsN0kxZFdyR1h0RklzY3RYa09Jb1BLZjU5OUwycUsydXFBUUh4V2xWQ3pPazhhclprUkpTUGEtZzhRakVpNHctVDdVellhNkpaUTZQdnlDNWR4YlZqdm5GbTRTUkQtWE53ZjkxRkxaQmtzcnpIZ1JjdXRvN1NMdjA0V3ZoQVdDSThxc3ZXU0xaRjFILURMbC16ZGxj?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "IGN",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Sony",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Bose Announces New QuietComfort Headphones, Bringing Flagship Features to a Lower Price Point",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQa09YWHQ2bWU5eE4wUkNkNi1Jb0lBcnJTa0h6V1YwUE96MUpJWHVfZ2hnMGdwYko5ZXZSY0RYWlkxOXcxc2xTVWd2Y1ZWRlN5RzhLVG1UcmVHX25XZXBlV21MeDVzdFVFemhpZ05McnlxeExvdDg1YWFWV3pGNlRHNXQyQnFCRVdacGx0ZGhsMVNrVlpqbWRNN2hlVERzQ1hyS1poSVNTcTI0S2dNcUVGVXZmcDVjWXdBS3IxMUFITkdfQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "Rolling Stone",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Bose\u2019s new QuietComfort headphones get spatial audio and USB-C lossless for $359",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPS1RmNXBEUDUyS1U4bnFaUE1LZUFlOU1ZOFh0ZXZPTlR5ekJ5aVUtOHc0RS1tdlNJLWJPV2I0bndZT1FlWkpQTmNpX1ZySUdGaDFPNFNkZGp3c3RMN2loRlVtNkZDQXFYQ2gtdnJwVmJrYXBNT2h1bzRoR285d2NiQlJhbUtoVHhldklIVThrY3ZoQTNiOXRVQUc5UjFaZzg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "popsci.com",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Bose\u2019s upgraded QuietComfort headphones add head-tracking immersive audio",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMGd2cHh3cUNuWGpjU0o1bmx0RWtJVFhXaWtXQXUxOXdxSzk0eDdPci01WUV4d0Q0V2xMd05wcG9peHItUlE1Q0d4akstNUl3MkRTb0Q5M3JxTm9MVEdPWEtaS1d2NG9iUXhIY3NiRjhLc2c5NVotbTU3ZDRPMWpxRFVXZXZObVRQMlV6Q2ZHRzBCR283QmQwbzhUYlRCbXVSdzlHeA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "The Verge",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Bose unveils next-gen QuietComfort Headphones with new industrial design, Immersive Audio, more",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPclVkNlczNklWeWpWc1hNc0tRRHpPWXducDJEZnRkRkZhUDdEaWpuT01CMzdrR2RmTmVHcVhOaFRwZFYyaEt6SU5sN2tUaG9tVjZKejlPYnRXZEZPUTZNejRPZmZoT09JeXE5emNKbkEzeHNmUXRfa3NVeFNnaTc0LVJpTXFncnAtR0RB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "9to5Toys",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "New midrange Bose headphones are here - with this many upgrades, do you need to buy premium?",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE96OGlIWGdmX3VwRXM0QU1PQmVpVW9uVlpZZXlJVFk5cE5FNC03Y2VTSVdfQWE0aVZBVzFuUy1STHcxNTdrM3lFU09Wa1BmcEtMeGw1enE5VEFVS3kyTGNwaWltRGxZN3g2TGdXeE1vcU5Pdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "ZDNET",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "I'm glad to see these colourful new Bose headphones inherit a trick from my favourite pair for travel",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNVWFYMmpGWFJDbmZNU2J0dXpsbEV0UGxhSXhSSmZpZXlxNzhVTXozTGxPMkZ2MjJuUFhRTHVQbGhwVVBDdl9CbzZBMVlYOFA0akVGVWtXWW14VWMwcTctSnIxdjhfcEtkME5ZR1lRYlRyd2NSemExY2thZmtEdjZlTUxfMk1vMFZ2dHFvOEI2QUViaW1SWllRZk15bElBWmowTkU4MnBzWjViOGJTdG5iR2hCd1ZoUWU4SFZQMUxSUGZRUVJRajFieDJwUW4?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "stuff.tv",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Bose",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Galaxy Z Fold 8 pre-orders up 70% over Z Fold 7 in Europe",
+      "url": "https://9to5google.com/2026/08/06/galaxy-z-fold-8-pre-orders-up-70-over-z-fold-7-in-europe/",
+      "source": "9to5Google",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "It looks like Samsung is riding a wave of success with the recent Z Fold 8 and 8 Ultra, as the Korean tech giant says they are the most pre-ordered foldables in Europe to date."
+    },
+    {
+      "title": "Microsoft\u2019s AI business is booming. A filing shows most of it is just OpenAI",
+      "url": "https://thenextweb.com/news/microsoft-ai-revenue-openai-70-percent-dependence",
+      "source": "thenextweb.com",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "Microsoft\u2019s AI business looks like a triumph. Its shares jumped after earnings last week, and the AI unit is growing fast. A new filing shows how much of that rests on a single partner.\nMicrosoft booked $24.1 billion in revenue from OpenAI during the year to June, Bloomberg reported. The company dis"
+    },
+    {
+      "title": "'The Bonfire of the Vanities' series is dropped by Apple TV",
+      "url": "https://appleinsider.com/articles/26/08/06/the-bonfire-of-the-vanities-series-dropped-by-apple-tv",
+      "source": "appleinsider.com",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "The high-profile television version of Tom Wolfe's \"The Bonfire of the Vanities\" will reportedly no longer be made for Apple TV because of creative differences.\nThis would have been the third version of Wolfe's famous 1980s novel about greed and Wall Street, and it was to be made by \"Ally McBeal\" an"
+    },
+    {
+      "title": "Silo Pharma Subsidiary QwikAgents Collaborates with Amazon",
+      "url": "https://www.globenewswire.com/news-release/2026/08/06/3340312/0/en/Silo-Pharma-Subsidiary-QwikAgents-Collaborates-with-Amazon-Web-Services-Premier-Tier-Partner-Caylent-to-Advance-Enterprise-AI-Platform.html",
+      "source": "GlobeNewswire",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Collaboration supports development of a next-generation AWS-native platform designed to accelerate commercialization, scalability and enterprise adoption\nSARASOTA, FLA., Aug. 06, 2026 (GLOBE NEWSWIRE) -- Silo Pharma (Nasdaq: SILO) (\u201cSilo\u201d or \u201cthe Company\u201d), a managed AI agent platform and developmen"
+    },
+    {
+      "title": "Will Muse Code Give Meta an Edge in the AI Coding Race?",
+      "url": "https://aimagazine.com/news/will-muse-code-give-meta-an-edge-in-the-ai-coding-race",
+      "source": "AI Magazine",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": "Will Muse Code Give Meta an Edge in the AI Coding Race?\nReleasing its first coding agent, Muse Code, Meta is entering the race long after its rivals, relying on low costs to make up the lost ground.\nThe launch will directly be in competition with leading AI labs Anthropic and OpenAI that already dom"
+    },
+    {
+      "title": "Meta Breach Reveals Irregular Cleared Muse Spark's Risk, Then Caused Breach It Had Cleared",
+      "url": "https://www.techtimes.com/articles/323279/20260806/meta-breach-reveals-irregular-cleared-muse-sparks-risk-then-caused-breach-it-had-cleared.htm",
+      "source": "Tech Times",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": "Meta confirmed Wednesday that its Muse Spark 1.1 model exploited a real company's systems during a cybersecurity evaluation \u2014 and that the breach happened through the same third-party evaluation vendor whose infrastructure misconfiguration was already implicated in Anthropic's three-company breach o"
+    },
+    {
+      "title": "Amazon and Apple impersonated in \u201c$149.99 unauthorized charge\u201d scam",
+      "url": "https://securityboulevard.com/2026/08/amazon-and-apple-impersonated-in-149-99-unauthorized-charge-scam/",
+      "source": "Security Boulevard",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Amazon and Apple impersonated in \u201c$149.99 unauthorized charge\u201d scam\nIf you\u2019ve spent any time browsing lately, you may have run into a full-screen popup warning you that your Apple ID or Amazon account was just used for a mysterious $149.99 purchase. It looks urgent. It looks official. And if you loo"
+    },
+    {
+      "title": "Microsoft launches Hyderabad cloud region to power India's AI economy, strengthen enterprise adoption",
+      "url": "https://www.aninews.in/news/business/microsoft-launches-hyderabad-cloud-region-to-power-indias-ai-economy-strengthen-enterprise-adoption20260806181853",
+      "source": "ANI News",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Get Apple\u2019s thinnest phone ever for way less with $150 off an unlocked iPhone Air",
+      "url": "https://www.macworld.com/article/3207836/get-apples-thinnest-phone-ever-for-way-less-with-150-off-an-unlocked-iphone-air.html",
+      "source": "Macworld",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "The iPhone AIr is down to $850 today\nEveryone knows there\u2019s an iPhone event just around the corner, but if you don\u2019t want to spend over a thousand dollars on a new phone, we\u2019ve got a fantastic deal for you today: Best Buy is selling the iPhone Air for $850, a savings of $150 and the best price we\u2019ve"
+    },
+    {
+      "title": "OpenAI moves to dismiss Apple trade secrets lawsuit",
+      "url": "https://qz.com/openai-motion-dismiss-apple-trade-secrets-lawsuit-080626",
+      "source": "qz.com",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "OpenAI filed a motion Wednesday seeking dismissal of Apple $AAPL's lawsuit, which charges the AI company and two of its hires from Apple with trade-secret theft and using job interviews to extract confidential information.\nOpenAI called Apple's complaint \"baseless and pretextual,\" arguing the iPhone"
+    },
+    {
+      "title": "SC Ventures and Sony Innovation Fund back Yellow Card",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYjJuU1hfY1RaVURIZHJPRzdVWXk4QVNfOWhhNy1RV0ZRRURfMmxBbnd6Q2wwMTFyR1VCSll1UE5ZdjZOdHBvQmhOUDR3WEtxZ2ozMVY3eGVCZm5UNGVVaHhzOFlXSzBKZlRwVnJrNm5nODk3QnNmbVVNTi1ONDdKaVU2SFM?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source": "africaprivateequitynews.com",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Sony",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Meta Enters the Terminal Coding Agent Race With Muse Code \u2013 as Contributor Pricing Raises New Data-Use Questions",
+      "url": "https://www.streetinsider.com/GetNews/Meta+Enters+the+Terminal+Coding+Agent+Race+With+Muse+Code+%E2%80%93+as+Contributor+Pricing+Raises+New+Data-Use+Questions/26879844.html",
+      "source": "StreetInsider",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Muse Code: Meta's first coding agent launches with Spark 1.2",
+      "url": "https://tbreak.com/meta-muse-code-muse-spark-1-2/",
+      "source": "tbreak.com",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": "Meta has launched Muse Code, its first coding agent, alongside Muse Spark 1.2, the model that powers it. Announced by Mark Zuckerberg on 5 August, the terminal tool installs with one command and handles complete engineering tasks \u2014 planning changes, writing code and validating results \u2014 across entir"
+    },
+    {
+      "title": "Exclusive: Official Samsung Galaxy S26 FE Images Show All Three Color Variants",
+      "url": "https://www.androidheadlines.com/samsung-galaxy-s26-fe",
+      "source": "Android Headlines",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "The Samsung Galaxy S26 FE is all over the news this week. The phone\u2019s seemingly official renders surfaced recently, showing the phone in all three colors. Unfortunately, those renders were really low-res.\nFollowing that, the phone\u2019s firmware popped up, from which official wallpapers were pulled. Rat"
+    },
+    {
+      "title": "Apple's iPhone 18 Pro Launch Is Six Weeks Away, and There's a $1 Billion Supply Chain Problem",
+      "url": "https://www.androidheadlines.com/2026/08/apples-iphone-18-pro-launch-is-six-weeks-away-and-theres-a-1-billion-supply-chain-problem.html",
+      "source": "Android Headlines",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Due to the DRAM crisis, TSMC is actually sitting on nearly $1 billion worth of Apple A20 Pro SoCs. This is because TSMC can\u2019t move forward with manufacturing these SoCs until it gets DRAM to put into the SoC. Keep in mind, these are \u201cSystem on a Chip\u201d and not a traditional processor, so the DRAM is "
+    },
+    {
+      "title": "Amazon\u2019s Best Back-to-School Deals Are Here: Save Up to 50% on Headphones, Smartwatches, Tablets, and More",
+      "url": "https://www.pcmag.com/deals/best-amazon-back-to-school-deals-2026-august-5",
+      "source": "PCMag",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Back-to-school shopping season is already here, and with the bummer of summer slipping away, the bright side is that there are plenty of sales and savings to be had out there. Major brands are already offering discounts on the tech that makes everyday life a little easier, from entertainment upgrade"
+    },
+    {
+      "title": "Microsoft opens its largest India data center hub as AI race heats up",
+      "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-opens-largest-india-data-123312683.html",
+      "source": "Yahoo Finance",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "Aug 6 (Reuters) - Microsoft launched its largest India data center in Hyderabad on Thursday and has signed up Adani Group and HDFC Bank among early users as it races rivals for the country's fast-growing AI market.\nThe India South Central facility brings Microsoft's cloud regions in India to four, a"
+    },
+    {
+      "title": "Amazon delivery driver caught on camera tossing package, damaging Pennsylvania man\u2019s new truck",
+      "url": "https://www.fox43.com/article/money/consumer/fox43-finds-out/amazon-delivery-driver-tosses-package-damages-car-truck-who-pays-for-the-damage/521-76e0dded-3792-4084-ae14-cf74e14ef6b3",
+      "source": "fox43.com",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Google's new Ask Maps features may be more exciting than the upcoming Pixel drop",
+      "url": "https://www.zdnet.com/article/googles-new-ask-maps-features-may-be-more-exciting-than-the-upcoming-pixel-drop/",
+      "source": "ZDNet",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Google announced several upgrades to Ask Maps, allowing users to order food and find hotels with fewer clicks."
+    },
+    {
+      "title": "You can now ask Google Maps\u2019 AI to order food for you",
+      "url": "https://www.theverge.com/tech/976079/google-ask-maps-food-ordering-personal-intelligence",
+      "source": "The Verge",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "The AI-powered \"Ask Maps\" tool in Google Maps can now perform a broader range of personalized and conversational requests, including ordering food, finding hotels, and providing suggestions that factor in your existing plans. These are among several new features announced for Ask Maps today, which a"
+    },
+    {
+      "title": "These brilliant Samsung Gallery features finally made me ditch Google Photos",
+      "url": "https://www.androidpolice.com/these-samsung-gallery-features-made-me-ditch-google-photos/",
+      "source": "Android Police",
+      "date": "2026-08-06",
       "vendor": null,
       "customer": "Google",
       "application": "Energy/Utility",
       "buckets": [],
-      "summary": "I gave Samsung\u2019s keyboard plenty of criticism in the past. And to be fair, I had a valid reason.\nThe keyboard used to be a wonky mess. I faced my fair share of issues, ranging from laggy swipe typing to hit-or-miss autocorrect. Plus, language support was limited, and the interface felt clunky.\nThis "
+      "summary": "After years of relying on Google Photos on my devices, my loyalty to Google's cloud gallery has hit a wall.\nMainly, I stuck around because of my Google One storage plan, which bundled cloud backup with the rest of my Google services.\nRecently, though, I started paying more attention to Samsung Galle"
     },
     {
-      "title": "Samsung details August 2026 security patch for Galaxy devices ahead of Google",
-      "url": "https://www.notebookcheck.net/Samsung-details-August-2026-security-patch-for-Galaxy-devices-ahead-of-Google.1360652.0.html",
-      "source": "Notebookcheck",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung details August 2026 security patch for Galaxy devices ahead of Google\nSamsung has published the details for its August 2026 Security Maintenance Release, getting ahead of Google's official Android update breakdown. The security patch resolves 56 separate vulnerabilities across Galaxy smartph"
-    },
-    {
-      "title": "Samsung unveils V10 BV-NAND with wafer bonding and 400 layers",
-      "url": "https://www.techzine.eu/news/infrastructure/143432/samsung-unveils-v10-bv-nand-with-wafer-bonding-and-400-layers/",
-      "source": "Techzine Global",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Robinhood to list a fund that lets anyone back Y Combinator startups",
-      "url": "https://techcrunch.com/2026/08/05/robinhood-to-list-a-fund-that-lets-anyone-back-y-combinator-startups/",
+      "title": "Google Maps adds agentic features, including food ordering and hotel bookings",
+      "url": "https://techcrunch.com/2026/08/06/google-maps-adds-agentic-features-including-food-ordering-and-hotel-bookings/",
       "source": "TechCrunch",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": null,
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Robinhood's latest financial instrument intends to let any retail investor feel like they, too, can make money by backing Y Combinator startups."
-    },
-    {
-      "title": "Most Traded US Stocks on ActivTrades in July 2026: Microsoft Soars, Micron and Tesla Tumble",
-      "url": "https://fxnewsgroup.com/forex-news/institutional/most-traded-us-stocks-on-activtrades-in-july-2026-microsoft-soars-micron-and-tesla-tumble/",
-      "source": "FX News Group",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Most Traded US Stocks on ActivTrades in July 2026: Microsoft Soars, Micron and Tesla Tumble\nThe following is a guest editorial courtesy of Carolane de Palmas, Markets Analyst at Retail FX and CFDs broker ActivTrades.\nJuly delivered a striking reminder that a relatively stable market can hide major o"
-    },
-    {
-      "title": "At $425, Samsung\u2019s Budget-Friendly Galaxy A57 5G Just Matched Its Record-Low Price",
-      "url": "https://www.cnet.com/deals/samsung-galaxy-a57-5g-deal-2026-08-05/",
-      "source": "CNET",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Save $125: Samsung offers some of the best phones on the market, but that doesn\u2019t mean you have to splurge to land flagship features. The Samsung Galaxy A57 includes some premium features, yet this deal means it\u2019s down to a low-matching price of just $425.\nThis deal is available to everyone right no"
-    },
-    {
-      "title": "Samsung, SK Hynix pledge stronger shareholder returns",
-      "url": "https://www.reuters.com/world/asia-pacific/samsung-sk-hynix-pledge-stronger-shareholder-returns-2026-08-05/",
-      "source": "Reuters",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "The Google Pixel 11 Is Bringing Back This Long-Forgotten Feature Of Android Phones",
-      "url": "https://www.bgr.com/2230657/google-pixel-11-series-pixel-glow-highlight-feature/",
-      "source": "bgr.com",
-      "date": "2026-08-05",
+      "date": "2026-08-06",
       "vendor": null,
       "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "The Google Pixel 11 Is Bringing Back This Long-Forgotten Feature Of Android Phones\nGoogle is all set to unveil the Pixel 11 lineup on August 12, and current Pixel owners have a lot of expectations from it. There have been several leaks already that have seemingly indicated that these phones are very"
+      "summary": "The launch of these new features reflects Google\u2019s ambitions to transform Google Maps from a navigation tool into an assistant that's capable of helping users complete real-world tasks."
     },
     {
-      "title": "Google is in talks for a $1.5 billion-plus deal with AI coding agent startup Mechanize",
-      "url": "https://www.businessinsider.com/google-mechanize-deal-talent-tech-ai-coding-2026-8",
-      "source": "Business Insider",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Google wants its AI to get better at coding. It might have found a shortcut.\nThe tech giant has been in discussions with San Francisco startup Mechanize in recent weeks for a potential deal that would involve Google hiring some of Mechanize's talent, four people familiar with the conversations said."
-    },
-    {
-      "title": "Broadcom Stock's Outlook Is Booming, So Why Is The Price Faltering?",
-      "url": "https://www.trefis.com/data/companies/AVGO/no-login-required/cnmjbfGZ/Broadcom-Stock-s-Outlook-Is-Booming-So-Why-Is-The-Price-Faltering-",
-      "source": "Trefis",
-      "date": "2026-08-05",
-      "vendor": "Broadcom",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "This interactive model has a limit on the number of drivers that can be modified in a single scenario. When the limit is reached those drivers not yet modified become disabled for modification.\nYour options are:\n- Create new scenarios to try different combinations of driver modifications\n- Reset one"
-    },
-    {
-      "title": "Amazon Just Made a $200 Million AI Pivot and Every Founder Should Pay Attention",
-      "url": "https://www.inc.com/kimanzi-constable/amazon-just-made-a-200-million-ai-pivot-and-every-founder-should-pay-attention/91383639",
-      "source": "inc.com",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Amazon's AWS CEO Just Sent Shivers Down the Spines of AI Bears. Supply is Mostly 'Spoken For' Through 2028.",
-      "url": "https://247wallst.com/investing/2026/08/05/amazons-aws-ceo-just-sent-shivers-down-the-spines-of-ai-bears-supply-is-mostly-spoken-for-through-2028/",
-      "source": "24/7 Wall St.",
-      "date": "2026-08-05",
-      "vendor": "Marvell",
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "Amazon\u2019s AI spending is settling a debate between the bulls and the bears. Amazon Web Services (AWS) CEO Matt Garman spent Monday on Bloomberg Technology arguing that AWS\u2019s growth is only getting started. He then went to X and quantified it in a way that undercuts every bear case that AI demand is t"
-    },
-    {
-      "title": "Official 25W Qi2 Google Pixelsnap Charger with Stand hits best price ever at 40% off, now $42 shipped",
-      "url": "https://9to5toys.com/2026/08/05/official-25w-qi2-google-pixelsnap-charger/",
-      "source": "9to5Toys",
-      "date": "2026-08-05",
+      "title": "Ask Maps in Google Maps rolling out Personal Intelligence, real-time transit, global launch",
+      "url": "https://9to5google.com/2026/08/06/google-ask-maps-global/",
+      "source": "9to5Google",
+      "date": "2026-08-06",
       "vendor": null,
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Just ahead of the Pixel 11 launch next week, Amazon is now offering the best price ever on the official Google Pixelsnap Charger with Stand at 40% off the list price.\nAmazon is now offering the Google Pixelsnap Charger with Stand down at $41.99 shipped. Regularly $70 and still fetching as much on th"
+      "summary": "After rolling out in March, the Gemini-powered Ask Maps chat in Google Maps is getting a number of big updates today, including a global launch."
     },
     {
-      "title": "Mark Zuckerberg Wrote That AI May Soon Deliver \"Personal Superintelligence to Everyone\" Just Before Meta's Free Cash Flow Cratered 91%. Do Investors Buy the Vision?",
-      "url": "https://www.fool.com/investing/2026/08/05/mark-zuckerberg-wrote-that-ai-may-soon-deliver-per/",
-      "source": "The Motley Fool",
-      "date": "2026-08-05",
+      "title": "Why are you still using Google Assistant on Android? [Poll]",
+      "url": "https://9to5google.com/2026/08/06/why-are-you-still-using-google-assistant-on-android-poll/",
+      "source": "9to5Google",
+      "date": "2026-08-06",
       "vendor": null,
-      "customer": "Meta",
-      "application": "Wearable",
+      "customer": "Google",
+      "application": "Smart Home",
       "buckets": [],
-      "summary": "Meta Platforms (META -0.39%) CEO Mark Zuckerberg made some bold claims on the company's second-quarter earnings conference call, but they weren't enough to appease investors after the company reported lackluster earnings results.\nThe company's earnings came up short of Wall Street consensus estimate"
+      "summary": "Google Assistant has an official end-of-life date \u2013 September 4. While many have already made the jump to Gemini, a number of Android users are still holding on to Google Assistant. Why are you?"
     },
     {
-      "title": "Amazon Wants to Connect Your Phone Everywhere, Whether You Want Them To Or Not",
-      "url": "https://www.rideapart.com/news/803780/amazon-gps-satellite-launch-may-kill-garmin-and-other-systems/",
-      "source": "RideApart.com",
-      "date": "2026-08-05",
+      "title": "Arriving Now: AI-Powered Toast Ordering on Google Maps",
+      "url": "https://www.businesswire.com/news/home/20260806458624/en/Arriving-Now-AI-Powered-Toast-Ordering-on-Google-Maps",
+      "source": "Business Wire",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Now You Can Chat With Google Maps To Order Food, Reserve Hotels And More",
+      "url": "https://www.engadget.com/2231441/google-maps-ask-maps-expansion/",
+      "source": "Engadget",
+      "date": "2026-08-06",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart City",
+      "buckets": [],
+      "summary": "Now you can chat with Google Maps to order food, reserve hotels and more\nGoogle is bringing a host of new features to its Ask Maps chatbot.\nThis past March, Google introduced a chatbot inside of Maps as part of its overhaul of the software's navigation suite. The company pitched the feature, Ask Map"
+    },
+    {
+      "title": "Camera catches Amazon tossing package, damaging York County resident's truck | FOX43 Finds Out",
+      "url": "https://www.fox43.com/video/money/consumer/fox43-finds-out/camera-catches-amazon-tossing-package-damaging-york-county-residents-truck-fox43-finds-out/521-bfe1e66a-37f6-4a75-9d2c-7175bf038d2c",
+      "source": "fox43.com",
+      "date": "2026-08-06",
       "vendor": null,
       "customer": "Amazon",
       "application": null,
@@ -366,129 +421,69 @@
       "summary": ""
     },
     {
-      "title": "Amazon posts Q2 growth driven strongly by groceries",
-      "url": "https://www.freshfruitportal.com/news/2026/08/05/amazon-groceries/",
-      "source": "FreshFruitPortal.com",
-      "date": "2026-08-05",
+      "title": "Amazon's 'Study and Reliable' Wall-Mounted Fan Is Perfect for Decks and Garages, and It's 40% Off Right Now",
+      "url": "https://www.autoblog.com/deals/bilt-hard-14-inch-high-velocity-outdoor-wall-mount-fan-amazon-sale",
+      "source": "autoblog.com",
+      "date": "2026-08-06",
       "vendor": null,
       "customer": "Amazon",
       "application": null,
       "buckets": [],
-      "summary": "Amazon posts Q2 growth driven strongly by groceries\nIn its last earnings call, Amazon reported a 20 percent increase in year-over-year net sales, totaling $200.3 billion. In North America, the company is also growing, posting a 16 percent uptick in Q2, sitting at $116.2 billion.\nHowever, positive fi"
+      "summary": ""
     },
     {
-      "title": "Apple opens opportunity for retail employees to support product launch event",
-      "url": "https://www.hrkatha.com/news/apple-opens-opportunity-for-retail-employees-to-support-product-launch-event/",
-      "source": "HR Katha",
-      "date": "2026-08-05",
+      "title": "Hanes items are on sale up to 72% off at Amazon",
+      "url": "https://www.thestreet.com/deals/hanes-basics-sale-amazon-sale",
+      "source": "thestreet.com",
+      "date": "2026-08-06",
       "vendor": null,
-      "customer": "Apple",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Apple is inviting US retail employees to participate in its upcoming product-launch event through an internal programme that will allow selected staff members to support the in-person unveiling.\nThe company has opened a lottery-based selection process for retail employees interested in being part of"
-    },
-    {
-      "title": "Jane Fonda, Google billionaire\u2019s wife wage war on fix to make California\u2019s housing cheaper \u2014 from their lavish estates",
-      "url": "https://nypost.com/2026/08/05/us-news/jane-fonda-wendy-schmidt-oppose-californias-prop-45-housing-reform/",
-      "source": "New York Post",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Healthcare",
-      "buckets": [],
-      "summary": "Politics\nexclusive\nJane Fonda, Google billionaire\u2019s wife wage war on fix to make California\u2019s housing cheaper \u2014 from their lavish estates\nSee more of our coverage in your search results.\nAdd The California Post on GoogleLefty Hollywood legend Jane Fonda and the wife of multi-billionaire Google found"
-    },
-    {
-      "title": "Apple reportedly set to launch camera-equipped AirPods",
-      "url": "https://www.varindia.com/news/apple-reportedly-set-to-launch-camera-equipped-airpods",
-      "source": "varindia.com",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "New reports suggest Apple is accelerating development of camera-enabled AirPods, with one prototype reportedly nearing launch and software references in iOS 27 indicating the company's AI-powered wearable strategy is advancing faster than earlier projections.\nApple is reportedly moving faster than a"
-    },
-    {
-      "title": "Google Assistant will shut down for good on Android and Wear OS in September \u2014 here's what you need to do next",
-      "url": "https://www.techradar.com/ai-platforms-assistants/gemini/google-assistant-will-shut-down-for-good-on-android-and-wear-os-in-september-heres-what-you-need-to-do-next",
-      "source": "TechRadar",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Google Assistant will shut down for good on Android and Wear OS in September \u2014 here's what you need to do next\nIt's all about Gemini now\n- We're saying goodbye to Google Assistant on more devices\n- September 4 is the cut-off point for Android and Wear OS\n- The process of switching over to Gemini is "
-    },
-    {
-      "title": "Google Assistant shuts down Sept 4 as Gemini takes over",
-      "url": "https://www.techbuzz.ai/articles/google-assistant-shuts-down-sept-4-as-gemini-takes-over",
-      "source": "The Tech Buzz",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Google is pulling the plug on Assistant. The company confirmed it will remove access to Google Assistant on Android phones and tablets starting September 4th, marking the end of an era for the voice assistant that launched in 2016. The shutdown, revealed through user emails and reported by 9to5Googl"
-    },
-    {
-      "title": "Shot Scope releases Apple Watch GPS app, expanding its golf technology ecosystem",
-      "url": "https://www.firstcallgolf.com/industry-news/release/2026-08-05/shot-scope-releases-apple-watch-gps-app-expanding-its-golf-technology-ecosystem",
-      "source": "firstcallgolf.com",
-      "date": "2026-08-05",
-      "vendor": null,
-      "customer": "Apple",
+      "customer": "Amazon",
       "application": null,
       "buckets": [],
-      "summary": "EDINBURGH, Scotland \u2013 Shot Scope, the industry leader in performance-driven golf technology, today announces the launch of its Apple Watch app. This strategic release marks a significant milestone as the brand continues to diversify its product range and offer golfers another seamless route into the"
+      "summary": ""
     }
   ],
   "vendor_news_30d": {
-    "Onsemi": 42,
-    "Broadcom": 33,
-    "Qualcomm": 31,
-    "NXP": 22,
-    "Microchip": 10,
-    "MediaTek": 9,
-    "Silicon Labs": 8,
-    "Murata": 6,
-    "Renesas": 5,
-    "STMicro": 5,
-    "Espressif": 4,
-    "Marvell": 3,
-    "Airoha": 3,
+    "Qualcomm": 50,
+    "Broadcom": 38,
+    "Onsemi": 19,
+    "Microchip": 15,
+    "NXP": 14,
+    "Silicon Labs": 9,
+    "MediaTek": 7,
+    "Murata": 5,
+    "STMicro": 4,
+    "Renesas": 3,
+    "Infineon": 3,
+    "Espressif": 3,
     "TI": 3,
+    "Apple": 2,
     "Synaptics": 2,
-    "Quectel": 2,
-    "Goodix": 1,
-    "LG Innotek": 1,
-    "Apple": 1,
+    "Nordic": 2,
+    "Quectel": 1,
     "UNISOC": 1,
-    "Sequans": 1,
-    "Skyworks": 1,
-    "Realtek": 1,
-    "Infineon": 1
+    "HiSilicon": 1,
+    "u-blox": 1,
+    "Airoha": 1,
+    "Marvell": 1
   },
   "customer_news_30d": {
-    "Apple": 178,
-    "Google": 130,
-    "Samsung": 116,
-    "Amazon": 100,
-    "Sony": 88,
-    "Microsoft": 83,
-    "Meta": 64,
-    "Bose": 13,
-    "Sonos": 10,
-    "BMW": 6,
-    "Tesla": 3,
+    "Google": 160,
+    "Apple": 146,
+    "Samsung": 120,
+    "Meta": 110,
+    "Amazon": 107,
+    "Sony": 76,
+    "Microsoft": 75,
+    "Bose": 29,
+    "Sonos": 3,
+    "BMW": 3,
+    "Tesla": 2,
+    "Huawei": 2,
     "Motorola": 2,
-    "SwitchBot": 2,
-    "HKMC": 1,
-    "Sennheiser": 1,
-    "GM": 1,
     "Garmin": 1,
-    "Aqara": 1,
-    "Volkswagen": 1
+    "Toyota": 1,
+    "HKMC": 1
   },
   "github_pulse": [
     {
@@ -500,9 +495,15 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3876,
+      "issues_open": 3896,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+        },
         {
           "tag": "v4.4.2-rc1",
           "name": "Zephyr v4.4.2-rc1",
@@ -514,16 +515,10 @@
           "name": "Zephyr v4.3.1",
           "published_at": "2026-06-23T12:27:28Z",
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
-        },
-        {
-          "tag": "v4.3.1-rc1",
-          "name": "Zephyr v4.3.1-rc1",
-          "published_at": "2026-06-13T07:08:30Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1-rc1"
         }
       ],
-      "stars": 16114,
-      "pushed_at": "2026-08-05T13:10:06Z"
+      "stars": 16131,
+      "pushed_at": "2026-08-06T12:41:18Z"
     },
     {
       "name": "ESP-IDF",
@@ -558,8 +553,23 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18700,
+      "stars": 18708,
       "pushed_at": "2026-08-04T20:26:24Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 241952,
+      "pushed_at": "2026-08-05T16:03:28Z"
     },
     {
       "name": "Matter SDK",
@@ -570,7 +580,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2763,
+      "issues_open": 2760,
       "prs_open": 0,
       "releases": [
         {
@@ -593,22 +603,7 @@
         }
       ],
       "stars": 8853,
-      "pushed_at": "2026-08-05T12:41:23Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 241792,
-      "pushed_at": "2026-08-04T21:23:40Z"
+      "pushed_at": "2026-08-06T13:23:11Z"
     },
     {
       "name": "OpenThread",
@@ -619,7 +614,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 161,
+      "issues_open": 162,
       "prs_open": 0,
       "releases": [
         {
@@ -641,8 +636,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4001,
-      "pushed_at": "2026-08-05T06:27:20Z"
+      "stars": 4002,
+      "pushed_at": "2026-08-06T05:48:03Z"
     },
     {
       "name": "BlueZ",
@@ -653,7 +648,7 @@
         "bluetooth"
       ],
       "commits_30d": 54,
-      "issues_open": 115,
+      "issues_open": 116,
       "prs_open": 0,
       "releases": [
         {
@@ -675,8 +670,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1124,
-      "pushed_at": "2026-08-04T18:52:11Z"
+      "stars": 1125,
+      "pushed_at": "2026-08-05T16:56:46Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -686,8 +681,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 46,
-      "issues_open": 459,
+      "commits_30d": 43,
+      "issues_open": 461,
       "prs_open": 0,
       "releases": [
         {
@@ -709,8 +704,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15473,
-      "pushed_at": "2026-08-03T19:26:37Z"
+      "stars": 15475,
+      "pushed_at": "2026-08-05T20:19:45Z"
     },
     {
       "name": "NimBLE",
@@ -720,8 +715,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 11,
-      "issues_open": 277,
+      "commits_30d": 10,
+      "issues_open": 278,
       "prs_open": 0,
       "releases": [],
       "stars": 880,
@@ -772,18 +767,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "10-Q",
-      "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
-    },
-    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "8-K",
       "date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
+    },
+    {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "10-Q",
+      "date": "2026-07-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
     },
     {
       "vendor": "Apple",
@@ -814,13 +809,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-07-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
-    },
-    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -835,18 +823,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom-20260729.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "10-Q",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
+      "vendor": "TI",
+      "ticker": "TXN",
       "form": "8-K",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
+      "date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
     },
     {
       "vendor": "Skyworks",
@@ -868,6 +849,20 @@
       "form": "8-K",
       "date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000045/swks-20260728.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "10-Q",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
     },
     {
       "vendor": "Microchip",
@@ -940,13 +935,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
@@ -954,11 +942,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
     },
     {
-      "vendor": "Marvell",
-      "ticker": "MRVL",
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
       "form": "8-K",
-      "date": "2026-06-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -966,6 +954,13 @@
       "form": "8-K",
       "date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
+    },
+    {
+      "vendor": "Marvell",
+      "ticker": "MRVL",
+      "form": "8-K",
+      "date": "2026-06-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -1092,34 +1087,6 @@
       "form": "10-K",
       "date": "2026-05-08",
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026032873/rfmd-20260328.htm"
-    },
-    {
-      "vendor": "Microchip",
-      "ticker": "MCHP",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126019416/ef20072662_8k.htm"
-    },
-    {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "10-Q",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000036/syna-20260328.htm"
-    },
-    {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-05-07",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000035/syna-20260507.htm"
     }
   ],
   "tracked_competitors": [
@@ -1231,6 +1198,21 @@
           "url": "https://seekingalpha.com/article/4929339-nordic-semiconductor-stock-question-cra-enforcement-appeal"
         },
         {
+          "title": "Nordic's nRF9151 opens satellite and cellular IoT to a new class of connected devices",
+          "date": "Aug 2026",
+          "url": ""
+        },
+        {
+          "title": "Nordic Semiconductor Q2 revenue climbs 33%, tops forecasts",
+          "date": "Aug 2026",
+          "url": "https://ca.investing.com/news/stock-market-news/nordic-semiconductor-q2-revenue-climbs-33-tops-forecasts-93CH-4780143"
+        },
+        {
+          "title": "Nordic Opens Mexico Delivery Facility to Support Healthcare AI, Managed Services, and Epic Optimization",
+          "date": "Aug 2026",
+          "url": "https://hitconsultant.net/2026/08/05/nordic-opens-mexico-delivery-facility-healthcare-ai-epic-managed-services/"
+        },
+        {
           "title": "Nordic Semiconductor Introduces Prototyping Tag to Simplify 'Find My' and Asset Tag Development",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
@@ -1259,21 +1241,6 @@
           "title": "Nordic\u2019s Prototyping Tag to Streamline \u2018Find My\u2019 and Asset Tag Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
-        },
-        {
-          "title": "Norik Systems Introduces nRF9151-based USB Dongle for DECT NR+ Deployments",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/09/norik-systems-introduces-nrf9151-based-usb-dongle-for-dect-nr-deployments/"
-        },
-        {
-          "title": "nRF54L Arduino Core Project Brings Arduino Support to Nordic Semi nRF54L Wireless SoCs",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
-        },
-        {
-          "title": "Arduino Core Project Brings Support to Nordic nRF54L Wireless SoCs",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/21/nrf54l-arduino-core-project-brings-arduino-support-to-nordic-semi-nrf54l-wireless-socs/"
         }
       ],
       "events": [
@@ -1526,34 +1493,34 @@
           "url": "https://wiot-group.com/think/en/news/nxp-ara240-ai-accelerator-industrial-edge/"
         },
         {
-          "title": "NXP Semiconductors Q2 2026 Earnings Report Expected",
-          "date": "Jul 2026",
-          "url": "https://www.inkl.com/news/what-to-expect-from-nxp-semiconductors-q2-2026-earnings-report"
+          "title": "NXP Semiconductors Partners With CELUS and Variscite to Streamline Embedded AI Hardware Design",
+          "date": "Aug 2026",
+          "url": "https://www.eetindia.co.in/celus-variscite-and-nxp-join-forces-to-streamline-embedded-ai-hardware-design/"
         },
         {
-          "title": "Mouser Adds NXP FRDM Automotive Development Boards to Product Portfolio",
-          "date": "Jul 2026",
-          "url": "https://www.newelectronics.co.uk/content/product-launches/mouser-adds-nxp-frdm-automotive-development-boards-to-product-portfolio"
+          "title": "NXP Semiconductors Launches Hybrid Radio-AI Processor for Automotive Infotainment",
+          "date": "Aug 2026",
+          "url": "https://www.allaboutcircuits.com/news/nxp-tunes-into-automotive-infotainment-with-hybrid-radio-ai-processor/"
         },
         {
-          "title": "NXP Semiconductors Announces Q2 2026 Earnings Report",
-          "date": "Jul 2026",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/expect-nxp-semiconductors-q2-2026-125413645.html"
+          "title": "NXP Semiconductors to Supply Ultra-Wideband Chips for BMW Digital Key and Occupant Detection",
+          "date": "Aug 2026",
+          "url": "https://www.thelec.net/news/articleView.html?idxno=12852"
         },
         {
-          "title": "F&S Elektronik Systeme GmbH Launches armStone MX8ULP with NXP i.MX 8ULP",
-          "date": "Jul 2026",
-          "url": "https://linuxgizmos.com/armstonemx8ulp-packs-nxp-i-mx-8ulp-into-a-100mm-pico-itx-single-board-computer/"
+          "title": "NXP Semiconductors Showcases Smart Home Ecosystem Solutions",
+          "date": "Aug 2026",
+          "url": "https://embeddedcomputing.com/technology/processing/semiconductor-ip/nxp-showcases-the-smart-home-ecosystem"
         },
         {
-          "title": "NXP i.MX 95 Application Processors Now Available",
-          "date": "Jul 2026",
-          "url": "https://timestech.in/mouser-now-offers-nxp-i-mx-95-application-processors/"
+          "title": "NXP Semiconductors and BMW Collaborate on Digital Key and Presence Detection Technology",
+          "date": "Aug 2026",
+          "url": "https://www.automotiveworld.com/news/nxp-chip-brings-digital-key-presence-detection-to-bmw/"
         },
         {
-          "title": "NXP Semiconductors Reports Q4 2025 Financial Results",
-          "date": "Jul 2026",
-          "url": "https://www.kavout.com/market-lens/how-did-nxp-semiconductors-perform-in-q4-2025"
+          "title": "CELUS, Variscite, and NXP Semiconductors Announce Collaboration for AI-Powered Embedded Design",
+          "date": "Aug 2026",
+          "url": "https://www.businesswire.com/news/home/20260804635741/en/CELUS-Joins-Variscite-and-NXP-to-Bring-AI-Powered-Design-to-Embedded-Engineers"
         }
       ],
       "events": [
@@ -2871,6 +2838,16 @@
           "url": "https://www.cnx-software.com/2026/08/04/espressif-esp32-c61-mini-1-1u-wi-fi-6-and-ble-iot-module-2-dollars/"
         },
         {
+          "title": "Espressif Systems Releases ESP RainMaker Neo Open-Source IoT Platform",
+          "date": "Aug 2026",
+          "url": "https://www.cnx-software.com/2026/08/06/espressif-systems-releases-esp-rainmaker-neo-open-source-device-to-cloud-to-phone-iot-platform/"
+        },
+        {
+          "title": "Espressif Launches ESP32-C61-MINI Module Family",
+          "date": "Aug 2026",
+          "url": "https://www.hackster.io/news/espressif-launches-the-esp32-c61-mini-module-family-for-budget-conscious-wi-fi-6-ble-matter-work-69b26e768dc5"
+        },
+        {
           "title": "ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/"
@@ -2904,16 +2881,6 @@
           "title": "Waveshare ESP32-C5-LCD-1.47: First ESP32-C5 Dev Kit with 1.47-inch Color LCD, Dual-Band WiFi 6, Bluetooth LE",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/"
-        },
-        {
-          "title": "M5Stack Stamp-C5: Tiny ESP32-C5 USB-C Board with WiFi 6, Bluetooth LE, and 802.15.4 Support",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/10/m5stack-stamp-c5-a-tiny-esp32-c5-usb-c-board-module-with-up-to-19-gpio-3-7v-battery-support/"
-        },
-        {
-          "title": "Open Book Touch: ESP32-S3-based E-reader Launched via Crowdfunding",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/10/open-book-touch-a-drm-free-wifi-connected-4-26-inch-open-source-hardware-e-reader/"
         }
       ],
       "events": [
@@ -3144,6 +3111,11 @@
       ],
       "press_releases": [
         {
+          "title": "STMicroelectronics Holds 19.6M Treasury Shares After Buyback",
+          "date": "Aug 2026",
+          "url": "https://www.stocktitan.net/news/STM/st-microelectronics-announces-status-of-common-share-repurchase-jmzrq5wuwxam.html"
+        },
+        {
           "title": "STMicroelectronics Announces Timing for Second Quarter 2026 Earnings Release and Conference Call",
           "date": "Jul 2026",
           "url": "https://www.globenewswire.com/news-release/2026/07/03/3321641/0/en/STMicroelectronics-Announces-Timing-for-Second-Quarter-2026-Earnings-Release-and-Conference-Call.html"
@@ -3187,11 +3159,6 @@
           "title": "STMicroelectronics Achieves Interoperability with Aliro for Smartphones and Readers",
           "date": "Jul 2026",
           "url": "https://csa-iot.org/newsroom/stmicroelectronics-on-aliro/"
-        },
-        {
-          "title": "STMicroelectronics Reports Q2 2026 Financial Results with $3.49 Billion Net Revenues",
-          "date": "Jul 2026",
-          "url": "https://newsroom.st.com/media-center/press-item.html/c3403.html"
         }
       ],
       "events": [
@@ -3424,6 +3391,16 @@
           "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N43Y01R:0-renesas-production-resumed-at-nishiki-factory-specifying-factory-in-phases-beginning-on-evening-of-july-29-and-returned-to-pre-earthquake-production-capacity-friday-morning/"
         },
         {
+          "title": "Renesas Launches Gen 3 MRDIMM Chipset Solutions for DDR5 Memory",
+          "date": "Aug 2026",
+          "url": "https://www.storagenewsletter.com/2026/08/06/fms-2026-renesas-gen-3-mrdimm-chipset-solutions-advance-ddr5-memory-performance-to-16000-mt-s-for-next-gen-ai-and-hpc-applications/"
+        },
+        {
+          "title": "Geniatech Integrates Renesas RZ/V2H into New SOM-V2H-OSM System-on-Module",
+          "date": "Aug 2026",
+          "url": "https://macaubusiness.com/geniatech-accelerates-edge-ai-and-next-gen-robotics-evolution-with-new-renesas-rz-v2h-strategic-integration/"
+        },
+        {
           "title": "Renesas Launches Starter Kits for RX113, RX140, and RX231 Microcontrollers",
           "date": "Jul 2026",
           "url": "https://www.renesas.com/en/document/tnn/notes-notes-sample-project-renesas-starter-kit"
@@ -3457,16 +3434,6 @@
           "title": "Chipmaker Renesas sues rival Navitas for stealing trade secrets",
           "date": "Jul 2026",
           "url": "https://www.reuters.com/legal/litigation/chipmaker-renesas-sues-rival-navitas-stealing-trade-secrets-2026-07-22/"
-        },
-        {
-          "title": "Renesas acquires Pictorus to accelerate embedded application software development",
-          "date": "Jul 2026",
-          "url": "https://engineerlive.com/renesas-acquires-pictorus-accelerate-embedded-application-software-development/"
-        },
-        {
-          "title": "Renesas Electronics Announces Q2 2025 Financial Results",
-          "date": "Jul 2026",
-          "url": "https://www.tipranks.com/stocks/rnecf/earnings/q2-2025-report"
         }
       ],
       "events": [
@@ -4035,6 +4002,11 @@
           "url": "https://www.u-blox.com/en/event/electronica-2026"
         },
         {
+          "title": "u-blox NORA-W40 Wi-Fi 6 Modules Now Available at Mouser",
+          "date": "Aug 2026",
+          "url": "https://www.electronicdesign.com/directory/radio/modules/press-release/55395816/mouser-u-blox-nora-w40-wi-fi-6-modules-now-at-mouser-offer-advanced-network-efficiency-range-and-low-power-consumption"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -4071,11 +4043,6 @@
         },
         {
           "title": "u-blox Launches New Wi-Fi 6 Module Families for Industrial IoT",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
-        },
-        {
-          "title": "u-blox Launches New Wi-Fi 6 Module Families MAYA-W5 and NORA-W5",
           "date": "Jul 2026",
           "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         }
@@ -4130,37 +4097,37 @@
           "url": "https://www.insidermedia.com/news/south-east/microchip-maker-secures-1.5m-contract-with-european-satellite-manufacturer"
         },
         {
+          "title": "Microchip Technology to Acquire Hailo",
+          "date": "Aug 2026",
+          "url": "https://www.photonics.com/Articles/Microchip-Technology-to-Acquire-Hailo/p21/a72471"
+        },
+        {
+          "title": "Microchip Technology, in Collaboration With Micron Technology, Demonstrates High-Performance PCIe\u00ae Gen 6 Storage Architecture for AI and Data Center Infrastructure",
+          "date": "Aug 2026",
+          "url": "https://finance.yahoo.com/technology/ai/articles/microchip-technology-collaboration-micron-technology-111600573.html"
+        },
+        {
+          "title": "Microchip and Micron showcase PCIe Gen 6 storage architecture for AI and cloud data centres",
+          "date": "Aug 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/microchip-and-micron-showcase-pcie-gen-6-storage-architecture-for-ai-and-cloud-data-centres"
+        },
+        {
+          "title": "Microchip and Micron Demonstrate PCIe 6.0 Storage System at FMS 2026",
+          "date": "Aug 2026",
+          "url": "https://www.thelec.net/news/articleView.html?idxno=12859"
+        },
+        {
+          "title": "Microchip Technology Inc. Demonstrates High-Performance PCIe Gen 6 Storage Architecture With Switchtec PCIe Switches And Micron 9650 NVMe SSDs",
+          "date": "Aug 2026",
+          "url": "https://www.marketscreener.com/news/microchip-technology-inc-demonstrates-high-performance-pcie-gen-6-storage-architecture-with-switcht-ce7f50dede81fe26"
+        },
+        {
+          "title": "Micron (MU) Teams Up With Liqid And Microchip On AI Memory And Storage",
+          "date": "Aug 2026",
+          "url": "https://finance.yahoo.com/technology/ai/articles/micron-mu-teams-liqid-microchip-081210293.html"
+        },
+        {
           "title": "Microchip Makes MPLAB XC Pro Compilers and MPLAB Machine Learning Development Suite Free for Developers",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
-        },
-        {
-          "title": "Microchip Launches Free MPLAB XC Compilers and ML Suite",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
-        },
-        {
-          "title": "Microchip Makes MPLAB XC Pro Compilers Free for Developers",
-          "date": "Jul 2026",
-          "url": "https://www.manufacturingtodayindia.com/microchip-mplab-xc-pro-compilers"
-        },
-        {
-          "title": "Microchip Makes MPLAB XC Pro Compilers and Machine Learning Tools Free for Developers",
-          "date": "Jul 2026",
-          "url": "https://www.newelectronics.co.uk/content/news/microchip-makes-mplab-xc-pro-compilers-and-machine-learning-tools-free-for-developers"
-        },
-        {
-          "title": "Microchip Expands Developer Access with Free MPLAB XC Compilers and MPLAB ML Development Suite",
-          "date": "Jul 2026",
-          "url": "https://www.dqindia.com/semiconductors/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-ml-development-suite-12148437"
-        },
-        {
-          "title": "Microchip Expands Developer Access with Free MPLAB\u00ae XC Compilers and MPLAB Machine Learning Development Suite",
-          "date": "Jul 2026",
-          "url": "https://www.manilatimes.net/2026/07/08/tmt-newswire/globenewswire/microchip-expands-developer-access-with-free-mplab-xc-compilers-and-mplab-machine-learning-development-suite/2380670"
-        },
-        {
-          "title": "Microchip Makes MPLAB XC Pro Compilers and ML Development Suite Free",
           "date": "Jul 2026",
           "url": "https://www.bisinfotech.com/microchip-launches-free-mplab-xc-compilers-and-ml-suite/"
         }
@@ -4339,6 +4306,16 @@
       ],
       "press_releases": [
         {
+          "title": "Airoha Announces Doubled Optical Communications Revenue",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260805PD215/airoha-broadband-wireless-revenue-growth.html"
+        },
+        {
+          "title": "Airoha Secures Communication Service Provider Customers for Broadband Solutions",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260805PD215/airoha-broadband-wireless-revenue-growth.html"
+        },
+        {
           "title": "Airoha Technology Partners with E Ink for Global Debut of 4.2-Inch Ripple\u2122 ESL",
           "date": "Jun 2026",
           "url": "https://www.prnewswire.com/news-releases/airoha-technology-partners-with-e-ink-for-global-debut-of-4-2-inch-ripple-esl-at-computex-2026--302786961.html"
@@ -4406,6 +4383,11 @@
       ],
       "press_releases": [
         {
+          "title": "Murata Manufacturing Announces Q1 2027 Financial Results",
+          "date": "Aug 2026",
+          "url": "https://seekingalpha.com/article/4930357-murata-manufacturing-co-ltd-2027-q1-results-earnings-call-presentation"
+        },
+        {
           "title": "Murata Manufacturing focus on components and global demand",
           "date": "Jul 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895"
@@ -4449,11 +4431,6 @@
           "title": "Murata Partners with Xona to Advance Satellite PNT Technologies",
           "date": "Jun 2026",
           "url": "https://evertiq.com/design/2026-06-05-murata-partners-with-xona-to-advance-satellite-pnt-technologies"
-        },
-        {
-          "title": "Murata Introduces World\u2019s First 2.2\u03bcF/100Vdc Soft-Termination Chip MLCC",
-          "date": "Jun 2026",
-          "url": "https://www.murata.com/en-eu/news/capacitor/ceramiccapacitor/2026/0604"
         }
       ]
     },
@@ -4558,6 +4535,36 @@
           "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-second-quarter-2026-results/"
         },
         {
+          "title": "Onsemi Reports Strong Q2 2026 Financial Results, Including 9% Revenue Growth, Quadrupled Free Cash Flow, and Doubled AI Data Center Outlook",
+          "date": "Aug 2026",
+          "url": "https://qz.com/on-semiconductor-earnings-ai-data-center-080426"
+        },
+        {
+          "title": "Onsemi Completes AI Power Stack with GaN Technology",
+          "date": "Aug 2026",
+          "url": "https://www.techtimes.com/articles/322917/20260804/onsemi-completes-ai-power-stack-gan-data-center-revenue-set-double.htm"
+        },
+        {
+          "title": "Onsemi Prioritizes AI Demand Over Automotive Market",
+          "date": "Aug 2026",
+          "url": "https://www.benzinga.com/markets/tech/26/08/60915388/quick-spark-on-semi-reveals-the-first-losers-in-the-ai-chip-race"
+        },
+        {
+          "title": "Vadzo Imaging Launches Falcon-2020MRS Camera Featuring Onsemi AR2020 Sensor",
+          "date": "Aug 2026",
+          "url": "https://www.newswire.com/news/vadzo-imaging-launches-falcon-2020mrs-a-20mp-monochrome-usb-camera-22839880"
+        },
+        {
+          "title": "Vadzo Imaging Introduces Falcon-521MRS Camera Utilizing Onsemi AR0521 Sensor",
+          "date": "Aug 2026",
+          "url": "https://www.lelezard.com/en/news-22320844.html"
+        },
+        {
+          "title": "Vadzo Imaging Launches Falcon-544CRH Camera Featuring Onsemi HyperLux LP AR0544 Sensor",
+          "date": "Aug 2026",
+          "url": "https://www.newswire.com/news/vadzo-imaging-introduces-falcon-544crh-5mp-color-autofocus-usb-3-2-gen-22800966"
+        },
+        {
           "title": "onsemi to Acquire Synaptics to Enable the Next Generation of Intelligent Systems for Physical AI",
           "date": "Jul 2026",
           "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
@@ -4571,36 +4578,6 @@
           "title": "Onsemi Acquires Synaptics for $7 Billion to Boost AI Edge Solutions",
           "date": "Jul 2026",
           "url": "https://finance.yahoo.com/technology/ai/articles/heres-why-semiconductor-just-made-113000581.html"
-        },
-        {
-          "title": "Onsemi to Announce Second Quarter Financial Results on August 3",
-          "date": "Jul 2026",
-          "url": "https://scanx.trade/stock-market-news/companies/onsemi-to-announce-q2-financial-results-on-august-3/45779605"
-        },
-        {
-          "title": "Mouser and Onsemi Release New eBook on Power and Sensing Technologies for AI",
-          "date": "Jul 2026",
-          "url": "https://www.electropages.com/blog/2026/07/new-mouser-and-onsemi-ebook-explores-power-and-sensing-technologies-ai"
-        },
-        {
-          "title": "onsemi Expands GaN Power Portfolio to Support High-Demand Applications",
-          "date": "Jun 2026",
-          "url": "https://www.newelectronics.co.uk/content/product-launches/onsemi-expands-gan-power-portfolio-to-support-high-demand-applications"
-        },
-        {
-          "title": "onsemi Introduces GaNEXUS Gallium Nitride Power Portfolio",
-          "date": "Jun 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-introduces-ganexus-gallium-nitride-power-portfolio"
-        },
-        {
-          "title": "onsemi Introduces Industry-First Elite Pairing Studio to Simplify Power Design",
-          "date": "Jun 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-introduces-industry-first-elite-pairing-studio-to-simplify-power-design"
-        },
-        {
-          "title": "onsemi and Penn State Sign MOU to Boost Silicon Carbide Research and Establish SiC Crystal Center",
-          "date": "Jun 2026",
-          "url": "https://www.onsemi.com/company/newsroom/news-and-insights/penn-state-and-onsemi-sign-mou-to-boost-silicon-carbide-research-in-the-u-s"
         }
       ]
     },
