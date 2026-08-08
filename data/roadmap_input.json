@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T13:30:10Z",
+  "generated_at": "2026-08-08T13:23:39Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -163,6 +163,11 @@
           "url": ""
         },
         {
+          "title": "Nordic Semiconductor Unveils Skylo-Certified Cellular IoT Module for Seamless Satellite Connectivity",
+          "date": "Aug 2026",
+          "url": "https://www.everythingrf.com/news/details/22469-nordic-semiconductor-unveils-skylo-certified-cellular-iot-module-for-seamless-satellite-connectivity"
+        },
+        {
           "title": "Nordic Semiconductor Introduces Prototyping Tag to Simplify 'Find My' and Asset Tag Development",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
@@ -171,11 +176,6 @@
           "title": "Nordic Launches Prototyping Tag for 'Find My' and Asset Tag Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
-        },
-        {
-          "title": "Norik Systems Selects Nordic nRF9151 SiP for New USB Dongle",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/09/norik-systems-introduces-nrf9151-based-usb-dongle-for-dect-nr-deployments/"
         }
       ],
       "events": [
@@ -989,14 +989,14 @@
           "url": "https://www.mlex.com/mlex/articles/2510922/singapore-clears-texas-instruments-acquisition-of-silicon-labs"
         },
         {
-          "title": "Silicon Labs Foresees Accelerated Smart Home Growth with Matter 1.6",
-          "date": "Jul 2026",
-          "url": "https://www.digitimes.com/news/a20260707PD230/silicon-labs-smart-home-growth-market-2026.html"
+          "title": "Silicon Labs Unveils BG2B, Its Lowest-Power Bluetooth SoC Yet, with Channel Sounding and Automotive CAN-FD Integration",
+          "date": "Aug 2026",
+          "url": "https://finance.biggo.com/news/1450cf61-be04-4c08-be0d-b32b7e69e896"
         },
         {
-          "title": "Silicon Labs Says Matter 1.6 Will Accelerate Smart Home Growth",
-          "date": "Jul 2026",
-          "url": "https://www.digitimes.com/news/a20260707PD230/silicon-labs-smart-home-growth-market-2026.html"
+          "title": "Silicon Labs unveils BG2B, its lowest-power Bluetooth LE SoC with power efficiency, security and integration",
+          "date": "Aug 2026",
+          "url": "https://iot-now.com/2026/08/06/157784-silicon-labs-unveils-bg2b-its-lowest-power-bluetooth-le-soc-with-power-efficiency-security-and-integration/"
         }
       ],
       "events": [
@@ -1275,14 +1275,14 @@
           "url": "https://www.mlex.com/mlex/articles/2510922/singapore-clears-texas-instruments-acquisition-of-silicon-labs"
         },
         {
-          "title": "onsemi to Acquire Synaptics to Enable the Next Generation of Intelligent Systems for Physical AI",
-          "date": "Jul 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
+          "title": "Infineon Collaborates With MediaTek to Enable Future Automotive Smart Cockpit Solutions",
+          "date": "Aug 2026",
+          "url": "https://smestreet.in/technology/infineon-collaborates-with-mediatek-to-enable-future-automotive-smart-cockpit-solutions-12241238"
         },
         {
-          "title": "LG Innotek Targets USD 647 million in Package Solution Operating Profit by 2031",
-          "date": "Jul 2026",
-          "url": "https://www.prnewswire.com/news-releases/lg-innotek-targets-usd-647-million-in-package-solution-operating-profit-by-2031-302814220.html"
+          "title": "Infineon partners with MediaTek to enable AI-driven automotive smart cockpits",
+          "date": "Aug 2026",
+          "url": "https://manufacturing.economictimes.indiatimes.com/news/hi-tech/infineon-partners-with-mediatek-to-enable-ai-driven-automotive-smart-cockpits/133046476"
         }
       ],
       "events": [
@@ -1788,6 +1788,21 @@
           "url": "https://www.hackster.io/news/espressif-sets-esp-rainmaker-free-releases-permissively-licensed-esp-rainmaker-neo-d8f796e790e4"
         },
         {
+          "title": "Espressif Launches the ESP32-C61-MINI Module Family for Budget-Conscious Wi-Fi 6, BLE, Matter Work",
+          "date": "Aug 2026",
+          "url": "https://www.hackster.io/news/espressif-launches-the-esp32-c61-mini-module-family-for-budget-conscious-wi-fi-6-ble-matter-work-69b26e768dc5"
+        },
+        {
+          "title": "Espressif Sets ESP RainMaker Free, Releases Permissively-Licensed ESP RainMaker Neo",
+          "date": "Aug 2026",
+          "url": "https://www.hackster.io/news/espressif-sets-esp-rainmaker-free-releases-permissively-licensed-esp-rainmaker-neo-d8f796e790e4"
+        },
+        {
+          "title": "NanoMind-S3: Fully-Dense 15.2M Param LLM on ESP32-S3",
+          "date": "Aug 2026",
+          "url": "https://www.hackster.io/6farsi/nanomind-s3-fully-dense-15-2m-param-llm-on-esp32-s3-73937f"
+        },
+        {
           "title": "ESP32-C5 dual-band WiFi 6 and Bluetooth LE IoT board features 1.47-inch color LCD",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/03/esp32-c5-dual-band-wifi-6-and-bluetooth-le-iot-board-features-1-47-inch-color-lcd/"
@@ -1801,21 +1816,6 @@
           "title": "Espressif Launches ESP32-C5 Chip Featuring Dual-Band Wi-Fi 6 and Bluetooth 5 LE",
           "date": "Jul 2026",
           "url": ""
-        },
-        {
-          "title": "Open Book Touch E-reader Features ESP32-S3",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/10/open-book-touch-a-drm-free-wifi-connected-4-26-inch-open-source-hardware-e-reader/"
-        },
-        {
-          "title": "Makerfabs MaUWB Module for Home Assistant Uses ESP32-S3 UWB Chip",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/09/makerfabs-mauwb-for-home-assistant-an-esp32-s3-uwb-module-with-poe-and-enclosure/"
-        },
-        {
-          "title": "Espressif ESP32-C5 Devkit Launched Featuring Dual-Band Wi-Fi 6 and Bluetooth 5 LE",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/07/esp32-c5-devkit-offers-2-8-inch-capacitive-touch-display-dual-band-wi-fi-6-bluetooth-5-le-lipo-battery-support/"
         }
       ],
       "events": [
@@ -2056,6 +2056,11 @@
           "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
         },
         {
+          "title": "STMicroelectronics Bets on Hardware-Based Post-Quantum Cryptography with ST54M",
+          "date": "Aug 2026",
+          "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
+        },
+        {
           "title": "STMicroelectronics Announces Timing for Second Quarter 2026 Earnings Release and Conference Call",
           "date": "Jul 2026",
           "url": "https://www.globenewswire.com/news-release/2026/07/03/3321641/0/en/STMicroelectronics-Announces-Timing-for-Second-Quarter-2026-Earnings-Release-and-Conference-Call.html"
@@ -2089,11 +2094,6 @@
           "title": "STMicroelectronics Details Mid-July Share Buybacks Under Ongoing Repurchase Program",
           "date": "Jul 2026",
           "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/3385084/stmicroelectronics-details-mid-july-share-buybacks-under-ongoing-repurchase-program/"
-        },
-        {
-          "title": "STMicroelectronics and Focal Point Commercialize Joint Automotive GNSS Solution",
-          "date": "Jul 2026",
-          "url": "https://www.gpsworld.com/focal-point-stmicroelectronics-commercialize-joint-automotive-gnss-solution/"
         }
       ],
       "events": [
@@ -2341,6 +2341,16 @@
           "url": "https://autonews.gasgoo.com/articles/news/renesas-electronics-to-showcase-embodied-robotics-solutions-at-eai-show-2085603438078435329"
         },
         {
+          "title": "Renesas Electronics Reports Strong Earnings",
+          "date": "Aug 2026",
+          "url": "https://simplywall.st/stocks/jp/semiconductors/tse-6723/renesas-electronics-shares/news/renesas-electronics-tse6723-earnings-may-just-be-the-startin/amp"
+        },
+        {
+          "title": "Renesas Launches Gen 3 MRDIMM Chipset Solutions for DDR5 Memory, AI, and HPC",
+          "date": "Aug 2026",
+          "url": "https://www.storagenewsletter.com/2026/08/06/fms-2026-renesas-gen-3-mrdimm-chipset-solutions-advance-ddr5-memory-performance-to-16000-mt-s-for-next-gen-ai-and-hpc-applications/"
+        },
+        {
           "title": "Renesas Launches Starter Kits for RX113, RX140, and RX231 Microcontrollers",
           "date": "Jul 2026",
           "url": "https://www.renesas.com/en/document/tnn/notes-notes-sample-project-renesas-starter-kit"
@@ -2359,16 +2369,6 @@
           "title": "Renesas RZ/V2N Powers New AI Vision Systems",
           "date": "Jul 2026",
           "url": "https://www.startuphub.ai/ai-news/ai/2026/renesas-rz-v2n-powers-new-ai-vision-systems"
-        },
-        {
-          "title": "Renesas Electronics Corporation (RNECF) Q2 2025 Earnings Report",
-          "date": "Jul 2026",
-          "url": "https://www.tipranks.com/stocks/rnecf/earnings/q2-2025-report"
-        },
-        {
-          "title": "Renesas Electronics: A 'Buy' On Business Sale And Investor Event",
-          "date": "Jul 2026",
-          "url": "https://seekingalpha.com/article/4924501-renesas-electronics-a-buy-on-business-sale-and-investor-event-rating-upgrade"
         }
       ],
       "events": [
@@ -2594,6 +2594,26 @@
           "url": "https://www.manilatimes.net/2026/08/07/tmt-newswire/globenewswire/synaptics-reports-fourth-quarter-and-full-year-fiscal-2026-results/2400563"
         },
         {
+          "title": "Synaptics (SYNA) Surpasses Q4 Earnings and Revenue Estimates",
+          "date": "Aug 2026",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/synaptics-syna-surpasses-q4-earnings-231017161.html"
+        },
+        {
+          "title": "Synaptics earnings beat by $0.03, revenue topped estimates",
+          "date": "Aug 2026",
+          "url": "https://ca.investing.com/news/earnings/synaptics-earnings-beat-by-003-revenue-topped-estimates-4784394"
+        },
+        {
+          "title": "Synaptics (NASDAQ:SYNA) Posts Earnings Results, Beats Estimates By $0.02 EPS",
+          "date": "Aug 2026",
+          "url": "https://www.marketbeat.com/instant-alerts/synaptics-nasdaqsyna-posts-earnings-results-beats-estimates-by-002-eps-2026-08-07/"
+        },
+        {
+          "title": "Synaptics (SYNA) Beats On Revenue And Margins, Is It Still Cheap?",
+          "date": "Aug 2026",
+          "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-syna/synaptics/news/synaptics-syna-beats-on-revenue-and-margins-is-it-still-chea/amp"
+        },
+        {
           "title": "Synaptics Schedules Q4 and FY26 Financial Results Conference Call",
           "date": "Jul 2026",
           "url": "https://scanx.trade/stock-market-news/companies/synaptics-to-report-q4-and-fy26-results-on-august-6/45702649"
@@ -2602,26 +2622,6 @@
           "title": "Synaptics Reports 10% Revenue Increase",
           "date": "Jul 2026",
           "url": "https://www.fool.com/coverage/filings/2026/07/21/what-this-synaptics-cfo-filing-signals-for-long-term-investors-with-revenue-up-10/"
-        },
-        {
-          "title": "Synaptics Announces Over 35 Robotics Customers",
-          "date": "Jul 2026",
-          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-has-35-plus-robotics-customers-its-product-chief-just-held-his-stake/"
-        },
-        {
-          "title": "Synaptics Reinforces Focus on IoT Market",
-          "date": "Jul 2026",
-          "url": "https://www.fool.com/coverage/filings/2026/07/21/synaptics-is-leaning-into-iot-its-strategy-officer-kept-usd7-million-in-stock/"
-        },
-        {
-          "title": "Synaptics Reports 31% Growth in Core IoT Sales",
-          "date": "Jul 2026",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/synaptics-ceo-filing-signals-investors-001219102.html"
-        },
-        {
-          "title": "Synaptics to Release Fourth Quarter and Full Year Fiscal 2026 Results",
-          "date": "Jul 2026",
-          "url": "https://www.manilatimes.net/2026/07/16/tmt-newswire/globenewswire/synaptics-to-release-fourth-quarter-and-full-year-fiscal-2026-results-on-august-6-2026/2385492"
         }
       ],
       "events": [
@@ -2885,14 +2885,14 @@
           "url": "https://www.aol.com/articles/broadcom-best-chip-stock-own-045701000.html"
         },
         {
+          "title": "Broadcom Announces Updates to VMware vDefend and Avi Load Balancer for Enhanced AI-Powered Cyber Defense",
+          "date": "Aug 2026",
+          "url": "https://www.marketscreener.com/news/broadcom-announces-updates-to-vmware-vdefend-and-avi-load-balancer-ce7f50dddd80f22d"
+        },
+        {
           "title": "Broadcom and Apple Extend Strategic Custom Chip Partnership Through 2031",
           "date": "Jul 2026",
           "url": "https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/"
-        },
-        {
-          "title": "Broadcom BCM47765 GPS Chip Powers Premium Wearables",
-          "date": "Jul 2026",
-          "url": ""
         }
       ]
     },
@@ -2942,6 +2942,11 @@
           "url": "https://www.electronicdesign.com/directory/radio/modules/press-release/55395816/mouser-u-blox-nora-w40-wi-fi-6-modules-now-at-mouser-offer-advanced-network-efficiency-range-and-low-power-consumption"
         },
         {
+          "title": "u-blox Launches Tri-radio Module for IoT Implementations",
+          "date": "Aug 2026",
+          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-launches-tri-radio-module-that-delivers-the-latest-wireless-technologies-for-iot-implementation-941502"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -2973,11 +2978,6 @@
         },
         {
           "title": "u-blox Introduces MAYA-W5 and NORA-W5 Wi-Fi 6 Module Families",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
-        },
-        {
-          "title": "u-blox Launches New Wi-Fi 6 Module Families for Industrial IoT",
           "date": "Jul 2026",
           "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         }
@@ -3323,6 +3323,11 @@
           "url": "https://seekingalpha.com/article/4930357-murata-manufacturing-co-ltd-2027-q1-results-earnings-call-presentation"
         },
         {
+          "title": "Murata Manufacturing Co (MRAAF): New Buy Recommendation for This Technology Giant",
+          "date": "Aug 2026",
+          "url": "https://www.theglobeandmail.com/investing/markets/stocks/MRAAY/pressreleases/3686583/murata-manufacturing-co-mraaf-new-buy-recommendation-for-this-technology-giant/"
+        },
+        {
           "title": "Murata Manufacturing focus on components and global demand",
           "date": "Jul 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895"
@@ -3361,11 +3366,6 @@
           "title": "Murata Introduces MGJ1T Series High-Isolation Gate Drive Converters",
           "date": "Jun 2026",
           "url": "https://www.murata.com/en-global/news/power/isolated-gate-drive-power/2026/0609"
-        },
-        {
-          "title": "Murata Partners with Xona to Advance Satellite PNT Technologies",
-          "date": "Jun 2026",
-          "url": "https://evertiq.com/design/2026-06-05-murata-partners-with-xona-to-advance-satellite-pnt-technologies"
         }
       ]
     },
@@ -3505,14 +3505,14 @@
           "url": "https://www.tikr.com/blog/on-semiconductor-stock-rallies-q2-earnings-beat"
         },
         {
-          "title": "onsemi to Acquire Synaptics to Enable the Next Generation of Intelligent Systems for Physical AI",
-          "date": "Jul 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-synaptics-to-enable-the-next-generation-of-intelligent-systems-for-physical-ai"
+          "title": "Onsemi Reports Stronger-Than-Expected Second-Quarter Earnings and Positive Q3 Guidance",
+          "date": "Aug 2026",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/numbers-behind-semiconductor-higher-target-115228254.html"
         },
         {
-          "title": "onsemi Advances Fab Right Strategy with Agreements to Divest Two Manufacturing Facilities",
-          "date": "Jul 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-advances-fab-right-strategy-with-agreements-to-divest-two-manufacturing-facilities"
+          "title": "Onsemi Launches Online Tool for Power Electronics Design",
+          "date": "Aug 2026",
+          "url": "https://www.investing.com/news/company-news/onsemi-launches-online-tool-for-power-electronics-design-93CH-4729866"
         }
       ]
     },
@@ -3719,25 +3719,25 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Microchip": 38,
-    "Qualcomm": 25,
-    "Broadcom": 22,
-    "Synaptics": 10,
+    "Microchip": 55,
+    "Qualcomm": 37,
+    "Broadcom": 25,
+    "Synaptics": 15,
     "NXP": 9,
-    "Silicon Labs": 8,
-    "Infineon": 6,
-    "Murata": 5,
-    "MediaTek": 4,
-    "TI": 4,
+    "Infineon": 5,
+    "Renesas": 5,
+    "Onsemi": 4,
     "Espressif": 4,
-    "STMicro": 3,
-    "Renesas": 3,
-    "Onsemi": 3,
-    "Nordic": 2,
-    "u-blox": 2,
-    "Apple": 1,
+    "TI": 4,
+    "Silicon Labs": 4,
+    "Nordic": 3,
+    "MediaTek": 2,
+    "Murata": 2,
+    "Quectel": 1,
     "Marvell": 1,
-    "HiSilicon": 1
+    "Apple": 1,
+    "STMicro": 1,
+    "u-blox": 1
   },
   "standards_in_flight": [
     {
@@ -3818,9 +3818,15 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3903,
+      "issues_open": 3878,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+        },
         {
           "tag": "v3.7.3-rc1",
           "name": "Zephyr LTS v3.7.3-rc1",
@@ -3832,16 +3838,10 @@
           "name": "Zephyr v4.4.2-rc1",
           "published_at": "2026-07-29T20:54:38Z",
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        },
-        {
-          "tag": "v4.3.1",
-          "name": "Zephyr v4.3.1",
-          "published_at": "2026-06-23T12:27:28Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.1"
         }
       ],
-      "stars": 16143,
-      "pushed_at": "2026-08-07T12:51:03Z"
+      "stars": 16150,
+      "pushed_at": "2026-08-07T21:14:42Z"
     },
     {
       "name": "ESP-IDF",
@@ -3854,7 +3854,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1650,
+      "issues_open": 1656,
       "prs_open": 0,
       "releases": [
         {
@@ -3876,7 +3876,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18719,
+      "stars": 18727,
       "pushed_at": "2026-08-04T20:26:24Z"
     },
     {
@@ -3888,7 +3888,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 163,
+      "issues_open": 162,
       "prs_open": 0,
       "releases": [
         {
@@ -3910,8 +3910,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4005,
-      "pushed_at": "2026-08-06T18:32:50Z"
+      "stars": 4006,
+      "pushed_at": "2026-08-08T05:33:17Z"
     },
     {
       "name": "Linux mac80211",
@@ -3925,8 +3925,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 242084,
-      "pushed_at": "2026-08-07T04:07:22Z"
+      "stars": 242171,
+      "pushed_at": "2026-08-08T00:43:02Z"
     },
     {
       "name": "Matter SDK",
@@ -3937,7 +3937,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2770,
+      "issues_open": 2773,
       "prs_open": 0,
       "releases": [
         {
@@ -3959,8 +3959,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8856,
-      "pushed_at": "2026-08-07T12:20:50Z"
+      "stars": 8859,
+      "pushed_at": "2026-08-08T09:44:21Z"
     },
     {
       "name": "BlueZ",
@@ -3971,7 +3971,7 @@
         "bluetooth"
       ],
       "commits_30d": 48,
-      "issues_open": 120,
+      "issues_open": 121,
       "prs_open": 0,
       "releases": [
         {
@@ -3993,8 +3993,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1127,
-      "pushed_at": "2026-08-07T10:29:09Z"
+      "stars": 1128,
+      "pushed_at": "2026-08-08T08:55:36Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4004,8 +4004,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 41,
-      "issues_open": 456,
+      "commits_30d": 39,
+      "issues_open": 467,
       "prs_open": 0,
       "releases": [
         {
@@ -4027,7 +4027,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15476,
+      "stars": 15479,
       "pushed_at": "2026-08-05T20:19:45Z"
     },
     {
@@ -4039,7 +4039,7 @@
         "bluetooth"
       ],
       "commits_30d": 10,
-      "issues_open": 278,
+      "issues_open": 279,
       "prs_open": 0,
       "releases": [],
       "stars": 880,
