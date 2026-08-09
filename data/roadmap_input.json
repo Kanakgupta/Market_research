@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T13:23:39Z",
+  "generated_at": "2026-08-09T13:25:14Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -168,14 +168,14 @@
           "url": "https://www.everythingrf.com/news/details/22469-nordic-semiconductor-unveils-skylo-certified-cellular-iot-module-for-seamless-satellite-connectivity"
         },
         {
-          "title": "Nordic Semiconductor Introduces Prototyping Tag to Simplify 'Find My' and Asset Tag Development",
-          "date": "Jul 2026",
-          "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
+          "title": "Nordic Semiconductor Reports Strong Q2 2026 Growth and Record Revenue",
+          "date": "Aug 2026",
+          "url": "https://baltic-review.com/norwegian-nordic-semiconductor-q2-2026-growth-edge-iot/"
         },
         {
-          "title": "Nordic Launches Prototyping Tag for 'Find My' and Asset Tag Designs",
-          "date": "Jul 2026",
-          "url": "https://www.allaboutcircuits.com/news/nordics-prototyping-tag-to-streamline-find-my-and-asset-tag-designs/"
+          "title": "LILYGO T-Echo Card Features Nordic Semi nRF52840 Wireless MCU",
+          "date": "Aug 2026",
+          "url": "https://www.cnx-software.com/2026/08/08/lilygo-t-echo-card-a-weatherproof-solar-powered-nrf52840-based-lora-gps-development-kit/"
         }
       ],
       "events": [
@@ -2061,6 +2061,11 @@
           "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
         },
         {
+          "title": "STMicroelectronics Introduces ST54M Hardware-Based Post-Quantum Cryptography Solution",
+          "date": "Aug 2026",
+          "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
+        },
+        {
           "title": "STMicroelectronics Announces Timing for Second Quarter 2026 Earnings Release and Conference Call",
           "date": "Jul 2026",
           "url": "https://www.globenewswire.com/news-release/2026/07/03/3321641/0/en/STMicroelectronics-Announces-Timing-for-Second-Quarter-2026-Earnings-Release-and-Conference-Call.html"
@@ -2089,11 +2094,6 @@
           "title": "ART-Pi II development board features 600 MHz STM32H7R7 Cortex-M7 MCU with NeoChrom GPU",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/21/art-pi-ii-development-board-features-600-mhz-stm32h7r7-cortex-m7-mcu-with-neochrom-gpu/"
-        },
-        {
-          "title": "STMicroelectronics Details Mid-July Share Buybacks Under Ongoing Repurchase Program",
-          "date": "Jul 2026",
-          "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/3385084/stmicroelectronics-details-mid-july-share-buybacks-under-ongoing-repurchase-program/"
         }
       ],
       "events": [
@@ -2351,6 +2351,16 @@
           "url": "https://www.storagenewsletter.com/2026/08/06/fms-2026-renesas-gen-3-mrdimm-chipset-solutions-advance-ddr5-memory-performance-to-16000-mt-s-for-next-gen-ai-and-hpc-applications/"
         },
         {
+          "title": "Renesas Enters Timing Deal with SiTime",
+          "date": "Aug 2026",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/why-sitime-sitm-35-8-231320796.html"
+        },
+        {
+          "title": "Renesas Electronics Announces Latest Earnings Results",
+          "date": "Aug 2026",
+          "url": "https://simplywall.st/stocks/jp/semiconductors/tse-6723/renesas-electronics-shares/news/renesas-electronics-tse6723-earnings-may-just-be-the-startin"
+        },
+        {
           "title": "Renesas Launches Starter Kits for RX113, RX140, and RX231 Microcontrollers",
           "date": "Jul 2026",
           "url": "https://www.renesas.com/en/document/tnn/notes-notes-sample-project-renesas-starter-kit"
@@ -2359,16 +2369,6 @@
           "title": "Titan Mini is a smaller Renesas RA8P1-based Edge AI board for RT-Thread RTOS development",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/02/titan-mini-smaller-renesas-ra8p1-based-edge-ai-board-for-rt-thread-rtos-development/"
-        },
-        {
-          "title": "Renesas Electronics America Inc. Acquires Significant Stake in SiTime Corp.",
-          "date": "Jul 2026",
-          "url": "https://www.gurufocus.com/news/8961462/renesas-electronics-america-inc-acquires-significant-stake-in-sitime-corp?mobile=true"
-        },
-        {
-          "title": "Renesas RZ/V2N Powers New AI Vision Systems",
-          "date": "Jul 2026",
-          "url": "https://www.startuphub.ai/ai-news/ai/2026/renesas-rz-v2n-powers-new-ai-vision-systems"
         }
       ],
       "events": [
@@ -2890,9 +2890,9 @@
           "url": "https://www.marketscreener.com/news/broadcom-announces-updates-to-vmware-vdefend-and-avi-load-balancer-ce7f50dddd80f22d"
         },
         {
-          "title": "Broadcom and Apple Extend Strategic Custom Chip Partnership Through 2031",
-          "date": "Jul 2026",
-          "url": "https://www.reuters.com/technology/broadcom-apple-extend-chip-partnership-through-2031-2026-07-06/"
+          "title": "Broadcom and LG Uplus Successfully Test Edge AI for Internet Outage Detection",
+          "date": "Aug 2026",
+          "url": "https://finance.biggo.com/news/f80086c2-10b9-4b85-b51d-54444a1b2450"
         }
       ]
     },
@@ -2947,6 +2947,11 @@
           "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-launches-tri-radio-module-that-delivers-the-latest-wireless-technologies-for-iot-implementation-941502"
         },
         {
+          "title": "u-blox Launches Tri-radio Module for IoT",
+          "date": "Aug 2026",
+          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-launches-tri-radio-module-that-delivers-the-latest-wireless-technologies-for-iot-implementation-941502"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -2973,11 +2978,6 @@
         },
         {
           "title": "u-blox Launches MAYA-W5 and NORA-W5 Wi-Fi 6 Module Families",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
-        },
-        {
-          "title": "u-blox Introduces MAYA-W5 and NORA-W5 Wi-Fi 6 Module Families",
           "date": "Jul 2026",
           "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         }
@@ -3543,6 +3543,11 @@
       ],
       "press_releases": [
         {
+          "title": "Toshiba Smart Microwave with Alexa Available for $25 Off on Amazon",
+          "date": "Aug 2026",
+          "url": "https://theinventory.com/toshiba-alexa-smart-microwave-sale-amazon"
+        },
+        {
           "title": "Toshiba Electronic Devices & Storage Corporation Signs MoU for Business Integration Discussions",
           "date": "Mar 2026",
           "url": "https://www.google.com/search?q=Toshiba+Electronic+Devices+%26+Storage+Corporation+Signs+MoU+for+Business+Integration+Discussions+Toshiba"
@@ -3719,23 +3724,22 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Microchip": 55,
+    "Microchip": 52,
     "Qualcomm": 37,
-    "Broadcom": 25,
-    "Synaptics": 15,
-    "NXP": 9,
-    "Infineon": 5,
-    "Renesas": 5,
-    "Onsemi": 4,
-    "Espressif": 4,
+    "Broadcom": 34,
+    "Synaptics": 16,
+    "NXP": 12,
+    "Onsemi": 9,
+    "Nordic": 7,
+    "Infineon": 6,
+    "MediaTek": 5,
+    "Renesas": 4,
     "TI": 4,
-    "Silicon Labs": 4,
-    "Nordic": 3,
-    "MediaTek": 2,
-    "Murata": 2,
-    "Quectel": 1,
-    "Marvell": 1,
-    "Apple": 1,
+    "Espressif": 2,
+    "Apple": 2,
+    "Silicon Labs": 2,
+    "Murata": 1,
+    "Sequans": 1,
     "STMicro": 1,
     "u-blox": 1
   },
@@ -3818,7 +3822,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3878,
+      "issues_open": 3817,
       "prs_open": 0,
       "releases": [
         {
@@ -3840,8 +3844,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16150,
-      "pushed_at": "2026-08-07T21:14:42Z"
+      "stars": 16157,
+      "pushed_at": "2026-08-08T20:36:41Z"
     },
     {
       "name": "ESP-IDF",
@@ -3854,7 +3858,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1656,
+      "issues_open": 1657,
       "prs_open": 0,
       "releases": [
         {
@@ -3876,7 +3880,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18727,
+      "stars": 18739,
       "pushed_at": "2026-08-04T20:26:24Z"
     },
     {
@@ -3925,8 +3929,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 242171,
-      "pushed_at": "2026-08-08T00:43:02Z"
+      "stars": 242277,
+      "pushed_at": "2026-08-08T23:45:58Z"
     },
     {
       "name": "Matter SDK",
@@ -3937,7 +3941,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2773,
+      "issues_open": 2775,
       "prs_open": 0,
       "releases": [
         {
@@ -3959,8 +3963,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8859,
-      "pushed_at": "2026-08-08T09:44:21Z"
+      "stars": 8860,
+      "pushed_at": "2026-08-09T00:48:42Z"
     },
     {
       "name": "BlueZ",
@@ -3970,8 +3974,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 48,
-      "issues_open": 121,
+      "commits_30d": 47,
+      "issues_open": 120,
       "prs_open": 0,
       "releases": [
         {
@@ -3993,8 +3997,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1128,
-      "pushed_at": "2026-08-08T08:55:36Z"
+      "stars": 1129,
+      "pushed_at": "2026-08-09T08:34:32Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4005,7 +4009,7 @@
         "ieee15_4"
       ],
       "commits_30d": 39,
-      "issues_open": 467,
+      "issues_open": 458,
       "prs_open": 0,
       "releases": [
         {
@@ -4027,8 +4031,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15479,
-      "pushed_at": "2026-08-05T20:19:45Z"
+      "stars": 15481,
+      "pushed_at": "2026-08-08T19:52:12Z"
     },
     {
       "name": "NimBLE",
@@ -4038,7 +4042,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 10,
+      "commits_30d": 8,
       "issues_open": 279,
       "prs_open": 0,
       "releases": [],
