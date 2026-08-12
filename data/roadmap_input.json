@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T13:20:55Z",
+  "generated_at": "2026-08-12T13:22:41Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2771,6 +2771,11 @@
       ],
       "press_releases": [
         {
+          "title": "Realtek Reports Q2 and H1 2026 Financial Results",
+          "date": "Aug 2026",
+          "url": "https://www.marketscreener.com/news/realtek-semiconductor-corp-reports-earnings-results-for-the-second-quarter-and-six-months-ended-jun-ce7859d8d88ff323"
+        },
+        {
           "title": "Realtek Licenses MPEG-H Audio Software from Fraunhofer IIS",
           "date": "Jul 2026",
           "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18&lang=en-GB"
@@ -2814,11 +2819,6 @@
           "title": "Realtek Drops Suit Against MediaTek Targeting Patent Bounty Deal",
           "date": "Jul 2026",
           "url": "https://news.bloomberglaw.com/antitrust/realtek-drops-suit-against-mediatek-targeting-patent-bounty-deal?utm_source=rss&utm_medium=ATNW&utm_campaign=0000019f-6b0d-d6ba-a3bf-6fad3ade0001"
-        },
-        {
-          "title": "Realtek Drops US Antitrust Claims Against MediaTek, Future Link",
-          "date": "Jul 2026",
-          "url": "https://www.mlex.com/mlex/articles/2502126/realtek-drops-us-antitrust-claims-against-mediatek-future-link"
         }
       ]
     },
@@ -3338,6 +3338,11 @@
           "url": "https://finance.biggo.com/news/d1e72452-98c3-4521-a314-a22ee34c075e"
         },
         {
+          "title": "Murata Unveils Upgraded Power Converters and Optical Components for AI Data Centers",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260811PD247/murata-data-optical-components-2026-worldwide.html"
+        },
+        {
           "title": "Murata Manufacturing focus on components and global demand",
           "date": "Jul 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895"
@@ -3361,11 +3366,6 @@
           "title": "Murata Commercializes New Common Mode Choke Coil for In-Vehicle Ethernet Standard",
           "date": "Jul 2026",
           "url": "https://www.murata.com/en-eu/news/emc/emifil/2026/0730"
-        },
-        {
-          "title": "Murata Collaborates with Synopsys to Provide Simulation Models",
-          "date": "Jun 2026",
-          "url": "https://www.murata.com/en-global/news/other/other/2026/0616"
         }
       ]
     },
@@ -3548,6 +3548,11 @@
           "url": "https://theinventory.com/toshiba-alexa-smart-microwave-sale-amazon"
         },
         {
+          "title": "Toshiba Qualifies Domtar's Phenol-Free Thermal Paper Clarion POS 48S",
+          "date": "Aug 2026",
+          "url": "https://www.paperage.com/2026news/08-11-2026domtar-phenol-free-thermal-paper-clarion-pos-48s-gains-toshiba-qualification.html"
+        },
+        {
           "title": "Toshiba Electronic Devices & Storage Corporation Signs MoU for Business Integration Discussions",
           "date": "Mar 2026",
           "url": "https://www.google.com/search?q=Toshiba+Electronic+Devices+%26+Storage+Corporation+Signs+MoU+for+Business+Integration+Discussions+Toshiba"
@@ -3724,24 +3729,24 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Broadcom": 39,
     "Qualcomm": 31,
-    "Microchip": 16,
-    "MediaTek": 8,
-    "Onsemi": 8,
-    "NXP": 7,
-    "Espressif": 7,
+    "Broadcom": 30,
+    "Microchip": 20,
+    "NXP": 13,
+    "Silicon Labs": 10,
+    "MediaTek": 9,
     "Renesas": 7,
-    "STMicro": 7,
-    "TI": 6,
-    "Synaptics": 4,
-    "Sony Semi": 3,
-    "Marvell": 3,
-    "Murata": 3,
-    "Infineon": 2,
-    "Quectel": 1,
-    "Silicon Labs": 1,
-    "Lattice": 1
+    "Onsemi": 7,
+    "Synaptics": 5,
+    "TI": 4,
+    "Espressif": 2,
+    "Murata": 2,
+    "Marvell": 2,
+    "Apple": 1,
+    "Sony Semi": 1,
+    "Realtek": 1,
+    "Nordic": 1,
+    "STMicro": 1
   },
   "standards_in_flight": [
     {
@@ -3824,7 +3829,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1660,
+      "issues_open": 1662,
       "prs_open": 0,
       "releases": [
         {
@@ -3846,8 +3851,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18752,
-      "pushed_at": "2026-08-11T11:59:03Z"
+      "stars": 18759,
+      "pushed_at": "2026-08-11T17:57:43Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3858,7 +3863,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3824,
+      "issues_open": 3849,
       "prs_open": 0,
       "releases": [
         {
@@ -3880,8 +3885,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16179,
-      "pushed_at": "2026-08-11T11:50:01Z"
+      "stars": 16186,
+      "pushed_at": "2026-08-12T05:42:48Z"
     },
     {
       "name": "OpenThread",
@@ -3914,7 +3919,7 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4007,
+      "stars": 4010,
       "pushed_at": "2026-08-11T06:37:26Z"
     },
     {
@@ -3929,8 +3934,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 242441,
-      "pushed_at": "2026-08-10T16:40:22Z"
+      "stars": 242593,
+      "pushed_at": "2026-08-11T15:08:38Z"
     },
     {
       "name": "Matter SDK",
@@ -3941,7 +3946,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2788,
+      "issues_open": 2774,
       "prs_open": 0,
       "releases": [
         {
@@ -3963,8 +3968,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8861,
-      "pushed_at": "2026-08-11T12:47:29Z"
+      "stars": 8863,
+      "pushed_at": "2026-08-12T13:18:35Z"
     },
     {
       "name": "BlueZ",
@@ -3974,8 +3979,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 45,
-      "issues_open": 122,
+      "commits_30d": 48,
+      "issues_open": 118,
       "prs_open": 0,
       "releases": [
         {
@@ -3998,7 +4003,7 @@
         }
       ],
       "stars": 1129,
-      "pushed_at": "2026-08-09T17:05:36Z"
+      "pushed_at": "2026-08-12T10:44:45Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4008,8 +4013,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 33,
-      "issues_open": 462,
+      "commits_30d": 32,
+      "issues_open": 465,
       "prs_open": 0,
       "releases": [
         {
@@ -4031,7 +4036,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15488,
+      "stars": 15495,
       "pushed_at": "2026-08-10T19:46:40Z"
     },
     {
@@ -4042,12 +4047,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 10,
-      "issues_open": 279,
+      "commits_30d": 11,
+      "issues_open": 278,
       "prs_open": 0,
       "releases": [],
-      "stars": 880,
-      "pushed_at": "2026-08-11T13:03:27Z"
+      "stars": 882,
+      "pushed_at": "2026-08-12T08:45:20Z"
     },
     {
       "name": "hostap",
