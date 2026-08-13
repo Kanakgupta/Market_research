@@ -213,6 +213,7 @@ APPLICATIONS: list[tuple[str, re.Pattern]] = [
     ("Smart City",     re.compile(r"\b(smart city|street light|parking sensor|traffic sensor|public transit)\b", re.I)),
     ("Agriculture",    re.compile(r"\b(precision (agri|farming)|smart farm|livestock monitoring)\b", re.I)),
     ("Robotics",       re.compile(r"\b(robot|cobot|amr\b|agv\b|drone)\b", re.I)),
+    ("Embedded / Electronics", re.compile(r"\b(embedded( systems?)?|firmware|rtos|freertos|zephyr rtos|microcontroller|\bmcu\b|soc\b|chipset|semiconductor|evaluation board|dev kit|reference design|edge ai)\b", re.I)),
 ]
 
 

@@ -337,6 +337,26 @@ PRIORITY_TECH_QUERIES: list[str] = [
 ]
 
 
+# Embedded + electronics-focused searches to increase coverage beyond
+# consumer-tech headlines.
+EMBEDDED_IOT_QUERIES: list[str] = [
+    "embedded systems news microcontroller",
+    "embedded firmware RTOS announcement",
+    "Zephyr RTOS release",
+    "FreeRTOS update",
+    "MCU launch low power IoT",
+    "wireless MCU launch Bluetooth LE",
+    "semiconductor connectivity SoC launch",
+    "IoT module launch embedded",
+    "industrial IoT gateway launch",
+    "edge AI microcontroller launch",
+    "electronics engineering wireless design",
+    "BLE module certification FCC",
+    "Thread Matter module launch",
+    "Wi-Fi 7 module launch embedded",
+]
+
+
 # ---------------------------------------------------------------------------
 # Social handles for competitor LinkedIn company pages and X timelines.
 # LinkedIn feeds require a running RSSHub instance (default: rsshub.app).
@@ -475,10 +495,10 @@ def dynamic_site_queries() -> list[str]:
 
 
 def dynamic_entity_queries() -> list[str]:
-    """Build broad (unfiltered) news queries for every tracked competitor/customer.
+    """Build broad + focused news queries for tracked competitor/customer entities.
 
-    This mirrors a manual Google News search behavior where the company name itself
-    is the query, with no wireless-only filter applied.
+    Keeps the original broad company-name horizon and adds embedded/IoT/electronics
+    variants for better technical coverage.
     """
     queries: list[str] = []
     seen: set[str] = set()
@@ -502,6 +522,13 @@ def dynamic_entity_queries() -> list[str]:
         if vendor:
             add(vendor)
             add(f"{vendor} press release")
+            add(f"{vendor} embedded")
+            add(f"{vendor} iot")
+            add(f"{vendor} wireless")
+            add(f"{vendor} semiconductor")
+            add(f"{vendor} microcontroller")
+            add(f"{vendor} module launch")
+            add(f"{vendor} press release wireless")
 
     try:
         customers = load_customers()
@@ -512,6 +539,10 @@ def dynamic_entity_queries() -> list[str]:
         if name:
             add(name)
             add(f"{name} launch")
+            add(f"{name} launch iot")
+            add(f"{name} smart home matter")
+            add(f"{name} bluetooth")
+            add(f"{name} wifi")
 
     return queries
 
@@ -545,6 +576,8 @@ def all_feed_urls() -> list[dict]:
     for f in RSS_FEEDS:
         feeds.append({**f, "bucket": f.get("bucket")})  # bucket inferred by classifier when None
     for q in PRIORITY_TECH_QUERIES:
+        add_search_feeds(q, bucket=None, include_bing=True)
+    for q in EMBEDDED_IOT_QUERIES:
         add_search_feeds(q, bucket=None, include_bing=True)
     for bucket, queries in QUERIES.items():
         for q in queries:

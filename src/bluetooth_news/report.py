@@ -155,6 +155,7 @@ a:hover { text-decoration:underline; }
 .nav-dd-group { padding:8px 12px 4px; font-size:11px; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
 .nav-dd-menu a.nav-dd-sub { padding-left:24px; font-size:13px; }
 .nav-news-last { margin-left:auto; }
+.nav-chat { color:var(--accent); font-weight:800; }
 .topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
 
 .content { padding:24px 20px 60px; }
@@ -302,7 +303,8 @@ _NAV_HTML = """
       </div>
     </div>
     <a href="applications.html" class="{{ 'active' if active=='applications' else '' }}">Applications</a>
-    <a href="news.html" class="nav-news-last {{ 'active' if active in news_slugs else '' }}">News</a>
+    <a href="news.html" class="{{ 'active' if active in news_slugs else '' }}">News</a>
+    <a href="chat.html" class="nav-chat {{ 'active' if active=='chat' else '' }}">Chat</a>
   </nav>
   <div class="meta-info">Updated {{ generated_at }} PDT</div>
 </div></header>
