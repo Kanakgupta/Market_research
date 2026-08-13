@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T13:22:41Z",
+  "generated_at": "2026-08-13T13:28:03Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2776,6 +2776,11 @@
           "url": "https://www.marketscreener.com/news/realtek-semiconductor-corp-reports-earnings-results-for-the-second-quarter-and-six-months-ended-jun-ce7859d8d88ff323"
         },
         {
+          "title": "Realtek Semiconductor Corp. Reports Earnings Results for the Second Quarter and Six Months Ended June 30, 2026",
+          "date": "Aug 2026",
+          "url": "https://www.marketscreener.com/news/realtek-semiconductor-corp-reports-earnings-results-for-the-second-quarter-and-six-months-ended-jun-ce7859d8d88ff323"
+        },
+        {
           "title": "Realtek Licenses MPEG-H Audio Software from Fraunhofer IIS",
           "date": "Jul 2026",
           "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18&lang=en-GB"
@@ -2814,11 +2819,6 @@
           "title": "Realtek, MediaTek Drop Case Alleging Bogus Patent Litigation",
           "date": "Jul 2026",
           "url": "https://www.law360.com/articles/2501820/realtek-mediatek-drop-case-alleging-bogus-patent-litigation"
-        },
-        {
-          "title": "Realtek Drops Suit Against MediaTek Targeting Patent Bounty Deal",
-          "date": "Jul 2026",
-          "url": "https://news.bloomberglaw.com/antitrust/realtek-drops-suit-against-mediatek-targeting-patent-bounty-deal?utm_source=rss&utm_medium=ATNW&utm_campaign=0000019f-6b0d-d6ba-a3bf-6fad3ade0001"
         }
       ]
     },
@@ -3343,6 +3343,11 @@
           "url": "https://www.digitimes.com/news/a20260811PD247/murata-data-optical-components-2026-worldwide.html"
         },
         {
+          "title": "Murata Upgrades Power and Optical Products for AI Data Centers",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260811PD247/murata-data-optical-components-2026-worldwide.html"
+        },
+        {
           "title": "Murata Manufacturing focus on components and global demand",
           "date": "Jul 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895"
@@ -3361,11 +3366,6 @@
           "title": "Murata Commercializes 1210 inch size Metal Terminal Type Common Mode Choke Coils for the \u201810Base-T1S\u2019 In-Vehicle Ethernet Standard",
           "date": "Jul 2026",
           "url": "https://www.murata.com/en-global/news/emc/emifil/2026/0730"
-        },
-        {
-          "title": "Murata Commercializes New Common Mode Choke Coil for In-Vehicle Ethernet Standard",
-          "date": "Jul 2026",
-          "url": "https://www.murata.com/en-eu/news/emc/emifil/2026/0730"
         }
       ]
     },
@@ -3729,24 +3729,23 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 31,
-    "Broadcom": 30,
-    "Microchip": 20,
-    "NXP": 13,
-    "Silicon Labs": 10,
-    "MediaTek": 9,
-    "Renesas": 7,
-    "Onsemi": 7,
-    "Synaptics": 5,
-    "TI": 4,
+    "Qualcomm": 43,
+    "NXP": 21,
+    "Broadcom": 18,
+    "Microchip": 14,
+    "Silicon Labs": 7,
+    "MediaTek": 6,
+    "Synaptics": 6,
+    "Renesas": 6,
+    "Onsemi": 4,
+    "Murata": 3,
     "Espressif": 2,
-    "Murata": 2,
-    "Marvell": 2,
-    "Apple": 1,
+    "WCH": 1,
     "Sony Semi": 1,
+    "TI": 1,
     "Realtek": 1,
     "Nordic": 1,
-    "STMicro": 1
+    "u-blox": 1
   },
   "standards_in_flight": [
     {
@@ -3819,42 +3818,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1662,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18759,
-      "pushed_at": "2026-08-11T17:57:43Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3863,7 +3826,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3849,
+      "issues_open": 3847,
       "prs_open": 0,
       "releases": [
         {
@@ -3885,42 +3848,44 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16186,
-      "pushed_at": "2026-08-12T05:42:48Z"
+      "stars": 16199,
+      "pushed_at": "2026-08-13T10:36:11Z"
     },
     {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
       "tech": [
-        "thread"
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 163,
+      "issues_open": 1671,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v2026.08.0",
-          "name": "OpenThread v2026.08.0",
-          "published_at": "2026-08-01T00:40:26Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
         },
         {
-          "tag": "v2026.07.0",
-          "name": "OpenThread v2026.07.0",
-          "published_at": "2026-07-01T00:58:53Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
         },
         {
-          "tag": "v2026.06.0",
-          "name": "OpenThread v2026.06.0",
-          "published_at": "2026-06-01T01:01:04Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 4010,
-      "pushed_at": "2026-08-11T06:37:26Z"
+      "stars": 18769,
+      "pushed_at": "2026-08-12T23:16:20Z"
     },
     {
       "name": "Linux mac80211",
@@ -3934,8 +3899,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 242593,
-      "pushed_at": "2026-08-11T15:08:38Z"
+      "stars": 242722,
+      "pushed_at": "2026-08-12T15:31:28Z"
     },
     {
       "name": "Matter SDK",
@@ -3946,7 +3911,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2774,
+      "issues_open": 2772,
       "prs_open": 0,
       "releases": [
         {
@@ -3968,8 +3933,42 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8863,
-      "pushed_at": "2026-08-12T13:18:35Z"
+      "stars": 8867,
+      "pushed_at": "2026-08-13T13:23:08Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 100,
+      "issues_open": 165,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.08.0",
+          "name": "OpenThread v2026.08.0",
+          "published_at": "2026-08-01T00:40:26Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
+        },
+        {
+          "tag": "v2026.07.0",
+          "name": "OpenThread v2026.07.0",
+          "published_at": "2026-07-01T00:58:53Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+        },
+        {
+          "tag": "v2026.06.0",
+          "name": "OpenThread v2026.06.0",
+          "published_at": "2026-06-01T01:01:04Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+        }
+      ],
+      "stars": 4013,
+      "pushed_at": "2026-08-13T00:41:52Z"
     },
     {
       "name": "BlueZ",
@@ -3979,8 +3978,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 48,
-      "issues_open": 118,
+      "commits_30d": 41,
+      "issues_open": 116,
       "prs_open": 0,
       "releases": [
         {
@@ -4003,7 +4002,7 @@
         }
       ],
       "stars": 1129,
-      "pushed_at": "2026-08-12T10:44:45Z"
+      "pushed_at": "2026-08-13T10:44:30Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4036,8 +4035,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15495,
-      "pushed_at": "2026-08-10T19:46:40Z"
+      "stars": 15497,
+      "pushed_at": "2026-08-12T19:53:51Z"
     },
     {
       "name": "NimBLE",
