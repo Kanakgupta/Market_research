@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import importlib.util
 import os
 import re
 from collections import Counter
@@ -3456,6 +3457,21 @@ def _build_chat_template() -> str:
 
 def _write_chat_index(output_dir: Path) -> None:
     """Build a lightweight text index of every rendered page for the Chat page."""
+    builder_path = _CHAT_SRC_DIR / "build" / "build_index.py"
+    if builder_path.exists():
+        try:
+            spec = importlib.util.spec_from_file_location("herai_build_index", builder_path)
+            if spec and spec.loader:
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+                chunks = module.build_index(output_dir, skip={"chat.html"})
+                (output_dir / "chat_index.json").write_text(
+                    json.dumps(chunks, ensure_ascii=False), encoding="utf-8"
+                )
+                return
+        except Exception:
+            pass
+
     script_style_re = re.compile(r"<(script|style)[^>]*>.*?</\1>", re.I | re.S)
     tag_re = re.compile(r"<[^>]+>")
     ws_re = re.compile(r"\s+")

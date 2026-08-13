@@ -227,7 +227,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="">News</a>
     <a href="chat.html" class="nav-chat active">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-13 14:59 PDT</div>
+  <div class="meta-info">Updated 2026-08-13 15:07 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -255,8 +255,9 @@ a:hover { text-decoration:underline; }
     <div class="row">
       <label for="model">Model</label>
       <select id="model">
-        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (fast)</option>
+        <option value="auto">Auto (recommended)</option>
         <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+        <option value="gemini-2.0-flash">gemini-2.0-flash</option>
         <option value="gemini-1.5-flash">gemini-1.5-flash</option>
       </select>
       <button id="saveKey">Save</button>
@@ -299,8 +300,18 @@ a:hover { text-decoration:underline; }
   var SITE_NAME = CFG.siteName || 'this website';
   var INDEX_URL = CFG.indexUrl || 'chat_index.json';
   var LS_KEY='herai_gemini_key', LS_MODEL='herai_gemini_model';
+  var DEFAULT_MODEL='auto';
+  var MODEL_CHAIN=['gemini-2.5-flash','gemini-2.0-flash','gemini-1.5-flash'];
   var INDEX=[]; var INDEX_READY=false; var BUSY=false;
   var STOP=new Set(['the','and','for','are','was','with','that','this','from','have','has','you','your','what','which','who','how','why','when','where','can','does','did','will','would','about','into','over','than','then','them','they','their','our','out','not','but','all','any','use','used','using','get','via','per','new','one','two']);
+  var ALIASES={
+    'wifi':['wifi','wi-fi','wi fi'],
+    'bluetooth':['bluetooth','ble','le audio','auracast'],
+    'thread':['thread','openthread','thread border router'],
+    'matter':['matter','matter over thread'],
+    'zephyr':['zephyr','zephyr stack','zephyr rtos'],
+    'nxp':['nxp','nxp semiconductors']
+  };
   var DEFAULT_CHIPS=['Who are the top Bluetooth chip vendors?','What is Matter over Thread?','Latest Wi-Fi 7 news','Which customers use Thread?','Compare Nordic vs the competition'];
   var CHIPS=(CFG.chips && CFG.chips.length) ? CFG.chips : DEFAULT_CHIPS;
   var INTRO=CFG.intro || ('Hi! I can answer questions using the content across ' + SITE_NAME + ' — ask me anything, or tap a suggestion above.');
@@ -313,13 +324,28 @@ a:hover { text-decoration:underline; }
 
   function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   function tokenize(s){ var m=(s||'').toLowerCase().match(/[a-z0-9]+/g)||[]; return m.filter(function(w){ return w.length>2 && !STOP.has(w); }); }
+  function uniq(arr){ var seen={}; return (arr||[]).filter(function(v){ if(seen[v]) return false; seen[v]=1; return true; }); }
+  function resolveQueryTerms(query){
+    var base=tokenize(query);
+    var expanded=[];
+    base.forEach(function(term){
+      expanded.push(term);
+      (ALIASES[term] || []).forEach(function(alias){ expanded.push(alias.toLowerCase()); });
+    });
+    return { base: uniq(base), expanded: uniq(expanded) };
+  }
 
   function getKey(){ return (localStorage.getItem(LS_KEY)||'').trim(); }
-  function getModel(){ return localStorage.getItem(LS_MODEL) || 'gemini-2.5-flash-lite'; }
+  function getModel(){ return localStorage.getItem(LS_MODEL) || DEFAULT_MODEL; }
+  function resolveModelChain(selected){
+    var choice=(selected||DEFAULT_MODEL).trim();
+    if(!choice || choice==='auto'){ return MODEL_CHAIN.slice(); }
+    return uniq([choice].concat(MODEL_CHAIN));
+  }
 
   function refreshStatus(){
     var k=getKey();
-    if(k){ keyStatus.innerHTML='<span class="ok">✓ Key saved</span> — full AI answers enabled ('+esc(getModel())+').'; }
+    if(k){ keyStatus.innerHTML='<span class="ok">✓ Key saved</span> — full AI answers enabled ('+esc(getModel()==='auto' ? 'auto fallback' : getModel())+').'; }
     else { keyStatus.innerHTML='<span class="warn">No key</span> — running in on-page search mode. Add a key for richer answers.'; }
   }
 
@@ -374,26 +400,78 @@ a:hover { text-decoration:underline; }
   }
 
   function pageTitle(rec){ return rec.t || rec.p; }
+  function pageLabel(rec){ return rec.s ? (pageTitle(rec) + ' — ' + rec.s) : pageTitle(rec); }
+
+  function excerptForQuery(rec, query){
+    var text=(rec.x||'').replace(/\s+/g,' ').trim();
+    if(!text){ return ''; }
+    var terms=resolveQueryTerms(query).expanded;
+    var low=text.toLowerCase();
+    var best=-1;
+    for(var i=0;i<terms.length;i++){
+      var idx=low.indexOf(terms[i]);
+      if(idx>=0 && (best<0 || idx<best)){ best=idx; }
+    }
+    if(best<0){ return text.length>260 ? text.slice(0,260).trim()+'…' : text; }
+    var start=Math.max(0, best-90);
+    var end=Math.min(text.length, best+260);
+    if(start>0){ while(start<best && /\S/.test(text.charAt(start-1))){ start--; } }
+    if(end<text.length){ while(end<text.length && /\S/.test(text.charAt(end))){ end++; } }
+    return (start>0 ? '…' : '') + text.slice(start, end).trim() + (end<text.length ? '…' : '');
+  }
+
+  function recContainsAll(rec, terms){
+    var blob=((rec.t||'')+' '+(rec.s||'')+' '+(rec.x||'')).toLowerCase();
+    return terms.every(function(term){
+      var aliases=ALIASES[term] || [term];
+      for(var i=0;i<aliases.length;i++){
+        if(blob.indexOf(aliases[i].toLowerCase())>=0){ return true; }
+      }
+      return false;
+    });
+  }
 
   function search(query, topK){
-    var qt=tokenize(query);
-    if(!qt.length) return [];
-    var qset={}; qt.forEach(function(t){ qset[t]=(qset[t]||0)+1; });
+    var terms=resolveQueryTerms(query);
+    if(!terms.base.length) return [];
+    var newsIntent=/\b(new|latest|recent|update|updates|whats new|what new)\b/i.test(query);
     var scored=[];
     for(var i=0;i<INDEX.length;i++){
       var rec=INDEX[i];
-      var low=rec._low || (rec._low=(rec.x||'').toLowerCase());
+      var low=rec._low || (rec._low=((rec.x||'')+' '+(rec.s||'')).toLowerCase());
       var tlow=rec._tl || (rec._tl=(rec.t||'').toLowerCase());
-      var score=0, hits=0;
-      for(var t in qset){
-        var idx=low.indexOf(t);
-        if(idx>=0){ hits++; var c=low.split(t).length-1; score+=1+Math.min(c,5)*0.4; }
-        if(tlow.indexOf(t)>=0){ score+=1.2; }
+      var plow=rec._pl || (rec._pl=(rec.p||'').toLowerCase());
+      var score=0, distinctHits=0;
+      for(var t=0;t<terms.base.length;t++){
+        var token=terms.base[t];
+        var tokenMatched=false;
+        var aliases=uniq([token].concat(ALIASES[token] || []));
+        for(var a=0;a<aliases.length;a++){
+          var alias=aliases[a].toLowerCase();
+          if(low.indexOf(alias)>=0){ score += alias===token ? 2.0 : 1.0; tokenMatched=true; }
+          if(tlow.indexOf(alias)>=0){ score += alias===token ? 1.8 : 1.1; tokenMatched=true; }
+        }
+        if(tokenMatched){ distinctHits++; }
       }
-      if(hits>0){ score += hits*0.6; scored.push({rec:rec, score:score}); }
+      if(!distinctHits){ continue; }
+      score += distinctHits * 2.2;
+      if(distinctHits === terms.base.length){ score += 8; }
+      if(rec.s && rec.s.length < 80){ score += 0.5; }
+      if(newsIntent && (plow.indexOf('news')>=0 || tlow.indexOf('news')>=0)){ score += 2.5; }
+      scored.push({rec:rec, score:score});
     }
     scored.sort(function(a,b){ return b.score-a.score; });
-    return scored.slice(0, topK||8).map(function(s){ return s.rec; });
+    var out=[]; var seenPages={}; var limit=topK||8;
+    for(var j=0;j<scored.length && out.length<limit;j++){
+      var page=scored[j].rec.p;
+      if(seenPages[page]){ continue; }
+      seenPages[page]=1;
+      out.push(scored[j].rec);
+    }
+    for(var k=0;k<scored.length && out.length<limit;k++){
+      if(out.indexOf(scored[k].rec)<0){ out.push(scored[k].rec); }
+    }
+    return out;
   }
 
   function sourceChips(recs){
@@ -407,15 +485,17 @@ a:hover { text-decoration:underline; }
     var budget=7000;
     for(var i=0;i<recs.length;i++){
       var r=recs[i];
-      var piece='['+pageTitle(r)+' — '+r.p+']\n'+r.x+'\n';
+      var label=pageLabel(r);
+      var piece='['+label+' — '+r.p+']\n'+r.x+'\n';
       if(budget - piece.length < 0) break;
       budget-=piece.length; ctx.push(piece);
     }
     return [
       'You are the AI assistant for the "'+SITE_NAME+'" website.',
       'Answer the question using ONLY the context excerpts below, taken from the site pages.',
+      'Start with a direct answer. If the context only partially answers the question, say that clearly.',
       'If the answer is not in the context, say you could not find it on the site and point to the closest relevant page.',
-      'Write a clear, well-structured answer using short paragraphs and bullet points. Do not invent facts or URLs.',
+      'Write a clear, well-structured answer using short paragraphs and bullet points. Quote page names when useful. Do not invent facts or URLs.',
       '',
       'CONTEXT:',
       ctx.join('\n'),
@@ -426,36 +506,59 @@ a:hover { text-decoration:underline; }
   }
 
   function callGemini(query, recs){
-    var key=getKey(); var model=getModel();
-    var url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key);
+    var key=getKey();
+    var models=resolveModelChain(getModel());
     var body={ contents:[{ role:'user', parts:[{ text: buildPrompt(query, recs) }] }], generationConfig:{ temperature:0.2, maxOutputTokens:1200 } };
-    return fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) })
-      .then(function(res){ return res.json().then(function(j){ return {ok:res.ok, status:res.status, j:j}; }); })
-      .then(function(r){
-        if(!r.ok){
-          var em=(r.j && r.j.error && r.j.error.message) ? r.j.error.message : ('HTTP '+r.status);
-          throw new Error(em);
-        }
-        var cand=(r.j.candidates && r.j.candidates[0]) || null;
-        var parts=cand && cand.content && cand.content.parts ? cand.content.parts : [];
-        var text=parts.map(function(p){ return p.text||''; }).join('').trim();
-        if(!text) throw new Error('Empty response from model.');
-        return text;
-      });
+
+    function tryModel(idx, lastErr){
+      if(idx >= models.length){
+        throw lastErr || new Error('No Gemini model could answer this request.');
+      }
+      var model=models[idx];
+      var url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key);
+      return fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) })
+        .then(function(res){ return res.json().then(function(j){ return {ok:res.ok, status:res.status, j:j}; }); })
+        .then(function(r){
+          if(!r.ok){
+            var em=(r.j && r.j.error && r.j.error.message) ? r.j.error.message : ('HTTP '+r.status);
+            throw new Error(em);
+          }
+          var cand=(r.j.candidates && r.j.candidates[0]) || null;
+          var parts=cand && cand.content && cand.content.parts ? cand.content.parts : [];
+          var text=parts.map(function(p){ return p.text||''; }).join('').trim();
+          if(!text){ throw new Error('Empty response from model.'); }
+          if(getModel()==='auto'){ localStorage.setItem(LS_MODEL, 'auto'); }
+          return text;
+        })
+        .catch(function(err){
+          return tryModel(idx + 1, err);
+        });
+    }
+
+    return tryModel(0, null);
   }
 
   function localAnswer(query, recs){
+    var terms=resolveQueryTerms(query).base;
     if(!recs.length){
       return '<p>I could not find anything about that on this site. Try rephrasing, or browse the site pages.</p>';
     }
-    var parts=['<p>Here is what I found on the site for <strong>'+esc(query)+'</strong>:</p>'];
-    var shown=0;
-    for(var i=0;i<recs.length && shown<4;i++){
-      var r=recs[i];
-      var snip=(r.x||'').slice(0,320).trim();
-      parts.push('<p><strong>'+esc(pageTitle(r))+':</strong> '+esc(snip)+(r.x.length>320?'…':'')+'</p>');
-      shown++;
+    var exact=recs.filter(function(rec){ return recContainsAll(rec, terms); });
+    var chosen=exact.length ? exact : recs;
+    var parts=[];
+    if(exact.length){
+      parts.push('<p>Closest on-site answer for <strong>'+esc(query)+'</strong>:</p>');
+    } else if(terms.length > 1){
+      parts.push('<p>I did not find a clean on-site passage that mentions all parts of <strong>'+esc(query)+'</strong> together. These are the closest matches:</p>');
+    } else {
+      parts.push('<p>Here are the closest matches I found on the site for <strong>'+esc(query)+'</strong>:</p>');
     }
+    parts.push('<ul>');
+    for(var i=0;i<chosen.length && i<4;i++){
+      var r=chosen[i];
+      parts.push('<li><strong>'+esc(pageLabel(r))+':</strong> '+esc(excerptForQuery(r, query))+'</li>');
+    }
+    parts.push('</ul>');
     parts.push('<p style="color:var(--muted);font-size:12.5px">Add a Gemini API key in AI settings above to get a synthesized answer instead of raw excerpts.</p>');
     return parts.join('');
   }
