@@ -70,4 +70,7 @@ Invoke-Step ("Committing changes: $CommitMessage") { git commit -m $CommitMessag
 Invoke-Step 'Syncing with remote before push (git pull -X ours)...' { git pull -X ours origin main }
 Invoke-Step 'Pushing to origin/main...' { git push origin main }
 
+# Keep the reusable HerAI chat repo in sync when its sources change.
+& (Join-Path $PSScriptRoot 'push_ai_chat.ps1') -CommitMessage $CommitMessage
+
 Write-Log 'Done. Latest data fetched, site built, committed, and pushed.'

@@ -40,6 +40,7 @@ a:hover { text-decoration:underline; }
 .nav-dd-group { padding:8px 12px 4px; font-size:11px; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
 .nav-dd-menu a.nav-dd-sub { padding-left:24px; font-size:13px; }
 .nav-news-last { margin-left:auto; }
+.nav-chat { color:var(--accent); font-weight:800; }
 .topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
 
 .content { padding:24px 20px 60px; }
@@ -369,9 +370,10 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </div>
     </div>
     <a href="applications.html" class="">Applications</a>
-    <a href="news.html" class="nav-news-last ">News</a>
+    <a href="news.html" class="">News</a>
+    <a href="chat.html" class="nav-chat ">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-13 14:39 PDT</div>
+  <div class="meta-info">Updated 2026-08-13 14:59 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -433,8 +435,8 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       <p>Weighted shortlist status based on protocol coverage, recent momentum, OEM pull, and execution strength.</p>
       <div class="action-stack">
         <div class="action-pill decide"><div class="n">0</div><div class="l">Decide Now</div></div>
-        <div class="action-pill investigate"><div class="n">3</div><div class="l">Investigate</div></div>
-        <div class="action-pill monitor"><div class="n">3</div><div class="l">Monitor</div></div>
+        <div class="action-pill investigate"><div class="n">0</div><div class="l">Investigate</div></div>
+        <div class="action-pill monitor"><div class="n">5</div><div class="l">Monitor</div></div>
       </div>
     </aside>
   </div>
@@ -461,149 +463,124 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <tbody>
       
       <tr>
-        <td class="vendor">Qualcomm<div class="score-reason">21 recent signals &middot; 1 protocol buckets</div></td>
-        <td>
-          <div class="score-num">16</div>
-          <div class="score-bar"><i style="width: 16%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">100</div>
-          <div class="score-bar"><i style="width: 100%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">100</div>
-          <div class="score-bar"><i style="width: 100%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">63</div>
-          <div class="score-bar"><i style="width: 63%"></i></div>
-        </td>
-        <td class="score-total">67</td>
-        <td>
-          <span class="score-action investigate">Investigate</span>
-          <div class="score-reason">Potential fit, but gaps need validation</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td class="vendor">Silicon Labs<div class="score-reason">21 recent signals &middot; 2 protocol buckets</div></td>
-        <td>
-          <div class="score-num">33</div>
-          <div class="score-bar"><i style="width: 33%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">100</div>
-          <div class="score-bar"><i style="width: 100%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">18</div>
-          <div class="score-bar"><i style="width: 18%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">63</div>
-          <div class="score-bar"><i style="width: 63%"></i></div>
-        </td>
-        <td class="score-total">52</td>
-        <td>
-          <span class="score-action investigate">Investigate</span>
-          <div class="score-reason">Potential fit, but gaps need validation</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td class="vendor">MediaTek<div class="score-reason">8 recent signals &middot; 2 protocol buckets</div></td>
-        <td>
-          <div class="score-num">33</div>
-          <div class="score-bar"><i style="width: 33%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">64</div>
-          <div class="score-bar"><i style="width: 64%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">54</div>
-          <div class="score-bar"><i style="width: 54%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">63</div>
-          <div class="score-bar"><i style="width: 63%"></i></div>
-        </td>
-        <td class="score-total">52</td>
-        <td>
-          <span class="score-action investigate">Investigate</span>
-          <div class="score-reason">Potential fit, but gaps need validation</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td class="vendor">NXP<div class="score-reason">5 recent signals &middot; 3 protocol buckets</div></td>
-        <td>
-          <div class="score-num">50</div>
-          <div class="score-bar"><i style="width: 50%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">40</div>
-          <div class="score-bar"><i style="width: 40%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">36</div>
-          <div class="score-bar"><i style="width: 36%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">71</div>
-          <div class="score-bar"><i style="width: 71%"></i></div>
-        </td>
-        <td class="score-total">48</td>
-        <td>
-          <span class="score-action monitor">Monitor</span>
-          <div class="score-reason">Insufficient market pull or weak fit signals</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td class="vendor">Nordic<div class="score-reason">2 recent signals &middot; 2 protocol buckets</div></td>
-        <td>
-          <div class="score-num">33</div>
-          <div class="score-bar"><i style="width: 33%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">16</div>
-          <div class="score-bar"><i style="width: 16%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">18</div>
-          <div class="score-bar"><i style="width: 18%"></i></div>
-        </td>
-        <td>
-          <div class="score-num">63</div>
-          <div class="score-bar"><i style="width: 63%"></i></div>
-        </td>
-        <td class="score-total">31</td>
-        <td>
-          <span class="score-action monitor">Monitor</span>
-          <div class="score-reason">Insufficient market pull or weak fit signals</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td class="vendor">TI<div class="score-reason">4 recent signals &middot; 0 protocol buckets</div></td>
+        <td class="vendor">NXP<div class="score-reason">0 recent signals &middot; 0 protocol buckets</div></td>
         <td>
           <div class="score-num">0</div>
           <div class="score-bar"><i style="width: 0%"></i></div>
         </td>
         <td>
-          <div class="score-num">32</div>
-          <div class="score-bar"><i style="width: 32%"></i></div>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
         </td>
         <td>
-          <div class="score-num">36</div>
-          <div class="score-bar"><i style="width: 36%"></i></div>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">71</div>
+          <div class="score-bar"><i style="width: 71%"></i></div>
+        </td>
+        <td class="score-total">14</td>
+        <td>
+          <span class="score-action monitor">Monitor</span>
+          <div class="score-reason">Insufficient market pull or weak fit signals</div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="vendor">Qualcomm<div class="score-reason">0 recent signals &middot; 0 protocol buckets</div></td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
         </td>
         <td>
           <div class="score-num">63</div>
           <div class="score-bar"><i style="width: 63%"></i></div>
         </td>
-        <td class="score-total">30</td>
+        <td class="score-total">13</td>
+        <td>
+          <span class="score-action monitor">Monitor</span>
+          <div class="score-reason">Insufficient market pull or weak fit signals</div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="vendor">MediaTek<div class="score-reason">0 recent signals &middot; 0 protocol buckets</div></td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">63</div>
+          <div class="score-bar"><i style="width: 63%"></i></div>
+        </td>
+        <td class="score-total">13</td>
+        <td>
+          <span class="score-action monitor">Monitor</span>
+          <div class="score-reason">Insufficient market pull or weak fit signals</div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="vendor">Nordic<div class="score-reason">0 recent signals &middot; 0 protocol buckets</div></td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">63</div>
+          <div class="score-bar"><i style="width: 63%"></i></div>
+        </td>
+        <td class="score-total">13</td>
+        <td>
+          <span class="score-action monitor">Monitor</span>
+          <div class="score-reason">Insufficient market pull or weak fit signals</div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="vendor">Silicon Labs<div class="score-reason">0 recent signals &middot; 0 protocol buckets</div></td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">0</div>
+          <div class="score-bar"><i style="width: 0%"></i></div>
+        </td>
+        <td>
+          <div class="score-num">63</div>
+          <div class="score-bar"><i style="width: 63%"></i></div>
+        </td>
+        <td class="score-total">13</td>
         <td>
           <span class="score-action monitor">Monitor</span>
           <div class="score-reason">Insufficient market pull or weak fit signals</div>
@@ -625,27 +602,27 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       <h3>Signal Recency</h3>
       <p>How fresh the market evidence is.</p>
       <ul class="mini-list">
-        <li><b>591</b> articles in last 7 days</li>
-        <li><b>739</b> articles in last 30 days</li>
-        <li><b>740</b> articles in last 45 days</li>
+        <li><b>0</b> articles in last 7 days</li>
+        <li><b>0</b> articles in last 30 days</li>
+        <li><b>0</b> articles in last 45 days</li>
       </ul>
     </article>
     <article class="mini-card">
       <h3>Market Breadth</h3>
       <p>How broad the evidence base is across technologies and sources.</p>
       <ul class="mini-list">
-        <li><b>233</b> unique publishers/sources</li>
-        <li><b>6</b>/6 technology buckets represented</li>
-        <li><b>65</b> days between oldest and newest captured article</li>
+        <li><b>21</b> unique publishers/sources</li>
+        <li><b>1</b>/6 technology buckets represented</li>
+        <li><b>0</b> days between oldest and newest captured article</li>
       </ul>
     </article>
     <article class="mini-card">
       <h3>Buyer-Relevant Depth</h3>
       <p>How much recent evidence exists across vendors and OEMs.</p>
       <ul class="mini-list">
-        <li><b>23</b> vendors with linked news</li>
-        <li><b>20</b> customers with linked news</li>
-        <li><b>2026-08-13</b> latest article timestamp</li>
+        <li><b>5</b> vendors with linked news</li>
+        <li><b>11</b> customers with linked news</li>
+        <li><b>n/a</b> latest article timestamp</li>
       </ul>
     </article>
   </div>
@@ -676,7 +653,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
         
           <div><a href="https://seekingalpha.com/article/4929339-nordic-semiconductor-stock-question-cra-enforcement-appeal" target="_blank" rel="noopener">Nordic Semiconductor: The Question Now Is CRA Enforcement Appeal (Rating Upgrade)</a> &middot; Aug 2026</div>
         
-          <div><a href="https://www.embedded.com/nordic-nrf9151-enables-cellular-and-satellite-iot-devices/" target="_blank" rel="noopener">Nordic&#39;s nRF9151 opens satellite and cellular IoT to a new class of connected devices</a> &middot; Aug 2026</div>
+          <div>Nordic&#39;s nRF9151 opens satellite and cellular IoT to a new class of connected devices &middot; Aug 2026</div>
         
       </div>
       
@@ -1227,14 +1204,14 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Google</h3>
-        <span class="conf-badge conf-high">High &middot; 92%</span>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
       </div>
-      <div class="cust-app">Wearable</div>
-      <p class="cust-product">Google health wearable refresh</p>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Google wireless product refresh</p>
       <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+        
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>131</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
@@ -1246,7 +1223,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
         
       </ul>
       
-      <div class="cust-basis">app signal=Wearable (score 16.0)</div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
       <div class="cust-links">
         <a href="oems.html">Customer profile &rarr;</a>
         <a href="news.html">Customer news feed &rarr;</a>
@@ -1256,26 +1233,22 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Amazon</h3>
-        <span class="conf-badge conf-high">High &middot; 92%</span>
+        <span class="conf-badge conf-medium">Medium &middot; 67%</span>
       </div>
       <div class="cust-app">Smart Home</div>
       <p class="cust-product">Amazon Matter hub refresh</p>
       <div>
         <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>24</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
         <li><a href="https://www.ign.com/articles/acer-predator-orion-rtx-5070-ti-gaming-pc-deal-intel-gamer-days-sale" target="_blank" rel="noopener">Amazon Is Offering a Great Deal on a RTX 5070 Ti Gaming PC, and It Includes Two Upcoming AAA Games</a> &middot; IGN</li>
         
-        <li><a href="https://www.cnx-software.com/2026/08/13/aaeon-pico-adn2-a-low-profile-alder-lake-n-pico-itx-sbc-for-space-constrained-applications/" target="_blank" rel="noopener">AAEON PICO-ADN2 – A low-profile Alder Lake-N Pico-ITX SBC for space-constrained applications</a> &middot; CNX Software</li>
-        
-        <li><a href="https://www.theregister.com/offbeat/2026/08/13/twitch-feeds-your-streams-to-amazons-ai-unless-you-tell-it-to-stop/5287258" target="_blank" rel="noopener">Twitch feeds your streams to Amazon&#39;s AI unless you tell it to stop</a> &middot; The Register</li>
-        
       </ul>
       
-      <div class="cust-basis">app signal=Smart Home (score 16.0)</div>
+      <div class="cust-basis">app signal=Smart Home (score 12.0)</div>
       <div class="cust-links">
         <a href="oems.html">Customer profile &rarr;</a>
         <a href="news.html">Customer news feed &rarr;</a>
@@ -1285,14 +1258,14 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Apple</h3>
-        <span class="conf-badge conf-high">High &middot; 91%</span>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
       </div>
-      <div class="cust-app">Smart Home</div>
-      <p class="cust-product">Apple Matter hub refresh</p>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Apple wireless product refresh</p>
       <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+        
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>151</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
@@ -1304,7 +1277,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
         
       </ul>
       
-      <div class="cust-basis">app signal=Smart Home (score 16.0)</div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
       <div class="cust-links">
         <a href="oems.html">Customer profile &rarr;</a>
         <a href="news.html">Customer news feed &rarr;</a>
@@ -1314,26 +1287,22 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Microsoft</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 74%</span>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
       </div>
-      <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Microsoft LE Audio earbuds refresh</p>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Microsoft wireless product refresh</p>
       <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+        
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>25</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
         <li><a href="https://www.windowscentral.com/hardware/qualcomm/a-youtuber-just-stress-tested-a-snapdragon-x2-laptop-for-17-hours-straight" target="_blank" rel="noopener">Can a Snapdragon laptop handle a 17-hour streaming marathon? One creator put it to the test.</a> &middot; Windows Central</li>
         
-        <li><a href="https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/" target="_blank" rel="noopener">Microsoft kills off unsuccessful AI features while merging its separate Copilot apps</a> &middot; TechCrunch</li>
-        
-        <li><a href="https://www.theregister.com/security/2026/08/13/sponsored-the-backup-microsoft-never-promised-you/5284957" target="_blank" rel="noopener">The backup Microsoft never promised you</a> &middot; The Register</li>
-        
       </ul>
       
-      <div class="cust-basis">app signal=Audio / Speaker (score 6.0)</div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
       <div class="cust-links">
         <a href="oems.html">Customer profile &rarr;</a>
         <a href="news.html">Customer news feed &rarr;</a>
@@ -1343,22 +1312,18 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Meta</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 76%</span>
+        <span class="conf-badge conf-medium">Medium &middot; 61%</span>
       </div>
       <div class="cust-app">Smart Glasses</div>
       <p class="cust-product">Meta smart glasses generation</p>
       <div>
         <span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span><span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">all-day battery profile</span>
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>6</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
         <li><a href="https://www.theverge.com/tech/979654/meta-whatsapp-scam-message-detection" target="_blank" rel="noopener">Meta adds AI screening to detect WhatsApp scams</a> &middot; The Verge</li>
-        
-        <li><a href="https://www.eetimes.com/meta-cuts-server-count-25-by-reusing-old-memory-can-anyone-else-do-it/" target="_blank" rel="noopener">Meta Recycles DDR4 Memory: Can Others Follow?</a> &middot; EE Times</li>
-        
-        <li><a href="https://arstechnica.com/gadgets/2026/08/us-boosts-drone-surveillance-as-flesh-eating-screwworms-spread-in-texas/" target="_blank" rel="noopener">US boosts drone surveillance as flesh-eating screwworms spread in Texas</a> &middot; Ars Technica</li>
         
       </ul>
       
@@ -1372,14 +1337,14 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Samsung</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 79%</span>
+        <span class="conf-badge conf-low">Low &middot; 35%</span>
       </div>
-      <div class="cust-app">Audio / Speaker</div>
-      <p class="cust-product">Samsung LE Audio earbuds refresh</p>
+      <div class="cust-app">Connected Device</div>
+      <p class="cust-product">Samsung wireless product refresh</p>
       <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Thread 1.4 support</span><span class="feat-chip">lower standby power</span><span class="feat-chip">mesh reliability</span>
+        
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>45</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
@@ -1387,11 +1352,9 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
         
         <li><a href="https://www.zdnet.com/article/samsung-r95h-micro-rgb-deal-best-buy/" target="_blank" rel="noopener">This Micro RGB TV rivals pricier OLED models</a> &middot; and I&#39;d recommend it, especially on sale</li>
         
-        <li><a href="https://www.gosugamers.net/dota2/news/78960-nigma-galaxy-hand-og-their-second-defeat-at-the-international-2026-group-stage" target="_blank" rel="noopener">Nigma Galaxy hand OG their second defeat at The International 2026 Group Stage</a> &middot; GosuGamers</li>
-        
       </ul>
       
-      <div class="cust-basis">app signal=Audio / Speaker (score 10.0)</div>
+      <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
       <div class="cust-links">
         <a href="oems.html">Customer profile &rarr;</a>
         <a href="news.html">Customer news feed &rarr;</a>
@@ -1401,22 +1364,18 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Sony</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 75%</span>
+        <span class="conf-badge conf-medium">Medium &middot; 61%</span>
       </div>
       <div class="cust-app">Audio / Speaker</div>
       <p class="cust-product">Sony LE Audio earbuds refresh</p>
       <div>
-        <span class="feat-chip">Matter multi-admin</span><span class="feat-chip">Thread border router</span><span class="feat-chip">faster onboarding</span><span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span>
+        <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span><span class="feat-chip">Auracast support</span><span class="feat-chip">low-latency audio path</span><span class="feat-chip">public broadcast receive</span>
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>5</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
         <li><a href="https://www.aol.com/articles/striking-open-world-ps4-game-185040000.html" target="_blank" rel="noopener">Striking Open-World PS4 Game Is 75% Off on PlayStation Store With Cheap DLC</a> &middot; AOL.com</li>
-        
-        <li><a href="https://wccftech.com/sony-limited-edition-battle-yellow-ps5-marvels-wolverine/" target="_blank" rel="noopener">Sony Unveils a Limited Edition Battle Yellow PS5 for Marvel’s Wolverine, with His Claws Slashing Straight Through the Co</a> &middot; Wccftech</li>
-        
-        <li><a href="https://www.whats-on-netflix.com/news/a-matter-of-time-netflix-movie-ben-stiller-cast-updates/" target="_blank" rel="noopener">‘A Matter of Time’ Netflix Movie: Toby Jones, Anne Reid, Tanya Franks, &amp; Nish Kumar Join Cast As Filming Continues</a> &middot; What&#39;s on Netflix</li>
         
       </ul>
       
@@ -1430,22 +1389,14 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
     <article class="cust-card">
       <div class="hd">
         <h3>Bose</h3>
-        <span class="conf-badge conf-medium">Medium &middot; 76%</span>
+        <span class="conf-badge conf-medium">Medium &middot; 70%</span>
       </div>
       <div class="cust-app">Audio / Speaker</div>
       <p class="cust-product">Bose LE Audio earbuds refresh</p>
       <div>
         <span class="feat-chip">Bluetooth LE 5.4+</span><span class="feat-chip">secure pairing hardening</span><span class="feat-chip">LE Audio broadcast</span><span class="feat-chip">Auracast support</span><span class="feat-chip">low-latency audio path</span><span class="feat-chip">public broadcast receive</span>
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>2</b></div>
-      
-      <ul class="cust-evidence">
-        
-        <li><a href="https://www.theverge.com/podcast/975732/bose-ceo-lila-snyder-ai-wearables-licensing-headphones-audio" target="_blank" rel="noopener">What happens to Bose when headphones become AI?</a> &middot; The Verge</li>
-        
-        <li><a href="https://www.theverge.com/tech/975643/bose-quietcomfort-wireless-headphones-anc-immersive-spatial-audio" target="_blank" rel="noopener">Bose’s upgraded QuietComfort headphones add head-tracking immersive audio</a> &middot; The Verge</li>
-        
-      </ul>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <div class="cust-basis">app signal=Audio / Speaker (score 14.0)</div>
       <div class="cust-links">
@@ -1464,13 +1415,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       <div>
         
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>1</b></div>
-      
-      <ul class="cust-evidence">
-        
-        <li><a href="https://9to5mac.com/2026/08/11/sonos-is-planning-ace-ultra-headphones-with-a-big-ai-push-report-says/" target="_blank" rel="noopener">Sonos is planning Ace Ultra headphones with a big AI push, report says</a> &middot; 9to5Mac</li>
-        
-      </ul>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <div class="cust-basis">Coverage entry: limited recent launch signal in current news window</div>
       <div class="cust-links">
@@ -1527,15 +1472,11 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       <div>
         
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>3</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
         <li><a href="https://techcrunch.com/2026/08/13/ford-on-track-to-complete-2b-factory-overhaul-for-fathom-ev-truck/" target="_blank" rel="noopener">Ford on track to complete $2B factory overhaul for Fathom EV truck</a> &middot; TechCrunch</li>
-        
-        <li><a href="https://finance.yahoo.com/energy/articles/elon-musks-tesla-weighs-10-060626216.html" target="_blank" rel="noopener">Elon Musk&#39;s Tesla Weighs $10.1 Billion Solar Plant, Chamath Palihapitiya Calls It a Bet on Nuclear: Here&#39;s Why</a> &middot; Yahoo Finance</li>
-        
-        <li><a href="https://www.zawya.com/en/world/pressured-by-tesla-european-regulators-keep-full-self-driving-safety-data-secret-423497" target="_blank" rel="noopener">Pressured by Tesla, European regulators keep &#39;Full Self-Driving&#39; safety data secret</a> &middot; Zawya</li>
         
       </ul>
       
@@ -1556,15 +1497,11 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       <div>
         
       </div>
-      <div class="cust-signal">Recent customer signals (30d): <b>10</b></div>
+      <div class="cust-signal">Recent customer signals (30d): <b>0</b></div>
       
       <ul class="cust-evidence">
         
         <li><a href="https://seekingalpha.com/article/4936229-solid-power-inc-sldp-presents-at-j-p-morgan-automotive-conference-transcript" target="_blank" rel="noopener">Solid Power, Inc. (SLDP) Presents at J.P. Morgan Automotive Conference Transcript</a> &middot; Seeking Alpha</li>
-        
-        <li><a href="https://arstechnica.com/cars/2026/08/jcb-sets-a-new-406-mph-speed-record-for-hydrogen-powered-cars/" target="_blank" rel="noopener">Two hydrogen-burning engines powered this car to a new land speed record</a> &middot; Ars Technica</li>
-        
-        <li><a href="https://simplywall.st/stocks/us/semiconductors/nasdaq-nxpi/nxp-semiconductors/news/does-nxps-bmw-uwb-win-and-ai-design-push-change-the-bull-cas" target="_blank" rel="noopener">Does NXP’s BMW UWB Win And AI Design Push Change The Bull Case For NXPI?</a> &middot; simplywall.st</li>
         
       </ul>
       
@@ -1599,7 +1536,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </ul>
       
       <p class="std-position">AIROC CYW20829 ships Channel Sounding (PBR/RTT baseline from BT 6.0); CYW55513 covers LE Audio. Track BT 6.3 Channel Sounding refinements (Inline PCT Transfer, per-PHY RTT) for next silicon revs.</p>
-      <div class="std-activity">60 related articles &middot; 7d &middot; <a href="https://www.bluetooth.com/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.bluetooth.com/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -1614,7 +1551,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </ul>
       
       <p class="std-position">AIROC CYW5557x (Wi-Fi 6E + BT 5.4) competing with Qualcomm/MediaTek/Realtek. No Wi-Fi 7 announced yet — gap vs Synaptics Veros/MediaTek Filogic 380.</p>
-      <div class="std-activity">30 related articles &middot; 7d &middot; <a href="https://www.wi-fi.org/discover-wi-fi" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.wi-fi.org/discover-wi-fi" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -1629,7 +1566,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </ul>
       
       <p class="std-position">Infineon CYW55573 provides 802.15.4 support as the PHY/MAC base for Thread and Zigbee class networks.</p>
-      <div class="std-activity">3 related articles &middot; 7d &middot; <a href="https://www.ieee802.org/15/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.ieee802.org/15/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -1644,7 +1581,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </ul>
       
       <p class="std-position">Infineon 802.15.4 capability is relevant for Zigbee-class low-power mesh designs; confirm Zigbee roadmap alignment.</p>
-      <div class="std-activity">3 related articles &middot; 7d &middot; <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -1659,7 +1596,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </ul>
       
       <p class="std-position">Infineon CYW55573 provides the 802.15.4 foundation for Thread-enabled products; continue certification alignment.</p>
-      <div class="std-activity">14 related articles &middot; 7d &middot; <a href="https://www.threadgroup.org/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://www.threadgroup.org/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -1674,7 +1611,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </ul>
       
       <p class="std-position">Matter SDK support is in place; prioritize Matter 1.6 features like Joint Fabric and NFC commissioning.</p>
-      <div class="std-activity">17 related articles &middot; 7d &middot; <a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
     <article class="std-card">
@@ -1689,7 +1626,7 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
       </ul>
       
       <p class="std-position">AIROC has no native UWB; partners with Qorvo. Watch for combo UWB+BLE parts from Qualcomm, NXP (Trimension), Apple, Samsung. Confirm FiRa Core 4.0 alignment before next combo announcement.</p>
-      <div class="std-activity">3 related articles &middot; 7d &middot; <a href="https://csa-iot.org/all-solutions/aliro/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
+      <div class="std-activity">0 related articles &middot; 14d fallback &middot; <a href="https://csa-iot.org/all-solutions/aliro/" target="_blank" rel="noopener">Open feed &rarr;</a></div>
     </article>
     
   </div>
@@ -1698,145 +1635,17 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
 <div class="section">
   <div class="section-head">
     <h2>Evidence Behind The Recommendation</h2>
-    <span class="pill">30d</span>
+    <span class="pill">45d fallback</span>
   </div>
   <p class="section-sub">The most recent competitor and OEM headlines that explain why the views above are moving.</p>
   <div class="signal-feed">
     <div class="signal-col">
       <h3>Competitor signals</h3>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.techspot.com/news/113466-qualcomm-snapdragon-c-wants-arm-chip-300-laptops.html" target="_blank" rel="noopener">Qualcomm&#39;s Snapdragon C wants to be the Arm chip for $300 laptops</a>
-          <div class="signal-meta">Qualcomm &middot; TechSpot &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.xda-developers.com/qualcomm-claims-its-snapdragon-c-chip-beats-intel-on-battery-power-for-300-laptops/" target="_blank" rel="noopener">Qualcomm claims its Snapdragon C chip beats Intel on battery power for $300 laptops - xda-developers.com</a>
-          <div class="signal-meta">Qualcomm &middot; xda-developers.com &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.sangritoday.com/technology/iqoo-neo-11-ultra-to-launch-in-china-on-august-18-with-custom-mediatek-dimensity-9500m-chipset" target="_blank" rel="noopener">iQOO Neo 11 Ultra to Launch in China on August 18 With Custom MediaTek Dimensity 9500M Chipset</a>
-          <div class="signal-meta">MediaTek &middot; Sangri Today &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://finance.biggo.com/news/54e2637a-0a9f-446b-8a49-4a5ab890e510" target="_blank" rel="noopener">Semiconductor Sales Grow for 16 Consecutive Months; Experts Flag Four Chip Stocks with Strong Upside Ahead</a>
-          <div class="signal-meta">TI &middot; finance.biggo.com &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://pulse2.com/silicon-labs-medical-revenue-surges-78-to-record-as-iot-design-wins-accelerate/amp/" target="_blank" rel="noopener">Silicon Labs: Medical Revenue Surges 78% To Record As IoT Design Wins Accelerate</a>
-          <div class="signal-meta">Silicon Labs &middot; Pulse 2.0 &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.cnx-software.com/2026/08/13/aaeon-pico-adn2-a-low-profile-alder-lake-n-pico-itx-sbc-for-space-constrained-applications/" target="_blank" rel="noopener">AAEON PICO-ADN2 – A low-profile Alder Lake-N Pico-ITX SBC for space-constrained applications</a>
-          <div class="signal-meta">Realtek &middot; CNX Software &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.techtimes.com/articles/324246/20260813/anatel-cuts-brazils-wi-fi-7-spectrum-half-effective-march-2027-deadline.htm" target="_blank" rel="noopener">Anatel Cuts Brazil’s Wi-Fi 7 Spectrum in Half, Effective March 2027 Deadline</a>
-          <div class="signal-meta">Broadcom &middot; Tech Times &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot vendor"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.techtimes.com/articles/324243/20260813/made-google-2026-recap-pixel-fold-ships-august-20-gemini-dials-you.htm" target="_blank" rel="noopener">Made by Google 2026 Recap: Pixel Fold Ships August 20, Gemini Dials for You</a>
-          <div class="signal-meta">MediaTek &middot; Tech Times &middot; Aug 13</div>
-        </div>
-      </div>
-      
+      <p class="muted">No competitor headlines yet.</p>
     </div>
     <div class="signal-col">
       <h3>Customer signals</h3>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.techspot.com/news/113466-qualcomm-snapdragon-c-wants-arm-chip-300-laptops.html" target="_blank" rel="noopener">Qualcomm&#39;s Snapdragon C wants to be the Arm chip for $300 laptops</a>
-          <div class="signal-meta">Apple &middot; TechSpot &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://au.pcmag.com/mobile-phone-accessories/119315/google-targets-apples-airtag-with-its-pixel-tag-bluetooth-tracker" target="_blank" rel="noopener">Google Targets Apple&#39;s AirTag With Its Pixel Tag Bluetooth Tracker</a>
-          <div class="signal-meta">Apple &middot; PCMag Australia &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://finance.biggo.com/news/54e2637a-0a9f-446b-8a49-4a5ab890e510" target="_blank" rel="noopener">Semiconductor Sales Grow for 16 Consecutive Months; Experts Flag Four Chip Stocks with Strong Upside Ahead</a>
-          <div class="signal-meta">Google &middot; finance.biggo.com &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://9to5google.com/2026/08/13/google-pixel-11-tensor-g6-chip-report/" target="_blank" rel="noopener">Google’s Tensor G6 in Pixel 11 isn’t a 2nm smartphone chip after all</a>
-          <div class="signal-meta">Google &middot; 9to5Google &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://9to5mac.com/2026/08/13/new-apple-tv-4k-2026-release-date-features-price/" target="_blank" rel="noopener">New Apple TV 4K: Everything we know about Apple’s 2026 upgrade</a>
-          <div class="signal-meta">Apple &middot; 9to5Mac &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.cnx-software.com/2026/08/13/aaeon-pico-adn2-a-low-profile-alder-lake-n-pico-itx-sbc-for-space-constrained-applications/" target="_blank" rel="noopener">AAEON PICO-ADN2 – A low-profile Alder Lake-N Pico-ITX SBC for space-constrained applications</a>
-          <div class="signal-meta">Amazon &middot; CNX Software &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.techtimes.com/articles/324243/20260813/made-google-2026-recap-pixel-fold-ships-august-20-gemini-dials-you.htm" target="_blank" rel="noopener">Made by Google 2026 Recap: Pixel Fold Ships August 20, Gemini Dials for You</a>
-          <div class="signal-meta">Google &middot; Tech Times &middot; Aug 13</div>
-        </div>
-      </div>
-      
-      <div class="signal-row">
-        <span class="signal-dot customer"></span>
-        <div class="signal-body">
-          <a class="signal-title" href="https://www.tomshardware.com/tech-industry/cyber-security/coin-sized-device-can-hack-a-boeing-737s-flight-management-computer-mess-with-takeoff-weights-or-even-divert-an-aircraft-gadget-connects-to-an-easily-accessible-port-that-overrides-commands-from-the-pilots-uses-in-flight-wi-fi" target="_blank" rel="noopener">Coin-sized device can hack a Boeing 737’s Flight Management Computer, mess with takeoff weights, or even divert an aircraft — gadget connects to an easily accessible port that overrides commands from the pilots, uses in-flight Wi-Fi</a>
-          <div class="signal-meta">Google &middot; Tom&#39;s Hardware &middot; Aug 13</div>
-        </div>
-      </div>
-      
+      <p class="muted">No customer headlines yet.</p>
     </div>
   </div>
   <p style="margin-top:12px;"><a href="news.html">Browse all news &rarr;</a></p>
@@ -1856,5 +1665,5 @@ body { font-family:"Space Grotesk","IBM Plex Sans","Segoe UI",sans-serif; backgr
 </section>
 
 </main>
-<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-08-13 14:39 PDT</div></footer>
+<footer class="footer"><div class="wrap">IoT Wireless Intel · generated 2026-08-13 14:59 PDT</div></footer>
 </body></html>

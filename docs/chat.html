@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chat · IoT Wireless Intel</title>
+<style>
+:root { color-scheme: light;
+  --bg:#f7f9fc; --card:#fff; --border:#e4e8ee; --text:#1a1f2c; --muted:#6b7280;
+  --accent:#2563eb; --hover:#f1f5fb;
+  --chip-bg:#eef2ff; --chip-fg:#3730a3;
+  --vendor-bg:#fef3c7; --vendor-fg:#92400e;
+  --cust-bg:#fce7f3; --cust-fg:#9d174d;
+  --app-bg:#dcfce7; --app-fg:#166534;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); font-size:14.5px; line-height:1.5; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:1280px; margin:0 auto; padding:0 20px; }
+
+.topnav { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+.topnav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+.brand-name { font-size:22px; font-weight:800; letter-spacing:.3px; white-space:nowrap;
+  background:linear-gradient(90deg,#2563eb 0%,#7c3aed 50%,#db2777 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+.brand { display:flex; align-items:center; }
+.topnav nav { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
+.topnav nav a { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav a:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav a.active { color:#fff; background:var(--accent); }
+.nav-dd { position:relative; }
+.nav-dd-trigger { cursor:pointer; display:inline-flex; align-items:center; gap:4px; }
+.topnav nav .nav-dd-trigger { color:#334155; font-weight:600; font-size:14px; padding:7px 14px; border-radius:8px; background:#f1f5f9; }
+.topnav nav .nav-dd-trigger:hover { color:var(--accent); background:#eef2ff; text-decoration:none; }
+.topnav nav .nav-dd-trigger.active { color:#fff; background:var(--accent); }
+.dd-caret { font-size:10px; }
+.nav-dd-menu { position:absolute; top:100%; left:0; margin-top:6px; min-width:220px; background:#fff; border:1px solid var(--border); border-radius:8px; box-shadow:0 12px 32px -10px rgba(15,23,42,.18); padding:6px; z-index:100; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s, transform .15s, visibility .15s; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dd-menu a { display:block; padding:8px 12px; font-size:14px; font-weight:600; color:#0f172a; background:transparent; border-radius:6px; }
+.nav-dd-menu a:hover { background:#f1f5f9; color:var(--accent); }
+.nav-dd-group { padding:8px 12px 4px; font-size:11px; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
+.nav-dd-menu a.nav-dd-sub { padding-left:24px; font-size:13px; }
+.nav-news-last { margin-left:auto; }
+.nav-chat { color:var(--accent); font-weight:800; }
+.topnav .meta-info { color:var(--muted); font-size:12px; white-space:nowrap; }
+
+.content { padding:24px 20px 60px; }
+.hero h1 { margin:0 0 6px; font-size:26px; }
+.hero p { color:var(--muted); margin:0; max-width:900px; }
+.hero .stats { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:12.5px; color:var(--muted); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.thumb { aspect-ratio:16/9; background:#f1f5fb; position:relative; overflow:hidden; }
+.thumb:not(:has(img)), .thumb.thumb-empty { display:none; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.body { padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.meta-row { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; font-size:.72rem; color:var(--muted); }
+.chip { padding:.15rem .55rem; border-radius:999px; font-weight:600; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip-tech    { background:var(--chip-bg);   color:var(--chip-fg); }
+.chip-vendor  { background:var(--vendor-bg); color:var(--vendor-fg); }
+.chip-cust    { background:var(--cust-bg);   color:var(--cust-fg); }
+.chip-app     { background:var(--app-bg);    color:var(--app-fg); }
+.chip-std     { background:#ede9fe;          color:#5b21b6; }
+.source { font-weight:600; opacity:.75; }
+.dot { opacity:.5; }
+.title { font-size:.98rem; font-weight:600; line-height:1.35; margin:0; }
+.title a { color:var(--text); }
+.title a:hover { color:var(--accent); }
+.summary { color:var(--muted); font-size:.83rem; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.empty { padding:3rem; text-align:center; color:var(--muted); }
+.footer { margin-top:2rem; text-align:center; color:var(--muted); font-size:.78rem; padding:20px 0; border-top:1px solid var(--border); }
+
+/* Section / table styling shared by Customers / Competitors */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:18px 0; }
+.section h2 { margin:0 0 8px; font-size:18px; }
+.section h3 { margin:18px 0 8px; font-size:15px; color:#0f172a; }
+.section .muted { color:var(--muted); font-size:13px; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:13.5px; }
+.tbl th, .tbl td { padding:9px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl th { background:#f9fafc; font-weight:600; color:#374151; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; position:sticky; top:60px; }
+.tbl tr:hover td { background:var(--hover); }
+.tbl ul { margin:0; padding-left:18px; }
+.tbl ul li { margin-bottom:3px; }
+.tag { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:1px 2px; }
+.tag-strong { background:#dcfce7; color:#166534; }
+.tag-weak { background:#fee2e2; color:#991b1b; }
+.tag-region-americas { background:#dbeafe; color:#1e40af; }
+.tag-region-europe { background:#e0e7ff; color:#3730a3; }
+.tag-region-asia { background:#fef3c7; color:#92400e; }
+
+.disclaimer { background:#fffbeb; border:1px solid #fde68a; color:#92400e; border-radius:8px; padding:10px 14px; font-size:12.5px; margin:12px 0 18px; }
+
+/* Refresh button */
+.btn-refresh { padding:6px 12px; font-size:13px; font-weight:600; border:1px solid var(--border); background:#fff; color:var(--accent); border-radius:6px; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:6px; }
+.btn-refresh:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
+.refresh-icon { display:inline-block; width:14px; height:14px; }
+.refresh-icon.spinning { animation:spin 1s linear infinite; }
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+.refresh-status { font-size:11px; color:var(--muted); margin-left:8px; }
+
+/* Technology tabs */
+.tech-toolbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:16px 0; flex-wrap:wrap; }
+.tech-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.tech-tab { padding:6px 12px; font-size:12px; font-weight:600; border:1px solid var(--border); background:#f1f5f9; color:#334155; border-radius:6px; cursor:pointer; transition:all .15s; }
+.tech-tab:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tech-actions { display:flex; gap:8px; align-items:center; }
+.tech-count { font-size:12px; color:var(--muted); }
+
+/* News page left panel */
+.news-layout { display:grid; grid-template-columns:240px 1fr; gap:18px; align-items:start; margin-top:16px; }
+@media (max-width:900px) { .news-layout { grid-template-columns:1fr; } }
+.news-sidebar { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; position:sticky; top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.news-sidebar-hdr { padding:10px 14px; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; background:#f9fafc; border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+.news-sidebar-hdr:first-child { border-top:none; }
+.news-class-block { border-bottom:1px solid #e5e7eb; }
+.news-class-title { width:100%; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; border:none; border-bottom:1px solid #f1f5f9; cursor:pointer; }
+.news-class-title .caret { font-size:11px; transition:transform .15s ease; }
+.news-class-block.collapsed .news-class-title .caret { transform:rotate(-90deg); }
+.news-class-body { display:block; }
+.news-class-block.collapsed .news-class-body { display:none; }
+.news-class-title.customers { background:#fdf2f8; color:#9d174d; }
+.news-class-title.competitors { background:#eff6ff; color:#1d4ed8; }
+.news-class-title.generic { background:#ecfdf5; color:#065f46; }
+.news-class-title.standards { background:#f5f3ff; color:#5b21b6; }
+.news-side-item { display:flex; justify-content:space-between; align-items:center; gap:6px; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #f1f5f9; padding:7px 14px; font-size:12.5px; color:#334155; cursor:pointer; }
+.news-side-item:hover { background:var(--hover); color:var(--accent); }
+.news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
+.news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
+.news-main { min-width:0; }
+
+.chat-wrap { max-width:900px; margin:0 auto; padding:18px 20px 40px; }
+.chat-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+.chat-head h1 { font-size:22px; margin:0; }
+.chat-sub { color:var(--muted); font-size:13px; margin:2px 0 0; }
+.chat-settings { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:14px; }
+.chat-settings summary { cursor:pointer; font-weight:700; font-size:13px; color:var(--text); }
+.chat-settings .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:10px; }
+.chat-settings label { font-size:12px; color:var(--muted); font-weight:600; }
+.chat-settings input[type=password], .chat-settings select { flex:1; min-width:180px; padding:8px 10px; border:1px solid var(--border); border-radius:8px; font-size:13px; background:#fff; color:var(--text); }
+.chat-settings button { padding:8px 14px; border:1px solid var(--border); border-radius:8px; background:var(--accent); color:#fff; font-weight:700; font-size:13px; cursor:pointer; }
+.chat-settings button.secondary { background:#fff; color:var(--text); }
+.chat-status { font-size:12px; margin-top:8px; }
+.chat-status .ok { color:#15803d; font-weight:700; }
+.chat-status .warn { color:#b45309; font-weight:700; }
+.chat-log { display:flex; flex-direction:column; gap:14px; min-height:200px; }
+.msg { display:flex; gap:10px; align-items:flex-start; }
+.msg .avatar { flex:0 0 30px; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; }
+.msg.user .avatar { background:#334155; }
+.msg.bot .avatar { background:var(--accent); }
+.msg .bubble { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; font-size:14px; line-height:1.6; overflow-wrap:anywhere; }
+.msg.user .bubble { background:var(--hover); }
+.msg .bubble p { margin:0 0 8px; }
+.msg .bubble p:last-child { margin-bottom:0; }
+.msg .bubble ul, .msg .bubble ol { margin:6px 0 8px; padding-left:20px; }
+.msg .bubble li { margin:3px 0; }
+.msg .bubble code { background:#eef2f7; padding:1px 5px; border-radius:5px; font-size:12.5px; }
+.msg .bubble h3 { font-size:14.5px; margin:8px 0 4px; }
+.chat-sources { margin-top:8px; font-size:12px; color:var(--muted); }
+.chat-sources a { display:inline-block; margin:2px 6px 2px 0; padding:2px 8px; background:#eef2f7; border-radius:20px; color:var(--accent); font-weight:600; text-decoration:none; }
+.chat-typing { font-size:13px; color:var(--muted); font-style:italic; }
+.chat-input { display:flex; gap:8px; margin-top:16px; position:sticky; bottom:0; background:var(--bg); padding:10px 0; }
+.chat-input textarea { flex:1; resize:none; min-height:46px; max-height:160px; padding:12px 14px; border:1px solid var(--border); border-radius:10px; font-size:14px; font-family:inherit; background:#fff; color:var(--text); }
+.chat-input button { padding:0 18px; border:none; border-radius:10px; background:var(--accent); color:#fff; font-weight:700; font-size:14px; cursor:pointer; }
+.chat-input button:disabled { opacity:.5; cursor:not-allowed; }
+.chat-chips { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 14px; }
+.chat-chips button { background:#fff; border:1px solid var(--border); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--text); cursor:pointer; }
+.chat-chips button:hover { border-color:var(--accent); color:var(--accent); }
+
+</style>
+
+<script id="password-gate-v1">
+(function(){
+  var KEY='site_unlock_v1';
+  var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
+  function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
+  function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
+  if (sessionStorage.getItem(KEY)==='1') { return; }
+  document.documentElement.style.display='none';
+  (async function(){
+    while(true){
+      var p=prompt('Enter password to access this site');
+      if (p===null){ location.replace('about:blank'); return; }
+      try {
+        var h=await sha256(p);
+        if (h===HASH){ sessionStorage.setItem(KEY,'1'); document.documentElement.style.display=''; return; }
+      } catch (e) {}
+      alert('Wrong password');
+    }
+  })();
+})();
+</script>
+
+</head><body>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">IoT Wireless Intel</span></a>
+  <nav>
+    <a href="index.html" class="">Overview</a>
+    <div class="nav-dd">
+      <a href="oems.html" class="nav-dd-trigger ">Companies <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="oems.html" class="">OEMs</a>
+        <a href="vendors.html" class="">Vendors</a>
+        <a href="relationships.html" class="">Relationships</a>
+      </div>
+    </div>
+    <div class="nav-dd">
+      <a href="technology.html" class="nav-dd-trigger ">Technology <span class="dd-caret">▾</span></a>
+      <div class="nav-dd-menu">
+        <a href="ieee15_4.html" class="">802.15.4</a>
+        <a href="zigbee.html" class="">Zigbee</a>
+        <a href="thread.html" class="">Thread</a>
+        <a href="wifi.html" class="">Wi-Fi</a>
+        <a href="matter.html" class="">Matter</a>
+        <a href="aliro.html" class="">Aliro</a>
+        <div class="nav-dd-group">Bluetooth</div>
+        <a href="bt_stack.html" class="nav-dd-sub ">BT Stack</a>
+        <a href="zephyr_stack.html" class="nav-dd-sub ">Zephyr Stack</a>
+      </div>
+    </div>
+    <a href="applications.html" class="">Applications</a>
+    <a href="news.html" class="">News</a>
+    <a href="chat.html" class="nav-chat active">Chat</a>
+  </nav>
+  <div class="meta-info">Updated 2026-08-13 14:59 PDT</div>
+</div></header>
+<script>
+(function(){
+  if(location.protocol !== 'file:') return;
+  if(!/\/site_\d{8}-\d{6}\//.test(location.href)) return;
+  var redirected = location.href.replace(/\/site_[^\/]+\//, '/latest/');
+  if(redirected !== location.href) location.replace(redirected);
+})();
+</script>
+
+<main class="chat-wrap">
+  <div class="chat-head">
+    <div>
+      <h1>Ask this site</h1>
+      <p class="chat-sub">AI chat that answers from the data across every page of this website.</p>
+    </div>
+  </div>
+
+  <details class="chat-settings" id="settings">
+    <summary>⚙️ AI settings (optional Gemini key for full answers)</summary>
+    <div class="row">
+      <label for="apiKey">Gemini API key</label>
+      <input type="password" id="apiKey" placeholder="Paste your Google Gemini API key" autocomplete="off">
+    </div>
+    <div class="row">
+      <label for="model">Model</label>
+      <select id="model">
+        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (fast)</option>
+        <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+        <option value="gemini-1.5-flash">gemini-1.5-flash</option>
+      </select>
+      <button id="saveKey">Save</button>
+      <button id="clearKey" class="secondary">Clear</button>
+    </div>
+    <div class="chat-status" id="keyStatus"></div>
+    <div class="chat-status" style="margin-top:6px;color:var(--muted)">
+      Your key is stored only in this browser (localStorage) and is sent directly to Google's Gemini API from your device. Get a free key at
+      <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">aistudio.google.com</a>.
+      Without a key, answers use on-page search only.
+    </div>
+  </details>
+
+  <div class="chat-chips" id="chips"></div>
+
+  <div class="chat-log" id="log"></div>
+
+  <div class="chat-input">
+    <textarea id="q" placeholder="Ask about companies, chips, standards, applications, news..." rows="1"></textarea>
+    <button id="send">Send</button>
+  </div>
+</main>
+
+<script>window.HERAI_CHAT_CONFIG={"siteName": "IoT Wireless Intel", "indexUrl": "chat_index.json", "chips": ["Who are the top Bluetooth chip vendors?", "What is Matter over Thread?", "Latest Wi-Fi 7 news", "Which customers use Thread?", "Compare Nordic vs the competition"]};</script>
+<script>
+/*
+ * HerAI chat widget — reusable, dependency-free.
+ * Answers questions from a site content index (chat_index.json) with optional
+ * Google Gemini synthesis. Configure per-project via window.HERAI_CHAT_CONFIG:
+ *   {
+ *     siteName: 'My Site',                 // used in the model prompt + intro
+ *     indexUrl: 'chat_index.json',         // path to the content index
+ *     chips: ['question 1', 'question 2'], // suggested questions
+ *     intro: 'Hi! ...'                     // first assistant message
+ *   }
+ * Requires these element ids in the page: log, q, send, apiKey, model, keyStatus, chips.
+ */
+(function(){
+  var CFG = (typeof window !== 'undefined' && window.HERAI_CHAT_CONFIG) ? window.HERAI_CHAT_CONFIG : {};
+  var SITE_NAME = CFG.siteName || 'this website';
+  var INDEX_URL = CFG.indexUrl || 'chat_index.json';
+  var LS_KEY='herai_gemini_key', LS_MODEL='herai_gemini_model';
+  var INDEX=[]; var INDEX_READY=false; var BUSY=false;
+  var STOP=new Set(['the','and','for','are','was','with','that','this','from','have','has','you','your','what','which','who','how','why','when','where','can','does','did','will','would','about','into','over','than','then','them','they','their','our','out','not','but','all','any','use','used','using','get','via','per','new','one','two']);
+  var DEFAULT_CHIPS=['Who are the top Bluetooth chip vendors?','What is Matter over Thread?','Latest Wi-Fi 7 news','Which customers use Thread?','Compare Nordic vs the competition'];
+  var CHIPS=(CFG.chips && CFG.chips.length) ? CFG.chips : DEFAULT_CHIPS;
+  var INTRO=CFG.intro || ('Hi! I can answer questions using the content across ' + SITE_NAME + ' — ask me anything, or tap a suggestion above.');
+  var logEl=document.getElementById('log');
+  var qEl=document.getElementById('q');
+  var sendEl=document.getElementById('send');
+  var keyInput=document.getElementById('apiKey');
+  var modelSel=document.getElementById('model');
+  var keyStatus=document.getElementById('keyStatus');
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function tokenize(s){ var m=(s||'').toLowerCase().match(/[a-z0-9]+/g)||[]; return m.filter(function(w){ return w.length>2 && !STOP.has(w); }); }
+
+  function getKey(){ return (localStorage.getItem(LS_KEY)||'').trim(); }
+  function getModel(){ return localStorage.getItem(LS_MODEL) || 'gemini-2.5-flash-lite'; }
+
+  function refreshStatus(){
+    var k=getKey();
+    if(k){ keyStatus.innerHTML='<span class="ok">✓ Key saved</span> — full AI answers enabled ('+esc(getModel())+').'; }
+    else { keyStatus.innerHTML='<span class="warn">No key</span> — running in on-page search mode. Add a key for richer answers.'; }
+  }
+
+  document.getElementById('saveKey').addEventListener('click', function(){
+    var v=(keyInput.value||'').trim();
+    if(v){ localStorage.setItem(LS_KEY, v); }
+    localStorage.setItem(LS_MODEL, modelSel.value);
+    keyInput.value='';
+    refreshStatus();
+  });
+  document.getElementById('clearKey').addEventListener('click', function(){
+    localStorage.removeItem(LS_KEY); keyInput.value=''; refreshStatus();
+  });
+
+  // ---- markdown-ish renderer (safe: escapes first) ----
+  function mdToHtml(text){
+    var lines=(text||'').split(/\r?\n/);
+    var html=[]; var listType=null;
+    function closeList(){ if(listType){ html.push(listType==='ul'?'</ul>':'</ol>'); listType=null; } }
+    function inline(s){
+      s=esc(s);
+      s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+      s=s.replace(/`([^`]+)`/g,'<code>$1</code>');
+      s=s.replace(/\*([^*]+)\*/g,'<em>$1</em>');
+      return s;
+    }
+    for(var i=0;i<lines.length;i++){
+      var ln=lines[i];
+      if(/^\s*$/.test(ln)){ closeList(); continue; }
+      var mH=ln.match(/^\s*#{1,3}\s+(.*)$/);
+      if(mH){ closeList(); html.push('<h3>'+inline(mH[1])+'</h3>'); continue; }
+      var mU=ln.match(/^\s*[-*\u2022]\s+(.*)$/);
+      if(mU){ if(listType!=='ul'){ closeList(); html.push('<ul>'); listType='ul'; } html.push('<li>'+inline(mU[1])+'</li>'); continue; }
+      var mO=ln.match(/^\s*\d+[.)]\s+(.*)$/);
+      if(mO){ if(listType!=='ol'){ closeList(); html.push('<ol>'); listType='ol'; } html.push('<li>'+inline(mO[1])+'</li>'); continue; }
+      closeList(); html.push('<p>'+inline(ln)+'</p>');
+    }
+    closeList();
+    return html.join('');
+  }
+
+  function addMsg(role, htmlContent, sourcesHtml){
+    var wrap=document.createElement('div');
+    wrap.className='msg '+role;
+    var av=document.createElement('div'); av.className='avatar'; av.textContent=(role==='user'?'U':'AI');
+    var bub=document.createElement('div'); bub.className='bubble'; bub.innerHTML=htmlContent;
+    if(sourcesHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=sourcesHtml; bub.appendChild(sc); }
+    wrap.appendChild(av); wrap.appendChild(bub);
+    logEl.appendChild(wrap);
+    wrap.scrollIntoView({behavior:'smooth', block:'end'});
+    return bub;
+  }
+
+  function pageTitle(rec){ return rec.t || rec.p; }
+
+  function search(query, topK){
+    var qt=tokenize(query);
+    if(!qt.length) return [];
+    var qset={}; qt.forEach(function(t){ qset[t]=(qset[t]||0)+1; });
+    var scored=[];
+    for(var i=0;i<INDEX.length;i++){
+      var rec=INDEX[i];
+      var low=rec._low || (rec._low=(rec.x||'').toLowerCase());
+      var tlow=rec._tl || (rec._tl=(rec.t||'').toLowerCase());
+      var score=0, hits=0;
+      for(var t in qset){
+        var idx=low.indexOf(t);
+        if(idx>=0){ hits++; var c=low.split(t).length-1; score+=1+Math.min(c,5)*0.4; }
+        if(tlow.indexOf(t)>=0){ score+=1.2; }
+      }
+      if(hits>0){ score += hits*0.6; scored.push({rec:rec, score:score}); }
+    }
+    scored.sort(function(a,b){ return b.score-a.score; });
+    return scored.slice(0, topK||8).map(function(s){ return s.rec; });
+  }
+
+  function sourceChips(recs){
+    var seen={}; var out=[];
+    recs.forEach(function(r){ if(!seen[r.p]){ seen[r.p]=1; out.push('<a href="'+esc(r.p)+'">'+esc(pageTitle(r))+'</a>'); } });
+    return out.length ? ('Sources: '+out.join(' ')) : '';
+  }
+
+  function buildPrompt(query, recs){
+    var ctx=[];
+    var budget=7000;
+    for(var i=0;i<recs.length;i++){
+      var r=recs[i];
+      var piece='['+pageTitle(r)+' — '+r.p+']\n'+r.x+'\n';
+      if(budget - piece.length < 0) break;
+      budget-=piece.length; ctx.push(piece);
+    }
+    return [
+      'You are the AI assistant for the "'+SITE_NAME+'" website.',
+      'Answer the question using ONLY the context excerpts below, taken from the site pages.',
+      'If the answer is not in the context, say you could not find it on the site and point to the closest relevant page.',
+      'Write a clear, well-structured answer using short paragraphs and bullet points. Do not invent facts or URLs.',
+      '',
+      'CONTEXT:',
+      ctx.join('\n'),
+      '',
+      'QUESTION: '+query,
+      'ANSWER:'
+    ].join('\n');
+  }
+
+  function callGemini(query, recs){
+    var key=getKey(); var model=getModel();
+    var url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key);
+    var body={ contents:[{ role:'user', parts:[{ text: buildPrompt(query, recs) }] }], generationConfig:{ temperature:0.2, maxOutputTokens:1200 } };
+    return fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) })
+      .then(function(res){ return res.json().then(function(j){ return {ok:res.ok, status:res.status, j:j}; }); })
+      .then(function(r){
+        if(!r.ok){
+          var em=(r.j && r.j.error && r.j.error.message) ? r.j.error.message : ('HTTP '+r.status);
+          throw new Error(em);
+        }
+        var cand=(r.j.candidates && r.j.candidates[0]) || null;
+        var parts=cand && cand.content && cand.content.parts ? cand.content.parts : [];
+        var text=parts.map(function(p){ return p.text||''; }).join('').trim();
+        if(!text) throw new Error('Empty response from model.');
+        return text;
+      });
+  }
+
+  function localAnswer(query, recs){
+    if(!recs.length){
+      return '<p>I could not find anything about that on this site. Try rephrasing, or browse the site pages.</p>';
+    }
+    var parts=['<p>Here is what I found on the site for <strong>'+esc(query)+'</strong>:</p>'];
+    var shown=0;
+    for(var i=0;i<recs.length && shown<4;i++){
+      var r=recs[i];
+      var snip=(r.x||'').slice(0,320).trim();
+      parts.push('<p><strong>'+esc(pageTitle(r))+':</strong> '+esc(snip)+(r.x.length>320?'…':'')+'</p>');
+      shown++;
+    }
+    parts.push('<p style="color:var(--muted);font-size:12.5px">Add a Gemini API key in AI settings above to get a synthesized answer instead of raw excerpts.</p>');
+    return parts.join('');
+  }
+
+  function ask(query){
+    if(BUSY) return;
+    if(!query || !query.trim()) return;
+    query=query.trim();
+    addMsg('user', '<p>'+esc(query)+'</p>');
+    qEl.value=''; autoGrow();
+    BUSY=true; sendEl.disabled=true;
+    var thinking=addMsg('bot', '<span class="chat-typing">Searching the site…</span>');
+
+    var run=function(){
+      var recs=search(query, 8);
+      var srcHtml=sourceChips(recs);
+      if(getKey() && recs.length){
+        thinking.innerHTML='<span class="chat-typing">Thinking…</span>';
+        callGemini(query, recs).then(function(text){
+          thinking.innerHTML=mdToHtml(text);
+          if(srcHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=srcHtml; thinking.appendChild(sc); }
+        }).catch(function(err){
+          thinking.innerHTML=mdToHtml('I hit an error calling Gemini: '+(err.message||err)+'\n\nShowing on-page results instead.');
+          var fb=document.createElement('div'); fb.innerHTML=localAnswer(query, recs); thinking.appendChild(fb);
+          if(srcHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=srcHtml; thinking.appendChild(sc); }
+        }).then(function(){ BUSY=false; sendEl.disabled=false; });
+      } else {
+        thinking.innerHTML=localAnswer(query, recs);
+        if(srcHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=srcHtml; thinking.appendChild(sc); }
+        BUSY=false; sendEl.disabled=false;
+      }
+    };
+
+    if(INDEX_READY){ run(); }
+    else { loadIndex().then(run).catch(function(){ thinking.innerHTML='<p>Could not load the site content index.</p>'; BUSY=false; sendEl.disabled=false; }); }
+  }
+
+  function loadIndex(){
+    if(INDEX_READY) return Promise.resolve();
+    return fetch(INDEX_URL, {cache:'no-cache'}).then(function(r){ return r.json(); }).then(function(data){
+      INDEX = Array.isArray(data) ? data : (data.chunks||[]);
+      INDEX_READY=true;
+    });
+  }
+
+  function autoGrow(){ qEl.style.height='auto'; qEl.style.height=Math.min(qEl.scrollHeight,160)+'px'; }
+  qEl.addEventListener('input', autoGrow);
+  qEl.addEventListener('keydown', function(e){ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); ask(qEl.value); } });
+  sendEl.addEventListener('click', function(){ ask(qEl.value); });
+
+  var chipsEl=document.getElementById('chips');
+  CHIPS.forEach(function(c){ var b=document.createElement('button'); b.textContent=c; b.addEventListener('click', function(){ ask(c); }); chipsEl.appendChild(b); });
+
+  refreshStatus();
+  modelSel.value=getModel();
+  loadIndex().catch(function(){});
+  addMsg('bot', '<p>'+esc(INTRO)+'</p>');
+})();
+
+</script>
+</body></html>

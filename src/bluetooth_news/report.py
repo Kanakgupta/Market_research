@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from collections import Counter
 from datetime import datetime, timezone, timedelta
@@ -3088,6 +3089,421 @@ def _curated_standard_cards() -> list[dict]:
     return cards
 
 
+# ---------------------------------------------------------------- chat template
+# The Chat page UI/logic is maintained in a SEPARATE repo (AI_Chat / "HerAI") so
+# it can be reused across projects. At build time we load its source and wrap it
+# with this site's nav, base CSS and password gate. The embedded template below
+# is only an offline FALLBACK used when the AI_Chat sources are not present.
+_CHAT_TEMPLATE_FALLBACK = """<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chat \u00b7 IoT Wireless Intel</title>
+<style>{{ css }}
+.chat-wrap { max-width:900px; margin:0 auto; padding:18px 20px 40px; }
+.chat-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+.chat-head h1 { font-size:22px; margin:0; }
+.chat-sub { color:var(--muted); font-size:13px; margin:2px 0 0; }
+.chat-settings { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:14px; }
+.chat-settings summary { cursor:pointer; font-weight:700; font-size:13px; color:var(--text); }
+.chat-settings .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:10px; }
+.chat-settings label { font-size:12px; color:var(--muted); font-weight:600; }
+.chat-settings input[type=password], .chat-settings select { flex:1; min-width:180px; padding:8px 10px; border:1px solid var(--border); border-radius:8px; font-size:13px; background:#fff; color:var(--text); }
+.chat-settings button { padding:8px 14px; border:1px solid var(--border); border-radius:8px; background:var(--accent); color:#fff; font-weight:700; font-size:13px; cursor:pointer; }
+.chat-settings button.secondary { background:#fff; color:var(--text); }
+.chat-status { font-size:12px; margin-top:8px; }
+.chat-status .ok { color:#15803d; font-weight:700; }
+.chat-status .warn { color:#b45309; font-weight:700; }
+.chat-log { display:flex; flex-direction:column; gap:14px; min-height:200px; }
+.msg { display:flex; gap:10px; align-items:flex-start; }
+.msg .avatar { flex:0 0 30px; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; }
+.msg.user .avatar { background:#334155; }
+.msg.bot .avatar { background:var(--accent); }
+.msg .bubble { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; font-size:14px; line-height:1.6; overflow-wrap:anywhere; }
+.msg.user .bubble { background:var(--hover); }
+.msg .bubble p { margin:0 0 8px; }
+.msg .bubble p:last-child { margin-bottom:0; }
+.msg .bubble ul, .msg .bubble ol { margin:6px 0 8px; padding-left:20px; }
+.msg .bubble li { margin:3px 0; }
+.msg .bubble code { background:#eef2f7; padding:1px 5px; border-radius:5px; font-size:12.5px; }
+.msg .bubble h3 { font-size:14.5px; margin:8px 0 4px; }
+.chat-sources { margin-top:8px; font-size:12px; color:var(--muted); }
+.chat-sources a { display:inline-block; margin:2px 6px 2px 0; padding:2px 8px; background:#eef2f7; border-radius:20px; color:var(--accent); font-weight:600; text-decoration:none; }
+.chat-typing { font-size:13px; color:var(--muted); font-style:italic; }
+.chat-input { display:flex; gap:8px; margin-top:16px; position:sticky; bottom:0; background:var(--bg); padding:10px 0; }
+.chat-input textarea { flex:1; resize:none; min-height:46px; max-height:160px; padding:12px 14px; border:1px solid var(--border); border-radius:10px; font-size:14px; font-family:inherit; background:#fff; color:var(--text); }
+.chat-input button { padding:0 18px; border:none; border-radius:10px; background:var(--accent); color:#fff; font-weight:700; font-size:14px; cursor:pointer; }
+.chat-input button:disabled { opacity:.5; cursor:not-allowed; }
+.chat-chips { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 14px; }
+.chat-chips button { background:#fff; border:1px solid var(--border); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--text); cursor:pointer; }
+.chat-chips button:hover { border-color:var(--accent); color:var(--accent); }
+</style>
+""" + _PASSWORD_GATE_HTML + """
+</head><body>
+""" + _NAV_HTML + """
+<main class="chat-wrap">
+  <div class="chat-head">
+    <div>
+      <h1>Ask this site</h1>
+      <p class="chat-sub">AI chat that answers from the data across every page of this website.</p>
+    </div>
+  </div>
+
+  <details class="chat-settings" id="settings">
+    <summary>\u2699\ufe0f AI settings (optional Gemini key for full answers)</summary>
+    <div class="row">
+      <label for="apiKey">Gemini API key</label>
+      <input type="password" id="apiKey" placeholder="Paste your Google Gemini API key" autocomplete="off">
+    </div>
+    <div class="row">
+      <label for="model">Model</label>
+      <select id="model">
+        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (fast)</option>
+        <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+        <option value="gemini-1.5-flash">gemini-1.5-flash</option>
+      </select>
+      <button id="saveKey">Save</button>
+      <button id="clearKey" class="secondary">Clear</button>
+    </div>
+    <div class="chat-status" id="keyStatus"></div>
+    <div class="chat-status" style="margin-top:6px;color:var(--muted)">
+      Your key is stored only in this browser (localStorage) and is sent directly to Google's Gemini API from your device. Get a free key at
+      <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">aistudio.google.com</a>.
+      Without a key, answers use on-page search only.
+    </div>
+  </details>
+
+  <div class="chat-chips" id="chips"></div>
+
+  <div class="chat-log" id="log"></div>
+
+  <div class="chat-input">
+    <textarea id="q" placeholder="Ask about companies, chips, standards, applications, news..." rows="1"></textarea>
+    <button id="send">Send</button>
+  </div>
+</main>
+
+<script>
+(function(){
+  var LS_KEY='giwi_gemini_key', LS_MODEL='giwi_gemini_model';
+  var INDEX=[]; var INDEX_READY=false; var BUSY=false;
+  var STOP=new Set(['the','and','for','are','was','with','that','this','from','have','has','you','your','what','which','who','how','why','when','where','can','does','did','will','would','about','into','over','than','then','them','they','their','our','out','not','but','all','any','use','used','using','get','via','per','new','one','two']);
+  var logEl=document.getElementById('log');
+  var qEl=document.getElementById('q');
+  var sendEl=document.getElementById('send');
+  var keyInput=document.getElementById('apiKey');
+  var modelSel=document.getElementById('model');
+  var keyStatus=document.getElementById('keyStatus');
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function tokenize(s){ var m=(s||'').toLowerCase().match(/[a-z0-9]+/g)||[]; return m.filter(function(w){ return w.length>2 && !STOP.has(w); }); }
+
+  function getKey(){ return (localStorage.getItem(LS_KEY)||'').trim(); }
+  function getModel(){ return localStorage.getItem(LS_MODEL) || 'gemini-2.5-flash-lite'; }
+
+  function refreshStatus(){
+    var k=getKey();
+    if(k){ keyStatus.innerHTML='<span class="ok">\u2713 Key saved</span> \u2014 full AI answers enabled ('+esc(getModel())+').'; }
+    else { keyStatus.innerHTML='<span class="warn">No key</span> \u2014 running in on-page search mode. Add a key for richer answers.'; }
+  }
+
+  document.getElementById('saveKey').addEventListener('click', function(){
+    var v=(keyInput.value||'').trim();
+    if(v){ localStorage.setItem(LS_KEY, v); }
+    localStorage.setItem(LS_MODEL, modelSel.value);
+    keyInput.value='';
+    refreshStatus();
+  });
+  document.getElementById('clearKey').addEventListener('click', function(){
+    localStorage.removeItem(LS_KEY); keyInput.value=''; refreshStatus();
+  });
+
+  // ---- markdown-ish renderer (safe: escapes first) ----
+  function mdToHtml(text){
+    var lines=(text||'').split(/\\r?\\n/);
+    var html=[]; var listType=null;
+    function closeList(){ if(listType){ html.push(listType==='ul'?'</ul>':'</ol>'); listType=null; } }
+    function inline(s){
+      s=esc(s);
+      s=s.replace(/\\*\\*([^*]+)\\*\\*/g,'<strong>$1</strong>');
+      s=s.replace(/`([^`]+)`/g,'<code>$1</code>');
+      s=s.replace(/\\*([^*]+)\\*/g,'<em>$1</em>');
+      return s;
+    }
+    for(var i=0;i<lines.length;i++){
+      var ln=lines[i];
+      if(/^\\s*$/.test(ln)){ closeList(); continue; }
+      var mH=ln.match(/^\\s*#{1,3}\\s+(.*)$/);
+      if(mH){ closeList(); html.push('<h3>'+inline(mH[1])+'</h3>'); continue; }
+      var mU=ln.match(/^\\s*[-*\\u2022]\\s+(.*)$/);
+      if(mU){ if(listType!=='ul'){ closeList(); html.push('<ul>'); listType='ul'; } html.push('<li>'+inline(mU[1])+'</li>'); continue; }
+      var mO=ln.match(/^\\s*\\d+[.)]\\s+(.*)$/);
+      if(mO){ if(listType!=='ol'){ closeList(); html.push('<ol>'); listType='ol'; } html.push('<li>'+inline(mO[1])+'</li>'); continue; }
+      closeList(); html.push('<p>'+inline(ln)+'</p>');
+    }
+    closeList();
+    return html.join('');
+  }
+
+  function addMsg(role, htmlContent, sourcesHtml){
+    var wrap=document.createElement('div');
+    wrap.className='msg '+role;
+    var av=document.createElement('div'); av.className='avatar'; av.textContent=(role==='user'?'U':'AI');
+    var bub=document.createElement('div'); bub.className='bubble'; bub.innerHTML=htmlContent;
+    if(sourcesHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=sourcesHtml; bub.appendChild(sc); }
+    wrap.appendChild(av); wrap.appendChild(bub);
+    logEl.appendChild(wrap);
+    wrap.scrollIntoView({behavior:'smooth', block:'end'});
+    return bub;
+  }
+
+  function pageTitle(rec){ return rec.t || rec.p; }
+
+  function search(query, topK){
+    var qt=tokenize(query);
+    if(!qt.length) return [];
+    var qset={}; qt.forEach(function(t){ qset[t]=(qset[t]||0)+1; });
+    var scored=[];
+    for(var i=0;i<INDEX.length;i++){
+      var rec=INDEX[i];
+      var low=rec._low || (rec._low=(rec.x||'').toLowerCase());
+      var tlow=rec._tl || (rec._tl=(rec.t||'').toLowerCase());
+      var score=0, hits=0;
+      for(var t in qset){
+        var idx=low.indexOf(t);
+        if(idx>=0){ hits++; var c=low.split(t).length-1; score+=1+Math.min(c,5)*0.4; }
+        if(tlow.indexOf(t)>=0){ score+=1.2; }
+      }
+      if(hits>0){ score += hits*0.6; scored.push({rec:rec, score:score}); }
+    }
+    scored.sort(function(a,b){ return b.score-a.score; });
+    return scored.slice(0, topK||8).map(function(s){ return s.rec; });
+  }
+
+  function sourceChips(recs){
+    var seen={}; var out=[];
+    recs.forEach(function(r){ if(!seen[r.p]){ seen[r.p]=1; out.push('<a href="'+esc(r.p)+'">'+esc(pageTitle(r))+'</a>'); } });
+    return out.length ? ('Sources: '+out.join(' ')) : '';
+  }
+
+  function buildPrompt(query, recs){
+    var ctx=[];
+    var budget=7000;
+    for(var i=0;i<recs.length;i++){
+      var r=recs[i];
+      var piece='['+pageTitle(r)+' \u2014 '+r.p+']\\n'+r.x+'\\n';
+      if(budget - piece.length < 0) break;
+      budget-=piece.length; ctx.push(piece);
+    }
+    return [
+      'You are the AI assistant for the "IoT Wireless Intel" research website.',
+      'Answer the question using ONLY the context excerpts below, taken from the site pages.',
+      'If the answer is not in the context, say you could not find it on the site and point to the closest relevant page.',
+      'Write a clear, well-structured answer using short paragraphs and bullet points. Do not invent facts or URLs.',
+      '',
+      'CONTEXT:',
+      ctx.join('\\n'),
+      '',
+      'QUESTION: '+query,
+      'ANSWER:'
+    ].join('\\n');
+  }
+
+  function callGemini(query, recs){
+    var key=getKey(); var model=getModel();
+    var url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key);
+    var body={ contents:[{ role:'user', parts:[{ text: buildPrompt(query, recs) }] }], generationConfig:{ temperature:0.2, maxOutputTokens:1200 } };
+    return fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) })
+      .then(function(res){ return res.json().then(function(j){ return {ok:res.ok, status:res.status, j:j}; }); })
+      .then(function(r){
+        if(!r.ok){
+          var em=(r.j && r.j.error && r.j.error.message) ? r.j.error.message : ('HTTP '+r.status);
+          throw new Error(em);
+        }
+        var cand=(r.j.candidates && r.j.candidates[0]) || null;
+        var parts=cand && cand.content && cand.content.parts ? cand.content.parts : [];
+        var text=parts.map(function(p){ return p.text||''; }).join('').trim();
+        if(!text) throw new Error('Empty response from model.');
+        return text;
+      });
+  }
+
+  function localAnswer(query, recs){
+    if(!recs.length){
+      return '<p>I could not find anything about that on this site. Try rephrasing, or browse the Overview, Companies, Technology, Applications or News pages.</p>';
+    }
+    var parts=['<p>Here is what I found on the site for <strong>'+esc(query)+'</strong>:</p>'];
+    var shown=0;
+    for(var i=0;i<recs.length && shown<4;i++){
+      var r=recs[i];
+      var snip=(r.x||'').slice(0,320).trim();
+      parts.push('<p><strong>'+esc(pageTitle(r))+':</strong> '+esc(snip)+(r.x.length>320?'\u2026':'')+'</p>');
+      shown++;
+    }
+    parts.push('<p style="color:var(--muted);font-size:12.5px">Add a Gemini API key in AI settings above to get a synthesized answer instead of raw excerpts.</p>');
+    return parts.join('');
+  }
+
+  function ask(query){
+    if(BUSY) return;
+    if(!query || !query.trim()) return;
+    query=query.trim();
+    addMsg('user', '<p>'+esc(query)+'</p>');
+    qEl.value=''; autoGrow();
+    BUSY=true; sendEl.disabled=true;
+    var thinking=addMsg('bot', '<span class="chat-typing">Searching the site\u2026</span>');
+
+    var run=function(){
+      var recs=search(query, 8);
+      var srcHtml=sourceChips(recs);
+      if(getKey() && recs.length){
+        thinking.innerHTML='<span class="chat-typing">Thinking\u2026</span>';
+        callGemini(query, recs).then(function(text){
+          thinking.innerHTML=mdToHtml(text);
+          if(srcHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=srcHtml; thinking.appendChild(sc); }
+        }).catch(function(err){
+          thinking.innerHTML=mdToHtml('I hit an error calling Gemini: '+(err.message||err)+'\\n\\nShowing on-page results instead.');
+          var fb=document.createElement('div'); fb.innerHTML=localAnswer(query, recs); thinking.appendChild(fb);
+          if(srcHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=srcHtml; thinking.appendChild(sc); }
+        }).then(function(){ BUSY=false; sendEl.disabled=false; });
+      } else {
+        thinking.innerHTML=localAnswer(query, recs);
+        if(srcHtml){ var sc=document.createElement('div'); sc.className='chat-sources'; sc.innerHTML=srcHtml; thinking.appendChild(sc); }
+        BUSY=false; sendEl.disabled=false;
+      }
+    };
+
+    if(INDEX_READY){ run(); }
+    else { loadIndex().then(run).catch(function(){ thinking.innerHTML='<p>Could not load the site content index.</p>'; BUSY=false; sendEl.disabled=false; }); }
+  }
+
+  function loadIndex(){
+    if(INDEX_READY) return Promise.resolve();
+    return fetch('chat_index.json', {cache:'no-cache'}).then(function(r){ return r.json(); }).then(function(data){
+      INDEX = Array.isArray(data) ? data : (data.chunks||[]);
+      INDEX_READY=true;
+    });
+  }
+
+  function autoGrow(){ qEl.style.height='auto'; qEl.style.height=Math.min(qEl.scrollHeight,160)+'px'; }
+  qEl.addEventListener('input', autoGrow);
+  qEl.addEventListener('keydown', function(e){ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); ask(qEl.value); } });
+  sendEl.addEventListener('click', function(){ ask(qEl.value); });
+
+  var CHIPS=['Who are the top Bluetooth chip vendors?','What is Matter over Thread?','Latest Wi-Fi 7 news','Which customers use Thread?','Compare Nordic vs the competition'];
+  var chipsEl=document.getElementById('chips');
+  CHIPS.forEach(function(c){ var b=document.createElement('button'); b.textContent=c; b.addEventListener('click', function(){ ask(c); }); chipsEl.appendChild(b); });
+
+  refreshStatus();
+  modelSel.value=getModel();
+  loadIndex().catch(function(){});
+  addMsg('bot', '<p>Hi! I can answer questions using the content across this whole site \u2014 companies, chips, standards, applications and news. Ask me anything, or tap a suggestion above.</p>');
+})();
+</script>
+</body></html>
+"""
+
+
+# Where the reusable HerAI chat sources live. Defaults to a sibling "AI_Chat"
+# folder next to this repo; override with the AI_CHAT_DIR environment variable.
+_CHAT_SRC_DIR = Path(
+    os.environ.get("AI_CHAT_DIR")
+    or (Path(__file__).resolve().parents[2].parent / "AI_Chat")
+)
+
+
+def _load_chat_assets() -> dict | None:
+    """Read the external chat widget sources (css/js/body); None if unavailable."""
+    try:
+        return {
+            "css": (_CHAT_SRC_DIR / "src" / "chat.css").read_text(encoding="utf-8"),
+            "js": (_CHAT_SRC_DIR / "src" / "chat.js").read_text(encoding="utf-8"),
+            "body": (_CHAT_SRC_DIR / "src" / "chat_body.html").read_text(encoding="utf-8"),
+        }
+    except OSError:
+        return None
+
+
+def _build_chat_template() -> str:
+    """Assemble the Chat page from the external HerAI widget, wrapped with this
+    site's head/nav/gate. Falls back to the embedded template when the external
+    sources are not checked out."""
+    assets = _load_chat_assets()
+    if not assets:
+        return _CHAT_TEMPLATE_FALLBACK
+    cfg = {
+        "siteName": "IoT Wireless Intel",
+        "indexUrl": "chat_index.json",
+        "chips": [
+            "Who are the top Bluetooth chip vendors?",
+            "What is Matter over Thread?",
+            "Latest Wi-Fi 7 news",
+            "Which customers use Thread?",
+            "Compare Nordic vs the competition",
+        ],
+    }
+    return (
+        "<!doctype html>\n<html lang=\"en\"><head>\n"
+        "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n"
+        "<title>Chat \u00b7 IoT Wireless Intel</title>\n"
+        "<style>{{ css }}\n" + assets["css"] + "\n</style>\n"
+        + _PASSWORD_GATE_HTML + "\n</head><body>\n"
+        + _NAV_HTML + "\n"
+        + assets["body"] + "\n"
+        + "<script>window.HERAI_CHAT_CONFIG=" + json.dumps(cfg) + ";</script>\n"
+        + "<script>\n" + assets["js"] + "\n</script>\n</body></html>\n"
+    )
+
+
+def _write_chat_index(output_dir: Path) -> None:
+    """Build a lightweight text index of every rendered page for the Chat page."""
+    script_style_re = re.compile(r"<(script|style)[^>]*>.*?</\1>", re.I | re.S)
+    tag_re = re.compile(r"<[^>]+>")
+    ws_re = re.compile(r"\s+")
+    title_re = re.compile(r"<title[^>]*>(.*?)</title>", re.I | re.S)
+
+    skip = {"chat.html"}
+    chunks: list[dict] = []
+    max_per_page = 60
+    max_total = 1400
+
+    for html in sorted(output_dir.glob("*.html")):
+        if html.name in skip:
+            continue
+        try:
+            raw = html.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        head = raw[:800].lower()
+        if 'http-equiv="refresh"' in head or ("location.replace(" in head and "redirect" in head):
+            continue
+        m = title_re.search(raw)
+        title = ws_re.sub(" ", tag_re.sub("", m.group(1))).strip() if m else html.stem
+        title = title.split("\u00b7")[0].strip() or html.stem
+        text = script_style_re.sub(" ", raw)
+        text = tag_re.sub(" ", text)
+        text = text.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&#39;", "'").replace("&quot;", '"').replace("&nbsp;", " ")
+        text = ws_re.sub(" ", text).strip()
+        if not text:
+            continue
+        words = text.split(" ")
+        step = 90
+        page_chunks = 0
+        for i in range(0, len(words), step):
+            if page_chunks >= max_per_page or len(chunks) >= max_total:
+                break
+            piece = " ".join(words[i:i + step]).strip()
+            if len(piece) < 40:
+                continue
+            chunks.append({"p": html.name, "t": title, "x": piece})
+            page_chunks += 1
+        if len(chunks) >= max_total:
+            break
+
+    (output_dir / "chat_index.json").write_text(
+        json.dumps(chunks, ensure_ascii=False), encoding="utf-8"
+    )
+
+
 def render(articles: list[dict], output_dir: Path,
            pulse: list[dict] | None = None,
            patents: list[dict] | None = None,
@@ -3230,6 +3646,11 @@ def render(articles: list[dict], output_dir: Path,
     # --- Applications page (hand-crafted market-research content per end-device) ---
     (output_dir / "applications.html").write_text(env.from_string(_APPLICATIONS_TEMPLATE).render(
       applications=APPLICATIONS, categories=APP_CATEGORIES, active="applications", **common_ctx
+    ), encoding="utf-8")
+
+    # --- Chat page (AI Q&A over the whole site; index built at end of render) ---
+    (output_dir / "chat.html").write_text(env.from_string(_build_chat_template()).render(
+      active="chat", **common_ctx
     ), encoding="utf-8")
 
     # --- BT Stack page (Bluetooth stack market map) ---
@@ -3407,6 +3828,9 @@ def render(articles: list[dict], output_dir: Path,
     #     a browser; they return an interstitial). Done in-place across
     #     every rendered page using a lightweight regex.
     _rewrite_broken_links(output_dir)
+
+    # Build the site-wide text index used by the Chat page (after final HTML).
+    _write_chat_index(output_dir)
 
     return output_dir / "index.html"
 

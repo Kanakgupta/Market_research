@@ -44,13 +44,13 @@ Write-Host "=== Daily refresh started $(Get-Date -Format o) ==="
 try {
     # Rebuild the multi-tab report with fresh news/customers/competitors/research
     # pulled from the web (default mode = with --external + --enrich).
-    Write-Host '--- step 1/4: regenerate report (web pull) ---'
+    Write-Host '--- step 1/5: regenerate report (web pull) ---'
     & $pythonCmd run.py --max-age-days 10
     if ($LASTEXITCODE -ne 0) {
         throw "step 1 failed (exit $LASTEXITCODE): $pythonCmd run.py --max-age-days 10"
     }
 
-    Write-Host '--- step 2/4: verify critical outputs exist ---'
+    Write-Host '--- step 2/5: verify critical outputs exist ---'
     $criticalDocs = @(
         'docs\index.html',
         'docs\news.html',
@@ -70,13 +70,13 @@ try {
         }
     }
 
-    Write-Host '--- step 3/4: stage generated data + docs only ---'
+    Write-Host '--- step 3/5: stage generated data + docs only ---'
     git add -A data docs
     if ($LASTEXITCODE -ne 0) {
         throw "step 3 failed (exit $LASTEXITCODE): git add -A data docs"
     }
 
-    Write-Host '--- step 4/4: commit + push when changes exist ---'
+    Write-Host '--- step 4/5: commit + push when changes exist ---'
     $changes = git status --porcelain
     if ([string]::IsNullOrWhiteSpace($changes)) {
         Write-Host 'No changes detected. Nothing to commit/push.'
@@ -103,6 +103,9 @@ try {
             }
         }
     }
+
+    Write-Host '--- step 5/5: push HerAI chat repo if its sources changed ---'
+    & (Join-Path $PSScriptRoot 'push_ai_chat.ps1') -CommitMessage ("auto update " + (Get-Date -Format 'yyyy-MM-dd HH:mm'))
 
     Write-Host "=== Finished $(Get-Date -Format o) ==="
 }

@@ -162,6 +162,9 @@ function Invoke-UpdateCycle {
         Write-Log 'Pushed update to GitHub.'
     }
 
+    # Keep the reusable HerAI chat repo in sync when its sources change.
+    & (Join-Path $PSScriptRoot 'push_ai_chat.ps1') -CommitMessage ('auto update ' + (Get-Date -Format 'yyyy-MM-dd HH:mm'))
+
     Write-StateSuccess
 
     $elapsed = (Get-Date) - $cycleStart
