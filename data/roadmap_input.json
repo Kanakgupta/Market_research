@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T21:39:56Z",
+  "generated_at": "2026-08-14T13:11:41Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2781,6 +2781,11 @@
           "url": "https://www.marketscreener.com/news/realtek-semiconductor-corp-reports-earnings-results-for-the-second-quarter-and-six-months-ended-jun-ce7859d8d88ff323"
         },
         {
+          "title": "Realtek Eyes Optical Communications Boom in 2027",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260812PD221/optical-communications-mediatek-realtek-himax-elan-2027.html"
+        },
+        {
           "title": "Realtek Licenses MPEG-H Audio Software from Fraunhofer IIS",
           "date": "Jul 2026",
           "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18&lang=en-GB"
@@ -2814,11 +2819,6 @@
           "title": "Realtek Stock Trades Steady as Recent Earnings Highlight Margin Resilience",
           "date": "Jul 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/realtek-stock-trades-steady-as-recent-earnings-highlight-margin-resilience/69827856"
-        },
-        {
-          "title": "Realtek, MediaTek Drop Case Alleging Bogus Patent Litigation",
-          "date": "Jul 2026",
-          "url": "https://www.law360.com/articles/2501820/realtek-mediatek-drop-case-alleging-bogus-patent-litigation"
         }
       ]
     },
@@ -3247,6 +3247,11 @@
         },
         {
           "title": "Airoha Secures Communication Service Provider Customers for Broadband Solutions",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260805PD215/airoha-broadband-wireless-revenue-growth.html"
+        },
+        {
+          "title": "Airoha Optical Comms Revenue Doubles as Broadband Lands CSPs",
           "date": "Aug 2026",
           "url": "https://www.digitimes.com/news/a20260805PD215/airoha-broadband-wireless-revenue-growth.html"
         },
@@ -3729,29 +3734,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 98,
-    "NXP": 57,
-    "Silicon Labs": 32,
+    "Qualcomm": 115,
+    "NXP": 47,
+    "Silicon Labs": 25,
     "Nordic": 23,
-    "MediaTek": 20,
     "TI": 18,
-    "Espressif": 13,
-    "Broadcom": 4,
-    "Infineon": 4,
+    "MediaTek": 13,
+    "Espressif": 11,
+    "Realtek": 3,
+    "Broadcom": 3,
+    "Infineon": 3,
     "Marvell": 2,
     "Microchip": 2,
+    "Quectel": 2,
     "u-blox": 2,
     "Apple": 2,
-    "UNISOC": 2,
-    "Quectel": 2,
-    "Realtek": 1,
+    "Synaptics": 2,
+    "LG Innotek": 1,
     "WCH": 1,
     "Atmosic": 1,
-    "Lattice": 1,
     "Murata": 1,
     "Airoha": 1,
-    "Sequans": 1,
-    "Onsemi": 1
+    "UNISOC": 1
   },
   "standards_in_flight": [
     {
@@ -3834,7 +3838,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1669,
+      "issues_open": 1670,
       "prs_open": 0,
       "releases": [
         {
@@ -3856,7 +3860,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18772,
+      "stars": 18775,
       "pushed_at": "2026-08-13T17:38:42Z"
     },
     {
@@ -3868,7 +3872,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3862,
+      "issues_open": 3843,
       "prs_open": 0,
       "releases": [
         {
@@ -3890,23 +3894,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16202,
-      "pushed_at": "2026-08-13T20:37:34Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 242755,
-      "pushed_at": "2026-08-13T16:41:49Z"
+      "stars": 16211,
+      "pushed_at": "2026-08-14T09:49:38Z"
     },
     {
       "name": "OpenThread",
@@ -3917,7 +3906,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 163,
+      "issues_open": 167,
       "prs_open": 0,
       "releases": [
         {
@@ -3951,7 +3940,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2765,
+      "issues_open": 2770,
       "prs_open": 0,
       "releases": [
         {
@@ -3973,8 +3962,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8868,
-      "pushed_at": "2026-08-13T21:10:15Z"
+      "stars": 8870,
+      "pushed_at": "2026-08-14T12:53:06Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 242807,
+      "pushed_at": "2026-08-14T02:12:23Z"
     },
     {
       "name": "BlueZ",
@@ -3985,7 +3989,7 @@
         "bluetooth"
       ],
       "commits_30d": 41,
-      "issues_open": 116,
+      "issues_open": 115,
       "prs_open": 0,
       "releases": [
         {
@@ -4008,7 +4012,7 @@
         }
       ],
       "stars": 1129,
-      "pushed_at": "2026-08-13T10:44:30Z"
+      "pushed_at": "2026-08-14T10:19:20Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4018,8 +4022,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 32,
-      "issues_open": 467,
+      "commits_30d": 31,
+      "issues_open": 465,
       "prs_open": 0,
       "releases": [
         {
@@ -4041,7 +4045,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15498,
+      "stars": 15500,
       "pushed_at": "2026-08-13T19:21:34Z"
     },
     {
@@ -4056,7 +4060,7 @@
       "issues_open": 278,
       "prs_open": 0,
       "releases": [],
-      "stars": 882,
+      "stars": 884,
       "pushed_at": "2026-08-12T08:45:20Z"
     },
     {
