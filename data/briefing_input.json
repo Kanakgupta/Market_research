@@ -1,508 +1,498 @@
 {
-  "generated_at": "2026-08-15T13:11:18Z",
+  "generated_at": "2026-08-16T13:08:14Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Xteink\u2019s tiny e-readers are getting access to free books through Libby",
-      "url": "https://www.theverge.com/tech/976390/xteink-x3-x4-x4-pro-e-reader-libby-plug-ins-drm-crosspoint-reader",
-      "source": "The Verge",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "One of the big tradeoffs with Xteink's pocket-friendly e-readers is a lack of easy access to ebooks. On a Kindle or Kobo you can download tens of thousands of titles through each device's respective online bookstores, but with Xteink's devices you have to source DRM-free ebooks on your own. That's a"
-    },
-    {
-      "title": "Middlesbrough (a): Team News & Match Discussion Thread",
-      "url": "https://vitalfootball.co.uk/middlesbrough-a-team-news-match-discussion-thread/",
-      "source": "Vital Football",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Middlesbrough host Lincoln City at the Riverside Stadium today in the opening match of the season for both sides. Today\u2019s referee is Bobby Madley for the 15:00 kick-off.\nQUIZ: How much do you know about the history of Middlesbrough Football Club? Click HERE to see if you can get 10 out of 10 on our "
-    },
-    {
-      "title": "Apple weekend deals: MacBooks up to $540 off, AirPods up to $100 off, Apple Watch, more",
-      "url": "https://9to5mac.com/2026/08/15/apple-weekend-deals-macbooks-airpods/",
-      "source": "9to5Mac",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Your 9to5Toys Lunch Break weekend edition is here, and so are the deals. We are starting off with a series of solid headliners, including AirPods Pro 3 at 25% and AirPods Max 2 at $100 off on all five color options, as well as AirPods 4 with ANC dropping to the best price in 6 months at $135. Just b"
-    },
-    {
-      "title": "We\u2019re reaching peak camera with the Sony A7R VI",
-      "url": "https://www.theverge.com/gadgets/980064/sony-a7r-vi-6-hands-on-impressions-review",
-      "source": "The Verge",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": "It wasn't long ago that shooting with a super high-resolution camera meant making serious sacrifices for the sake of all those megapixels. Enter the A7R VI. Sony's latest flagship high-res camera is a 66.8-megapixel spec monster. In addition to its modest bump in resolution from the last-gen A7R V, "
-    },
-    {
-      "title": "So much solar: Digging into the list of every US power plant that went online this year",
-      "url": "https://arstechnica.com/science/2026/08/so-much-solar-digging-into-the-list-of-every-us-power-plant-that-went-online-this-year/",
-      "source": "Ars Technica",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "Utility-scale solar leads by a mile, followed by batteries. Fossil fuels, not so much."
-    },
-    {
-      "title": "Google Pixel 11 - Full phone specifications",
-      "url": "https://www.gsmarena.com/google_pixel_11_5g-14799.php",
-      "source": "gsmarena.com",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Login\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nNo point to upgrade. Completely not.\ni don't talk about quality ... it's overpriced AF. shouldn't exceed 600 bucks\nWe went through the same spec overbid on PC chips: most people don't need a 50 TOPS N"
-    },
-    {
-      "title": "797,200 Shares in Qualcomm Incorporated $QCOM Purchased by Tensor Edge Capital LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-797200-shares-in-qualcomm-incorporated-qcom-purchased-by-tensor-edge-capital-llc-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Tensor Edge Capital LLC bought a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the second quarter, according to its most recent 13F filing with the SEC. The institutional investor bought 797,200 shares of the wireless technology company's stock, valued at approximately $14"
-    },
-    {
-      "title": "GEEKOM IT13 Max Review \u2013 Part 3: Ubuntu 26.04 on an Intel Core Ultra 9 185H mini computer",
-      "url": "https://www.cnx-software.com/2026/08/15/geekom-it13-max-review-part-3-ubuntu-26-04-on-an-intel-core-ultra-9-185h-mini-computer/",
-      "source": "CNX Software",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "We&#8217;ve already checked out the hardware with an unboxing and a teardown of the GEEKOM IT13 Max in the first part of the review, before testing the Intel Core Ultra 9 185H mini PC with Windows 11, so it&#8217;s now time to test Linux on the mini computer using Ubuntu 26.04. In this review, we wi"
-    },
-    {
-      "title": "Unique Wealth Strategies LLC Trims Stake in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-unique-wealth-strategies-llc-trims-stake-in-qualcomm-incorporated-qcom-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Unique Wealth Strategies LLC reduced its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 45.2% during the second quarter, according to its most recent 13F filing with the Securities & Exchange Commission. The fund owned 6,309 shares of the wireless technology company's stock after s"
-    },
-    {
-      "title": "Milestone Asset Management LLC Decreases Stock Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-milestone-asset-management-llc-decreases-stock-position-in-qualcomm-incorporated-qcom-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Milestone Asset Management LLC reduced its holdings in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 69.2% during the second quarter, according to the company in its most recent disclosure with the Securities and Exchange Commission (SEC). The institutional investor owned 6,479 shar"
-    },
-    {
-      "title": "QRG Capital Management Inc. Buys 23,009 Shares of Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-qrg-capital-management-inc-buys-23009-shares-of-qualcomm-incorporated-qcom-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "QRG Capital Management Inc. boosted its stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 12.7% during the second quarter, according to its most recent Form 13F filing with the Securities and Exchange Commission (SEC). The institutional investor owned 204,726 shares of the wireless techn"
-    },
-    {
-      "title": "Google Pixel 11 Pro Fold - Full phone specifications",
-      "url": "https://www.gsmarena.com/google_pixel_11_pro_fold-14874.php",
-      "source": "gsmarena.com",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Disclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nI'm a pixel fanboy. I have a 10 pro and my wife a 9 pro. We both moved from iPhones. But the battery on my 10 Pro is about 30% weaker than on my wife's 9 Pro. If Google can't fix this, they'll become obsole"
-    },
-    {
-      "title": "India Solar Stocks For Cheaper Modules And Faster Project Growth",
-      "url": "https://simplywall.st/stocks/in/capital-goods/nse-technoe/techno-electric-engineering-shares/news/india-solar-stocks-for-cheaper-modules-and-faster-project-gr",
-      "source": "simplywall.st",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": null,
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "- India\n- /\n- Electrical\n- /\n- NSEI:UTLSOLAR\nIndia Solar Stocks For Cheaper Modules And Faster Project Growth\nFresh US tariffs on key solar components are reshaping global trade routes, and that shift could change where future growth stories emerge. As modules are redirected toward faster growing em"
-    },
-    {
-      "title": "BayBridge Capital Group LLC Sells 7,320 Shares of Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-baybridge-capital-group-llc-sells-7320-shares-of-qualcomm-incorporated-qcom-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "BayBridge Capital Group LLC lessened its stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 78.2% during the 2nd quarter, according to its most recent disclosure with the SEC. The institutional investor owned 2,046 shares of the wireless technology company's stock after selling 7,320 shar"
-    },
-    {
-      "title": "Brookstone Capital Management Reduces Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-brookstone-capital-management-reduces-position-in-qualcomm-incorporated-qcom-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Brookstone Capital Management cut its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 9.4% during the second quarter, according to the company in its most recent Form 13F filing with the Securities and Exchange Commission (SEC). The institutional investor owned 54,388 shares of the "
-    },
-    {
-      "title": "Goelzer Investment Management Inc. Trims Stock Holdings in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-goelzer-investment-management-inc-trims-stock-holdings-in-qualcomm-incorporated-qcom-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Goelzer Investment Management Inc. decreased its holdings in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 3.9% during the second quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The firm owned 77,526 shares of the wireless technology c"
-    },
-    {
-      "title": "Burney Co. Reduces Stock Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-burney-co-reduces-stock-position-in-qualcomm-incorporated-qcom-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Burney Co. lessened its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 27.0% during the 2nd quarter, according to its most recent filing with the Securities & Exchange Commission. The fund owned 35,560 shares of the wireless technology company's stock after selling 13,154 shares du"
-    },
-    {
-      "title": "Qualcomm Incorporated $QCOM Shares Sold by Essential Investment Partners LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-sold-by-essential-investment-partners-llc-2026-08-15/",
-      "source": "MarketBeat",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Essential Investment Partners LLC decreased its position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 48.1% during the 2nd quarter, according to the company in its most recent disclosure with the SEC. The fund owned 5,535 shares of the wireless technology company's stock after s"
-    },
-    {
-      "title": "Qualcomm (QCOM) Stock Looks Fairly Valued On Its 61% Three Year Run",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-qcom/qualcomm/news/qualcomm-qcom-stock-looks-fairly-valued-on-its-61-three-year",
-      "source": "simplywall.st",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:QCOM\nQualcomm (QCOM) Stock Looks Fairly Valued On Its 61% Three Year Run\nQUALCOMM stock has delivered a 60.7% gain over the past three years, yet current checks suggest it now sits close to its estimated intrinsic value rather than looking clearly "
-    },
-    {
-      "title": "The 4 Best Wi-Fi 6 Routers of 2026",
-      "url": "https://www.rtings.com/router/reviews/best/wi-fi-6",
-      "source": "RTINGS.com",
-      "date": "2026-08-15",
+      "title": "10 Best Wi-Fi Routers 2026: 10 Top Picks Tested",
+      "url": "https://memeburn.com/best-wi-fi-routers/",
+      "source": "Memeburn",
+      "date": "2026-08-16",
       "vendor": "MediaTek",
       "customer": "Amazon",
-      "application": null,
+      "application": "Embedded / Electronics",
       "buckets": [
         "wifi"
       ],
-      "summary": "Best\nWi-Fi Routers\nMesh Wi-Fi Systems\nGaming\nCable Modem-Router Combos\nWi-Fi 7\nSpectrum\nLarge Homes\nFiber Internet\nXfinity\nLong-Range\nWi-Fi 6\nASUS\nBudget And Cheap\nTP-Link\nStreaming\nTools\nCompare\nResults Table Tool\nReview List\nReview Index\nGraph\nReview Pipeline\nVote\nCustom Ratings\nPopular\nTP-Link De"
+      "summary": "TL;DR\n- The ASUS RT-BE96U is our top standalone pick, combining strong real-world range, Wi-Fi 7 performance and dual 10Gbps connectivity.\n- Mesh is better suited to large or multi-floor homes, while smaller homes can often get better value from a single router.\n- The eero 6+ offers a lower-cost ent"
     },
     {
-      "title": "QUALCOMM Incorporated Stock 12\u2011Month Price Target Cut to $201, Implies 21% Upside",
-      "url": "https://www.tradingview.com/news/tradingview:6f01948ae0c4a:0-qualcomm-incorporated-stock-12-month-price-target-cut-to-201-implies-21-upside/",
-      "source": "TradingView",
-      "date": "2026-08-15",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
+      "title": "Google Pixel 11 Pro vs. Apple iPhone 17 Pro: How the new Pixel competes with its biggest rival",
+      "url": "https://www.zdnet.com/article/google-pixel-11-pro-vs-apple-iphone-17-pro/",
+      "source": "ZDNet",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Wearable",
       "buckets": [],
-      "summary": "QUALCOMM Incorporated Stock 12\u2011Month Price Target Cut to $201, Implies 21% Upside\nLess than 1 min read\n- According to estimates from 28 analysts, QUALCOMM Incorporated stock's average price target has fallen from $203.72 to $201, with forecasts ranging from $100 to $400 per share\n- Based on the Aug."
+      "summary": "I've tested both phones, and they're neck and neck. Here's where they each succeed (and have room for improvement)."
     },
     {
-      "title": "Pixel Tag vs AirTag: Which Tracker Actually Wins?",
-      "url": "https://thezeronet.com/pixel-tag-vs-airtag/",
-      "source": "The Zero Net",
-      "date": "2026-08-15",
+      "title": "Chipolo Loop Limited Edition review: object finder offers features Apple AirTag just can\u2019t match",
+      "url": "https://www.irishmirror.ie/lifestyle/technology/chipolo-loop-limited-edition-review-37557252",
+      "source": "Irish Mirror",
+      "date": "2026-08-16",
       "vendor": null,
       "customer": "Apple",
       "application": "Asset Tracking",
       "buckets": [
         "bluetooth"
       ],
-      "summary": "Google finally has an answer to Apple\u2019s AirTag. The Pixel Tag vs AirTag question has real stakes now, because for years Android owners had no first-party option at all. That changed days ago at Made by Google 2026, when Google unveiled its own $29 Bluetooth tracker built around its Find Hub network."
+      "summary": "Chipolo Loop Limited Edition review: object finder offers features Apple AirTag just can\u2019t match\nI tested the two Chipolo Loop Limited Edition trackers which come in new colour combinations, Morning Mist and Deep Sunset.\nThe award-winning Bluetooth tracker company, Chipolo, recently launched two Lim"
     },
     {
-      "title": "Commerce Secretary says US opposes Apple buying Chinese memory chips",
-      "url": "https://9to5mac.com/2026/08/14/commerce-secretary-says-us-opposes-apple-buying-chinese-memory-chips/",
-      "source": "9to5Mac",
-      "date": "2026-08-15",
+      "title": "Sunday Morning Open Thread with Music by Prince",
+      "url": "https://www.dailykos.com/stories/2026/8/16/800084337/community/sunday-morning-open-thread-with-music-by-prince/",
+      "source": "Daily Kos",
+      "date": "2026-08-16",
       "vendor": null,
-      "customer": "Apple",
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Good morning, music fans. Today\u2019s featured artist is Prince Rogers Nelson, also known as\u2026well, you know the immortal symbol. Prince himself said it was never meant to be spoken. Actually, I think what led to it was a squabble with his record company, which was screwing him over. It\u2019s all in the past"
+    },
+    {
+      "title": "Google Pixel 11 vs. Pixel 9: Why I'm considering the upgrade this year",
+      "url": "https://www.zdnet.com/article/google-pixel-11-vs-pixel-9/",
+      "source": "ZDNet",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "If you didn't upgrade last year (or the year before), there's a good case to be made for the new Pixel 11."
+    },
+    {
+      "title": "Deals: the Google Pixel 11 series is now on pre-order with gift cards and trade-in bonuses - GSMArena.com news",
+      "url": "https://www.gsmarena.com/deals_the_google_pixel_11_series_is_now_on_preorder_with_gift_cards_and_tradein_bonuses-news-74174.php",
+      "source": "GSMArena.com",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Google launched its new Pixel 11 series earlier this week \u2013 there is a new vanilla, two new Pro and one new foldable model. All that\u2019s missing now is an affordable a-phone.\nThe massive increase in RAM prices has affected the Pixel series. Google now offers 256GB storage as standard on all 11-series "
+    },
+    {
+      "title": "Independent Financial Group LLC Raises Holdings in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-independent-financial-group-llc-raises-holdings-in-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "The Wall Street Journal reports that US Commerce Secretary Howard Lutnick has urged Apple not to turn to Chinese memory chips as the company looks for alternatives to alleviate the ongoing global supply shortage. Here are the details."
+      "summary": "Independent Financial Group LLC lifted its stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 15.0% during the second quarter, according to its most recent disclosure with the Securities & Exchange Commission. The fund owned 37,040 shares of the wireless technology company's stock after b"
     },
     {
-      "title": "Marvell's August 27 Report Card: The Moment When Product Momentum Meets a Divided Analyst House - ad-hoc-news.de",
-      "url": "https://www.ad-hoc-news.de/boerse/news/unternehmensnachrichten/marvell-s-august-27-report-card-the-moment-when-product-momentum-meets-a/69951523",
-      "source": "ad-hoc-news.de",
+      "title": "Union Bancaire Privee UBP SA Sells 11,530 Shares of Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-union-bancaire-privee-ubp-sa-sells-11530-shares-of-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Union Bancaire Privee UBP SA reduced its stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 29.0% during the second quarter, according to the company in its most recent Form 13F filing with the Securities and Exchange Commission. The fund owned 28,261 shares of the wireless technology com"
+    },
+    {
+      "title": "Zevenbergen Capital Investments LLC Cuts Holdings in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-zevenbergen-capital-investments-llc-cuts-holdings-in-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Zevenbergen Capital Investments LLC lowered its position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 7.6% in the second quarter, according to the company in its most recent disclosure with the SEC. The firm owned 115,977 shares of the wireless technology company's stock after selling 9,5"
+    },
+    {
+      "title": "Prospera Financial Services Inc Purchases 11,326 Shares of Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-prospera-financial-services-inc-purchases-11326-shares-of-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Prospera Financial Services Inc increased its position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 31.4% during the 2nd quarter, according to its most recent filing with the Securities and Exchange Commission. The institutional investor owned 47,368 shares of the wireless techn"
+    },
+    {
+      "title": "Open Thread: August 16, 2026",
+      "url": "https://www.managingmadrid.com/general/111364/open-thread-august-16-2026",
+      "source": "Managing Madrid",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "The Open Thread/Daily Merengue is a place where you can discuss anything and everything related to football. Feel free to discuss the topics presented here, or start your very own discussions! The Open thread will be posted every day by one of the mods you\u2019d totally go swimming with: Valyrian Steel,"
+    },
+    {
+      "title": "Quattro Financial Advisors LLC Takes Position in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-quattro-financial-advisors-llc-takes-position-in-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Quattro Financial Advisors LLC purchased a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the second quarter, according to its most recent Form 13F filing with the Securities & Exchange Commission. The institutional investor purchased 4,360 shares of the wireless technology com"
+    },
+    {
+      "title": "Matrix Asset Advisors Inc. NY Sells 43,347 Shares of Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-matrix-asset-advisors-inc-ny-sells-43347-shares-of-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Matrix Asset Advisors Inc. NY trimmed its stake in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 15.1% in the 2nd quarter, according to the company in its most recent Form 13F filing with the Securities & Exchange Commission. The fund owned 243,892 shares of the wireless technology "
+    },
+    {
+      "title": "Lighthouse Financial Services Inc. ADV Sells 16,764 Shares of Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-lighthouse-financial-services-inc-adv-sells-16764-shares-of-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Lighthouse Financial Services Inc. ADV lessened its position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 82.8% in the second quarter, according to the company in its most recent 13F filing with the Securities & Exchange Commission. The institutional investor owned 3,475 shares of the wir"
+    },
+    {
+      "title": "Canada Post Corp Registered Pension Plan Trims Holdings in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-canada-post-corp-registered-pension-plan-trims-holdings-in-qualcomm-incorporated-qcom-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Canada Post Corp Registered Pension Plan lessened its stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 11.9% in the 2nd quarter, according to its most recent filing with the SEC. The fund owned 36,309 shares of the wireless technology company's stock after selling 4,927 shares during th"
+    },
+    {
+      "title": "Clearstead Trust LLC Buys Shares of 6,000 NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-clearstead-trust-llc-buys-shares-of-6000-nxp-semiconductors-nv-nxpi-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Clearstead Trust LLC acquired a new stake in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 2nd quarter, according to its most recent Form 13F filing with the Securities and Exchange Commission (SEC). The firm acquired 6,000 shares of the semiconductor provider's stock, val"
+    },
+    {
+      "title": "Bridgewater Advisors Inc. Invests $992,000 in Texas Instruments Incorporated $TXN",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-bridgewater-advisors-inc-invests-992000-in-texas-instruments-incorporated-txn-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "TI",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Bridgewater Advisors Inc. acquired a new position in Texas Instruments Incorporated (NASDAQ:TXN - Free Report) in the second quarter, according to its most recent Form 13F filing with the SEC. The institutional investor acquired 3,688 shares of the semiconductor company's stock, valued at approximat"
+    },
+    {
+      "title": "Empowered Funds LLC Has $7.04 Million Position in NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-empowered-funds-llc-has-704-million-position-in-nxp-semiconductors-nv-nxpi-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Empowered Funds LLC grew its holdings in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) by 23.4% during the first quarter, according to its most recent filing with the Securities and Exchange Commission. The institutional investor owned 35,748 shares of the semiconductor provider's st"
+    },
+    {
+      "title": "Qualcomm Incorporated $QCOM Shares Sold by Cannon Advisors Inc.",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-sold-by-cannon-advisors-inc-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "Cannon Advisors Inc. trimmed its position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 67.6% during the second quarter, according to the company in its most recent Form 13F filing with the Securities & Exchange Commission. The firm owned 2,068 shares of the wireless technology c"
+    },
+    {
+      "title": "Tottenham Hotspur vs. TSG Hoffenheim: game time, open thread, and how to watch friendly online",
+      "url": "https://cartilagefreecaptain.sbnation.com/tottenham-hotspur-match-threads/72842/tottenham-hotspur-vs-tsg-hoffenheim-game-time-open-thread-and-how-to-watch-friendly-online",
+      "source": "Cartilage Free Captain",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "This is it: Tottenham Hotspur\u2019s final preseason hit-out before kicking off their 2026/27 season. Spurs are taking on TSG Hoffenheim, last season\u2019s fifth place in the Bundesliga.\nTottenham Hotspur vs. TSG Hoffenheim: game time, open thread, and how to watch friendly online\nIt\u2019s Groundhog Day. Again.\n"
+    },
+    {
+      "title": "The what, why, and how of pull requests and source comments",
+      "url": "https://www.theregister.com/offbeat/2026/08/16/the-what-why-and-how-of-pull-requests-and-source-comments/5287914",
+      "source": "The Register",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "Microsoft veteran on knowing the difference and convincing approvers to accept a change"
+    },
+    {
+      "title": "Using the Khadas Mind Graphics 2 (NVIDIA RTX 5060 Ti USB4 eGPU) on Ubuntu 26.04",
+      "url": "https://www.cnx-software.com/2026/08/16/using-the-khadas-mind-graphics-2-nvidia-rtx-5060-ti-usb4-egpu-on-ubuntu-26-04/",
+      "source": "CNX Software",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "When we used the NVIDIA GeForce RTX 5060 Ti 16GB-based Khadas Mind Graphics 2 dock with a mini PC running Ubuntu 26.04 last week, the USB4-connected eGPU was detected and enabled automatically, but we encountered two issues: very poor performance and the mini PC failed to boot when the dock was remo"
+    },
+    {
+      "title": "ABN AMRO Bank N.V. Acquires New Holdings in NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-abn-amro-bank-nv-acquires-new-holdings-in-nxp-semiconductors-nv-nxpi-2026-08-16/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "ABN AMRO Bank N.V. bought a new position in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the 2nd quarter, according to its most recent 13F filing with the Securities and Exchange Commission. The fund bought 5,178 shares of the semiconductor provider's stock, valued at approximately $1,452,"
+    },
+    {
+      "title": "NXP Semiconductors NV (NXPI) Stock News Today",
+      "url": "https://www.tradingkey.com/markets/stocks/nxpi/news?topic=recent",
+      "source": "TradingKey",
+      "date": "2026-08-16",
+      "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Follow the latest NXP Semiconductors NV stock news, earnings, analyst ratings and key developments.\nNXP Semiconductors NV Stock (NXPI) Moved Down by 5.05% on Jul 31: Key Drivers Unveiled\nNXP Semiconductors NV Stock (NXPI) Moved Up by 5.05% on Jun 21: A Full Analysis\nNXP Semiconductors NV Stock (NXPI"
+    },
+    {
+      "title": "Qualcomm reveals Snapdragon C specs for budget laptops, and Intel could have a serious headache",
+      "url": "https://tech.yahoo.com/computing/articles/qualcomm-reveals-snapdragon-c-specs-063854501.html",
+      "source": "Yahoo Tech",
+      "date": "2026-08-16",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Qualcomm wants to fix the biggest problem with budget laptops: performance and battery life. In May of this year, the company showed off its entry-tier new Snapdragon C Platform, made for budget laptops starting at $300, promising speed, battery life, and AI smarts that budget shoppers usually have "
+    },
+    {
+      "title": "AIAI Holdings' Constellation Network Launches D\u00f4r Retail Intelligence: Transformational AI-Powered Retail Intelligence",
+      "url": "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/aiai-holdings-constellation-network-launches-d%C3%B4r-retail-intellige-1205999",
+      "source": "accessnewswire.com",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": "Retail",
+      "buckets": [],
+      "summary": "AIAI Holdings' Constellation Network Launches D\u00f4r Retail Intelligence: Transformational AI-Powered Retail Intelligence\nTuesday, 11 August 2026 08:30 AM\nCompany Update\nPlatform Connects Customer Traffic With Point-of-Sale, Labor, Marketing and Weather Data to Identify Missed Demand, Explain Performan"
+    },
+    {
+      "title": "Polaroid\u2019s tiny instant camera is $72 and includes a free pack of film",
+      "url": "https://www.theverge.com/gadgets/980448/polaroid-go-second-generation-film-pack-bundle-deal-sale",
+      "source": "The Verge",
       "date": "2026-08-15",
-      "vendor": "Marvell",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Smartphone cameras are convenient, but they lack the charm of analog instant cameras. If you\u2019re trying to relive the nostalgia of waiting for an instant photo to develop, Amazon is selling the second-generation Polaroid Go instant camera with a 16-photo film pack for $71.99 (usually $109.99). That\u2019s"
+    },
+    {
+      "title": "Motorola and Samsung grow their US prepaid smartphone market shares",
+      "url": "https://www.phonearena.com/news/motorola-samsung-grow-prepaid-smartphone-market-shares_id182604",
+      "source": "PhoneArena",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Motorola and Samsung grow their US prepaid smartphone market shares\nThe Moto G Series and the Samsung Galaxy A line help the manufacturers hike their prepaid phone sales during Q2.\nMotorola and Samsung increase prepaid phone market shares | Image by PhoneArena\nDuring the second quarter of 2026, Coun"
+    },
+    {
+      "title": "TWSE Foreign Holding Weekly (Aug 14th): MediaTek, Nanya Technology, TSMC, Yageo",
+      "url": "https://www.smartkarma.com/insights/twse-foreign-holding-weekly-aug-14th-mediatek-nanya-technology-tsmc-yageo",
+      "source": "Smartkarma",
+      "date": "2026-08-16",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Samsung Galaxy A27 - Full phone specifications",
+      "url": "https://www.gsmarena.com/samsung_galaxy_a27_5g-14606.php",
+      "source": "GSMArena.com",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Login\nAlso known as Samsung Galaxy A27 5G\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nYou are kind of spoiled for choice when it comes to Samsung's Galaxy A series. The Korean giant knows all too well that it's the A family that moves units, and it h"
+    },
+    {
+      "title": "Matter Smart Home: Compatibility Explained for Buyers - true-tech.net",
+      "url": "https://true-tech.net/matter-smart-home-compatibility-explained/",
+      "source": "true-tech.net",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [
+        "matter",
+        "thread"
+      ],
+      "summary": "Matter is an open, vendor-neutral smart-home standard that lets certified devices work across Apple, Google, and Amazon platforms without locking you into a single ecosystem. The biggest consumer win is Multi-Admin: one device, multiple controllers, no re-pairing. But compatibility isn\u2019t automatic. "
+    },
+    {
+      "title": "PlayStation Portal OLED Leak: 2M Sold, $50 Price Hike [2026] - tech-insider.org",
+      "url": "https://tech-insider.org/playstation-portal-oled-leak-2026/",
+      "source": "tech-insider.org",
+      "date": "2026-08-16",
+      "vendor": null,
+      "customer": "Sony",
+      "application": "Retail",
+      "buckets": [],
+      "summary": "Sony has not said a word publicly, but the pattern is hard to miss. A hardware leaker with a strong hit rate, an unusually vague quote from a Sony Interactive Entertainment executive, and pricing filings that already tack Portal onto the PS5 family price sheet all point the same direction: an OLED r"
+    },
+    {
+      "title": "NXP Semiconductors Sees Demand Rebound as Auto, AI and Data Center Growth Accelerate",
+      "url": "https://www.marketbeat.com/instant-alerts/nxp-semiconductors-sees-demand-rebound-as-auto-ai-and-data-center-growth-accelerate-2026-08-15/",
+      "source": "MarketBeat",
+      "date": "2026-08-16",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NXP Semiconductors NASDAQ: NXPI sees a meaningfully improved business environment compared with 90 days ago and a year ago, with book-to-bill ratios solidly above one across its end markets, according to Senior Vice President of Investor Relations Jeff Palmer.\nSpeaking at a KeyBanc Capital Markets c"
+    },
+    {
+      "title": "Xiaomi Poco F9 Ultra - Full phone specifications",
+      "url": "https://www.gsmarena.com/xiaomi_poco_f9_ultra_5g-14876.php",
+      "source": "GSMArena.com",
+      "date": "2026-08-15",
+      "vendor": null,
+      "customer": "Xiaomi",
+      "application": null,
+      "buckets": [],
+      "summary": "Login\nUnofficial preliminary specifications\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nNo bypass charging again? pass.\nIt's very expensive.\n8050 mah wtf do u expect"
+    },
+    {
+      "title": "VisionQuest trailer kicks off Disney's D23 fan event",
+      "url": "https://arstechnica.com/culture/2026/08/visionquest-trailer-kicks-off-disneys-d23-fan-event/",
+      "source": "Ars Technica",
+      "date": "2026-08-15",
+      "vendor": null,
       "customer": null,
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "Marvell's August 27 Report Card: The Moment When Product Momentum Meets a Divided Analyst House\nPublished on 08/15/2026 at 03:51 | Redaktion boerse-global.deThe calendar is doing Marvell Technology a favor this earnings season. When the chipmaker reports fiscal second-quarter results on August 27, i"
+      "summary": "Also: Ahsoka S2 teaser, Doomsday trailer, news about MCU's X-Men and Star Wars: Starfighter"
     },
     {
-      "title": "All 2027 GM cars will be able to charge using Tesla Superchargers anywhere in the country",
-      "url": "https://www.digitaltrends.com/cars/all-2027-gm-cars-will-soon-be-able-to-charge-using-tesla-superchargers-anywhere-in-the-country/",
-      "source": "Digital Trends",
-      "date": "2026-08-15",
-      "vendor": null,
-      "customer": "Tesla",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "General Motors is making a major change to its electric vehicles: every GM EV for the 2027 model year will get a native North American Charging Standard (NACS) port. Chevrolet, Cadillac and GMC models will all make the switch, allowing drivers to connect directly to compatible Tesla Superchargers an"
-    },
-    {
-      "title": "Galaxy S27 Ultra gearing up to fight the fastest phones around",
-      "url": "https://www.phonearena.com/news/qualcomm-snapdragon-8-elite-gen-6-pro-benchmark_id182592",
-      "source": "PhoneArena",
+      "title": "Samsung Says Anthropic's Claude Code Slashes Chip Verification From Weeks to Days, With Caveats",
+      "url": "https://finance.biggo.com/news/4d436d6f-78b8-41df-8554-ea95a7b6bb06",
+      "source": "finance.biggo.com",
       "date": "2026-08-15",
       "vendor": "Qualcomm",
       "customer": "Samsung",
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "Galaxy S27 Ultra gearing up to fight the fastest phones around\nThe Qualcomm Snapdragon 8 Elite Gen 6 Pro is shaping up to be mighty fast.\nThere's a slim chance that the S27 Ultra will skip Qualcomm's best chip this year. | Image by PhoneArena\nCasual users might not care about benchmark scores, but p"
+      "summary": "Samsung Says Anthropic's Claude Code Slashes Chip Verification From Weeks to Days, With Caveats\nSamsung Electronics has begun deploying Anthropic's Claude Code across its semiconductor design and verification operations, reporting dramatic reductions in the time required for certain engineering task"
     },
     {
-      "title": "Android 17 QPR2 adds App lock to Pixel",
-      "url": "https://9to5google.com/2026/08/14/android-17-qpr2-app-lock/",
-      "source": "9to5Google",
-      "date": "2026-08-14",
+      "title": "Which Nvidia GPU Is Equivalent To The Xbox Series X?",
+      "url": "https://www.bgr.com/2233582/nvidia-gpu-equivalent-to-xbox-series-x/",
+      "source": "bgr.com",
+      "date": "2026-08-15",
       "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Besides visual changes, Android 17 QPR2 Beta 3 also introduces a native App lock feature to Pixel devices."
-    },
-    {
-      "title": "Google set to launch its answer to the AirTag with new Bluetooth tracker",
-      "url": "https://www.newstalkzb.co.nz/on-air/saturday-morning-with-jack-tame/audio/paul-stenhouse-googles-pixel-11-pixel-tag-and-translation-for-asl-australian-mans-ai-finds-holes-in-gym-booking-system/",
-      "source": "Newstalk ZB",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Asset Tracking",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Google set to launch its answer to the AirTag with new Bluetooth tracker\nGoogle's announced its latest gadgets at its \"Made by Google\" event\nThe Pixel 11 \u2013 it has the same phone wide camera bar, but it's 40% thinner. It's got more powerful wireless charging, it's 25% faster, and boasts 30+ hours of "
-    },
-    {
-      "title": "Android 17 QPR2 brings system blur to the Pixel lockscreen",
-      "url": "https://9to5google.com/2026/08/14/android-17-qpr2-pixel-lockscreen-blur/",
-      "source": "9to5Google",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The interface changes in Android 17 QPR2 Beta 3 continue with more blur for the Pixel lockscreen."
-    },
-    {
-      "title": "Android 17 QPR2 lets you customize Pixel Quick Settings layout",
-      "url": "https://9to5google.com/2026/08/14/customize-pixel-quick-settings/",
-      "source": "9to5Google",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The surprise Friday drop of Android 17 QPR2 lets you customize the layout of the Quick Settings shade on Pixel. This editor was introduced in the latest Android Canary build for a relatively short turnaround."
-    },
-    {
-      "title": "Android 17 QPR2 greatly expands Dynamic Color theming on Pixel",
-      "url": "https://9to5google.com/2026/08/14/android-17-qpr2-dynamic-color/",
-      "source": "9to5Google",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "With Android 17 QPR2 Beta 3\u2019s surprise Friday drop, Google is introducing expanded Dynamic Color theming options for Pixel devices."
-    },
-    {
-      "title": "Mets vs. Nationals: Lineups, broadcast info, and open thread, 8/14/26",
-      "url": "https://www.amazinavenue.com/new-york-mets-discussion/99448/mets-vs-nationals-lineups-broadcast-info-and-open-thread-8-14-26-how-to-watch-new-york-washington",
-      "source": "Amazin' Avenue",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Mets vs. Nationals: Lineups, broadcast info, and open thread, 8/14/26\nThe Mets open up a new series at home against the Nationals.\n- AJ Ewing - LF\n- Francisco Lindor - SS\n- Bo Bichette - 3B\n- Luis Robert - CF\n- Carson Benge - RF\n- Francisco Alvarez - DH\n- Marcus Semien - 2B\n- Jared Young - 1B\n- Luis"
-    },
-    {
-      "title": "Android 17 QPR2 Beta 3 for Pixel rolling out",
-      "url": "https://9to5google.com/2026/08/14/android-17-qpr2-beta-3-pixel/",
-      "source": "9to5Google",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Following the last release at the start of last week, Google is rolling out Android 17 QPR2 Beta 3 for Pixel devices in a rare Friday drop. So far, it is the biggest update this cycle."
-    },
-    {
-      "title": "BigBear.ai vs. Texas Instruments: Which Technology Stock Is a Better Buy in 2026?",
-      "url": "https://www.fool.com/coverage/better-buy/2026/08/14/bigbearai-vs-texas-instruments-which-technology-stock-is-a-better-buy-in-2026/",
-      "source": "The Motley Fool",
-      "date": "2026-08-14",
-      "vendor": "TI",
-      "customer": null,
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Investors often choose between speculative high-growth software and established hardware giants. Today we compare BigBear.ai (BBAI -2.10%) and Texas Instruments (TXN +2.25%) to see which path offers the best opportunity right now.\nBigBear.ai provides specialized intelligence software primarily for g"
-    },
-    {
-      "title": "Low-Power Bluetooth Chips: Silicon Labs Introduced Its Bluetooth Low Energy System-On-Chip",
-      "url": "https://www.trendhunter.com/trends/Bluetooth-Low-Energy",
-      "source": "Trend Hunter",
-      "date": "2026-08-14",
-      "vendor": "Silicon Labs",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Silicon Labs introduced the BG2B, a Series 2 Bluetooth Low Energy system-on-chip designed for compact, battery-powered IoT devices. The chip uses the company\u2019s lowest-power Bluetooth architecture to support longer battery life while integrating Secure Vault security and advanced Bluetooth Channel So"
-    },
-    {
-      "title": "Apple adds new MacBook Air configs, iPhone 16 Plus models, more to refurb store",
-      "url": "https://9to5mac.com/2026/08/14/apple-adds-new-macbook-air-iphone-16-plus-refurb-store/",
-      "source": "9to5Mac",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple has expanded its Certified Refurbished Store this week with a handful of new MacBook Air and MacBook Pro configurations. It also includes unique iPhone 16 Plus models, Apple Watch, and more."
-    },
-    {
-      "title": "NXP Semiconductors N.V. stock outperforms competitors on strong trading day",
-      "url": "https://www.marketwatch.com/data-news/nxp-semiconductors-n-v-stock-outperforms-competitors-on-strong-trading-day-7ef42064-f88149e623f7",
-      "source": "MarketWatch",
-      "date": "2026-08-14",
-      "vendor": "NXP",
-      "customer": null,
+      "customer": "Microsoft",
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "Which Nvidia GPU Is Equivalent To The Xbox Series X?\nThe Xbox Series X is one of the most powerful video game consoles ever made, but the GPU inside isn't that different from the type that goes in a PC. Its GPU instead is based on AMD's Radeon RX 6800, and in real-world gaming, the Xbox performs mos"
     },
     {
-      "title": "Pixelated 112: Mid by Google",
-      "url": "https://9to5google.com/2026/08/14/pixelated-112-mid-by-google/",
-      "source": "9to5Google",
-      "date": "2026-08-14",
-      "vendor": null,
+      "title": "\u2018The Qualcomm chipset offers very good performance for still image processing, but for video, it\u2019s not good enough\u2019: Honor explains why it created a dedicated imaging chipset for its gimbal-equipped Robot Phone",
+      "url": "https://www.techradar.com/phones/honor-phones/the-qualcomm-chipset-offers-very-good-performance-for-still-image-processing-but-for-video-its-not-good-enough-honor-explains-why-it-created-a-dedicated-imaging-chipset-for-its-gimbal-equipped-robot-phone",
+      "source": "TechRadar",
+      "date": "2026-08-15",
+      "vendor": "Qualcomm",
       "customer": "Apple",
-      "application": "Automotive",
+      "application": "Robotics",
       "buckets": [],
-      "summary": "Welcome to Pixelated episode 112. This week, Damien, Abner, and Will share their early impressions of the Pixel 11 series, offer a full breakdown of the actual Made by Google event, and share some big picture thoughts on the future of Pixel hardware inspired by this HiLight ad. Enjoy the episode? Yo"
+      "summary": "\u2018The Qualcomm chipset offers very good performance for still image processing, but for video, it\u2019s not good enough\u2019: Honor explains why it created a dedicated imaging chipset for its gimbal-equipped Robot Phone\nWriting about chipsets can be a bit like watching paint dry. These tiny mobile brains get"
     },
     {
-      "title": "Humanoid Robots, Simplifying Embedded System Design, Photonic IC Development: Embedded Week Insights",
-      "url": "https://www.embedded.com/humanoid-robots-simplifying-embedded-system-design-photonic-ic-development-embedded-week-insights/?utm_source=eetimes&utm_medium=latestnews&_ga=2.123933066.1671528438.1644750094-1204887681.1597044287",
-      "source": "embedded.com",
-      "date": "2026-08-14",
+      "title": "Nigma Galaxy upset Team Spirit to reach The International 2026 Playoffs",
+      "url": "https://www.gosugamers.net/dota2/news/78977-nigma-galaxy-upset-team-spirit-to-reach-the-international-2026-playoffs",
+      "source": "GosuGamers",
+      "date": "2026-08-15",
       "vendor": null,
-      "customer": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "After upsetting Team Spirit, Nigma Galaxy become one of the three teams to qualify directly to The International 2026 Playoffs.\nFan-favourites Nigma Galaxy have successfully booked a direct berth to The International (TI) 2026 Playoffs, sweeping Team Spirit in a stunning 2-0 victory in the final rou"
+    },
+    {
+      "title": "AI infrastructure spending is splitting the semiconductor sector in two",
+      "url": "https://www.marketscale.com/industries/software-and-technology/ai-infrastructure-spending-is-splitting-the-semiconductor-sector-in-two",
+      "source": "MarketScale",
+      "date": "2026-08-15",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "ChatGPT subscribers can now open and edit Google Drive files from inside the chat",
-      "url": "https://9to5mac.com/2026/08/14/chatgpt-subscribers-can-now-open-and-edit-google-drive-files-from-inside-the-chat/",
-      "source": "9to5Mac",
-      "date": "2026-08-14",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "ChatGPT is rolling out a deeper integration with Google Drive, allowing users to add Google Drive files to their ChatGPT Library and edit documents without leaving the chat. Here are the details."
+      "summary": "AI infrastructure spending is splitting the semiconductor sector in two\nSamsung's semiconductor division experienced a significant profit surge despite general challenges in the smartphone sector faced by companies like Qualcomm and Arm. The demand gap between consumer and enterprise hardware is wid"
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 115,
-    "NXP": 44,
-    "Nordic": 26,
-    "Silicon Labs": 20,
-    "TI": 15,
+    "Qualcomm": 113,
+    "NXP": 41,
+    "Nordic": 18,
+    "Silicon Labs": 15,
+    "TI": 14,
     "MediaTek": 11,
-    "Espressif": 9,
-    "Broadcom": 4,
+    "Espressif": 10,
     "Marvell": 3,
     "Realtek": 3,
-    "Infineon": 3,
+    "Broadcom": 3,
     "Quectel": 2,
+    "Infineon": 2,
     "Skyworks": 1,
-    "LG Innotek": 1,
+    "Microchip": 1,
     "WCH": 1,
     "Atmosic": 1,
-    "Qorvo": 1,
-    "Sequans": 1,
-    "Renesas": 1,
     "Murata": 1,
     "Synaptics": 1,
-    "UNISOC": 1,
-    "Microchip": 1,
     "u-blox": 1
   },
   "customer_news_30d": {
-    "Apple": 163,
-    "Google": 157,
-    "Samsung": 37,
-    "Microsoft": 21,
-    "Amazon": 20,
-    "Sony": 6,
-    "Meta": 4,
-    "BMW": 4,
-    "Tesla": 3,
-    "Volkswagen": 3,
-    "Motorola": 1,
-    "LG": 1,
+    "Google": 165,
+    "Apple": 157,
+    "Samsung": 34,
+    "Microsoft": 25,
+    "Amazon": 22,
+    "Sony": 7,
+    "Meta": 3,
+    "BMW": 3,
+    "Motorola": 2,
+    "Xiaomi": 1,
     "Philips Hue": 1,
-    "HKMC": 1,
-    "Toyota": 1,
+    "Tesla": 1,
     "Sonos": 1,
-    "Bose": 1,
-    "Huawei": 1,
-    "Xiaomi": 1
+    "Eufy/Anker": 1,
+    "Bose": 1
   },
   "github_pulse": [
     {
@@ -516,7 +506,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1674,
+      "issues_open": 1680,
       "prs_open": 0,
       "releases": [
         {
@@ -538,7 +528,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18782,
+      "stars": 18791,
       "pushed_at": "2026-08-13T17:38:42Z"
     },
     {
@@ -550,7 +540,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3837,
+      "issues_open": 3828,
       "prs_open": 0,
       "releases": [
         {
@@ -572,42 +562,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16213,
-      "pushed_at": "2026-08-15T13:03:35Z"
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 100,
-      "issues_open": 169,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v2026.08.0",
-          "name": "OpenThread v2026.08.0",
-          "published_at": "2026-08-01T00:40:26Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
-        },
-        {
-          "tag": "v2026.07.0",
-          "name": "OpenThread v2026.07.0",
-          "published_at": "2026-07-01T00:58:53Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
-        },
-        {
-          "tag": "v2026.06.0",
-          "name": "OpenThread v2026.06.0",
-          "published_at": "2026-06-01T01:01:04Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
-        }
-      ],
-      "stars": 4013,
-      "pushed_at": "2026-08-13T17:52:07Z"
+      "stars": 16223,
+      "pushed_at": "2026-08-16T05:33:51Z"
     },
     {
       "name": "Linux mac80211",
@@ -621,8 +577,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 242904,
-      "pushed_at": "2026-08-15T04:58:55Z"
+      "stars": 243008,
+      "pushed_at": "2026-08-15T16:00:10Z"
     },
     {
       "name": "Matter SDK",
@@ -633,7 +589,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2774,
+      "issues_open": 2777,
       "prs_open": 0,
       "releases": [
         {
@@ -655,8 +611,42 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8870,
-      "pushed_at": "2026-08-15T00:53:29Z"
+      "stars": 8871,
+      "pushed_at": "2026-08-16T00:46:56Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 93,
+      "issues_open": 170,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.08.0",
+          "name": "OpenThread v2026.08.0",
+          "published_at": "2026-08-01T00:40:26Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
+        },
+        {
+          "tag": "v2026.07.0",
+          "name": "OpenThread v2026.07.0",
+          "published_at": "2026-07-01T00:58:53Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+        },
+        {
+          "tag": "v2026.06.0",
+          "name": "OpenThread v2026.06.0",
+          "published_at": "2026-06-01T01:01:04Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+        }
+      ],
+      "stars": 4014,
+      "pushed_at": "2026-08-13T17:52:07Z"
     },
     {
       "name": "BlueZ",
@@ -666,7 +656,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 50,
+      "commits_30d": 46,
       "issues_open": 116,
       "prs_open": 0,
       "releases": [
@@ -690,7 +680,7 @@
         }
       ],
       "stars": 1130,
-      "pushed_at": "2026-08-14T23:10:45Z"
+      "pushed_at": "2026-08-16T07:56:50Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -700,8 +690,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 30,
-      "issues_open": 465,
+      "commits_30d": 28,
+      "issues_open": 469,
       "prs_open": 0,
       "releases": [
         {
@@ -723,7 +713,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15499,
+      "stars": 15500,
       "pushed_at": "2026-08-14T19:20:07Z"
     },
     {
@@ -856,6 +846,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "10-Q",
+      "date": "2026-07-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "8-K",
@@ -863,11 +860,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
+      "vendor": "Apple",
+      "ticker": "AAPL",
       "form": "10-Q",
       "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
     },
     {
       "vendor": "Sequans",
@@ -886,16 +883,16 @@
     {
       "vendor": "Apple",
       "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
-    },
-    {
-      "vendor": "Apple",
-      "ticker": "AAPL",
       "form": "8-K",
       "date": "2026-07-30",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
+    },
+    {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -910,13 +907,6 @@
       "form": "8-K",
       "date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom-20260729.htm"
-    },
-    {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-07-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
     },
     {
       "vendor": "Skyworks",
@@ -1038,18 +1028,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
     },
     {
-      "vendor": "Marvell",
-      "ticker": "MRVL",
-      "form": "8-K",
-      "date": "2026-06-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
-    },
-    {
       "vendor": "Broadcom",
       "ticker": "AVGO",
       "form": "8-K",
       "date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526266777/d152717d8k.htm"
+    },
+    {
+      "vendor": "Marvell",
+      "ticker": "MRVL",
+      "form": "8-K",
+      "date": "2026-06-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526267688/d151562d8k.htm"
     },
     {
       "vendor": "Broadcom",
@@ -4078,6 +4068,11 @@
           "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-launches-tri-radio-module-that-delivers-the-latest-wireless-technologies-for-iot-implementation-941502"
         },
         {
+          "title": "u-blox Secures Significant Project Wins in the Robotic Lawnmower Market With its High-Precision Positioning Technology",
+          "date": "Aug 2026",
+          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-secures-significant-project-wins-in-the-robotic-lawnmower-market-with-its-high-precision-positi-856456"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -4101,11 +4096,6 @@
           "title": "U-blox Unwraps Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
-        },
-        {
-          "title": "u-blox Launches MAYA-W5 and NORA-W5 Wi-Fi 6 Module Families",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         }
       ]
     },

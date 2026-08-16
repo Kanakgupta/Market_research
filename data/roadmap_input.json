@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T13:11:18Z",
+  "generated_at": "2026-08-16T13:08:14Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2952,6 +2952,11 @@
           "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-launches-tri-radio-module-that-delivers-the-latest-wireless-technologies-for-iot-implementation-941502"
         },
         {
+          "title": "u-blox Secures Significant Project Wins in the Robotic Lawnmower Market With its High-Precision Positioning Technology",
+          "date": "Aug 2026",
+          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-secures-significant-project-wins-in-the-robotic-lawnmower-market-with-its-high-precision-positi-856456"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -2975,11 +2980,6 @@
           "title": "U-blox Unwraps Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
-        },
-        {
-          "title": "u-blox Launches MAYA-W5 and NORA-W5 Wi-Fi 6 Module Families",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         }
       ]
     },
@@ -3734,29 +3734,24 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 115,
-    "NXP": 44,
-    "Nordic": 26,
-    "Silicon Labs": 20,
-    "TI": 15,
+    "Qualcomm": 113,
+    "NXP": 41,
+    "Nordic": 18,
+    "Silicon Labs": 15,
+    "TI": 14,
     "MediaTek": 11,
-    "Espressif": 9,
-    "Broadcom": 4,
+    "Espressif": 10,
     "Marvell": 3,
     "Realtek": 3,
-    "Infineon": 3,
+    "Broadcom": 3,
     "Quectel": 2,
+    "Infineon": 2,
     "Skyworks": 1,
-    "LG Innotek": 1,
+    "Microchip": 1,
     "WCH": 1,
     "Atmosic": 1,
-    "Qorvo": 1,
-    "Sequans": 1,
-    "Renesas": 1,
     "Murata": 1,
     "Synaptics": 1,
-    "UNISOC": 1,
-    "Microchip": 1,
     "u-blox": 1
   },
   "standards_in_flight": [
@@ -3840,7 +3835,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1674,
+      "issues_open": 1680,
       "prs_open": 0,
       "releases": [
         {
@@ -3862,7 +3857,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18782,
+      "stars": 18791,
       "pushed_at": "2026-08-13T17:38:42Z"
     },
     {
@@ -3874,7 +3869,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3837,
+      "issues_open": 3828,
       "prs_open": 0,
       "releases": [
         {
@@ -3896,42 +3891,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16213,
-      "pushed_at": "2026-08-15T13:03:35Z"
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 100,
-      "issues_open": 169,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v2026.08.0",
-          "name": "OpenThread v2026.08.0",
-          "published_at": "2026-08-01T00:40:26Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
-        },
-        {
-          "tag": "v2026.07.0",
-          "name": "OpenThread v2026.07.0",
-          "published_at": "2026-07-01T00:58:53Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
-        },
-        {
-          "tag": "v2026.06.0",
-          "name": "OpenThread v2026.06.0",
-          "published_at": "2026-06-01T01:01:04Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
-        }
-      ],
-      "stars": 4013,
-      "pushed_at": "2026-08-13T17:52:07Z"
+      "stars": 16223,
+      "pushed_at": "2026-08-16T05:33:51Z"
     },
     {
       "name": "Linux mac80211",
@@ -3945,8 +3906,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 242904,
-      "pushed_at": "2026-08-15T04:58:55Z"
+      "stars": 243008,
+      "pushed_at": "2026-08-15T16:00:10Z"
     },
     {
       "name": "Matter SDK",
@@ -3957,7 +3918,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2774,
+      "issues_open": 2777,
       "prs_open": 0,
       "releases": [
         {
@@ -3979,8 +3940,42 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8870,
-      "pushed_at": "2026-08-15T00:53:29Z"
+      "stars": 8871,
+      "pushed_at": "2026-08-16T00:46:56Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 93,
+      "issues_open": 170,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.08.0",
+          "name": "OpenThread v2026.08.0",
+          "published_at": "2026-08-01T00:40:26Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
+        },
+        {
+          "tag": "v2026.07.0",
+          "name": "OpenThread v2026.07.0",
+          "published_at": "2026-07-01T00:58:53Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
+        },
+        {
+          "tag": "v2026.06.0",
+          "name": "OpenThread v2026.06.0",
+          "published_at": "2026-06-01T01:01:04Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
+        }
+      ],
+      "stars": 4014,
+      "pushed_at": "2026-08-13T17:52:07Z"
     },
     {
       "name": "BlueZ",
@@ -3990,7 +3985,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 50,
+      "commits_30d": 46,
       "issues_open": 116,
       "prs_open": 0,
       "releases": [
@@ -4014,7 +4009,7 @@
         }
       ],
       "stars": 1130,
-      "pushed_at": "2026-08-14T23:10:45Z"
+      "pushed_at": "2026-08-16T07:56:50Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4024,8 +4019,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 30,
-      "issues_open": 465,
+      "commits_30d": 28,
+      "issues_open": 469,
       "prs_open": 0,
       "releases": [
         {
@@ -4047,7 +4042,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15499,
+      "stars": 15500,
       "pushed_at": "2026-08-14T19:20:07Z"
     },
     {
