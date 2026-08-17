@@ -132,6 +132,11 @@ a:hover { text-decoration:underline; }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
 .news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
 .news-main { min-width:0; }
+/* News mode toggle */
+.news-mode-wrap { display:inline-flex; align-items:center; gap:6px; margin-left:14px; vertical-align:middle; }
+.news-mode-btn { padding:4px 14px; font-size:12px; font-weight:700; border:1.5px solid var(--border); background:#f1f5f9; color:#334155; border-radius:20px; cursor:pointer; transition:all .15s; line-height:1.4; }
+.news-mode-btn:hover { background:#e2e8f0; }
+.news-mode-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 
 .chat-wrap { max-width:900px; margin:0 auto; padding:18px 20px 40px; }
 .chat-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
@@ -171,12 +176,16 @@ a:hover { text-decoration:underline; }
 .chat-chips { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 14px; }
 .chat-chips button { background:#fff; border:1px solid var(--border); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--text); cursor:pointer; }
 .chat-chips button:hover { border-color:var(--accent); color:var(--accent); }
+.chat-source-bar { display:flex; gap:18px; align-items:center; padding:8px 2px 2px; flex-wrap:wrap; }
+.chat-source-bar .src-label { font-size:11.5px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-right:4px; }
+.chat-source-bar label { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#334155; cursor:pointer; user-select:none; }
+.chat-source-bar input[type=checkbox] { width:15px; height:15px; accent-color:var(--accent); cursor:pointer; }
 
 </style>
 
 <script id="password-gate-v1">
 (function(){
-  var KEY='site_unlock_v1';
+  var KEY='airoc_unlock_v1';
   var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
   function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
@@ -228,7 +237,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="">News</a>
     <a href="chat.html" class="nav-chat active">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-17 06:09 PDT</div>
+  <div class="meta-info">Updated 2026-08-17 14:18 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -254,6 +263,12 @@ a:hover { text-decoration:underline; }
   <div class="chat-input">
     <textarea id="q" placeholder="Ask about companies, chips, standards, applications, news..." rows="1"></textarea>
     <button id="send">Send</button>
+  </div>
+
+  <div class="chat-source-bar">
+    <span class="src-label">Search:</span>
+    <label><input type="checkbox" id="srcWebsite" checked> 🌐 Website</label>
+    <label><input type="checkbox" id="srcInternet"> 🔍 Internet</label>
   </div>
 
   <details class="chat-settings" id="settings">
@@ -585,6 +600,43 @@ a:hover { text-decoration:underline; }
     return parts.join('');
   }
 
+  function callGeminiInternet(query, websiteContext){
+    var key=getKey();
+    if(!key) return Promise.reject(new Error('A Gemini API key is required for Internet search. Add one in AI Settings below.'));
+    var models=resolveModelChain(getModel());
+    var userText = websiteContext
+      ? ('WEBSITE CONTEXT (from ' + SITE_NAME + '):\n' + websiteContext + '\n\n---\nQUESTION: ' + query + '\n\nAlso search the internet to supplement the website information. Combine both sources into a comprehensive, well-structured answer. Clearly indicate when information comes from the website vs the internet.')
+      : ('You are an AI research assistant specialising in IoT wireless technology. Answer the following question thoroughly using your Google Search grounding. Structure your answer clearly.\n\nQUESTION: ' + query);
+    var body={
+      contents:[{ role:'user', parts:[{ text: userText }] }],
+      tools:[{ googleSearch:{} }],
+      generationConfig:{ temperature:0.2, maxOutputTokens:1500 }
+    };
+    function tryModel(idx, lastErr){
+      if(idx >= models.length) throw lastErr || new Error('No Gemini model could handle the internet search.');
+      var model=models[idx];
+      var url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key);
+      return fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) })
+        .then(function(res){ return res.json().then(function(j){ return {ok:res.ok, status:res.status, j:j}; }); })
+        .then(function(r){
+          if(!r.ok){ var em=(r.j&&r.j.error&&r.j.error.message)?r.j.error.message:('HTTP '+r.status); throw new Error(em); }
+          var cand=(r.j.candidates&&r.j.candidates[0])||null;
+          var parts=cand&&cand.content&&cand.content.parts?cand.content.parts:[];
+          var text=parts.map(function(p){ return p.text||''; }).join('').trim();
+          if(!text) throw new Error('Empty response from model.');
+          return text;
+        })
+        .catch(function(err){ return tryModel(idx+1, err); });
+    }
+    return tryModel(0, null);
+  }
+
+  function getSourceMode(){
+    var web=document.getElementById('srcWebsite');
+    var inet=document.getElementById('srcInternet');
+    return { website: web ? web.checked : true, internet: inet ? inet.checked : false };
+  }
+
   function ask(query){
     if(BUSY) return;
     if(!query || !query.trim()) return;
@@ -592,11 +644,59 @@ a:hover { text-decoration:underline; }
     addMsg('user', '<p>'+esc(query)+'</p>');
     qEl.value=''; autoGrow();
     BUSY=true; sendEl.disabled=true;
-    var thinking=addMsg('bot', '<span class="chat-typing">Searching the site…</span>');
 
+    var mode=getSourceMode();
+    var useWebsite=mode.website, useInternet=mode.internet;
+    if(!useWebsite && !useInternet) useWebsite=true;
+
+    if(useInternet && !getKey()){
+      var th=addMsg('bot', '');
+      th.innerHTML='<p style="color:#b45309">⚠️ A Gemini API key is required for Internet search. Add one in ⚙️ AI Settings below.</p>';
+      BUSY=false; sendEl.disabled=false; return;
+    }
+
+    if(useInternet && !useWebsite){
+      var thinking=addMsg('bot', '<span class="chat-typing">Searching the internet…</span>');
+      callGeminiInternet(query, null).then(function(text){
+        thinking.innerHTML=mdToHtml(text);
+        var badge=document.createElement('div'); badge.className='chat-sources'; badge.innerHTML='Source: 🔍 Internet (Google Search grounding)';
+        thinking.appendChild(badge);
+      }).catch(function(err){
+        thinking.innerHTML='<p style="color:#b45309">Internet search error: '+esc(err.message||String(err))+'</p>';
+      }).then(function(){ BUSY=false; sendEl.disabled=false; });
+      return;
+    }
+
+    var thinking=addMsg('bot', '<span class="chat-typing">Searching the site…</span>');
     var run=function(){
       var recs=search(query, 8);
       var srcHtml=sourceChips(recs);
+
+      if(useInternet){
+        thinking.innerHTML='<span class="chat-typing">Combining website + internet…</span>';
+        var websiteCtx='';
+        if(recs.length){
+          var budget=4000; var pieces=[];
+          for(var i=0;i<recs.length;i++){
+            var r=recs[i];
+            var piece='['+pageLabel(r)+' — '+r.p+']\n'+r.x+'\n';
+            if(budget-piece.length<0) break;
+            budget-=piece.length; pieces.push(piece);
+          }
+          websiteCtx=pieces.join('\n');
+        }
+        callGeminiInternet(query, websiteCtx).then(function(text){
+          thinking.innerHTML=mdToHtml(text);
+          var badge=document.createElement('div'); badge.className='chat-sources';
+          badge.innerHTML=(srcHtml ? srcHtml+' &nbsp;·&nbsp; ' : '')+'🔍 Internet (Google Search grounding)';
+          thinking.appendChild(badge);
+        }).catch(function(err){
+          thinking.innerHTML='<p style="color:#b45309">Combined search error: '+esc(err.message||String(err))+'</p>';
+          if(recs.length){ var fb=document.createElement('div'); fb.innerHTML=localAnswer(query,recs); thinking.appendChild(fb); }
+        }).then(function(){ BUSY=false; sendEl.disabled=false; });
+        return;
+      }
+
       if(getKey() && recs.length){
         thinking.innerHTML='<span class="chat-typing">Thinking…</span>';
         callGemini(query, recs).then(function(text){

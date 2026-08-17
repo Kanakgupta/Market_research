@@ -249,6 +249,11 @@ a:hover { text-decoration:underline; }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
 .news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
 .news-main { min-width:0; }
+/* News mode toggle */
+.news-mode-wrap { display:inline-flex; align-items:center; gap:6px; margin-left:14px; vertical-align:middle; }
+.news-mode-btn { padding:4px 14px; font-size:12px; font-weight:700; border:1.5px solid var(--border); background:#f1f5f9; color:#334155; border-radius:20px; cursor:pointer; transition:all .15s; line-height:1.4; }
+.news-mode-btn:hover { background:#e2e8f0; }
+.news-mode-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 """
 
 # Client-side password gate injected into every generated page.
@@ -355,7 +360,10 @@ _NEWS_TEMPLATE = """<!doctype html>
 
 <main class="wrap content">
 <section class="hero">
-  <h1>{{ page_title }}</h1>
+  <h1>{{ page_title }}{% if page_title == 'All News' %} <span class="news-mode-wrap">
+    <button class="news-mode-btn active" id="modeBtnTech" onclick="setNewsMode('tech')">Tech News</button>
+    <button class="news-mode-btn" id="modeBtnAll" onclick="setNewsMode('all')">All News</button>
+  </span>{% endif %}</h1>
   {% if page_title != 'All News' %}
   <p>{{ page_desc }}</p>
   {% endif %}
@@ -479,6 +487,7 @@ document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(
 
 let techFilter = 'all';
 let sideFilter = { type: 'all', value: '' };
+let newsMode = 'tech';
 const STANDARDS_BODY_DAYS = 180;
 const STANDARDS_TECH_DAYS = 15;
 
@@ -519,7 +528,8 @@ function applyFilters(){
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
     else if (sideFilter.type === 'standard') sideOk = matchesStandardsScope(card, sideFilter.value || '');
-    const show = techOk && sideOk;
+    const modeOk = newsMode === 'all' || card.dataset.isTech === '1';
+    const show = techOk && sideOk && modeOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
   });
@@ -532,7 +542,9 @@ function updateSidebarCounts(){
   const activeCards = [];
   cards.forEach(card => {
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
-    if (techFilter === 'all' || buckets.includes(techFilter)) activeCards.push(card);
+    const techOk = techFilter === 'all' || buckets.includes(techFilter);
+    const modeOk = newsMode === 'all' || card.dataset.isTech === '1';
+    if (techOk && modeOk) activeCards.push(card);
   });
 
   const vendorCounts = Object.create(null);
@@ -593,6 +605,28 @@ function filterBySideFromButton(btn) {
   applyFilters();
 }
 
+const TECH_NEWS_SOURCES = new Set([
+  'The Verge','Ars Technica','TechCrunch','The Register','Wired','WIRED',
+  'Engadget','9to5Google','9to5Mac','IEEE Spectrum','EE Times','CNX Software',
+  'ZDNet','Bluetooth SIG','Bluetooth SIG Blog','CSA / Matter','CSA/Matter',
+]);
+
+function initNewsModeMarkers(){
+  document.querySelectorAll('#grid .card').forEach(card => {
+    const srcEl = card.querySelector('.source');
+    const src = srcEl ? srcEl.textContent.trim() : '';
+    if(TECH_NEWS_SOURCES.has(src)) card.dataset.isTech = '1';
+  });
+}
+
+function setNewsMode(mode){
+  newsMode = mode;
+  document.getElementById('modeBtnTech').classList.toggle('active', mode === 'tech');
+  document.getElementById('modeBtnAll').classList.toggle('active', mode === 'all');
+  updateSidebarCounts();
+  applyFilters();
+}
+
 function toggleNewsSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -637,6 +671,7 @@ async function loadNews(){
     if (!Array.isArray(data) || !data.length) return;
     grid.innerHTML = data.map(cardHtml).join('');
     document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    initNewsModeMarkers();
     updateSidebarCounts();
     applyFilters();
   } catch (e) {
@@ -707,6 +742,8 @@ async function refreshNews(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  initNewsModeMarkers();
+  applyFilters();
   updateSidebarCounts();
   const btn = document.getElementById('refreshBtn');
   if (btn && !isLocalBackend()) {
@@ -3137,6 +3174,10 @@ _CHAT_TEMPLATE_FALLBACK = """<!doctype html>
 .chat-chips { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 14px; }
 .chat-chips button { background:#fff; border:1px solid var(--border); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--text); cursor:pointer; }
 .chat-chips button:hover { border-color:var(--accent); color:var(--accent); }
+.chat-source-bar { display:flex; gap:18px; align-items:center; padding:8px 2px 2px; flex-wrap:wrap; }
+.chat-source-bar .src-label { font-size:11.5px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-right:4px; }
+.chat-source-bar label { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#334155; cursor:pointer; user-select:none; }
+.chat-source-bar input[type=checkbox] { width:15px; height:15px; accent-color:var(--accent); cursor:pointer; }
 </style>
 """ + _PASSWORD_GATE_HTML + """
 </head><body>
@@ -3180,6 +3221,12 @@ _CHAT_TEMPLATE_FALLBACK = """<!doctype html>
   <div class="chat-input">
     <textarea id="q" placeholder="Ask about companies, chips, standards, applications, news..." rows="1"></textarea>
     <button id="send">Send</button>
+  </div>
+
+  <div class="chat-source-bar">
+    <span class="src-label">Search:</span>
+    <label><input type="checkbox" id="srcWebsite" checked> \U0001f310 Website</label>
+    <label><input type="checkbox" id="srcInternet"> \U0001f50d Internet</label>
   </div>
 </main>
 
@@ -3344,6 +3391,33 @@ _CHAT_TEMPLATE_FALLBACK = """<!doctype html>
     return parts.join('');
   }
 
+  function callGeminiInternet(query, websiteContext){
+    var key=getKey();
+    if(!key) return Promise.reject(new Error('A Gemini API key is required for Internet search. Add one in AI Settings above.'));
+    var model=getModel();
+    var userText = websiteContext
+      ? ('WEBSITE CONTEXT:\\n' + websiteContext + '\\n\\n---\\nQUESTION: ' + query + '\\n\\nAlso search the internet to supplement the website information. Combine both sources into a comprehensive answer.')
+      : ('You are an AI research assistant specialising in IoT wireless technology. Answer the following question using Google Search grounding.\\n\\nQUESTION: ' + query);
+    var url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key);
+    var body={ contents:[{ role:'user', parts:[{ text: userText }] }], tools:[{ googleSearch:{} }], generationConfig:{ temperature:0.2, maxOutputTokens:1500 } };
+    return fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) })
+      .then(function(res){ return res.json().then(function(j){ return {ok:res.ok, status:res.status, j:j}; }); })
+      .then(function(r){
+        if(!r.ok){ var em=(r.j&&r.j.error&&r.j.error.message)?r.j.error.message:('HTTP '+r.status); throw new Error(em); }
+        var cand=(r.j.candidates&&r.j.candidates[0])||null;
+        var pts=cand&&cand.content&&cand.content.parts?cand.content.parts:[];
+        var text=pts.map(function(p){ return p.text||''; }).join('').trim();
+        if(!text) throw new Error('Empty response from model.');
+        return text;
+      });
+  }
+
+  function getSourceMode(){
+    var web=document.getElementById('srcWebsite');
+    var inet=document.getElementById('srcInternet');
+    return { website: web ? web.checked : true, internet: inet ? inet.checked : false };
+  }
+
   function ask(query){
     if(BUSY) return;
     if(!query || !query.trim()) return;
@@ -3351,11 +3425,60 @@ _CHAT_TEMPLATE_FALLBACK = """<!doctype html>
     addMsg('user', '<p>'+esc(query)+'</p>');
     qEl.value=''; autoGrow();
     BUSY=true; sendEl.disabled=true;
-    var thinking=addMsg('bot', '<span class="chat-typing">Searching the site\u2026</span>');
 
+    var mode=getSourceMode();
+    var useWebsite=mode.website, useInternet=mode.internet;
+    if(!useWebsite && !useInternet) useWebsite=true;
+
+    if(useInternet && !getKey()){
+      var th=addMsg('bot', '');
+      th.innerHTML='<p style="color:#b45309">\u26a0\ufe0f A Gemini API key is required for Internet search. Add one in AI Settings above.</p>';
+      BUSY=false; sendEl.disabled=false; return;
+    }
+
+    if(useInternet && !useWebsite){
+      var thinking=addMsg('bot', '<span class="chat-typing">Searching the internet\u2026</span>');
+      callGeminiInternet(query, null).then(function(text){
+        thinking.innerHTML=mdToHtml(text);
+        var badge=document.createElement('div'); badge.className='chat-sources'; badge.innerHTML='Source: \U0001f50d Internet (Google Search grounding)';
+        thinking.appendChild(badge);
+      }).catch(function(err){
+        thinking.innerHTML='<p style="color:#b45309">Internet search error: '+esc(err.message||String(err))+'</p>';
+      }).then(function(){ BUSY=false; sendEl.disabled=false; });
+      return;
+    }
+
+    var thinking=addMsg('bot', '<span class="chat-typing">Searching the site\u2026</span>');
     var run=function(){
       var recs=search(query, 8);
       var srcHtml=sourceChips(recs);
+
+      if(useInternet){
+        thinking.innerHTML='<span class="chat-typing">Combining website + internet\u2026</span>';
+        var websiteCtx='';
+        if(recs.length){
+          var budget=4000;
+          var pieces=[];
+          for(var i=0;i<recs.length;i++){
+            var r=recs[i];
+            var piece='['+pageTitle(r)+' \u2014 '+r.p+']\\n'+r.x+'\\n';
+            if(budget-piece.length<0) break;
+            budget-=piece.length; pieces.push(piece);
+          }
+          websiteCtx=pieces.join('\\n');
+        }
+        callGeminiInternet(query, websiteCtx).then(function(text){
+          thinking.innerHTML=mdToHtml(text);
+          var badge=document.createElement('div'); badge.className='chat-sources';
+          badge.innerHTML=(srcHtml ? srcHtml+' &nbsp;\u00b7&nbsp; ' : '')+'\U0001f50d Internet (Google Search grounding)';
+          thinking.appendChild(badge);
+        }).catch(function(err){
+          thinking.innerHTML='<p style="color:#b45309">Combined search error: '+esc(err.message||String(err))+'</p>';
+          if(recs.length){ var fb=document.createElement('div'); fb.innerHTML=localAnswer(query,recs); thinking.appendChild(fb); }
+        }).then(function(){ BUSY=false; sendEl.disabled=false; });
+        return;
+      }
+
       if(getKey() && recs.length){
         thinking.innerHTML='<span class="chat-typing">Thinking\u2026</span>';
         callGemini(query, recs).then(function(text){

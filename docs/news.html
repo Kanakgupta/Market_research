@@ -132,6 +132,11 @@ a:hover { text-decoration:underline; }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
 .news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
 .news-main { min-width:0; }
+/* News mode toggle */
+.news-mode-wrap { display:inline-flex; align-items:center; gap:6px; margin-left:14px; vertical-align:middle; }
+.news-mode-btn { padding:4px 14px; font-size:12px; font-weight:700; border:1.5px solid var(--border); background:#f1f5f9; color:#334155; border-radius:20px; cursor:pointer; transition:all .15s; line-height:1.4; }
+.news-mode-btn:hover { background:#e2e8f0; }
+.news-mode-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 </style>
 
 <script id="password-gate-v1">
@@ -210,7 +215,10 @@ a:hover { text-decoration:underline; }
 
 <main class="wrap content">
 <section class="hero">
-  <h1>All News</h1>
+  <h1>All News <span class="news-mode-wrap">
+    <button class="news-mode-btn active" id="modeBtnTech" onclick="setNewsMode('tech')">Tech News</button>
+    <button class="news-mode-btn" id="modeBtnAll" onclick="setNewsMode('all')">All News</button>
+  </span></h1>
   
   <div class="stats">
     
@@ -13989,6 +13997,7 @@ document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(
 
 let techFilter = 'all';
 let sideFilter = { type: 'all', value: '' };
+let newsMode = 'tech';
 const STANDARDS_BODY_DAYS = 180;
 const STANDARDS_TECH_DAYS = 15;
 
@@ -14029,7 +14038,8 @@ function applyFilters(){
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
     else if (sideFilter.type === 'standard') sideOk = matchesStandardsScope(card, sideFilter.value || '');
-    const show = techOk && sideOk;
+    const modeOk = newsMode === 'all' || card.dataset.isTech === '1';
+    const show = techOk && sideOk && modeOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
   });
@@ -14042,7 +14052,9 @@ function updateSidebarCounts(){
   const activeCards = [];
   cards.forEach(card => {
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
-    if (techFilter === 'all' || buckets.includes(techFilter)) activeCards.push(card);
+    const techOk = techFilter === 'all' || buckets.includes(techFilter);
+    const modeOk = newsMode === 'all' || card.dataset.isTech === '1';
+    if (techOk && modeOk) activeCards.push(card);
   });
 
   const vendorCounts = Object.create(null);
@@ -14103,6 +14115,28 @@ function filterBySideFromButton(btn) {
   applyFilters();
 }
 
+const TECH_NEWS_SOURCES = new Set([
+  'The Verge','Ars Technica','TechCrunch','The Register','Wired','WIRED',
+  'Engadget','9to5Google','9to5Mac','IEEE Spectrum','EE Times','CNX Software',
+  'ZDNet','Bluetooth SIG','Bluetooth SIG Blog','CSA / Matter','CSA/Matter',
+]);
+
+function initNewsModeMarkers(){
+  document.querySelectorAll('#grid .card').forEach(card => {
+    const srcEl = card.querySelector('.source');
+    const src = srcEl ? srcEl.textContent.trim() : '';
+    if(TECH_NEWS_SOURCES.has(src)) card.dataset.isTech = '1';
+  });
+}
+
+function setNewsMode(mode){
+  newsMode = mode;
+  document.getElementById('modeBtnTech').classList.toggle('active', mode === 'tech');
+  document.getElementById('modeBtnAll').classList.toggle('active', mode === 'all');
+  updateSidebarCounts();
+  applyFilters();
+}
+
 function toggleNewsSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -14147,6 +14181,7 @@ async function loadNews(){
     if (!Array.isArray(data) || !data.length) return;
     grid.innerHTML = data.map(cardHtml).join('');
     document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    initNewsModeMarkers();
     updateSidebarCounts();
     applyFilters();
   } catch (e) {
@@ -14217,6 +14252,8 @@ async function refreshNews(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  initNewsModeMarkers();
+  applyFilters();
   updateSidebarCounts();
   const btn = document.getElementById('refreshBtn');
   if (btn && !isLocalBackend()) {
