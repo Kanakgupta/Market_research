@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T13:08:14Z",
+  "generated_at": "2026-08-17T13:09:52Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3098,6 +3098,11 @@
       ],
       "press_releases": [
         {
+          "title": "Telink Launches TL3225 Family of Wireless SoCs for Automotive",
+          "date": "Aug 2026",
+          "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
+        },
+        {
           "title": "Telink Joins Alliance Board to Develop Global IoT Standard Ecosystem",
           "date": "Jul 2026",
           "url": ""
@@ -3734,25 +3739,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 113,
-    "NXP": 41,
-    "Nordic": 18,
-    "Silicon Labs": 15,
-    "TI": 14,
-    "MediaTek": 11,
-    "Espressif": 10,
-    "Marvell": 3,
+    "Qualcomm": 102,
+    "NXP": 44,
+    "Silicon Labs": 14,
+    "MediaTek": 12,
+    "Espressif": 9,
+    "Nordic": 9,
+    "TI": 8,
+    "Broadcom": 5,
     "Realtek": 3,
-    "Broadcom": 3,
+    "Telink": 2,
     "Quectel": 2,
-    "Infineon": 2,
-    "Skyworks": 1,
+    "Marvell": 2,
+    "Synaptics": 2,
+    "Apple": 1,
     "Microchip": 1,
+    "Skyworks": 1,
     "WCH": 1,
     "Atmosic": 1,
     "Murata": 1,
-    "Synaptics": 1,
-    "u-blox": 1
+    "Infineon": 1
   },
   "standards_in_flight": [
     {
@@ -3835,7 +3841,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1680,
+      "issues_open": 1681,
       "prs_open": 0,
       "releases": [
         {
@@ -3857,8 +3863,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18791,
-      "pushed_at": "2026-08-13T17:38:42Z"
+      "stars": 18798,
+      "pushed_at": "2026-08-17T02:48:39Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3869,7 +3875,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3828,
+      "issues_open": 3856,
       "prs_open": 0,
       "releases": [
         {
@@ -3891,23 +3897,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16223,
-      "pushed_at": "2026-08-16T05:33:51Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 243008,
-      "pushed_at": "2026-08-15T16:00:10Z"
+      "stars": 16229,
+      "pushed_at": "2026-08-17T12:18:37Z"
     },
     {
       "name": "Matter SDK",
@@ -3918,7 +3909,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2777,
+      "issues_open": 2782,
       "prs_open": 0,
       "releases": [
         {
@@ -3940,8 +3931,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8871,
-      "pushed_at": "2026-08-16T00:46:56Z"
+      "stars": 8874,
+      "pushed_at": "2026-08-17T00:49:56Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 242975,
+      "pushed_at": "2026-08-16T22:55:57Z"
     },
     {
       "name": "OpenThread",
@@ -3951,8 +3957,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 93,
-      "issues_open": 170,
+      "commits_30d": 92,
+      "issues_open": 172,
       "prs_open": 0,
       "releases": [
         {
@@ -3974,8 +3980,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4014,
-      "pushed_at": "2026-08-13T17:52:07Z"
+      "stars": 4015,
+      "pushed_at": "2026-08-17T09:34:26Z"
     },
     {
       "name": "BlueZ",
@@ -3986,7 +3992,7 @@
         "bluetooth"
       ],
       "commits_30d": 46,
-      "issues_open": 116,
+      "issues_open": 114,
       "prs_open": 0,
       "releases": [
         {
@@ -4008,8 +4014,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1130,
-      "pushed_at": "2026-08-16T07:56:50Z"
+      "stars": 1129,
+      "pushed_at": "2026-08-17T10:03:05Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4020,7 +4026,7 @@
         "ieee15_4"
       ],
       "commits_30d": 28,
-      "issues_open": 469,
+      "issues_open": 466,
       "prs_open": 0,
       "releases": [
         {
@@ -4042,7 +4048,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15500,
+      "stars": 15501,
       "pushed_at": "2026-08-14T19:20:07Z"
     },
     {
@@ -4054,7 +4060,7 @@
         "bluetooth"
       ],
       "commits_30d": 11,
-      "issues_open": 278,
+      "issues_open": 279,
       "prs_open": 0,
       "releases": [],
       "stars": 884,
