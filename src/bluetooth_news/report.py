@@ -1748,6 +1748,20 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 
 /* Companies / qualification table */
 .co-note { font-size:12.5px; color:#475569; margin:10px 2px 6px; line-height:1.6; }
+
+/* Zigbee editorial tutorial */
+.zigbee-summary { margin-top:12px; padding:24px; background:#081c2c; color:#f8fbff; border-radius:8px; box-shadow:0 18px 34px rgba(8,28,44,.2); }
+.zigbee-summary .summary-lead { margin:0; max-width:920px; color:#dceaf4; font-size:15px; line-height:1.7; }
+.zigbee-flow { display:grid; grid-template-columns:repeat(5, minmax(110px, 1fr)); gap:8px; margin:20px 0 18px; }
+.zigbee-flow .zf-block { min-height:92px; padding:12px; background:#0f3148; border:1px solid #286077; border-radius:6px; }
+.zigbee-flow .zf-block:nth-child(1) { border-color:#ffcf4a; }.zigbee-flow .zf-block:nth-child(2) { border-color:#32d5b2; }.zigbee-flow .zf-block:nth-child(3) { border-color:#66b8ff; }.zigbee-flow .zf-block:nth-child(4) { border-color:#f77c8e; }.zigbee-flow .zf-block:nth-child(5) { border-color:#c4a1ff; }
+.zf-block b { display:block; color:#fff; font-size:13px; }.zf-block span { display:block; margin-top:5px; color:#bcd2df; font-size:11.5px; line-height:1.45; }
+.zigbee-summary-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; }
+.zigbee-summary-grid article { padding:13px; background:#eef8f6; color:#12313d; border-left:4px solid #32d5b2; border-radius:4px; }.zigbee-summary-grid article:nth-child(2) { border-left-color:#ffcf4a; background:#fff8df; }.zigbee-summary-grid article:nth-child(3) { border-left-color:#f77c8e; background:#fff0f2; }
+.zigbee-summary-grid h3 { margin:0 0 5px; font-size:13px; }.zigbee-summary-grid p { margin:0; color:#3e5561; font-size:12px; line-height:1.55; }
+.role-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px; }.role-strip article { padding:13px; border:1px solid #2b5a72; border-radius:5px; background:#0c2840; }.role-strip h3 { margin:0 0 5px; font-size:13px; color:#ffdc6e; }.role-strip p { margin:0; color:#c7dce8; font-size:12px; line-height:1.55; }
+.zigbee-apps { display:grid; gap:14px; margin-top:12px; }.zigbee-app { overflow:hidden; border:1px solid #d7e3ec; border-radius:8px; background:#fff; }.zigbee-app-head { padding:15px 16px; background:#f1f8fa; border-bottom:1px solid #d7e3ec; }.zigbee-app-head h3 { margin:0; color:#0e3b51; font-size:16px; }.zigbee-app-diagram { display:flex; align-items:stretch; gap:7px; padding:14px 16px; background:#071e31; overflow-x:auto; }.zigbee-app-diagram span { flex:1 0 120px; position:relative; padding:9px; border:1px solid #36718a; border-radius:4px; color:#e8f7ff; font-size:12px; font-weight:700; text-align:center; }.zigbee-app-diagram span:not(:last-child)::after { content:'>'; position:absolute; right:-7px; top:50%; z-index:1; color:#ffcf4a; font-size:16px; transform:translateY(-50%); }.zigbee-app-copy { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:15px 16px; }.zigbee-app-copy div { font-size:12.5px; color:#405460; line-height:1.6; }.zigbee-app-copy b { display:block; color:#0e3b51; margin-bottom:4px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }.zigbee-app details { margin:0 16px 16px; padding:0 12px; border:1px solid #c4d9e3; border-radius:5px; background:#f7fbfc; }.zigbee-app summary { padding:10px 0; color:#075a70; cursor:pointer; font-size:12.5px; font-weight:800; }.zigbee-app details p { margin:0 0 12px; color:#405460; font-size:12.5px; line-height:1.65; }
+@media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy { grid-template-columns:1fr; } }
 </style>
 """ + _PASSWORD_GATE_HTML + """
 </head><body>
@@ -1778,6 +1792,50 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 
   <h2 class="tech-h2">\U0001F4D6 Overview</h2>
   <p class="tech-overview">{{ t.overview }}</p>
+
+  {% if t.tutorial_summary %}
+  <h2 class="tech-h2">Summary</h2>
+  <section class="zigbee-summary">
+    <p class="summary-lead">{{ t.tutorial_summary.lead }}</p>
+    <div class="zigbee-flow" aria-label="Zigbee stack block diagram">
+      <div class="zf-block"><b>Application</b><span>Endpoints, profiles, and device behavior</span></div>
+      <div class="zf-block"><b>ZCL + ZDO</b><span>Clusters, attributes, commands, discovery</span></div>
+      <div class="zf-block"><b>APS</b><span>Binding, endpoints, APS security</span></div>
+      <div class="zf-block"><b>NWK</b><span>Addressing, mesh routes, network key</span></div>
+      <div class="zf-block"><b>802.15.4</b><span>MAC/PHY, ACK/retry, shared radio medium</span></div>
+    </div>
+    <div class="zigbee-summary-grid">
+      {% for principle in t.tutorial_summary.principles %}
+      <article><h3>{{ principle.name }}</h3><p>{{ principle.detail }}</p></article>
+      {% endfor %}
+    </div>
+    <div class="role-strip">
+      {% for role in t.tutorial_summary.roles %}
+      <article><h3>{{ role.name }}</h3><p>{{ role.detail }}</p></article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if t.application_fit %}
+  <h2 class="tech-h2">Target Applications and Positioning</h2>
+  <div class="zigbee-apps">
+    {% for app in t.application_fit %}
+    <article class="zigbee-app">
+      <div class="zigbee-app-head"><h3>{{ app.name }}</h3></div>
+      <div class="zigbee-app-diagram" aria-label="{{ app.name }} Zigbee application block diagram">
+        {% for block in app.diagram %}<span>{{ block }}</span>{% endfor %}
+      </div>
+      <div class="zigbee-app-copy">
+        <div><b>Why Zigbee</b>{{ app.benefit }}</div>
+        <div><b>Alternatives</b>{{ app.alternatives }}</div>
+        <div><b>Positioning</b>{{ app.position }}</div>
+      </div>
+      <details><summary>Open deployment and design considerations</summary><p>{{ app.detail }}</p></details>
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
 
   {% if t.block_diagram %}
   <h2 class="tech-h2">\U0001F9F1 Architecture Block Diagram</h2>
@@ -1926,16 +1984,21 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 (function(){
   var tabs = document.querySelectorAll('.tech-tab');
   var panels = document.querySelectorAll('.tech-panel');
+  function activateTab(slug, updateHash) {
+    var tab = document.querySelector('.tech-tab[data-slug="' + slug + '"]');
+    var panel = document.getElementById('panel-' + slug);
+    if (!tab || !panel) return;
+    tabs.forEach(function(item){ item.classList.remove('active'); });
+    panels.forEach(function(item){ item.classList.remove('active'); });
+    tab.classList.add('active');
+    panel.classList.add('active');
+    if (updateHash) history.replaceState(null, '', '#' + slug);
+  }
   tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      var slug = this.dataset.slug;
-      tabs.forEach(function(t){ t.classList.remove('active'); });
-      panels.forEach(function(p){ p.classList.remove('active'); });
-      this.classList.add('active');
-      var panel = document.getElementById('panel-' + slug);
-      if (panel) panel.classList.add('active');
-    });
+    tab.addEventListener('click', function(){ activateTab(this.dataset.slug, true); });
   });
+  if (location.hash) activateTab(location.hash.slice(1), false);
+  window.addEventListener('hashchange', function(){ activateTab(location.hash.slice(1), false); });
 })();
 </script>
 </body></html>
@@ -3805,7 +3868,11 @@ def render(articles: list[dict], output_dir: Path,
       active="bt_stack", **common_ctx
     ), encoding="utf-8")
     (output_dir / "zigbee.html").write_text(
-      _redirect_page("ieee15_4.html#zigbee-in-depth", "Zigbee Redirect"),
+      _redirect_page("technology.html#zigbee", "Zigbee Tutorial"),
+      encoding="utf-8",
+    )
+    (output_dir / "thread.html").write_text(
+      _redirect_page("technology.html#thread", "Thread Tutorial"),
       encoding="utf-8",
     )
 

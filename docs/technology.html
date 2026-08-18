@@ -257,6 +257,20 @@ a:hover { text-decoration:underline; }
 
 /* Companies / qualification table */
 .co-note { font-size:12.5px; color:#475569; margin:10px 2px 6px; line-height:1.6; }
+
+/* Zigbee editorial tutorial */
+.zigbee-summary { margin-top:12px; padding:24px; background:#081c2c; color:#f8fbff; border-radius:8px; box-shadow:0 18px 34px rgba(8,28,44,.2); }
+.zigbee-summary .summary-lead { margin:0; max-width:920px; color:#dceaf4; font-size:15px; line-height:1.7; }
+.zigbee-flow { display:grid; grid-template-columns:repeat(5, minmax(110px, 1fr)); gap:8px; margin:20px 0 18px; }
+.zigbee-flow .zf-block { min-height:92px; padding:12px; background:#0f3148; border:1px solid #286077; border-radius:6px; }
+.zigbee-flow .zf-block:nth-child(1) { border-color:#ffcf4a; }.zigbee-flow .zf-block:nth-child(2) { border-color:#32d5b2; }.zigbee-flow .zf-block:nth-child(3) { border-color:#66b8ff; }.zigbee-flow .zf-block:nth-child(4) { border-color:#f77c8e; }.zigbee-flow .zf-block:nth-child(5) { border-color:#c4a1ff; }
+.zf-block b { display:block; color:#fff; font-size:13px; }.zf-block span { display:block; margin-top:5px; color:#bcd2df; font-size:11.5px; line-height:1.45; }
+.zigbee-summary-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; }
+.zigbee-summary-grid article { padding:13px; background:#eef8f6; color:#12313d; border-left:4px solid #32d5b2; border-radius:4px; }.zigbee-summary-grid article:nth-child(2) { border-left-color:#ffcf4a; background:#fff8df; }.zigbee-summary-grid article:nth-child(3) { border-left-color:#f77c8e; background:#fff0f2; }
+.zigbee-summary-grid h3 { margin:0 0 5px; font-size:13px; }.zigbee-summary-grid p { margin:0; color:#3e5561; font-size:12px; line-height:1.55; }
+.role-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px; }.role-strip article { padding:13px; border:1px solid #2b5a72; border-radius:5px; background:#0c2840; }.role-strip h3 { margin:0 0 5px; font-size:13px; color:#ffdc6e; }.role-strip p { margin:0; color:#c7dce8; font-size:12px; line-height:1.55; }
+.zigbee-apps { display:grid; gap:14px; margin-top:12px; }.zigbee-app { overflow:hidden; border:1px solid #d7e3ec; border-radius:8px; background:#fff; }.zigbee-app-head { padding:15px 16px; background:#f1f8fa; border-bottom:1px solid #d7e3ec; }.zigbee-app-head h3 { margin:0; color:#0e3b51; font-size:16px; }.zigbee-app-diagram { display:flex; align-items:stretch; gap:7px; padding:14px 16px; background:#071e31; overflow-x:auto; }.zigbee-app-diagram span { flex:1 0 120px; position:relative; padding:9px; border:1px solid #36718a; border-radius:4px; color:#e8f7ff; font-size:12px; font-weight:700; text-align:center; }.zigbee-app-diagram span:not(:last-child)::after { content:'>'; position:absolute; right:-7px; top:50%; z-index:1; color:#ffcf4a; font-size:16px; transform:translateY(-50%); }.zigbee-app-copy { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:15px 16px; }.zigbee-app-copy div { font-size:12.5px; color:#405460; line-height:1.6; }.zigbee-app-copy b { display:block; color:#0e3b51; margin-bottom:4px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }.zigbee-app details { margin:0 16px 16px; padding:0 12px; border:1px solid #c4d9e3; border-radius:5px; background:#f7fbfc; }.zigbee-app summary { padding:10px 0; color:#075a70; cursor:pointer; font-size:12.5px; font-weight:800; }.zigbee-app details p { margin:0 0 12px; color:#405460; font-size:12.5px; line-height:1.65; }
+@media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy { grid-template-columns:1fr; } }
 </style>
 
 <script id="password-gate-v1">
@@ -313,7 +327,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="">News</a>
     <a href="chat.html" class="nav-chat ">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-18 06:09 PDT</div>
+  <div class="meta-info">Updated 2026-08-18 14:03 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -362,6 +376,10 @@ a:hover { text-decoration:underline; }
 
   <h2 class="tech-h2">📖 Overview</h2>
   <p class="tech-overview">Zephyr is a Linux-Foundation-governed, Apache-2.0 real-time OS that ships a complete Bluetooth Low Energy stack -- Host, Controller, and the HCI glue between them -- written from scratch in-tree (not a BlueZ port), plus a growing set of Classic Bluetooth (BR/EDR) Host profiles (SDP, L2CAP, RFCOMM, A2DP, AVRCP, HFP, GOEP/OBEX, BIP). It is Bluetooth v5.3 compliant, portable to every CPU architecture Zephyr supports, highly configurable down to a 16 KB-RAM footprint for Bluetooth Mesh, and ships with a Bluetooth SIG pre-qualified Host listing that product companies can reference to cut their own qualification cost and effort.</p>
+
+  
+
+  
 
   
   <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
@@ -654,6 +672,10 @@ int main(void)
   <p class="tech-overview">IEEE 802.15.4 is the LR-WPAN base standard that defines only two layers: PHY and MAC. PHY defines channels/modulation/data rates; MAC defines framing, channel access, reliability, and optional link-layer security. It intentionally does not define end-to-end routing or app semantics. Zigbee and Thread both reuse the same 802.15.4 radio but build different network and application ecosystems on top. If you are new: learn MAC behavior first (beacons, CSMA-CA, ack/retry, association, and security fields), then map how Zigbee and Thread consume those services.</p>
 
   
+
+  
+
+  
   <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
   <div class="arch">
     
@@ -864,6 +886,84 @@ int main(void)
 
   <h2 class="tech-h2">📖 Overview</h2>
   <p class="tech-overview">Zigbee is a complete low-power mesh networking and application standard (governed by the Connectivity Standards Alliance) that runs on the IEEE 802.15.4 radio. Where 802.15.4 stops at PHY and MAC, Zigbee adds everything above: a Network (NWK) layer for mesh routing, an Application Support Sublayer (APS) for endpoint addressing and binding, the Zigbee Device Object (ZDO) for device and service management, and the Zigbee Cluster Library (ZCL) that defines standardized application behavior. That ZCL layer is the key idea -- because clusters like On/Off, Level Control, and Color Control are standardized, a bulb from one vendor and a switch from another interoperate. Zigbee is a mature, widely deployed ecosystem for lighting, sensors, and building automation, and it now interworks with Matter through bridges.</p>
+
+  
+  <h2 class="tech-h2">Summary</h2>
+  <section class="zigbee-summary">
+    <p class="summary-lead">Zigbee is best understood as a low-rate radio mesh plus a common device language. The 802.15.4 radio moves frames one hop; Zigbee builds a secure, self-healing mesh above it; ZCL makes the message sent by a switch, lamp, sensor, or controller predictable across certified products.</p>
+    <div class="zigbee-flow" aria-label="Zigbee stack block diagram">
+      <div class="zf-block"><b>Application</b><span>Endpoints, profiles, and device behavior</span></div>
+      <div class="zf-block"><b>ZCL + ZDO</b><span>Clusters, attributes, commands, discovery</span></div>
+      <div class="zf-block"><b>APS</b><span>Binding, endpoints, APS security</span></div>
+      <div class="zf-block"><b>NWK</b><span>Addressing, mesh routes, network key</span></div>
+      <div class="zf-block"><b>802.15.4</b><span>MAC/PHY, ACK/retry, shared radio medium</span></div>
+    </div>
+    <div class="zigbee-summary-grid">
+      
+      <article><h3>Mesh</h3><p>NWK discovers and repairs multi-hop paths among routers. Each hop still uses 802.15.4 CSMA-CA, acknowledgement, and retry.</p></article>
+      
+      <article><h3>Interoperability</h3><p>Endpoints expose standardized ZCL clusters. Attributes represent state; commands request actions; reporting communicates state changes. This is the reusable contract across devices.</p></article>
+      
+      <article><h3>Security</h3><p>The Trust Center controls joining and key distribution. Network keys protect the mesh; APS link keys can provide per-device-pair protection. Install-code onboarding is stronger than shared default join keys.</p></article>
+      
+    </div>
+    <div class="role-strip">
+      
+      <article><h3>Coordinator / Trust Center</h3><p>One logical device creates the network, selects the PAN and channel, and normally controls admission plus network-key distribution. It may also be a controller or gateway, but it is not a throughput bottleneck by definition.</p></article>
+      
+      <article><h3>Router</h3><p>Usually mains powered. It forwards mesh traffic, maintains neighbor and route information, and can parent sleepy end devices. Router density is a primary reliability variable in a real building.</p></article>
+      
+      <article><h3>End Device</h3><p>A non-routing leaf, often battery powered. It sleeps between polls and communicates through one parent, trading direct mesh participation for a much smaller energy budget.</p></article>
+      
+    </div>
+  </section>
+  
+
+  
+  <h2 class="tech-h2">Target Applications and Positioning</h2>
+  <div class="zigbee-apps">
+    
+    <article class="zigbee-app">
+      <div class="zigbee-app-head"><h3>Smart lighting and room control</h3></div>
+      <div class="zigbee-app-diagram" aria-label="Smart lighting and room control Zigbee application block diagram">
+        <span>Wall switch</span><span>Zigbee routers: lamps / plugs</span><span>Group or binding</span><span>Gateway / controller</span>
+      </div>
+      <div class="zigbee-app-copy">
+        <div><b>Why Zigbee</b>Mains-powered lamps naturally become routers, creating dense coverage as fixtures are installed. ZCL On/Off, Level Control, Color Control, Groups, and Scenes map directly to lighting behavior; local bindings keep basic switch-to-light operation working even if a hub or cloud service is unavailable.</div>
+        <div><b>Alternatives</b>Bluetooth Mesh offers a comparable low-power lighting mesh; Thread plus Matter offers IP-native control; DALI is a wired lighting-control alternative; Wi-Fi suits high-bandwidth fixtures but is normally a poorer fit for dense, battery-powered sensors.</div>
+        <div><b>Positioning</b>Zigbee is strongly positioned where there are many mains-powered fixtures, a broad installed base, and a hub is acceptable. Its value is mature lighting semantics and local group/scene behavior, not raw bandwidth or direct IP reachability.</div>
+      </div>
+      <details><summary>Open deployment and design considerations</summary><p>Design for at least several always-on routers per area, select a channel after surveying Wi-Fi occupancy, use groups for fan-out commands, and use binding when the physical switch must retain direct control. A gateway can bridge the installation into a Matter controller without replacing every device.</p></details>
+    </article>
+    
+    <article class="zigbee-app">
+      <div class="zigbee-app-head"><h3>Battery sensors, security, and comfort automation</h3></div>
+      <div class="zigbee-app-diagram" aria-label="Battery sensors, security, and comfort automation Zigbee application block diagram">
+        <span>Battery sensor</span><span>Parent router</span><span>Zigbee mesh</span><span>Hub / alarm / HVAC rule</span>
+      </div>
+      <div class="zigbee-app-copy">
+        <div><b>Why Zigbee</b>An end device can sleep most of the time, wake to report a change or poll its parent, and use a small 802.15.4 frame rather than maintaining a Wi-Fi association. Standard clusters enable common sensor behaviors such as occupancy, temperature, contact, and IAS alarm messages.</div>
+        <div><b>Alternatives</b>Bluetooth LE is excellent for phone-centric or star-topology sensors; Thread/Matter supplies IPv6 and a modern ecosystem; Wi-Fi is appropriate when the device already has ample power and needs IP bandwidth; sub-GHz LPWAN is better for long outdoor distances at low message rates.</div>
+        <div><b>Positioning</b>Choose Zigbee when a reliable indoor mesh and a local hub are acceptable, and the value of long battery life plus established device profiles outweighs the need for every endpoint to be directly IP-addressable.</div>
+      </div>
+      <details><summary>Open deployment and design considerations</summary><p>Battery estimates must include report interval, parent-poll interval, retries, and retransmissions caused by channel contention. Place parent routers close enough for strong links and avoid assuming that battery devices will heal a mesh: they do not route traffic.</p></details>
+    </article>
+    
+    <article class="zigbee-app">
+      <div class="zigbee-app-head"><h3>Commercial buildings, meters, and load control</h3></div>
+      <div class="zigbee-app-diagram" aria-label="Commercial buildings, meters, and load control Zigbee application block diagram">
+        <span>Meters / sensors</span><span>Router-rich floor mesh</span><span>Zigbee gateway</span><span>BMS / cloud analytics</span>
+      </div>
+      <div class="zigbee-app-copy">
+        <div><b>Why Zigbee</b>A low-rate mesh can connect a large number of control and telemetry points without pulling a new cable to every endpoint. Groups, bindings, and standardized control behavior help local automation continue during upstream outages.</div>
+        <div><b>Alternatives</b>BACnet and DALI are established wired-building choices; WirelessHART/ISA100 address industrial process needs; Thread/Matter is attractive for IP integration; Wi-Fi is a fit for cameras and high-data equipment rather than dense low-rate control points.</div>
+        <div><b>Positioning</b>Zigbee is positioned as a cost-conscious, low-rate control network behind a gateway. It should not be sold as a replacement for deterministic safety systems or high-throughput backhaul.</div>
+      </div>
+      <details><summary>Open deployment and design considerations</summary><p>Start with a site survey and capacity model: RF attenuation, metalwork, Wi-Fi channel overlap, router placement, expected reporting rates, and a maintenance plan for the coordinator, key rotation, and gateway monitoring. Separate life-safety requirements from convenience and energy-management traffic.</p></details>
+    </article>
+    
+  </div>
+  
 
   
   <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
@@ -1104,7 +1204,7 @@ int main(void)
 
   <h2 class="tech-h2">🔗 Learn More</h2>
   <ul class="resource-list">
-    <li><a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Connectivity Standards Alliance -- Zigbee</a></li><li><a href="https://csa-iot.org/developer-resource/specifications-download-request/" target="_blank" rel="noopener">CSA specifications &amp; downloads</a></li><li><a href="https://standards.ieee.org/ieee/802.15.4/7029/" target="_blank" rel="noopener">IEEE 802.15.4 (radio layer Zigbee runs on)</a></li>
+    <li><a href="https://eclass.uoa.gr/modules/document/file.php/DI367/%CE%A5%CE%BB%CE%B9%CE%BA%CF%8C/introduction-to-zigbee-technology.pdf" target="_blank" rel="noopener">University of Athens -- Introduction to Zigbee Technology (teaching reference)</a></li><li><a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Connectivity Standards Alliance -- Zigbee</a></li><li><a href="https://csa-iot.org/developer-resource/specifications-download-request/" target="_blank" rel="noopener">CSA specifications &amp; downloads</a></li><li><a href="https://standards.ieee.org/ieee/802.15.4/7029/" target="_blank" rel="noopener">IEEE 802.15.4 (radio layer Zigbee runs on)</a></li>
   </ul>
 </div>
 
@@ -1121,6 +1221,10 @@ int main(void)
 
   <h2 class="tech-h2">📖 Overview</h2>
   <p class="tech-overview">Thread is a mesh networking protocol -- standardized by the Thread Group -- that gives every device on the mesh a real, routable IPv6 address, unlike Zigbee&#39;s proprietary networking layer. It reuses the IEEE 802.15.4 radio (2.4 GHz) but replaces Zigbee&#39;s NWK layer with 6LoWPAN + IPv6 mesh routing, so any standard IP or CoAP application can run over it. Thread is the low-power mesh transport most Matter devices use under the hood.</p>
+
+  
+
+  
 
   
   <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
@@ -1341,6 +1445,10 @@ int main(void)
 
   
 
+  
+
+  
+
   <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
   <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
   <div class="stack">
@@ -1458,6 +1566,10 @@ int main(void)
 
   <h2 class="tech-h2">📖 Overview</h2>
   <p class="tech-overview">Matter (from the Connectivity Standards Alliance) is not a radio technology -- it&#39;s an application-layer standard that defines a common data model so smart-home devices from different manufacturers interoperate regardless of which network they run on (Thread, Wi-Fi, or Ethernet). Bluetooth LE is used only during the initial commissioning handshake; after that, all operational traffic runs over IP. This is the single most important thing to understand about Matter&#39;s architecture -- it deliberately reuses Thread and Wi-Fi rather than inventing a new radio layer.</p>
+
+  
+
+  
 
   
 
@@ -1583,6 +1695,10 @@ int main(void)
 
   
 
+  
+
+  
+
   <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
   <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
   <div class="stack">
@@ -1681,21 +1797,26 @@ int main(void)
 
 
 </main>
-<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-08-18 06:09 PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-08-18 14:03 PDT</div></footer>
 <script>
 (function(){
   var tabs = document.querySelectorAll('.tech-tab');
   var panels = document.querySelectorAll('.tech-panel');
+  function activateTab(slug, updateHash) {
+    var tab = document.querySelector('.tech-tab[data-slug="' + slug + '"]');
+    var panel = document.getElementById('panel-' + slug);
+    if (!tab || !panel) return;
+    tabs.forEach(function(item){ item.classList.remove('active'); });
+    panels.forEach(function(item){ item.classList.remove('active'); });
+    tab.classList.add('active');
+    panel.classList.add('active');
+    if (updateHash) history.replaceState(null, '', '#' + slug);
+  }
   tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      var slug = this.dataset.slug;
-      tabs.forEach(function(t){ t.classList.remove('active'); });
-      panels.forEach(function(p){ p.classList.remove('active'); });
-      this.classList.add('active');
-      var panel = document.getElementById('panel-' + slug);
-      if (panel) panel.classList.add('active');
-    });
+    tab.addEventListener('click', function(){ activateTab(this.dataset.slug, true); });
   });
+  if (location.hash) activateTab(location.hash.slice(1), false);
+  window.addEventListener('hashchange', function(){ activateTab(location.hash.slice(1), false); });
 })();
 </script>
 </body></html>

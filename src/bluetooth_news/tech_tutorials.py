@@ -538,6 +538,45 @@ TECH_TUTORIALS: list[dict] = [
             "switch from another interoperate. Zigbee is a mature, widely deployed ecosystem for lighting, "
             "sensors, and building automation, and it now interworks with Matter through bridges."
         ),
+        "tutorial_summary": {
+            "lead": "Zigbee is best understood as a low-rate radio mesh plus a common device language. The 802.15.4 radio moves frames one hop; Zigbee builds a secure, self-healing mesh above it; ZCL makes the message sent by a switch, lamp, sensor, or controller predictable across certified products.",
+            "roles": [
+                {"name": "Coordinator / Trust Center", "detail": "One logical device creates the network, selects the PAN and channel, and normally controls admission plus network-key distribution. It may also be a controller or gateway, but it is not a throughput bottleneck by definition."},
+                {"name": "Router", "detail": "Usually mains powered. It forwards mesh traffic, maintains neighbor and route information, and can parent sleepy end devices. Router density is a primary reliability variable in a real building."},
+                {"name": "End Device", "detail": "A non-routing leaf, often battery powered. It sleeps between polls and communicates through one parent, trading direct mesh participation for a much smaller energy budget."},
+            ],
+            "principles": [
+                {"name": "Mesh", "detail": "NWK discovers and repairs multi-hop paths among routers. Each hop still uses 802.15.4 CSMA-CA, acknowledgement, and retry."},
+                {"name": "Interoperability", "detail": "Endpoints expose standardized ZCL clusters. Attributes represent state; commands request actions; reporting communicates state changes. This is the reusable contract across devices."},
+                {"name": "Security", "detail": "The Trust Center controls joining and key distribution. Network keys protect the mesh; APS link keys can provide per-device-pair protection. Install-code onboarding is stronger than shared default join keys."},
+            ],
+        },
+        "application_fit": [
+            {
+                "name": "Smart lighting and room control",
+                "diagram": ["Wall switch", "Zigbee routers: lamps / plugs", "Group or binding", "Gateway / controller"],
+                "benefit": "Mains-powered lamps naturally become routers, creating dense coverage as fixtures are installed. ZCL On/Off, Level Control, Color Control, Groups, and Scenes map directly to lighting behavior; local bindings keep basic switch-to-light operation working even if a hub or cloud service is unavailable.",
+                "alternatives": "Bluetooth Mesh offers a comparable low-power lighting mesh; Thread plus Matter offers IP-native control; DALI is a wired lighting-control alternative; Wi-Fi suits high-bandwidth fixtures but is normally a poorer fit for dense, battery-powered sensors.",
+                "position": "Zigbee is strongly positioned where there are many mains-powered fixtures, a broad installed base, and a hub is acceptable. Its value is mature lighting semantics and local group/scene behavior, not raw bandwidth or direct IP reachability.",
+                "detail": "Design for at least several always-on routers per area, select a channel after surveying Wi-Fi occupancy, use groups for fan-out commands, and use binding when the physical switch must retain direct control. A gateway can bridge the installation into a Matter controller without replacing every device.",
+            },
+            {
+                "name": "Battery sensors, security, and comfort automation",
+                "diagram": ["Battery sensor", "Parent router", "Zigbee mesh", "Hub / alarm / HVAC rule"],
+                "benefit": "An end device can sleep most of the time, wake to report a change or poll its parent, and use a small 802.15.4 frame rather than maintaining a Wi-Fi association. Standard clusters enable common sensor behaviors such as occupancy, temperature, contact, and IAS alarm messages.",
+                "alternatives": "Bluetooth LE is excellent for phone-centric or star-topology sensors; Thread/Matter supplies IPv6 and a modern ecosystem; Wi-Fi is appropriate when the device already has ample power and needs IP bandwidth; sub-GHz LPWAN is better for long outdoor distances at low message rates.",
+                "position": "Choose Zigbee when a reliable indoor mesh and a local hub are acceptable, and the value of long battery life plus established device profiles outweighs the need for every endpoint to be directly IP-addressable.",
+                "detail": "Battery estimates must include report interval, parent-poll interval, retries, and retransmissions caused by channel contention. Place parent routers close enough for strong links and avoid assuming that battery devices will heal a mesh: they do not route traffic.",
+            },
+            {
+                "name": "Commercial buildings, meters, and load control",
+                "diagram": ["Meters / sensors", "Router-rich floor mesh", "Zigbee gateway", "BMS / cloud analytics"],
+                "benefit": "A low-rate mesh can connect a large number of control and telemetry points without pulling a new cable to every endpoint. Groups, bindings, and standardized control behavior help local automation continue during upstream outages.",
+                "alternatives": "BACnet and DALI are established wired-building choices; WirelessHART/ISA100 address industrial process needs; Thread/Matter is attractive for IP integration; Wi-Fi is a fit for cameras and high-data equipment rather than dense low-rate control points.",
+                "position": "Zigbee is positioned as a cost-conscious, low-rate control network behind a gateway. It should not be sold as a replacement for deterministic safety systems or high-throughput backhaul.",
+                "detail": "Start with a site survey and capacity model: RF attenuation, metalwork, Wi-Fi channel overlap, router placement, expected reporting rates, and a maintenance plan for the coordinator, key rotation, and gateway monitoring. Separate life-safety requirements from convenience and energy-management traffic.",
+            },
+        ],
         "architecture": [
             {"tag": "ZCL", "name": "Application layer (ZCL + application objects)", "function": "Standardized Clusters (On/Off, Level Control, Color Control, Thermostat, etc.) exposed on Endpoints. Each cluster defines Attributes (state) and Commands (actions) -- the interoperable behavior contract between devices from different vendors."},
             {"tag": "APS", "name": "Application Support Sublayer (APS)", "function": "Endpoint addressing, the binding table (linking, e.g., a switch endpoint to a light endpoint), APS-level security, and fragmentation/reassembly of large application messages."},
@@ -646,6 +685,7 @@ TECH_TUTORIALS: list[dict] = [
             "Existing Zigbee fleets bridged into Matter ecosystems",
         ],
         "resources": [
+            {"label": "University of Athens -- Introduction to Zigbee Technology (teaching reference)", "url": "https://eclass.uoa.gr/modules/document/file.php/DI367/%CE%A5%CE%BB%CE%B9%CE%BA%CF%8C/introduction-to-zigbee-technology.pdf"},
             {"label": "Connectivity Standards Alliance -- Zigbee", "url": "https://csa-iot.org/all-solutions/zigbee/"},
             {"label": "CSA specifications & downloads", "url": "https://csa-iot.org/developer-resource/specifications-download-request/"},
             {"label": "IEEE 802.15.4 (radio layer Zigbee runs on)", "url": "https://standards.ieee.org/ieee/802.15.4/7029/"},
