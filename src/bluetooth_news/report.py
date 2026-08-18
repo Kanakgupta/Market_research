@@ -1633,6 +1633,8 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 .tech-tab { cursor:pointer; border:1px solid var(--border); border-bottom:none; background:#f1f5f9; color:#334155; font-weight:700; font-size:13.5px; padding:9px 18px; border-radius:10px 10px 0 0; }
 .tech-tab:hover { background:#e2e8f0; }
 .tech-tab.active { background:var(--card); color:var(--accent); border-color:var(--border); position:relative; top:1px; }
+.tech-focus .tech-tabs { display:none; }
+.tech-focus .tech-panel { border-radius:10px; margin-top:16px; }
 .tech-panel { display:none; background:var(--card); border:1px solid var(--border); border-radius:0 10px 10px 10px; padding:22px 24px; margin-top:-1px; }
 .tech-panel.active { display:block; }
 .tech-panel .tagline { color:var(--muted); font-size:14px; margin:2px 0 14px; }
@@ -1992,13 +1994,22 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
     panels.forEach(function(item){ item.classList.remove('active'); });
     tab.classList.add('active');
     panel.classList.add('active');
+    document.body.classList.toggle('tech-focus', Boolean(location.hash));
     if (updateHash) history.replaceState(null, '', '#' + slug);
+    if (updateHash) document.body.classList.add('tech-focus');
   }
   tabs.forEach(function(tab){
     tab.addEventListener('click', function(){ activateTab(this.dataset.slug, true); });
   });
   if (location.hash) activateTab(location.hash.slice(1), false);
-  window.addEventListener('hashchange', function(){ activateTab(location.hash.slice(1), false); });
+  window.addEventListener('hashchange', function(){
+    if (location.hash) {
+      activateTab(location.hash.slice(1), false);
+    } else {
+      document.body.classList.remove('tech-focus');
+      activateTab('bluetooth', false);
+    }
+  });
 })();
 </script>
 </body></html>
