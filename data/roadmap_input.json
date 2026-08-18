@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T13:09:52Z",
+  "generated_at": "2026-08-18T13:09:44Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3103,6 +3103,11 @@
           "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
         },
         {
+          "title": "Telink Introduces TL3225 Family of Wireless SoCs for Automotive Applications",
+          "date": "Aug 2026",
+          "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
+        },
+        {
           "title": "Telink Joins Alliance Board to Develop Global IoT Standard Ecosystem",
           "date": "Jul 2026",
           "url": ""
@@ -3141,11 +3146,6 @@
           "title": "Telink Introduces TL3228 Low-Power, Low-Latency Dual-Core RISC-V Wireless MCU",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Telink+Introduces+TL3228+Low-Power%2C+Low-Latency+Dual-Core+RISC-V+Wireless+MCU+Telink"
-        },
-        {
-          "title": "Telink Unveils TL322X Series and ML3228A at Embedded World 2026",
-          "date": "Mar 2026",
-          "url": "https://www.google.com/search?q=Telink+Unveils+TL322X+Series+and+ML3228A+at+Embedded+World+2026+Telink"
         }
       ]
     },
@@ -3739,26 +3739,25 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 102,
-    "NXP": 44,
-    "Silicon Labs": 14,
-    "MediaTek": 12,
-    "Espressif": 9,
+    "Qualcomm": 94,
+    "NXP": 53,
+    "MediaTek": 20,
+    "Silicon Labs": 17,
+    "Espressif": 13,
+    "TI": 12,
     "Nordic": 9,
-    "TI": 8,
-    "Broadcom": 5,
+    "Broadcom": 4,
+    "Quectel": 3,
     "Realtek": 3,
-    "Telink": 2,
-    "Quectel": 2,
+    "Microchip": 2,
+    "Apple": 2,
     "Marvell": 2,
-    "Synaptics": 2,
-    "Apple": 1,
-    "Microchip": 1,
-    "Skyworks": 1,
+    "Renesas": 1,
+    "Infineon": 1,
+    "Synaptics": 1,
+    "Telink": 1,
     "WCH": 1,
-    "Atmosic": 1,
-    "Murata": 1,
-    "Infineon": 1
+    "Murata": 1
   },
   "standards_in_flight": [
     {
@@ -3831,42 +3830,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1681,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18798,
-      "pushed_at": "2026-08-17T02:48:39Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3875,7 +3838,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3856,
+      "issues_open": 3903,
       "prs_open": 0,
       "releases": [
         {
@@ -3897,8 +3860,59 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16229,
-      "pushed_at": "2026-08-17T12:18:37Z"
+      "stars": 16242,
+      "pushed_at": "2026-08-18T12:55:33Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1689,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18806,
+      "pushed_at": "2026-08-18T11:54:46Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 243152,
+      "pushed_at": "2026-08-18T03:57:01Z"
     },
     {
       "name": "Matter SDK",
@@ -3909,7 +3923,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2782,
+      "issues_open": 2790,
       "prs_open": 0,
       "releases": [
         {
@@ -3931,23 +3945,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8874,
-      "pushed_at": "2026-08-17T00:49:56Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 242975,
-      "pushed_at": "2026-08-16T22:55:57Z"
+      "stars": 8877,
+      "pushed_at": "2026-08-18T12:10:22Z"
     },
     {
       "name": "OpenThread",
@@ -3957,8 +3956,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 92,
-      "issues_open": 172,
+      "commits_30d": 97,
+      "issues_open": 176,
       "prs_open": 0,
       "releases": [
         {
@@ -3980,8 +3979,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4015,
-      "pushed_at": "2026-08-17T09:34:26Z"
+      "stars": 4016,
+      "pushed_at": "2026-08-18T00:38:55Z"
     },
     {
       "name": "BlueZ",
@@ -3992,7 +3991,7 @@
         "bluetooth"
       ],
       "commits_30d": 46,
-      "issues_open": 114,
+      "issues_open": 115,
       "prs_open": 0,
       "releases": [
         {
@@ -4014,8 +4013,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1129,
-      "pushed_at": "2026-08-17T10:03:05Z"
+      "stars": 1130,
+      "pushed_at": "2026-08-18T11:28:39Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4025,8 +4024,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 28,
-      "issues_open": 466,
+      "commits_30d": 27,
+      "issues_open": 463,
       "prs_open": 0,
       "releases": [
         {
@@ -4048,7 +4047,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15501,
+      "stars": 15506,
       "pushed_at": "2026-08-14T19:20:07Z"
     },
     {
@@ -4063,7 +4062,7 @@
       "issues_open": 279,
       "prs_open": 0,
       "releases": [],
-      "stars": 884,
+      "stars": 885,
       "pushed_at": "2026-08-12T08:45:20Z"
     },
     {

@@ -185,7 +185,7 @@ a:hover { text-decoration:underline; }
 
 <script id="password-gate-v1">
 (function(){
-  var KEY='airoc_unlock_v1';
+  var KEY='site_unlock_v1';
   var HASH='eecb6691ea4b94d780985dd0797634885fd7195f12c889ed367be387492f68ef';
   function hex(buf){return Array.prototype.map.call(new Uint8Array(buf), function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function sha256(text){return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(hex);}
@@ -237,7 +237,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="">News</a>
     <a href="chat.html" class="nav-chat active">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-17 14:18 PDT</div>
+  <div class="meta-info">Updated 2026-08-18 06:09 PDT</div>
 </div></header>
 <script>
 (function(){

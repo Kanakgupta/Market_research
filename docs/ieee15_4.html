@@ -132,6 +132,11 @@ a:hover { text-decoration:underline; }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
 .news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
 .news-main { min-width:0; }
+/* News mode toggle */
+.news-mode-wrap { display:inline-flex; align-items:center; gap:6px; margin-left:14px; vertical-align:middle; }
+.news-mode-btn { padding:4px 14px; font-size:12px; font-weight:700; border:1.5px solid var(--border); background:#f1f5f9; color:#334155; border-radius:20px; cursor:pointer; transition:all .15s; line-height:1.4; }
+.news-mode-btn:hover { background:#e2e8f0; }
+.news-mode-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 </style>
 
 <script id="password-gate-v1">
@@ -188,7 +193,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="active">News</a>
     <a href="chat.html" class="nav-chat ">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-17 06:09 PDT</div>
+  <div class="meta-info">Updated 2026-08-18 06:09 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -216,12 +221,12 @@ a:hover { text-decoration:underline; }
   
   <div class="stats">
     
-    <span class="pill">5 articles</span>
+    <span class="pill">6 articles</span>
     <span class="pill">3 vendors</span>
     <span class="pill">33 customers</span>
-    <span class="pill">8 applications</span>
+    <span class="pill">9 applications</span>
     
-    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-17 06:09">2026-08-17 06:09 PDT</span></span>
+    <span class="pill" id="lastUpdatedPill">Last updated: <span id="lastUpdatedText" data-ts="2026-08-18 06:09">2026-08-18 06:09 PDT</span></span>
   </div>
 </section>
 
@@ -248,6 +253,48 @@ a:hover { text-decoration:underline; }
       <div class="meta-row">
         <span class="source">IEEE / Thread Group / CSA</span>
         <span class="dot">·</span><span class="time" data-ts="2026-07-07T00:00:00+00:00">2026-07-07</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="ieee15_4,bluetooth" data-vendor="Nordic" data-customer="Amazon" data-standard="" data-published="2026-08-18T09:10:18+00:00">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/08/LILYGO-T-Echo-Lit-Kit-720x540.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
+        <span class="chip chip-vendor">Nordic</span>
+        <span class="chip chip-cust">Amazon</span>
+        <span class="chip chip-app">Audio / Speaker</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/08/18/lilygo-t-echo-lite-kit-adds-a-keyboard-shield-to-the-nrrf52840-based-epaper-lora-and-gps-development-board/" target="_blank" rel="noopener">LILYGO T-Echo Lite Kit adds a keyboard shield to the nrRF52840-based ePaper LoRa and GPS development board</a></h2>
+      <p class="summary">LILYGO T-Echo Lite Kit is a Nordic nRF52840-based LoRa + GPS development kit with a built-in keyboard that enables direct off-grid communication without a smartphone. The kit is not entirely new since it&amp;#8217;s based on the T-Echo Lite dev…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-08-18T09:10:18+00:00">2026-08-18</span>
+      </div>
+    </div>
+  </article>
+  
+  <article class="card" data-buckets="ieee15_4,bluetooth" data-vendor="" data-customer="Google" data-standard="" data-published="2026-08-17T14:55:39+00:00">
+    <div class="thumb">
+      <img src="https://www.cnx-software.com/wp-content/uploads/2026/08/SONOFF-Hydro-DUO-review-eWeLink-Home-Assistant-720x481.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
+    </div>
+    <div class="body">
+      <div class="meta-row">
+        
+        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
+        
+        <span class="chip chip-cust">Google</span>
+        <span class="chip chip-app">Retail</span>
+      </div>
+      <h2 class="title"><a href="https://www.cnx-software.com/2026/08/17/sonoff-hydro-duo-review-a-dual-zone-ble-and-zigbee-water-valve-tested-with-ewelink-and-home-assistant/" target="_blank" rel="noopener">SONOFF Hydro DUO review – A dual-zone BLE and Zigbee water valve tested with eWeLink and Home Assistant</a></h2>
+      <p class="summary">ITEAD has sent us a review sample of the SONOFF Hydro DUO (SWV-ZF2E) dual-channel Zigbee 3.0 and Bluetooth 5 LE smart water valve. The device supports up to 12 custom watering schedules, integrates a water flow meter, and features alert sys…</p>
+      <div class="meta-row">
+        <span class="source">CNX Software</span>
+        <span class="dot">·</span><span class="time" data-ts="2026-08-17T14:55:39+00:00">2026-08-17</span>
       </div>
     </div>
   </article>
@@ -316,27 +363,6 @@ Thank you for signing up for the IEEE SA Newsletter. Check your email for a conf
     </div>
   </article>
   
-  <article class="card" data-buckets="ieee15_4,bluetooth" data-vendor="Nordic" data-customer="Amazon" data-standard="" data-published="2026-08-08T07:09:52+00:00">
-    <div class="thumb">
-      <img src="https://www.cnx-software.com/wp-content/uploads/2026/08/LILYGO-T-Echo-Card-720x510.jpg" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('thumb-empty'); this.remove()">
-    </div>
-    <div class="body">
-      <div class="meta-row">
-        
-        <span class="chip chip-tech">802.15.4</span><span class="chip chip-tech">Bluetooth</span>
-        <span class="chip chip-vendor">Nordic</span>
-        <span class="chip chip-cust">Amazon</span>
-        <span class="chip chip-app">Audio / Speaker</span>
-      </div>
-      <h2 class="title"><a href="https://www.cnx-software.com/2026/08/08/lilygo-t-echo-card-a-weatherproof-solar-powered-nrf52840-based-lora-gps-development-kit/" target="_blank" rel="noopener">LILYGO T-Echo Card – A weatherproof, solar-powered, nRF52840-based LoRa + GPS development kit</a></h2>
-      <p class="summary">LILYGO T-Echo Card is a thin development kit based on Nordic Semi nRF52840 wireless MCU and a Semtech SX1262 LoRa transceiver with a solar panel for charging an 800 mAh battery. It supports Bluetooth 5, NFC, Bluetooth Mesh, ANT, 802.15.4 (Z…</p>
-      <div class="meta-row">
-        <span class="source">CNX Software</span>
-        <span class="dot">·</span><span class="time" data-ts="2026-08-08T07:09:52+00:00">2026-08-08</span>
-      </div>
-    </div>
-  </article>
-  
 </div>
 
 
@@ -360,6 +386,7 @@ document.querySelectorAll('.time[data-ts]').forEach(el=>{el.textContent=timeAgo(
 
 let techFilter = 'all';
 let sideFilter = { type: 'all', value: '' };
+let newsMode = 'tech';
 const STANDARDS_BODY_DAYS = 180;
 const STANDARDS_TECH_DAYS = 15;
 
@@ -400,7 +427,8 @@ function applyFilters(){
     else if (sideFilter.type === 'customer') sideOk = customer === sideFilter.value;
     else if (sideFilter.type === 'market') sideOk = !vendor && !customer;
     else if (sideFilter.type === 'standard') sideOk = matchesStandardsScope(card, sideFilter.value || '');
-    const show = techOk && sideOk;
+    const modeOk = newsMode === 'all' || card.dataset.isTech === '1';
+    const show = techOk && sideOk && modeOk;
     card.style.display = show ? '' : 'none';
     if (show) visible++;
   });
@@ -413,7 +441,9 @@ function updateSidebarCounts(){
   const activeCards = [];
   cards.forEach(card => {
     const buckets = (card.dataset.buckets || '').split(',').filter(Boolean);
-    if (techFilter === 'all' || buckets.includes(techFilter)) activeCards.push(card);
+    const techOk = techFilter === 'all' || buckets.includes(techFilter);
+    const modeOk = newsMode === 'all' || card.dataset.isTech === '1';
+    if (techOk && modeOk) activeCards.push(card);
   });
 
   const vendorCounts = Object.create(null);
@@ -474,6 +504,28 @@ function filterBySideFromButton(btn) {
   applyFilters();
 }
 
+const TECH_NEWS_SOURCES = new Set([
+  'The Verge','Ars Technica','TechCrunch','The Register','Wired','WIRED',
+  'Engadget','9to5Google','9to5Mac','IEEE Spectrum','EE Times','CNX Software',
+  'ZDNet','Bluetooth SIG','Bluetooth SIG Blog','CSA / Matter','CSA/Matter',
+]);
+
+function initNewsModeMarkers(){
+  document.querySelectorAll('#grid .card').forEach(card => {
+    const srcEl = card.querySelector('.source');
+    const src = srcEl ? srcEl.textContent.trim() : '';
+    if(TECH_NEWS_SOURCES.has(src)) card.dataset.isTech = '1';
+  });
+}
+
+function setNewsMode(mode){
+  newsMode = mode;
+  document.getElementById('modeBtnTech').classList.toggle('active', mode === 'tech');
+  document.getElementById('modeBtnAll').classList.toggle('active', mode === 'all');
+  updateSidebarCounts();
+  applyFilters();
+}
+
 function toggleNewsSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -518,6 +570,7 @@ async function loadNews(){
     if (!Array.isArray(data) || !data.length) return;
     grid.innerHTML = data.map(cardHtml).join('');
     document.querySelectorAll('#grid .time[data-ts]').forEach(el=>{el.textContent=timeAgo(el.dataset.ts); el.title=el.dataset.ts;});
+    initNewsModeMarkers();
     updateSidebarCounts();
     applyFilters();
   } catch (e) {
@@ -588,6 +641,8 @@ async function refreshNews(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  initNewsModeMarkers();
+  applyFilters();
   updateSidebarCounts();
   const btn = document.getElementById('refreshBtn');
   if (btn && !isLocalBackend()) {

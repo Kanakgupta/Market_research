@@ -132,6 +132,11 @@ a:hover { text-decoration:underline; }
 .news-side-item.active { background:#eef2ff; color:var(--accent); font-weight:700; }
 .news-side-item .side-count { font-size:10.5px; color:var(--muted); background:#f1f5f9; border-radius:8px; padding:1px 6px; }
 .news-main { min-width:0; }
+/* News mode toggle */
+.news-mode-wrap { display:inline-flex; align-items:center; gap:6px; margin-left:14px; vertical-align:middle; }
+.news-mode-btn { padding:4px 14px; font-size:12px; font-weight:700; border:1.5px solid var(--border); background:#f1f5f9; color:#334155; border-radius:20px; cursor:pointer; transition:all .15s; line-height:1.4; }
+.news-mode-btn:hover { background:#e2e8f0; }
+.news-mode-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 
 
 /* ===== OEM CUSTOMER INTELLIGENCE HUB ===== */
@@ -272,7 +277,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="">News</a>
     <a href="chat.html" class="nav-chat ">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-17 06:09 PDT</div>
+  <div class="meta-info">Updated 2026-08-18 06:09 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -293,8 +298,8 @@ a:hover { text-decoration:underline; }
 <!-- Stats bar -->
 <div class="oc-stats-bar">
   <div class="oc-stat-pill"><div class="v">13</div><div class="l">OEMs tracked</div></div>
-  <div class="oc-stat-pill"><div class="v">416</div><div class="l">News (all time)</div></div>
-  <div class="oc-stat-pill"><div class="v">825</div><div class="l">Products tracked</div></div>
+  <div class="oc-stat-pill"><div class="v">434</div><div class="l">News (all time)</div></div>
+  <div class="oc-stat-pill"><div class="v">837</div><div class="l">Products tracked</div></div>
 </div>
 
 <!-- Main layout -->
@@ -311,7 +316,7 @@ a:hover { text-decoration:underline; }
         <strong>Google</strong>
         <div class="ci-tab-region">Big Tech / Smart Home</div>
       </div>
-      <span class="ci-news-badge">165</span>
+      <span class="ci-news-badge">193</span>
     </button>
     
     
@@ -321,7 +326,7 @@ a:hover { text-decoration:underline; }
         <strong>Amazon</strong>
         <div class="ci-tab-region">Big Tech / Smart Home</div>
       </div>
-      <span class="ci-news-badge">23</span>
+      <span class="ci-news-badge">21</span>
     </button>
     
     
@@ -331,7 +336,7 @@ a:hover { text-decoration:underline; }
         <strong>Apple</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">157</span>
+      <span class="ci-news-badge">159</span>
     </button>
     
     
@@ -341,7 +346,7 @@ a:hover { text-decoration:underline; }
         <strong>Microsoft</strong>
         <div class="ci-tab-region">Big Tech / PC + Enterprise</div>
       </div>
-      <span class="ci-news-badge">19</span>
+      <span class="ci-news-badge">22</span>
     </button>
     
     
@@ -351,7 +356,7 @@ a:hover { text-decoration:underline; }
         <strong>Meta</strong>
         <div class="ci-tab-region">AR/VR/XR</div>
       </div>
-      <span class="ci-news-badge">7</span>
+      <span class="ci-news-badge">2</span>
     </button>
     
     
@@ -361,7 +366,7 @@ a:hover { text-decoration:underline; }
         <strong>Samsung</strong>
         <div class="ci-tab-region">Big Tech / Consumer</div>
       </div>
-      <span class="ci-news-badge">30</span>
+      <span class="ci-news-badge">17</span>
     </button>
     
     
@@ -371,7 +376,7 @@ a:hover { text-decoration:underline; }
         <strong>Sony</strong>
         <div class="ci-tab-region">Audio / Gaming</div>
       </div>
-      <span class="ci-news-badge">4</span>
+      <span class="ci-news-badge">3</span>
     </button>
     
     
@@ -381,7 +386,7 @@ a:hover { text-decoration:underline; }
         <strong>Bose</strong>
         <div class="ci-tab-region">Audio</div>
       </div>
-      <span class="ci-news-badge">1</span>
+      <span class="ci-news-badge">0</span>
     </button>
     
     
@@ -391,7 +396,7 @@ a:hover { text-decoration:underline; }
         <strong>Sonos</strong>
         <div class="ci-tab-region">Audio / Smart Home</div>
       </div>
-      <span class="ci-news-badge">1</span>
+      <span class="ci-news-badge">2</span>
     </button>
     
     
@@ -457,7 +462,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">165</div>
+          <div class="ci-nc-num">193</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -1480,7 +1485,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">23</div>
+          <div class="ci-nc-num">21</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -3191,6 +3196,16 @@ a:hover { text-decoration:underline; }
           </div>
           
           <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.cnx-software.com/2026/08/17/luckfox-lyra-plc-a-linux-based-rockchip-rk3506b-industrial-controller-with-rs232-rs422-rs485-can-bus-and-relays/" target="_blank" rel="noopener" class="ci-prod-link">Luckfox Lyra PLC &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">WiFi 6, Bluetooth 5.2</div>
+            <div class="ci-product-summary">This Linux-based industrial controller features a Rockchip RK3506B SoC with dual Ethernet, WiFi 6, and Bluetooth 5.2 wireless connectivity. It also includes RS232, RS422, RS485, CAN bus, and relays for versatile industrial applications.</div>
+          </div>
+          
+          <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
               <span class="ci-prod-link" title="Direct source URL not available">Echo Show 10 (Refresh)</span>
@@ -3283,7 +3298,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">157</div>
+          <div class="ci-nc-num">159</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -4554,6 +4569,36 @@ a:hover { text-decoration:underline; }
           </div>
           
           <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.digitaltrends.com/home/apple-is-reportedly-looking-to-expand-its-smart-home-lineup-with-smart-displays-cameras-and-updated-homepods/" target="_blank" rel="noopener" class="ci-prod-link">HomePods &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Wi-Fi, Bluetooth</div>
+            <div class="ci-product-summary">Apple is reportedly planning to update its HomePod lineup, suggesting new versions of the smart speaker are in development. This expansion aims to broaden Apple&#39;s smart home offerings.</div>
+          </div>
+          
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.digitaltrends.com/home/apple-is-reportedly-looking-to-expand-its-smart-home-lineup-with-smart-displays-cameras-and-updated-homepods/" target="_blank" rel="noopener" class="ci-prod-link">Smart Displays &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Wi-Fi, Bluetooth</div>
+            <div class="ci-product-summary">Apple is reportedly developing smart displays as part of an expanded smart home product lineup. These devices would compete in a growing market for connected home hubs.</div>
+          </div>
+          
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.digitaltrends.com/home/apple-is-reportedly-looking-to-expand-its-smart-home-lineup-with-smart-displays-cameras-and-updated-homepods/" target="_blank" rel="noopener" class="ci-prod-link">Smart Home Cameras &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Wi-Fi, Bluetooth</div>
+            <div class="ci-product-summary">Apple is rumored to be working on smart home cameras, expanding its presence in the connected home market. This move would bring Apple into direct competition with existing smart camera manufacturers.</div>
+          </div>
+          
+          <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
               <a href="https://www.macrumors.com/guide/airtags-2/" target="_blank" rel="noopener" class="ci-prod-link">AirTag 2 (Precision Tracker) &#x2197;</a>
@@ -4656,7 +4701,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">19</div>
+          <div class="ci-nc-num">22</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -5079,7 +5124,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">7</div>
+          <div class="ci-nc-num">2</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -5362,7 +5407,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">30</div>
+          <div class="ci-nc-num">17</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -6628,7 +6673,7 @@ a:hover { text-decoration:underline; }
               <a href="https://www.sammobile.com/news/samsung-takes-another-step-toward-launching-galaxy-tab-s12-series/" target="_blank" rel="noopener" class="ci-prod-link">Galaxy Tab S12 series &#x2197;</a>
               
             </div>
-            <div class="ci-product-type"></div>
+            <div class="ci-product-type">Bluetooth</div>
             <div class="ci-product-summary">Samsung is preparing to launch the Galaxy Tab S12 series. Recent information suggests the company is taking steps towards the official release of these new tablets.</div>
           </div>
           
@@ -6883,6 +6928,26 @@ a:hover { text-decoration:underline; }
           </div>
           
           <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.theverge.com/gadgets/980547/samsung-galaxy-h1-over-ear-headphones" target="_blank" rel="noopener" class="ci-prod-link">Galaxy H1 over-ear headphones &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type"></div>
+            <div class="ci-product-summary">Code strings found in Samsung&#39;s Galaxy Wearable app suggest the development of new over-ear headphones, referred to as Galaxy H1. These are expected to compete with high-end models like Apple&#39;s AirPods Max.</div>
+          </div>
+          
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.gsmarena.com/samsung_galaxy_tab_s12_series_bluetooth_certified-news-74128.php" target="_blank" rel="noopener" class="ci-prod-link">Galaxy Tab S12+ and Tab S12 Ultra &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Bluetooth</div>
+            <div class="ci-product-summary">The Samsung Galaxy Tab S12+ and Tab S12 Ultra have achieved Bluetooth certification, moving them a step closer to their official launch. This certification is a key milestone before release.</div>
+          </div>
+          
+          <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
               <span class="ci-prod-link" title="Direct source URL not available">Galaxy S25 / S25+ / S25 Ultra</span>
@@ -6965,7 +7030,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">4</div>
+          <div class="ci-nc-num">3</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -7786,6 +7851,16 @@ a:hover { text-decoration:underline; }
           </div>
           
           <div class="ci-product-card">
+            <div class="ci-product-sku">2026 &mdash;
+              
+              <a href="https://www.theverge.com/gadgets/980064/sony-a7r-vi-6-hands-on-impressions-review" target="_blank" rel="noopener" class="ci-prod-link">A7R VI &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Wi-Fi, Bluetooth</div>
+            <div class="ci-product-summary">The Sony A7R VI is a high-resolution camera that aims to eliminate the need for serious sacrifices in exchange for megapixels. It represents a peak in camera technology, offering advanced features for photographers.</div>
+          </div>
+          
+          <div class="ci-product-card">
             <div class="ci-product-sku">2025 &mdash;
               
               <span class="ci-prod-link" title="Direct source URL not available">PlayStation 5 Pro</span>
@@ -7838,7 +7913,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">1</div>
+          <div class="ci-nc-num">0</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -8258,6 +8333,56 @@ a:hover { text-decoration:underline; }
             <div class="ci-product-summary">Flagship ANC products featuring immersive space-audio tracks and optimized low-energy Bluetooth audio profiles.</div>
           </div>
           
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2024 &mdash;
+              
+              <a href="https://www.nbcnews.com/select/shopping/best-wireless-earbuds-headphones-rcna214088" target="_blank" rel="noopener" class="ci-prod-link">QuietComfort Ultra Earbuds &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Bluetooth</div>
+            <div class="ci-product-summary">These earbuds offer immersive audio with Bose Immersive Audio and advanced noise cancellation. They are designed for a comfortable fit and superior sound quality for everyday listening.</div>
+          </div>
+          
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2024 &mdash;
+              
+              <a href="https://www.nbcnews.com/select/shopping/best-wireless-earbuds-headphones-rcna214088" target="_blank" rel="noopener" class="ci-prod-link">QuietComfort Ultra Headphones &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Bluetooth</div>
+            <div class="ci-product-summary">The QuietComfort Ultra Headphones provide world-class noise cancellation and Bose Immersive Audio for a captivating listening experience. They are built for comfort and long-lasting wear.</div>
+          </div>
+          
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2024 &mdash;
+              
+              <a href="https://www.nbcnews.com/select/shopping/best-wireless-earbuds-headphones-rcna214088" target="_blank" rel="noopener" class="ci-prod-link">QuietComfort Headphones &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Bluetooth</div>
+            <div class="ci-product-summary">These headphones deliver a balance of quiet and comfort, featuring Bose&#39;s signature noise cancellation. They are ideal for travel and daily commutes, offering a premium audio experience.</div>
+          </div>
+          
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2024 &mdash;
+              
+              <a href="https://www.nbcnews.com/select/shopping/best-wireless-earbuds-headphones-rcna214088" target="_blank" rel="noopener" class="ci-prod-link">Sport Earbuds &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Bluetooth</div>
+            <div class="ci-product-summary">Designed for an active lifestyle, these earbuds offer a secure and comfortable fit with sweat and weather resistance. They provide clear audio and reliable connectivity for workouts.</div>
+          </div>
+          
+          <div class="ci-product-card">
+            <div class="ci-product-sku">2024 &mdash;
+              
+              <a href="https://www.nbcnews.com/select/shopping/best-wireless-earbuds-headphones-rcna214088" target="_blank" rel="noopener" class="ci-prod-link">SoundSport Free &#x2197;</a>
+              
+            </div>
+            <div class="ci-product-type">Bluetooth</div>
+            <div class="ci-product-summary">These truly wireless earbuds are built for movement, offering a secure fit and Bose&#39;s acclaimed sound. They are sweat-resistant and provide a robust audio experience for active users.</div>
+          </div>
+          
         </div>
       </div>
 
@@ -8281,7 +8406,7 @@ a:hover { text-decoration:underline; }
           </div>
         </div>
         <div class="ci-news-count">
-          <div class="ci-nc-num">1</div>
+          <div class="ci-nc-num">2</div>
           <div class="ci-nc-label">news<br>articles</div>
         </div>
       </div>
@@ -9123,7 +9248,7 @@ a:hover { text-decoration:underline; }
 </div><!-- /ci-layout -->
 
 </main>
-<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-08-17 06:09</div></footer>
+<footer class="footer"><div class="wrap">Edit data in <code>data/customers.json</code> &middot; IoT Wireless Intel &middot; 2026-08-18 06:09</div></footer>
 <script>
 function timeAgo(iso){
   var s=iso; if(s&&s.length===10)s+='T00:00:00Z';

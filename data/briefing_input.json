@@ -1,536 +1,503 @@
 {
-  "generated_at": "2026-08-17T13:09:52Z",
+  "generated_at": "2026-08-18T13:09:44Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Cantor Fitzgerald Reaffirms Overweight Rating for NXP Semiconductors (NASDAQ:NXPI)",
-      "url": "https://www.marketbeat.com/instant-alerts/cantor-fitzgerald-reaffirms-overweight-rating-for-nxp-semiconductors-nasdaqnxpi-2026-08-17/",
+      "title": "The 5 Best NETGEAR Routers of 2026",
+      "url": "https://www.rtings.com/router/reviews/netgear",
+      "source": "RTINGS.com",
+      "date": "2026-08-18",
+      "vendor": "MediaTek",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "Best\nWi-Fi Routers\nMesh Wi-Fi Systems\nGaming\nCable Modem-Router Combos\nWi-Fi 7\nSpectrum\nLarge Homes\nFiber Internet\nXfinity\nLong-Range\nWi-Fi 6\nASUS\nBudget And Cheap\nNETGEAR\nTP-Link\nStreaming\nTools\nCompare\nResults Table Tool\nReview List\nReview Index\nGraph\nReview Pipeline\nVote\nCustom Ratings\nPopular\nTP"
+    },
+    {
+      "title": "The eight changes Apple is making to App Tracking Transparency in Europe",
+      "url": "https://9to5mac.com/2026/08/18/the-eight-changes-apple-is-making-to-app-tracking-transparency-in-europe/",
+      "source": "9to5Mac",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "It was reported yesterday that Apple has agreed to comply with \u201cfairer\u201d App Tracking Transparency rules in the EU, following an investigation by the German antitrust regulator. Apple said it was complying voluntarily, and we understand it will be making a total of eight changes in order to do so \u2026"
+    },
+    {
+      "title": "Why Threat Intelligence Feeds Often Fail to Meet SOC Expectations",
+      "url": "https://cybersecuritynews.com/why-threat-intelligence-feeds-often-fail-to-meet-soc-expectations/",
+      "source": "CyberSecurityNews",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Threat intelligence (TI) feeds are expected to close visibility gaps that inevitably emerge in enterprise SOCs and make investigations faster and more effective.\nThis promise sounds particularly attractive to leaders of growing SOC teams that need to face an increasing alert number without constantl"
+    },
+    {
+      "title": "Google Pixel \u2018attack\u2019 plan: 13 million phones in 2026, ending China production next year",
+      "url": "https://9to5google.com/2026/08/18/google-pixel-report-china-production-2026-shipments/",
+      "source": "9to5Google",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "A new report details Google\u2019s plans to completely end production in China as soon as next year, while the company is aiming to sell around 13 million Pixel phones in 2026."
+    },
+    {
+      "title": "NXP simplifies secure industrial connectivity with MCX A5 MCUs",
+      "url": "https://www.computerweekly.com/news/366649377/NXP-simplifies-secure-industrial-connectivity-with-MCX-A5-MCUs",
+      "source": "Computer Weekly",
+      "date": "2026-08-18",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "NXP\nNXP simplifies secure industrial connectivity with MCX A5 MCUs\nChip family designed to make connection to industrial edge devices easier and to unlock trusted real-time data for AI-driven applications such as simplified industrial networking\nAs artificial intelligence (AI) and edge processing in"
+    },
+    {
+      "title": "Ericsson and MediaTek test achieves decimetre-level positioning accuracy over commercial 5G network",
+      "url": "https://www.telecompaper.com/news/ericsson-and-mediatek-test-achieves-decimetre-level-positioning-accuracy-over-commercial-5g-network--1580180",
+      "source": "Telecompaper",
+      "date": "2026-08-18",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Complete profile\nBefore downloading the whitepaper, we would like to ask you to complete your profile with company and position. After confirming you will receive the white paper.\nComplete profile\nBefore downloading the whitepaper, we would like to ask you to complete your profile with company and p"
+    },
+    {
+      "title": "Google&#8217;s Pet Memory forgot who my cats are",
+      "url": "https://www.theverge.com/tech/981269/google-home-gemini-pet-memory-nest-camera-review",
+      "source": "The Verge",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "One of the best things my smart home does is help me care for my pets, and security cameras are particularly useful for keeping track of my many critters. But the barrage of notifications they send often means I miss important ones. So, when Google announced its new Pet Memory feature for Gemini for"
+    },
+    {
+      "title": "Steve Jobs\u2019 8th-grade science fair project goes up for auction",
+      "url": "https://9to5mac.com/2026/08/18/steve-jobs-8th-grade-science-fair-project-goes-up-for-auction/",
+      "source": "9to5Mac",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Collectors have proven avid fans of Steve Jobs memorabilia over the years, and a new piece seems likely to attract significant interest. It\u2019s an 8th-grade science fair project with two demonstration circuits \u2013 and a warning note from Steve to his teachers. It\u2019s remained at the Jobs family property i"
+    },
+    {
+      "title": "NXP Promises to Secure the Industrial Edge with New MCX A5 Microcontrollers",
+      "url": "https://www.hackster.io/news/nxp-promises-to-secure-the-industrial-edge-with-new-mcx-a5-microcontrollers-87760b8762e9",
+      "source": "Hackster.io",
+      "date": "2026-08-18",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "NXP Promises to Secure the Industrial Edge with New MCX A5 Microcontrollers\n10BASE-T1S Ethernet included as standard, secure boot, post-quantum cryptography, FlexIO, and a 240MHz Arm Cortex-M33 core.\nNXP Semiconductors has unveiled a new family of microcontrollers, the MCX A5 \u2014 designed to offer eve"
+    },
+    {
+      "title": "Skip the Pixel Tag: 3 Bluetooth trackers I recommend you buy instead",
+      "url": "https://www.androidpolice.com/3-bluetooth-trackers-i-recommend-instead-of-pixel-tag/",
+      "source": "Android Police",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "We've been waiting for Google to announce its own AirTag competitor for a couple of years now, and it finally happened. The Pixel Tag is official, and it will be available starting November 11.\nGoogle has opted for a wafer-thin pebble design for its tracker, opting for something that is midway betwe"
+    },
+    {
+      "title": "Ericsson, MediaTek achieve high-precision 5G positioning test",
+      "url": "https://www.communicationstoday.co.in/ericsson-mediatek-achieve-high-precision-5g-positioning-test/",
+      "source": "Communications Today",
+      "date": "2026-08-18",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Company News\nEricsson, MediaTek achieve high-precision 5G positioning test\nEricsson and MediaTek have successfully completed a world-first end-to-end (e2e) test of high-precision outdoor positioning. Utilizing standardized 3GPP technology for Global Navigation Satellite System (GNSS) Real-Time Kinem"
+    },
+    {
+      "title": "NXP Semiconductors stock holds near $232.72 after July earnings",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-stock-holds-near-232-72-after-july-earnings/69964094",
+      "source": "AD HOC NEWS",
+      "date": "2026-08-18",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NXP Semiconductors stock holds near $232.72 after July earnings\nPublished on 08/18/2026 at 13:36 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSNXP Semiconductors N.V. (NL0009538779) closed at $232.72 on August 17, 2026, with a market value of $58.68 billion. The stock finishe"
+    },
+    {
+      "title": "Silex Technology Launches EP-200N Edge AI System-on-Module for Industrial and Medical Devices",
+      "url": "https://aijourn.com/silex-technology-launches-ep-200n-edge-ai-system-on-module-for-industrial-and-medical-devices/",
+      "source": "aijourn.com",
+      "date": "2026-08-18",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "Powered by the NXP\u00ae Semiconductors\u2019 i.MX 95 applications processor, the EP-200N delivers secure and reliable edge AI capabilities, long-term availability, and Wi-Fi 6E support to simplify embedded product development.\nSANTA ANA, Calif., Aug. 18, 2026 /PRNewswire/ \u2014 Silex Technology, a global leader "
+    },
+    {
+      "title": "Your iPhone's built-in magnifier does way more than help you see the fine print",
+      "url": "https://www.zdnet.com/article/how-iphone-magnifier-helps-you-see-the-fine-print/",
+      "source": "how to use it",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Forgot your glasses? You can easily use your iPhone to read small text, or words from far away. Here's how."
+    },
+    {
+      "title": "Apple admits it may not make any commission from alternative app stores",
+      "url": "https://9to5mac.com/2026/08/18/apple-admits-it-may-not-make-any-commission-from-alternative-app-stores/",
+      "source": "9to5Mac",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple has been fighting hard to ensure that it is still able to take a commission from app sales made through third-party stores. Its aggression in doing this landed it in hot water with the judge in the long-running Epic Games case. The company has since submitted a proposal for a more toned down v"
+    },
+    {
+      "title": "Oops! My cat is an iPad kid",
+      "url": "https://www.theverge.com/tech/980226/cat-ipad-kid-pet-tech-games-youtube",
+      "source": "The Verge",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Pets, like children, come with the responsibility to keep them happy, healthy, and mentally stimulated - obligations I readily committed to before getting my cat, Trevor. I work from home, so he's never lonely, and play with him using a mountain of toys at every opportunity outside of my working hou"
+    },
+    {
+      "title": "Google wants you to use its phones less",
+      "url": "https://www.zdnet.com/article/google-wants-you-to-use-its-phones-less-but-im-skeptical/",
+      "source": "but I'm skeptical",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Glasses",
+      "buckets": [],
+      "summary": "Google is leveraging our poor relationship to technology to sell its new phones - the same relationship it had a hand in creating."
+    },
+    {
+      "title": "Two camera features may be unique to the iPhone 18 Pro Max, suggests leaker",
+      "url": "https://9to5mac.com/2026/08/18/two-camera-features-may-be-unique-to-the-iphone-18-pro-max-suggests-leaker/",
+      "source": "9to5Mac",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Whether or not you need to buy Apple\u2019s largest iPhone Pro in order to get the best camera features has varied by generation. So far, reporting has mostly suggested that there will be no camera differentiation between the iPhone 18 Pro and Pro Max, but a leaker today casts some doubt on this. Specifi"
+    },
+    {
+      "title": "Fairphone is launching its latest repairable phone in the US too",
+      "url": "https://techcrunch.com/2026/08/18/fairphone-is-launching-its-latest-repairable-phone-in-the-us-too/",
+      "source": "TechCrunch",
+      "date": "2026-08-18",
+      "vendor": "Qualcomm",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Fairphone, the Dutch company known for its sustainable and repair-friendly phones, on Tuesday said its latest smartphone, Fairphone (Gen 6+), is now available in the U.S, starting at $649.\nThe company previously had a partnership with French open-source operating system maker e/OS to sell a \u201cde-Goog"
+    },
+    {
+      "title": "Fairphone\u2019s latest repairable phone is going on sale in the US",
+      "url": "https://www.theverge.com/tech/980876/fairphone-6-plus-us-t-mobile-amazon",
+      "source": "The Verge",
+      "date": "2026-08-18",
+      "vendor": "Qualcomm",
+      "customer": "Amazon",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "The Fairphone 6 Plus is a minor hardware refresh, but a major launch for the company: It's the first phone that Fairphone is selling directly in the US. It's on sale now for $649.99, available through Fairphone's website and Amazon, and is sold unlocked with support for both T-Mobile and AT&#38;T. I"
+    },
+    {
+      "title": "Google\u2019s got Spirit (yes it does)",
+      "url": "https://9to5google.com/2026/08/18/inbox-newsletter-11/",
+      "source": "9to5Google",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Good morning. I hope you had a wonderful weekend. Today I\u2019m reading more about Anthropic\u2019s strange new text watermarking process, watching this historic Joshua Ba\u00e9z home run recap on repeat, listening to the incredible new Phoebe Bridgers album, and getting stuck into Daniel Mason\u2019s new satire, Coun"
+    },
+    {
+      "title": "Ericsson and MediaTek put precise 5G positioning through its paces",
+      "url": "https://www.telecoms.com/5g-6g/ericsson-and-mediatek-put-precise-5g-positioning-through-its-paces",
+      "source": "Telecoms",
+      "date": "2026-08-18",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Taiwan Stocks Reverse Gains to Reclaim 45,000; MediaTek Surges Past 4,000, Passive Components Rally with Multiple Limit-Ups",
+      "url": "https://finance.biggo.com/news/f02f065b-e3b6-4175-b2a1-4e75dd381eeb",
+      "source": "finance.biggo.com",
+      "date": "2026-08-18",
+      "vendor": "MediaTek",
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Taiwan Stocks Reverse Gains to Reclaim 45,000; MediaTek Surges Past 4,000, Passive Components Rally with Multiple Limit-Ups\nTaiwan stocks reversed course on August 11 as buying interest returned, with the benchmark TAIEX closing at 45,120.72 points, up 191.96 points, reclaiming the 45,000 threshold."
+    },
+    {
+      "title": "Morning Open Thread New Music \u2013 Beck \u2013 \u201cRide Lonesome \u201c",
+      "url": "https://www.dailykos.com/stories/2026/8/18/800069340/community/morning-open-thread-new-musicbeck-ride-lonesome/",
+      "source": "Daily Kos",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Good Morning! Happy Tuesday.\nWelcome to Morning Open Thread, with daily posts from a MOTley crew of hosts who choose their own topics from a wide-open range: often music or poetry, sometimes history \u2014 anything and everything from Apples to Zoology! We support our community, invite and share ideas, a"
+    },
+    {
+      "title": "Einride strikes deal to add 500 Tesla Semis to its fleet",
+      "url": "https://techcrunch.com/2026/08/18/einride-strikes-deal-to-add-500-tesla-semis-to-its-fleet/",
+      "source": "TechCrunch",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Asset Tracking",
+      "buckets": [],
+      "summary": "Einride will buy the Tesla Semis, which will be made to Amazon and other customers."
+    },
+    {
+      "title": "Apple @ Work Podcast: Agentic networking actions",
+      "url": "https://9to5mac.com/2026/08/18/proactive-networking-actions/",
+      "source": "9to5Mac",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple @ Work is exclusively brought to you by Mosyle, the only Apple Unified Platform. Mosyle is the only solution that integrates in a single professional-grade platform all the solutions necessary to seamlessly and automatically deploy, manage &amp; protect Apple devices at work. Over 45,000 organ"
+    },
+    {
+      "title": "Detroit startup Grounded raises $5M to customize electric and gas-powered vans",
+      "url": "https://techcrunch.com/2026/08/18/detroit-startup-grounded-raises-5m-to-customize-electric-and-gas-powered-vans/",
+      "source": "TechCrunch",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Mercedes",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The company has shifted from making van-life builds to custom outfitting vehicles for small businesses, all while the EV landscape in the US changed dramatically."
+    },
+    {
+      "title": "Mitsubishi UFJ Asset Management Co. Ltd. Invests $195.53 Million in NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-mitsubishi-ufj-asset-management-co-ltd-invests-19553-million-in-nxp-semiconductors-nv-nxpi-2026-08-18/",
       "source": "MarketBeat",
-      "date": "2026-08-17",
+      "date": "2026-08-18",
       "vendor": "NXP",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "NXP Semiconductors (NASDAQ:NXPI - Get Free Report)'s stock had its \"overweight\" rating reiterated by analysts at Cantor Fitzgerald in a note issued to investors on Monday,Benzinga reports. They currently have a $400.00 target price on the semiconductor provider's stock. Cantor Fitzgerald's price tar"
+      "summary": "Mitsubishi UFJ Asset Management Co. Ltd. acquired a new stake in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the second quarter, according to its most recent Form 13F filing with the SEC. The fund acquired 695,757 shares of the semiconductor provider's stock, valued at approximately $"
     },
     {
-      "title": "Best AirPods deals right now: Save $120 on AirPods Max 2, AirPods Pro 3 for $190, more",
-      "url": "https://9to5mac.com/2026/08/17/best-airpods-deals-right-now-save-120-on-airpods-max-2-airpods-pro-3-for-190-more/",
-      "source": "9to5Mac",
-      "date": "2026-08-17",
-      "vendor": "Apple",
+      "title": "UK puts Google AI on the flight path to fewer contrails",
+      "url": "https://www.theregister.com/public-sector/2026/08/18/uk-puts-google-ai-on-the-flight-path-to-fewer-contrails/5288516",
+      "source": "The Register",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "Trial will test whether small route and altitude tweaks can reduce aviation's warming impact"
+    },
+    {
+      "title": "[Insight] Qualcomm Korea Is Designing How AI Works Beyond the Chip",
+      "url": "https://www.koreaittimes.com/news/articleView.html?idxno=156228",
+      "source": "Korea IT Times",
+      "date": "2026-08-18",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "The AI industry has so far concentrated on securing larger data centers and more graphics processing units. But as AI begins to continuously interpret users\u2019 voices, locations and health data\u2014as well as vehicle sensors and factory video\u2014sending every decision to the cloud creates limits in cost, lat"
+    },
+    {
+      "title": "Plato Investment Management Ltd Acquires Shares of 4,835 NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-plato-investment-management-ltd-acquires-shares-of-4835-nxp-semiconductors-nv-nxpi-2026-08-18/",
+      "source": "MarketBeat",
+      "date": "2026-08-18",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Plato Investment Management Ltd bought a new position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the 2nd quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The firm bought 4,835 shares of the semiconductor provider's stock, valued"
+    },
+    {
+      "title": "Sequoia Financial Advisors LLC Increases Holdings in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-sequoia-financial-advisors-llc-increases-holdings-in-qualcomm-incorporated-qcom-2026-08-18/",
+      "source": "MarketBeat",
+      "date": "2026-08-18",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Sequoia Financial Advisors LLC raised its holdings in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 9.6% in the second quarter, according to its most recent 13F filing with the Securities and Exchange Commission (SEC). The fund owned 153,479 shares of the wireless technology company"
+    },
+    {
+      "title": "Ericsson, MediaTek claim world-first high-precision 5G positioning test",
+      "url": "https://www.mobileeurope.co.uk/ericsson-mediatek-5g-test/",
+      "source": "Mobile Europe",
+      "date": "2026-08-18",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Ericsson has partnered with MediaTek in what it claims is a world-first end-to-end test of high-precision outdoor positioning over a commercial 5G network.\nThe test used standardised 3GPP technology for Global Navigation Satellite System (GNSS) Real-Time Kinematic (RTK), achieving positioning accura"
+    },
+    {
+      "title": "Queclink provides fleet and asset tracking boost for the freight and logistics sector",
+      "url": "https://iotbusinessnews.com/2026/08/18/queclink-provides-fleet-and-asset-tracking-boost-for-the-freight-and-logistics-sector/",
+      "source": "IoT Business News",
+      "date": "2026-08-18",
+      "vendor": null,
+      "customer": null,
+      "application": "Asset Tracking",
+      "buckets": [],
+      "summary": "Queclink Wireless Solutions, a global provider of IoT devices and hardware, has launched a rechargeable tracker designed for freight and logistics applications such as HGVs, trailer, cargo and equipment monitoring. The compact GL330MG device possesses optimised power consumption and advanced connect"
+    },
+    {
+      "title": "Merit Financial Group LLC Has $8.06 Million Stake in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-merit-financial-group-llc-has-806-million-stake-in-qualcomm-incorporated-qcom-2026-08-18/",
+      "source": "MarketBeat",
+      "date": "2026-08-18",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Merit Financial Group LLC reduced its position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 58.8% in the 2nd quarter, according to the company in its most recent disclosure with the Securities and Exchange Commission (SEC). The firm owned 43,638 shares of the wireless technology company's"
+    },
+    {
+      "title": "Qualcomm Incorporated $QCOM Shares Sold by Merit Financial Group LLC",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-sold-by-merit-financial-group-llc-2026-08-18/",
+      "source": "MarketBeat",
+      "date": "2026-08-18",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Merit Financial Group LLC decreased its position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 58.8% in the second quarter, according to its most recent 13F filing with the Securities and Exchange Commission (SEC). The fund owned 43,638 shares of the wireless technology company's stock aft"
+    },
+    {
+      "title": "Qualcomm Incorporated $QCOM Shares Sold by OFI Invest Asset Management",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-sold-by-ofi-invest-asset-management-2026-08-18/",
+      "source": "MarketBeat",
+      "date": "2026-08-18",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "OFI Invest Asset Management reduced its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 32.0% during the second quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The institutional investor owned 358,300 shares of the wireless technology "
+    },
+    {
+      "title": "LILYGO T-Echo Lite Kit adds a keyboard shield to the nrRF52840-based ePaper LoRa and GPS development board",
+      "url": "https://www.cnx-software.com/2026/08/18/lilygo-t-echo-lite-kit-adds-a-keyboard-shield-to-the-nrrf52840-based-epaper-lora-and-gps-development-board/",
+      "source": "CNX Software",
+      "date": "2026-08-18",
+      "vendor": "Nordic",
+      "customer": "Amazon",
+      "application": "Audio / Speaker",
+      "buckets": [
+        "ieee15_4",
+        "bluetooth"
+      ],
+      "summary": "LILYGO T-Echo Lite Kit is a Nordic nRF52840-based LoRa + GPS development kit with a built-in keyboard that enables direct off-grid communication without a smartphone. The kit is not entirely new since it&#8217;s based on the T-Echo Lite devkit introduced last year, to which the company has now added"
+    },
+    {
+      "title": "Apple&#8217;s camera-equipped AirPods appear in leaked video",
+      "url": "https://www.theverge.com/tech/981326/apple-airpods-with-cameras-demo-video-leak",
+      "source": "The Verge",
+      "date": "2026-08-18",
+      "vendor": null,
       "customer": "Apple",
       "application": "Audio / Speaker",
       "buckets": [],
-      "summary": "The late summer AirPods deals are really flying now, folks. While we might be in for a next-gen and potentially next-gen price come next month, AirPods Pro 3 are sitting at some of the best prices ever, AirPods 4 with ANC just hit the lowest rate in nearly half a year, and the 2026 AirPods Max 2 jus"
+      "summary": "We may have our first glimpse of Apple's rumored camera-equipped AirPods, thanks to a video that MacRumors found in the macOS Tahoe 26.7 Release Candidate. The short video clip features a man - who is wearing the new AirPods - holding up a book with the cover displayed, so that Visual Intelligence c"
     },
     {
-      "title": "Commvault Integrates Threat Scan with Google Threat Intelligence to Enable Fast, Clean Recoveries Following Cyberattacks",
-      "url": "https://www.storagenewsletter.com/2026/08/17/commvault-integrates-threat-scan-with-google-threat-intelligence-to-enable-fast-clean-recoveries-following-cyberattacks/",
-      "source": "StorageNewsletter",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Commvault Integrates Threat Scan with Google Threat Intelligence to Enable Fast, Clean Recoveries Following Cyberattacks\nNew threat-informed recovery capabilities help organizations identify clean recovery points quicker, reduce downtime after cyberattacks, and restore operations with confidence\nThi"
-    },
-    {
-      "title": "This Google Play Store trick saved me over $100 on the Pixel 11 Pro XL",
-      "url": "https://www.zdnet.com/article/this-google-play-store-trick-might-save-you-up-to-175-on-the-pixel-11-heres-how-to-do-it/",
-      "source": "here's how",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "This Google Play Store trick saved me over $100 on the Pixel 11 Pro XL - here's how\nFollow ZDNET: Add us as a preferred source on Google.\nZDNET's key takeaways\n- Gold and higher Play Store users are getting Pixel discounts.\n- You can sign up for a Play Pass trial to get free gold status.\n- Discounts"
-    },
-    {
-      "title": "The Charging Inlet Has Become a System: Rethinking EV Charge-Control Electronics",
-      "url": "https://www.eetimes.com/the-charging-inlet-has-become-a-system-rethinking-ev-charge-control-electronics/",
-      "source": "EE Times",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Explore how integrated charge-control architecture reduces complexity while supporting J3400, MCS, and global EV platforms. The post The Charging Inlet Has Become a System: Rethinking EV Charge-Control Electronics appeared first on EE Times."
-    },
-    {
-      "title": "Google Workspace lets Gemini access your company data by default",
-      "url": "https://www.zdnet.com/article/google-workspace-lets-gemini-access-your-company-data-by-default-how-to-shut-it-down/",
-      "source": "how to shut it down",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "In Google Workspace, Gemini has access to Gmail, Docs, Calendar, Chat, and more by default. Here's why it matters, and how administrators can disable it today."
-    },
-    {
-      "title": "A serious Mac screen sharing vulnerability is being actively exploited",
-      "url": "https://9to5mac.com/2026/08/17/a-serious-mac-screen-sharing-vulnerability-is-being-actively-exploited/",
-      "source": "9to5Mac",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple recently released updates to three versions of macOS, stating that they fixed a serious screen sharing vulnerability in macOS Tahoe, Sequoia, and Sonoma. At the time, there was no indication that the security flaw was being exploited in the wild, but now there is, so if you haven\u2019t yet updated"
-    },
-    {
-      "title": "Apple Fitness+ could be getting live sessions, but probably not",
-      "url": "https://9to5mac.com/2026/08/17/apple-fitness-could-be-getting-live-sessions-but-probably-not/",
-      "source": "9to5Mac",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "An Apple job listing appears to be suggesting that the company might be planning some live Apple Fitness+ sessions. However, my strong suspicion is that all is not quite as it seems. The job opening is for a studio producer, and Apple is specifically seeking someone with a strong background in live "
-    },
-    {
-      "title": "Whisker\u2019s AI-powered litter robot thinks my cats swapped bodies",
-      "url": "https://www.theverge.com/tech/978323/whisker-litter-robot-5-pro-review",
-      "source": "The Verge",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": null,
-      "application": "Robotics",
-      "buckets": [],
-      "summary": "The greatest invention in pet tech in recent years is the litter robot. A machine that scoops your kitties' poop so you don't have to - what else could a cat owner possibly want? How about insights into your kitty's litter box usage that could flag health issues? Sign me up. But I have two [&#8230;]"
-    },
-    {
-      "title": "Anthropic explains how Claude&#8217;s invisible text watermarks will work",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
-      "source": "The Verge",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Anthropic has clarified how it's planning to apply invisible watermarks to Claude-generated text in order to comply with Europe's AI transparency rules. On Friday, Anthropic announced that Claude's text marking system is \"a version of the SynthID-Text approach\" - an open-source watermarking technolo"
-    },
-    {
-      "title": "Qualcomm Has Fallen 36% From Its High. Is the Margin Dip a Reason to Buy or to Run?",
-      "url": "https://www.tikr.com/blog/qualcomm-has-fallen-36-from-its-high-is-the-margin-dip-a-reason-to-buy-or-to-run?",
-      "source": "TIKR.com",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Key Stats for Qualcomm Stock\n- Current Price: $165.79\n- Target Price (Mid): ~$415\n- Street Target: ~$193\n- Potential Total Return: ~150%\n- Annualized IRR: ~25% / year\nNow Live: Discover how much upside your favorite stocks could have using TIKR\u2019s new Valuation Model (It\u2019s free) >>>\nWhat Happened?\nQu"
-    },
-    {
-      "title": "Snapdragon C Specs: 8-Core Kryo Chip for $300 Laptops",
-      "url": "https://techmymoney.com/2026/08/17/snapdragon-c-specs-8-core-kryo-chip-for-300-laptops/",
-      "source": "Tech My Money",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Qualcomm has published official Snapdragon C specs in its product brief. The May press note already said the platform is for entry-tier Windows laptops targeting $300 and up. Now the brief lists clocks, memory, and ports. It is not a Snapdragon X chip. Instead, it is a Kryo part aimed at students, f"
-    },
-    {
-      "title": "Mouser Now Shipping Espressif ESP32-P4X-EYE Vision Development Kit",
-      "url": "https://www.electropages.com/blog/2026/08/mouser-now-shipping-espressif-esp32-p4x-eye-vision-development-kit",
-      "source": "Electropages",
-      "date": "2026-08-17",
-      "vendor": "Espressif",
-      "customer": null,
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Mouser Now Shipping Espressif ESP32-P4X-EYE Vision Development Kit\nIn The News | 17-08-2026 | By Jack Pollard\nMouser Electronics is now shipping the new Espressif Systems ESP32-P4X-EYE vision development kit, a compact camera-focused platform designed for AI, edge computing, HMI and IoT applications"
-    },
-    {
-      "title": "Semiconductor development: Lessons from France and path forward for Vietnam",
-      "url": "https://www.design-reuse.com/news/202530992-semiconductor-development-lessons-from-france-and-path-forward-for-vietnam/",
-      "source": "Design And Reuse",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Huawei",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "August 17, 2026 -\nVOV.VN - As semiconductors become a strategic arena, France is focusing on strategic autonomy in key segments rather than the entire value chain, offering valuable lessons for Vietnam to build its domestic industry.\nAccording to Nguyen Van Minh, Head of the Wireless Technology and "
-    },
-    {
-      "title": "Tulsa Wealth Advisors INC Takes Position in NXP Semiconductors N.V. $NXPI",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-tulsa-wealth-advisors-inc-takes-position-in-nxp-semiconductors-nv-nxpi-2026-08-17/",
-      "source": "MarketBeat",
-      "date": "2026-08-17",
-      "vendor": "NXP",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Tulsa Wealth Advisors INC bought a new position in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 2nd quarter, according to the company in its most recent disclosure with the Securities and Exchange Commission. The institutional investor bought 5,043 shares of the semiconductor provi"
-    },
-    {
-      "title": "Samsung Galaxy Tab S12 Ultra surfaces on Google Play Console, may feature flagship MediaTek Dimensity chipset",
-      "url": "https://www.91mobiles.com/hub/samsung-galaxy-s12-ultra-spotted-on-google-play-console/",
-      "source": "91mobiles.com",
-      "date": "2026-08-17",
-      "vendor": "MediaTek",
-      "customer": "Google",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "The Samsung Galaxy Tab S11 series, comprising the Galaxy Tab S11 and Galaxy Tab S11 Ultra, was launched in September last year. In typical fashion, the company is expected to release its successors in the same timeframe this year. In conjunction with this, the Samsung Galaxy Tab S12 Ultra has surfac"
-    },
-    {
-      "title": "LineageOS support finally comes to the Galaxy S22 series",
-      "url": "https://9to5google.com/2026/08/17/lineageos-support-finally-comes-to-the-galaxy-s22-series/",
-      "source": "9to5Google",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "With about 6 months left in the \u201cofficial\u201d support window, it\u2019s great to see that LineageOS support has finally come to the Samsung Galaxy S22."
-    },
-    {
-      "title": "GSA Capital Partners LLP Purchases Shares of 6,246 NXP Semiconductors N.V. $NXPI",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-gsa-capital-partners-llp-purchases-shares-of-6246-nxp-semiconductors-nv-nxpi-2026-08-17/",
-      "source": "MarketBeat",
-      "date": "2026-08-17",
-      "vendor": "NXP",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "GSA Capital Partners LLP acquired a new stake in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the second quarter, according to the company in its most recent Form 13F filing with the SEC. The firm acquired 6,246 shares of the semiconductor provider's stock, valued at approximately $1,755,0"
-    },
-    {
-      "title": "Patriot Financial Group Insurance Agency LLC Sells 6,930 Shares of Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-patriot-financial-group-insurance-agency-llc-sells-6930-shares-of-qualcomm-incorporated-qcom-2026-08-17/",
-      "source": "MarketBeat",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Patriot Financial Group Insurance Agency LLC lessened its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 50.4% in the second quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission (SEC). The fund owned 6,816 shares of the wireles"
-    },
-    {
-      "title": "Pi-Ener-lite \u2013 A compact 18650 UPS board for Raspberry Pi Zero with RTC and fuel gauge",
-      "url": "https://www.cnx-software.com/2026/08/17/pi-ener-lite-a-compact-18650-ups-board-for-raspberry-pi-zero-with-rtc-and-fuel-gauge/",
-      "source": "CNX Software",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Designed by ACE Design Studio in China, the Pi-Ener-lite is a dedicated UPS board made specifically for the Raspberry Pi Zero series. It features a standard flat-top 18650 lithium-ion battery holder and switches to battery power when external power is lost, while supporting simultaneous charging and"
-    },
-    {
-      "title": "Mouser adds MediaTek Genio 420 Edge AI IoT platform to product portfolio",
-      "url": "https://www.newelectronics.co.uk/content/news/mouser-adds-mediatek-genio-420-edge-ai-iot-platform-to-product-portfolio",
-      "source": "New Electronics",
-      "date": "2026-08-17",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "CHICAGO TRUST Co NA Has $847,000 Stock Holdings in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-chicago-trust-co-na-has-847000-stock-holdings-in-qualcomm-incorporated-qcom-2026-08-17/",
-      "source": "MarketBeat",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "CHICAGO TRUST Co NA reduced its stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 44.3% in the 2nd quarter, according to the company in its most recent disclosure with the Securities and Exchange Commission. The institutional investor owned 4,584 shares of the wireless technology company"
-    },
-    {
-      "title": "Crossmark Global Holdings Inc. Has $69.43 Million Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-crossmark-global-holdings-inc-has-6943-million-position-in-qualcomm-incorporated-qcom-2026-08-17/",
-      "source": "MarketBeat",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Crossmark Global Holdings Inc. lessened its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 17.8% in the second quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission (SEC). The fund owned 375,705 shares of the wireless technology"
-    },
-    {
-      "title": "Nokia to Repurpose NXP Arizona Fab for AI Optical Chips",
-      "url": "https://www.electronicsforyou.biz/industry-buzz/nokia-to-repurpose-nxp-arizona-fab-for-ai-optical-chips/",
-      "source": "Electronics For You BUSINESS",
-      "date": "2026-08-17",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Nokia plans to acquire NXP\u2019s Arizona semiconductor fab and convert it for indium phosphide optical chip production to support growing AI data-centre demand.\nNokia plans to acquire NXP Semiconductors\u2019 semiconductor fabrication campus in Chandler, Arizona, to expand its optical component manufacturing"
-    },
-    {
-      "title": "Wireless SoC for Comprehensive In-Vehicle Connectivity",
-      "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity",
-      "source": "Electronics For You",
-      "date": "2026-08-17",
-      "vendor": "Telink",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "A chip combines Bluetooth, vehicle communication, and control features for digital keys, in-car devices, and vehicle electronics.\nTelink has introduced the TL3225 family of wireless SoCs for automotive applications such as digital key fobs, body domain control, and in-cabin communication.\nThe SoC co"
-    },
-    {
-      "title": "Ceva and Actions Show Off Strengths of Bluetooth HDT in New Audio Chips",
-      "url": "https://www.allaboutcircuits.com/news/ceva-and-actions-show-off-strengths-of-bluetooth-hdt-in-new-audio-chips/",
-      "source": "All About Circuits",
-      "date": "2026-08-17",
+      "title": "New Interface Simplifies Management of Matter-Powered Smart Homes",
+      "url": "https://www.businesswire.com/news/home/20260818954752/en/New-Interface-Simplifies-Management-of-Matter-Powered-Smart-Homes",
+      "source": "Business Wire",
+      "date": "2026-08-18",
       "vendor": null,
       "customer": null,
       "application": null,
       "buckets": [
-        "bluetooth"
+        "matter"
       ],
       "summary": ""
-    },
-    {
-      "title": "Your Pixel could soon help you diagnose issues with calls, mobile data, and Wi-Fi",
-      "url": "https://www.androidauthority.com/pixel-connectivity-health-diagnostics-apk-teardown-3699105/",
-      "source": "Android Authority",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\nYour Pixel could soon help you diagnose issues with calls, mobile data, and Wi-Fi\nAug 17, 2026 \u2014 2:52 AM ET\n- Google is working on a new \u201cConnectivity health\u201d feature for Pixel devices.\n- It will identify issues with mobile d"
-    },
-    {
-      "title": "Barclays raises target price for Nordic Semiconductor to 180 Norwegian kroner (170), reiterates equal weight",
-      "url": "https://www.marketscreener.com/news/barclays-raises-target-price-for-nordic-semiconductor-to-180-norwegian-kroner-170-reiterates-equa-ce7859dfd189fe23",
-      "source": "marketscreener.com",
-      "date": "2026-08-17",
-      "vendor": "Nordic",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Barclays raises target price for Nordic Semiconductor to 180 Norwegian kroner (170), reiterates equal weight"
-    },
-    {
-      "title": "Google Pixel 11 Pro Fold - Full phone specifications",
-      "url": "https://www.gsmarena.com/google_pixel_11_pro_fold-14874.php",
-      "source": "GSMArena.com",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Disclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nI'm a pixel fanboy. I have a 10 pro and my wife a 9 pro. We both moved from iPhones. But the battery on my 10 Pro is about 30% weaker than on my wife's 9 Pro. If Google can't fix this, they'll become obsole"
-    },
-    {
-      "title": "Qualcomm stock holds $165.79 after earnings and guidance",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qualcomm-stock-holds-165-79-after-earnings-and-guidance/69956688",
-      "source": "AD HOC NEWS",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Qualcomm stock holds $165.79 after earnings and guidance\nPublished on 08/17/2026 at 07:17 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSQualcomm stock is trading from a $165.79 opening price and a $174.12 billion market capitalization as of August 17, 2026, with the latest qu"
-    },
-    {
-      "title": "Luckfox Lyra PLC \u2013 A Linux-based Rockchip RK3506B industrial controller with RS232, RS422, RS485, CAN bus, and relays",
-      "url": "https://www.cnx-software.com/2026/08/17/luckfox-lyra-plc-a-linux-based-rockchip-rk3506b-industrial-controller-with-rs232-rs422-rs485-can-bus-and-relays/",
-      "source": "CNX Software",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Industrial",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "Luckfox Lyra PLC is a Linux-based programmable logic controller powered by a Rockchip RK3506B tri-core Arm Cortex-A7 SoC, equipped with dual Ethernet, WiFi 6 and Bluetooth 5.2 wireless connectivity, a 1.9-inch touchscreen LCD, and a range of I/Os. The I/Os are mostly exposed through two 11-pole term"
-    },
-    {
-      "title": "China wants to tax this type of car \u2013 so BYD launched another one",
-      "url": "https://www.drive.com.au/news/byd-joins-chinas-mega-sized-suv-race-with-potential-denza-again/",
-      "source": "drive.com.au",
-      "date": "2026-08-17",
-      "vendor": null,
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "SemiAnalysis Cuts Google TPU Shipment Forecast; MediaTek Shares Plunge 4% Intraday",
-      "url": "https://finance.biggo.com/news/2321b566-ceec-46d5-896a-e9f05c23f8e5",
-      "source": "finance.biggo.com",
-      "date": "2026-08-17",
-      "vendor": "MediaTek",
-      "customer": "Google",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "SemiAnalysis Cuts Google TPU Shipment Forecast; MediaTek Shares Plunge 4% Intraday\nIC design giant MediaTek (2454.TW) came under heavy selling pressure today (August 17), with shares plunging more than 4% in early trading, significantly underperforming the broader market. Market attention focused on"
-    },
-    {
-      "title": "Google Chrome is now available for Arm Linux. We tested it on a Raspberry Pi 5",
-      "url": "https://www.cnx-software.com/2026/08/17/google-chrome-is-now-available-for-arm-linux-we-tested-it-on-a-raspberry-pi-5/",
-      "source": "CNX Software",
-      "date": "2026-08-17",
-      "vendor": "Broadcom",
-      "customer": "Google",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Google Chrome web browser is now available for 64-bit Arm Linux, and we quickly tested it with Raspberry Pi OS on a Raspberry Pi 5 2GB SBC. The open-source Google Chromium web browser has been available for Arm Linux for years, but it lacks some features such as account sync, out-of-the-box DRM supp"
-    },
-    {
-      "title": "Microsoft blames AI for delayed Exchange update, can\u2019t say when it will arrive",
-      "url": "https://www.theregister.com/software/2026/08/17/microsoft-blames-ai-for-delayed-exchange-update-cant-say-when-it-will-arrive/5288227",
-      "source": "The Register",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Dealing with machine-made bug backlog makes it hard to find a moment to deliver promised subscription service"
-    },
-    {
-      "title": "Chinese AI company Zhipu claims its new model is a better bug-finder than Anthropic, OpenAI",
-      "url": "https://www.theregister.com/security/2026/08/17/chinese-ai-company-zhipu-claims-its-new-model-is-a-better-bug-finder-than-anthropic-openai/5288203",
-      "source": "The Register",
-      "date": "2026-08-17",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "PLUS: HCL, TCS, admit data breaches; South Korea to fine Apple, Google; India bans some rideshare tips; and more!"
-    },
-    {
-      "title": "Samsung Galaxy Tab S12 series tablets now appear in Google Play Console's supported devices list - GSMArena.com news",
-      "url": "https://www.gsmarena.com/samsung_galaxy_tab_s12_series_google_play_console_listing-news-74194.php",
-      "source": "GSMArena.com",
-      "date": "2026-08-16",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "The Samsung Galaxy Tab S12 series tablets were recently spotted on Bluetooth SIG's website, as they were Bluetooth-certified. Now those same tablets have appeared in Google Play Console's supported devices list.\nThe Galaxy Tab S12 series consists of two tablets - the Galaxy Tab S12+ and the Galaxy T"
-    },
-    {
-      "title": "Wireshark 4.6.8: critical update for 28 vulnerabilities",
-      "url": "https://www.secnews.gr/en/726602/wireshark-468-28-eyes/",
-      "source": "SecNews.gr",
-      "date": "2026-08-16",
-      "vendor": null,
-      "customer": null,
-      "application": "Energy/Utility",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Wireshark 4.6.8 brings an extensive set of security fixes, addressing 28 vulnerabilities and 25 other bugs. The update concerns the popular network protocol analyzer and is recommended for those who open log files or examine untrusted traffic.\nThe SANS Internet Storm Center announcement lists the re"
-    },
-    {
-      "title": "Grok vs Meta AI vs Qwen: 1B vs 117M vs 10M Users [2026] - tech-insider.org",
-      "url": "https://tech-insider.org/ie/grok-vs-meta-ai-vs-qwen-2026/",
-      "source": "tech-insider.org",
-      "date": "2026-08-16",
-      "vendor": null,
-      "customer": "Meta",
-      "application": "Smart Glasses",
-      "buckets": [],
-      "summary": "Grok vs Meta AI vs Qwen: 1B vs 117M vs 10M Users [2026]&nbsp;&nbsp;tech-insider.org"
-    },
-    {
-      "title": "AirTag Tracking for Pets & Bikes: What You Should Know - AppleMagazine",
-      "url": "https://applemagazine.com/airtag-tracking-pets-bikes-limitations/amp/",
-      "source": "AppleMagazine",
-      "date": "2026-08-16",
-      "vendor": "Microchip",
-      "customer": "Apple",
-      "application": "Asset Tracking",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "- AirTag tracking can provide an extra chance of locating a missing pet or stolen bicycle, but it should never be mistaken for continuous GPS monitoring. AirTag does not calculate its own position through satellites, contain a cellular connection, or send a constant stream of movement data.\nIt broad"
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 102,
-    "NXP": 44,
-    "Silicon Labs": 14,
-    "MediaTek": 12,
-    "Espressif": 9,
+    "Qualcomm": 94,
+    "NXP": 53,
+    "MediaTek": 20,
+    "Silicon Labs": 17,
+    "Espressif": 13,
+    "TI": 12,
     "Nordic": 9,
-    "TI": 8,
-    "Broadcom": 5,
+    "Broadcom": 4,
+    "Quectel": 3,
     "Realtek": 3,
-    "Telink": 2,
-    "Quectel": 2,
+    "Microchip": 2,
+    "Apple": 2,
     "Marvell": 2,
-    "Synaptics": 2,
-    "Apple": 1,
-    "Microchip": 1,
-    "Skyworks": 1,
+    "Renesas": 1,
+    "Infineon": 1,
+    "Synaptics": 1,
+    "Telink": 1,
     "WCH": 1,
-    "Atmosic": 1,
-    "Murata": 1,
-    "Infineon": 1
+    "Murata": 1
   },
   "customer_news_30d": {
-    "Google": 165,
-    "Apple": 156,
-    "Samsung": 30,
-    "Amazon": 23,
-    "Microsoft": 19,
-    "Meta": 7,
-    "Sony": 4,
+    "Google": 193,
+    "Apple": 158,
+    "Microsoft": 22,
+    "Amazon": 21,
+    "Samsung": 17,
     "BMW": 3,
-    "Huawei": 1,
-    "Motorola": 1,
+    "Sony": 3,
+    "Volkswagen": 2,
+    "Meta": 2,
+    "Sonos": 2,
+    "Mercedes": 1,
     "Xiaomi": 1,
-    "Philips Hue": 1,
     "Tesla": 1,
-    "Sonos": 1,
+    "Motorola": 1,
+    "Philips Hue": 1,
+    "HKMC": 1,
+    "Toyota": 1,
+    "GoPro": 1,
     "Eufy/Anker": 1,
-    "Bose": 1
+    "Huawei": 1
   },
   "github_pulse": [
-    {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1681,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        },
-        {
-          "tag": "v6.1-beta1",
-          "name": "ESP-IDF Pre-release v6.1-beta1",
-          "published_at": "2026-06-29T12:07:01Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
-        }
-      ],
-      "stars": 18798,
-      "pushed_at": "2026-08-17T02:48:39Z"
-    },
     {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
@@ -540,7 +507,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3856,
+      "issues_open": 3903,
       "prs_open": 0,
       "releases": [
         {
@@ -562,8 +529,59 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16229,
-      "pushed_at": "2026-08-17T12:18:37Z"
+      "stars": 16242,
+      "pushed_at": "2026-08-18T12:55:33Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1689,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        },
+        {
+          "tag": "v6.1-beta1",
+          "name": "ESP-IDF Pre-release v6.1-beta1",
+          "published_at": "2026-06-29T12:07:01Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
+        },
+        {
+          "tag": "v6.0.2",
+          "name": "ESP-IDF Release v6.0.2",
+          "published_at": "2026-06-29T01:29:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
+        }
+      ],
+      "stars": 18806,
+      "pushed_at": "2026-08-18T11:54:46Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 243152,
+      "pushed_at": "2026-08-18T03:57:01Z"
     },
     {
       "name": "Matter SDK",
@@ -574,7 +592,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2782,
+      "issues_open": 2790,
       "prs_open": 0,
       "releases": [
         {
@@ -596,23 +614,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
         }
       ],
-      "stars": 8874,
-      "pushed_at": "2026-08-17T00:49:56Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 242975,
-      "pushed_at": "2026-08-16T22:55:57Z"
+      "stars": 8877,
+      "pushed_at": "2026-08-18T12:10:22Z"
     },
     {
       "name": "OpenThread",
@@ -622,8 +625,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 92,
-      "issues_open": 172,
+      "commits_30d": 97,
+      "issues_open": 176,
       "prs_open": 0,
       "releases": [
         {
@@ -645,8 +648,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4015,
-      "pushed_at": "2026-08-17T09:34:26Z"
+      "stars": 4016,
+      "pushed_at": "2026-08-18T00:38:55Z"
     },
     {
       "name": "BlueZ",
@@ -657,7 +660,7 @@
         "bluetooth"
       ],
       "commits_30d": 46,
-      "issues_open": 114,
+      "issues_open": 115,
       "prs_open": 0,
       "releases": [
         {
@@ -679,8 +682,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1129,
-      "pushed_at": "2026-08-17T10:03:05Z"
+      "stars": 1130,
+      "pushed_at": "2026-08-18T11:28:39Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -690,8 +693,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 28,
-      "issues_open": 466,
+      "commits_30d": 27,
+      "issues_open": 463,
       "prs_open": 0,
       "releases": [
         {
@@ -713,7 +716,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15501,
+      "stars": 15506,
       "pushed_at": "2026-08-14T19:20:07Z"
     },
     {
@@ -728,7 +731,7 @@
       "issues_open": 279,
       "prs_open": 0,
       "releases": [],
-      "stars": 884,
+      "stars": 885,
       "pushed_at": "2026-08-12T08:45:20Z"
     },
     {
@@ -783,18 +786,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526342367/ter-20260807.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-08-10",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926093355/tm2622643d1_8k.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-K",
       "date": "2026-08-10",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000055/syna-20260627.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-10",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926093355/tm2622643d1_8k.htm"
     },
     {
       "vendor": "Microchip",
@@ -818,20 +821,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "10-Q",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000109786426000017/on-20260703.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
@@ -844,6 +833,20 @@
       "form": "8-K",
       "date": "2026-08-03",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "10-Q",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000109786426000017/on-20260703.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
       "vendor": "TI",
@@ -860,6 +863,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
     },
     {
+      "vendor": "Apple",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "date": "2026-07-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
+    },
+    {
       "vendor": "Sequans",
       "ticker": "SQNS",
       "form": "10-Q",
@@ -872,13 +882,6 @@
       "form": "8-K",
       "date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000057/lyb-20260731.htm"
-    },
-    {
-      "vendor": "Apple",
-      "ticker": "AAPL",
-      "form": "10-Q",
-      "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
     },
     {
       "vendor": "Apple",
@@ -986,18 +989,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -1124,13 +1127,6 @@
       "form": "8-K",
       "date": "2026-05-20",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926064574/tm2614811d2_8k.htm"
-    },
-    {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-05-19",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000031/swks-20260513.htm"
     }
   ],
   "tracked_competitors": [
@@ -4212,6 +4208,11 @@
           "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
         },
         {
+          "title": "Telink Introduces TL3225 Family of Wireless SoCs for Automotive Applications",
+          "date": "Aug 2026",
+          "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
+        },
+        {
           "title": "Telink Joins Alliance Board to Develop Global IoT Standard Ecosystem",
           "date": "Jul 2026",
           "url": ""
@@ -4250,11 +4251,6 @@
           "title": "Telink Introduces TL3228 Low-Power, Low-Latency Dual-Core RISC-V Wireless MCU",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Telink+Introduces+TL3228+Low-Power%2C+Low-Latency+Dual-Core+RISC-V+Wireless+MCU+Telink"
-        },
-        {
-          "title": "Telink Unveils TL322X Series and ML3228A at Embedded World 2026",
-          "date": "Mar 2026",
-          "url": "https://www.google.com/search?q=Telink+Unveils+TL322X+Series+and+ML3228A+at+Embedded+World+2026+Telink"
         }
       ]
     },
