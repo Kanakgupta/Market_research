@@ -744,4 +744,51 @@ TECH_TUTORIALS: list[dict] = [
     },
 ]
 
+_TUTORIALS_BY_SLUG: dict[str, dict] = {t["slug"]: t for t in TECH_TUTORIALS}
+_IEEE_15_4 = _TUTORIALS_BY_SLUG["ieee15_4"]
+_ZIGBEE = _TUTORIALS_BY_SLUG["zigbee"]
+_THREAD = _TUTORIALS_BY_SLUG["thread"]
+
+# IEEE 802.15.4 is the shared radio foundation; Zigbee and Thread are the two
+# complementary stacks learners need to compare directly above that foundation.
+_IEEE_15_4.update({
+    "label": "15.4",
+    "tagline": "One tutorial for the IEEE 802.15.4 radio foundation and the two major mesh stacks above it: Zigbee and Thread.",
+    "overview": (
+        "IEEE 802.15.4 supplies the low-rate PHY and MAC used by both Zigbee and Thread. "
+        "The shared layers define channels, framing, clear-channel access, acknowledgement/retry, "
+        "and low-power parent-child operation. Above them, Zigbee supplies a complete mesh and "
+        "standardized application language through ZCL; Thread supplies 6LoWPAN, IPv6, and IP-native "
+        "mesh routing. Learn the foundation first, then choose the upper stack that best matches the product."
+    ),
+    "protocol_comparisons": [
+        {
+            "name": "Zigbee: mesh plus common device language",
+            "accent": "zigbee",
+            "summary": "Zigbee adds NWK, APS, ZDO, and ZCL above 802.15.4. Its strongest fit is mature low-power control where standardized clusters, groups, scenes, and local bindings matter.",
+            "architecture": _ZIGBEE["architecture"],
+            "visual_walkthroughs": _ZIGBEE["visual_walkthroughs"],
+            "application_fit": _ZIGBEE["application_fit"],
+            "concepts": _ZIGBEE["core_concepts"],
+            "details": _ZIGBEE["zigbee_in_depth"],
+            "resources": _ZIGBEE["resources"],
+        },
+        {
+            "name": "Thread: IPv6 mesh for IP applications",
+            "accent": "thread",
+            "summary": "Thread adds 6LoWPAN, IPv6, UDP, and MLE above 802.15.4. Its strongest fit is low-power mesh devices that need standard IP connectivity, especially Matter-over-Thread products.",
+            "architecture": _THREAD["architecture"],
+            "concepts": _THREAD["core_concepts"],
+            "details": _THREAD["thread_in_depth"],
+            "resources": _THREAD["resources"],
+        },
+    ],
+})
+
+# Only the combined learning path is exposed as a tutorial tab. The individual
+# records remain above as reusable editorial source for its comparison sections.
+TECH_TUTORIALS: list[dict] = [
+    tutorial for tutorial in TECH_TUTORIALS
+    if tutorial["slug"] not in {"zigbee", "thread"}
+]
 TECH_TUTORIALS_BY_SLUG: dict[str, dict] = {t["slug"]: t for t in TECH_TUTORIALS}

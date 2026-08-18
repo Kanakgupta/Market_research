@@ -298,9 +298,7 @@ _NAV_HTML = """
     <div class="nav-dd">
       <a href="technology.html" class="nav-dd-trigger {{ 'active' if active in ['technology','bluetooth','ieee15_4','zigbee','thread','wifi','matter','aliro','bt_stack','zephyr_stack'] else '' }}">Technology <span class="dd-caret">▾</span></a>
       <div class="nav-dd-menu">
-        <a href="ieee15_4.html" class="{{ 'active' if active=='ieee15_4' else '' }}">802.15.4</a>
-        <a href="zigbee.html" class="{{ 'active' if active=='zigbee' else '' }}">Zigbee</a>
-        <a href="thread.html" class="{{ 'active' if active=='thread' else '' }}">Thread</a>
+        <a href="technology.html#ieee15_4" class="{{ 'active' if active in ['ieee15_4','zigbee','thread'] else '' }}">15.4</a>
         <a href="wifi.html" class="{{ 'active' if active=='wifi' else '' }}">Wi-Fi</a>
         <a href="matter.html" class="{{ 'active' if active=='matter' else '' }}">Matter</a>
         <a href="aliro.html" class="{{ 'active' if active=='aliro' else '' }}">Aliro</a>
@@ -1765,6 +1763,7 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 .zigbee-apps { display:grid; gap:14px; margin-top:12px; }.zigbee-app { overflow:hidden; border:1px solid #d7e3ec; border-radius:8px; background:#fff; }.zigbee-app-head { padding:15px 16px; background:#f1f8fa; border-bottom:1px solid #d7e3ec; }.zigbee-app-head h3 { margin:0; color:#0e3b51; font-size:16px; }.zigbee-app-diagram { display:flex; align-items:stretch; gap:7px; padding:14px 16px; background:#071e31; overflow-x:auto; }.zigbee-app-diagram span { flex:1 0 120px; position:relative; padding:9px; border:1px solid #36718a; border-radius:4px; color:#e8f7ff; font-size:12px; font-weight:700; text-align:center; }.zigbee-app-diagram span:not(:last-child)::after { content:'>'; position:absolute; right:-7px; top:50%; z-index:1; color:#ffcf4a; font-size:16px; transform:translateY(-50%); }.zigbee-app-copy { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:15px 16px; }.zigbee-app-copy div { font-size:12.5px; color:#405460; line-height:1.6; }.zigbee-app-copy b { display:block; color:#0e3b51; margin-bottom:4px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }.zigbee-app details { margin:0 16px 16px; padding:0 12px; border:1px solid #c4d9e3; border-radius:5px; background:#f7fbfc; }.zigbee-app summary { padding:10px 0; color:#075a70; cursor:pointer; font-size:12.5px; font-weight:800; }.zigbee-app details p { margin:0 0 12px; color:#405460; font-size:12.5px; line-height:1.65; }
 /* Zigbee visual learning aids */
 .zigbee-visuals { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:12px; }.zigbee-visual { overflow:hidden; background:#fff; border:1px solid #cfe1e8; border-radius:8px; }.zigbee-visual-head { padding:14px 16px 8px; background:#eaf5f5; }.zigbee-visual-head h3 { margin:0; color:#083d4c; font-size:15px; }.zigbee-visual-head p { margin:5px 0 0; color:#41606b; font-size:12px; line-height:1.55; }.zigbee-canvas { position:relative; display:grid; grid-template-columns:repeat(4,minmax(92px,1fr)); gap:10px; align-items:center; min-height:166px; padding:22px 16px; background:linear-gradient(135deg,#082338,#0e3e54); overflow-x:auto; }.zigbee-canvas::before { content:""; position:absolute; top:50%; left:10%; right:10%; height:2px; background:repeating-linear-gradient(90deg,#7ac9d8 0 10px,transparent 10px 17px); opacity:.72; }.zigbee-node { position:relative; z-index:1; min-height:100px; padding:10px 8px; display:flex; flex-direction:column; justify-content:center; border:1px solid #65aabc; border-radius:6px; background:#123f57; box-shadow:0 8px 15px rgba(0,0,0,.18); text-align:center; }.zigbee-node b { color:#fff; font-size:12px; }.zigbee-node span { margin-top:5px; color:#c4e5ee; font-size:10.5px; line-height:1.4; }.zigbee-node.hub { border-color:#ffd15a; background:#644d12; }.zigbee-node.router { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.end { border-color:#f4909c; background:#66313b; }.zigbee-node.source,.zigbee-node.sense { border-color:#73b8ff; }.zigbee-node.map,.zigbee-node.relay { border-color:#ffd15a; background:#645116; }.zigbee-node.target,.zigbee-node.rule { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.group,.zigbee-node.gateway { border-color:#c4a1ff; background:#49356f; }.zigbee-node.step1 { border-color:#73b8ff; }.zigbee-node.step2 { border-color:#ffd15a; background:#645116; }.zigbee-node.step3 { border-color:#f4909c; background:#66313b; }.zigbee-node.step4 { border-color:#59d2b8; background:#0d5b57; }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(3,minmax(92px,1fr)); }.zigbee-visual.topology .zigbee-canvas::before { top:44%; left:18%; right:18%; transform:rotate(-10deg); }.zigbee-visual.topology .zigbee-node:nth-child(4) { grid-column:1; }.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:3; }.zigbee-visual-foot { margin:0; padding:12px 16px 14px; color:#3d5661; background:#f8fcfd; font-size:12px; line-height:1.6; }.zigbee-visual-foot b { color:#075a70; }
+.protocol-chapter { margin-top:28px; padding:20px; background:#f7fbfc; border:1px solid #cfe1e8; border-radius:8px; }.protocol-chapter.thread { background:#f5f7ff; border-color:#cbd5fa; }.protocol-chapter-title { margin:0; color:#083d4c; font-size:21px; }.protocol-chapter.thread .protocol-chapter-title,.protocol-chapter.thread .protocol-subtitle { color:#3730a3; }.protocol-chapter-lead { margin:6px 0 0; color:#405b66; font-size:13px; line-height:1.65; }.protocol-architecture,.protocol-concepts { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:8px; margin-top:12px; }.protocol-layer,.protocol-concept,.protocol-detail { padding:11px; border-left:4px solid #32a98c; background:#fff; border-radius:4px; }.protocol-chapter.thread .protocol-layer,.protocol-chapter.thread .protocol-concept,.protocol-chapter.thread .protocol-detail { border-left-color:#6366f1; }.protocol-layer b,.protocol-concept b { display:block; color:#12313d; font-size:12px; }.protocol-layer span,.protocol-concept span { display:block; margin-top:4px; color:#516670; font-size:11.5px; line-height:1.5; }.protocol-subtitle { margin:22px 0 7px; color:#0e3b51; font-size:14px; }.protocol-detail { margin-top:8px; border:1px solid #d8e7eb; border-left-width:4px; }.protocol-detail h4 { margin:0 0 4px; color:#0e3b51; font-size:12.5px; }.protocol-detail p { margin:0; color:#4b5e67; font-size:12px; line-height:1.6; }
 @media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy,.zigbee-visuals { grid-template-columns:1fr; }.zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-node:nth-child(4),.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:auto; }.zigbee-canvas::before { display:none; } }
 </style>
 """ + _PASSWORD_GATE_HTML + """
@@ -1920,6 +1919,34 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
     <div class="step"><span class="num">{{ loop.index }}</span><div class="st-body"><strong>{{ s.title }}</strong><span>{{ s.detail }}</span></div></div>
     {% endfor %}
   </div>
+
+  {% if t.protocol_comparisons %}
+  <h2 class="tech-h2">Above 15.4: Zigbee and Thread</h2>
+  {% for protocol in t.protocol_comparisons %}
+  <section class="protocol-chapter {{ protocol.accent }}">
+    <h3 class="protocol-chapter-title">{{ protocol.name }}</h3>
+    <p class="protocol-chapter-lead">{{ protocol.summary }}</p>
+    <h4 class="protocol-subtitle">What this stack adds above the 15.4 radio</h4>
+    <div class="protocol-architecture">{% for layer in protocol.architecture %}<div class="protocol-layer"><b>{{ layer.name }}</b><span>{{ layer.function }}</span></div>{% endfor %}</div>
+
+    {% if protocol.visual_walkthroughs %}
+    <h4 class="protocol-subtitle">Visual Walkthroughs</h4>
+    <div class="zigbee-visuals">{% for v in protocol.visual_walkthroughs %}<article class="zigbee-visual {{ v.kind }}"><div class="zigbee-visual-head"><h3>{{ v.title }}</h3><p>{{ v.intro }}</p></div><div class="zigbee-canvas" aria-label="{{ v.title }} diagram">{% for item in v.nodes %}<div class="zigbee-node {{ item.class }}"><b>{{ item.name }}</b><span>{{ item.role }}</span></div>{% endfor %}</div><p class="zigbee-visual-foot"><b>Key idea:</b> {{ v.takeaway }}</p></article>{% endfor %}</div>
+    {% endif %}
+
+    {% if protocol.application_fit %}
+    <h4 class="protocol-subtitle">Target Applications and Positioning</h4>
+    <div class="zigbee-apps">{% for app in protocol.application_fit %}<article class="zigbee-app"><div class="zigbee-app-head"><h3>{{ app.name }}</h3></div><div class="zigbee-app-diagram" aria-label="{{ app.name }} application block diagram">{% for block in app.diagram %}<span>{{ block }}</span>{% endfor %}</div><div class="zigbee-app-copy"><div><b>Why Zigbee</b>{{ app.benefit }}</div><div><b>Alternatives</b>{{ app.alternatives }}</div><div><b>Positioning</b>{{ app.position }}</div></div><details><summary>Open deployment and design considerations</summary><p>{{ app.detail }}</p></details></article>{% endfor %}</div>
+    {% endif %}
+
+    <h4 class="protocol-subtitle">Key Concepts</h4>
+    <div class="protocol-concepts">{% for concept in protocol.concepts %}<div class="protocol-concept"><b>{{ concept.term }}</b><span>{{ concept.definition }}</span></div>{% endfor %}</div>
+    <h4 class="protocol-subtitle">Detailed Design Notes</h4>
+    {% for detail in protocol.details %}<article class="protocol-detail"><h4>{{ detail.title }}</h4><p>{{ detail.detail }}</p></article>{% endfor %}
+    <ul class="resource-list">{% for resource in protocol.resources %}<li><a href="{{ resource.url }}" target="_blank" rel="noopener">{{ resource.label }}</a></li>{% endfor %}</ul>
+  </section>
+  {% endfor %}
+  {% endif %}
 
   <h2 class="tech-h2">\U0001F468\u200D\U0001F4BB For Application Developers</h2>
   <div class="dev-grid">
@@ -3868,7 +3895,7 @@ def render(articles: list[dict], output_dir: Path,
         "spec_url": std.get("url", ""),
       })
 
-    _tab_order = ["bluetooth", "ieee15_4", "zigbee", "thread", "wifi", "matter", "aliro"]
+    _tab_order = ["bluetooth", "ieee15_4", "wifi", "matter", "aliro"]
     tech_tutorials.sort(key=lambda x: _tab_order.index(x["slug"]) if x["slug"] in _tab_order else 99)
 
     (output_dir / "technology.html").write_text(env.from_string(_TECHNOLOGY_TEMPLATE).render(
@@ -3898,11 +3925,11 @@ def render(articles: list[dict], output_dir: Path,
       active="bt_stack", **common_ctx
     ), encoding="utf-8")
     (output_dir / "zigbee.html").write_text(
-      _redirect_page("technology.html#zigbee", "Zigbee Tutorial"),
+      _redirect_page("technology.html#ieee15_4", "15.4 Tutorial"),
       encoding="utf-8",
     )
     (output_dir / "thread.html").write_text(
-      _redirect_page("technology.html#thread", "Thread Tutorial"),
+      _redirect_page("technology.html#ieee15_4", "15.4 Tutorial"),
       encoding="utf-8",
     )
 

@@ -274,6 +274,7 @@ a:hover { text-decoration:underline; }
 .zigbee-apps { display:grid; gap:14px; margin-top:12px; }.zigbee-app { overflow:hidden; border:1px solid #d7e3ec; border-radius:8px; background:#fff; }.zigbee-app-head { padding:15px 16px; background:#f1f8fa; border-bottom:1px solid #d7e3ec; }.zigbee-app-head h3 { margin:0; color:#0e3b51; font-size:16px; }.zigbee-app-diagram { display:flex; align-items:stretch; gap:7px; padding:14px 16px; background:#071e31; overflow-x:auto; }.zigbee-app-diagram span { flex:1 0 120px; position:relative; padding:9px; border:1px solid #36718a; border-radius:4px; color:#e8f7ff; font-size:12px; font-weight:700; text-align:center; }.zigbee-app-diagram span:not(:last-child)::after { content:'>'; position:absolute; right:-7px; top:50%; z-index:1; color:#ffcf4a; font-size:16px; transform:translateY(-50%); }.zigbee-app-copy { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:15px 16px; }.zigbee-app-copy div { font-size:12.5px; color:#405460; line-height:1.6; }.zigbee-app-copy b { display:block; color:#0e3b51; margin-bottom:4px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }.zigbee-app details { margin:0 16px 16px; padding:0 12px; border:1px solid #c4d9e3; border-radius:5px; background:#f7fbfc; }.zigbee-app summary { padding:10px 0; color:#075a70; cursor:pointer; font-size:12.5px; font-weight:800; }.zigbee-app details p { margin:0 0 12px; color:#405460; font-size:12.5px; line-height:1.65; }
 /* Zigbee visual learning aids */
 .zigbee-visuals { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:12px; }.zigbee-visual { overflow:hidden; background:#fff; border:1px solid #cfe1e8; border-radius:8px; }.zigbee-visual-head { padding:14px 16px 8px; background:#eaf5f5; }.zigbee-visual-head h3 { margin:0; color:#083d4c; font-size:15px; }.zigbee-visual-head p { margin:5px 0 0; color:#41606b; font-size:12px; line-height:1.55; }.zigbee-canvas { position:relative; display:grid; grid-template-columns:repeat(4,minmax(92px,1fr)); gap:10px; align-items:center; min-height:166px; padding:22px 16px; background:linear-gradient(135deg,#082338,#0e3e54); overflow-x:auto; }.zigbee-canvas::before { content:""; position:absolute; top:50%; left:10%; right:10%; height:2px; background:repeating-linear-gradient(90deg,#7ac9d8 0 10px,transparent 10px 17px); opacity:.72; }.zigbee-node { position:relative; z-index:1; min-height:100px; padding:10px 8px; display:flex; flex-direction:column; justify-content:center; border:1px solid #65aabc; border-radius:6px; background:#123f57; box-shadow:0 8px 15px rgba(0,0,0,.18); text-align:center; }.zigbee-node b { color:#fff; font-size:12px; }.zigbee-node span { margin-top:5px; color:#c4e5ee; font-size:10.5px; line-height:1.4; }.zigbee-node.hub { border-color:#ffd15a; background:#644d12; }.zigbee-node.router { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.end { border-color:#f4909c; background:#66313b; }.zigbee-node.source,.zigbee-node.sense { border-color:#73b8ff; }.zigbee-node.map,.zigbee-node.relay { border-color:#ffd15a; background:#645116; }.zigbee-node.target,.zigbee-node.rule { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.group,.zigbee-node.gateway { border-color:#c4a1ff; background:#49356f; }.zigbee-node.step1 { border-color:#73b8ff; }.zigbee-node.step2 { border-color:#ffd15a; background:#645116; }.zigbee-node.step3 { border-color:#f4909c; background:#66313b; }.zigbee-node.step4 { border-color:#59d2b8; background:#0d5b57; }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(3,minmax(92px,1fr)); }.zigbee-visual.topology .zigbee-canvas::before { top:44%; left:18%; right:18%; transform:rotate(-10deg); }.zigbee-visual.topology .zigbee-node:nth-child(4) { grid-column:1; }.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:3; }.zigbee-visual-foot { margin:0; padding:12px 16px 14px; color:#3d5661; background:#f8fcfd; font-size:12px; line-height:1.6; }.zigbee-visual-foot b { color:#075a70; }
+.protocol-chapter { margin-top:28px; padding:20px; background:#f7fbfc; border:1px solid #cfe1e8; border-radius:8px; }.protocol-chapter.thread { background:#f5f7ff; border-color:#cbd5fa; }.protocol-chapter-title { margin:0; color:#083d4c; font-size:21px; }.protocol-chapter.thread .protocol-chapter-title,.protocol-chapter.thread .protocol-subtitle { color:#3730a3; }.protocol-chapter-lead { margin:6px 0 0; color:#405b66; font-size:13px; line-height:1.65; }.protocol-architecture,.protocol-concepts { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:8px; margin-top:12px; }.protocol-layer,.protocol-concept,.protocol-detail { padding:11px; border-left:4px solid #32a98c; background:#fff; border-radius:4px; }.protocol-chapter.thread .protocol-layer,.protocol-chapter.thread .protocol-concept,.protocol-chapter.thread .protocol-detail { border-left-color:#6366f1; }.protocol-layer b,.protocol-concept b { display:block; color:#12313d; font-size:12px; }.protocol-layer span,.protocol-concept span { display:block; margin-top:4px; color:#516670; font-size:11.5px; line-height:1.5; }.protocol-subtitle { margin:22px 0 7px; color:#0e3b51; font-size:14px; }.protocol-detail { margin-top:8px; border:1px solid #d8e7eb; border-left-width:4px; }.protocol-detail h4 { margin:0 0 4px; color:#0e3b51; font-size:12.5px; }.protocol-detail p { margin:0; color:#4b5e67; font-size:12px; line-height:1.6; }
 @media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy,.zigbee-visuals { grid-template-columns:1fr; }.zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-node:nth-child(4),.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:auto; }.zigbee-canvas::before { display:none; } }
 </style>
 
@@ -316,9 +317,7 @@ a:hover { text-decoration:underline; }
     <div class="nav-dd">
       <a href="technology.html" class="nav-dd-trigger active">Technology <span class="dd-caret">▾</span></a>
       <div class="nav-dd-menu">
-        <a href="ieee15_4.html" class="">802.15.4</a>
-        <a href="zigbee.html" class="">Zigbee</a>
-        <a href="thread.html" class="">Thread</a>
+        <a href="technology.html#ieee15_4" class="">15.4</a>
         <a href="wifi.html" class="">Wi-Fi</a>
         <a href="matter.html" class="">Matter</a>
         <a href="aliro.html" class="">Aliro</a>
@@ -331,7 +330,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="">News</a>
     <a href="chat.html" class="nav-chat ">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-18 14:23 PDT</div>
+  <div class="meta-info">Updated 2026-08-18 14:30 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -352,11 +351,7 @@ a:hover { text-decoration:underline; }
   
   <div class="tech-tab active" data-slug="bluetooth">Zephyr Bluetooth</div>
   
-  <div class="tech-tab " data-slug="ieee15_4">802.15.4</div>
-  
-  <div class="tech-tab " data-slug="zigbee">Zigbee</div>
-  
-  <div class="tech-tab " data-slug="thread">Thread</div>
+  <div class="tech-tab " data-slug="ieee15_4">15.4</div>
   
   <div class="tech-tab " data-slug="wifi">Wi-Fi</div>
   
@@ -511,6 +506,8 @@ a:hover { text-decoration:underline; }
     
   </div>
 
+  
+
   <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
   <div class="dev-grid">
     
@@ -664,7 +661,7 @@ int main(void)
 </div>
 
 <div class="tech-panel " id="panel-ieee15_4">
-  <p class="tagline">The low-rate PHY+MAC foundation for Zigbee and Thread; understand this first, then upper layers become much easier.</p>
+  <p class="tagline">One tutorial for the IEEE 802.15.4 radio foundation and the two major mesh stacks above it: Zigbee and Thread.</p>
 
   
   <div class="spec-snapshot">
@@ -675,7 +672,7 @@ int main(void)
   
 
   <h2 class="tech-h2">📖 Overview</h2>
-  <p class="tech-overview">IEEE 802.15.4 is the LR-WPAN base standard that defines only two layers: PHY and MAC. PHY defines channels/modulation/data rates; MAC defines framing, channel access, reliability, and optional link-layer security. It intentionally does not define end-to-end routing or app semantics. Zigbee and Thread both reuse the same 802.15.4 radio but build different network and application ecosystems on top. If you are new: learn MAC behavior first (beacons, CSMA-CA, ack/retry, association, and security fields), then map how Zigbee and Thread consume those services.</p>
+  <p class="tech-overview">IEEE 802.15.4 supplies the low-rate PHY and MAC used by both Zigbee and Thread. The shared layers define channels, framing, clear-channel access, acknowledgement/retry, and low-power parent-child operation. Above them, Zigbee supplies a complete mesh and standardized application language through ZCL; Thread supplies 6LoWPAN, IPv6, and IP-native mesh routing. Learn the foundation first, then choose the upper stack that best matches the product.</p>
 
   
 
@@ -849,6 +846,51 @@ int main(void)
     
   </div>
 
+  
+  <h2 class="tech-h2">Above 15.4: Zigbee and Thread</h2>
+  
+  <section class="protocol-chapter zigbee">
+    <h3 class="protocol-chapter-title">Zigbee: mesh plus common device language</h3>
+    <p class="protocol-chapter-lead">Zigbee adds NWK, APS, ZDO, and ZCL above 802.15.4. Its strongest fit is mature low-power control where standardized clusters, groups, scenes, and local bindings matter.</p>
+    <h4 class="protocol-subtitle">What this stack adds above the 15.4 radio</h4>
+    <div class="protocol-architecture"><div class="protocol-layer"><b>Application layer (ZCL + application objects)</b><span>Standardized Clusters (On/Off, Level Control, Color Control, Thermostat, etc.) exposed on Endpoints. Each cluster defines Attributes (state) and Commands (actions) -- the interoperable behavior contract between devices from different vendors.</span></div><div class="protocol-layer"><b>Application Support Sublayer (APS)</b><span>Endpoint addressing, the binding table (linking, e.g., a switch endpoint to a light endpoint), APS-level security, and fragmentation/reassembly of large application messages.</span></div><div class="protocol-layer"><b>Zigbee Device Object (ZDO)</b><span>Device and service discovery, network join/leave management, binding management, and definition of the device roles (Coordinator, Router, End Device).</span></div><div class="protocol-layer"><b>Network layer (NWK)</b><span>Mesh route discovery and forwarding, 16-bit network address assignment, network-key security, and neighbor/route table maintenance across routers.</span></div><div class="protocol-layer"><b>IEEE 802.15.4 MAC</b><span>Reused unchanged: CSMA-CA channel access, acknowledgment/retry, addressing, and optional AES-CCM* link security (see the 802.15.4 tab).</span></div><div class="protocol-layer"><b>IEEE 802.15.4 PHY</b><span>Reused unchanged: 2.4 GHz O-QPSK DSSS at 250 kbps (channels 11-26), plus sub-GHz options in some regional profiles.</span></div></div>
+
+    
+    <h4 class="protocol-subtitle">Visual Walkthroughs</h4>
+    <div class="zigbee-visuals"><article class="zigbee-visual topology"><div class="zigbee-visual-head"><h3>How a Zigbee Mesh Covers a Home or Floor</h3><p>Routers form the always-on backbone. End Devices attach to one parent and conserve energy by sleeping; they do not extend coverage themselves.</p></div><div class="zigbee-canvas" aria-label="How a Zigbee Mesh Covers a Home or Floor diagram"><div class="zigbee-node hub"><b>Coordinator + Trust Center</b><span>Forms the network and admits devices</span></div><div class="zigbee-node router"><b>Lamp / plug router</b><span>Forwards traffic and hosts children</span></div><div class="zigbee-node router"><b>Lamp / plug router</b><span>Creates an alternate mesh path</span></div><div class="zigbee-node end"><b>Battery sensor</b><span>Sleeps, then polls or reports</span></div><div class="zigbee-node end"><b>Door contact</b><span>Battery end-device leaf</span></div></div><p class="zigbee-visual-foot"><b>Key idea:</b> For a reliable deployment, add mains-powered routers where RF obstacles or large distances would otherwise force battery devices to reach too far.</p></article><article class="zigbee-visual binding"><div class="zigbee-visual-head"><h3>Local Switch-to-Light Binding</h3><p>Binding lets a switch send a standard cluster command directly to its target, without requiring a cloud service or a controller to relay every press.</p></div><div class="zigbee-canvas" aria-label="Local Switch-to-Light Binding diagram"><div class="zigbee-node source"><b>Switch endpoint 1</b><span>On/Off client</span></div><div class="zigbee-node map"><b>Binding table</b><span>Maps cluster and destination</span></div><div class="zigbee-node target"><b>Lamp endpoint 1</b><span>On/Off server</span></div><div class="zigbee-node group"><b>Group address</b><span>Optional fan-out to many lamps</span></div></div><p class="zigbee-visual-foot"><b>Key idea:</b> Use a group for one-to-many actions such as all kitchen lights. Use a binding when a physical control must remain responsive even while the gateway is offline.</p></article><article class="zigbee-visual commissioning"><div class="zigbee-visual-head"><h3>Secure Join and Commissioning Sequence</h3><p>Commissioning is a controlled process: a network permits joining for a short interval, authenticates the new device, gives it network credentials, then discovers its capabilities.</p></div><div class="zigbee-canvas" aria-label="Secure Join and Commissioning Sequence diagram"><div class="zigbee-node step1"><b>Open permit-join</b><span>Time-limited admission window</span></div><div class="zigbee-node step2"><b>Authenticate</b><span>Trust Center validates joining device</span></div><div class="zigbee-node step3"><b>Distribute keys</b><span>Protected network credentials</span></div><div class="zigbee-node step4"><b>Discover + bind</b><span>Find endpoints and clusters</span></div></div><p class="zigbee-visual-foot"><b>Key idea:</b> Install-code-based onboarding and a short permit-join window reduce the risk of unintended devices entering a deployed network.</p></article><article class="zigbee-visual telemetry"><div class="zigbee-visual-head"><h3>From Sensor Event to Building Rule</h3><p>A report moves upward through a parent and the mesh, while the application meaning is carried by a ZCL cluster rather than a custom, opaque radio payload.</p></div><div class="zigbee-canvas" aria-label="From Sensor Event to Building Rule diagram"><div class="zigbee-node sense"><b>Occupancy sensor</b><span>Reports an attribute change</span></div><div class="zigbee-node relay"><b>Parent router</b><span>Receives and forwards</span></div><div class="zigbee-node gateway"><b>Gateway</b><span>Integrates the Zigbee network</span></div><div class="zigbee-node rule"><b>Lighting / HVAC rule</b><span>Acts on interoperable state</span></div></div><p class="zigbee-visual-foot"><b>Key idea:</b> This separation is why application behavior can remain consistent while the mesh chooses and repairs its own radio path beneath it.</p></article></div>
+    
+
+    
+    <h4 class="protocol-subtitle">Target Applications and Positioning</h4>
+    <div class="zigbee-apps"><article class="zigbee-app"><div class="zigbee-app-head"><h3>Smart lighting and room control</h3></div><div class="zigbee-app-diagram" aria-label="Smart lighting and room control application block diagram"><span>Wall switch</span><span>Zigbee routers: lamps / plugs</span><span>Group or binding</span><span>Gateway / controller</span></div><div class="zigbee-app-copy"><div><b>Why Zigbee</b>Mains-powered lamps naturally become routers, creating dense coverage as fixtures are installed. ZCL On/Off, Level Control, Color Control, Groups, and Scenes map directly to lighting behavior; local bindings keep basic switch-to-light operation working even if a hub or cloud service is unavailable.</div><div><b>Alternatives</b>Bluetooth Mesh offers a comparable low-power lighting mesh; Thread plus Matter offers IP-native control; DALI is a wired lighting-control alternative; Wi-Fi suits high-bandwidth fixtures but is normally a poorer fit for dense, battery-powered sensors.</div><div><b>Positioning</b>Zigbee is strongly positioned where there are many mains-powered fixtures, a broad installed base, and a hub is acceptable. Its value is mature lighting semantics and local group/scene behavior, not raw bandwidth or direct IP reachability.</div></div><details><summary>Open deployment and design considerations</summary><p>Design for at least several always-on routers per area, select a channel after surveying Wi-Fi occupancy, use groups for fan-out commands, and use binding when the physical switch must retain direct control. A gateway can bridge the installation into a Matter controller without replacing every device.</p></details></article><article class="zigbee-app"><div class="zigbee-app-head"><h3>Battery sensors, security, and comfort automation</h3></div><div class="zigbee-app-diagram" aria-label="Battery sensors, security, and comfort automation application block diagram"><span>Battery sensor</span><span>Parent router</span><span>Zigbee mesh</span><span>Hub / alarm / HVAC rule</span></div><div class="zigbee-app-copy"><div><b>Why Zigbee</b>An end device can sleep most of the time, wake to report a change or poll its parent, and use a small 802.15.4 frame rather than maintaining a Wi-Fi association. Standard clusters enable common sensor behaviors such as occupancy, temperature, contact, and IAS alarm messages.</div><div><b>Alternatives</b>Bluetooth LE is excellent for phone-centric or star-topology sensors; Thread/Matter supplies IPv6 and a modern ecosystem; Wi-Fi is appropriate when the device already has ample power and needs IP bandwidth; sub-GHz LPWAN is better for long outdoor distances at low message rates.</div><div><b>Positioning</b>Choose Zigbee when a reliable indoor mesh and a local hub are acceptable, and the value of long battery life plus established device profiles outweighs the need for every endpoint to be directly IP-addressable.</div></div><details><summary>Open deployment and design considerations</summary><p>Battery estimates must include report interval, parent-poll interval, retries, and retransmissions caused by channel contention. Place parent routers close enough for strong links and avoid assuming that battery devices will heal a mesh: they do not route traffic.</p></details></article><article class="zigbee-app"><div class="zigbee-app-head"><h3>Commercial buildings, meters, and load control</h3></div><div class="zigbee-app-diagram" aria-label="Commercial buildings, meters, and load control application block diagram"><span>Meters / sensors</span><span>Router-rich floor mesh</span><span>Zigbee gateway</span><span>BMS / cloud analytics</span></div><div class="zigbee-app-copy"><div><b>Why Zigbee</b>A low-rate mesh can connect a large number of control and telemetry points without pulling a new cable to every endpoint. Groups, bindings, and standardized control behavior help local automation continue during upstream outages.</div><div><b>Alternatives</b>BACnet and DALI are established wired-building choices; WirelessHART/ISA100 address industrial process needs; Thread/Matter is attractive for IP integration; Wi-Fi is a fit for cameras and high-data equipment rather than dense low-rate control points.</div><div><b>Positioning</b>Zigbee is positioned as a cost-conscious, low-rate control network behind a gateway. It should not be sold as a replacement for deterministic safety systems or high-throughput backhaul.</div></div><details><summary>Open deployment and design considerations</summary><p>Start with a site survey and capacity model: RF attenuation, metalwork, Wi-Fi channel overlap, router placement, expected reporting rates, and a maintenance plan for the coordinator, key rotation, and gateway monitoring. Separate life-safety requirements from convenience and energy-management traffic.</p></details></article></div>
+    
+
+    <h4 class="protocol-subtitle">Key Concepts</h4>
+    <div class="protocol-concepts"><div class="protocol-concept"><b>Coordinator / Router / End Device</b><span>Exactly one Coordinator forms the network and holds the Trust Center role. Routers relay mesh traffic and can host children. End Devices are simple (often battery) leaves that talk only to a parent Router.</span></div><div class="protocol-concept"><b>Endpoint &amp; Cluster</b><span>A node exposes up to 240 application Endpoints; each Endpoint implements one or more Clusters. Endpoint+Cluster is how you address a specific function on a device (e.g. endpoint 1, On/Off cluster).</span></div><div class="protocol-concept"><b>Attribute vs. Command</b><span>An Attribute is a readable/reportable value (state); a Command is an action you invoke. Controllers read/report attributes and send commands -- directly parallel to BLE GATT characteristics and writes.</span></div><div class="protocol-concept"><b>Binding</b><span>A stored link (source endpoint/cluster -&gt; destination) that lets a device send directly to another without a controller in the loop -- e.g. a physical switch bound to a group of lights.</span></div><div class="protocol-concept"><b>Trust Center</b><span>The security authority (usually the Coordinator) that authorizes joins and distributes the network key and optional link keys.</span></div><div class="protocol-concept"><b>Network key vs. Link key</b><span>The network key encrypts NWK-layer traffic shared by the whole mesh; link keys secure APS-layer communication between specific device pairs for stronger isolation.</span></div><div class="protocol-concept"><b>Groups &amp; Scenes</b><span>Groups let one command address many devices at once (all kitchen lights); Scenes store and recall preset attribute combinations (a &#39;movie&#39; lighting scene).</span></div></div>
+    <h4 class="protocol-subtitle">Detailed Design Notes</h4>
+    <article class="protocol-detail"><h4>Full stack above 802.15.4</h4><p>Zigbee layers NWK + APS + ZDO + ZCL on the 802.15.4 MAC/PHY. NWK provides mesh routing and network management; APS manages endpoint addressing, binding, and security to application objects; ZDO handles device/service discovery and management; ZCL defines interoperable application behavior (clusters, attributes, commands).</p></article><article class="protocol-detail"><h4>Addressing and endpoints</h4><p>A node is referenced by its 16-bit NWK address (assigned at join) and its stable 64-bit IEEE address. Application functions live on Endpoints (1-240), each implementing clusters. Example: endpoint 1 hosts On/Off and Level Control clusters for a dimmable bulb.</p></article><article class="protocol-detail"><h4>Trust Center security model</h4><p>The Trust Center controls admission and key distribution. Devices join through permit-join windows, receive the network key, and may establish APS link keys for pairwise security depending on the profile and policy (default keys vs. install codes).</p></article><article class="protocol-detail"><h4>Mesh routing behavior</h4><p>Routing runs in the NWK layer among the Coordinator and Routers; End Devices reach the mesh through their parent Router. Routes are discovered and repaired dynamically, while the 802.15.4 MAC still handles per-link contention, ACK, and retries on every hop.</p></article><article class="protocol-detail"><h4>Interworking with Matter</h4><p>Zigbee remains its own ecosystem rather than native IPv6, so cloud/service integration is typically done at a hub. Zigbee devices can be exposed to Matter ecosystems through a bridge, letting existing Zigbee deployments participate in Matter controllers.</p></article><article class="protocol-detail"><h4>Capability profile for product teams</h4><p>Zigbee&#39;s strongest capability set is mature low-power mesh control: standardized device semantics (ZCL), robust group/scene behavior for lighting at scale, and stable multi-vendor modules. It is excellent for cost-sensitive, high-node-count control networks when a hub is acceptable.</p></article><article class="protocol-detail"><h4>Operational levers that move outcomes</h4><p>In production, reliability is usually determined by three levers: router density (mains nodes), channel plan quality, and Trust Center policy (install-code onboarding and key updates). App logic is often correct while these levers are the real root cause of field issues.</p></article>
+    <ul class="resource-list"><li><a href="https://eclass.uoa.gr/modules/document/file.php/DI367/%CE%A5%CE%BB%CE%B9%CE%BA%CF%8C/introduction-to-zigbee-technology.pdf" target="_blank" rel="noopener">University of Athens -- Introduction to Zigbee Technology (teaching reference)</a></li><li><a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Connectivity Standards Alliance -- Zigbee</a></li><li><a href="https://csa-iot.org/developer-resource/specifications-download-request/" target="_blank" rel="noopener">CSA specifications &amp; downloads</a></li><li><a href="https://standards.ieee.org/ieee/802.15.4/7029/" target="_blank" rel="noopener">IEEE 802.15.4 (radio layer Zigbee runs on)</a></li></ul>
+  </section>
+  
+  <section class="protocol-chapter thread">
+    <h3 class="protocol-chapter-title">Thread: IPv6 mesh for IP applications</h3>
+    <p class="protocol-chapter-lead">Thread adds 6LoWPAN, IPv6, UDP, and MLE above 802.15.4. Its strongest fit is low-power mesh devices that need standard IP connectivity, especially Matter-over-Thread products.</p>
+    <h4 class="protocol-subtitle">What this stack adds above the 15.4 radio</h4>
+    <div class="protocol-architecture"><div class="protocol-layer"><b>Application layer</b><span>Any IP application protocol -- most commonly CoAP for device control, or Matter&#39;s data model layered directly on top of Thread&#39;s IPv6 transport (see the Matter tab).</span></div><div class="protocol-layer"><b>Thread networking layer</b><span>6LoWPAN header compression/fragmentation of IPv6 over 802.15.4, Mesh Link Establishment (MLE) for topology/routing, Network Data distribution (prefixes, DNS/services), and the Border Router function that bridges the mesh to Wi-Fi/Ethernet and the internet.</span></div><div class="protocol-layer"><b>IEEE 802.15.4 MAC/PHY</b><span>The same radio layer used by Zigbee (2.4 GHz, CSMA-CA channel access) -- Thread&#39;s innovation is entirely in the networking layer above it, not the radio itself.</span></div></div>
+
+    
+
+    
+
+    <h4 class="protocol-subtitle">Key Concepts</h4>
+    <div class="protocol-concepts"><div class="protocol-concept"><b>Leader</b><span>An elected router responsible for network-wide configuration (like assigning router IDs); if it goes offline, another eligible router is elected automatically.</span></div><div class="protocol-concept"><b>Router / REED / End Device</b><span>Routers forward mesh traffic and can have children; a Router-Eligible End Device (REED) can be promoted to a Router if the mesh needs more routing capacity; simple End Devices only talk to their parent.</span></div><div class="protocol-concept"><b>Border Router</b><span>Bridges the Thread mesh to the home&#39;s IP network (Wi-Fi/Ethernet) and the internet, advertises the mesh&#39;s routable IPv6 prefix, and proxies mDNS/DNS-SD so devices are discoverable from outside the mesh.</span></div><div class="protocol-concept"><b>Commissioning</b><span>The secure process of adding a new device to the mesh -- a Commissioner (often a phone app) and a Joiner exchange credentials (via DTLS) so the Joiner can obtain the network key.</span></div><div class="protocol-concept"><b>Mesh Link Establishment (MLE)</b><span>The protocol routers use to discover neighbors, build routing tables, and keep the mesh self-healing if a router drops out.</span></div></div>
+    <h4 class="protocol-subtitle">Detailed Design Notes</h4>
+    <article class="protocol-detail"><h4>Why Thread uses IPv6 instead of a proprietary mesh</h4><p>Giving every node a routable IPv6 address means Thread reuses decades of proven IP protocols (UDP, CoAP, DTLS, mDNS) instead of reinventing them. A phone or cloud service can address a Thread device the same way it addresses any internet host, through the Border Router -- this is the core reason modern smart-home standards chose Thread.</p></article><article class="protocol-detail"><h4>Device roles and mesh resilience</h4><p>Routers form the always-on mesh backbone and forward traffic. A Router-Eligible End Device (REED) can be promoted to Router when the mesh needs more capacity. Minimal/Sleepy End Devices (MED/SED) only talk to a parent Router and sleep to save battery. One Leader coordinates network-wide configuration; if it drops, another Router is elected automatically -- there is no single point of failure.</p></article><article class="protocol-detail"><h4>Addressing model (RLOC, ML-EID, GUA)</h4><p>Each node has a Routing Locator (RLOC) that reflects its position in the mesh and changes as topology changes, plus a stable Mesh-Local EID (ML-EID) for identity within the mesh. When a Border Router advertises an Off-Mesh-Routable prefix, nodes also gain a Global Unicast Address reachable from outside the mesh.</p></article><article class="protocol-detail"><h4>Commissioning (secure joining)</h4><p>A new device (Joiner) is admitted through a DTLS-secured handshake with a Commissioner -- typically a phone app brokered via the Border Router. The Joiner proves knowledge of a pre-shared commissioning credential, then receives the network credentials so it can attach to a parent and route traffic.</p></article><article class="protocol-detail"><h4>Border Router: bridging to the internet</h4><p>The Thread Border Router connects the low-power mesh to Wi-Fi/Ethernet, advertises routable prefixes, and proxies mDNS/DNS-SD so mesh devices are discoverable from the home network. Matter-over-Thread depends on this bridge for controllers (phones, hubs) to reach devices.</p></article><article class="protocol-detail"><h4>OpenThread as the reference stack</h4><p>OpenThread is the open-source implementation of the full Thread networking layer and role/state machines. It is integrated into the SDKs of most silicon vendors rather than reimplemented per chip, so behavior is consistent across hardware and certification is simpler.</p></article><article class="protocol-detail"><h4>Capability profile for product teams</h4><p>Thread&#39;s key capability is IP-native low-power mesh: every node is addressable with standard network tooling, Border Routers can be redundant, and Matter rides naturally on top. This makes Thread highly suitable for future-proof smart-home products that need deep ecosystem interoperability.</p></article><article class="protocol-detail"><h4>Operational levers that move outcomes</h4><p>Most field issues are driven by Border Router placement/quality, parent selection stability for sleepy nodes, and 2.4 GHz coexistence planning. Instrumenting attach time, parent switches, and route churn is more valuable than app-only telemetry.</p></article>
+    <ul class="resource-list"><li><a href="https://www.threadgroup.org/" target="_blank" rel="noopener">Thread Group</a></li><li><a href="https://openthread.io/" target="_blank" rel="noopener">OpenThread (open-source stack)</a></li></ul>
+  </section>
+  
+  
+
   <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
   <div class="dev-grid">
     
@@ -884,631 +926,6 @@ int main(void)
   <h2 class="tech-h2">🔗 Learn More</h2>
   <ul class="resource-list">
     <li><a href="https://standards.ieee.org/ieee/802.15.4/7029/" target="_blank" rel="noopener">IEEE 802.15.4 standard (IEEE-SA)</a></li><li><a href="https://www.ieee802.org/15/" target="_blank" rel="noopener">IEEE 802.15 Working Group (public documents)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4944" target="_blank" rel="noopener">6LoWPAN over IEEE 802.15.4 -- RFC 4944</a></li><li><a href="#" target="_blank" rel="noopener">See the Zigbee and Thread tabs for the stacks built on top</a></li>
-  </ul>
-</div>
-
-<div class="tech-panel " id="panel-zigbee">
-  <p class="tagline">A full mesh network + application framework on top of 802.15.4 -- standardized clusters let multi-vendor devices interoperate out of the box.</p>
-
-  
-
-  <h2 class="tech-h2">📖 Overview</h2>
-  <p class="tech-overview">Zigbee is a complete low-power mesh networking and application standard (governed by the Connectivity Standards Alliance) that runs on the IEEE 802.15.4 radio. Where 802.15.4 stops at PHY and MAC, Zigbee adds everything above: a Network (NWK) layer for mesh routing, an Application Support Sublayer (APS) for endpoint addressing and binding, the Zigbee Device Object (ZDO) for device and service management, and the Zigbee Cluster Library (ZCL) that defines standardized application behavior. That ZCL layer is the key idea -- because clusters like On/Off, Level Control, and Color Control are standardized, a bulb from one vendor and a switch from another interoperate. Zigbee is a mature, widely deployed ecosystem for lighting, sensors, and building automation, and it now interworks with Matter through bridges.</p>
-
-  
-  <h2 class="tech-h2">Summary</h2>
-  <section class="zigbee-summary">
-    <p class="summary-lead">Zigbee is best understood as a low-rate radio mesh plus a common device language. The 802.15.4 radio moves frames one hop; Zigbee builds a secure, self-healing mesh above it; ZCL makes the message sent by a switch, lamp, sensor, or controller predictable across certified products.</p>
-    <div class="zigbee-flow" aria-label="Zigbee stack block diagram">
-      <div class="zf-block"><b>Application</b><span>Endpoints, profiles, and device behavior</span></div>
-      <div class="zf-block"><b>ZCL + ZDO</b><span>Clusters, attributes, commands, discovery</span></div>
-      <div class="zf-block"><b>APS</b><span>Binding, endpoints, APS security</span></div>
-      <div class="zf-block"><b>NWK</b><span>Addressing, mesh routes, network key</span></div>
-      <div class="zf-block"><b>802.15.4</b><span>MAC/PHY, ACK/retry, shared radio medium</span></div>
-    </div>
-    <div class="zigbee-summary-grid">
-      
-      <article><h3>Mesh</h3><p>NWK discovers and repairs multi-hop paths among routers. Each hop still uses 802.15.4 CSMA-CA, acknowledgement, and retry.</p></article>
-      
-      <article><h3>Interoperability</h3><p>Endpoints expose standardized ZCL clusters. Attributes represent state; commands request actions; reporting communicates state changes. This is the reusable contract across devices.</p></article>
-      
-      <article><h3>Security</h3><p>The Trust Center controls joining and key distribution. Network keys protect the mesh; APS link keys can provide per-device-pair protection. Install-code onboarding is stronger than shared default join keys.</p></article>
-      
-    </div>
-    <div class="role-strip">
-      
-      <article><h3>Coordinator / Trust Center</h3><p>One logical device creates the network, selects the PAN and channel, and normally controls admission plus network-key distribution. It may also be a controller or gateway, but it is not a throughput bottleneck by definition.</p></article>
-      
-      <article><h3>Router</h3><p>Usually mains powered. It forwards mesh traffic, maintains neighbor and route information, and can parent sleepy end devices. Router density is a primary reliability variable in a real building.</p></article>
-      
-      <article><h3>End Device</h3><p>A non-routing leaf, often battery powered. It sleeps between polls and communicates through one parent, trading direct mesh participation for a much smaller energy budget.</p></article>
-      
-    </div>
-  </section>
-  
-
-  
-  <h2 class="tech-h2">Visual Walkthroughs</h2>
-  <div class="zigbee-visuals">
-    
-    <article class="zigbee-visual topology">
-      <div class="zigbee-visual-head"><h3>How a Zigbee Mesh Covers a Home or Floor</h3><p>Routers form the always-on backbone. End Devices attach to one parent and conserve energy by sleeping; they do not extend coverage themselves.</p></div>
-      <div class="zigbee-canvas" aria-label="How a Zigbee Mesh Covers a Home or Floor diagram">
-        
-        <div class="zigbee-node hub"><b>Coordinator + Trust Center</b><span>Forms the network and admits devices</span></div>
-        
-        <div class="zigbee-node router"><b>Lamp / plug router</b><span>Forwards traffic and hosts children</span></div>
-        
-        <div class="zigbee-node router"><b>Lamp / plug router</b><span>Creates an alternate mesh path</span></div>
-        
-        <div class="zigbee-node end"><b>Battery sensor</b><span>Sleeps, then polls or reports</span></div>
-        
-        <div class="zigbee-node end"><b>Door contact</b><span>Battery end-device leaf</span></div>
-        
-      </div>
-      <p class="zigbee-visual-foot"><b>Key idea:</b> For a reliable deployment, add mains-powered routers where RF obstacles or large distances would otherwise force battery devices to reach too far.</p>
-    </article>
-    
-    <article class="zigbee-visual binding">
-      <div class="zigbee-visual-head"><h3>Local Switch-to-Light Binding</h3><p>Binding lets a switch send a standard cluster command directly to its target, without requiring a cloud service or a controller to relay every press.</p></div>
-      <div class="zigbee-canvas" aria-label="Local Switch-to-Light Binding diagram">
-        
-        <div class="zigbee-node source"><b>Switch endpoint 1</b><span>On/Off client</span></div>
-        
-        <div class="zigbee-node map"><b>Binding table</b><span>Maps cluster and destination</span></div>
-        
-        <div class="zigbee-node target"><b>Lamp endpoint 1</b><span>On/Off server</span></div>
-        
-        <div class="zigbee-node group"><b>Group address</b><span>Optional fan-out to many lamps</span></div>
-        
-      </div>
-      <p class="zigbee-visual-foot"><b>Key idea:</b> Use a group for one-to-many actions such as all kitchen lights. Use a binding when a physical control must remain responsive even while the gateway is offline.</p>
-    </article>
-    
-    <article class="zigbee-visual commissioning">
-      <div class="zigbee-visual-head"><h3>Secure Join and Commissioning Sequence</h3><p>Commissioning is a controlled process: a network permits joining for a short interval, authenticates the new device, gives it network credentials, then discovers its capabilities.</p></div>
-      <div class="zigbee-canvas" aria-label="Secure Join and Commissioning Sequence diagram">
-        
-        <div class="zigbee-node step1"><b>Open permit-join</b><span>Time-limited admission window</span></div>
-        
-        <div class="zigbee-node step2"><b>Authenticate</b><span>Trust Center validates joining device</span></div>
-        
-        <div class="zigbee-node step3"><b>Distribute keys</b><span>Protected network credentials</span></div>
-        
-        <div class="zigbee-node step4"><b>Discover + bind</b><span>Find endpoints and clusters</span></div>
-        
-      </div>
-      <p class="zigbee-visual-foot"><b>Key idea:</b> Install-code-based onboarding and a short permit-join window reduce the risk of unintended devices entering a deployed network.</p>
-    </article>
-    
-    <article class="zigbee-visual telemetry">
-      <div class="zigbee-visual-head"><h3>From Sensor Event to Building Rule</h3><p>A report moves upward through a parent and the mesh, while the application meaning is carried by a ZCL cluster rather than a custom, opaque radio payload.</p></div>
-      <div class="zigbee-canvas" aria-label="From Sensor Event to Building Rule diagram">
-        
-        <div class="zigbee-node sense"><b>Occupancy sensor</b><span>Reports an attribute change</span></div>
-        
-        <div class="zigbee-node relay"><b>Parent router</b><span>Receives and forwards</span></div>
-        
-        <div class="zigbee-node gateway"><b>Gateway</b><span>Integrates the Zigbee network</span></div>
-        
-        <div class="zigbee-node rule"><b>Lighting / HVAC rule</b><span>Acts on interoperable state</span></div>
-        
-      </div>
-      <p class="zigbee-visual-foot"><b>Key idea:</b> This separation is why application behavior can remain consistent while the mesh chooses and repairs its own radio path beneath it.</p>
-    </article>
-    
-  </div>
-  
-
-  
-  <h2 class="tech-h2">Target Applications and Positioning</h2>
-  <div class="zigbee-apps">
-    
-    <article class="zigbee-app">
-      <div class="zigbee-app-head"><h3>Smart lighting and room control</h3></div>
-      <div class="zigbee-app-diagram" aria-label="Smart lighting and room control Zigbee application block diagram">
-        <span>Wall switch</span><span>Zigbee routers: lamps / plugs</span><span>Group or binding</span><span>Gateway / controller</span>
-      </div>
-      <div class="zigbee-app-copy">
-        <div><b>Why Zigbee</b>Mains-powered lamps naturally become routers, creating dense coverage as fixtures are installed. ZCL On/Off, Level Control, Color Control, Groups, and Scenes map directly to lighting behavior; local bindings keep basic switch-to-light operation working even if a hub or cloud service is unavailable.</div>
-        <div><b>Alternatives</b>Bluetooth Mesh offers a comparable low-power lighting mesh; Thread plus Matter offers IP-native control; DALI is a wired lighting-control alternative; Wi-Fi suits high-bandwidth fixtures but is normally a poorer fit for dense, battery-powered sensors.</div>
-        <div><b>Positioning</b>Zigbee is strongly positioned where there are many mains-powered fixtures, a broad installed base, and a hub is acceptable. Its value is mature lighting semantics and local group/scene behavior, not raw bandwidth or direct IP reachability.</div>
-      </div>
-      <details><summary>Open deployment and design considerations</summary><p>Design for at least several always-on routers per area, select a channel after surveying Wi-Fi occupancy, use groups for fan-out commands, and use binding when the physical switch must retain direct control. A gateway can bridge the installation into a Matter controller without replacing every device.</p></details>
-    </article>
-    
-    <article class="zigbee-app">
-      <div class="zigbee-app-head"><h3>Battery sensors, security, and comfort automation</h3></div>
-      <div class="zigbee-app-diagram" aria-label="Battery sensors, security, and comfort automation Zigbee application block diagram">
-        <span>Battery sensor</span><span>Parent router</span><span>Zigbee mesh</span><span>Hub / alarm / HVAC rule</span>
-      </div>
-      <div class="zigbee-app-copy">
-        <div><b>Why Zigbee</b>An end device can sleep most of the time, wake to report a change or poll its parent, and use a small 802.15.4 frame rather than maintaining a Wi-Fi association. Standard clusters enable common sensor behaviors such as occupancy, temperature, contact, and IAS alarm messages.</div>
-        <div><b>Alternatives</b>Bluetooth LE is excellent for phone-centric or star-topology sensors; Thread/Matter supplies IPv6 and a modern ecosystem; Wi-Fi is appropriate when the device already has ample power and needs IP bandwidth; sub-GHz LPWAN is better for long outdoor distances at low message rates.</div>
-        <div><b>Positioning</b>Choose Zigbee when a reliable indoor mesh and a local hub are acceptable, and the value of long battery life plus established device profiles outweighs the need for every endpoint to be directly IP-addressable.</div>
-      </div>
-      <details><summary>Open deployment and design considerations</summary><p>Battery estimates must include report interval, parent-poll interval, retries, and retransmissions caused by channel contention. Place parent routers close enough for strong links and avoid assuming that battery devices will heal a mesh: they do not route traffic.</p></details>
-    </article>
-    
-    <article class="zigbee-app">
-      <div class="zigbee-app-head"><h3>Commercial buildings, meters, and load control</h3></div>
-      <div class="zigbee-app-diagram" aria-label="Commercial buildings, meters, and load control Zigbee application block diagram">
-        <span>Meters / sensors</span><span>Router-rich floor mesh</span><span>Zigbee gateway</span><span>BMS / cloud analytics</span>
-      </div>
-      <div class="zigbee-app-copy">
-        <div><b>Why Zigbee</b>A low-rate mesh can connect a large number of control and telemetry points without pulling a new cable to every endpoint. Groups, bindings, and standardized control behavior help local automation continue during upstream outages.</div>
-        <div><b>Alternatives</b>BACnet and DALI are established wired-building choices; WirelessHART/ISA100 address industrial process needs; Thread/Matter is attractive for IP integration; Wi-Fi is a fit for cameras and high-data equipment rather than dense low-rate control points.</div>
-        <div><b>Positioning</b>Zigbee is positioned as a cost-conscious, low-rate control network behind a gateway. It should not be sold as a replacement for deterministic safety systems or high-throughput backhaul.</div>
-      </div>
-      <details><summary>Open deployment and design considerations</summary><p>Start with a site survey and capacity model: RF attenuation, metalwork, Wi-Fi channel overlap, router placement, expected reporting rates, and a maintenance plan for the coordinator, key rotation, and gateway monitoring. Separate life-safety requirements from convenience and energy-management traffic.</p></details>
-    </article>
-    
-  </div>
-  
-
-  
-  <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
-  <div class="arch">
-    
-    
-    <div class="arch-block k-upper">
-      <div class="ab-name">Application (ZCL + App Objects + ZDO)</div>
-      <div class="ab-sub">Endpoints | Clusters (On/Off, Level, Color) | Attributes | Commands</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">APSDE / APSME</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-nwk">
-      <div class="ab-name">APS -- Application Support Sublayer</div>
-      <div class="ab-sub">Endpoint addressing | binding table | APS security | fragmentation</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">NLDE / NLME</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-mac">
-      <div class="ab-name">NWK -- Network Layer</div>
-      <div class="ab-sub">Mesh routing | 16-bit address assignment | network-key security | route discovery</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">MCPS / MLME (SAPs)</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-phy">
-      <div class="ab-name">IEEE 802.15.4 MAC</div>
-      <div class="ab-sub">CSMA-CA | ACK / retry | beacons | AES-CCM*</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">PD / PLME</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-medium">
-      <div class="ab-name">IEEE 802.15.4 PHY + Radio</div>
-      <div class="ab-sub">2.4 GHz O-QPSK DSSS | channels 11-26 (+ sub-GHz)</div>
-    </div>
-    
-    
-    <p class="arch-cap">Zigbee builds a full mesh + application framework on top of the 802.15.4 MAC/PHY. Each layer talks to the one below through defined service primitives (APS uses NLDE/NLME; NWK uses the 802.15.4 MCPS/MLME SAPs). ZDO sits beside APS as the management brain of the device.</p>
-  </div>
-  
-
-  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
-  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
-  <div class="stack">
-    
-    <a class="stack-layer" href="#zigbee-layer-1" title="Jump to Application layer (ZCL + application objects) details">
-      <span class="tag">ZCL</span>
-      <div class="body"><strong>Application layer (ZCL + application objects)</strong><span>Standardized Clusters (On/Off, Level Control, Color Control, Thermostat, etc.) exposed on Endpoints. Each cluster defines Attributes (state) and Commands (actions) -- the interoperable behavior contract between devices from different vendors.</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#zigbee-layer-2" title="Jump to Application Support Sublayer (APS) details">
-      <span class="tag">APS</span>
-      <div class="body"><strong>Application Support Sublayer (APS)</strong><span>Endpoint addressing, the binding table (linking, e.g., a switch endpoint to a light endpoint), APS-level security, and fragmentation/reassembly of large application messages.</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#zigbee-layer-3" title="Jump to Zigbee Device Object (ZDO) details">
-      <span class="tag">ZDO</span>
-      <div class="body"><strong>Zigbee Device Object (ZDO)</strong><span>Device and service discovery, network join/leave management, binding management, and definition of the device roles (Coordinator, Router, End Device).</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#zigbee-layer-4" title="Jump to Network layer (NWK) details">
-      <span class="tag">NWK</span>
-      <div class="body"><strong>Network layer (NWK)</strong><span>Mesh route discovery and forwarding, 16-bit network address assignment, network-key security, and neighbor/route table maintenance across routers.</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#zigbee-layer-5" title="Jump to IEEE 802.15.4 MAC details">
-      <span class="tag">MAC</span>
-      <div class="body"><strong>IEEE 802.15.4 MAC</strong><span>Reused unchanged: CSMA-CA channel access, acknowledgment/retry, addressing, and optional AES-CCM* link security (see the 802.15.4 tab).</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#zigbee-layer-6" title="Jump to IEEE 802.15.4 PHY details">
-      <span class="tag">PHY</span>
-      <div class="body"><strong>IEEE 802.15.4 PHY</strong><span>Reused unchanged: 2.4 GHz O-QPSK DSSS at 250 kbps (channels 11-26), plus sub-GHz options in some regional profiles.</span></div>
-    </a>
-    
-    
-  </div>
-
-  
-  <h2 class="tech-h2">🔎 Layer Deep Dive (clickable from stack)</h2>
-  <div class="layer-grid">
-    
-    <article class="layer-card" id="zigbee-layer-1">
-      <h3>ZCL: the interoperability contract</h3>
-      <p>The Zigbee Cluster Library standardizes application behavior into Clusters. A cluster (e.g. On/Off) defines a fixed set of Attributes (like the current on/off state) and Commands (like Toggle). Because these are standardized, any certified controller can operate any certified device -- this is Zigbee&#39;s equivalent of BLE&#39;s GATT services.</p>
-      
-      <div class="chips"><span>Clusters</span><span>Attributes</span><span>Commands</span><span>Vendor interoperability</span></div>
-      
-    </article>
-    
-    <article class="layer-card" id="zigbee-layer-2">
-      <h3>APS: endpoints, binding, and fragmentation</h3>
-      <p>The Application Support Sublayer routes messages to the correct Endpoint on a node, maintains the binding table (which links a source endpoint/cluster to a destination so a switch &#39;knows&#39; which light it controls), applies APS-level link-key security, and fragments large payloads.</p>
-      
-      <div class="chips"><span>Endpoints</span><span>Binding table</span><span>APS security</span><span>Fragmentation</span></div>
-      
-    </article>
-    
-    <article class="layer-card" id="zigbee-layer-3">
-      <h3>ZDO: device and service management</h3>
-      <p>The Zigbee Device Object handles discovery (what endpoints/clusters a node exposes), network management (join/leave), and binding management. It also defines the three logical device roles that determine routing capability.</p>
-      
-      <div class="chips"><span>Service discovery</span><span>Join / leave</span><span>Roles</span></div>
-      
-    </article>
-    
-    <article class="layer-card" id="zigbee-layer-4">
-      <h3>NWK: the mesh brain</h3>
-      <p>The Network layer does mesh route discovery and forwarding, assigns 16-bit network addresses, enforces network-key security, and maintains neighbor and routing tables so packets traverse multiple hops reliably.</p>
-      
-      <div class="chips"><span>Mesh routing</span><span>Address assignment</span><span>Network key</span><span>Many-to-one optimization</span><span>Route repair</span></div>
-      
-    </article>
-    
-    <article class="layer-card" id="zigbee-layer-5">
-      <h3>MAC + PHY: reused 802.15.4 radio</h3>
-      <p>Zigbee does not change the radio -- it uses the same 802.15.4 MAC (CSMA-CA, ACK/retry, AES-CCM* link security) and PHY (2.4 GHz O-QPSK) covered on the 802.15.4 tab. All of Zigbee&#39;s differentiation is above the MAC.</p>
-      
-      <div class="chips"><span>802.15.4 MAC</span><span>802.15.4 PHY</span><span>CSMA-CA</span></div>
-      
-    </article>
-    
-  </div>
-  
-
-  <h2 class="tech-h2">📚 Core Concepts</h2>
-  <div class="concept-grid">
-    
-    <div class="concept-card"><div class="term">Coordinator / Router / End Device</div><div class="def">Exactly one Coordinator forms the network and holds the Trust Center role. Routers relay mesh traffic and can host children. End Devices are simple (often battery) leaves that talk only to a parent Router.</div></div>
-    
-    <div class="concept-card"><div class="term">Endpoint &amp; Cluster</div><div class="def">A node exposes up to 240 application Endpoints; each Endpoint implements one or more Clusters. Endpoint+Cluster is how you address a specific function on a device (e.g. endpoint 1, On/Off cluster).</div></div>
-    
-    <div class="concept-card"><div class="term">Attribute vs. Command</div><div class="def">An Attribute is a readable/reportable value (state); a Command is an action you invoke. Controllers read/report attributes and send commands -- directly parallel to BLE GATT characteristics and writes.</div></div>
-    
-    <div class="concept-card"><div class="term">Binding</div><div class="def">A stored link (source endpoint/cluster -&gt; destination) that lets a device send directly to another without a controller in the loop -- e.g. a physical switch bound to a group of lights.</div></div>
-    
-    <div class="concept-card"><div class="term">Trust Center</div><div class="def">The security authority (usually the Coordinator) that authorizes joins and distributes the network key and optional link keys.</div></div>
-    
-    <div class="concept-card"><div class="term">Network key vs. Link key</div><div class="def">The network key encrypts NWK-layer traffic shared by the whole mesh; link keys secure APS-layer communication between specific device pairs for stronger isolation.</div></div>
-    
-    <div class="concept-card"><div class="term">Groups &amp; Scenes</div><div class="def">Groups let one command address many devices at once (all kitchen lights); Scenes store and recall preset attribute combinations (a &#39;movie&#39; lighting scene).</div></div>
-    
-  </div>
-
-  <h2 class="tech-h2">⚙️ How It Works</h2>
-  <div class="steps">
-    
-    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Network formation</strong><span>The Coordinator scans for a quiet channel, picks a PAN ID, forms the network, and takes on the Trust Center role.</span></div></div>
-    
-    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Permit-join window</strong><span>The Coordinator (or a Router) opens a time-limited permit-join window during which new devices are allowed to associate -- limiting exposure of the join process.</span></div></div>
-    
-    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Association &amp; authentication</strong><span>A joining device associates at the 802.15.4 MAC, then the Trust Center authenticates it and delivers the network key (protected by a well-known or install-code-derived key).</span></div></div>
-    
-    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Address assignment</strong><span>The device receives a 16-bit network address; it also retains its globally-unique 64-bit IEEE address for stable identity.</span></div></div>
-    
-    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Service discovery</strong><span>ZDO queries reveal which Endpoints and Clusters the new device exposes, so a controller knows how to operate it.</span></div></div>
-    
-    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Binding (optional)</strong><span>Bindings are created so devices can talk peer-to-peer (a switch bound directly to lights) without routing every action through a hub.</span></div></div>
-    
-    <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Application messaging</strong><span>Controllers read/report Attributes and send Commands on ZCL Clusters; the APS and NWK layers handle secure delivery and multi-hop routing beneath.</span></div></div>
-    
-    <div class="step"><span class="num">8</span><div class="st-body"><strong>8. Mesh routing &amp; self-heal</strong><span>NWK discovers and repairs routes as devices move or drop; the 802.15.4 MAC handles per-hop contention, ACKs, and retries.</span></div></div>
-    
-  </div>
-
-  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
-  <div class="dev-grid">
-    
-    <div class="dev-card"><div class="dt">You program against ZCL clusters</div><div class="dd">Application development is mostly implementing or consuming standard ZCL clusters on endpoints. Reuse standard clusters for interoperability instead of inventing proprietary ones wherever possible.</div></div>
-    
-    <div class="dev-card"><div class="dt">Model your device with endpoints</div><div class="dd">Map each independent function to an endpoint (e.g. a 3-gang switch = 3 endpoints, each with an On/Off cluster). Controllers then treat each endpoint independently.</div></div>
-    
-    <div class="dev-card"><div class="dt">Security &amp; commissioning choices</div><div class="dd">Decide between well-known default join keys (convenient) and install-code-based joining (stronger). Plan Trust Center policy early -- it affects how easily devices onboard and how secure the network is.</div></div>
-    
-    <div class="dev-card"><div class="dt">Debugging strategy</div><div class="dd">Use a Zigbee sniffer to watch ZCL frames and NWK routing, and read Coordinator/Trust Center logs for join and key-distribution problems. As with 802.15.4, isolate radio/MAC issues (retries, channel) before blaming application logic.</div></div>
-    
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-  <h2 class="tech-h2" id="zigbee-in-depth">🧩 Zigbee In Depth</h2>
-  <div class="deep-grid">
-    
-    <article class="deep-card"><h3>Full stack above 802.15.4</h3><p>Zigbee layers NWK + APS + ZDO + ZCL on the 802.15.4 MAC/PHY. NWK provides mesh routing and network management; APS manages endpoint addressing, binding, and security to application objects; ZDO handles device/service discovery and management; ZCL defines interoperable application behavior (clusters, attributes, commands).</p></article>
-    
-    <article class="deep-card"><h3>Addressing and endpoints</h3><p>A node is referenced by its 16-bit NWK address (assigned at join) and its stable 64-bit IEEE address. Application functions live on Endpoints (1-240), each implementing clusters. Example: endpoint 1 hosts On/Off and Level Control clusters for a dimmable bulb.</p></article>
-    
-    <article class="deep-card"><h3>Trust Center security model</h3><p>The Trust Center controls admission and key distribution. Devices join through permit-join windows, receive the network key, and may establish APS link keys for pairwise security depending on the profile and policy (default keys vs. install codes).</p></article>
-    
-    <article class="deep-card"><h3>Mesh routing behavior</h3><p>Routing runs in the NWK layer among the Coordinator and Routers; End Devices reach the mesh through their parent Router. Routes are discovered and repaired dynamically, while the 802.15.4 MAC still handles per-link contention, ACK, and retries on every hop.</p></article>
-    
-    <article class="deep-card"><h3>Interworking with Matter</h3><p>Zigbee remains its own ecosystem rather than native IPv6, so cloud/service integration is typically done at a hub. Zigbee devices can be exposed to Matter ecosystems through a bridge, letting existing Zigbee deployments participate in Matter controllers.</p></article>
-    
-    <article class="deep-card"><h3>Capability profile for product teams</h3><p>Zigbee&#39;s strongest capability set is mature low-power mesh control: standardized device semantics (ZCL), robust group/scene behavior for lighting at scale, and stable multi-vendor modules. It is excellent for cost-sensitive, high-node-count control networks when a hub is acceptable.</p></article>
-    
-    <article class="deep-card"><h3>Operational levers that move outcomes</h3><p>In production, reliability is usually determined by three levers: router density (mains nodes), channel plan quality, and Trust Center policy (install-code onboarding and key updates). App logic is often correct while these levers are the real root cause of field issues.</p></article>
-    
-  </div>
-  
-
-  
-
-  <h2 class="tech-h2">💡 Common Use Cases</h2>
-  <div class="usecase-chips">
-    <span>Smart lighting (bulbs, dimmers, switches)</span><span>Home &amp; building sensors (motion, contact, temperature)</span><span>Energy metering and load control</span><span>Commercial lighting and building automation</span><span>Existing Zigbee fleets bridged into Matter ecosystems</span>
-  </div>
-
-  <h2 class="tech-h2">🔗 Learn More</h2>
-  <ul class="resource-list">
-    <li><a href="https://eclass.uoa.gr/modules/document/file.php/DI367/%CE%A5%CE%BB%CE%B9%CE%BA%CF%8C/introduction-to-zigbee-technology.pdf" target="_blank" rel="noopener">University of Athens -- Introduction to Zigbee Technology (teaching reference)</a></li><li><a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener">Connectivity Standards Alliance -- Zigbee</a></li><li><a href="https://csa-iot.org/developer-resource/specifications-download-request/" target="_blank" rel="noopener">CSA specifications &amp; downloads</a></li><li><a href="https://standards.ieee.org/ieee/802.15.4/7029/" target="_blank" rel="noopener">IEEE 802.15.4 (radio layer Zigbee runs on)</a></li>
-  </ul>
-</div>
-
-<div class="tech-panel " id="panel-thread">
-  <p class="tagline">An IPv6 mesh network built on 802.15.4 radios -- the low-power backbone most Matter smart-home devices run on.</p>
-
-  
-  <div class="spec-snapshot">
-    <span><b>Current:</b> Thread 1.4 (last publicly verified) · Matter 1.6 (Jun 2026)</span>
-    <span><b>Next:</b> Matter 1.7 (scope not yet public); Thread next version unverified</span>
-    <a href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noopener">Official spec &rarr;</a>
-  </div>
-  
-
-  <h2 class="tech-h2">📖 Overview</h2>
-  <p class="tech-overview">Thread is a mesh networking protocol -- standardized by the Thread Group -- that gives every device on the mesh a real, routable IPv6 address, unlike Zigbee&#39;s proprietary networking layer. It reuses the IEEE 802.15.4 radio (2.4 GHz) but replaces Zigbee&#39;s NWK layer with 6LoWPAN + IPv6 mesh routing, so any standard IP or CoAP application can run over it. Thread is the low-power mesh transport most Matter devices use under the hood.</p>
-
-  
-
-  
-
-  
-
-  
-  <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
-  <div class="arch">
-    
-    
-    <div class="arch-block k-upper">
-      <div class="ab-name">Application</div>
-      <div class="ab-sub">CoAP / UDP apps | Matter data model over IPv6</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">UDP sockets / CoAP</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-nwk">
-      <div class="ab-name">IPv6 + Transport</div>
-      <div class="ab-sub">IPv6 | ICMPv6 | UDP | DTLS (commissioning security)</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">IPv6 datagrams</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-mac">
-      <div class="ab-name">Mesh routing + Adaptation</div>
-      <div class="ab-sub">MLE mesh link establishment | Network Data | 6LoWPAN header compression &amp; fragmentation</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">MCPS / MLME (SAPs)</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-phy">
-      <div class="ab-name">IEEE 802.15.4 MAC</div>
-      <div class="ab-sub">CSMA-CA | ACK / retry | AES-CCM* link security</div>
-    </div>
-    
-    <div class="arch-conn">
-      <span class="sap iface">PD / PLME</span>
-      
-    </div>
-    
-    
-    <div class="arch-block k-medium">
-      <div class="ab-name">IEEE 802.15.4 PHY + Radio</div>
-      <div class="ab-sub">2.4 GHz O-QPSK DSSS | channels 11-26</div>
-    </div>
-    
-    
-    <p class="arch-cap">Thread keeps the 802.15.4 MAC/PHY but replaces proprietary networking with a standards-based IPv6 stack: 6LoWPAN adapts IPv6 to the small 802.15.4 frame, MLE builds and heals the mesh, and applications talk plain UDP/CoAP (or Matter) on top. Because every node has a real IPv6 address, ordinary IP tooling works end-to-end.</p>
-  </div>
-  
-
-  <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
-  <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
-  <div class="stack">
-    
-    <a class="stack-layer" href="#thread-layer-1" title="Jump to Application layer details">
-      <span class="tag">APP</span>
-      <div class="body"><strong>Application layer</strong><span>Any IP application protocol -- most commonly CoAP for device control, or Matter&#39;s data model layered directly on top of Thread&#39;s IPv6 transport (see the Matter tab).</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#thread-layer-2" title="Jump to Thread networking layer details">
-      <span class="tag">NWK</span>
-      <div class="body"><strong>Thread networking layer</strong><span>6LoWPAN header compression/fragmentation of IPv6 over 802.15.4, Mesh Link Establishment (MLE) for topology/routing, Network Data distribution (prefixes, DNS/services), and the Border Router function that bridges the mesh to Wi-Fi/Ethernet and the internet.</span></div>
-    </a>
-    <div class="stack-arrow">&#8595;</div>
-    
-    <a class="stack-layer" href="#thread-layer-3" title="Jump to IEEE 802.15.4 MAC/PHY details">
-      <span class="tag">MAC/PHY</span>
-      <div class="body"><strong>IEEE 802.15.4 MAC/PHY</strong><span>The same radio layer used by Zigbee (2.4 GHz, CSMA-CA channel access) -- Thread&#39;s innovation is entirely in the networking layer above it, not the radio itself.</span></div>
-    </a>
-    
-    
-  </div>
-
-  
-  <h2 class="tech-h2">🔎 Layer Deep Dive (clickable from stack)</h2>
-  <div class="layer-grid">
-    
-    <article class="layer-card" id="thread-layer-1">
-      <h3>APP: standard IP applications</h3>
-      <p>Because a Thread node is a full IPv6 host, application code is ordinary networking code -- CoAP or UDP sockets, or a Matter session. No proprietary application framework is imposed by Thread itself.</p>
-      
-      <div class="chips"><span>CoAP / UDP</span><span>Matter over Thread</span><span>Standard IP tooling</span></div>
-      
-    </article>
-    
-    <article class="layer-card" id="thread-layer-2">
-      <h3>NWK: 6LoWPAN + IPv6 + MLE</h3>
-      <p>6LoWPAN compresses and fragments IPv6 to fit 802.15.4 frames. IPv6/ICMPv6/UDP provide addressing and transport. Mesh Link Establishment (MLE) discovers neighbors, builds routing tables, and keeps the mesh self-healing. Network Data distributes prefixes and services.</p>
-      
-      <div class="chips"><span>6LoWPAN adaptation</span><span>IPv6 / UDP</span><span>MLE mesh routing</span><span>RLOC / ML-EID addressing</span><span>Network Data</span></div>
-      
-    </article>
-    
-    <article class="layer-card" id="thread-layer-3">
-      <h3>MAC/PHY: reused 802.15.4 radio</h3>
-      <p>Thread does not modify the radio -- it consumes the same 802.15.4 MAC (CSMA-CA, ACK/retry, AES-CCM* link security) and PHY (2.4 GHz O-QPSK) described on the 802.15.4 tab.</p>
-      
-      <div class="chips"><span>802.15.4 MAC</span><span>802.15.4 PHY</span><span>Battery-friendly radio</span></div>
-      
-    </article>
-    
-  </div>
-  
-
-  <h2 class="tech-h2">📚 Core Concepts</h2>
-  <div class="concept-grid">
-    
-    <div class="concept-card"><div class="term">Leader</div><div class="def">An elected router responsible for network-wide configuration (like assigning router IDs); if it goes offline, another eligible router is elected automatically.</div></div>
-    
-    <div class="concept-card"><div class="term">Router / REED / End Device</div><div class="def">Routers forward mesh traffic and can have children; a Router-Eligible End Device (REED) can be promoted to a Router if the mesh needs more routing capacity; simple End Devices only talk to their parent.</div></div>
-    
-    <div class="concept-card"><div class="term">Border Router</div><div class="def">Bridges the Thread mesh to the home&#39;s IP network (Wi-Fi/Ethernet) and the internet, advertises the mesh&#39;s routable IPv6 prefix, and proxies mDNS/DNS-SD so devices are discoverable from outside the mesh.</div></div>
-    
-    <div class="concept-card"><div class="term">Commissioning</div><div class="def">The secure process of adding a new device to the mesh -- a Commissioner (often a phone app) and a Joiner exchange credentials (via DTLS) so the Joiner can obtain the network key.</div></div>
-    
-    <div class="concept-card"><div class="term">Mesh Link Establishment (MLE)</div><div class="def">The protocol routers use to discover neighbors, build routing tables, and keep the mesh self-healing if a router drops out.</div></div>
-    
-  </div>
-
-  <h2 class="tech-h2">⚙️ How It Works</h2>
-  <div class="steps">
-    
-    <div class="step"><span class="num">1</span><div class="st-body"><strong>1. Network formation</strong><span>A Leader is elected among capable routers; the network&#39;s channel, PAN ID, and network key are established for the mesh.</span></div></div>
-    
-    <div class="step"><span class="num">2</span><div class="st-body"><strong>2. Commissioning</strong><span>A new device (Joiner) is securely admitted using a DTLS-based exchange with a Commissioner -- typically brokered through the Border Router -- and receives the network key.</span></div></div>
-    
-    <div class="step"><span class="num">3</span><div class="st-body"><strong>3. Attaching</strong><span>The joined device attaches to a suitable parent Router, becoming a Router, REED, or End Device, and is assigned a 16-bit Routing Locator (RLOC) plus a full IPv6 address.</span></div></div>
-    
-    <div class="step"><span class="num">4</span><div class="st-body"><strong>4. Routing</strong><span>Devices route IPv6 packets hop-by-hop using MLE-derived routing tables; if a router fails, the mesh recalculates routes and self-heals without manual intervention.</span></div></div>
-    
-    <div class="step"><span class="num">5</span><div class="st-body"><strong>5. Border routing &amp; discovery</strong><span>The Border Router advertises an Off-Mesh Routable (OMR) prefix to the home network and relays traffic between Thread and Wi-Fi/Ethernet/the internet, including proxying mDNS service discovery.</span></div></div>
-    
-    <div class="step"><span class="num">6</span><div class="st-body"><strong>6. Application data</strong><span>CoAP/UDP messages -- or a Matter application session -- ride over the IPv6 transport exactly like they would on any other IP network.</span></div></div>
-    
-  </div>
-
-  <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
-  <div class="dev-grid">
-    
-    <div class="dev-card"><div class="dt">OpenThread</div><div class="dd">The open-source Thread stack (originally from Google/Nest) implements the full networking layer and exposes a C API for network management; it&#39;s used inside the Nordic, Silicon Labs, NXP, and TI SDKs rather than being reimplemented per vendor.</div></div>
-    
-    <div class="dev-card"><div class="dt">Plain IP APIs above OpenThread</div><div class="dd">Because a Thread device is just an IPv6 host, you can use standard CoAP client/server libraries directly for custom device control instead of building a Zigbee-style proprietary protocol.</div></div>
-    
-    <div class="dev-card"><div class="dt">Matter as the common application layer</div><div class="dd">Most product teams don&#39;t write raw CoAP against Thread directly -- they build on Matter&#39;s data model (Clusters/Attributes/Commands), which already runs over Thread&#39;s IPv6 transport. See the Matter tab.</div></div>
-    
-    <div class="dev-card"><div class="dt">Border Router reference implementation</div><div class="dd">OpenThread Border Router (OTBR) is the standard reference implementation, commonly run on a Raspberry Pi or embedded into smart speakers/hubs (Apple TV, Google Nest Hub, Amazon Echo, etc.).</div></div>
-    
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <h2 class="tech-h2">🧵 OpenThread / Thread In Depth</h2>
-  <div class="deep-grid">
-    
-    <article class="deep-card"><h3>Why Thread uses IPv6 instead of a proprietary mesh</h3><p>Giving every node a routable IPv6 address means Thread reuses decades of proven IP protocols (UDP, CoAP, DTLS, mDNS) instead of reinventing them. A phone or cloud service can address a Thread device the same way it addresses any internet host, through the Border Router -- this is the core reason modern smart-home standards chose Thread.</p></article>
-    
-    <article class="deep-card"><h3>Device roles and mesh resilience</h3><p>Routers form the always-on mesh backbone and forward traffic. A Router-Eligible End Device (REED) can be promoted to Router when the mesh needs more capacity. Minimal/Sleepy End Devices (MED/SED) only talk to a parent Router and sleep to save battery. One Leader coordinates network-wide configuration; if it drops, another Router is elected automatically -- there is no single point of failure.</p></article>
-    
-    <article class="deep-card"><h3>Addressing model (RLOC, ML-EID, GUA)</h3><p>Each node has a Routing Locator (RLOC) that reflects its position in the mesh and changes as topology changes, plus a stable Mesh-Local EID (ML-EID) for identity within the mesh. When a Border Router advertises an Off-Mesh-Routable prefix, nodes also gain a Global Unicast Address reachable from outside the mesh.</p></article>
-    
-    <article class="deep-card"><h3>Commissioning (secure joining)</h3><p>A new device (Joiner) is admitted through a DTLS-secured handshake with a Commissioner -- typically a phone app brokered via the Border Router. The Joiner proves knowledge of a pre-shared commissioning credential, then receives the network credentials so it can attach to a parent and route traffic.</p></article>
-    
-    <article class="deep-card"><h3>Border Router: bridging to the internet</h3><p>The Thread Border Router connects the low-power mesh to Wi-Fi/Ethernet, advertises routable prefixes, and proxies mDNS/DNS-SD so mesh devices are discoverable from the home network. Matter-over-Thread depends on this bridge for controllers (phones, hubs) to reach devices.</p></article>
-    
-    <article class="deep-card"><h3>OpenThread as the reference stack</h3><p>OpenThread is the open-source implementation of the full Thread networking layer and role/state machines. It is integrated into the SDKs of most silicon vendors rather than reimplemented per chip, so behavior is consistent across hardware and certification is simpler.</p></article>
-    
-    <article class="deep-card"><h3>Capability profile for product teams</h3><p>Thread&#39;s key capability is IP-native low-power mesh: every node is addressable with standard network tooling, Border Routers can be redundant, and Matter rides naturally on top. This makes Thread highly suitable for future-proof smart-home products that need deep ecosystem interoperability.</p></article>
-    
-    <article class="deep-card"><h3>Operational levers that move outcomes</h3><p>Most field issues are driven by Border Router placement/quality, parent selection stability for sleepy nodes, and 2.4 GHz coexistence planning. Instrumenting attach time, parent switches, and route churn is more valuable than app-only telemetry.</p></article>
-    
-  </div>
-  
-
-  <h2 class="tech-h2">💡 Common Use Cases</h2>
-  <div class="usecase-chips">
-    <span>Matter-over-Thread smart home devices (locks, sensors, bulbs)</span><span>Always-on low-power mesh sensor networks</span><span>Devices needing IP-routability without a Wi-Fi radio&#39;s power cost</span>
-  </div>
-
-  <h2 class="tech-h2">🔗 Learn More</h2>
-  <ul class="resource-list">
-    <li><a href="https://www.threadgroup.org/" target="_blank" rel="noopener">Thread Group</a></li><li><a href="https://openthread.io/" target="_blank" rel="noopener">OpenThread (open-source stack)</a></li>
   </ul>
 </div>
 
@@ -1601,6 +1018,8 @@ int main(void)
     <div class="step"><span class="num">7</span><div class="st-body"><strong>7. Roaming</strong><span>802.11k/v/r let a moving station discover and hand off to a better AP quickly, minimizing the reassociation gap.</span></div></div>
     
   </div>
+
+  
 
   <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
   <div class="dev-grid">
@@ -1730,6 +1149,8 @@ int main(void)
     
   </div>
 
+  
+
   <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
   <div class="dev-grid">
     
@@ -1850,6 +1271,8 @@ int main(void)
     
   </div>
 
+  
+
   <h2 class="tech-h2">👨‍💻 For Application Developers</h2>
   <div class="dev-grid">
     
@@ -1886,7 +1309,7 @@ int main(void)
 
 
 </main>
-<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-08-18 14:23 PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-08-18 14:30 PDT</div></footer>
 <script>
 (function(){
   var tabs = document.querySelectorAll('.tech-tab');
