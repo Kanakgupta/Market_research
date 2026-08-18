@@ -272,7 +272,9 @@ a:hover { text-decoration:underline; }
 .zigbee-summary-grid h3 { margin:0 0 5px; font-size:13px; }.zigbee-summary-grid p { margin:0; color:#3e5561; font-size:12px; line-height:1.55; }
 .role-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px; }.role-strip article { padding:13px; border:1px solid #2b5a72; border-radius:5px; background:#0c2840; }.role-strip h3 { margin:0 0 5px; font-size:13px; color:#ffdc6e; }.role-strip p { margin:0; color:#c7dce8; font-size:12px; line-height:1.55; }
 .zigbee-apps { display:grid; gap:14px; margin-top:12px; }.zigbee-app { overflow:hidden; border:1px solid #d7e3ec; border-radius:8px; background:#fff; }.zigbee-app-head { padding:15px 16px; background:#f1f8fa; border-bottom:1px solid #d7e3ec; }.zigbee-app-head h3 { margin:0; color:#0e3b51; font-size:16px; }.zigbee-app-diagram { display:flex; align-items:stretch; gap:7px; padding:14px 16px; background:#071e31; overflow-x:auto; }.zigbee-app-diagram span { flex:1 0 120px; position:relative; padding:9px; border:1px solid #36718a; border-radius:4px; color:#e8f7ff; font-size:12px; font-weight:700; text-align:center; }.zigbee-app-diagram span:not(:last-child)::after { content:'>'; position:absolute; right:-7px; top:50%; z-index:1; color:#ffcf4a; font-size:16px; transform:translateY(-50%); }.zigbee-app-copy { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:15px 16px; }.zigbee-app-copy div { font-size:12.5px; color:#405460; line-height:1.6; }.zigbee-app-copy b { display:block; color:#0e3b51; margin-bottom:4px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }.zigbee-app details { margin:0 16px 16px; padding:0 12px; border:1px solid #c4d9e3; border-radius:5px; background:#f7fbfc; }.zigbee-app summary { padding:10px 0; color:#075a70; cursor:pointer; font-size:12.5px; font-weight:800; }.zigbee-app details p { margin:0 0 12px; color:#405460; font-size:12.5px; line-height:1.65; }
-@media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy { grid-template-columns:1fr; } }
+/* Zigbee visual learning aids */
+.zigbee-visuals { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:12px; }.zigbee-visual { overflow:hidden; background:#fff; border:1px solid #cfe1e8; border-radius:8px; }.zigbee-visual-head { padding:14px 16px 8px; background:#eaf5f5; }.zigbee-visual-head h3 { margin:0; color:#083d4c; font-size:15px; }.zigbee-visual-head p { margin:5px 0 0; color:#41606b; font-size:12px; line-height:1.55; }.zigbee-canvas { position:relative; display:grid; grid-template-columns:repeat(4,minmax(92px,1fr)); gap:10px; align-items:center; min-height:166px; padding:22px 16px; background:linear-gradient(135deg,#082338,#0e3e54); overflow-x:auto; }.zigbee-canvas::before { content:""; position:absolute; top:50%; left:10%; right:10%; height:2px; background:repeating-linear-gradient(90deg,#7ac9d8 0 10px,transparent 10px 17px); opacity:.72; }.zigbee-node { position:relative; z-index:1; min-height:100px; padding:10px 8px; display:flex; flex-direction:column; justify-content:center; border:1px solid #65aabc; border-radius:6px; background:#123f57; box-shadow:0 8px 15px rgba(0,0,0,.18); text-align:center; }.zigbee-node b { color:#fff; font-size:12px; }.zigbee-node span { margin-top:5px; color:#c4e5ee; font-size:10.5px; line-height:1.4; }.zigbee-node.hub { border-color:#ffd15a; background:#644d12; }.zigbee-node.router { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.end { border-color:#f4909c; background:#66313b; }.zigbee-node.source,.zigbee-node.sense { border-color:#73b8ff; }.zigbee-node.map,.zigbee-node.relay { border-color:#ffd15a; background:#645116; }.zigbee-node.target,.zigbee-node.rule { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.group,.zigbee-node.gateway { border-color:#c4a1ff; background:#49356f; }.zigbee-node.step1 { border-color:#73b8ff; }.zigbee-node.step2 { border-color:#ffd15a; background:#645116; }.zigbee-node.step3 { border-color:#f4909c; background:#66313b; }.zigbee-node.step4 { border-color:#59d2b8; background:#0d5b57; }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(3,minmax(92px,1fr)); }.zigbee-visual.topology .zigbee-canvas::before { top:44%; left:18%; right:18%; transform:rotate(-10deg); }.zigbee-visual.topology .zigbee-node:nth-child(4) { grid-column:1; }.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:3; }.zigbee-visual-foot { margin:0; padding:12px 16px 14px; color:#3d5661; background:#f8fcfd; font-size:12px; line-height:1.6; }.zigbee-visual-foot b { color:#075a70; }
+@media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy,.zigbee-visuals { grid-template-columns:1fr; }.zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-node:nth-child(4),.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:auto; }.zigbee-canvas::before { display:none; } }
 </style>
 
 <script id="password-gate-v1">
@@ -329,7 +331,7 @@ a:hover { text-decoration:underline; }
     <a href="news.html" class="">News</a>
     <a href="chat.html" class="nav-chat ">Chat</a>
   </nav>
-  <div class="meta-info">Updated 2026-08-18 14:10 PDT</div>
+  <div class="meta-info">Updated 2026-08-18 14:23 PDT</div>
 </div></header>
 <script>
 (function(){
@@ -378,6 +380,8 @@ a:hover { text-decoration:underline; }
 
   <h2 class="tech-h2">📖 Overview</h2>
   <p class="tech-overview">Zephyr is a Linux-Foundation-governed, Apache-2.0 real-time OS that ships a complete Bluetooth Low Energy stack -- Host, Controller, and the HCI glue between them -- written from scratch in-tree (not a BlueZ port), plus a growing set of Classic Bluetooth (BR/EDR) Host profiles (SDP, L2CAP, RFCOMM, A2DP, AVRCP, HFP, GOEP/OBEX, BIP). It is Bluetooth v5.3 compliant, portable to every CPU architecture Zephyr supports, highly configurable down to a 16 KB-RAM footprint for Bluetooth Mesh, and ships with a Bluetooth SIG pre-qualified Host listing that product companies can reference to cut their own qualification cost and effort.</p>
+
+  
 
   
 
@@ -678,6 +682,8 @@ int main(void)
   
 
   
+
+  
   <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
   <div class="arch">
     
@@ -919,6 +925,79 @@ int main(void)
       
     </div>
   </section>
+  
+
+  
+  <h2 class="tech-h2">Visual Walkthroughs</h2>
+  <div class="zigbee-visuals">
+    
+    <article class="zigbee-visual topology">
+      <div class="zigbee-visual-head"><h3>How a Zigbee Mesh Covers a Home or Floor</h3><p>Routers form the always-on backbone. End Devices attach to one parent and conserve energy by sleeping; they do not extend coverage themselves.</p></div>
+      <div class="zigbee-canvas" aria-label="How a Zigbee Mesh Covers a Home or Floor diagram">
+        
+        <div class="zigbee-node hub"><b>Coordinator + Trust Center</b><span>Forms the network and admits devices</span></div>
+        
+        <div class="zigbee-node router"><b>Lamp / plug router</b><span>Forwards traffic and hosts children</span></div>
+        
+        <div class="zigbee-node router"><b>Lamp / plug router</b><span>Creates an alternate mesh path</span></div>
+        
+        <div class="zigbee-node end"><b>Battery sensor</b><span>Sleeps, then polls or reports</span></div>
+        
+        <div class="zigbee-node end"><b>Door contact</b><span>Battery end-device leaf</span></div>
+        
+      </div>
+      <p class="zigbee-visual-foot"><b>Key idea:</b> For a reliable deployment, add mains-powered routers where RF obstacles or large distances would otherwise force battery devices to reach too far.</p>
+    </article>
+    
+    <article class="zigbee-visual binding">
+      <div class="zigbee-visual-head"><h3>Local Switch-to-Light Binding</h3><p>Binding lets a switch send a standard cluster command directly to its target, without requiring a cloud service or a controller to relay every press.</p></div>
+      <div class="zigbee-canvas" aria-label="Local Switch-to-Light Binding diagram">
+        
+        <div class="zigbee-node source"><b>Switch endpoint 1</b><span>On/Off client</span></div>
+        
+        <div class="zigbee-node map"><b>Binding table</b><span>Maps cluster and destination</span></div>
+        
+        <div class="zigbee-node target"><b>Lamp endpoint 1</b><span>On/Off server</span></div>
+        
+        <div class="zigbee-node group"><b>Group address</b><span>Optional fan-out to many lamps</span></div>
+        
+      </div>
+      <p class="zigbee-visual-foot"><b>Key idea:</b> Use a group for one-to-many actions such as all kitchen lights. Use a binding when a physical control must remain responsive even while the gateway is offline.</p>
+    </article>
+    
+    <article class="zigbee-visual commissioning">
+      <div class="zigbee-visual-head"><h3>Secure Join and Commissioning Sequence</h3><p>Commissioning is a controlled process: a network permits joining for a short interval, authenticates the new device, gives it network credentials, then discovers its capabilities.</p></div>
+      <div class="zigbee-canvas" aria-label="Secure Join and Commissioning Sequence diagram">
+        
+        <div class="zigbee-node step1"><b>Open permit-join</b><span>Time-limited admission window</span></div>
+        
+        <div class="zigbee-node step2"><b>Authenticate</b><span>Trust Center validates joining device</span></div>
+        
+        <div class="zigbee-node step3"><b>Distribute keys</b><span>Protected network credentials</span></div>
+        
+        <div class="zigbee-node step4"><b>Discover + bind</b><span>Find endpoints and clusters</span></div>
+        
+      </div>
+      <p class="zigbee-visual-foot"><b>Key idea:</b> Install-code-based onboarding and a short permit-join window reduce the risk of unintended devices entering a deployed network.</p>
+    </article>
+    
+    <article class="zigbee-visual telemetry">
+      <div class="zigbee-visual-head"><h3>From Sensor Event to Building Rule</h3><p>A report moves upward through a parent and the mesh, while the application meaning is carried by a ZCL cluster rather than a custom, opaque radio payload.</p></div>
+      <div class="zigbee-canvas" aria-label="From Sensor Event to Building Rule diagram">
+        
+        <div class="zigbee-node sense"><b>Occupancy sensor</b><span>Reports an attribute change</span></div>
+        
+        <div class="zigbee-node relay"><b>Parent router</b><span>Receives and forwards</span></div>
+        
+        <div class="zigbee-node gateway"><b>Gateway</b><span>Integrates the Zigbee network</span></div>
+        
+        <div class="zigbee-node rule"><b>Lighting / HVAC rule</b><span>Acts on interoperable state</span></div>
+        
+      </div>
+      <p class="zigbee-visual-foot"><b>Key idea:</b> This separation is why application behavior can remain consistent while the mesh chooses and repairs its own radio path beneath it.</p>
+    </article>
+    
+  </div>
   
 
   
@@ -1229,6 +1308,8 @@ int main(void)
   
 
   
+
+  
   <h2 class="tech-h2">🧱 Architecture Block Diagram</h2>
   <div class="arch">
     
@@ -1451,6 +1532,8 @@ int main(void)
 
   
 
+  
+
   <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
   <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
   <div class="stack">
@@ -1568,6 +1651,8 @@ int main(void)
 
   <h2 class="tech-h2">📖 Overview</h2>
   <p class="tech-overview">Matter (from the Connectivity Standards Alliance) is not a radio technology -- it&#39;s an application-layer standard that defines a common data model so smart-home devices from different manufacturers interoperate regardless of which network they run on (Thread, Wi-Fi, or Ethernet). Bluetooth LE is used only during the initial commissioning handshake; after that, all operational traffic runs over IP. This is the single most important thing to understand about Matter&#39;s architecture -- it deliberately reuses Thread and Wi-Fi rather than inventing a new radio layer.</p>
+
+  
 
   
 
@@ -1701,6 +1786,8 @@ int main(void)
 
   
 
+  
+
   <h2 class="tech-h2">🏗️ Layer-by-layer Responsibilities</h2>
   <p class="tech-overview" style="margin-bottom:0">Click any layer to jump to its detailed explanation below.</p>
   <div class="stack">
@@ -1799,7 +1886,7 @@ int main(void)
 
 
 </main>
-<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-08-18 14:10 PDT</div></footer>
+<footer class="footer"><div class="wrap">Wireless Technology tutorial · hand-curated, not news-driven · spec versions verified 2026-08-18 14:23 PDT</div></footer>
 <script>
 (function(){
   var tabs = document.querySelectorAll('.tech-tab');

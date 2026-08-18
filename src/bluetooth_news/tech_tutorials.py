@@ -551,6 +551,57 @@ TECH_TUTORIALS: list[dict] = [
                 {"name": "Security", "detail": "The Trust Center controls joining and key distribution. Network keys protect the mesh; APS link keys can provide per-device-pair protection. Install-code onboarding is stronger than shared default join keys."},
             ],
         },
+        "visual_walkthroughs": [
+            {
+                "kind": "topology",
+                "title": "How a Zigbee Mesh Covers a Home or Floor",
+                "intro": "Routers form the always-on backbone. End Devices attach to one parent and conserve energy by sleeping; they do not extend coverage themselves.",
+                "nodes": [
+                    {"name": "Coordinator + Trust Center", "role": "Forms the network and admits devices", "class": "hub"},
+                    {"name": "Lamp / plug router", "role": "Forwards traffic and hosts children", "class": "router"},
+                    {"name": "Lamp / plug router", "role": "Creates an alternate mesh path", "class": "router"},
+                    {"name": "Battery sensor", "role": "Sleeps, then polls or reports", "class": "end"},
+                    {"name": "Door contact", "role": "Battery end-device leaf", "class": "end"},
+                ],
+                "takeaway": "For a reliable deployment, add mains-powered routers where RF obstacles or large distances would otherwise force battery devices to reach too far.",
+            },
+            {
+                "kind": "binding",
+                "title": "Local Switch-to-Light Binding",
+                "intro": "Binding lets a switch send a standard cluster command directly to its target, without requiring a cloud service or a controller to relay every press.",
+                "nodes": [
+                    {"name": "Switch endpoint 1", "role": "On/Off client", "class": "source"},
+                    {"name": "Binding table", "role": "Maps cluster and destination", "class": "map"},
+                    {"name": "Lamp endpoint 1", "role": "On/Off server", "class": "target"},
+                    {"name": "Group address", "role": "Optional fan-out to many lamps", "class": "group"},
+                ],
+                "takeaway": "Use a group for one-to-many actions such as all kitchen lights. Use a binding when a physical control must remain responsive even while the gateway is offline.",
+            },
+            {
+                "kind": "commissioning",
+                "title": "Secure Join and Commissioning Sequence",
+                "intro": "Commissioning is a controlled process: a network permits joining for a short interval, authenticates the new device, gives it network credentials, then discovers its capabilities.",
+                "nodes": [
+                    {"name": "Open permit-join", "role": "Time-limited admission window", "class": "step1"},
+                    {"name": "Authenticate", "role": "Trust Center validates joining device", "class": "step2"},
+                    {"name": "Distribute keys", "role": "Protected network credentials", "class": "step3"},
+                    {"name": "Discover + bind", "role": "Find endpoints and clusters", "class": "step4"},
+                ],
+                "takeaway": "Install-code-based onboarding and a short permit-join window reduce the risk of unintended devices entering a deployed network.",
+            },
+            {
+                "kind": "telemetry",
+                "title": "From Sensor Event to Building Rule",
+                "intro": "A report moves upward through a parent and the mesh, while the application meaning is carried by a ZCL cluster rather than a custom, opaque radio payload.",
+                "nodes": [
+                    {"name": "Occupancy sensor", "role": "Reports an attribute change", "class": "sense"},
+                    {"name": "Parent router", "role": "Receives and forwards", "class": "relay"},
+                    {"name": "Gateway", "role": "Integrates the Zigbee network", "class": "gateway"},
+                    {"name": "Lighting / HVAC rule", "role": "Acts on interoperable state", "class": "rule"},
+                ],
+                "takeaway": "This separation is why application behavior can remain consistent while the mesh chooses and repairs its own radio path beneath it.",
+            },
+        ],
         "application_fit": [
             {
                 "name": "Smart lighting and room control",

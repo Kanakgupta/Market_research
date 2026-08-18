@@ -1763,7 +1763,9 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
 .zigbee-summary-grid h3 { margin:0 0 5px; font-size:13px; }.zigbee-summary-grid p { margin:0; color:#3e5561; font-size:12px; line-height:1.55; }
 .role-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px; }.role-strip article { padding:13px; border:1px solid #2b5a72; border-radius:5px; background:#0c2840; }.role-strip h3 { margin:0 0 5px; font-size:13px; color:#ffdc6e; }.role-strip p { margin:0; color:#c7dce8; font-size:12px; line-height:1.55; }
 .zigbee-apps { display:grid; gap:14px; margin-top:12px; }.zigbee-app { overflow:hidden; border:1px solid #d7e3ec; border-radius:8px; background:#fff; }.zigbee-app-head { padding:15px 16px; background:#f1f8fa; border-bottom:1px solid #d7e3ec; }.zigbee-app-head h3 { margin:0; color:#0e3b51; font-size:16px; }.zigbee-app-diagram { display:flex; align-items:stretch; gap:7px; padding:14px 16px; background:#071e31; overflow-x:auto; }.zigbee-app-diagram span { flex:1 0 120px; position:relative; padding:9px; border:1px solid #36718a; border-radius:4px; color:#e8f7ff; font-size:12px; font-weight:700; text-align:center; }.zigbee-app-diagram span:not(:last-child)::after { content:'>'; position:absolute; right:-7px; top:50%; z-index:1; color:#ffcf4a; font-size:16px; transform:translateY(-50%); }.zigbee-app-copy { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:15px 16px; }.zigbee-app-copy div { font-size:12.5px; color:#405460; line-height:1.6; }.zigbee-app-copy b { display:block; color:#0e3b51; margin-bottom:4px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }.zigbee-app details { margin:0 16px 16px; padding:0 12px; border:1px solid #c4d9e3; border-radius:5px; background:#f7fbfc; }.zigbee-app summary { padding:10px 0; color:#075a70; cursor:pointer; font-size:12.5px; font-weight:800; }.zigbee-app details p { margin:0 0 12px; color:#405460; font-size:12.5px; line-height:1.65; }
-@media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy { grid-template-columns:1fr; } }
+/* Zigbee visual learning aids */
+.zigbee-visuals { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:12px; }.zigbee-visual { overflow:hidden; background:#fff; border:1px solid #cfe1e8; border-radius:8px; }.zigbee-visual-head { padding:14px 16px 8px; background:#eaf5f5; }.zigbee-visual-head h3 { margin:0; color:#083d4c; font-size:15px; }.zigbee-visual-head p { margin:5px 0 0; color:#41606b; font-size:12px; line-height:1.55; }.zigbee-canvas { position:relative; display:grid; grid-template-columns:repeat(4,minmax(92px,1fr)); gap:10px; align-items:center; min-height:166px; padding:22px 16px; background:linear-gradient(135deg,#082338,#0e3e54); overflow-x:auto; }.zigbee-canvas::before { content:""; position:absolute; top:50%; left:10%; right:10%; height:2px; background:repeating-linear-gradient(90deg,#7ac9d8 0 10px,transparent 10px 17px); opacity:.72; }.zigbee-node { position:relative; z-index:1; min-height:100px; padding:10px 8px; display:flex; flex-direction:column; justify-content:center; border:1px solid #65aabc; border-radius:6px; background:#123f57; box-shadow:0 8px 15px rgba(0,0,0,.18); text-align:center; }.zigbee-node b { color:#fff; font-size:12px; }.zigbee-node span { margin-top:5px; color:#c4e5ee; font-size:10.5px; line-height:1.4; }.zigbee-node.hub { border-color:#ffd15a; background:#644d12; }.zigbee-node.router { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.end { border-color:#f4909c; background:#66313b; }.zigbee-node.source,.zigbee-node.sense { border-color:#73b8ff; }.zigbee-node.map,.zigbee-node.relay { border-color:#ffd15a; background:#645116; }.zigbee-node.target,.zigbee-node.rule { border-color:#59d2b8; background:#0d5b57; }.zigbee-node.group,.zigbee-node.gateway { border-color:#c4a1ff; background:#49356f; }.zigbee-node.step1 { border-color:#73b8ff; }.zigbee-node.step2 { border-color:#ffd15a; background:#645116; }.zigbee-node.step3 { border-color:#f4909c; background:#66313b; }.zigbee-node.step4 { border-color:#59d2b8; background:#0d5b57; }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(3,minmax(92px,1fr)); }.zigbee-visual.topology .zigbee-canvas::before { top:44%; left:18%; right:18%; transform:rotate(-10deg); }.zigbee-visual.topology .zigbee-node:nth-child(4) { grid-column:1; }.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:3; }.zigbee-visual-foot { margin:0; padding:12px 16px 14px; color:#3d5661; background:#f8fcfd; font-size:12px; line-height:1.6; }.zigbee-visual-foot b { color:#075a70; }
+@media (max-width:760px) { .zigbee-summary { padding:17px; }.zigbee-flow { grid-template-columns:1fr; }.zigbee-summary-grid,.role-strip,.zigbee-app-copy,.zigbee-visuals { grid-template-columns:1fr; }.zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-canvas { grid-template-columns:repeat(2,minmax(120px,1fr)); }.zigbee-visual.topology .zigbee-node:nth-child(4),.zigbee-visual.topology .zigbee-node:nth-child(5) { grid-column:auto; }.zigbee-canvas::before { display:none; } }
 </style>
 """ + _PASSWORD_GATE_HTML + """
 </head><body>
@@ -1817,6 +1819,23 @@ _TECHNOLOGY_TEMPLATE = """<!doctype html>
       {% endfor %}
     </div>
   </section>
+  {% endif %}
+
+  {% if t.visual_walkthroughs %}
+  <h2 class="tech-h2">Visual Walkthroughs</h2>
+  <div class="zigbee-visuals">
+    {% for v in t.visual_walkthroughs %}
+    <article class="zigbee-visual {{ v.kind }}">
+      <div class="zigbee-visual-head"><h3>{{ v.title }}</h3><p>{{ v.intro }}</p></div>
+      <div class="zigbee-canvas" aria-label="{{ v.title }} diagram">
+        {% for item in v.nodes %}
+        <div class="zigbee-node {{ item.class }}"><b>{{ item.name }}</b><span>{{ item.role }}</span></div>
+        {% endfor %}
+      </div>
+      <p class="zigbee-visual-foot"><b>Key idea:</b> {{ v.takeaway }}</p>
+    </article>
+    {% endfor %}
+  </div>
   {% endif %}
 
   {% if t.application_fit %}
