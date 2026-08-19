@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T13:09:44Z",
+  "generated_at": "2026-08-19T13:10:30Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3261,6 +3261,11 @@
           "url": "https://www.digitimes.com/news/a20260805PD215/airoha-broadband-wireless-revenue-growth.html"
         },
         {
+          "title": "Airoha Takes Stake in IC Plus and Joins Management",
+          "date": "Aug 2026",
+          "url": "https://www.digitimes.com/news/a20260818PD224/ic-plus-ethernet-realtek-airoha-mediatek.html"
+        },
+        {
           "title": "Airoha Technology Partners with E Ink for Global Debut of 4.2-Inch Ripple\u2122 ESL",
           "date": "Jun 2026",
           "url": "https://www.prnewswire.com/news-releases/airoha-technology-partners-with-e-ink-for-global-debut-of-4-2-inch-ripple-esl-at-computex-2026--302786961.html"
@@ -3289,11 +3294,6 @@
           "title": "Airoha and Fraunhofer IIS Showcase High Data Rate Multichannel Spatial Audio",
           "date": "Mar 2026",
           "url": "https://www.google.com/search?q=Airoha+and+Fraunhofer+IIS+Showcase+High+Data+Rate+Multichannel+Spatial+Audio+Airoha"
-        },
-        {
-          "title": "Fraunhofer IIS and Airoha Showcase High Data Rate Multichannel Spatial Audio at MWC 2026",
-          "date": "Mar 2026",
-          "url": "https://www.google.com/search?q=Fraunhofer+IIS+and+Airoha+Showcase+High+Data+Rate+Multichannel+Spatial+Audio+at+MWC+2026+Airoha"
         }
       ]
     },
@@ -3739,23 +3739,24 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 94,
-    "NXP": 53,
-    "MediaTek": 20,
-    "Silicon Labs": 17,
-    "Espressif": 13,
-    "TI": 12,
-    "Nordic": 9,
-    "Broadcom": 4,
-    "Quectel": 3,
-    "Realtek": 3,
-    "Microchip": 2,
+    "Qualcomm": 96,
+    "NXP": 54,
+    "MediaTek": 25,
+    "Silicon Labs": 19,
+    "Nordic": 10,
+    "TI": 10,
+    "Espressif": 10,
+    "Broadcom": 5,
+    "Quectel": 5,
+    "Marvell": 4,
     "Apple": 2,
-    "Marvell": 2,
+    "Bouffalo Lab": 1,
+    "STMicro": 1,
+    "Synaptics": 1,
     "Renesas": 1,
     "Infineon": 1,
-    "Synaptics": 1,
     "Telink": 1,
+    "Microchip": 1,
     "WCH": 1,
     "Murata": 1
   },
@@ -3838,7 +3839,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3903,
+      "issues_open": 3961,
       "prs_open": 0,
       "releases": [
         {
@@ -3860,8 +3861,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16242,
-      "pushed_at": "2026-08-18T12:55:33Z"
+      "stars": 16254,
+      "pushed_at": "2026-08-19T10:56:20Z"
     },
     {
       "name": "ESP-IDF",
@@ -3874,9 +3875,15 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1689,
+      "issues_open": 1688,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "v6.1-rc1",
+          "name": "ESP-IDF Pre-release v6.1-rc1",
+          "published_at": "2026-08-18T15:26:58Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-rc1"
+        },
         {
           "tag": "v5.5.5",
           "name": "ESP-IDF Release v5.5.5",
@@ -3888,65 +3895,10 @@
           "name": "ESP-IDF Pre-release v6.1-beta1",
           "published_at": "2026-06-29T12:07:01Z",
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
-        },
-        {
-          "tag": "v6.0.2",
-          "name": "ESP-IDF Release v6.0.2",
-          "published_at": "2026-06-29T01:29:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.2"
         }
       ],
-      "stars": 18806,
-      "pushed_at": "2026-08-18T11:54:46Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 243152,
-      "pushed_at": "2026-08-18T03:57:01Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2790,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        },
-        {
-          "tag": "v1.5.0.0",
-          "name": "v1.5.0.0 Release",
-          "published_at": "2025-11-17T22:07:57Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
-        }
-      ],
-      "stars": 8877,
-      "pushed_at": "2026-08-18T12:10:22Z"
+      "stars": 18814,
+      "pushed_at": "2026-08-18T17:21:29Z"
     },
     {
       "name": "OpenThread",
@@ -3956,8 +3908,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 97,
-      "issues_open": 176,
+      "commits_30d": 100,
+      "issues_open": 173,
       "prs_open": 0,
       "releases": [
         {
@@ -3979,8 +3931,57 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4016,
-      "pushed_at": "2026-08-18T00:38:55Z"
+      "stars": 4014,
+      "pushed_at": "2026-08-18T22:08:41Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 243287,
+      "pushed_at": "2026-08-19T02:54:46Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2796,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        },
+        {
+          "tag": "v1.5.0.0",
+          "name": "v1.5.0.0 Release",
+          "published_at": "2025-11-17T22:07:57Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+        }
+      ],
+      "stars": 8878,
+      "pushed_at": "2026-08-19T09:49:46Z"
     },
     {
       "name": "BlueZ",
@@ -3990,7 +3991,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 46,
+      "commits_30d": 50,
       "issues_open": 115,
       "prs_open": 0,
       "releases": [
@@ -4013,8 +4014,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1130,
-      "pushed_at": "2026-08-18T11:28:39Z"
+      "stars": 1129,
+      "pushed_at": "2026-08-19T09:39:36Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4025,7 +4026,7 @@
         "ieee15_4"
       ],
       "commits_30d": 27,
-      "issues_open": 463,
+      "issues_open": 460,
       "prs_open": 0,
       "releases": [
         {
@@ -4047,8 +4048,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15506,
-      "pushed_at": "2026-08-14T19:20:07Z"
+      "stars": 15511,
+      "pushed_at": "2026-08-18T20:09:27Z"
     },
     {
       "name": "NimBLE",
