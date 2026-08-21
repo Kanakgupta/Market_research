@@ -1,530 +1,501 @@
 {
-  "generated_at": "2026-08-20T13:11:47Z",
+  "generated_at": "2026-08-21T13:09:59Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Nurmina Launches Nova Smart Lighting Series in the U.S., Bringing AI-Powered Effects and Matter Connectivity to Everyday Spaces",
-      "url": "https://www.manilatimes.net/2026/08/20/tmt-newswire/globenewswire/nurmina-launches-nova-smart-lighting-series-in-the-us-bringing-ai-powered-effects-and-matter-connectivity-to-everyday-spaces/2409229",
-      "source": "The Manila Times",
-      "date": "2026-08-20",
+      "title": "The camera I always have with me keeps paying dividends",
+      "url": "https://9to5mac.com/2026/08/21/the-camera-i-always-have-with-me-keeps-paying-dividends/",
+      "source": "9to5Mac",
+      "date": "2026-08-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "There\u2019s an old photography saying that the best camera is the one you have on you at the time. The iPhone is of course the camera that most of us have on us most of the time, and that\u2019s obviously a massive benefit for things like shots of kids, social events, and so on. But a current video project h"
+    },
+    {
+      "title": "BYD unveils new car with a nonstop range of 2,300 kilometers",
+      "url": "https://kz.kursiv.media/en/2026-08-21/engk-tank-byd-unveils-massive-new-ev-with-a-nonstop-range-of-2300-kilometers/",
+      "source": "Kursiv Media",
+      "date": "2026-08-21",
+      "vendor": null,
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "BYD unveils new car with a nonstop range of 2,300 kilometers\nBYD, China\u2019s largest electric vehicle maker, has unveiled a new large plug-in hybrid crossover, the Fang Cheng Bao Ti 9, featuring a 536-horsepower (hp) powertrain and a 66.5 kWh battery that provides up to 310 kilometers of all-electric r"
+    },
+    {
+      "title": "Dimensity 9600 Pro engineering samples listed for a measly $30 on the Chinese black market",
+      "url": "https://www.notebookcheck.net/Dimensity-9600-Pro-engineering-samples-listed-for-a-measly-30-on-the-Chinese-black-market.1374741.0.html",
+      "source": "Notebookcheck",
+      "date": "2026-08-21",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Dimensity 9600 Pro engineering samples listed for a measly $30 on the Chinese black market\nJefull, the same Xianyu seller who previously obtained engineering samples of Qualcomm's next Snapdragon chipset (SM8975), tentatively named the Snapdragon 8 Elite Extreme Gen 6, has now listed chips marked MT"
+    },
+    {
+      "title": "Add this meross HomeKit two-zone Wi-Fi smart water timer to your spigots for a new $76 low",
+      "url": "https://9to5toys.com/2026/08/21/meross-homekit-two-zone-wi-fi-smart-water-timer-new-76-low/",
+      "source": "9to5Toys",
+      "date": "2026-08-21",
       "vendor": null,
       "customer": "Apple",
       "application": "Smart Home",
       "buckets": [
-        "matter"
+        "wifi"
       ],
-      "summary": "Nova Desk Light Bars Pro and Nova Floor Lamp Pro bring dynamic multicolor lighting, AI-generated effects and Matter smart home connectivity to gaming setups, bedrooms and living rooms nationwide\nSan Francisco , Aug. 20, 2026 (GLOBE NEWSWIRE) -- Nurmina, a smart home brand built around AI-powered amb"
+      "summary": "Through the official meross Amazon storefront, you can find the best price yet on the Two-Zone Wi-Fi Smart Water Timer with hub down at $75.99 shipped. Normally going for $116 at full price, it\u2019s spent most of summer keeping down between $92 and $85, including during Prime Day. Since late July it\u2019s "
     },
     {
-      "title": "Meta AI\u2019s new Mac app wants you to talk to your apps",
-      "url": "https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/",
-      "source": "TechCrunch",
-      "date": "2026-08-20",
+      "title": "Tesla sunsets its Solar Roof tiles",
+      "url": "https://www.theverge.com/tech/983167/tesla-solar-roof-tiles-discontinued",
+      "source": "The Verge",
+      "date": "2026-08-21",
       "vendor": null,
-      "customer": "Meta",
+      "customer": "Tesla",
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "Tesla has discontinued Solar Roof, its solar panels designed to look like regular roofing tiles, Electrek reports. Sources \"close to the program\" told the publication that Tesla has informed its third-party installer network that Solar Roof is no longer available to order, and that only conventional"
+    },
+    {
+      "title": "Texas Instruments' strong Q2 growth and rising dividends keep it a top buy amid AI and chip cycles.",
+      "url": "https://pluang.com/en/news-feed/texas-instruments-pilihan-ai-dan-dividen-kuat",
+      "source": "Pluang",
+      "date": "2026-08-21",
+      "vendor": "TI",
+      "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "Meta today announced a new Mac app for Meta AI with built-in system-wide dictation. The app can also look at the current screen and answer your questions based on the context using its Muse Spark model.\nThe company said that the dictation feature works across all apps, just like other tools such as "
+      "summary": "Texas Instruments posts strong Q2 2026 with 23% revenue growth and 53% net income rise.\nTexas Instruments reported a strong Q2 2026, with revenue up 23%, operating profit up 48%, and net income rising 53%, signaling a broad operational recovery. The company is ending a heavy capital expenditure cycl"
     },
     {
-      "title": "NXP Semiconductors stock holds above $225 as automotive recovery shapes outlook - Ad-hoc-news.de",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-stock-holds-above-225-as-automotive-recovery-shapes/69975813",
-      "source": "Ad-hoc-news.de",
-      "date": "2026-08-20",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Automotive",
+      "title": "Galaxy S27 Ultra Could be Powered by Snapdragon 8 Elite Extreme Chip",
+      "url": "https://sammyguru.com/qualcomm-snapdragon-8-elite-extreme-gen-6-galaxy-s27-ultra/",
+      "source": "SammyGuru",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": null,
       "buckets": [],
-      "summary": "NXP Semiconductors stock holds above $225 as automotive recovery shapes outlook\nPublished on 08/20/2026 at 14:06 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSNXP Semiconductors N.V. (ISIN NL0009538779) stock most recently closed at $226.02 on Nasdaq under the ticker NXPI on "
+      "summary": "SammyGuru is reader-supported. We have affiliate and sponsored partnerships, so we may earn a commission when you buy through links on our site \u2014 at no extra cost to you. Learn more.\nQualcomm is gearing up to launch two variants of its flagship Snapdragon chip this year. The company recently teased "
     },
     {
-      "title": "Meta glasses are a workplace menace",
-      "url": "https://www.theverge.com/report/982414/meta-glasses-work-surveillance-labor-security",
-      "source": "The Verge",
-      "date": "2026-08-20",
+      "title": "Texas Instruments Is a Worthy AI Picks-and-Shovels Play I Keep Buying",
+      "url": "https://247wallst.com/investing/2026/08/21/texas-instruments-is-a-worthy-ai-picks-and-shovels-play-i-keep-buying/",
+      "source": "24/7 Wall St.",
+      "date": "2026-08-21",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "I bought Texas Instruments (NASDAQ:TXN | TXN Price Prediction) again last week, and I will buy more the next time cash lands in my brokerage. This is the analog chip company I keep coming back to, and the reason is plain: every rack of AI servers, every automated factory line, every EV powertrain ne"
+    },
+    {
+      "title": "Qualcomm: A Compelling Turnaround Opportunity (NASDAQ:QCOM)",
+      "url": "https://seekingalpha.com/article/4939080-qualcomm-compelling-turnaround-opportunity",
+      "source": "Seeking Alpha",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "The best large tablets of 2026: Expert tested and reviewed",
+      "url": "https://www.zdnet.com/article/best-large-tablet/",
+      "source": "ZDNet",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "We tested the best big-screen tablets from Apple, Samsung, Microsoft, and more, to help you choose the right one."
+    },
+    {
+      "title": "Dark Matter\u2019s latest POS release brings real-time document validation to the point of sale",
+      "url": "https://www.ncnewsonline.com/news/national/dark-matter-s-latest-pos-release-brings-real-time-document-validation-to-the-point-of/article_82d57adf-bea3-5071-ad03-8328b15036b4.html",
+      "source": "New Castle News",
+      "date": "2026-08-21",
+      "vendor": null,
+      "customer": null,
+      "application": "Retail",
+      "buckets": [],
+      "summary": "- Aiva Intelligence now validates borrower documents at upload, giving borrowers immediate feedback while helping lenders resolve issues earlier in the lending process -\nkAmyprz$~}'x{{t[ u=2][ pF8] a`[ a_ae W$t}sa!#t$$ }t($(x#tX \u2014 k2 9C67lQ9EEADi^^HHH]5>2EE6C]4@>^nFE>0D@FC46l56AE9ACU2>AjFE>042>A2:8?"
+    },
+    {
+      "title": "AAEON uCOM-Q6490 \u2013 A SMARC 2.1-compliant SoM powered by Qualcomm Dragonwing\u00a0QCS6490 SoC",
+      "url": "https://www.cnx-software.com/2026/08/21/aaeon-ucom-q6490-a-smarc-2-1-qualcomm-dragonwing-qcs6490-som/",
+      "source": "CNX Software",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Amazon",
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "AAEON uCOM-Q6490 is a SMARC 2.1-compliant System-on-Module (SoM) built around the Qualcomm Dragonwing QCS6490 octa-core SoC, designed for robotics, healthcare, industrial automation, and digital signage applications. The 82 \u00d7 50 mm module ships with up to 16GB LPDDR5 memory and 64GB UFS storage, and"
+    },
+    {
+      "title": "As demand for Meta AI glasses explodes, it\u2019s harder to avoid creepy recordings",
+      "url": "https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/",
+      "source": "Ars Technica",
+      "date": "2026-08-21",
       "vendor": null,
       "customer": "Meta",
       "application": "Smart Glasses",
       "buckets": [],
-      "summary": "In August, Toru Hinkle was stocking shelves at their job at Target when they noticed two customers and asked if they needed any help. The men requested a price check on an item - but even after Hinkle told them the item was $20, the customers asked for the price again and again. \"After a [&#8230;]"
+      "summary": "Ars looks at Zuckoff, the latest free app detecting Meta AI glasses amid privacy backlash."
     },
     {
-      "title": "Samsung Galaxy Tab S12 series US pricing info surfaces with price hikes incoming",
-      "url": "https://www.notebookcheck.net/Samsung-Galaxy-Tab-S12-series-US-pricing-info-surfaces-with-price-hikes-incoming.1373823.0.html",
-      "source": "Notebookcheck",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung Galaxy Tab S12 series US pricing info surfaces with price hikes incoming\nSamsung is expected to present the Galaxy Tab S12 series in the near future. The company has already confirmed its plans to launch the Galaxy S26 FE next week and, while it's unlikely its flagship tablets arrive at the "
-    },
-    {
-      "title": "Qualcomm Confirms Two Snapdragon 8 Elite Gen 6 Chips Are Coming",
-      "url": "https://www.androidheadlines.com/2026/08/qualcomm-confirms-two-snapdragon-8-elite-gen-6-chips-are-coming.html",
-      "source": "Android Headlines",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Qualcomm has just confirmed the rumors, as two Snapdragon 8 Elite Gen 6 processors are coming. The company confirmed as much via a post on X, along with a specific date the chips are coming.\nQualcomm confirms two Snapdragon 8 Elite Gen 6 chips are on the way\nIf you take a look at the embedded post b"
-    },
-    {
-      "title": "Yes, you can change your Messages backgrounds on iPhone",
-      "url": "https://www.zdnet.com/article/how-to-change-your-text-background-on-iphone/",
-      "source": "but there's a catch",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "Android has had the advantage when it comes to changing your message wallpaper - but there is an easy way to do it in iOS 26, too, as long as you don't mind one thing."
-    },
-    {
-      "title": "You can earn your Google Al Professional Certificate for free",
-      "url": "https://www.zdnet.com/article/you-can-earn-your-google-al-professional-certificate-for-free/",
-      "source": "and I highly recommend it",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "From AI fundamentals to data analysis and app building, Google's certificate covers quite a lot. And there's a way to avoid paying anything to earn your credential."
-    },
-    {
-      "title": "I ruined my cats\u2019 toilet time with a motion-activated neon litter box sign",
-      "url": "https://www.theverge.com/gadgets/978782/cat-litterbox-motion-activated-neon-on-air-sign",
-      "source": "The Verge",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Robotics",
-      "buckets": [],
-      "summary": "My two cats live a refreshingly low-tech lifestyle. They've never experienced a robot litter box, an automated feeder, or a GPS tracker. Noodle and Loaf live blissfully unaware of the technological trappings that surround the rest of my life. Except, that is, for the glowing neon sign that turns on "
-    },
-    {
-      "title": "iQOO Buds Launch in India: 50-Hour Battery, 42ms Gaming Latency and Bluetooth 6.1 at \u20b91,899",
-      "url": "https://techgenyz.com/iqoo-buds-india-launch-50-hour-battery-42ms-latency/",
-      "source": "Techgenyz",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Audio / Speaker",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "With the launch of the iQOO Buds in India along with the iQOO Z11 5G, iQOO has officially widened its range of audio devices.\nThe earbuds had been teased before their release on August 20, with the company marketing them on the themes of music, gaming, and general listening purposes. With the offici"
-    },
-    {
-      "title": "Microsoft probes reports of games taking exception to Windows 11's August update",
-      "url": "https://www.theregister.com/os-platforms/2026/08/20/microsoft-probes-reports-of-games-taking-exception-to-windows-11s-august-update/5290214",
-      "source": "The Register",
-      "date": "2026-08-20",
-      "vendor": "Broadcom",
-      "customer": "Microsoft",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Affected titles crash, freeze, or restart PCs while Redmond works out whether it is to blame"
-    },
-    {
-      "title": "4 iPad accessories I swear by (including a cheaper Apple Pencil alternative)",
-      "url": "https://www.zdnet.com/article/4-ipad-accessories-i-swear-by-including-a-cheaper-apple-pencil-alternative/",
-      "source": "ZDNet",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "I've been using an iPad Air M2 for over two years, and these are my go-to essentials to get the most out of my tablet."
-    },
-    {
-      "title": "The Audi S6 Sportback E-tron proves that sedans still matter",
-      "url": "https://www.theverge.com/transportation/982464/audi-s6-sportback-etron-sedan-ev-review",
-      "source": "The Verge",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Volkswagen",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Last year, Audi announced that it gave its all-EV-by-2033 plan the boot, and instead will offer a mix of gasoline, hybrid, and electrified propulsion. There's no doubt still some uncertainty among bigger automakers - especially those under the Volkswagen Group umbrella - when it comes to such a (now"
-    },
-    {
-      "title": "The trials and tribulations of reviewing a Pixel",
-      "url": "https://9to5google.com/2026/08/20/the-trials-and-tribulations-of-reviewing-a-pixel/",
-      "source": "9to5Google",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Good morning and happy Thursday. We\u2019ve got Pixel reviews galore, a new look at Insomniac\u2019s upcoming Wolverine game, a crazy story about prolific phone scammers, and an updated version of Qwen 3.8 that I\u2019ll be spending the next few days tweaking to my liking. As a reminder, Inbox is the tech newslett"
-    },
-    {
-      "title": "9to5Mac Daily: August 20, 2026 \u2013 Apple RAM suppliers, iPhone Ultra rumors",
-      "url": "https://9to5mac.com/2026/08/20/daily-august-20-2026/",
+      "title": "9to5Mac Daily: August 21, 2026 \u2013 AirPods with cameras, more",
+      "url": "https://9to5mac.com/2026/08/21/daily-august-21-2026/",
       "source": "9to5Mac",
-      "date": "2026-08-20",
+      "date": "2026-08-21",
       "vendor": null,
       "customer": "Apple",
-      "application": "Automotive",
+      "application": "Audio / Speaker",
       "buckets": [],
       "summary": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple\u2019s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overcast and other podcast players. Sponsored by Backblaze: Backup you can rely on. Save 20% with code 9to"
     },
     {
-      "title": "Qualcomm is launching two flagship chips at once this September",
-      "url": "https://gagadget.com/en/722776-qualcomm-is-launching-two-flagship-chips-at-once-this-september/",
-      "source": "Gagadget.com",
-      "date": "2026-08-20",
+      "title": "Bernie\u2019s Dugout Open Thread: 8/21-8/27",
+      "url": "https://sports.yahoo.com/articles/bernie-dugout-open-thread-8-110000357.html",
+      "source": "Yahoo Sports",
+      "date": "2026-08-21",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "Greetings, Brew Crew Ball community. The Brewers bounced back nicely this week, as they maintained (and even slightly outplayed) the Cubs this week to stay atop the NL Central with just over a month to go.\nFeel free to use this thread to chat about (almost) anything you want: video games, food, movi"
+    },
+    {
+      "title": "Automate spigots and more with the Eve's Aqua HomeKit smart water controller down at $111 ($1 above 2026 low)",
+      "url": "https://9to5toys.com/2026/08/21/eve-aqua-homekit-smart-water-controller-116/",
+      "source": "9to5Toys",
+      "date": "2026-08-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Update 8/21: Amazon has dropped the price further on this Eve Aqua smart water controller to $110.52 shipped, after clipping the on-page coupon, landing it just $1 above the annual low.\nOver at Amazon right now, you can grab the Eve Aqua HomeKit Smart Water Controller for $116.09 shipped, after clip"
+    },
+    {
+      "title": "Qualcomm's next-gen Snapdragon 8 Elite Gen 6 Pro chip reportedly spotted on black market for just $42",
+      "url": "https://videocardz.com/newz/qualcomms-next-gen-snapdragon-8-elite-gen-6-pro-chip-reportedly-spotted-on-black-market-for-just-42",
+      "source": "VideoCardz.com",
+      "date": "2026-08-21",
       "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Qualcomm is launching two flagship chips at once this September\nQualcomm will unveil not one but two flagship mobile chips at its Snapdragon Summit 2026, running September 22\u201324 in Maui, Hawaii. Expected to be called the Snapdragon 8 Elite Gen 6 and Gen 6 Pro, both are reportedly built on TSMC's 2nm"
-    },
-    {
-      "title": "Apple\u2019s long-running app store battle with the EU appears to finally be over",
-      "url": "https://9to5mac.com/2026/08/20/apples-long-running-app-store-battle-with-the-eu-appears-to-finally-be-over/",
-      "source": "9to5Mac",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple\u2019s long-running antitrust battle with the European Union over the sale of iPhone apps appears to finally be over. The EU has said that it welcomes the new app commission rates the company is offering within the bloc. The revised terms will see developers pay a commission or fee ranging from 5% "
-    },
-    {
-      "title": "The International 2026 meta: It\u2019s all about tanks, healing, and late games",
-      "url": "https://esportsinsider.com/2026/08/the-international-2026-meta",
-      "source": "Esports Insider",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Meta",
+      "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "The International 2026 (TI 2026) is currently underway in Shanghai \u2014 and if you\u2019re a true Dota 2 fan, this is definitely an event you don\u2019t want to miss.\nAfter 109 games in the group stage, we\u2019ve already witnessed plenty of upsets, pocket strats, and unorthodox picks. More importantly, many clear tr"
+      "summary": ""
     },
     {
-      "title": "Sennheiser\u2019s new Momentum 5 earbuds feature easily replaceable batteries",
-      "url": "https://www.theverge.com/tech/982216/sennheiser-momentum-true-wireless-5-earbuds-replaceable-batteries",
-      "source": "The Verge",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Sennheiser",
-      "application": null,
-      "buckets": [],
-      "summary": "Sennheiser announced the next version of its flagship wireless earbuds with a major redesign focusing on sustainability. The company claims the new design improves the Momentum True Wireless 5's \"comfort, stability, and portability,\" but a more compelling reason to upgrade is that you won't have to "
-    },
-    {
-      "title": "Simplicity Wealth LLC Buys Shares of 9,083 Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-simplicity-wealth-llc-buys-shares-of-9083-qualcomm-incorporated-qcom-2026-08-20/",
+      "title": "111,448 Shares in NXP Semiconductors N.V. $NXPI Acquired by Trillium Asset Management LLC",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-111448-shares-in-nxp-semiconductors-nv-nxpi-acquired-by-trillium-asset-management-llc-2026-08-21/",
       "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Simplicity Wealth LLC acquired a new stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to its most recent disclosure with the Securities & Exchange Commission. The firm acquired 9,083 shares of the wireless technology company's stock, valued at approximatel"
-    },
-    {
-      "title": "Lynch Asset Management Inc. Purchases New Shares in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-lynch-asset-management-inc-purchases-new-shares-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Lynch Asset Management Inc. purchased a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the 2nd quarter, according to the company in its most recent Form 13F filing with the Securities and Exchange Commission. The fund purchased 15,200 shares of the wireless technology company's"
-    },
-    {
-      "title": "HBK Sorce Advisory LLC Invests $2.75 Million in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-hbk-sorce-advisory-llc-invests-275-million-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "HBK Sorce Advisory LLC bought a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the second quarter, according to its most recent filing with the Securities and Exchange Commission. The fund bought 17,461 shares of the wireless technology company's stock, valued at approximat"
-    },
-    {
-      "title": "OneDigital Investment Advisors LLC Takes Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-onedigital-investment-advisors-llc-takes-position-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "OneDigital Investment Advisors LLC acquired a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to the company in its most recent disclosure with the SEC. The fund acquired 24,217 shares of the wireless technology company's stock, valued at approxima"
-    },
-    {
-      "title": "Northstar Financial Companies Inc. Acquires Shares of 4,501 Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-northstar-financial-companies-inc-acquires-shares-of-4501-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Northstar Financial Companies Inc. bought a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the 2nd quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The firm bought 4,501 shares of the wireless technology company's stock, valued at "
-    },
-    {
-      "title": "Plato Investment Management Ltd Invests $4.59 Million in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-plato-investment-management-ltd-invests-459-million-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Plato Investment Management Ltd acquired a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the second quarter, according to its most recent disclosure with the Securities & Exchange Commission. The fund acquired 24,982 shares of the wireless technology company's stock, value"
-    },
-    {
-      "title": "J.Safra Asset Management Corp Invests $1 Million in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-jsafra-asset-management-corp-invests-1-million-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "J.Safra Asset Management Corp acquired a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to the company in its most recent Form 13F filing with the Securities & Exchange Commission. The fund acquired 5,421 shares of the wireless technology company'"
-    },
-    {
-      "title": "Trivium Point Advisory LLC Takes $9.06 Million Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-trivium-point-advisory-llc-takes-906-million-position-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Trivium Point Advisory LLC purchased a new stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the 2nd quarter, according to its most recent filing with the Securities & Exchange Commission. The fund purchased 49,055 shares of the wireless technology company's stock, valued at approximatel"
-    },
-    {
-      "title": "Meeder Advisory Services Inc. Invests $1.58 Million in NXP Semiconductors N.V. $NXPI",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-meeder-advisory-services-inc-invests-158-million-in-nxp-semiconductors-nv-nxpi-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
+      "date": "2026-08-21",
       "vendor": "NXP",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Meeder Advisory Services Inc. purchased a new position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 2nd quarter, according to the company in its most recent disclosure with the Securities & Exchange Commission. The fund purchased 5,607 shares of the semiconductor provi"
+      "summary": "Trillium Asset Management LLC acquired a new stake in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the 2nd quarter, according to the company in its most recent Form 13F filing with the SEC. The institutional investor acquired 111,448 shares of the semiconductor provider's stock, valued at "
     },
     {
-      "title": "Performance Wealth Partners LLC Makes New Investment in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-performance-wealth-partners-llc-makes-new-investment-in-qualcomm-incorporated-qcom-2026-08-20/",
+      "title": "Wealthfront Advisers LLC Invests $23.30 Million in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-wealthfront-advisers-llc-invests-2330-million-in-qualcomm-incorporated-qcom-2026-08-21/",
       "source": "MarketBeat",
-      "date": "2026-08-20",
+      "date": "2026-08-21",
       "vendor": "Qualcomm",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Performance Wealth Partners LLC bought a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the second quarter, according to its most recent 13F filing with the SEC. The fund bought 3,465 shares of the wireless technology company's stock, valued at approximately $640,000.\nOther"
+      "summary": "Wealthfront Advisers LLC acquired a new position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the 2nd quarter, according to its most recent 13F filing with the SEC. The fund acquired 126,066 shares of the wireless technology company's stock, valued at approximately $23,296,000.\n"
     },
     {
-      "title": "Pallas Capital Advisors LLC Purchases New Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-pallas-capital-advisors-llc-purchases-new-position-in-qualcomm-incorporated-qcom-2026-08-20/",
+      "title": "7,753 Shares in NXP Semiconductors N.V. $NXPI Bought by Madison Asset Management LLC",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-7753-shares-in-nxp-semiconductors-nv-nxpi-bought-by-madison-asset-management-llc-2026-08-21/",
       "source": "MarketBeat",
-      "date": "2026-08-20",
+      "date": "2026-08-21",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Madison Asset Management LLC bought a new stake in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 2nd quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The fund bought 7,753 shares of the semiconductor provider's stock, valued a"
+    },
+    {
+      "title": "K2 Principal Fund L.P. Purchases New Shares in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-k2-principal-fund-lp-purchases-new-shares-in-qualcomm-incorporated-qcom-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
       "vendor": "Qualcomm",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Pallas Capital Advisors LLC acquired a new position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the second quarter, according to its most recent filing with the Securities and Exchange Commission. The institutional investor acquired 4,385 shares of the wireless technology compa"
+      "summary": "K2 Principal Fund L.P. acquired a new stake in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to its most recent 13F filing with the SEC. The firm acquired 4,500 shares of the wireless technology company's stock, valued at approximately $832,000.\nOther "
     },
     {
-      "title": "Perigon Wealth Management LLC Acquires Shares of 41,046 Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-perigon-wealth-management-llc-acquires-shares-of-41046-qualcomm-incorporated-qcom-2026-08-20/",
+      "title": "Investmark Advisory Group LLC Makes New Investment in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-investmark-advisory-group-llc-makes-new-investment-in-qualcomm-incorporated-qcom-2026-08-21/",
       "source": "MarketBeat",
-      "date": "2026-08-20",
+      "date": "2026-08-21",
       "vendor": "Qualcomm",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Perigon Wealth Management LLC acquired a new position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the second quarter, according to the company in its most recent 13F filing with the Securities & Exchange Commission. The fund acquired 41,046 shares of the wireless technology"
+      "summary": "Investmark Advisory Group LLC purchased a new stake in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the 2nd quarter, according to its most recent Form 13F filing with the Securities & Exchange Commission. The institutional investor purchased 30,001 shares of the wireless technology"
     },
     {
-      "title": "Trust Co. of Vermont Invests $1.97 Million in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-trust-co-of-vermont-invests-197-million-in-qualcomm-incorporated-qcom-2026-08-20/",
+      "title": "7,426 Shares in NXP Semiconductors N.V. $NXPI Purchased by Wealthfront Advisers LLC",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-7426-shares-in-nxp-semiconductors-nv-nxpi-purchased-by-wealthfront-advisers-llc-2026-08-21/",
       "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
+      "date": "2026-08-21",
+      "vendor": "NXP",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Trust Co. of Vermont acquired a new stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to its most recent 13F filing with the Securities and Exchange Commission (SEC). The institutional investor acquired 10,668 shares of the wireless technology company's sto"
+      "summary": "Wealthfront Advisers LLC bought a new stake in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the second quarter, according to the company in its most recent disclosure with the Securities & Exchange Commission. The institutional investor bought 7,426 shares of the semiconducto"
     },
     {
-      "title": "Principle Wealth Partners LLC Buys New Shares in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-principle-wealth-partners-llc-buys-new-shares-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Principle Wealth Partners LLC acquired a new position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the second quarter, according to its most recent 13F filing with the Securities and Exchange Commission. The institutional investor acquired 33,640 shares of the wireless technolog"
+      "title": "M5Stack Paper Mono \u2013 An ESP32-S3 e-paper development board with 3.97-inch touchscreen, LoRa, and NFC",
+      "url": "https://www.cnx-software.com/2026/08/21/m5stack-paper-mono-an-esp32-s3-e-paper-development-board-with-3-97-inch-touchscreen-lora-and-nfc/",
+      "source": "CNX Software",
+      "date": "2026-08-21",
+      "vendor": "Espressif",
+      "customer": "Amazon",
+      "application": "Embedded / Electronics",
+      "buckets": [
+        "bluetooth",
+        "wifi"
+      ],
+      "summary": "M5Stack introduced the PaperColor ESP32-S3 devkit last May, but if you prefer faster refresh rates, the new Paper Mono should be a better option. The kit is based on a 3.97-inch monochrome e-Paper touch display and also supports LoRa and NFC long-range and short-range connectivity. The devkit featur"
     },
     {
-      "title": "Mitsubishi UFJ Asset Management Co. Ltd. Takes $510.83 Million Position in Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-mitsubishi-ufj-asset-management-co-ltd-takes-51083-million-position-in-qualcomm-incorporated-qcom-2026-08-20/",
-      "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Mitsubishi UFJ Asset Management Co. Ltd. bought a new position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the second quarter, according to the company in its most recent Form 13F filing with the Securities and Exchange Commission. The institutional investor bought 2,764,365 sh"
-    },
-    {
-      "title": "Morse Micro adds Pace Wireless to Wi-Fi HaLow partner programme",
-      "url": "https://www.iotinsider.com/industries/communications/morse-micro-adds-pace-wireless-to-wi-fi-halow-partner-programme/",
-      "source": "IOT Insider",
-      "date": "2026-08-20",
+      "title": "Huawei Pura X View - Full phone specifications",
+      "url": "https://www.gsmarena.com/huawei_pura_x_view-14887.php",
+      "source": "GSMArena.com",
+      "date": "2026-08-21",
       "vendor": null,
-      "customer": null,
+      "customer": "Huawei",
+      "application": null,
+      "buckets": [],
+      "summary": "Login\nUnofficial preliminary specifications\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nhope other competitors will launch a similar product\nNice to see some variation in form factors, with such ratio you certainly see less in scrolling-centered apps"
+    },
+    {
+      "title": "Meeder Advisory Services Inc. Buys Shares of 21,820 Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-meeder-advisory-services-inc-buys-shares-of-21820-qualcomm-incorporated-qcom-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Meeder Advisory Services Inc. purchased a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to its most recent disclosure with the SEC. The fund purchased 21,820 shares of the wireless technology company's stock, valued at approximately $4,032,000.\nA"
+    },
+    {
+      "title": "Meeder Asset Management Inc. Buys New Position in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-meeder-asset-management-inc-buys-new-position-in-qualcomm-incorporated-qcom-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Meeder Asset Management Inc. bought a new position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the second quarter, according to its most recent disclosure with the Securities and Exchange Commission (SEC). The fund bought 60,593 shares of the wireless technology company's s"
+    },
+    {
+      "title": "Occidental Asset Management LLC Buys Shares of 39,238 Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-occidental-asset-management-llc-buys-shares-of-39238-qualcomm-incorporated-qcom-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Occidental Asset Management LLC purchased a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the second quarter, according to the company in its most recent disclosure with the Securities & Exchange Commission. The fund purchased 39,238 shares of the wireless technology company's"
+    },
+    {
+      "title": "4,628 Shares in Qualcomm Incorporated $QCOM Acquired by Texas Capital Bank Wealth Management Services Inc",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-4628-shares-in-qualcomm-incorporated-qcom-acquired-by-texas-capital-bank-wealth-management-services-inc-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Texas Capital Bank Wealth Management Services Inc bought a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to its most recent filing with the SEC. The institutional investor bought 4,628 shares of the wireless technology company's stock, valued at "
+    },
+    {
+      "title": "MidFirst Bank Acquires Shares of 24,747 Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-midfirst-bank-acquires-shares-of-24747-qualcomm-incorporated-qcom-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "MidFirst Bank acquired a new stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the 2nd quarter, according to its most recent disclosure with the Securities and Exchange Commission. The firm acquired 24,747 shares of the wireless technology company's stock, valued at approximately $4,573,"
+    },
+    {
+      "title": "Wi-Fi 7's WPA3 protections come with a compatibility catch",
+      "url": "https://www.theregister.com/networks/2026/08/21/wi-fi-7s-wpa3-protections-come-with-a-compatibility-catch/5289614",
+      "source": "The Register",
+      "date": "2026-08-21",
+      "vendor": "Broadcom",
+      "customer": "Google",
       "application": "Industrial",
       "buckets": [
         "wifi"
       ],
-      "summary": "Morse Micro has added Chicago-based engineering company Pace Wireless to its Wi-Fi HaLow Design Partner Programme as the low-power wireless technology seeks to move from development projects into commercial IoT deployments.\nPace Wireless will provide product development and manufacturing expertise t"
+      "summary": "CableLabs wants hardware makers to embrace a workaround that keeps legacy kit connected"
     },
     {
-      "title": "Why are people suddenly adding Apple Lightning cables to Raspberry Pi Pico 2 boards?",
-      "url": "https://www.cnx-software.com/2026/08/20/why-are-people-suddenly-adding-apple-lightning-cables-to-raspberry-pi-pico-2-boards/",
-      "source": "CNX Software",
-      "date": "2026-08-20",
-      "vendor": null,
-      "customer": "Apple",
+      "title": "Qualcomm\u2019s next Snapdragon flagships could go by these names",
+      "url": "https://www.gizmochina.com/2026/08/21/qualcomms-next-snapdragon-flagships-could-go-by-these-names/",
+      "source": "Gizmochina",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Microsoft",
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "Yesterday I received an email with the subject &#8220;Rp2350 pi pico 2 modified one&#8221;. I found the request funny because it features an illustration with a Raspberry Pi Pico 2 board and an Apple Lightning cable, and I had no idea why somebody would do that at the time. Coming to my physical add"
+      "summary": "Qualcomm is releasing two flagship chips this year instead of one, and tipster Digital Chat Station has now shared their possible marketing names.\nAccording to the leak, the chip with model number SM8950 will be called the Snapdragon 8 Elite Gen 6. Meanwhile, the other chip, SM8975, will be called t"
     },
     {
-      "title": "LG\u2019s new OLED breakthrough can boost display lifespans",
-      "url": "https://www.theverge.com/tech/982609/lg-oled-panel-flipp-display-technology",
-      "source": "The Verge",
-      "date": "2026-08-20",
+      "title": "Open Thread: August 21, 2026",
+      "url": "https://www.managingmadrid.com/general/111637/open-thread-august-21-2026",
+      "source": "Managing Madrid",
+      "date": "2026-08-21",
       "vendor": null,
-      "customer": "Google",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "LG Display has unveiled a new OLED manufacturing method that reportedly results in panels that are brighter, longer-lasting, more efficient, and theoretically can be almost any size. This new technology is called FLiPP (FMM-Less innovative Pixel Patterning), which LG Display describes as a \"dream ne"
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "The Open Thread/Daily Merengue is a place where you can discuss anything and everything related to football. Feel free to discuss the topics presented here, or start your very own discussions! The Open thread will be posted every day by one of the mods you\u2019d totally do a movie Marathon with: Valyria"
     },
     {
-      "title": "The Upside Case For Qualcomm Stock Now Carries Purchase Orders",
-      "url": "https://www.trefis.com/stock/qcom/articles/612018/the-upside-case-for-qualcomm-stock-now-carries-purchase-orders/2026-08-20",
-      "source": "Trefis",
-      "date": "2026-08-20",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The Upside Case For Qualcomm Stock Now Carries Purchase Orders\nQualcomm\u2019s non-handset business is inflecting fast enough that management expects it to replace the revenue Apple is taking away, and the first proof of that arrives in the December quarter.\nQualcomm (QCOM) stock has fallen 21% over the "
-    },
-    {
-      "title": "iQOO Z11 5G with MediaTek Dimensity 7500 Turbo launched in India",
-      "url": "https://www.deccanherald.com/technology/iqoo-z11-5g-with-mediatek-dimensity-7500-turbo-launched-in-india-4117787",
-      "source": "Deccan Herald",
-      "date": "2026-08-20",
-      "vendor": "MediaTek",
+      "title": "Google's new Tap to Share feature on the Pixel 11 is incredible. Here's how to use it",
+      "url": "https://www.androidauthority.com/pixel-11-tap-to-share-how-use-3700155/",
+      "source": "Android Authority",
+      "date": "2026-08-21",
+      "vendor": null,
       "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "Quick summary - click for full details\nConcise summary of key highlights\nIn one line\niQOO launched the Z11 5G smartphone in India with a MediaTek Dimensity 7500 Turbo processor and competitive pricing.\nKey highlights\n\u2022 Display and design\nThe iQOO Z11 features a 6.83-inch 1.5K 3D curved AMOLED displa"
+      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\nGoogle's new Tap to Share feature on the Pixel 11 is incredible. Here's how to use it\nAug 21, 2026 \u2014 5:00 AM ET\nGoogle has introduced a much more intuitive way to use Quick Share with the Pixel 11 series. Called Tap to Share,"
     },
     {
-      "title": "E Fund Management Co. Ltd. Makes New $4.40 Million Investment in NXP Semiconductors N.V. $NXPI",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-e-fund-management-co-ltd-makes-new-440-million-investment-in-nxp-semiconductors-nv-nxpi-2026-08-20/",
+      "title": "Build a Cloud-Free Matter Display with ESP32 for Your Smart Home",
+      "url": "https://www.geeky-gadgets.com/diy-matter-smart-home-display/",
+      "source": "Geeky Gadgets",
+      "date": "2026-08-21",
+      "vendor": "Espressif",
+      "customer": "Sonos",
+      "application": "Smart Home",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Matter-enabled smart home displays are currently missing from the market, leaving users without a clear way to manage devices in a decentralized manner. In response, Microamp Home developed a custom display using the Matter protocol, built around an ESP32C6 microcontroller and the ESP Matter SDK. Th"
+    },
+    {
+      "title": "Mouser Now Shipping TI MSPM0G5187 Mixed-Signal MCUs for Edge AI Applications",
+      "url": "https://www.electropages.com/blog/2026/08/mouser-now-shipping-ti-mspm0g5187-mixed-signal-mcus-edge-ai-applications",
+      "source": "Electropages",
+      "date": "2026-08-21",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Mouser Now Shipping TI MSPM0G5187 Mixed-Signal MCUs for Edge AI Applications\nIn The News | 21-08-2026 | By Jack Pollard\nMouser Electronics is now stocking the MSPM0G5187 mixed-signal microcontrollers (MCUs) from Texas Instruments. Based on the 32-bit Arm Cortex-M0+ core platform, the devices combine"
+    },
+    {
+      "title": "Qualcomm poaches Motorola veteran to lead AI & mobile arm",
+      "url": "https://www.mobileeurope.co.uk/qualcomm-motorola-ai-mobile/",
+      "source": "Mobile Europe",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Motorola",
+      "application": "Wearable",
+      "buckets": [],
+      "summary": "Qualcomm has appointed Sergio Buniac as executive vice president and group general manager of Mobile, Compute and Personal AI, effective from 2 September.\nBuniac will oversee Qualcomm\u2019s smartphone, personal computer, smart wearable and XR businesses, after spending over three decades at Motorola, wh"
+    },
+    {
+      "title": "First National Bank of Omaha Takes Position in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-first-national-bank-of-omaha-takes-position-in-qualcomm-incorporated-qcom-2026-08-21/",
       "source": "MarketBeat",
-      "date": "2026-08-20",
-      "vendor": "NXP",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "E Fund Management Co. Ltd. acquired a new stake in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the 2nd quarter, according to the company in its most recent filing with the SEC. The firm acquired 15,671 shares of the semiconductor provider's stock, valued at approximately $4,404,000.\nA num"
+      "summary": "First National Bank of Omaha purchased a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) in the 2nd quarter, according to the company in its most recent disclosure with the SEC. The fund purchased 5,462 shares of the wireless technology company's stock, valued at approximately $1,0"
+    },
+    {
+      "title": "37,258 Shares in Qualcomm Incorporated $QCOM Purchased by Foster & Motley Inc.",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-37258-shares-in-qualcomm-incorporated-qcom-purchased-by-foster-motley-inc-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "Foster & Motley Inc. purchased a new stake in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to its most recent 13F filing with the Securities and Exchange Commission (SEC). The fund purchased 37,258 shares of the wireless technology company's stock, va"
+    },
+    {
+      "title": "Dunhill Financial LLC Makes New Investment in Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-dunhill-financial-llc-makes-new-investment-in-qualcomm-incorporated-qcom-2026-08-21/",
+      "source": "MarketBeat",
+      "date": "2026-08-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Dunhill Financial LLC purchased a new position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 2nd quarter, according to the company in its most recent 13F filing with the SEC. The institutional investor purchased 4,556 shares of the wireless technology company's stock, val"
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 110,
-    "NXP": 57,
-    "MediaTek": 25,
-    "Silicon Labs": 17,
-    "Nordic": 12,
-    "Espressif": 12,
-    "Broadcom": 10,
+    "Qualcomm": 106,
+    "NXP": 58,
+    "MediaTek": 30,
+    "Broadcom": 17,
+    "Espressif": 13,
+    "Silicon Labs": 11,
+    "Nordic": 10,
+    "TI": 9,
     "Quectel": 7,
-    "TI": 7,
+    "Apple": 4,
     "Marvell": 3,
-    "STMicro": 3,
-    "Murata": 2,
     "Skyworks": 2,
-    "Apple": 2,
+    "STMicro": 2,
+    "Onsemi": 1,
+    "Murata": 1,
     "Bouffalo Lab": 1,
     "Synaptics": 1,
-    "HiSilicon": 1,
-    "Renesas": 1,
     "Infineon": 1,
     "WCH": 1
   },
   "customer_news_30d": {
-    "Google": 192,
-    "Apple": 149,
-    "Samsung": 29,
-    "Amazon": 19,
-    "Microsoft": 11,
-    "Sony": 9,
-    "Meta": 6,
+    "Google": 181,
+    "Apple": 154,
+    "Samsung": 26,
+    "Amazon": 20,
+    "Microsoft": 13,
+    "Meta": 7,
+    "Motorola": 6,
+    "Sony": 5,
     "BMW": 4,
-    "Xiaomi": 3,
-    "Motorola": 2,
-    "Volkswagen": 1,
-    "Sennheiser": 1,
-    "Stellantis": 1,
-    "Eufy/Anker": 1,
-    "Bose": 1,
-    "HKMC": 1,
-    "Huawei": 1
+    "Tesla": 3,
+    "Huawei": 3,
+    "Sennheiser": 2,
+    "Xiaomi": 2,
+    "HKMC": 2,
+    "Sonos": 1,
+    "Tuya": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3930,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16262,
-      "pushed_at": "2026-08-20T12:17:46Z"
-    },
     {
       "name": "ESP-IDF",
       "owner": "espressif",
@@ -536,7 +507,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1687,
+      "issues_open": 1673,
       "prs_open": 0,
       "releases": [
         {
@@ -558,57 +529,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1"
         }
       ],
-      "stars": 18823,
-      "pushed_at": "2026-08-19T17:50:16Z"
+      "stars": 18829,
+      "pushed_at": "2026-08-20T20:17:09Z"
     },
     {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
       "tech": [
-        "matter"
+        "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 2793,
+      "issues_open": 3941,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
         },
         {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
         },
         {
-          "tag": "v1.5.0.0",
-          "name": "v1.5.0.0 Release",
-          "published_at": "2025-11-17T22:07:57Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.0"
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 8880,
-      "pushed_at": "2026-08-20T12:58:44Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 243370,
-      "pushed_at": "2026-08-20T00:54:11Z"
+      "stars": 16277,
+      "pushed_at": "2026-08-21T12:45:05Z"
     },
     {
       "name": "OpenThread",
@@ -619,7 +575,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 175,
+      "issues_open": 169,
       "prs_open": 0,
       "releases": [
         {
@@ -642,7 +598,56 @@
         }
       ],
       "stars": 4017,
-      "pushed_at": "2026-08-20T02:02:38Z"
+      "pushed_at": "2026-08-21T02:03:11Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 243580,
+      "pushed_at": "2026-08-21T03:38:02Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2803,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.6.0.0",
+          "name": "v1.6.0.0 Release",
+          "published_at": "2026-08-20T15:23:47Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+        },
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        }
+      ],
+      "stars": 8880,
+      "pushed_at": "2026-08-21T12:15:21Z"
     },
     {
       "name": "BlueZ",
@@ -653,7 +658,7 @@
         "bluetooth"
       ],
       "commits_30d": 50,
-      "issues_open": 113,
+      "issues_open": 116,
       "prs_open": 0,
       "releases": [
         {
@@ -676,7 +681,7 @@
         }
       ],
       "stars": 1129,
-      "pushed_at": "2026-08-20T11:05:36Z"
+      "pushed_at": "2026-08-21T11:01:31Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -686,8 +691,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 25,
-      "issues_open": 453,
+      "commits_30d": 18,
+      "issues_open": 455,
       "prs_open": 0,
       "releases": [
         {
@@ -709,7 +714,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15513,
+      "stars": 15514,
       "pushed_at": "2026-08-18T20:09:27Z"
     },
     {
@@ -721,10 +726,10 @@
         "bluetooth"
       ],
       "commits_30d": 10,
-      "issues_open": 279,
+      "issues_open": 280,
       "prs_open": 0,
       "releases": [],
-      "stars": 887,
+      "stars": 886,
       "pushed_at": "2026-08-12T08:45:20Z"
     },
     {
@@ -743,6 +748,13 @@
   ],
   "recent_patents": [],
   "sec_filings_90d": [
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-08-21",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000061/syna-20260820.htm"
+    },
     {
       "vendor": "Marvell",
       "ticker": "MRVL",
@@ -793,18 +805,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526342367/ter-20260807.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-08-10",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926093355/tm2622643d1_8k.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-K",
       "date": "2026-08-10",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000055/syna-20260627.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-10",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926093355/tm2622643d1_8k.htm"
     },
     {
       "vendor": "Microchip",
@@ -828,20 +840,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "10-Q",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000109786426000017/on-20260703.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
@@ -854,6 +852,20 @@
       "form": "8-K",
       "date": "2026-08-03",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "10-Q",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000109786426000017/on-20260703.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -919,6 +931,20 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
     },
     {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "10-Q",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
+    },
+    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -938,20 +964,6 @@
       "form": "8-K",
       "date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000045/swks-20260728.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "10-Q",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
     },
     {
       "vendor": "Microchip",
@@ -996,18 +1008,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -1024,18 +1036,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-06-12",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
-    },
-    {
       "vendor": "Qorvo",
       "ticker": "QRVO",
       "form": "8-K",
       "date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326008888/dp248325_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-06-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926073096/tm2613769d1_8k.htm"
     },
     {
       "vendor": "Marvell",
@@ -1106,13 +1118,6 @@
       "form": "8-K",
       "date": "2026-05-26",
       "url": "https://www.sec.gov/Archives/edgar/data/1038074/000119312526237879/d467226d8k.htm"
-    },
-    {
-      "vendor": "Sequans",
-      "ticker": "SQNS",
-      "form": "8-K",
-      "date": "2026-05-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/1489393/000148939326000034/lyb-20260522.htm"
     }
   ],
   "tracked_competitors": [
@@ -3182,9 +3187,9 @@
           "url": "https://www.stocktitan.net/news/TER/lite-point-collaborates-with-st-microelectronics-to-validate-next-hnb900q1ww8q.html"
         },
         {
-          "title": "STMicroelectronics Announces Timing for Second Quarter 2026 Earnings Release and Conference Call",
-          "date": "Jul 2026",
-          "url": "https://www.globenewswire.com/news-release/2026/07/03/3321641/0/en/STMicroelectronics-Announces-Timing-for-Second-Quarter-2026-Earnings-Release-and-Conference-Call.html"
+          "title": "LitePoint validates STMicroelectronics\u2019 ST64UWB chip family",
+          "date": "Aug 2026",
+          "url": "https://www.bisinfotech.com/litepoint-stmicroelectronics-partner-to-test-next-generation-uwb-solutions/"
         }
       ],
       "events": [
