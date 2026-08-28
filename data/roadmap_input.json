@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T13:09:28Z",
+  "generated_at": "2026-08-28T13:10:47Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2957,6 +2957,11 @@
           "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-secures-significant-project-wins-in-the-robotic-lawnmower-market-with-its-high-precision-positi-856456"
         },
         {
+          "title": "u-blox Announces Strategic Decision to Increase Focus on Locate Business and Phase Out Cellular as Well as an Impairment",
+          "date": "Aug 2026",
+          "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -2975,11 +2980,6 @@
           "title": "u-blox Expands Industrial IoT Portfolio with New Wi-Fi 6 Module Families",
           "date": "Jul 2026",
           "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
-        },
-        {
-          "title": "U-blox Unwraps Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs",
-          "date": "Jul 2026",
-          "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
         }
       ]
     },
@@ -3373,9 +3373,9 @@
           "url": "https://www.murata.com/en-global/news/capacitor/ceramiccapacitor/2026/0827"
         },
         {
-          "title": "Murata Manufacturing focus on components and global demand",
-          "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/murata-manufacturing-focus-on-components-and-global-demand/69722895"
+          "title": "Murata 2NR Bluetooth LE 6.0 Module",
+          "date": "Aug 2026",
+          "url": "https://www.electronicdesign.com/directory/communication/wireless/product/55399288/mouser-murata-2nr-bluetooth-le-60-module"
         }
       ]
     },
@@ -3754,29 +3754,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 108,
-    "NXP": 39,
-    "MediaTek": 22,
-    "Espressif": 11,
-    "TI": 10,
-    "Apple": 9,
-    "Nordic": 8,
-    "Broadcom": 7,
-    "STMicro": 5,
+    "Qualcomm": 111,
+    "NXP": 31,
+    "MediaTek": 21,
+    "Espressif": 17,
+    "TI": 11,
+    "Apple": 10,
+    "Nordic": 6,
+    "Broadcom": 5,
+    "Infineon": 4,
+    "STMicro": 4,
+    "Skyworks": 3,
     "Marvell": 3,
-    "Infineon": 3,
-    "Silicon Labs": 3,
-    "Quectel": 3,
+    "Renesas": 3,
     "Murata": 2,
-    "Renesas": 2,
-    "Samsung LSI": 1,
+    "Quectel": 2,
     "Microchip": 1,
+    "u-blox": 1,
     "Goodix": 1,
     "Ingenic": 1,
     "Qorvo": 1,
-    "Realtek": 1,
     "WCH": 1,
-    "Skyworks": 1,
+    "Silicon Labs": 1,
     "Bouffalo Lab": 1,
     "Synaptics": 1
   },
@@ -3851,42 +3850,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1674,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v6.1",
-          "name": "ESP-IDF Release v6.1",
-          "published_at": "2026-08-27T01:56:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1"
-        },
-        {
-          "tag": "v6.1-rc1",
-          "name": "ESP-IDF Pre-release v6.1-rc1",
-          "published_at": "2026-08-18T15:26:58Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-rc1"
-        },
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
-        }
-      ],
-      "stars": 18879,
-      "pushed_at": "2026-08-27T01:07:48Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3895,7 +3858,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3907,
+      "issues_open": 3865,
       "prs_open": 0,
       "releases": [
         {
@@ -3917,8 +3880,44 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16322,
-      "pushed_at": "2026-08-27T11:16:04Z"
+      "stars": 16331,
+      "pushed_at": "2026-08-28T11:11:13Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1677,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v6.1",
+          "name": "ESP-IDF Release v6.1",
+          "published_at": "2026-08-27T01:56:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1"
+        },
+        {
+          "tag": "v6.1-rc1",
+          "name": "ESP-IDF Pre-release v6.1-rc1",
+          "published_at": "2026-08-18T15:26:58Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-rc1"
+        },
+        {
+          "tag": "v5.5.5",
+          "name": "ESP-IDF Release v5.5.5",
+          "published_at": "2026-07-17T15:35:23Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
+        }
+      ],
+      "stars": 18893,
+      "pushed_at": "2026-08-27T21:39:14Z"
     },
     {
       "name": "Matter SDK",
@@ -3929,7 +3928,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2804,
+      "issues_open": 2797,
       "prs_open": 0,
       "releases": [
         {
@@ -3951,8 +3950,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8906,
-      "pushed_at": "2026-08-27T12:08:38Z"
+      "stars": 8908,
+      "pushed_at": "2026-08-28T12:44:55Z"
     },
     {
       "name": "Linux mac80211",
@@ -3966,8 +3965,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 244642,
-      "pushed_at": "2026-08-26T23:09:41Z"
+      "stars": 244794,
+      "pushed_at": "2026-08-27T21:12:11Z"
     },
     {
       "name": "OpenThread",
@@ -3977,7 +3976,7 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 82,
+      "commits_30d": 75,
       "issues_open": 168,
       "prs_open": 0,
       "releases": [
@@ -4000,7 +3999,7 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4021,
+      "stars": 4020,
       "pushed_at": "2026-08-26T20:50:55Z"
     },
     {
@@ -4011,8 +4010,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 61,
-      "issues_open": 112,
+      "commits_30d": 67,
+      "issues_open": 114,
       "prs_open": 0,
       "releases": [
         {
@@ -4035,7 +4034,7 @@
         }
       ],
       "stars": 1136,
-      "pushed_at": "2026-08-26T18:21:06Z"
+      "pushed_at": "2026-08-28T00:29:30Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4045,8 +4044,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 13,
-      "issues_open": 459,
+      "commits_30d": 7,
+      "issues_open": 458,
       "prs_open": 0,
       "releases": [
         {
@@ -4068,8 +4067,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15576,
-      "pushed_at": "2026-08-26T10:17:17Z"
+      "stars": 15577,
+      "pushed_at": "2026-08-27T16:53:28Z"
     },
     {
       "name": "NimBLE",
@@ -4080,7 +4079,7 @@
         "bluetooth"
       ],
       "commits_30d": 4,
-      "issues_open": 284,
+      "issues_open": 285,
       "prs_open": 0,
       "releases": [],
       "stars": 888,
