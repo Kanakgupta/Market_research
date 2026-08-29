@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T13:10:47Z",
+  "generated_at": "2026-08-29T13:09:22Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2962,6 +2962,11 @@
           "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
         },
         {
+          "title": "u-blox Announces Strategic Shift to Focus on Locate Business, Phasing Out Cellular, and Reports Impairment",
+          "date": "Aug 2026",
+          "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -2975,11 +2980,6 @@
           "title": "U-blox Launches Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
-        },
-        {
-          "title": "u-blox Expands Industrial IoT Portfolio with New Wi-Fi 6 Module Families",
-          "date": "Jul 2026",
-          "url": "https://www.bisinfotech.com/u-blox-expands-industrial-iot-portfolio-with-new-wi-fi-6-module-families/"
         }
       ]
     },
@@ -3578,6 +3578,11 @@
           "url": "https://www.newelectronics.co.uk/content/news/toshiba-sampling-new-arm-cortex-m4-microcontrollers-for-embedded-and-iot-applications"
         },
         {
+          "title": "Toshiba Announces Sampling of New Arm Cortex-M4 Microcontrollers for Embedded and IoT Applications",
+          "date": "Aug 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/toshiba-sampling-new-arm-cortex-m4-microcontrollers-for-embedded-and-iot-applications"
+        },
+        {
           "title": "Toshiba Electronic Devices & Storage Corporation Signs MoU for Business Integration Discussions",
           "date": "Mar 2026",
           "url": "https://www.google.com/search?q=Toshiba+Electronic+Devices+%26+Storage+Corporation+Signs+MoU+for+Business+Integration+Discussions+Toshiba"
@@ -3754,30 +3759,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 111,
-    "NXP": 31,
-    "MediaTek": 21,
-    "Espressif": 17,
-    "TI": 11,
-    "Apple": 10,
-    "Nordic": 6,
-    "Broadcom": 5,
-    "Infineon": 4,
-    "STMicro": 4,
-    "Skyworks": 3,
-    "Marvell": 3,
-    "Renesas": 3,
+    "Qualcomm": 102,
+    "NXP": 30,
+    "MediaTek": 15,
+    "Espressif": 15,
+    "Apple": 13,
+    "TI": 12,
+    "Broadcom": 7,
+    "Marvell": 6,
+    "Nordic": 5,
+    "Skyworks": 4,
+    "STMicro": 3,
     "Murata": 2,
+    "Renesas": 2,
     "Quectel": 2,
+    "Infineon": 2,
+    "Qorvo": 1,
+    "HiSilicon": 1,
     "Microchip": 1,
     "u-blox": 1,
-    "Goodix": 1,
-    "Ingenic": 1,
-    "Qorvo": 1,
-    "WCH": 1,
-    "Silicon Labs": 1,
-    "Bouffalo Lab": 1,
-    "Synaptics": 1
+    "Goodix": 1
   },
   "standards_in_flight": [
     {
@@ -3858,7 +3859,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3865,
+      "issues_open": 3869,
       "prs_open": 0,
       "releases": [
         {
@@ -3880,8 +3881,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16331,
-      "pushed_at": "2026-08-28T11:11:13Z"
+      "stars": 16339,
+      "pushed_at": "2026-08-28T19:34:31Z"
     },
     {
       "name": "ESP-IDF",
@@ -3894,7 +3895,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1677,
+      "issues_open": 1674,
       "prs_open": 0,
       "releases": [
         {
@@ -3916,8 +3917,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
         }
       ],
-      "stars": 18893,
-      "pushed_at": "2026-08-27T21:39:14Z"
+      "stars": 18895,
+      "pushed_at": "2026-08-28T19:01:53Z"
     },
     {
       "name": "Matter SDK",
@@ -3928,7 +3929,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2797,
+      "issues_open": 2805,
       "prs_open": 0,
       "releases": [
         {
@@ -3950,8 +3951,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8908,
-      "pushed_at": "2026-08-28T12:44:55Z"
+      "stars": 8909,
+      "pushed_at": "2026-08-29T05:38:20Z"
     },
     {
       "name": "Linux mac80211",
@@ -3965,8 +3966,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 244794,
-      "pushed_at": "2026-08-27T21:12:11Z"
+      "stars": 244915,
+      "pushed_at": "2026-08-29T01:12:08Z"
     },
     {
       "name": "OpenThread",
@@ -3976,8 +3977,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 75,
-      "issues_open": 168,
+      "commits_30d": 79,
+      "issues_open": 165,
       "prs_open": 0,
       "releases": [
         {
@@ -3999,8 +4000,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4020,
-      "pushed_at": "2026-08-26T20:50:55Z"
+      "stars": 4021,
+      "pushed_at": "2026-08-29T05:17:57Z"
     },
     {
       "name": "BlueZ",
@@ -4010,8 +4011,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 67,
-      "issues_open": 114,
+      "commits_30d": 66,
+      "issues_open": 118,
       "prs_open": 0,
       "releases": [
         {
@@ -4034,7 +4035,7 @@
         }
       ],
       "stars": 1136,
-      "pushed_at": "2026-08-28T00:29:30Z"
+      "pushed_at": "2026-08-28T21:30:30Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4044,8 +4045,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 7,
-      "issues_open": 458,
+      "commits_30d": 5,
+      "issues_open": 453,
       "prs_open": 0,
       "releases": [
         {
@@ -4067,8 +4068,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15577,
-      "pushed_at": "2026-08-27T16:53:28Z"
+      "stars": 15580,
+      "pushed_at": "2026-08-28T19:22:08Z"
     },
     {
       "name": "NimBLE",
