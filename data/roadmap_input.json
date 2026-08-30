@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T13:09:22Z",
+  "generated_at": "2026-08-30T13:10:02Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2791,6 +2791,11 @@
           "url": "https://www.digitimes.com/news/a20260812PD221/optical-communications-mediatek-realtek-himax-elan-2027.html"
         },
         {
+          "title": "RTL8723BS Driver Continues Dominating The Staging Area Activity For Linux 7.3",
+          "date": "Aug 2026",
+          "url": "https://www.phoronix.com/news/Linux-7.3-Staging"
+        },
+        {
           "title": "Realtek Licenses MPEG-H Audio Software from Fraunhofer IIS",
           "date": "Jul 2026",
           "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18&lang=en-GB"
@@ -2814,11 +2819,6 @@
           "title": "Realtek RTL8723BS WiFi Linux Driver Hardened Against Malicious WiFi Access Points",
           "date": "Jul 2026",
           "url": "https://www.phoronix.com/news/Realtek-RTL8723BS-WiFi-Bad-APs"
-        },
-        {
-          "title": "Realtek Reports Recent Earnings Highlighting Margin Resilience",
-          "date": "Jul 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/realtek-stock-trades-steady-as-recent-earnings-highlight-margin-resilience/69827856"
         }
       ]
     },
@@ -2967,6 +2967,11 @@
           "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
         },
         {
+          "title": "u-blox Announces Strategic Decision to Focus on Locate Business and Phase Out Cellular",
+          "date": "Aug 2026",
+          "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861738ecb9b"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
@@ -2975,11 +2980,6 @@
           "title": "u-blox Introduces F11 Low-Power Dual-Band GNSS Chips and Modules",
           "date": "Jul 2026",
           "url": "https://www.cnx-software.com/2026/07/06/u-blox-f11-low-power-dual-band-gnss-chips-and-modules-consume-just-7mw-in-leap-mode/"
-        },
-        {
-          "title": "U-blox Launches Pair of Wi-Fi 6 Modules for Cost-Sensitive Designs",
-          "date": "Jul 2026",
-          "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
         }
       ]
     },
@@ -3759,26 +3759,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 102,
-    "NXP": 30,
-    "MediaTek": 15,
-    "Espressif": 15,
-    "Apple": 13,
-    "TI": 12,
-    "Broadcom": 7,
-    "Marvell": 6,
-    "Nordic": 5,
-    "Skyworks": 4,
+    "Qualcomm": 98,
+    "NXP": 35,
+    "MediaTek": 17,
+    "Espressif": 16,
+    "TI": 9,
+    "Apple": 9,
+    "Marvell": 4,
+    "Nordic": 4,
+    "Realtek": 3,
+    "Skyworks": 3,
     "STMicro": 3,
-    "Murata": 2,
-    "Renesas": 2,
-    "Quectel": 2,
-    "Infineon": 2,
+    "Infineon": 3,
+    "Renesas": 3,
+    "Broadcom": 3,
     "Qorvo": 1,
     "HiSilicon": 1,
     "Microchip": 1,
     "u-blox": 1,
-    "Goodix": 1
+    "Goodix": 1,
+    "Quectel": 1,
+    "WCH": 1,
+    "Silicon Labs": 1
   },
   "standards_in_flight": [
     {
@@ -3859,7 +3861,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3869,
+      "issues_open": 3881,
       "prs_open": 0,
       "releases": [
         {
@@ -3881,7 +3883,7 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16339,
+      "stars": 16341,
       "pushed_at": "2026-08-28T19:34:31Z"
     },
     {
@@ -3895,7 +3897,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1674,
+      "issues_open": 1676,
       "prs_open": 0,
       "releases": [
         {
@@ -3917,7 +3919,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
         }
       ],
-      "stars": 18895,
+      "stars": 18901,
       "pushed_at": "2026-08-28T19:01:53Z"
     },
     {
@@ -3929,7 +3931,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2805,
+      "issues_open": 2798,
       "prs_open": 0,
       "releases": [
         {
@@ -3951,8 +3953,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8909,
-      "pushed_at": "2026-08-29T05:38:20Z"
+      "stars": 8910,
+      "pushed_at": "2026-08-30T01:02:37Z"
     },
     {
       "name": "Linux mac80211",
@@ -3966,8 +3968,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 244915,
-      "pushed_at": "2026-08-29T01:12:08Z"
+      "stars": 245261,
+      "pushed_at": "2026-08-29T19:27:21Z"
     },
     {
       "name": "OpenThread",
@@ -3977,8 +3979,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 79,
-      "issues_open": 165,
+      "commits_30d": 71,
+      "issues_open": 164,
       "prs_open": 0,
       "releases": [
         {
@@ -4000,7 +4002,7 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4021,
+      "stars": 4022,
       "pushed_at": "2026-08-29T05:17:57Z"
     },
     {
@@ -4011,8 +4013,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 66,
-      "issues_open": 118,
+      "commits_30d": 50,
+      "issues_open": 115,
       "prs_open": 0,
       "releases": [
         {
@@ -4034,8 +4036,23 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1136,
-      "pushed_at": "2026-08-28T21:30:30Z"
+      "stars": 1137,
+      "pushed_at": "2026-08-30T10:44:04Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 4,
+      "issues_open": 285,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 889,
+      "pushed_at": "2026-08-21T21:49:10Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4045,8 +4062,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 5,
-      "issues_open": 453,
+      "commits_30d": 2,
+      "issues_open": 450,
       "prs_open": 0,
       "releases": [
         {
@@ -4068,23 +4085,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15580,
-      "pushed_at": "2026-08-28T19:22:08Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 4,
-      "issues_open": 285,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 888,
-      "pushed_at": "2026-08-21T21:49:10Z"
+      "stars": 15583,
+      "pushed_at": "2026-08-29T18:45:32Z"
     },
     {
       "name": "hostap",
