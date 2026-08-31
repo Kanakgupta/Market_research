@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T13:10:02Z",
+  "generated_at": "2026-08-31T13:12:13Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3759,28 +3759,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 98,
-    "NXP": 35,
-    "MediaTek": 17,
-    "Espressif": 16,
-    "TI": 9,
-    "Apple": 9,
-    "Marvell": 4,
-    "Nordic": 4,
-    "Realtek": 3,
+    "Qualcomm": 89,
+    "MediaTek": 28,
+    "NXP": 28,
+    "Apple": 11,
+    "TI": 8,
+    "Marvell": 7,
+    "Espressif": 7,
+    "Broadcom": 5,
+    "Infineon": 4,
+    "Realtek": 4,
+    "Renesas": 4,
+    "STMicro": 4,
     "Skyworks": 3,
-    "STMicro": 3,
-    "Infineon": 3,
-    "Renesas": 3,
-    "Broadcom": 3,
+    "Nordic": 3,
+    "Silicon Labs": 2,
     "Qorvo": 1,
     "HiSilicon": 1,
     "Microchip": 1,
     "u-blox": 1,
     "Goodix": 1,
     "Quectel": 1,
-    "WCH": 1,
-    "Silicon Labs": 1
+    "WCH": 1
   },
   "standards_in_flight": [
     {
@@ -3853,40 +3853,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3881,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16341,
-      "pushed_at": "2026-08-28T19:34:31Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3897,7 +3863,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1676,
+      "issues_open": 1679,
       "prs_open": 0,
       "releases": [
         {
@@ -3919,8 +3885,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
         }
       ],
-      "stars": 18901,
+      "stars": 18906,
       "pushed_at": "2026-08-28T19:01:53Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3849,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+        },
+        {
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+        },
+        {
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+        }
+      ],
+      "stars": 16357,
+      "pushed_at": "2026-08-31T13:08:41Z"
     },
     {
       "name": "Matter SDK",
@@ -3931,7 +3931,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2798,
+      "issues_open": 2797,
       "prs_open": 0,
       "releases": [
         {
@@ -3954,7 +3954,7 @@
         }
       ],
       "stars": 8910,
-      "pushed_at": "2026-08-30T01:02:37Z"
+      "pushed_at": "2026-08-31T12:19:40Z"
     },
     {
       "name": "Linux mac80211",
@@ -3968,8 +3968,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 245261,
-      "pushed_at": "2026-08-29T19:27:21Z"
+      "stars": 245406,
+      "pushed_at": "2026-08-30T21:36:02Z"
     },
     {
       "name": "OpenThread",
@@ -3979,8 +3979,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 71,
-      "issues_open": 164,
+      "commits_30d": 67,
+      "issues_open": 167,
       "prs_open": 0,
       "releases": [
         {
@@ -4003,7 +4003,7 @@
         }
       ],
       "stars": 4022,
-      "pushed_at": "2026-08-29T05:17:57Z"
+      "pushed_at": "2026-08-31T09:39:26Z"
     },
     {
       "name": "BlueZ",
@@ -4014,7 +4014,7 @@
         "bluetooth"
       ],
       "commits_30d": 50,
-      "issues_open": 115,
+      "issues_open": 120,
       "prs_open": 0,
       "releases": [
         {
@@ -4037,7 +4037,7 @@
         }
       ],
       "stars": 1137,
-      "pushed_at": "2026-08-30T10:44:04Z"
+      "pushed_at": "2026-08-31T07:12:14Z"
     },
     {
       "name": "NimBLE",
@@ -4051,8 +4051,21 @@
       "issues_open": 285,
       "prs_open": 0,
       "releases": [],
-      "stars": 889,
+      "stars": 891,
       "pushed_at": "2026-08-21T21:49:10Z"
+    },
+    {
+      "name": "hostap",
+      "owner": "ihewitt",
+      "repo": "hostap",
+      "label": "wpa_supplicant / hostapd Wi-Fi",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 0,
+      "issues_open": 0,
+      "prs_open": 0,
+      "releases": []
     },
     {
       "name": "Zigbee2MQTT",
@@ -4062,8 +4075,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 2,
-      "issues_open": 450,
+      "commits_30d": 0,
+      "issues_open": 453,
       "prs_open": 0,
       "releases": [
         {
@@ -4085,21 +4098,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
         }
       ],
-      "stars": 15583,
-      "pushed_at": "2026-08-29T18:45:32Z"
-    },
-    {
-      "name": "hostap",
-      "owner": "ihewitt",
-      "repo": "hostap",
-      "label": "wpa_supplicant / hostapd Wi-Fi",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 0,
-      "issues_open": 0,
-      "prs_open": 0,
-      "releases": []
+      "stars": 15587,
+      "pushed_at": "2026-08-30T18:48:15Z"
     }
   ],
   "recent_competitor_patents": []
