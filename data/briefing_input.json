@@ -1,511 +1,500 @@
 {
-  "generated_at": "2026-08-31T13:12:13Z",
+  "generated_at": "2026-09-01T13:11:09Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Nvidia to Invest $3.5 Billion in MediaTek as Part of Deeper Collaboration",
-      "url": "https://www.marketscreener.com/news/nvidia-to-invest-3-5-billion-in-mediatek-as-part-of-deeper-collaboration-ce7858dcd18ff521",
-      "source": "marketscreener.com",
-      "date": "2026-08-31",
+      "title": "Poco\u2019s F9 Ultra pairs an ultra-bright display with a glowing Bose subwoofer",
+      "url": "https://www.theverge.com/tech/986148/poco-f9-pro-ultra-specs-features-price-bose",
+      "source": "The Verge",
+      "date": "2026-09-01",
+      "vendor": "Qualcomm",
+      "customer": "Bose",
+      "application": "Audio / Speaker",
+      "buckets": [],
+      "summary": "Xiaomi spinoff brand Poco has partnered with Bose for the second year in a row for its flagship F9 Pro and Ultra phones. The F9 phones double down on amped up audio, with a light-up subwoofer built into the Ultra, along with extremely bright displays, enormous batteries, and what should be Poco's be"
+    },
+    {
+      "title": "Poco F9 Pro and F9 Ultra launch with 185Hz panels, 8 Elite Gen 5 chips, and huge batteries",
+      "url": "https://9to5google.com/2026/09/01/poco-f9-pro-and-f9-ultra-launch/",
+      "source": "9to5Google",
+      "date": "2026-09-01",
+      "vendor": "Qualcomm",
+      "customer": "Xiaomi",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Xiaomi sub-brand Poco is officially expanding its flagship smartphone line with the launch of the Poco F9 Pro and Poco F9 Ultra. more\u2026"
+    },
+    {
+      "title": "The Gentlemen come calling as Nutex confirms sensitive data theft",
+      "url": "https://www.theregister.com/cyber-crime/2026/09/01/the-gentlemen-come-calling-as-nutex-confirms-sensitive-data-theft/5293642",
+      "source": "The Register",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": "Ransomware crew threatens publication while healthcare biz assesses which records escaped"
+    },
+    {
+      "title": "A day-one briefing for Apple\u2019s new CEO",
+      "url": "https://www.theverge.com/tech/987066/john-ternus-day-one-apple-ceo-briefing",
+      "source": "The Verge",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Executive Summary, Day One &#240;&#x178;&#x201c;&#129; Inbox 5:05AMTo: Ternus, John &#60;jternus@apple.com&#62;Reply-to: CEO-transition-team@apple.com Welcome to your first day as CEO! Hopefully you're finding your new office spacious and comfortable. If you have trouble with any of the doors just p"
+    },
+    {
+      "title": "MediaTek Shares Surge 10% Following Nvidia\u2019s $3.5B Tech-Backed Fundraising",
+      "url": "https://www.fxleaders.com/news/2026/09/01/mediatek-shares-surge-10-following-nvidias-3-5b-tech-backed-fundraising/",
+      "source": "FXLeaders",
+      "date": "2026-09-01",
       "vendor": "MediaTek",
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "MediaTek Shares Surge 10% Following Nvidia\u2019s $3.5B Tech-Backed Fundraising\nMediaTek shares surged approximately 10% following the announcement of Nvidia\u2019s blockbuster $3.5 billion convertible bond investment\nMediaTek shares surged approximately 10% following the announcement of Nvidia\u2019s blockbuster "
+    },
+    {
+      "title": "JBL takes on Sonos with new multi-room Cove speakers",
+      "url": "https://www.theverge.com/tech/987322/jbl-cove-multi-room-speaker-series-price-availability",
+      "source": "The Verge",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Sonos",
+      "application": "Audio / Speaker",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "JBL is well known for its portable bluetooth and party speakers, but now it's also stepping into the world of connected whole-home audio. The JBL Cove series of speakers introduced today can work independently, as a stereo pair, or linked together to form a multi-room sound system, placing the range"
+    },
+    {
+      "title": "Vasion\u00ae Unlocks Windows PCs on Snapdragon Adoption with Native, Driverless Printing",
+      "url": "https://www.voiceofalexandria.com/news/national_business_news/vasion-unlocks-windows-pcs-on-snapdragon-adoption-with-native-driverless-printing/article_9ec8dfa2-c5b8-581f-95d2-9ffd833678d8.html",
+      "source": "Voice of Alexandria",
+      "date": "2026-09-01",
+      "vendor": "Qualcomm",
+      "customer": "Microsoft",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "ST. GEORGE, Utah--(BUSINESS WIRE)--Sep 1, 2026--\nVasion is removing a critical barrier to modern Windows device adoption with native, driverless printing for PCs powered by Snapdragon\u00ae compute processors. The Vasion Spring 2026 release delivers a seamless, cloud-native print experience, eliminating "
+    },
+    {
+      "title": "IFA 2026: the biggest tech and gadget announcements",
+      "url": "https://www.theverge.com/tech/986178/ifa-2026-the-biggest-tech-and-gadget-announcements",
+      "source": "The Verge",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Every year over 200,000 people descend on Berlin for IFA, the largest tech trade show in Europe. Some of the world&#8217;s biggest manufacturers turn up to demo everything from appliances to smartphones to smart home gadgets, and this year should be no different. IFA itself runs from September 4th t"
+    },
+    {
+      "title": "AAPL gained 2,736% under Cook, but Ternus doesn\u2019t have to emulate him",
+      "url": "https://9to5mac.com/2026/09/01/aapl-gained-2736-under-cook-but-ternus-doesnt-have-to-emulate-him/",
+      "source": "9to5Mac",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Bloomberg carries a piece noting the astonishing gains made by Apple stockholders during the time when Tim Cook was CEO. The cumulative gain was 2,275% \u2013 or a total return of 2,736% when accounting for dividend payments also. The site suggests this will make him a tough act to follow, but my own vie"
+    },
+    {
+      "title": "NXP Semiconductors To Go Ex-Dividend On September 16th, 2026 With 1.014 USD Dividend Per Share",
+      "url": "https://www.moomoo.com/news/post/75592845/nxp-semiconductors-to-go-ex-dividend-on-september-16th-2026",
+      "source": "Moomoo",
+      "date": "2026-09-01",
+      "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "\u8bf7\u542f\u7528 JavaScript"
+    },
+    {
+      "title": "Simplifying Robotic Design With Quectel\u2019s All-in-One Robotic Smart Module",
+      "url": "https://www.allaboutcircuits.com/industry-white-papers/simplifying-robotic-design-with-quectels-all-in-one-robotic-smart-module/",
+      "source": "All About Circuits",
+      "date": "2026-09-01",
+      "vendor": "Quectel",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "OpenAI calls trade secret dispute \u2018a mess of Apple\u2019s own making\u2019",
+      "url": "https://9to5mac.com/2026/09/01/openai-calls-trade-secret-dispute-a-mess-of-apples-own-making/",
+      "source": "9to5Mac",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple yesterday presented what it said was \u201cshocking evidence\u201d based on analysis of a MacBook owned by Chang Liu, a former employee who moved to OpenAI. The company is alleging that two of its former employees stole trade secrets relating to hardware design and more. The AI company hit back with its"
+    },
+    {
+      "title": "MediaTek Cements Its Standing as AI Player With Nvidia\u2019s Backing",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-09-01/nvidia-s-mediatek-investment-marks-the-next-ai-chipmaking-champion-to-watch",
+      "source": "Bloomberg.com",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Tim Cook\u2019s Apple: his 10 biggest wins and misses",
+      "url": "https://www.theverge.com/tech/987043/tim-cook-biggest-wins-misses",
+      "source": "The Verge",
+      "date": "2026-09-01",
+      "vendor": "Apple",
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Expectations for Tim Cook were almost impossibly high when he stepped in to replace Apple's visionary cofounder in 2011. He inherited a company on a blockbuster run, after Steve Jobs returned and revitalized the Mac, launched the iPod, and oversaw the launch of the iPhone. Now, after 15 years in the"
+    },
+    {
+      "title": "Be the MapQuest you want to see in the world",
+      "url": "https://9to5google.com/2026/09/01/be-the-mapquest-you-want-to-see-in-the-world/",
+      "source": "9to5Google",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Google morning. How many times have you written that before? I hope you had a lovely final weekend before Labor Day. This morning, I\u2019m reading about tens of thousands of dollars\u2019 worth of pristine Duck Hunt cartridges found in a box in Wisconsin, vigorously nodding my head along to John Oliver\u2019s tak"
+    },
+    {
+      "title": "Nvidia Invests $3.5B in MediaTek, Buys 90% of Bonds [2026] - tech-insider.org",
+      "url": "https://tech-insider.org/nvidia-invests-3-5-billion-mediatek-nvlink-fusion-2026/",
+      "source": "tech-insider.org",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Nvidia Invests $3.5B in MediaTek, Buys 90% of Bonds [2026]&nbsp;&nbsp;tech-insider.org"
+    },
+    {
+      "title": "Makera Z1 Desktop CNC Review \u2013 Smart milling, 4-axis module, and 5W laser engraving",
+      "url": "https://www.cnx-software.com/2026/09/01/makera-z1-desktop-cnc-review-smart-milling-4-axis-module-and-5w-laser-engraving/",
+      "source": "CNX Software",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The Makera Z1 Desktop CNC is a desktop CNC machine designed for milling and engraving work that requires precision. The fully enclosed machine features an aluminum structure, offers a 200 \u00d7 200 \u00d7 100 mm work volume, and is suitable for wood, plastic, acrylic, PCB boards, carbon fiber, as well as non"
+    },
+    {
+      "title": "NVIDIA Widens Its AI Moat With MediaTek",
+      "url": "https://www.tradingview.com/news/benzinga:72716d3ee094b:0-nvidia-widens-its-ai-moat-with-mediatek/",
+      "source": "TradingView",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NVIDIA Widens Its AI Moat With MediaTek\nNVIDIA Corp. www.benzinga.com/quote/NVDA(NASDAQ:NVDA) is expanding its reach into custom AI chips through a deeper partnership with MediaTek, giving NVIDIA another way to capture spending as major technology companies increasingly develop their own processors."
+    },
+    {
+      "title": "Security Bite Podcast: Why Apple\u2019s making big changes to its bug bounty program (Part 1)",
+      "url": "https://9to5mac.com/2026/09/01/security-bite-podcast-why-apples-making-big-changes-to-its-bug-bounty-program-part-1/",
+      "source": "9to5Mac",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "9to5Mac Security Bite is exclusively brought to you by Mosyle, the only Apple Unified Platform. Making Apple devices work-ready and enterprise-safe is all we do. Our unique integrated approach to management and security combines state-of-the-art Apple-specific security solutions for fully automated "
+    },
+    {
+      "title": "Is QUALCOMM (QCOM) Stock Cheap Or Already Near Fair Value?",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-qcom/qualcomm/news/is-qualcomm-qcom-stock-cheap-or-already-near-fair-value",
+      "source": "simplywall.st",
+      "date": "2026-09-01",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:QCOM\nIs QUALCOMM (QCOM) Stock Cheap Or Already Near Fair Value?\nQUALCOMM stock has delivered a strong 56.6% return over the past three years, and the current share price of US$170.48 now appears close to the intrinsic value estimate from a Discount"
+    },
+    {
+      "title": "TP-Link\u2019s first Wi-Fi 8 router is almost here",
+      "url": "https://www.theverge.com/gadgets/987277/tplink-wifi-8-archer-8-ultra-availability",
+      "source": "The Verge",
+      "date": "2026-09-01",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "The Wi-Fi 8 standard is far from finalized, but TP-Link is almost ready to release its first hardware targeting the next-gen spec. It unveiled the Archer 8 Ultra tri-band router and Deco 8 Ultra mesh system at IFA 2026, which utilize the upcoming IEEE 802.11bn standard to \"address the connectivity p"
+    },
+    {
+      "title": "Wi-Fi 8 Arrives: TP-Link Unveils Next-Gen Routers at IFA 2026",
+      "url": "https://www.analyticsinsight.net/news/wi-fi-8-arrives-tp-link-unveils-next-gen-routers-at-ifa-2026",
+      "source": "Analytics Insight",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "TP-Link unveiled its first complete consumer Wi-Fi 8 lineup at IFA 2026 in Berlin, bringing the next generation of wireless connectivity closer to mainstream users. The company brings the Archer 8 Ultra router and Deco 8 Ultra mesh system as the latest Wi-Fi 8 portfolio.\nBuilt around the upcoming IE"
+    },
+    {
+      "title": "Apple leadership page updated as John Ternus becomes the new CEO",
+      "url": "https://9to5mac.com/2026/09/01/apple-leadership-page-updated-as-john-ternus-becomes-the-new-ceo/",
+      "source": "9to5Mac",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Today is September 1st, and Apple has officially handed over the reins of CEO from Tim Cook to John Ternus. This commences a new era with Ternus leading the company. You can see the change reflected on the company\u2019s newly-updated leadership page, with Ternus getting the CEO title and Cook moving to "
+    },
+    {
+      "title": "NuRAN Wireless Advances Edge AI Infrastructure Strategy for Rural Connectivity Sites in Africa",
+      "url": "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/nuran-wireless-advances-edge-ai-infrastructure-strategy-for-rural-1215058",
+      "source": "ACCESS Newswire",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "NuRAN Wireless Advances Edge AI Infrastructure Strategy for Rural Connectivity Sites in Africa\nTuesday, 01 September 2026 06:00 AM\nCompany Update\nNuRAN Plans to Turn Thousands of Powered, Connected Rural Sites It Already Owns Into the Next Layer of Africa's Digital Infrastructure: Edge AI and Local "
+    },
+    {
+      "title": "Vietnam Urges Qualcomm and Samsung to Expand AI and Semiconductor Investments for Regional Tech Shift",
+      "url": "https://www.bisinfotech.com/vietnam-urges-qualcomm-and-samsung-to-expand-ai-and-semiconductor-investments-for-regional-tech-shift/",
+      "source": "Bisinfotech",
+      "date": "2026-09-01",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Vietnam Urges Qualcomm and Samsung to Expand AI and Semiconductor Investments for Regional Tech Shift\nVietnam has been very proactive in making changes for the modernization of the economy and becoming a leading technology center in the region. In this respect, Vietnamese leaders have lately had tal"
+    },
+    {
+      "title": "John Ternus is now the CEO of Apple",
+      "url": "https://www.theverge.com/tech/987150/apple-ceo-john-ternus",
+      "source": "The Verge",
+      "date": "2026-09-01",
+      "vendor": null,
       "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "Nvidia to Invest $3.5 Billion in MediaTek as Part of Deeper Collaboration...\nNvidia to Invest $3.5 Billion in MediaTek as Part of Deeper Collaboration Published on 08/31/2026 at 08:55 am EDT MT Newswires This article is reserved for our members.Log in to continueLog inCreate an account Continue with"
+      "summary": "For the first time since 2011, one of the world's most valuable companies has a new leader, as today marks John Ternus' first day as Apple's CEO. He's replacing Tim Cook, who will continue on as the executive chairman on Apple's board and departed with a letter to employees that remarked, \"This plac"
     },
     {
-      "title": "Nvidia invests $3.5 billion in MediaTek convertible bonds",
-      "url": "https://www.reuters.com/world/asia-pacific/nvidia-invests-35-billion-mediatek-convertible-bonds-2026-08-31/",
-      "source": "Reuters",
-      "date": "2026-08-31",
+      "title": "Apple @ Work Podcast: The human side of AI adoption in the enterprise",
+      "url": "https://9to5mac.com/2026/09/01/apple-work-podcast-the-human-side-of-ai-adoption-in-the-enterprise/",
+      "source": "9to5Mac",
+      "date": "2026-09-01",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple @ Work is exclusively brought to you by Mosyle, the only Apple Unified Platform. Mosyle is the only solution that integrates in a single professional grade platform all the solutions necessary to seamlessly and automatically deploy, manage, and protect Apple devices at work. Over 45,000 organi"
+    },
+    {
+      "title": "Nvidia invests $3.5bn in MediaTek and expands AI platform collaboration",
+      "url": "https://www.verdict.co.uk/nvidia-invests-3-5bn-mediatek/",
+      "source": "verdict.co.uk",
+      "date": "2026-09-01",
       "vendor": "MediaTek",
       "customer": null,
-      "application": null,
+      "application": "Automotive",
       "buckets": [],
-      "summary": ""
+      "summary": "Nvidia and MediaTek have announced an expansion of their long-standing partnership to develop the next generation of AI computing platforms.\nThe collaboration will cover areas spanning AI infrastructure, local AI computing, and automotive applications.\nAccess deeper industry intelligence\nExperience "
     },
     {
-      "title": "Watch Nvidia Investing $3.5 Billion in Chipmaker MediaTek",
-      "url": "https://www.bloomberg.com/news/videos/2026-08-31/nvidia-investing-3-5-billion-in-chipmaker-mediatek-video",
-      "source": "Bloomberg.com",
-      "date": "2026-08-31",
-      "vendor": "MediaTek",
+      "title": "How Is Texas Instruments' Stock Performance Compared to Other Semiconductor Stocks?",
+      "url": "https://www.barchart.com/story/news/4369577/how-is-texas-instruments-stock-performance-compared-to-other-semiconductor-stocks",
+      "source": "Barchart.com",
+      "date": "2026-09-01",
+      "vendor": "TI",
       "customer": null,
-      "application": null,
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": ""
+      "summary": "With a market cap of $236.2 billion, Texas Instruments Incorporated (TXN) is a global semiconductor company that designs and manufactures analog, mixed signal, and digital signal processing integrated circuits. It operates through two main segments: Analog and Embedded Processing, serving a variety "
     },
     {
-      "title": "Qualcomm vs. Sandisk: Comparing Gradual Revenue Contraction Against Rapid Revenue Acceleration",
-      "url": "https://currently.att.yahoo.com/att/qualcomm-vs-sandisk-comparing-gradual-125201230.html",
-      "source": "Currently.com",
-      "date": "2026-08-31",
-      "vendor": "Qualcomm",
+      "title": "Fix Stick Drift on PS5, Xbox, Switch, Deck: 12 Steps [2026] - tech-insider.org",
+      "url": "https://tech-insider.org/fix-stick-drift-ps5-xbox-switch-steam-deck-2026/",
+      "source": "tech-insider.org",
+      "date": "2026-09-01",
+      "vendor": "Silicon Labs",
+      "customer": "Microsoft",
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "Fix Stick Drift on PS5, Xbox, Switch, Deck: 12 Steps [2026]&nbsp;&nbsp;tech-insider.org"
+    },
+    {
+      "title": "Nvidia\u2019s MediaTek Partnership Could Push Its Rack-Scale AI Empire Into Custom Chips, Top Analyst Says",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-media-tek-partnership-could-push-its-rack-scale-ai-empire-into-custom-chips-top-analyst-says/cZsoW5zRJtw",
+      "source": "Stocktwits",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
       "customer": null,
       "application": "Retail",
       "buckets": [],
-      "summary": "Qualcomm vs. Sandisk: Comparing Gradual Revenue Contraction Against Rapid Revenue Acceleration\nQualcomm: Observing a Gradual Downward Trend in Total Quarterly Revenue\nThrough its various operating segments, Qualcomm (NASDAQ:QCOM) primarily generates revenue by developing integrated circuits and lice"
+      "summary": "Advertisement|Remove ads.\nAdvertisement|Remove ads.\nNvidia\u2019s expanded partnership with MediaTek could help the chipmaker extend its AI infrastructure dominance into the growing market for custom AI chips, according to supply-chain analyst Ming-Chi Kuo.\nThe companies announced Monday that MediaTek wi"
     },
     {
-      "title": "Nvidia Invests $3.5 Billion in MediaTek",
-      "url": "https://www.quiverquant.com/news/Nvidia+Invests+%243.5+Billion+in+MediaTek",
-      "source": "Quiver Quantitative",
-      "date": "2026-08-31",
+      "title": "Nvidia and MediaTek deepen partnership on AI edge-to-cloud platforms",
+      "url": "https://www.scientific-computing.com/article/nvidia-mediatek-deepen-partnership-ai-edge-cloud-platforms",
+      "source": "Scientific Computing World",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Nvidia and MediaTek deepen partnership on AI edge-to-cloud platforms\nThe expanded relationship builds on previous work between Nvidia and MediaTek on computing platforms spanning devices, vehicles, and cloud infrastructure.\nKM Stock/Shutterstock\nThe companies will collaborate on AI infrastructure, l"
+    },
+    {
+      "title": "MediaTek Partners with Nvidia to Expand Data Center Market",
+      "url": "https://intellectia.ai/news/stock/mediatek-partners-with-nvidia-to-expand-data-center-market",
+      "source": "Intellectia AI",
+      "date": "2026-09-01",
       "vendor": "MediaTek",
       "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Nvidia ($NVDA) is investing $3.5 billion in MediaTek through convertible bonds as the companies expand their partnership around AI data center infrastructure. MediaTek will adopt Nvidia's NVLink Fusion and newly announced NVHBM technologies as it pursues a larger role designing custom AI chips for m"
-    },
-    {
-      "title": "Nvidia and MediaTek expand partnership, Nvidia invests $3.5b By Investing.com",
-      "url": "https://in.investing.com/news/stock-market-news/nvidia-and-mediatek-expand-partnership-nvidia-invests-35b-5577138",
-      "source": "Investing.com India",
-      "date": "2026-08-31",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Nvidia buys $3.5B worth of MediaTek bonds",
-      "url": "https://breakingthenews.net/Article/Nvidia-buys-dollar3.5B-worth-of-MediaTek-bonds/67014012",
-      "source": "Breakingthenews.net",
-      "date": "2026-08-31",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Nvidia, MediaTek deepen AI collaboration with $3.5B investment (NVDA:NASDAQ)",
-      "url": "https://seekingalpha.com/news/4638213-nvidia-mediatek-deepen-ai-collaboration-with-35b-investment",
-      "source": "Seeking Alpha",
-      "date": "2026-08-31",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "From watches to passwords on paper, everything that's old is new again",
-      "url": "https://www.theregister.com/offbeat/2026/08/31/from-watches-to-passwords-on-paper-everything-thats-old-is-new-again/5293348",
-      "source": "The Register",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "This week on the Kettle, we reminisce about the good old days of Windows on XP's 25th anniversary, how new-old Casio watches could reshape the smartwatch market, and why passwords might be better on paper"
-    },
-    {
-      "title": "Nvidia to Invest $3.5 Billion in Chipmaker MediaTek",
-      "url": "https://www.bloomberg.com/news/articles/2026-08-31/nvidia-to-invest-3-5-billion-in-chipmaker-mediatek",
-      "source": "Bloomberg.com",
-      "date": "2026-08-31",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "NVIDIA and MediaTek extend AI work across cloud systems, PCs and cars",
-      "url": "https://www.stocktitan.net/news/NVDA/nvidia-and-media-tek-deepen-long-standing-partnership-to-build-ai-tvzqviljqlok.html",
-      "source": "Stock Titan",
-      "date": "2026-08-31",
-      "vendor": "MediaTek",
-      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "NVIDIA and MediaTek Deepen Long-Standing Partnership to Build AI Edge to Cloud Computing Platforms\nRhea-AI Summary\nNVIDIA (NASDAQ: NVDA) and MediaTek announced an expanded partnership to develop multigenerational AI computing platforms spanning cloud AI infrastructure, local AI computing and automot"
+      "summary": "MediaTek Partners with Nvidia to Expand Data Center Market\nWritten by Emily J. Thompson, Senior Investment Analyst\nUpdated: 45 minutes ago\n0mins\nSource: CNBC\n- Stock Surge: MediaTek's shares rose 10% following the announcement of its partnership with Nvidia, marking a significant step into the data "
     },
     {
-      "title": "Apple Maps still shows Lake Ontario as Google Maps changes name",
-      "url": "https://9to5mac.com/2026/08/31/apple-maps-still-shows-lake-ontario-as-google-maps-changes-name/",
-      "source": "9to5Mac",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "The latest development in the trade war Trump started with Canada is an executive order to rename Lake Ontario as Lake America. Google Maps has updated the name, though what you see depends on which country you are in, with only US users seeing Lake America. Apple Maps has so far stuck to the real n"
-    },
-    {
-      "title": "Secure, low-power Bluetooth LE SoC - 31 August 2026 - NuVision Electronics",
-      "url": "https://www.dataweek.co.za/27996r",
-      "source": "dataweek.co.za",
-      "date": "2026-08-31",
+      "title": "Wi-Fi\u00ae (MAC/PHY) - WiFi Alliance - wi-fi.org",
+      "url": "https://www.wi-fi.org/wi-fi-macphy",
+      "source": "wi-fi.org",
+      "date": "2026-09-01",
       "vendor": null,
       "customer": null,
-      "application": "Embedded / Electronics",
+      "application": null,
       "buckets": [
-        "bluetooth"
-      ],
-      "summary": ""
-    },
-    {
-      "title": "CarPlay keeps getting better with three recent exciting app updates",
-      "url": "https://9to5mac.com/2026/08/31/carplay-keeps-getting-better-with-three-recent-exciting-app-updates/",
-      "source": "9to5Mac",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "CarPlay is about to get even better with iOS 27 in September. New features including a dedicated Siri app and Siri AI will upgrade Apple\u2019s car infotainment system for iPhone users. Even before the big iPhone software update officially launches, CarPlay in August has improved for everyone with three "
-    },
-    {
-      "title": "Ezurio Launches Veda IF912 and IF913 Connected MCU Modules with Integrated Infineon Chipsets",
-      "url": "https://www.bisinfotech.com/ezurio-launches-veda-if912-and-if913-connected-mcu-modules-with-integrated-infineon-chipsets/",
-      "source": "Bisinfotech",
-      "date": "2026-08-31",
-      "vendor": "Infineon",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Ezurio Launches Veda IF912 and IF913 Connected MCU Modules with Integrated Infineon Chipsets\nEzurio has enhanced its range of wireless products through the introduction of the Veda IF912 and IF913 series of connected MCU modules which can be made available worldwide. The modules that are available t"
-    },
-    {
-      "title": "Explainer: Does Turning Off Bluetooth Actually Improve Wi-Fi Speeds?",
-      "url": "https://streamlinefeed.co.ke/news/explainer-does-turning-off-bluetooth-actually-improve-wi-fi-speeds",
-      "source": "streamlinefeed.co.ke",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": null,
-      "application": "Smart Home",
-      "buckets": [
-        "bluetooth",
         "wifi"
       ],
-      "summary": "Explainer: Does Turning Off Bluetooth Actually Improve Wi-Fi Speeds?\nWhile both Wi-Fi and Bluetooth share the 2.4 GHz band, modern hardware coexistence logic means turning off your wireless accessories rarely fixes slow internet.\nModern homes and offices are saturated with wireless signals. From sma"
+      "summary": "Wi-Fi\u00ae (MAC/PHY) - WiFi Alliance&nbsp;&nbsp;wi-fi.org"
     },
     {
-      "title": "Samsung Galaxy Tab S12 Ultra Allegedly Listed on Geekbench With MediaTek Dimensity 9500 Chipset",
-      "url": "https://www.gadgets360.com/tablets/news/samsung-galaxy-tab-s12-ultra-geekbench-database-listing-specifications-features-11982008",
-      "source": "Gadgets 360",
-      "date": "2026-08-31",
-      "vendor": "MediaTek",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Unusual timing of Mac mini and Mac Studio updates all about AI, claims report",
-      "url": "https://9to5mac.com/2026/08/31/unusual-timing-of-mac-mini-and-mac-studio-updates-all-about-ai-claims-report/",
-      "source": "9to5Mac",
-      "date": "2026-08-31",
-      "vendor": "Apple",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Apple surprised many when it quietly announced updated Mac mini and Mac Studio models shortly before its September event. We would normally have expected these announcements to be part of that event. One strong theory is that the company may be making a lot of big announcements in its \u2018Surprise and "
-    },
-    {
-      "title": "How Is QUALCOMM's Stock Performance Compared to Other Semiconductor Stocks?",
-      "url": "https://www.barchart.com/story/news/4352381/how-is-qualcomm-s-stock-performance-compared-to-other-semiconductor-stocks",
-      "source": "Barchart.com",
-      "date": "2026-08-31",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "With a market cap of $172.4 billion, QUALCOMM Incorporated (QCOM) is a global leader in wireless technology development and commercialization. The company operates through three main segments: Qualcomm CDMA Technologies; Qualcomm Technology Licensing; and Qualcomm Strategic Initiatives.\nCompanies va"
-    },
-    {
-      "title": "Does Adding Qualcomm\u2019s Akash Palkhiwala to the Board Sharpen Applied Materials\u2019 AI Strategy Narrative (AMAT)?",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-amat/applied-materials/news/does-adding-qualcomms-akash-palkhiwala-to-the-board-sharpen",
-      "source": "simplywall.st",
-      "date": "2026-08-31",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:AMAT\nDoes Adding Qualcomm\u2019s Akash Palkhiwala to the Board Sharpen Applied Materials\u2019 AI Strategy Narrative (AMAT)?\n- On August 27, 2026, Applied Materials added Qualcomm CFO and COO Akash Palkhiwala to its Board of Directors and Audit Committee, br"
-    },
-    {
-      "title": "Silicon Labs (SLAB) Stock May Be 48% Undervalued On Cash Flow",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-slab/silicon-laboratories/news/silicon-labs-slab-stock-may-be-48-undervalued-on-cash-flow",
-      "source": "simplywall.st",
-      "date": "2026-08-31",
-      "vendor": "Silicon Labs",
-      "customer": null,
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:SLAB\nSilicon Labs (SLAB) Stock May Be 48% Undervalued On Cash Flow\nSilicon Laboratories has surged year to date, but the valuation signals are pulling in different directions, with an intrinsic value estimate suggesting the stock may be cheap while"
-    },
-    {
-      "title": "Apple AirTag 2 4-Pack Drops Below Its Prime Day Price to an All-Time Low, Making Each Tracker a Steal",
-      "url": "https://kotaku.com/apple-airtag-2-4-pack-drops-below-its-prime-day-price-to-an-all-time-low-making-each-tracker-a-steal-2000728623",
-      "source": "Kotaku",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Asset Tracking",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Losing track of your essentials is never fun, but you don\u2019t have to put up with all that stress. Bluetooth trackers attach to your essentials and help you see their recent location on your smartphone. Apple\u2019s AirTags are one of the best around, and you can now pick up a few while saving big.\nA pack "
-    },
-    {
-      "title": "Here\u2019s the likely reason the iPhone Ultra isn\u2019t getting an Apple Pencil",
-      "url": "https://9to5mac.com/2026/08/31/heres-the-likely-reason-the-iphone-ultra-isnt-getting-an-apple-pencil/",
-      "source": "9to5Mac",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "A report yesterday suggested that Apple considered making a special version of the Apple Pencil for the upcoming iPhone Ultra before deciding against it. Bloomberg suggests that there are three reasons behind this decision, one of them being a desire not to conflict with the position adopted by Stev"
-    },
-    {
-      "title": "ARK Just A Pi \u2013 A credit card-sized, NDAA-compliant Raspberry Pi CM5 carrier board for drones and robots",
-      "url": "https://www.cnx-software.com/2026/08/31/ark-just-a-pi-a-credit-card-sized-ndaa-compliant-raspberry-pi-cm5-carrier-board-for-drones-and-robots/",
-      "source": "CNX Software",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "ARK Just A Pi is a tiny NDAA-compliant carrier board for the Raspberry Pi CM5 designed for drones, robots, or other space-constrained embedded applications. This follows ARK Electronics&#8217; NDAA-compliant ARK Jetson Orin NX/Nano bundles introduced in 2024. The new &#8220;Just A Pi&#8221; is much "
-    },
-    {
-      "title": "Qualcomm: When AI Leaves the Data Center, Opportunity Truly Begins",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262141384-qualcomm-ai-pc-automotive-data-center-analysis-tradingkey",
-      "source": "TradingKey",
-      "date": "2026-08-31",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Qualcomm: When AI Leaves the Data Center, Opportunity Truly Begins\nQualcomm is transforming from a mobile-dependent semiconductor firm into a cross-device AI platform company. While its mature handset business and high-margin QTL licensing provide stable cash flow, future growth relies on scaling it"
-    },
-    {
-      "title": "Pocket's AI made my game ideas real. Now Meta controls the results.",
-      "url": "https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results/",
-      "source": "Ars Technica",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Meta",
-      "application": null,
-      "buckets": [],
-      "summary": "Interactive mobile \"gizmos\" are easy to make, hard to share outside Meta's platform."
-    },
-    {
-      "title": "Agentrys, agentic chip design startup backed by MediaTek, raises US$24.5M in funding",
-      "url": "https://www.digitimes.com/news/a20260831VL218/design-mediatek-funding-startup-eda.html",
-      "source": "digitimes",
-      "date": "2026-08-31",
+      "title": "NVIDIA and MediaTek expand AI partnership ...",
+      "url": "https://www.eenewseurope.com/en/nvidia-and-mediatek-expand-ai-partnership/",
+      "source": "eeNews Europe",
+      "date": "2026-09-01",
       "vendor": "MediaTek",
       "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Access denied\nSorry, unusual traffic from your computer network.\nYour IP (73.92.166.158) has been blocked temporarily.\nTo provide quality services to our members, DIGITIMES blocks IPs if large volume of traffic coming from a single IP address.\nIf you see this page during normal browsing, please cont"
-    },
-    {
-      "title": "D-Robotics RDK S100P \u2013 A 128 TOPS alternative to NVIDIA Jetson Orin NX 16GB with Cortex-A78AE/R52+ cores",
-      "url": "https://www.cnx-software.com/2026/08/31/d-robotics-rdk-s100p-a-128-tops-alternative-to-nvidia-jetson-orin-nx-16gb-with-cortex-a78ae-r52-cores/",
-      "source": "CNX Software",
-      "date": "2026-08-31",
-      "vendor": "Apple",
-      "customer": "Apple",
-      "application": "Robotics",
-      "buckets": [],
-      "summary": "D-Robotics RDK S100P development kit is a robotics SBC built around an S100P-based module providing an alternative to NVIDIA Jetson Orin NX 16GB with a 6-core Cortex-A78AE application cluster, a 4-core Cortex-R52+ MCU domain, a Nash BPU rated at 128 TOPS INT8, a Mali-G78AE GPU, and 24 GB of LPDDR5. "
-    },
-    {
-      "title": "ASRock White Motherboard 36% Off at Amazon Smile Sale, Now \u00a521,980",
-      "url": "https://finance.biggo.com/news/f6fb0c31-4368-4ffe-849c-53ff64c03ca5",
-      "source": "finance.biggo.com",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [],
-      "summary": "ASRock White Motherboard 36% Off at Amazon Smile Sale, Now \u00a521,980\nAmazon.co.jp is currently offering ASRock's Socket AM5-compatible ATX motherboard, the \"B650 Steel Legend WiFi,\" at \u00a521,980 \u2014 a 36% discount from its regular price of \u00a534,223 \u2014 as part of its ongoing Smile Sale. The white-PCB gaming-"
-    },
-    {
-      "title": "Advanced Cooling Technologies Address the Automotive Heat Challenge",
-      "url": "https://www.eetimes.com/advanced-cooling-technologies-address-the-automotive-heat-challenge/",
-      "source": "EE Times",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "New cooling technologies are emerging as electric drivetrains, AI processors, and autonomous systems push automotive heat fluxes higher. The post Advanced Cooling Technologies Address the Automotive Heat Challenge appeared first on EE Times."
+      "summary": "NVIDIA and MediaTek are expanding their long-running partnership across cloud AI infrastructure, local AI computing and automotive platforms, with MediaTek set to adopt NVIDIA\u2019s NVLink Fusion platform for custom AI accelerators.\nThe agreement also includes a $3.5 billion NVIDIA investment in convert"
     },
     {
-      "title": "Qualcomm Hosts Dragonwing IoT Day... Unveils Demos from Key Partners",
-      "url": "https://www.mk.co.kr/en/business/12140476",
-      "source": "\ub9e4\uc77c\uacbd\uc81c",
-      "date": "2026-08-31",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Robotics",
-      "buckets": [],
-      "summary": "\u2019 Kwon Oh-hyung, Qualcomm APAC Representative, delivers the opening remarks at the \u2018Qualcomm DragonWing IoT Day\u2019 held at The Grand Lotte Seoul on the 31st. <Qualcomm Qualcomm Technologies, a global fabless semiconductor company, held an event for key customers and partners using the \u2018Qualcomm Dragon"
-    },
-    {
-      "title": "Orange Pi Zero 4 \u2013 Compact Allwinner A733 SBC offers HDMI, USB-C DP, GbE, WiFI 6, PCIe FFC connector for $26.5 and up",
-      "url": "https://www.cnx-software.com/2026/08/31/orange-pi-zero-4-allwinner-a733-sbc-offers-hdmi-usb-c-dp-gbe-wifi-6-pcie-ffc-connector/",
-      "source": "CNX Software",
-      "date": "2026-08-31",
-      "vendor": null,
+      "title": "MediaTek Expands Partnership with Nvidia for Custom AI Chips",
+      "url": "https://intellectia.ai/news/stock/mediatek-expands-partnership-with-nvidia-for-custom-ai-chips",
+      "source": "Intellectia AI",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
       "customer": "Google",
-      "application": "Embedded / Electronics",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "Orange Pi Zero 4 is an affordable yet feature-rich Allwinner A733 single board computer (SBC) with up to 8GB RAM, eMMC/UFS storage footprint, a microSD card slot, and plenty of I/Os. The board packs mini HDMI and USB-C DisplayPort, Gigabit Ethernet, WiFi 6 and Bluetooth 5.4, two MIPI CSI camera conn"
-    },
-    {
-      "title": "Qualcomm \u2022 Robinhood Token - QCOM - Stock Price & News",
-      "url": "https://www.fool.com/quote/crypto/qcom/",
-      "source": "The Motley Fool",
-      "date": "2026-08-31",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Qualcomm \u2022 Robinhood Token(CRYPTO) QCOM\nMarket CapN/AMarket cap calculated using publicly traded shares outstanding only. Does not include unlisted, private, or dual-class non-traded shares. Implied market cap may vary.\nSince IPO (2026)-21%\n5 YearN/A\n1 YearN/A\n1 Month+3%\n$0.00\n+0.00%\n+0.00Today\nQual"
-    },
-    {
-      "title": "Multiaxial Sensing Improves EV Inverters",
-      "url": "https://www.electronicsforu.com/news/multiaxial-sensing-improves-ev-inverters",
-      "source": "Electronics For You",
-      "date": "2026-08-31",
-      "vendor": "TI",
-      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "A new sensing approach improves current measurement in electric-vehicle powertrains, helping engineers develop more efficient, compact, and precise traction inverter systems.\nA new multiaxial current-sensing architecture aims to address one of the key design trade-offs in electric and hybrid vehicle"
+      "summary": "MediaTek Expands Partnership with Nvidia for Custom AI Chips\nWritten by Emily J. Thompson, Senior Investment Analyst\nUpdated: 28 minutes ago\n0mins\nSource: stocktwits\n- Partnership Expansion: MediaTek and Nvidia announced an expanded partnership to develop custom XPUs using Nvidia's NVLink Fusion pla"
     },
     {
-      "title": "Compact Edge AI Targets Visual Computing",
-      "url": "https://www.electronicsforu.com/news/compact-edge-ai-targets-visual-computing",
-      "source": "Electronics For You",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "A new compact edge computing platform brings AI acceleration, advanced visual processing and flexible connectivity to industrial systems, supporting smarter applications in space-constrained environments.\nIBASE Technology has introduced the AA400-N, an ultra-compact fanless edge AI computer built ar"
-    },
-    {
-      "title": "NEWS TAGGED BROADCOM",
-      "url": "https://www.digitimes.com/tag/broadcom/033737.html",
-      "source": "digitimes",
-      "date": "2026-08-31",
-      "vendor": "Broadcom",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Long dominated by Ikanos Communications, the VDSL semiconductor market recently has become much more competitive, according to IHS iSuppli. The market researcher also projects that...\nNews of Ralink being targeted for acquisition has never stopped ever since the company's preparation to go public to"
-    },
-    {
-      "title": "Ezurio Expands IoT Connectivity Portfolio with New Compact Wi-Fi and Bluetooth MCU Modules",
-      "url": "https://www.everythingrf.com/news/details/22586-ezurio-expands-iot-connectivity-portfolio-with-new-compact-wi-fi-and-bluetooth-mcu-modules",
-      "source": "everything RF",
-      "date": "2026-08-31",
-      "vendor": "Infineon",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "Ezurio, a global leader in wireless connectivity and Premium Partner for Infineon Technologies, has made its Veda IF912 and IF913 series connected MCU modules available for purchase through its global distribution network. Now in stock, the modules are powered by Infineon\u2019s AIROC\u2122 CYW55912 and CYW55"
-    },
-    {
-      "title": "Ultrathin Chromium Layer Could Cut Perovskite Solar Costs",
-      "url": "https://www.electronicsforu.com/news/ultrathin-chromium-layer-could-cut-perovskite-solar-costs",
-      "source": "Electronics For You",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": null,
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "A five-nanometre chromium barrier could replace costly gold electrodes, improving durability while keeping perovskite solar cells efficient, stable and far more affordable for large-scale deployment.\nResearchers have found a cheaper route to durable perovskite solar cells, using a five-nanometre chr"
-    },
-    {
-      "title": "Xiaomi will introduce smart bands and portable Bluetooth speakers worth 30,000 won in Korea. It plan..",
-      "url": "https://www.mk.co.kr/en/it/12140385",
-      "source": "\ub9e4\uc77c\uacbd\uc81c",
-      "date": "2026-08-31",
-      "vendor": null,
-      "customer": "Xiaomi",
-      "application": "Wearable",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Measurement of heart rate, oxygen in blood, sleep condition\nSoundplay 18W Output support\nEquipped with top and bottom lights that respond to music\nXiaomi will introduce smart bands and portable Bluetooth speakers worth 30,000 won in Korea. It plans to expand its domestic product line by adding weara"
-    },
-    {
-      "title": "Qualcomm holds 'Dragonwing IoT Day' in Seoul, unveils 16 partner demos",
-      "url": "https://www.digitaltoday.co.kr/en/view/98219/qualcomm-holds-dragonwing-iot-day-in-seoul-unveils-16-partner-demos",
-      "source": "\ub514\uc9c0\ud138\ud22c\ub370\uc774",
-      "date": "2026-08-31",
+      "title": "Galaxy S27 Ultra could lose to a new Chinese custom-made, record-breaking chip",
+      "url": "https://www.phonearena.com/news/galaxy-s27-ultra-could-lose-to-a-new-chinese-custom-made-record-breaking-chip_id182996",
+      "source": "PhoneArena",
+      "date": "2026-09-01",
       "vendor": "Qualcomm",
       "customer": "Samsung",
-      "application": "Robotics",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "Major South Korean companies working on industrial AI and IoT technologies gathered in one place. Qualcomm Technologies, referred to as Qualcomm, said on Sunday it held 'Qualcomm Dragonwing IoT Day' at The Grand Lotte Seoul in Seoul and shared technologies and application cases related to industrial"
+      "summary": "Galaxy S27 Ultra could lose to a new Chinese custom-made, record-breaking chip\nThe new Snapdragon 8 Elite Extreme Gen 6 is right around the corner. But there's a new, record-breaking chipset from China that could steal the show.\nXiaomi is entering the battle for the fastest smartphone chip with the "
+    },
+    {
+      "title": "Nvidia investing $3.5m into semiconductor company MediaTek",
+      "url": "https://www.siliconrepublic.com/business/nvidia-investing-3-5m-semiconductor-company-mediatek-ai-chip-development",
+      "source": "Silicon Republic",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "The chipmaker is aiming for a landscape in which future AI development is in line with its own hardware and standards.\nNvidia has announced plans to invest $3.5bn into MediaTek, a Taiwanese semiconductor company. The investment is the latest update in an established partnership between the two organ"
+    },
+    {
+      "title": "Nvidia's Strategic Pivot: From Chip Seller to Semiconductor Power Broker",
+      "url": "https://www.ad-hoc-news.de/boerse/news/unternehmensnachrichten/nvidia-s-strategic-pivot-from-chip-seller-to-semiconductor-power-broker/70034759",
+      "source": "AD HOC NEWS",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Nvidia's Strategic Pivot: From Chip Seller to Semiconductor Power Broker\nPublished on 09/01/2026 at 10:41 | Editorial boerse-global.deThe narrative around Nvidia has long been dominated by one question: how much longer can the AI chipmaker sustain its breakneck growth? But a pair of developments ove"
+    },
+    {
+      "title": "Taiex soars to 2-month closing high on Nvidia-MediaTek deal",
+      "url": "https://focustaiwan.tw/business/202609010019",
+      "source": "Focus Taiwan",
+      "date": "2026-09-01",
+      "vendor": "MediaTek",
+      "customer": "Apple",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Taipei, Sept. 1 (CNA) Shares in Taiwan moved sharply higher to end at their highest for two months as investors chased prices in the semiconductor industry due to Nvidia Corp's plan to invest in MediaTek Inc., dealers said.\nThe Taiex, the Taiwan Stock Exchange's benchmark index, ended up 820.25 poin"
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 89,
-    "MediaTek": 28,
-    "NXP": 28,
-    "Apple": 11,
+    "Qualcomm": 105,
+    "MediaTek": 98,
+    "NXP": 29,
+    "Apple": 9,
     "TI": 8,
-    "Marvell": 7,
-    "Espressif": 7,
-    "Broadcom": 5,
+    "Marvell": 8,
+    "Silicon Labs": 5,
+    "Espressif": 5,
+    "Nordic": 4,
+    "Broadcom": 4,
     "Infineon": 4,
     "Realtek": 4,
-    "Renesas": 4,
-    "STMicro": 4,
     "Skyworks": 3,
-    "Nordic": 3,
-    "Silicon Labs": 2,
+    "Quectel": 2,
+    "Renesas": 2,
+    "Murata": 1,
     "Qorvo": 1,
     "HiSilicon": 1,
-    "Microchip": 1,
     "u-blox": 1,
     "Goodix": 1,
-    "Quectel": 1,
     "WCH": 1
   },
   "customer_news_30d": {
-    "Apple": 149,
-    "Google": 91,
-    "Samsung": 33,
-    "Amazon": 32,
-    "Microsoft": 14,
-    "Meta": 11,
-    "Xiaomi": 11,
-    "Sony": 5,
-    "Huawei": 4,
-    "BMW": 2,
-    "IKEA": 2,
-    "Tesla": 2,
-    "Motorola": 2,
+    "Apple": 167,
+    "Google": 120,
+    "Samsung": 35,
+    "Amazon": 26,
+    "Microsoft": 18,
+    "Meta": 9,
+    "Sony": 8,
+    "Xiaomi": 7,
+    "Huawei": 3,
+    "Bose": 2,
+    "Sonos": 2,
     "Philips Hue": 2,
-    "Sonos": 1,
     "Stellantis": 1,
+    "IKEA": 1,
     "HKMC": 1,
-    "Oura": 1,
-    "Bose": 1,
+    "BMW": 1,
+    "Volkswagen": 1,
+    "Motorola": 1,
     "Wyze": 1,
-    "Tuya": 1,
-    "Aqara": 1,
-    "Toyota": 1
+    "Aqara": 1
   },
   "github_pulse": [
     {
@@ -519,7 +508,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1679,
+      "issues_open": 1683,
       "prs_open": 0,
       "releases": [
         {
@@ -541,8 +530,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
         }
       ],
-      "stars": 18906,
-      "pushed_at": "2026-08-28T19:01:53Z"
+      "stars": 18916,
+      "pushed_at": "2026-08-31T18:17:13Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -553,7 +542,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3849,
+      "issues_open": 3882,
       "prs_open": 0,
       "releases": [
         {
@@ -575,8 +564,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16357,
-      "pushed_at": "2026-08-31T13:08:41Z"
+      "stars": 16370,
+      "pushed_at": "2026-09-01T10:06:58Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 245800,
+      "pushed_at": "2026-09-01T03:54:36Z"
     },
     {
       "name": "Matter SDK",
@@ -587,7 +591,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2797,
+      "issues_open": 2816,
       "prs_open": 0,
       "releases": [
         {
@@ -610,22 +614,7 @@
         }
       ],
       "stars": 8910,
-      "pushed_at": "2026-08-31T12:19:40Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 245406,
-      "pushed_at": "2026-08-30T21:36:02Z"
+      "pushed_at": "2026-09-01T12:47:34Z"
     },
     {
       "name": "OpenThread",
@@ -635,10 +624,16 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 67,
-      "issues_open": 167,
+      "commits_30d": 74,
+      "issues_open": 169,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "v2026.09.0",
+          "name": "OpenThread v2026.09.0",
+          "published_at": "2026-09-01T00:41:55Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.09.0"
+        },
         {
           "tag": "v2026.08.0",
           "name": "OpenThread v2026.08.0",
@@ -650,16 +645,10 @@
           "name": "OpenThread v2026.07.0",
           "published_at": "2026-07-01T00:58:53Z",
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
-        },
-        {
-          "tag": "v2026.06.0",
-          "name": "OpenThread v2026.06.0",
-          "published_at": "2026-06-01T01:01:04Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.06.0"
         }
       ],
-      "stars": 4022,
-      "pushed_at": "2026-08-31T09:39:26Z"
+      "stars": 4025,
+      "pushed_at": "2026-09-01T00:41:54Z"
     },
     {
       "name": "BlueZ",
@@ -669,7 +658,7 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 50,
+      "commits_30d": 54,
       "issues_open": 120,
       "prs_open": 0,
       "releases": [
@@ -693,7 +682,7 @@
         }
       ],
       "stars": 1137,
-      "pushed_at": "2026-08-31T07:12:14Z"
+      "pushed_at": "2026-09-01T09:38:33Z"
     },
     {
       "name": "NimBLE",
@@ -732,7 +721,7 @@
         "ieee15_4"
       ],
       "commits_30d": 0,
-      "issues_open": 453,
+      "issues_open": 452,
       "prs_open": 0,
       "releases": [
         {
@@ -755,7 +744,7 @@
         }
       ],
       "stars": 15587,
-      "pushed_at": "2026-08-30T18:48:15Z"
+      "pushed_at": "2026-09-01T11:30:29Z"
     }
   ],
   "recent_patents": [],
@@ -831,13 +820,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526342367/ter-20260807.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "10-K",
-      "date": "2026-08-10",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000055/syna-20260627.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
@@ -847,9 +829,9 @@
     {
       "vendor": "Synaptics",
       "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-08-06",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
+      "form": "10-K",
+      "date": "2026-08-10",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000055/syna-20260627.htm"
     },
     {
       "vendor": "Microchip",
@@ -866,18 +848,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/mchp-20260806.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
       "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089397/tm2621905d1_8k.htm"
-    },
-    {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
+      "date": "2026-08-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
     },
     {
       "vendor": "Onsemi",
@@ -894,11 +869,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
-      "vendor": "Qualcomm",
-      "ticker": "QCOM",
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
       "form": "8-K",
-      "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089397/tm2621905d1_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
     },
     {
       "vendor": "TI",
@@ -906,6 +888,13 @@
       "form": "10-Q",
       "date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
+    },
+    {
+      "vendor": "Qualcomm",
+      "ticker": "QCOM",
+      "form": "8-K",
+      "date": "2026-07-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
     },
     {
       "vendor": "Apple",
@@ -936,6 +925,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -948,13 +944,6 @@
       "form": "8-K",
       "date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom-20260729.htm"
-    },
-    {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-07-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
     },
     {
       "vendor": "Skyworks",
@@ -1034,18 +1023,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "8-K",
       "date": "2026-06-25",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-06-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -2322,6 +2311,11 @@
       ],
       "press_releases": [
         {
+          "title": "Qualcomm stock climbs as Q3 2026 earnings and AI chip price hike reshape expectations",
+          "date": "Sep 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qualcomm-stock-climbs-as-q3-2026-earnings-and-ai-chip-price-hike-reshape/70033669"
+        },
+        {
           "title": "GE Appliances teams with Texas Instruments to power smart laundry machines",
           "date": "Aug 2026",
           "url": "https://www.wave3.com/2026/08/04/ge-appliances-teams-with-texas-instruments-power-smart-laundry-machines/"
@@ -2365,11 +2359,6 @@
           "title": "Infineon Collaborates With MediaTek to Enable Future Automotive Smart Cockpit Solutions",
           "date": "Aug 2026",
           "url": "https://smestreet.in/technology/infineon-collaborates-with-mediatek-to-enable-future-automotive-smart-cockpit-solutions-12241238"
-        },
-        {
-          "title": "Infineon partners with MediaTek to enable AI-driven automotive smart cockpits",
-          "date": "Aug 2026",
-          "url": "https://manufacturing.economictimes.indiatimes.com/news/hi-tech/infineon-partners-with-mediatek-to-enable-ai-driven-automotive-smart-cockpits/133046476"
         }
       ],
       "events": [
@@ -2592,6 +2581,11 @@
       ],
       "press_releases": [
         {
+          "title": "Anritsu and MediaTek validate 5G Release 17 coverage enhancement tests",
+          "date": "Sep 2026",
+          "url": "https://www.telecompaper.com/news/anritsu-and-mediatek-validate-5g-release-17-coverage-enhancement-tests--1581268"
+        },
+        {
           "title": "MediaTek Reports Financial Results for Q2 2026",
           "date": "Aug 2026",
           "url": "https://ximitime.com/mediatek-reports-12-6-drop-in-net-profit-for-q2-2026-99171/"
@@ -2635,11 +2629,6 @@
           "title": "MediaTek's Second-Generation Data Center ASIC Product On Track for 2028 Mass Production",
           "date": "Aug 2026",
           "url": "https://www.digitimes.com/news/a20260803PD210/mediatek-asic-2028-intel-production.html"
-        },
-        {
-          "title": "MediaTek Plans $5 Billion AI Chip Push for Data Center Growth",
-          "date": "Aug 2026",
-          "url": "https://www.asiabusinessoutlook.com/news/mediatek-plans-5-billion-ai-chip-push-for-data-center-growth-nwid-12252.html"
         }
       ],
       "events": [
@@ -4059,14 +4048,14 @@
           "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861738ecb9b"
         },
         {
+          "title": "u-blox Announces Strategic Shift: Focus on Locate Business, Phase Out Cellular, and Impairment",
+          "date": "Aug 2026",
+          "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
+        },
+        {
           "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
           "date": "Jul 2026",
           "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
-        },
-        {
-          "title": "u-blox Introduces F11 Low-Power Dual-Band GNSS Chips and Modules",
-          "date": "Jul 2026",
-          "url": "https://www.cnx-software.com/2026/07/06/u-blox-f11-low-power-dual-band-gnss-chips-and-modules-consume-just-7mw-in-leap-mode/"
         }
       ]
     },
