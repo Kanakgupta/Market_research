@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T13:11:09Z",
+  "generated_at": "2026-09-02T13:13:05Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -128,6 +128,16 @@
       ],
       "press_releases": [
         {
+          "title": "Nordic's Skylo-Certified nRF9151 Modem Extends Satellite IoT Reach with LooUQ",
+          "date": "Sep 2026",
+          "url": "https://www.eetindia.co.in/nordic-loouq-extend-satellite-iot-reach-with-skylo-certified-nrf9151-modem/"
+        },
+        {
+          "title": "Mouser Electronics Stocks New Nordic Semiconductor Multiprotocol Wireless Connectivity Solutions",
+          "date": "Sep 2026",
+          "url": "https://www.everythingrf.com/news/details/22595-mouser-electronics-stocks-new-multiprotocol-wireless-connectivity-solutions-from-nordic-semiconductor"
+        },
+        {
           "title": "Nordic Semiconductor: The Question Now Is CRA Enforcement Appeal (Rating Upgrade)",
           "date": "Aug 2026",
           "url": "https://seekingalpha.com/article/4929339-nordic-semiconductor-stock-question-cra-enforcement-appeal"
@@ -166,16 +176,6 @@
           "title": "Nordic Semiconductor Unveils Skylo-Certified Cellular IoT Module for Seamless Satellite Connectivity",
           "date": "Aug 2026",
           "url": "https://www.everythingrf.com/news/details/22469-nordic-semiconductor-unveils-skylo-certified-cellular-iot-module-for-seamless-satellite-connectivity"
-        },
-        {
-          "title": "Nordic Semiconductor Reports Strong Q2 2026 Growth and Record Revenue",
-          "date": "Aug 2026",
-          "url": "https://baltic-review.com/norwegian-nordic-semiconductor-q2-2026-growth-edge-iot/"
-        },
-        {
-          "title": "LILYGO T-Echo Card Features Nordic Semi nRF52840 Wireless MCU",
-          "date": "Aug 2026",
-          "url": "https://www.cnx-software.com/2026/08/08/lilygo-t-echo-card-a-weatherproof-solar-powered-nrf52840-based-lora-gps-development-kit/"
         }
       ],
       "events": [
@@ -408,6 +408,11 @@
       ],
       "press_releases": [
         {
+          "title": "MIT Bengaluru Students Win NXP Cup Regional Final",
+          "date": "Sep 2026",
+          "url": "https://cxotoday.com/media-coverage/mit-bengaluru-students-win-nxp-cup-regional-final-with-autonomous-medical-response-robot-advance-to-nationals/"
+        },
+        {
           "title": "CELUS, Variscite, and NXP Partner to Bring AI-Powered Design to Embedded Engineers",
           "date": "Aug 2026",
           "url": "https://www.ncnewsonline.com/news/national/celus-joins-variscite-and-nxp-to-bring-ai-powered-design-to-embedded-engineers/article_9b32143c-1959-5cdd-85c0-1b32b51d1626.html"
@@ -451,11 +456,6 @@
           "title": "NXP Semiconductors and BMW Collaborate on Digital Key and Presence Detection Technology",
           "date": "Aug 2026",
           "url": "https://www.automotiveworld.com/news/nxp-chip-brings-digital-key-presence-detection-to-bmw/"
-        },
-        {
-          "title": "CELUS, Variscite, and NXP Semiconductors Announce Collaboration for AI-Powered Embedded Design",
-          "date": "Aug 2026",
-          "url": "https://www.businesswire.com/news/home/20260804635741/en/CELUS-Joins-Variscite-and-NXP-to-Bring-AI-Powered-Design-to-Embedded-Engineers"
         }
       ],
       "events": [
@@ -680,6 +680,31 @@
       ],
       "press_releases": [
         {
+          "title": "Qualcomm Unveils Dragonwing Q-2390 and IQ-2390 Processors for Consumer IoT and Industrial Edge",
+          "date": "Sep 2026",
+          "url": "https://www.techpowerup.com/352218/qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors-for-consumer-iot-and-industrial-edge"
+        },
+        {
+          "title": "Qualcomm Introduces Dragonwing Q-2390 and IQ-2390 Processors, Expanding Access to Intelligent Connected Devices",
+          "date": "Sep 2026",
+          "url": "https://www.qualcomm.com/news/releases/2026/09/-qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors--e"
+        },
+        {
+          "title": "Qualcomm Introduces Dragonwing Q-2390 and IQ-2390 Chips to Power Local AI on Smart Devices",
+          "date": "Sep 2026",
+          "url": "https://www.androidheadlines.com/2026/09/qualcomm-unveils-dragonwing-q-2390-iq-2390-chips.html"
+        },
+        {
+          "title": "Qualcomm Unveils Dragonwing Q-2390 and IQ-2390 Processors Announced for Commercial and Consumer Devices",
+          "date": "Sep 2026",
+          "url": "https://www.gadgets360.com/smart-home/news/qualcomm-dragonwing-q-iq-2390-processors-launch-features-specifications-11990599"
+        },
+        {
+          "title": "Qualcomm Unveils Dragonwing Q-2390, IQ-2390 Processors",
+          "date": "Sep 2026",
+          "url": "https://www.thelec.net/news/articleView.html?idxno=13559"
+        },
+        {
           "title": "Qualcomm Appoints Wassim Chourbaji as SVP and President, Qualcomm EMEA",
           "date": "Aug 2026",
           "url": "https://www.zawya.com/en/press-release/people-in-the-news/qualcomm-appoints-wassim-chourbaji-as-svp-and-president-qualcomm-emea-420322"
@@ -703,31 +728,6 @@
           "title": "Qualcomm Chip Price Hikes Confirmed as Q3 Revenue Drops 20%",
           "date": "Aug 2026",
           "url": "https://techgenyz.com/qualcomm-chip-price-hikes/"
-        },
-        {
-          "title": "Qualcomm Will Raise Snapdragon Chip Prices by Double Digits on September 1",
-          "date": "Aug 2026",
-          "url": "https://startupfortune.com/qualcomm-will-raise-snapdragon-chip-prices-by-double-digits-on-september-1/"
-        },
-        {
-          "title": "LB Semicon Receives Qualcomm Production Approval for PMICs, Begins Mass Production",
-          "date": "Aug 2026",
-          "url": "https://www.thelec.net/news/articleView.html?idxno=12785"
-        },
-        {
-          "title": "Qualcomm's Gaming-Focused Snapdragon 8 Elite Gen 5 V-series Chip Goes Official",
-          "date": "Aug 2026",
-          "url": "https://www.gizmochina.com/2026/08/04/snapdragon-8-elite-gen-5-sm8850-1-ab-official-redmi-k100-pro/"
-        },
-        {
-          "title": "Qualcomm Bets on AI-Native Architecture to Define 6G Mobile Networks",
-          "date": "Aug 2026",
-          "url": "https://www.foreignpolicyjournal.com/2026/08/03/qualcomm-nasdaq-qcom-bets-on-ai-native-architecture-to-define-6g-mobile-networks/"
-        },
-        {
-          "title": "Qualcomm Files Prospectus Supplement for Resale of 17.8 Million Shares",
-          "date": "Aug 2026",
-          "url": "https://www.gurufocus.com/news/8998630/qualcomm-qcom-files-prospectus-supplement-for-resale-of-178-million-shares-issued-in-modular-acquisition"
         }
       ],
       "events": [
@@ -1768,6 +1768,11 @@
       ],
       "press_releases": [
         {
+          "title": "Espressif Systems Launches ESP32-P4 System-on-Chip (SoC)",
+          "date": "Sep 2026",
+          "url": "https://www.electronicdesign.com/directory/digital/soc/product/55402296/mouser-espressif-systems-esp32-p4-system-on-chip-soc"
+        },
+        {
           "title": "Espressif Launches ESP32-C61-MINI-1/1U Wi-Fi 6 and BLE IoT Module",
           "date": "Aug 2026",
           "url": "https://www.cnx-software.com/2026/08/04/espressif-esp32-c61-mini-1-1u-wi-fi-6-and-ble-iot-module-2-dollars/"
@@ -1811,11 +1816,6 @@
           "title": "Makerfabs Promises High-Accuracy Positioning with the MaTouch ESP32-S3 MaUWB",
           "date": "Aug 2026",
           "url": "https://www.hackster.io/news/makerfabs-promises-a-three-minute-path-to-high-accuracy-positioning-with-the-matouch-esp32-s3-mauwb-8b24c0221927"
-        },
-        {
-          "title": "Elecrow ThinkNode M9: ESP32-S3 MeshCore Communication Terminal with LCD and Keyboard",
-          "date": "Aug 2026",
-          "url": "https://www.cnx-software.com/2026/08/10/elecrow-thinknode-m9-a-standalone-esp32-s3-meshcore-communication-terminal-with-color-lcd-qwerty-keyboard/"
         }
       ],
       "events": [
@@ -2796,6 +2796,11 @@
           "url": "https://www.phoronix.com/news/Linux-7.3-Staging"
         },
         {
+          "title": "Realtek Automotive Chips Development",
+          "date": "Aug 2026",
+          "url": "https://www.taiwan-panorama.com/en/Articles/Details?Guid=4b649876-079b-48b3-ba26-1b66198637cd&CatId=9&postname=Realtek%20Semiconductor%3A-Taking%20on%20the%20World%20with%20a%20Crab%20Philosophy"
+        },
+        {
           "title": "Realtek Licenses MPEG-H Audio Software from Fraunhofer IIS",
           "date": "Jul 2026",
           "url": "https://www.realtek.com/Article/NewsDetail?id=4806&app_id=18&lang=en-GB"
@@ -2814,11 +2819,6 @@
           "title": "Realtek Announces Record Q2 Revenue of NT$37.55 Billion",
           "date": "Jul 2026",
           "url": "https://finance.biggo.com/news/8ad007db-f483-4d8a-b0c1-7cc5c67ff84f"
-        },
-        {
-          "title": "Realtek RTL8723BS WiFi Linux Driver Hardened Against Malicious WiFi Access Points",
-          "date": "Jul 2026",
-          "url": "https://www.phoronix.com/news/Realtek-RTL8723BS-WiFi-Bad-APs"
         }
       ]
     },
@@ -2977,9 +2977,9 @@
           "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
         },
         {
-          "title": "u-blox Launches New Wi-Fi 6 Modules for Cost-Sensitive Designs",
-          "date": "Jul 2026",
-          "url": "https://www.allaboutcircuits.com/news/u-blox-unwraps-pair-wi-fi6-modules-cost-sensitive-designs/"
+          "title": "u-blox Announces Strategic Shift to Focus on Locate Business, Phase Out Cellular, and Reports Impairment",
+          "date": "Aug 2026",
+          "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
         }
       ]
     },
@@ -3328,6 +3328,11 @@
       ],
       "press_releases": [
         {
+          "title": "Murata to Showcase \u2019Scaling the Future from India with Murata\u2019 at electronica India 2026",
+          "date": "Sep 2026",
+          "url": "https://www.murata.com/en-global/news/event/other/2026/0901"
+        },
+        {
           "title": "Murata Manufacturing Announces Q1 2027 Financial Results",
           "date": "Aug 2026",
           "url": "https://seekingalpha.com/article/4930357-murata-manufacturing-co-ltd-2027-q1-results-earnings-call-presentation"
@@ -3371,11 +3376,6 @@
           "title": "Murata Introduces World's Smallest 100Vdc/10\u03bcF Lead-Type MLCC",
           "date": "Aug 2026",
           "url": "https://www.murata.com/en-global/news/capacitor/ceramiccapacitor/2026/0827"
-        },
-        {
-          "title": "Murata 2NR Bluetooth LE 6.0 Module",
-          "date": "Aug 2026",
-          "url": "https://www.electronicdesign.com/directory/communication/wireless/product/55399288/mouser-murata-2nr-bluetooth-le-60-module"
         }
       ]
     },
@@ -3759,26 +3759,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 105,
-    "MediaTek": 98,
-    "NXP": 29,
-    "Apple": 9,
+    "Qualcomm": 109,
+    "MediaTek": 102,
+    "NXP": 27,
     "TI": 8,
-    "Marvell": 8,
-    "Silicon Labs": 5,
+    "Apple": 8,
+    "Infineon": 5,
+    "Broadcom": 5,
+    "Nordic": 5,
     "Espressif": 5,
-    "Nordic": 4,
-    "Broadcom": 4,
-    "Infineon": 4,
-    "Realtek": 4,
+    "Realtek": 3,
     "Skyworks": 3,
-    "Quectel": 2,
+    "Silicon Labs": 2,
+    "Murata": 2,
     "Renesas": 2,
-    "Murata": 1,
+    "Marvell": 2,
+    "Microchip": 1,
     "Qorvo": 1,
-    "HiSilicon": 1,
     "u-blox": 1,
     "Goodix": 1,
+    "STMicro": 1,
     "WCH": 1
   },
   "standards_in_flight": [
@@ -3862,9 +3862,15 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1683,
+      "issues_open": 1680,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "v6.0.3",
+          "name": "ESP-IDF Release v6.0.3",
+          "published_at": "2026-09-02T11:55:49Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
+        },
         {
           "tag": "v6.1",
           "name": "ESP-IDF Release v6.1",
@@ -3876,16 +3882,10 @@
           "name": "ESP-IDF Pre-release v6.1-rc1",
           "published_at": "2026-08-18T15:26:58Z",
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-rc1"
-        },
-        {
-          "tag": "v5.5.5",
-          "name": "ESP-IDF Release v5.5.5",
-          "published_at": "2026-07-17T15:35:23Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.5"
         }
       ],
-      "stars": 18916,
-      "pushed_at": "2026-08-31T18:17:13Z"
+      "stars": 18926,
+      "pushed_at": "2026-09-02T09:26:18Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3896,7 +3896,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3882,
+      "issues_open": 3896,
       "prs_open": 0,
       "releases": [
         {
@@ -3918,8 +3918,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16370,
-      "pushed_at": "2026-09-01T10:06:58Z"
+      "stars": 16380,
+      "pushed_at": "2026-09-02T08:10:01Z"
     },
     {
       "name": "Linux mac80211",
@@ -3933,8 +3933,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 245800,
-      "pushed_at": "2026-09-01T03:54:36Z"
+      "stars": 245942,
+      "pushed_at": "2026-09-01T20:49:36Z"
     },
     {
       "name": "Matter SDK",
@@ -3945,7 +3945,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2816,
+      "issues_open": 2802,
       "prs_open": 0,
       "releases": [
         {
@@ -3967,8 +3967,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8910,
-      "pushed_at": "2026-09-01T12:47:34Z"
+      "stars": 8911,
+      "pushed_at": "2026-09-02T12:59:57Z"
     },
     {
       "name": "OpenThread",
@@ -3978,8 +3978,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 74,
-      "issues_open": 169,
+      "commits_30d": 75,
+      "issues_open": 162,
       "prs_open": 0,
       "releases": [
         {
@@ -4002,7 +4002,7 @@
         }
       ],
       "stars": 4025,
-      "pushed_at": "2026-09-01T00:41:54Z"
+      "pushed_at": "2026-09-02T01:52:53Z"
     },
     {
       "name": "BlueZ",
@@ -4013,7 +4013,7 @@
         "bluetooth"
       ],
       "commits_30d": 54,
-      "issues_open": 120,
+      "issues_open": 126,
       "prs_open": 0,
       "releases": [
         {
@@ -4036,7 +4036,41 @@
         }
       ],
       "stars": 1137,
-      "pushed_at": "2026-09-01T09:38:33Z"
+      "pushed_at": "2026-09-01T22:34:20Z"
+    },
+    {
+      "name": "Zigbee2MQTT",
+      "owner": "Koenkk",
+      "repo": "zigbee2mqtt",
+      "label": "Zigbee gateway",
+      "tech": [
+        "ieee15_4"
+      ],
+      "commits_30d": 39,
+      "issues_open": 461,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "2.14.0",
+          "name": "2.14.0",
+          "published_at": "2026-09-01T18:00:36Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
+        },
+        {
+          "tag": "2.13.0",
+          "name": "2.13.0",
+          "published_at": "2026-08-01T05:54:06Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
+        },
+        {
+          "tag": "2.12.1",
+          "name": "2.12.1",
+          "published_at": "2026-07-01T06:04:12Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
+        }
+      ],
+      "stars": 15589,
+      "pushed_at": "2026-09-01T18:18:47Z"
     },
     {
       "name": "NimBLE",
@@ -4065,40 +4099,6 @@
       "issues_open": 0,
       "prs_open": 0,
       "releases": []
-    },
-    {
-      "name": "Zigbee2MQTT",
-      "owner": "Koenkk",
-      "repo": "zigbee2mqtt",
-      "label": "Zigbee gateway",
-      "tech": [
-        "ieee15_4"
-      ],
-      "commits_30d": 0,
-      "issues_open": 452,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "2.13.0",
-          "name": "2.13.0",
-          "published_at": "2026-08-01T05:54:06Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
-        },
-        {
-          "tag": "2.12.1",
-          "name": "2.12.1",
-          "published_at": "2026-07-01T06:04:12Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.1"
-        },
-        {
-          "tag": "2.12.0",
-          "name": "2.12.0",
-          "published_at": "2026-06-09T19:08:29Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.12.0"
-        }
-      ],
-      "stars": 15587,
-      "pushed_at": "2026-09-01T11:30:29Z"
     }
   ],
   "recent_competitor_patents": []
