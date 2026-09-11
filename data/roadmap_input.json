@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T13:11:40Z",
+  "generated_at": "2026-09-11T13:12:33Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -163,6 +163,11 @@
           "url": "https://www.eetindia.co.in/nordic-loouq-extend-satellite-iot-reach-with-skylo-certified-nrf9151-modem/"
         },
         {
+          "title": "Rutronik Adds Nordic Semiconductor's Lifetime FOTA Service to Portfolio",
+          "date": "Sep 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/rutronik-adds-nordic-semiconductor-s-lifetime-fota-service-to-portfolio"
+        },
+        {
           "title": "Nordic Semiconductor: The Question Now Is CRA Enforcement Appeal (Rating Upgrade)",
           "date": "Aug 2026",
           "url": "https://seekingalpha.com/article/4929339-nordic-semiconductor-stock-question-cra-enforcement-appeal"
@@ -171,11 +176,6 @@
           "title": "Nordic's nRF9151 opens satellite and cellular IoT to a new class of connected devices",
           "date": "Aug 2026",
           "url": ""
-        },
-        {
-          "title": "Nordic Semiconductor Q2 revenue climbs 33%, tops forecasts",
-          "date": "Aug 2026",
-          "url": "https://ca.investing.com/news/stock-market-news/nordic-semiconductor-q2-revenue-climbs-33-tops-forecasts-93CH-4780143"
         }
       ],
       "events": [
@@ -1803,19 +1803,19 @@
           "url": "https://www.electronicsforu.com/news/esp32-c5-pico-board-adds-5ghz-wi-fi-for-8-99-dollars"
         },
         {
+          "title": "DIY ESP32-P4 weather station & air quality monitor connects to LoRa and ESP-NOW sensors, various weather APIs",
+          "date": "Sep 2026",
+          "url": "https://www.cnx-software.com/2026/09/03/diy-esp32-p4-weather-station-air-quality-monitor-connects-to-lora-and-esp-now-sensors-various-weather-apis/"
+        },
+        {
+          "title": "TickrCast \u2013 An ESP32-S3 HUB75 LED ticker display with server-side rendering and OTA (Crowdfunding)",
+          "date": "Sep 2026",
+          "url": "https://www.cnx-software.com/2026/09/03/tickrcast-esp32-s3-hub75-led-ticker-display-with-server-side-rendering-and-ota/"
+        },
+        {
           "title": "Espressif Launches ESP32-C61-MINI-1/1U Wi-Fi 6 and BLE IoT Module",
           "date": "Aug 2026",
           "url": "https://www.cnx-software.com/2026/08/04/espressif-esp32-c61-mini-1-1u-wi-fi-6-and-ble-iot-module-2-dollars/"
-        },
-        {
-          "title": "Espressif Systems Releases ESP RainMaker Neo Open-Source IoT Platform",
-          "date": "Aug 2026",
-          "url": "https://www.cnx-software.com/2026/08/06/espressif-systems-releases-esp-rainmaker-neo-open-source-device-to-cloud-to-phone-iot-platform/"
-        },
-        {
-          "title": "Espressif Launches ESP32-C61-MINI Module Family",
-          "date": "Aug 2026",
-          "url": "https://www.hackster.io/news/espressif-launches-the-esp32-c61-mini-module-family-for-budget-conscious-wi-fi-6-ble-matter-work-69b26e768dc5"
         }
       ],
       "events": [
@@ -2326,6 +2326,16 @@
           "url": "https://www.renesas.com/en/about/newsroom/renesas-launches-64-bit-rzg3l-and-rzg3se-mpus-advanced-hmi-and-iot-edge-systems"
         },
         {
+          "title": "Renesas Electronics Corporation Launches 64-Bit RZ/G3L And RZ/G3SE MPUs For Advanced HMI And IoT Edge Systems",
+          "date": "Sep 2026",
+          "url": "https://www.marketscreener.com/news/renesas-electronics-corporation-launches-64-bit-rz-g3l-and-rz-g3se-mpus-for-advanced-hmi-and-iot-edg-ce785bdedf8af323"
+        },
+        {
+          "title": "Renesas launches RZ/G3L, RZ/G3SE MPUs with 1mW standby",
+          "date": "Sep 2026",
+          "url": "https://jp.ibtimes.com/renesas-launches-rz-g3l-rz-g3se-mpus-1mw-standby-104323"
+        },
+        {
           "title": "Renesas Resumes Production at Nishiki Factory to Pre-Earthquake Capacity",
           "date": "Aug 2026",
           "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N43Y01R:0-renesas-production-resumed-at-nishiki-factory-specifying-factory-in-phases-beginning-on-evening-of-july-29-and-returned-to-pre-earthquake-production-capacity-friday-morning/"
@@ -2359,16 +2369,6 @@
           "title": "Renesas Enters Timing Deal with SiTime",
           "date": "Aug 2026",
           "url": "https://finance.yahoo.com/markets/stocks/articles/why-sitime-sitm-35-8-231320796.html"
-        },
-        {
-          "title": "Renesas Electronics Announces Latest Earnings Results",
-          "date": "Aug 2026",
-          "url": "https://simplywall.st/stocks/jp/semiconductors/tse-6723/renesas-electronics-shares/news/renesas-electronics-tse6723-earnings-may-just-be-the-startin"
-        },
-        {
-          "title": "Renesas Electronics Announces Profit Rebound and Gen 3 DDR5 MRDIMM Launch",
-          "date": "Aug 2026",
-          "url": "https://simplywall.st/stocks/jp/semiconductors/tse-6723/renesas-electronics-shares/news/renesas-electronics-tse6723-is-up-92-after-profit-rebound-an"
         }
       ],
       "events": [
@@ -2801,6 +2801,11 @@
           "url": "https://www.phoronix.com/news/Linux-7.4-RTL8127atf-RTL8116af"
         },
         {
+          "title": "Linux 7.4 To Support Realtek RTL8127atf & RTL8116af Networking",
+          "date": "Sep 2026",
+          "url": "https://www.phoronix.com/news/Linux-7.4-RTL8127atf-RTL8116af"
+        },
+        {
           "title": "Realtek Reports Q2 and H1 2026 Financial Results",
           "date": "Aug 2026",
           "url": "https://www.marketscreener.com/news/realtek-semiconductor-corp-reports-earnings-results-for-the-second-quarter-and-six-months-ended-jun-ce7859d8d88ff323"
@@ -2812,11 +2817,6 @@
         },
         {
           "title": "Realtek Eyes Optical Communications Boom in 2027",
-          "date": "Aug 2026",
-          "url": "https://www.digitimes.com/news/a20260812PD221/optical-communications-mediatek-realtek-himax-elan-2027.html"
-        },
-        {
-          "title": "MediaTek, Realtek, Himax, Elan eye optical communications boom in 2027",
           "date": "Aug 2026",
           "url": "https://www.digitimes.com/news/a20260812PD221/optical-communications-mediatek-realtek-himax-elan-2027.html"
         }
@@ -3759,26 +3759,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 179,
-    "MediaTek": 55,
-    "NXP": 33,
-    "Silicon Labs": 12,
+    "Qualcomm": 184,
+    "MediaTek": 32,
+    "NXP": 30,
     "Espressif": 11,
-    "TI": 10,
-    "Nordic": 6,
-    "Apple": 6,
+    "Silicon Labs": 11,
+    "TI": 7,
+    "Apple": 5,
     "Broadcom": 5,
-    "Murata": 4,
+    "Renesas": 4,
+    "Skyworks": 4,
     "Qorvo": 4,
     "Realtek": 3,
-    "Quectel": 3,
-    "HiSilicon": 3,
-    "Skyworks": 3,
-    "Microchip": 3,
-    "Renesas": 1,
-    "STMicro": 1,
-    "Marvell": 1,
-    "Sequans": 1
+    "Nordic": 3,
+    "Marvell": 2,
+    "HiSilicon": 2,
+    "Microchip": 2,
+    "Quectel": 2,
+    "Sequans": 1,
+    "Murata": 1,
+    "Samsung LSI": 1
   },
   "standards_in_flight": [
     {
@@ -3851,40 +3851,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3819,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16469,
-      "pushed_at": "2026-09-10T11:08:06Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3899,6 +3865,12 @@
       "prs_open": 0,
       "releases": [
         {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        },
+        {
           "tag": "v6.0.3",
           "name": "ESP-IDF Release v6.0.3",
           "published_at": "2026-09-02T11:55:49Z",
@@ -3909,65 +3881,10 @@
           "name": "ESP-IDF Release v6.1",
           "published_at": "2026-08-27T01:56:12Z",
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1"
-        },
-        {
-          "tag": "v6.1-rc1",
-          "name": "ESP-IDF Pre-release v6.1-rc1",
-          "published_at": "2026-08-18T15:26:58Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-rc1"
         }
       ],
-      "stars": 18985,
-      "pushed_at": "2026-09-10T11:56:28Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2820,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.6.0.0",
-          "name": "v1.6.0.0 Release",
-          "published_at": "2026-08-20T15:23:47Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
-        },
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        }
-      ],
-      "stars": 8944,
-      "pushed_at": "2026-09-10T12:43:52Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 247694,
-      "pushed_at": "2026-09-09T18:38:16Z"
+      "stars": 18994,
+      "pushed_at": "2026-09-11T10:17:08Z"
     },
     {
       "name": "BlueZ",
@@ -3977,8 +3894,8 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 99,
-      "issues_open": 126,
+      "commits_30d": 100,
+      "issues_open": 112,
       "prs_open": 0,
       "releases": [
         {
@@ -4001,7 +3918,90 @@
         }
       ],
       "stars": 1141,
-      "pushed_at": "2026-09-09T19:30:43Z"
+      "pushed_at": "2026-09-10T21:43:02Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3829,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+        },
+        {
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+        },
+        {
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+        }
+      ],
+      "stars": 16485,
+      "pushed_at": "2026-09-11T12:26:46Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2805,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.6.0.0",
+          "name": "v1.6.0.0 Release",
+          "published_at": "2026-08-20T15:23:47Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+        },
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        },
+        {
+          "tag": "v1.5.0.1",
+          "name": "v1.5.0.1 Release",
+          "published_at": "2025-12-02T14:31:09Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
+        }
+      ],
+      "stars": 8948,
+      "pushed_at": "2026-09-11T13:06:23Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 248231,
+      "pushed_at": "2026-09-10T21:52:02Z"
     },
     {
       "name": "OpenThread",
@@ -4011,8 +4011,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 77,
-      "issues_open": 162,
+      "commits_30d": 78,
+      "issues_open": 154,
       "prs_open": 0,
       "releases": [
         {
@@ -4035,7 +4035,7 @@
         }
       ],
       "stars": 4027,
-      "pushed_at": "2026-09-08T21:29:11Z"
+      "pushed_at": "2026-09-11T04:01:13Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4046,7 +4046,7 @@
         "ieee15_4"
       ],
       "commits_30d": 33,
-      "issues_open": 457,
+      "issues_open": 454,
       "prs_open": 0,
       "releases": [
         {
@@ -4068,8 +4068,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15622,
-      "pushed_at": "2026-09-10T00:34:36Z"
+      "stars": 15625,
+      "pushed_at": "2026-09-11T12:48:56Z"
     },
     {
       "name": "NimBLE",
@@ -4079,12 +4079,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 9,
-      "issues_open": 281,
+      "commits_30d": 20,
+      "issues_open": 272,
       "prs_open": 0,
       "releases": [],
       "stars": 893,
-      "pushed_at": "2026-09-09T22:21:32Z"
+      "pushed_at": "2026-09-11T13:11:51Z"
     },
     {
       "name": "hostap",
