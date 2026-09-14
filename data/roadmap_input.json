@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T13:10:01Z",
+  "generated_at": "2026-09-14T13:13:28Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2056,6 +2056,16 @@
           "url": "https://www.cnx-software.com/2026/09/12/neoeyes-ne302-a-tiny-usb-c-powered-wifi-6-edge-ai-vision-camera-based-on-stm32n6-mcu/"
         },
         {
+          "title": "STMicroelectronics Introduces Automotive Image Sensor for Affordable In-Cabin Sensing",
+          "date": "Sep 2026",
+          "url": "https://www.manilatimes.net/2026/09/14/tmt-newswire/globenewswire/stmicroelectronics-introduces-automotive-image-sensor-to-help-scale-affordable-in-cabin-sensing/2424190"
+        },
+        {
+          "title": "NeoEyes NE302 Camera Features STMicroelectronics STM32N6 MCU for Edge AI Vision",
+          "date": "Sep 2026",
+          "url": "https://www.cnx-software.com/2026/09/12/neoeyes-ne302-a-tiny-usb-c-powered-wifi-6-edge-ai-vision-camera-based-on-stm32n6-mcu/"
+        },
+        {
           "title": "STMicroelectronics Holds 19.6M Treasury Shares After Buyback",
           "date": "Aug 2026",
           "url": "https://www.stocktitan.net/news/STM/st-microelectronics-announces-status-of-common-share-repurchase-jmzrq5wuwxam.html"
@@ -2084,16 +2094,6 @@
           "title": "STMicroelectronics Repurchases 65,209 Shares Under Ongoing Buyback Program",
           "date": "Aug 2026",
           "url": "https://www.stocktitan.net/sec-filings/STM/6-k-st-microelectronics-n-v-current-report-foreign-issuer-dae7ab22b2a7.html"
-        },
-        {
-          "title": "STMicroelectronics Introduces ST54M for Hardware-Based Post-Quantum Cryptography",
-          "date": "Aug 2026",
-          "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
-        },
-        {
-          "title": "LitePoint Validates STMicroelectronics' ST64UWB Chip Family for Next-Generation UWB Solutions",
-          "date": "Aug 2026",
-          "url": "https://www.bisinfotech.com/litepoint-stmicroelectronics-partner-to-test-next-generation-uwb-solutions/"
         }
       ],
       "events": [
@@ -2351,6 +2351,11 @@
           "url": "https://www.newelectronics.co.uk/content/product-launches/renesas-unveils-new-mpus-for-industrial-hmi-and-iot-edge-applications"
         },
         {
+          "title": "Renesas Launches RZ/G3L and RZ/G3SE 64-Bit MPUs for Advanced HMI and IoT Edge Systems",
+          "date": "Sep 2026",
+          "url": "https://www.marketscreener.com/news/renesas-electronics-corporation-launches-64-bit-rz-g3l-and-rz-g3se-mpus-for-advanced-hmi-and-iot-edg-ce785bdedf8af323"
+        },
+        {
           "title": "Renesas Resumes Production at Nishiki Factory to Pre-Earthquake Capacity",
           "date": "Aug 2026",
           "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N43Y01R:0-renesas-production-resumed-at-nishiki-factory-specifying-factory-in-phases-beginning-on-evening-of-july-29-and-returned-to-pre-earthquake-production-capacity-friday-morning/"
@@ -2364,11 +2369,6 @@
           "title": "Geniatech Integrates Renesas RZ/V2H into New SOM-V2H-OSM System-on-Module",
           "date": "Aug 2026",
           "url": "https://macaubusiness.com/geniatech-accelerates-edge-ai-and-next-gen-robotics-evolution-with-new-renesas-rz-v2h-strategic-integration/"
-        },
-        {
-          "title": "Renesas Electronics to Showcase Embodied Robotics Solutions at EAI Show",
-          "date": "Aug 2026",
-          "url": "https://autonews.gasgoo.com/articles/news/renesas-electronics-to-showcase-embodied-robotics-solutions-at-eai-show-2085603438078435329"
         }
       ],
       "events": [
@@ -3759,25 +3759,25 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 168,
-    "NXP": 23,
-    "MediaTek": 19,
-    "Silicon Labs": 12,
-    "Espressif": 10,
-    "Apple": 6,
-    "Renesas": 6,
-    "HiSilicon": 4,
-    "TI": 3,
-    "Skyworks": 3,
-    "Nordic": 3,
+    "Qualcomm": 138,
+    "MediaTek": 21,
+    "NXP": 20,
+    "Silicon Labs": 10,
+    "Espressif": 9,
+    "TI": 5,
+    "Apple": 4,
+    "Renesas": 4,
     "Qorvo": 3,
     "STMicro": 2,
+    "Broadcom": 2,
+    "HiSilicon": 2,
     "Marvell": 2,
-    "Realtek": 2,
-    "Broadcom": 1,
+    "Nordic": 2,
+    "Quectel": 1,
+    "Realtek": 1,
     "Sequans": 1,
-    "Microchip": 1,
-    "Quectel": 1
+    "Skyworks": 1,
+    "Microchip": 1
   },
   "standards_in_flight": [
     {
@@ -3850,76 +3850,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "BlueZ",
-      "owner": "bluez",
-      "repo": "bluez",
-      "label": "Linux BT stack",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 111,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "5.87",
-          "name": "5.87",
-          "published_at": "2026-07-07T16:41:14Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
-        },
-        {
-          "tag": "5.86",
-          "name": "5.86",
-          "published_at": "2026-02-09T21:27:33Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
-        }
-      ],
-      "stars": 1143,
-      "pushed_at": "2026-09-12T20:58:57Z"
-    },
-    {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1687,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
-        },
-        {
-          "tag": "v6.0.3",
-          "name": "ESP-IDF Release v6.0.3",
-          "published_at": "2026-09-02T11:55:49Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
-        },
-        {
-          "tag": "v6.1",
-          "name": "ESP-IDF Release v6.1",
-          "published_at": "2026-08-27T01:56:12Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1"
-        }
-      ],
-      "stars": 19007,
-      "pushed_at": "2026-09-11T17:51:10Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3928,7 +3858,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3828,
+      "issues_open": 3807,
       "prs_open": 0,
       "releases": [
         {
@@ -3950,8 +3880,78 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16501,
-      "pushed_at": "2026-09-13T10:57:37Z"
+      "stars": 16512,
+      "pushed_at": "2026-09-14T13:02:12Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1689,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        },
+        {
+          "tag": "v6.0.3",
+          "name": "ESP-IDF Release v6.0.3",
+          "published_at": "2026-09-02T11:55:49Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
+        },
+        {
+          "tag": "v6.1",
+          "name": "ESP-IDF Release v6.1",
+          "published_at": "2026-08-27T01:56:12Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1"
+        }
+      ],
+      "stars": 19012,
+      "pushed_at": "2026-09-14T12:37:59Z"
+    },
+    {
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 113,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "5.87",
+          "name": "5.87",
+          "published_at": "2026-07-07T16:41:14Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
+        },
+        {
+          "tag": "5.86",
+          "name": "5.86",
+          "published_at": "2026-02-09T21:27:33Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
+        },
+        {
+          "tag": "5.85",
+          "name": "5.85",
+          "published_at": "2025-11-26T16:00:07Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
+        }
+      ],
+      "stars": 1144,
+      "pushed_at": "2026-09-12T20:58:57Z"
     },
     {
       "name": "Matter SDK",
@@ -3984,8 +3984,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8950,
-      "pushed_at": "2026-09-13T01:01:51Z"
+      "stars": 8949,
+      "pushed_at": "2026-09-14T12:59:08Z"
     },
     {
       "name": "Linux mac80211",
@@ -3999,8 +3999,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 248488,
-      "pushed_at": "2026-09-12T23:24:36Z"
+      "stars": 248931,
+      "pushed_at": "2026-09-14T01:09:50Z"
     },
     {
       "name": "OpenThread",
@@ -4011,7 +4011,7 @@
         "thread"
       ],
       "commits_30d": 77,
-      "issues_open": 155,
+      "issues_open": 158,
       "prs_open": 0,
       "releases": [
         {
@@ -4034,7 +4034,7 @@
         }
       ],
       "stars": 4028,
-      "pushed_at": "2026-09-12T00:50:52Z"
+      "pushed_at": "2026-09-14T09:32:57Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4044,8 +4044,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 29,
-      "issues_open": 458,
+      "commits_30d": 27,
+      "issues_open": 456,
       "prs_open": 0,
       "releases": [
         {
@@ -4067,8 +4067,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15631,
-      "pushed_at": "2026-09-12T21:44:25Z"
+      "stars": 15634,
+      "pushed_at": "2026-09-14T06:09:02Z"
     },
     {
       "name": "NimBLE",
