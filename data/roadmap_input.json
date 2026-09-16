@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T13:11:24Z",
+  "generated_at": "2026-09-16T13:14:27Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2076,6 +2076,11 @@
           "url": "https://www.stocktitan.net/news/STM/st-microelectronics-introduces-automotive-image-sensor-to-help-scale-17775ngnvro3.html"
         },
         {
+          "title": "NeoEyes NE302 Camera Features STM32N6 MCU for Edge AI Vision",
+          "date": "Sep 2026",
+          "url": "https://www.cnx-software.com/2026/09/12/neoeyes-ne302-a-tiny-usb-c-powered-wifi-6-edge-ai-vision-camera-based-on-stm32n6-mcu/"
+        },
+        {
           "title": "STMicroelectronics Holds 19.6M Treasury Shares After Buyback",
           "date": "Aug 2026",
           "url": "https://www.stocktitan.net/news/STM/st-microelectronics-announces-status-of-common-share-repurchase-jmzrq5wuwxam.html"
@@ -2087,11 +2092,6 @@
         },
         {
           "title": "STMicroelectronics Bets on Hardware-Based Post-Quantum Cryptography with ST54M",
-          "date": "Aug 2026",
-          "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
-        },
-        {
-          "title": "STMicroelectronics Introduces ST54M Hardware-Based Post-Quantum Cryptography Solution",
           "date": "Aug 2026",
           "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
         }
@@ -3373,9 +3373,9 @@
           "url": "https://www.murata.com/en-eu/news/connectivitymodule/mmwave-radar/2026/0915"
         },
         {
-          "title": "Murata Manufacturing Announces Q1 2027 Financial Results",
-          "date": "Aug 2026",
-          "url": "https://seekingalpha.com/article/4930357-murata-manufacturing-co-ltd-2027-q1-results-earnings-call-presentation"
+          "title": "Murata and Smart Eye Announce Collaboration on Camera-Radar Sensor Fusion for In-Cabin Sensing",
+          "date": "Sep 2026",
+          "url": "https://www.murata.com/en-eu/news/connectivitymodule/mmwave-radar/2026/0915"
         }
       ]
     },
@@ -3490,6 +3490,11 @@
           "url": "https://kalkine.com.au/news/technology/weebit-nano-asxwbt-enters-fy27-with-texas-instruments-onsemi-and-growing-reram-commercialisation"
         },
         {
+          "title": "Vadzo Imaging Validates Product Featuring Onsemi AR1335 Camera",
+          "date": "Sep 2026",
+          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/vadzo-imaging-validates-bolt-1335mrs-onsemi-ar1335-13mp-mipi-csi-2-came-1220159"
+        },
+        {
           "title": "onsemi Reports Strong Second Quarter 2026 Financial Results",
           "date": "Aug 2026",
           "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-second-quarter-2026-results/"
@@ -3518,11 +3523,6 @@
           "title": "Vadzo Imaging Introduces Falcon-521MRS Camera Utilizing Onsemi AR0521 Sensor",
           "date": "Aug 2026",
           "url": "https://www.lelezard.com/en/news-22320844.html"
-        },
-        {
-          "title": "Vadzo Imaging Launches Falcon-544CRH Camera Featuring Onsemi HyperLux LP AR0544 Sensor",
-          "date": "Aug 2026",
-          "url": "https://www.newswire.com/news/vadzo-imaging-introduces-falcon-544crh-5mp-color-autofocus-usb-3-2-gen-22800966"
         }
       ]
     },
@@ -3759,26 +3759,25 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 127,
-    "MediaTek": 55,
-    "NXP": 24,
+    "Qualcomm": 130,
+    "MediaTek": 73,
+    "NXP": 28,
+    "Silicon Labs": 10,
     "Espressif": 8,
-    "Silicon Labs": 6,
-    "Nordic": 5,
-    "Apple": 5,
-    "TI": 5,
+    "TI": 7,
+    "Nordic": 6,
+    "Renesas": 6,
+    "Apple": 4,
+    "Skyworks": 3,
     "Qorvo": 3,
-    "STMicro": 3,
-    "Renesas": 3,
+    "STMicro": 2,
     "Broadcom": 2,
-    "HiSilicon": 2,
     "Marvell": 2,
-    "Sequans": 2,
     "Synaptics": 1,
     "Murata": 1,
     "Quectel": 1,
-    "Infineon": 1,
-    "Skyworks": 1,
+    "HiSilicon": 1,
+    "Sequans": 1,
     "Microchip": 1
   },
   "standards_in_flight": [
@@ -3862,7 +3861,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1691,
+      "issues_open": 1672,
       "prs_open": 0,
       "releases": [
         {
@@ -3884,8 +3883,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19019,
-      "pushed_at": "2026-09-14T18:33:17Z"
+      "stars": 19024,
+      "pushed_at": "2026-09-16T04:08:45Z"
     },
     {
       "name": "BlueZ",
@@ -3896,7 +3895,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 112,
+      "issues_open": 117,
       "prs_open": 0,
       "releases": [
         {
@@ -3918,8 +3917,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1147,
-      "pushed_at": "2026-09-15T10:23:12Z"
+      "stars": 1148,
+      "pushed_at": "2026-09-16T00:03:44Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3930,7 +3929,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3862,
+      "issues_open": 3917,
       "prs_open": 0,
       "releases": [
         {
@@ -3952,8 +3951,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16526,
-      "pushed_at": "2026-09-15T12:41:45Z"
+      "stars": 16536,
+      "pushed_at": "2026-09-16T07:33:40Z"
     },
     {
       "name": "Matter SDK",
@@ -3964,7 +3963,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2816,
+      "issues_open": 2805,
       "prs_open": 0,
       "releases": [
         {
@@ -3987,7 +3986,7 @@
         }
       ],
       "stars": 8951,
-      "pushed_at": "2026-09-15T12:56:06Z"
+      "pushed_at": "2026-09-16T04:21:30Z"
     },
     {
       "name": "Linux mac80211",
@@ -4001,8 +4000,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 249071,
-      "pushed_at": "2026-09-14T18:07:30Z"
+      "stars": 249173,
+      "pushed_at": "2026-09-15T19:18:07Z"
     },
     {
       "name": "OpenThread",
@@ -4012,8 +4011,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 79,
-      "issues_open": 158,
+      "commits_30d": 80,
+      "issues_open": 160,
       "prs_open": 0,
       "releases": [
         {
@@ -4035,8 +4034,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4028,
-      "pushed_at": "2026-09-15T00:56:29Z"
+      "stars": 4029,
+      "pushed_at": "2026-09-16T01:38:08Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4047,7 +4046,7 @@
         "ieee15_4"
       ],
       "commits_30d": 27,
-      "issues_open": 457,
+      "issues_open": 456,
       "prs_open": 0,
       "releases": [
         {
@@ -4069,8 +4068,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15634,
-      "pushed_at": "2026-09-14T06:09:02Z"
+      "stars": 15637,
+      "pushed_at": "2026-09-16T06:12:57Z"
     },
     {
       "name": "NimBLE",
