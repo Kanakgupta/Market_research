@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T13:15:20Z",
+  "generated_at": "2026-09-19T13:09:18Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2361,14 +2361,14 @@
           "url": "https://www.newelectronics.co.uk/content/product-launches/eggtronic-unveils-140w-usb-c-power-delivery-reference-design-using-renesas-gan-technology"
         },
         {
+          "title": "Renesas Launches 64-bit RZ/G3L and RZ/G3SE MPUs for Advanced HMI",
+          "date": "Sep 2026",
+          "url": "https://worldbusinessoutlook.com/renesas-launches-64-bit-rz-g3l-and-rz-g3se-mpus-for-advanced-hmi/"
+        },
+        {
           "title": "Renesas Resumes Production at Nishiki Factory to Pre-Earthquake Capacity",
           "date": "Aug 2026",
           "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N43Y01R:0-renesas-production-resumed-at-nishiki-factory-specifying-factory-in-phases-beginning-on-evening-of-july-29-and-returned-to-pre-earthquake-production-capacity-friday-morning/"
-        },
-        {
-          "title": "Renesas Launches Gen 3 MRDIMM Chipset Solutions for DDR5 Memory",
-          "date": "Aug 2026",
-          "url": "https://www.storagenewsletter.com/2026/08/06/fms-2026-renesas-gen-3-mrdimm-chipset-solutions-advance-ddr5-memory-performance-to-16000-mt-s-for-next-gen-ai-and-hpc-applications/"
         }
       ],
       "events": [
@@ -3411,6 +3411,11 @@
           "url": "https://www.01net.it/atmosic-unveils-atm53-series-a-new-era-in-physical-ai-driven-asset-tracking/"
         },
         {
+          "title": "Atmosic Unveils ATM53 Series",
+          "date": "Sep 2026",
+          "url": "https://www.01net.it/atmosic-unveils-atm53-series-a-new-era-in-physical-ai-driven-asset-tracking/"
+        },
+        {
           "title": "Atmosic ATM34/e SoC Now Available Through Mouser for Ultra-Low Power IoT Applications",
           "date": "Jun 2026",
           "url": "https://www.electronicsmedia.info/2026/06/10/atmosic-atm34-e-soc/"
@@ -3764,22 +3769,21 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 116,
-    "MediaTek": 77,
-    "NXP": 39,
-    "TI": 16,
-    "Marvell": 14,
-    "Espressif": 9,
-    "Silicon Labs": 9,
-    "Renesas": 5,
-    "Nordic": 4,
-    "Broadcom": 3,
-    "Apple": 3,
+    "Qualcomm": 109,
+    "MediaTek": 84,
+    "NXP": 36,
+    "Marvell": 13,
+    "TI": 13,
+    "Espressif": 11,
+    "Silicon Labs": 7,
+    "Renesas": 6,
+    "Nordic": 5,
     "Infineon": 3,
+    "Broadcom": 2,
     "Quectel": 2,
     "Atmosic": 1,
+    "Apple": 1,
     "UNISOC": 1,
-    "Onsemi": 1,
     "Skyworks": 1,
     "Synaptics": 1,
     "Qorvo": 1,
@@ -3864,7 +3868,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 115,
+      "issues_open": 113,
       "prs_open": 0,
       "releases": [
         {
@@ -3887,7 +3891,7 @@
         }
       ],
       "stars": 1148,
-      "pushed_at": "2026-09-18T00:52:03Z"
+      "pushed_at": "2026-09-19T00:28:54Z"
     },
     {
       "name": "ESP-IDF",
@@ -3900,7 +3904,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1674,
+      "issues_open": 1677,
       "prs_open": 0,
       "releases": [
         {
@@ -3922,8 +3926,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19046,
-      "pushed_at": "2026-09-18T06:24:31Z"
+      "stars": 19052,
+      "pushed_at": "2026-09-18T18:17:28Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3934,7 +3938,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3909,
+      "issues_open": 3922,
       "prs_open": 0,
       "releases": [
         {
@@ -3956,8 +3960,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16559,
-      "pushed_at": "2026-09-18T12:55:49Z"
+      "stars": 16560,
+      "pushed_at": "2026-09-19T08:40:29Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 249491,
+      "pushed_at": "2026-09-18T23:46:01Z"
     },
     {
       "name": "Matter SDK",
@@ -3968,7 +3987,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2847,
+      "issues_open": 2850,
       "prs_open": 0,
       "releases": [
         {
@@ -3990,23 +4009,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8952,
-      "pushed_at": "2026-09-18T12:17:15Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 249390,
-      "pushed_at": "2026-09-18T00:08:44Z"
+      "stars": 8950,
+      "pushed_at": "2026-09-19T12:13:17Z"
     },
     {
       "name": "OpenThread",
@@ -4016,7 +4020,7 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 75,
+      "commits_30d": 71,
       "issues_open": 157,
       "prs_open": 0,
       "releases": [
@@ -4039,8 +4043,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4032,
-      "pushed_at": "2026-09-18T04:24:41Z"
+      "stars": 4033,
+      "pushed_at": "2026-09-18T20:22:40Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4051,7 +4055,7 @@
         "ieee15_4"
       ],
       "commits_30d": 24,
-      "issues_open": 460,
+      "issues_open": 455,
       "prs_open": 0,
       "releases": [
         {
@@ -4073,8 +4077,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15643,
-      "pushed_at": "2026-09-16T17:21:25Z"
+      "stars": 15650,
+      "pushed_at": "2026-09-18T19:20:29Z"
     },
     {
       "name": "NimBLE",
@@ -4085,11 +4089,11 @@
         "bluetooth"
       ],
       "commits_30d": 22,
-      "issues_open": 272,
+      "issues_open": 273,
       "prs_open": 0,
       "releases": [],
       "stars": 892,
-      "pushed_at": "2026-09-17T23:18:47Z"
+      "pushed_at": "2026-09-18T21:44:42Z"
     },
     {
       "name": "hostap",
