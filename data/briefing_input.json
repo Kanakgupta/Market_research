@@ -1,340 +1,194 @@
 {
-  "generated_at": "2026-09-19T13:09:18Z",
+  "generated_at": "2026-09-21T13:10:05Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Teardown confirms US iPhone 18 Pro Max lacks Apple's C2 modem",
-      "url": "https://appleinsider.com/articles/26/09/19/teardown-confirms-us-iphone-18-pro-max-lacks-apples-c2-modem",
-      "source": "AppleInsider",
-      "date": "2026-09-19",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "A teardown of the iPhone 18 Pro Max has confirmed an oddity of the US-based model, in that it uses a Qualcomm modem instead of Apple's C2 chip.\nApple's introduction of the iPhone 18 Pro line included a lot of hype about its use of the C2 modem. It turns out not to be the case for the iPhone 18 Pro M"
-    },
-    {
-      "title": "TP-Link brings Wi-Fi 8 home routers closer to a consumer launch",
-      "url": "https://inews.zoombangla.com/tp-link-wifi-8-home-routers-consumer-launch/",
-      "source": "iNews Zoombangla",
-      "date": "2026-09-19",
-      "vendor": null,
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "TP-Link has moved its Wi-Fi 8 plans from a technology preview toward a consumer rollout, with the company\u2019s first Wi-Fi 8 router platform and a broader lineup announced for 2026. Android Headlines listed the development among its latest technology stories on September 18, while TP-Link\u2019s own release"
-    },
-    {
-      "title": "Apple weekend deals: AirPods up to $100 off, Apple Watch Series 12, MacBook Air, Mac mini, more",
-      "url": "https://9to5mac.com/2026/09/19/apple-weekend-deals-airpods-apple-watch/",
+      "title": "M6 Mac mini review: Apple\u2019s most versatile Mac continues to shine",
+      "url": "https://9to5mac.com/2026/09/21/m6-mac-mini-review/",
       "source": "9to5Mac",
-      "date": "2026-09-19",
+      "date": "2026-09-21",
+      "vendor": "Apple",
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Over the last several years, the Mac mini has become one of the most compelling Macs in Apple\u2019s lineup. It combines impressive performance with a compact footprint, making it versatile enough for all kinds of workflows. I\u2019ve spent the last week using the M6 Mac mini, and it pushes that formula even "
+    },
+    {
+      "title": "Apple Fitness+ team hit by layoffs, as \u2018major changes\u2019 reportedly loom",
+      "url": "https://9to5mac.com/2026/09/21/apple-fitness-team-hit-by-layoffs-as-major-changes-reportedly-loom/",
+      "source": "9to5Mac",
+      "date": "2026-09-21",
       "vendor": null,
       "customer": "Apple",
-      "application": "Audio / Speaker",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "Your weekend Apple deals have arrived, much like the first wave of iPhone 18 Pro orders and all of the discounts we are tracking on cases and accessories as part of Amazon\u2019s early fall Prime Day deals. Those offers join a $50 price drop on AirPods Pro 3, and the $100 discount AirPods Max 2. Alongsid"
+      "summary": "Apple is assessing the future of Apple Fitness+, according to a new Bloomberg report. The company has reportedly laid off a \u201chandful of employees\u201d working on the service, a move viewed as just the beginning of bigger changes still to come. more\u2026"
     },
     {
-      "title": "iPhone 18 Pro Max still uses a Qualcomm modem in the US, teardown confirms",
-      "url": "https://9to5mac.com/2026/09/19/iphone-18-pro-max-still-uses-a-qualcomm-modem-in-the-us-teardown-confirms/",
-      "source": "9to5Mac",
-      "date": "2026-09-19",
+      "title": "Can Cars And Data Centers Carry Qualcomm Stock Past Apple?",
+      "url": "https://www.trefis.com/stock/qcom/articles/616030/can-cars-and-data-centers-carry-qualcomm-stock-past-apple/2026-09-21",
+      "source": "Trefis",
+      "date": "2026-09-21",
       "vendor": "Qualcomm",
       "customer": "Apple",
       "application": "Automotive",
       "buckets": [],
-      "summary": "TechInsights has published one of the first in-depth iPhone 18 Pro Max teardowns. Most notably, the teardown confirms that the iPhone 18 Pro Max sold in the United States still uses a Qualcomm modem. more\u2026"
+      "summary": "Can Cars And Data Centers Carry Qualcomm Stock Past Apple?\nQualcomm (QCOM) stock is up about 37% over the past six months, even after falling 21% over the past three. The case for the next leg rests outside phones, where management expects growth fast enough to cover a shrinking Apple business. The "
     },
     {
-      "title": "NXP Semiconductors stock edges higher as dividend and analyst upside support valuation",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-stock-edges-higher-as-dividend-and-analyst-upside/70131551",
-      "source": "AD HOC NEWS",
-      "date": "2026-09-19",
-      "vendor": "NXP",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "NXP Semiconductors stock edges higher as dividend and analyst upside support valuation\nPublished on 09/19/2026 at 13:21 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSNXP Semiconductors N.V. stock (ISIN NL0009538779) closed at USD 228.03 on Nasdaq on September 18, 2026, slight"
-    },
-    {
-      "title": "iPhone 18 Pro Max\u2019s battery is so big Apple had to add this new feature to iOS 27",
-      "url": "https://9to5mac.com/2026/09/19/iphone-18-pro-maxs-battery-is-so-big-apple-had-to-add-this-new-feature-to-ios-27/",
-      "source": "9to5Mac",
-      "date": "2026-09-19",
+      "title": "Apple\u2019s clever software solution lets iPhone batteries skirt shipping limits",
+      "url": "https://www.theverge.com/tech/998144/apple-iphone-18-pro-max-battery-firmware-limit",
+      "source": "The Verge",
+      "date": "2026-09-21",
       "vendor": null,
       "customer": "Apple",
-      "application": "Industrial",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "The iPhone 18 Pro Max offers a huge jump in battery life, partly because the battery itself is physically larger. In a new support document published today, Apple says the iPhone 18 Pro Max has such a big battery that it has additional shipping requirements. more\u2026"
+      "summary": "Apple has developed an unexpected workaround to prevent the iPhone 18 Pro Max from being hit by shipping restrictions on big batteries. There's a \"battery-firmware solution\" in place on the new iPhones, according to Apple's support page, which keeps capacity below the 20Wh limit for single-cell batt"
     },
     {
-      "title": "Apple\u2019s iPhone 18 Pro Max still can\u2019t quit Qualcomm in the US",
-      "url": "https://www.digitaltrends.com/phones/apples-iphone-18-pro-max-still-cant-quit-qualcomm-in-the-us/",
-      "source": "Digital Trends",
-      "date": "2026-09-19",
-      "vendor": "Qualcomm",
+      "title": "You can now claim your payout from Apple\u2019s $250 million Siri settlement",
+      "url": "https://9to5mac.com/2026/09/21/you-can-now-claim-your-payout-from-apples-250-million-siri-settlement/",
+      "source": "9to5Mac",
+      "date": "2026-09-21",
+      "vendor": null,
       "customer": "Apple",
-      "application": null,
+      "application": "Automotive",
       "buckets": [],
-      "summary": ""
+      "summary": "The major class action lawsuit against Apple over Siri and Apple Intelligence delays continues to progress. Apple is expected to pay $250 million to settle the lawsuit, and you can now submit your claim to get a chunk of that payout. Here\u2019s how. more\u2026"
     },
     {
-      "title": "8 Best PCIe Wi-Fi Cards for Desktops 2026",
-      "url": "https://www.propelrc.com/best-pcie-wi-fi-cards-for-desktops/",
-      "source": "Propel RC",
-      "date": "2026-09-19",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Audio / Speaker",
+      "title": "Bluetooth IC Market Shifts Toward IoT as Edge AI and Positioning Gain Ground",
+      "url": "https://iotbusinessnews.com/2026/09/21/bluetooth-ic-market-shifts-toward-iot-as-edge-ai-and-positioning-gain-ground/",
+      "source": "IoT Business News",
+      "date": "2026-09-21",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Embedded / Electronics",
       "buckets": [
-        "wifi",
         "bluetooth"
       ],
-      "summary": "8 Best PCIe Wi-Fi Cards for Desktops 2026\nI have built, upgraded, and stress-tested desktop networking on more rigs than I can count, and I can tell you without hesitation: the fastest PCIe Wi-Fi cards for desktops in 2026 come down to chipset, antenna design, and whether your router can keep up. Af"
+      "summary": "The Bluetooth market continues to expand across a broader range of IoT applications. New Bluetooth standards and features are opening opportunities in secure access, asset tracking, and ultra-low-power sensors. At the same time, edge AI is increasing the value of Bluetooth SoCs beyond wireless conne"
     },
     {
-      "title": "MediaTek stock holds firm as investors digest latest earnings and AI chip strategy",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-stock-holds-firm-as-investors-digest-latest-earnings-and-ai-chip/70130541",
-      "source": "AD HOC NEWS",
-      "date": "2026-09-19",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "MediaTek stock holds firm as investors digest latest earnings and AI chip strategy\nPublished on 09/19/2026 at 11:44 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSMediaTek stock (ISIN TW0002454006) remains supported by its latest quarterly figures, with investors continuing to"
-    },
-    {
-      "title": "Qualcomm stock falls sharply as investors reassess iPhone and AI outlook",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qualcomm-stock-falls-sharply-as-investors-reassess-iphone-and-ai-outlook/70130120",
-      "source": "AD HOC NEWS",
-      "date": "2026-09-19",
+      "title": "AI Networking Bet Sends Qualcomm, Lumentum Shares Higher",
+      "url": "https://finance.yahoo.com/technology/ai/articles/ai-networking-bet-sends-qualcomm-121316291.html",
+      "source": "Yahoo Finance",
+      "date": "2026-09-21",
       "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
+      "customer": null,
+      "application": null,
       "buckets": [],
-      "summary": "Qualcomm stock falls sharply as investors reassess iPhone and AI outlook\nPublished on 09/19/2026 at 11:08 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSQualcomm Incorporated stock (ISIN US7475251036) came under renewed pressure on September 18, 2026, as the shares fell more t"
+      "summary": "This article first appeared on GuruFocus.\nLumentum Holdings (NASDAQ:LITE) and Qualcomm (NASDAQ:QCOM) shares moved higher Monday after the companies, alongside Corning (NYSE:GLW), revealed plans to demonstrate a high-density optical interconnect platform designed for next-generation AI infrastructure"
     },
     {
-      "title": "Huaruizhipu Praxis One Brings ~106 TOPS Embodied Edge Compute on MediaTek Genio Pro 5100",
-      "url": "https://pandaily.com/huaruizhipu-praxis-one-mediatek-genio-pro-5100-edge",
-      "source": "Pandaily",
-      "date": "2026-09-19",
-      "vendor": "MediaTek",
+      "title": "Lumentum, Qualcomm, and Corning to Demonstrate High-Density 1060 nm VCSEL Optical D2D Connectivity for AI Scale-Up at ECOC 2026",
+      "url": "https://www.01net.it/lumentum-qualcomm-and-corning-to-demonstrate-high-density-1060-nm-vcsel-optical-d2d-connectivity-for-ai-scale-up-at-ecoc-2026/",
+      "source": "01net",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
       "customer": null,
       "application": null,
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "TechInsights finds a Qualcomm X80 modem inside the US iPhone 18 Pro Max",
-      "url": "https://www.macobserver.com/news/techinsights-qualcomm-x80-modem-us-iphone-18-pro-max/",
-      "source": "The Mac Observer",
-      "date": "2026-09-19",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "TechInsights\u2019 preliminary teardown of the iPhone 18 Pro Max found a Qualcomm Snapdragon X80 modem inside, not Apple\u2019s own C2. The unit it opened is model A3473, the US version of the phone, and Apple\u2019s own US specs page quietly agrees: it lists the Apple C2 cellular modem for iPhone 18 Pro but not f"
-    },
-    {
-      "title": "Hangsheng, NXP Establish Joint Technology Innovation Lab, Accelerating Automotive AI Innovation",
-      "url": "https://autonews.gasgoo.com/articles/news/hangsheng-nxp-establish-joint-technology-innovation-lab-accelerating-automotive-ai-innovation-2101155526062047232",
-      "source": "Gasgoo",
-      "date": "2026-09-19",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Gasgoo Munich- Hangsheng Electronics and NXP Semiconductors recently held a signing and unveiling ceremony in Shenzhen for their joint technology innovation lab. The official launch of the lab marks a significant shift for the partnership, moving it from the initial stage of strategic planning into "
-    },
-    {
-      "title": "Qualcomm (QCOM) Joins New Edge AI Ecosystem",
-      "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-joins-edge-ai-041937210.html",
-      "source": "finance.yahoo.com",
-      "date": "2026-09-19",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "-\nQUALCOMM (NasdaqGS:QCOM) has joined Advantech and other partners in the new WEDA edge AI ecosystem to support scalable deployments across varied hardware.\n-\nThe WEDA collaboration focuses on simplifying edge AI solutions by standardising tools and reference designs for industrial and enterprise us"
-    },
-    {
-      "title": "TSMC Scores Another 2nm Win: MediaTek's Dimensity 9600 Pro to Use N2P Process",
-      "url": "https://finance.biggo.com/news/3734e880-304e-4f9d-8149-b294912ed478",
-      "source": "finance.biggo.com",
-      "date": "2026-09-19",
-      "vendor": "MediaTek",
-      "customer": "Apple",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "TSMC Scores Another 2nm Win: MediaTek's Dimensity 9600 Pro to Use N2P Process\nTaiwan Semiconductor Manufacturing (2330.TW) has further extended its lead in the advanced process race. Following Apple, MediaTek's (2454.TW) latest flagship mobile chip, the \"Dimensity 9600 Pro,\" is confirmed to use TSMC"
-    },
-    {
-      "title": "The U.S. variant of the iPhone 18 Pro Max features Qualcomm\u2019s Snapdragon X80 Modem",
-      "url": "https://appleosophy.com/2026/09/18/the-u-s-variant-of-the-iphone-18-pro-max-features-qualcomms-snapdragon-x80-modem/",
-      "source": "Appleosophy",
-      "date": "2026-09-19",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "Last week, Apple introduced its most advanced cellular modem: the C2 modem, and it\u2019s available on both the iPhone 18 Pro Max and the iPhone Duo; however, not all variants of these models are created equal, as we reported that the iPhone 18 Pro Max sold in the U.S. is apparently skipping the C2 modem"
-    },
-    {
-      "title": "Nanoleaf Matter Smart Floor Lamp (Review)",
-      "url": "https://www.pocnetwork.net/product-reviews/nanoleaf-matter-smart-floor-lamp/",
-      "source": "Poc Network // Tech",
-      "date": "2026-09-19",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "Once again, we have another smart home product from Nanoleaf, this time it is the Matter Smart Floor Lamp. A slim, freestanding smart light designed to add ambient and accent lighting to a room without the hassle of mounting panels on a wall or stringing light strips around furniture.\nNanoleaf has b"
-    },
-    {
-      "title": "OpenMote \u2013 An ESP32-S3 programmable universal remote in a Wiimote shell (Crowdfunding)",
-      "url": "https://www.cnx-software.com/2026/09/19/openmote-an-esp32-s3-programmable-universal-remote-in-a-wiimote-shell/",
-      "source": "CNX Software",
-      "date": "2026-09-19",
-      "vendor": "Espressif",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "bluetooth",
-        "wifi"
-      ],
-      "summary": "Hat &#38; Hammer has launched the OpenMote, an ESP32-S3-powered programmable universal remote that adopts the familiar, nostalgic form factor of a Nintendo Wiimote. It features WiFi, Bluetooth LE, an infrared (IR) transceiver, a 6-axis IMU, and Home Assistant integration, letting it control smart ho"
-    },
-    {
-      "title": "Gemini app for macOS adding send and read iMessage integration",
-      "url": "https://9to5google.com/2026/09/18/gemini-macos-imessage/",
-      "source": "9to5Mac",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Google\u2019s latest update to the Gemini app for macOS readies local iMessage integration. This follows the app coming to Windows last week. more\u2026"
-    },
-    {
-      "title": "MediaTek, Vivo bring 30B MoE models on-device in next AI phone race",
-      "url": "https://www.digitimes.com/news/a20260918PD224/mediatek-vivo-dimensity-smartphone-flagship.html",
-      "source": "digitimes",
-      "date": "2026-09-18",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Access denied\nSorry, unusual traffic from your computer network.\nYour IP (73.92.166.158) has been blocked temporarily.\nTo provide quality services to our members, DIGITIMES blocks IPs if large volume of traffic coming from a single IP address.\nIf you see this page during normal browsing, please cont"
-    },
-    {
-      "title": "The Quantified Scientist tests the Apple Watch Series 12\u2019s new heart rate sensor",
-      "url": "https://9to5mac.com/2026/09/18/the-quantified-scientist-tests-the-apple-watch-series-12s-new-heart-rate-sensor/",
-      "source": "9to5Mac",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "In a new video, The Quantified Scientist\u2019s Rob ter Horst compares the new Apple Watch Series 12\u2019s heart rate sensor against a Polar H10 ECG chest strap. Here\u2019s what he found. more\u2026"
-    },
-    {
-      "title": "Friday Night Open Thread: Stacking wins edition",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-discussion/174877/friday-night-open-thread-stacking-wins-edition",
-      "source": "Behind the Steel Curtain",
-      "date": "2026-09-18",
+      "title": "Buffalo Sabres Open Thread, Wk of 9/21",
+      "url": "https://www.diebytheblade.com/buffalo-sabres-open-thread-wk-of-9-21/",
+      "source": "diebytheblade.com",
+      "date": "2026-09-21",
       "vendor": null,
       "customer": null,
       "application": null,
       "buckets": [
         "thread"
       ],
-      "summary": "Welcome back to BTSC\u2019s Friday night open thread:\nFriday Night Open Thread: Stacking wins edition\nCome through. Stay awhile.\n- It was an up-and-down Week 1 for the Steelers, but they enter Week 2 with a 1-0 record. Which Steelers were you most impressed by in the opening week of football?\n- This week"
+      "summary": "Things are already heating up because guess what, hockey season is basically here!\nThere are four preseason games this week, here\u2019s how to watch and listen. We\u2019re going to have a game thread for each of the games as well.\nMonday, Sept. 21 at Pittsburgh \u2013 7 p.m.\n- Watch: Broadcast on MSG (Sportsnet P"
     },
     {
-      "title": "The 5 Best NETGEAR Routers of 2026",
-      "url": "https://www.rtings.com/router/reviews/netgear",
-      "source": "RTINGS.com",
-      "date": "2026-09-18",
-      "vendor": "MediaTek",
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Best\nWi-Fi Routers\nMesh Wi-Fi Systems\nGaming\nCable Modem-Router Combos\nWi-Fi 7\nSpectrum\nFiber Internet\nLarge Homes\nTravel\nXfinity\nBudget And Cheap\nLong-Range\nASUS\nWi-Fi 6\nNETGEAR\nTP-Link\nStreaming\nTools\nCompare\nResults Table Tool\nReview List\nReview Index\nGraph\nReview Pipeline\nVote\nCustom Ratings\nPop"
-    },
-    {
-      "title": "Mets vs Phillies: Lineups, broadcast info, and open thread, 9/18/26",
-      "url": "https://www.amazinavenue.com/new-york-mets-discussion/100879/mets-vs-phillies-lineups-broadcast-info-and-open-thread-9-18-26-thornton-urquidy",
-      "source": "Amazin' Avenue",
-      "date": "2026-09-18",
-      "vendor": null,
+      "title": "Cracker Barrel Old Country Store and Qualcomm have been highlighted as Zacks Bull and Bear of the Day",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/cracker-barrel-old-country-store-115300760.html",
+      "source": "Yahoo Finance",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
       "customer": "Apple",
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Mets vs Phillies: Lineups, broadcast info, and open thread, 9/18/26\nThe Mets hope to even the series and (partially) dash Philly\u2019s playoff hopes.\nFrancisco Lindor - SS\nJuan Soto - LF\nBo Bichette - 3B\nCarson Benge - RF\nMark Vientos - DH\nA.J. Ewing - CF\nMarcus Semien - 2B\nBrett Baty - 1B\nLuis Torrens "
-    },
-    {
-      "title": "Tapo\u2019s Matter-Compatible Dimmer Switch Drops Below $15",
-      "url": "https://sammyguru.com/tapo-matter-smart-dimmer-switch-deal-14-99/",
-      "source": "SammyGuru",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "SammyGuru is reader-supported. We have affiliate and sponsored partnerships, so we may earn a commission when you buy through links on our site \u2014 at no extra cost to you. Learn more.\nSave $5.00 (25%)\nPrice and availability can change. We may earn a commission if you buy through this link.\nIn this ar"
-    },
-    {
-      "title": "Anthropic\u2019s first embedded evaluator is\u00a0\u2026 Accenture?",
-      "url": "https://techcrunch.com/2026/09/18/anthropics-first-embedded-evaluator-is-accenture/",
-      "source": "TechCrunch",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": null,
-      "application": "Embedded / Electronics",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "Dario Amodei\u2019s plans to put third-party safety evaluators inside AI labs are taking shape: Anthropic said that staff from technology consulting giant Accenture will begin working inside the company to scrutinize its models and staff.\nIn a blog post, Anthropic said that Faculty, a company Accenture a"
+      "summary": "For Immediate Release\nChicago, IL \u2013 September 21, 2026 \u2013 Zacks Equity Research shares Cracker Barrel Old Country Store CBRL as the Bull of the Day and Qualcomm QCOM as the Bear of the Day. In addition, Zacks Equity Research provides analysis on Goldman Sachs GS, Interactive Brokers Group IBKR and Ta"
     },
     {
-      "title": "TECH WATCH: Is Europe\u2019s Wi-Fi future under threat? \u2013 with Alex Roytblat, Wi-Fi Alliance - Wi-Fi NOW Global",
-      "url": "https://wifinowglobal.com/news-blog/tech-watch-is-europes-wi-fi-future-under-threat-with-alex-roytblat-wi-fi-alliance/",
-      "source": "Wi-Fi NOW Global",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Embedded / Electronics",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "While big parts of the world have already allocated the upper half of the 6 GHz band to Wi-Fi, Europe is still hesitating. So is Europe\u2019s Wi-Fi future threatened? We\u2019ll get the latest insights from Wi-Fi Alliance\u2019s VP of Regulatory Affairs, Alex Roytblat.\nWi-Fi Industry News\nSeptember 19, 2026 [Week"
-    },
-    {
-      "title": "A Look at Qualcomm Inc (QCOM) After 5.8% Decline -- GF Value $17",
-      "url": "https://www.gurufocus.com/news/9088597/a-look-at-qualcomm-inc-qcom-after-58-decline-gf-value-17565-vs-price-17772",
-      "source": "GuruFocus",
-      "date": "2026-09-18",
+      "title": "Tech Triumvirate Joins Forces: Qualcomm (QCOM.US), Lumentum (LITE.US), and Corning (GLW.US) to Jointly Demonstrate Optical Interconnects, Targeting AI Horizontal Scaling Architectures",
+      "url": "https://www.moomoo.com/news/post/76532294/tech-triumvirate-joins-forces-qualcomm-qcomus-lumentum-liteus-and-corning",
+      "source": "Moomoo",
+      "date": "2026-09-21",
       "vendor": "Qualcomm",
       "customer": null,
       "application": null,
       "buckets": [],
-      "summary": ""
+      "summary": "\u8bf7\u542f\u7528 JavaScript"
+    },
+    {
+      "title": "Bear of the Day: Qualcomm (QCOM)",
+      "url": "https://www.tradingview.com/news/zacks:33059c749094b:0-bear-of-the-day-qualcomm-qcom/",
+      "source": "TradingView",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Bear of the Day: Qualcomm (QCOM)\nThere\u2019s an old saying in business, \u201cYou don\u2019t want to stand in front of a freight train.\u201d But there\u2019s another rule that matters just as much. You don\u2019t want to stand underneath falling earnings estimates. That\u2019s where today\u2019s Bear of the Day sits. Estimates creeping "
+    },
+    {
+      "title": "Teardown details the iPhone 18 Pro\u2019s mechanical camera",
+      "url": "https://www.theverge.com/tech/998108/apple-iphone-18-pro-max-camera-ifixit-teardown",
+      "source": "The Verge",
+      "date": "2026-09-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "iFixit's latest device teardown shows us the inner workings of the new variable aperture lens inside Apple's iPhone 18 Pro and 18 Pro Max, alongside some repair concerns to be mindful of. The adjustable mechanical iris opens and closes magnetically, controlling how much light should pass through to "
+    },
+    {
+      "title": "Motorola Signature 27 launches tomorrow with details teased",
+      "url": "https://www.techadvisor.com/article/3238888/motorola-signature-27-launches-tomorrow-specs-colours-teased.html",
+      "source": "Tech Advisor",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": "Motorola",
+      "application": null,
+      "buckets": [],
+      "summary": "A new flagship phone will be announced at the Qualcomm Snapdragon Summit and Motorola is doing something interesting with materials\nendif; ?>In summary:\n- Tech Advisor reports that Motorola is set to unveil the Signature 27 on 22 September, sooner than many expected, with the announcement coinciding"
+    },
+    {
+      "title": "Wi-Fi\u00ae (MAC/PHY) - WiFi Alliance - wi-fi.org",
+      "url": "https://www.wi-fi.org/wi-fi-macphy",
+      "source": "wi-fi.org",
+      "date": "2026-09-21",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "Wi-Fi\u00ae (MAC/PHY) - WiFi Alliance&nbsp;&nbsp;wi-fi.org"
+    },
+    {
+      "title": "Lumentum, Qualcomm, Corning to Showcase Optical D2D Interconnect for AI",
+      "url": "https://www.marketscreener.com/news/lumentum-qualcomm-corning-to-showcase-optical-d2d-interconnect-for-ai-ce785adbda81f623",
+      "source": "marketscreener.com",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Lumentum, Qualcomm, Corning to Showcase Optical D2D Interconnect for AI Published on 09/21/2026 at 06:02 am EDT MT Newswires This article is reserved for our members.Log in to continueLog inCreate an account Continue with Google Continue with Apple Continue with LinkedIn or by emailContinue with an "
     },
     {
       "title": "- Google",
       "url": "https://www.google.com/m/storepages?q=amazon.in&c=IN&hl=en-IN",
       "source": "Google",
-      "date": "2026-09-18",
+      "date": "2026-09-21",
       "vendor": null,
       "customer": "Google",
       "application": null,
@@ -342,172 +196,344 @@
       "summary": "About this page\nStore ratings are based on customer reviews and other data from Google and/or its partners.\nGoogle's Top Quality Store badge is earned by merchants that provide a great shopping experience.\nInformation on delivery, returns and support is based on customer reviews and surveys, and som"
     },
     {
-      "title": "Microsoft agentically ports Copilot runtime to Rust for $120K",
-      "url": "https://www.theregister.com/devops/2026/09/18/microsoft-agentically-ports-copilot-runtime-to-rust-for-120k/5297549",
-      "source": "The Register",
-      "date": "2026-09-18",
+      "title": "Gaming on the Pixel 11 is a mess, and I traced it to one hidden setting",
+      "url": "https://www.androidauthority.com/pixel-11-gaming-stutter-genshin-impact-fix-3712770/",
+      "source": "Android Authority",
+      "date": "2026-09-21",
       "vendor": null,
-      "customer": "Microsoft",
+      "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "TOP STORIES\nAI\n-\nMicrosoft agentically ports Copilot runtime to Rust for $120K\nThe Rust compiler remains unperturbed by the antics of the LLM\n-\nVirginia governor wakes up to fact datacenters have become political cancer\nExecutive order puts the kibosh on NDAs, limits permitting, and calls for stiffe"
+      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\nGaming on the Pixel 11 is a mess, and I traced it to one hidden setting\nSep 21, 2026 \u2014 6:00 AM ET\nThe Pixel 11 series hasn\u2019t gotten off to a great start for gamers. Gameplay performance is about as hit-and-miss as everyone ex"
     },
     {
-      "title": "OpenAI and Microsoft knew they were starting a \u2018doom loop\u2019 for the web",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/997633/openai-microsoft-chatgpt-ai-new-york-times-doom-loop-theft-google-zero",
+      "title": "Qualcomm's Snapdragon Summit Highlights AI and New Processors",
+      "url": "https://intellectia.ai/news/stock/qualcomms-snapdragon-summit-highlights-ai-and-new-processors",
+      "source": "Intellectia AI",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Qualcomm's Snapdragon Summit Highlights AI and New Processors\nWritten by Emily J. Thompson, Senior Investment Analyst\nUpdated: 37 minutes ago\n0mins\nSource: stocktwits\n- Processor Launch: Qualcomm is set to unveil the Snapdragon 8 Elite Gen 6 and its high-end variant at the Snapdragon Summit in Hawai"
+    },
+    {
+      "title": "GEYOTO N300 vs Anker SOLIX C300: Which 300W Portable Power Station Is Better?",
+      "url": "https://www.einnews.com/pr_news/943918998/geyoto-n300-vs-anker-solix-c300-which-300w-portable-power-station-is-better",
+      "source": "EIN News",
+      "date": "2026-09-21",
+      "vendor": null,
+      "customer": "Eufy/Anker",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Lumentum, Qualcomm, Corning partner on AI optical tech; shares rise (LITE:NASDAQ)",
+      "url": "https://seekingalpha.com/news/4644637-lumentum-qualcomm-corning-partner-on-ai-optical-tech-shares-rise",
+      "source": "Seeking Alpha",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Lumentum (LITE) on Monday unveiled plans for a joint demonstration together with Qualcomm (QCOM) and Corning (GLW) of a high-density die-to-die optical interconnect showcase for AI scale-up architectures at ECOC 2026.\nThe board-level demonstration will combine a D2D interface IP\nTo ensure this doesn"
+    },
+    {
+      "title": "Lava Virat Curve 5G launches with MediaTek Dimensity 7100 and 50MP camera",
+      "url": "https://timesofindia.indiatimes.com/technology/mobiles-tabs/lava-virat-curve-5g-launches-with-mediatek-dimensity-7100-and-50mp-camera/articleshow/134385721.cms",
+      "source": "The Times of India",
+      "date": "2026-09-21",
+      "vendor": "MediaTek",
+      "customer": "Sony",
+      "application": null,
+      "buckets": [],
+      "summary": "Lava has expanded its product portfolio with the launch of Virat Curve 5G. The new Lava smartphone features a 3D Curved AMOLED display, premium vegan leather finish, distinctive Rear Mini Screen, powerful imaging capabilities, Vayu AI and enduring battery life in a compact, premium footprint. Lava V"
+    },
+    {
+      "title": "Amazon doesn\u2019t trust Meta\u2019s Muse AI agent",
+      "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping",
       "source": "The Verge",
-      "date": "2026-09-18",
+      "date": "2026-09-21",
       "vendor": null,
-      "customer": "Microsoft",
-      "application": "Wearable",
+      "customer": "Amazon",
+      "application": null,
       "buckets": [],
-      "summary": "Recently unsealed court documents in the New York Times' case against OpenAI and Microsoft are pretty damning. The companies' own documentation warned that it was starting a \"doom loop\" that would damage the web, characterized its scraping of data to train its models as the \"largest theft of labor i"
+      "summary": "Meta's Muse AI agent has been blocked from shopping Amazon on behalf of its users, GeekWire reports. A popup message started appearing on Sunday for Muse users saying that \"continued access by an unauthorized AI agent violates Amazon's Conditions of Use, to which our customers have agreed.\" Accordin"
     },
     {
-      "title": "An AirPods Pro 3 Owner Accidentally Broke The Wireless Earbuds While Replacing An Eartip, But This Accident Made Him Realize That He Purchased A Counterfeit Product",
-      "url": "https://wccftech.com/airpods-pro-3-owner-breaks-earbuds-replacing-eartip-discovers-fake/",
-      "source": "Wccftech",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Apple",
+      "title": "MediaTek stock jumps on record-breaking Taiwan rally and convertible bond deal - ad-hoc-news.de",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-stock-jumps-on-record-breaking-taiwan-rally-and-convertible-bond/70143196",
+      "source": "ad-hoc-news.de",
+      "date": "2026-09-21",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "MediaTek stock jumps on record-breaking Taiwan rally and convertible bond deal\nPublished on 09/21/2026 at 11:17 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSMediaTek stock (ISIN TW0002454006) extended its strong run on the Taiwan Stock Exchange on September 21, 2026, with th"
+    },
+    {
+      "title": "QCOM Stock Inches Higher After Worst Drop In Three Months: Traders Eye Snapdragon Summit For Cues",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/qcom-stock-inches-higher-worst-090515172.html",
+      "source": "Yahoo Finance",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": "Amazon",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "-\nSnapdragon Summit is expected to spotlight Qualcomm's next flagship smartphone processors and on-device AI push.\n-\nThe chipmaker is broadening beyond handsets with new opportunities across PCs, automotive, IoT and data centers.\n-\nQCOM is recovering after a 5.8% drop on Friday, with shares still up"
+    },
+    {
+      "title": "MediaTek unveils 2nm smartphone chip",
+      "url": "https://www.newsofbahrain.com/trends/141542.html",
+      "source": "News of Bahrain",
+      "date": "2026-09-21",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "MediaTek unveils 2nm smartphone chip\nTDT | Manama\nEmail: mail@newsofbahrain.com\nMediaTek has unveiled its Dimensity 9600 Pro, a flagship smartphone processor built using TSMC\u2019s advanced 2nm process. The chip is designed to deliver higher performance while reducing power consumption, with MediaTek re"
+    },
+    {
+      "title": "Realtek RTL8773J \u2013 A Bluetooth 7-ready Cortex-M55/M33 microcontroller with HDT support",
+      "url": "https://www.cnx-software.com/2026/09/21/realtek-rtl8773j-a-bluetooth-7-ready-cortex-m55-m33-microcontroller-with-hdt-support/",
+      "source": "CNX Software",
+      "date": "2026-09-21",
+      "vendor": "Realtek",
+      "customer": "Amazon",
       "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "You\u2019d be shocked to learn how crafty counterfeit product peddlers have become so adept in mimicking the AirPods Pro 3, with the copycats sporting attention to detail that reaches to the serial number font. Sadly, one owner found out the hard way when he broke his pair of earbuds, only to realize tha"
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Realtek RTL8773J Series is the first Bluetooth 7-ready microcontroller family we&#8217;ve seen so far. It features a dual-core design with a 200 MHz Cortex-M55 application core and a Cortex-M33 sensor and network core, along with DSPs for high-fidelity codec processing and an accelerator for ANC, Ta"
     },
     {
-      "title": "Pixelated 117: Googlebook Eve",
-      "url": "https://9to5google.com/2026/09/18/pixelated-117-googlebook-eve/",
-      "source": "9to5Google",
-      "date": "2026-09-18",
+      "title": "Joytutus Introduces Wireless CarPlay Baby Monitor for In-Car Rear Seat Viewing",
+      "url": "https://www.einnews.com/pr_news/943907781/joytutus-introduces-wireless-carplay-baby-monitor-for-in-car-rear-seat-viewing",
+      "source": "EIN News",
+      "date": "2026-09-21",
       "vendor": null,
-      "customer": "Apple",
+      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "Welcome to Pixelated episode 117. This week, Damien and Will discuss Android 17 QPR1 and the upcoming launch of Android on laptops. Enjoy the episode? You can listen to our brand new weekly members-only Pixelated Pro bonus episode by signing up for 9to5Google Pro for just $5 per month. Sponsored by "
+      "summary": ""
     },
     {
-      "title": "iOS 27 and iPadOS 27 expand language support for Dictionary, QuickType Keyboard, more",
-      "url": "https://9to5mac.com/2026/09/18/ios-27-and-ipados-27-expand-language-support-for-dictionary-quicktype-keyboard-more/",
-      "source": "9to5Mac",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Apple",
+      "title": "MediaTek Dimensity CX C10 Max brings an all big core CPU and 55 TOPS NPU to thin and light laptops",
+      "url": "https://mightygadget.com/mediatek-dimensity-cx-c10-max-announced/",
+      "source": "Mighty Gadget",
+      "date": "2026-09-21",
+      "vendor": "MediaTek",
+      "customer": "Samsung",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Apple today updated its iOS and iPadOS 27 Feature Availability page, confirming that more than 30 new languages and language variants are now supported across features such as Dictionary: Thesaurus, Activate with Siri, and Visual Look Up. Here\u2019s what\u2019s new. more\u2026"
+      "summary": "MediaTek Dimensity CX C10 Max brings an all big core CPU and 55 TOPS NPU to thin and light laptops\nMediaTek has announced the Dimensity CX C10 Max, a new flagship system on chip for laptops, detachables and tablets. It is the first flagship processor in the Dimensity CX family, the computing branch "
     },
     {
-      "title": "Accenture and Anthropic Partner to Build Team of Embedded Evaluators at Anthropic",
-      "url": "https://finance.yahoo.com/technology/ai/articles/accenture-anthropic-partner-build-team-201500758.html",
-      "source": "finance.yahoo.com",
-      "date": "2026-09-18",
+      "title": "AI, Crypto Mining Expose Global Compute Infrastructure Constraints",
+      "url": "https://www.eetimes.com/ai-crypto-mining-expose-global-compute-infrastructure-constraints/",
+      "source": "EE Times",
+      "date": "2026-09-21",
       "vendor": null,
       "customer": null,
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "Each company expects to invest at least $1 billion in building AI safely over the next five years\nNEW YORK & SAN FRANCISCO, September 18, 2026--(BUSINESS WIRE)--Accenture (NYSE: ACN) and Anthropic today announced that they are partnering to establish a team of embedded evaluators to work alongside A"
+      "summary": "Global semiconductor bottlenecks, multi-year foundry lead times, and rising trade friction leave European compute infrastructure supply-constrained amid surging AI and blockchain hardware demand. The post AI, Crypto Mining Expose Global Compute Infrastructure Constraints appeared first on EE Times."
     },
     {
-      "title": "After your iOS 27 upgrade, do these 5 things first",
-      "url": "https://www.zdnet.com/tech/5-things-to-do-after-upgrading-to-ios-27/",
-      "source": "ZDNET",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "You\u2019ve just bought a brand new iPhone or upgraded the operating system on your current phone. Either way, you\u2019ve now got iOS 27 on your device. And you\u2019re probably eager to try out all the new features, most notably Siri AI. Ah, but there are a few tasks you\u2019ll want to tackle before you start explor"
-    },
-    {
-      "title": "Download the iPhone Duo\u2019s official light and dark wallpapers here",
-      "url": "https://9to5mac.com/2026/09/18/download-the-iphone-duos-official-light-and-dark-wallpapers-here/",
-      "source": "9to5Mac",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Although Apple did not include the iPhone Duo\u2019s wallpapers in iOS 27, the company did include them in the iPhone simulator in Xcode 27.1 beta, released earlier today, which means now you can download them. Get them below. more\u2026"
-    },
-    {
-      "title": "Samsung\u2019s battery upgrades for Galaxy S27 Ultra and Pro leak \u2013 is it enough?",
-      "url": "https://9to5google.com/2026/09/18/samsung-galaxy-s27-ultra-pro-battery-upgrades-leak/",
-      "source": "9to5Google",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "A new leak reveals the battery sizes of Samsung\u2019s upcoming Galaxy S27 Ultra and S27 Pro including some long overdue upgrades, but do you think it\u2019s enough? more\u2026"
-    },
-    {
-      "title": "AirPods Pro 3 keep getting better, here\u2019s what\u2019s new in iOS 27",
-      "url": "https://9to5mac.com/2026/09/18/airpods-pro-3-keep-getting-better-heres-whats-new-ios-27/",
-      "source": "9to5Mac",
-      "date": "2026-09-18",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "AirPods just got a variety of new features in iOS 27, several of which are exclusive to AirPods Pro 3. Here\u2019s everything new. more\u2026"
-    },
-    {
-      "title": "iPhone 18 Pro Max in U.S. Has Qualcomm's Snapdragon X80 Modem",
-      "url": "https://www.macrumors.com/2026/09/18/iphone-18-pro-max-us-qualcomm-x80/",
-      "source": "MacRumors",
-      "date": "2026-09-18",
+      "title": "Snapdragon 8 Elite Extreme Gen 6\u2019s Engineering Prototype Video Surfaces Before Official Launch, Showing A New Packaging, Improved Benchmark Scores & More",
+      "url": "https://wccftech.com/snapdragon-8-elite-extreme-gen-6-prototype-leak-packaging-benchmarks/",
+      "source": "wccftech.com",
+      "date": "2026-09-21",
       "vendor": "Qualcomm",
       "customer": "Apple",
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "TechInsights has published an iPhone 18 Pro Max teardown that confirms the U.S. version of the device is equipped with Qualcomm's Snapdragon X80 modem.\nThe device's modem firmware had already pointed towards the Snapdragon X80 modem.\nThe smaller iPhone 18 Pro and the iPhone Duo use Apple's custom-de"
+      "summary": "A day before the Snapdragon Summit kicks off, a Chinese content creator has uploaded an engineering prototype featuring none other than Qualcomm\u2019s first 2nm SoC, the Snapdragon 8 Elite Extreme Gen 6. In the video, we get to learn a multitude of the chipset\u2019s specifications, not to mention its new an"
+    },
+    {
+      "title": "Compliance-Ready Powersports Audio: Hisound carAudio FCC & Rohs Certified ATV Sound Bar Bluetooth Solutions",
+      "url": "https://www.einnews.com/pr_news/943896287/compliance-ready-powersports-audio-hisound-caraudio-fcc-rohs-certified-atv-sound-bar-bluetooth-solutions",
+      "source": "EIN News",
+      "date": "2026-09-21",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": ""
+    },
+    {
+      "title": "Apple, Xiaomi, Qualcomm each eye edge AI ecosystem gains",
+      "url": "https://www.digitimes.com/news/a20260921PD210/apple-xiaomi-qualcomm-ai-inference-market.html",
+      "source": "digitimes",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Market sources say Apple is developing an enterprise AI server that could use 2-4 unreleased M8 Ultra processors, aimed at AI developers, large enterprises and government agencies for AI inference workloads. Apple's edge data center may also adopt NVLink...\nThe article requires paid subscription.\nSu"
+    },
+    {
+      "title": "Qualcomm stock heads into the open after a 5.82% slide - ad-hoc-news.de",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qualcomm-stock-heads-into-the-open-after-a-5-82-percent-slide/70142598",
+      "source": "ad-hoc-news.de",
+      "date": "2026-09-21",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Qualcomm stock heads into the open after a 5.82% slide&nbsp;&nbsp;ad-hoc-news.de"
+    },
+    {
+      "title": "MediaTek Tops NT$5,000 for First Time as Taiwan's TAIEX Surges 538 Points Toward Record High",
+      "url": "https://finance.biggo.com/news/5aa41b20-6efa-43ff-8265-7cdc7ee05ce1",
+      "source": "finance.biggo.com",
+      "date": "2026-09-21",
+      "vendor": "MediaTek",
+      "customer": "Google",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "MediaTek Tops NT$5,000 for First Time as Taiwan's TAIEX Surges 538 Points Toward Record High\nTaiwan's TAIEX surged 538.09 points, or 1.14%, to close at 47,718.84 on the 21st, marking a near three-month high and leaving the benchmark just 500 points away from its all-time peak of 48,218.87, as heavyw"
+    },
+    {
+      "title": "Google Goes Nuclear in Nordic Data Center Push",
+      "url": "https://www.industrialinfo.com/news/article/google-goes-nuclear-in-nordic-data-center-push--362663",
+      "source": "Industrial Info Resources",
+      "date": "2026-09-21",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "Power\nGoogle Goes Nuclear in Nordic Data Center Push\nGoogle has committed to taking half of the electricity produced by Finland's Loviisa nuclear power plant for the next two decades as part of a major data center push in the country.\nReleased Monday, September 21, 2026\nWritten by Martin Lynch, Euro"
+    },
+    {
+      "title": "iPhone 18 Pro Max QLC Storage Slower Than SD Card [2026] - tech-insider.org",
+      "url": "https://tech-insider.org/iphone-18-pro-max-qlc-storage-slower-than-sd-card-2026/",
+      "source": "tech-insider.org",
+      "date": "2026-09-21",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "iPhone 18 Pro Max QLC Storage Slower Than SD Card [2026]&nbsp;&nbsp;tech-insider.org"
+    },
+    {
+      "title": "MediaTek stock heads into the open after latest Taiwan close - ad-hoc-news.de",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-stock-heads-into-the-open-after-latest-taiwan-close/70141979",
+      "source": "ad-hoc-news.de",
+      "date": "2026-09-21",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "MediaTek stock heads into the open after latest Taiwan close\nPublished on 09/21/2026 at 07:44 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSMediaTek stock closed higher on the Taiwan Stock Exchange on September 18, 2026, with the latest available figures indicating a positive"
+    },
+    {
+      "title": "Huang Hsiang Construction Sells Stake in MediaTek Worth NT$536 Million",
+      "url": "https://www.marketscreener.com/news/huang-hsiang-construction-sells-stake-in-mediatek-worth-nt-536-million-ce785adbd88ef423",
+      "source": "marketscreener.com",
+      "date": "2026-09-21",
+      "vendor": "MediaTek",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Huang Hsiang Construction Sells Stake in MediaTek Worth NT$536 Million Published on 09/21/2026 at 01:37 am EDT MT Newswires This article is reserved for our members.Log in to continueLog inCreate an account Continue with Google Continue with Apple Continue with LinkedIn or by emailContinue with an e"
+    },
+    {
+      "title": "ESP32-P4 Runs MIPI-CSI Cameras In The Arduino IDE",
+      "url": "https://www.electronicsforu.com/news/esp32-p4-runs-mipi-csi-cameras-in-the-arduino-ide",
+      "source": "Electronics For You",
+      "date": "2026-09-21",
+      "vendor": "Espressif",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Espressif\u2019s new ESP_Video library lets Arduino sketches capture video from MIPI-CSI and DVP cameras on ESP32-P4 and ESP32-S3 boards without requiring a separate ESP-IDF project.\nEspressif has added camera capture support to the Arduino environment through its new ESP_Video library, allowing develope"
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 109,
-    "MediaTek": 84,
-    "NXP": 36,
-    "Marvell": 13,
-    "TI": 13,
-    "Espressif": 11,
-    "Silicon Labs": 7,
-    "Renesas": 6,
+    "Qualcomm": 111,
+    "MediaTek": 70,
+    "NXP": 32,
+    "Marvell": 10,
+    "Silicon Labs": 9,
+    "TI": 7,
+    "Espressif": 6,
     "Nordic": 5,
-    "Infineon": 3,
-    "Broadcom": 2,
-    "Quectel": 2,
+    "Broadcom": 5,
+    "Apple": 4,
+    "Renesas": 4,
+    "STMicro": 3,
+    "Realtek": 2,
+    "Onsemi": 2,
+    "Infineon": 2,
+    "Skyworks": 2,
+    "Sequans": 1,
     "Atmosic": 1,
-    "Apple": 1,
-    "UNISOC": 1,
-    "Skyworks": 1,
     "Synaptics": 1,
-    "Qorvo": 1,
-    "STMicro": 1
+    "Quectel": 1,
+    "Qorvo": 1
   },
   "customer_news_30d": {
-    "Apple": 225,
+    "Apple": 193,
     "Google": 72,
-    "Amazon": 31,
-    "Samsung": 28,
+    "Amazon": 28,
     "Microsoft": 23,
+    "Samsung": 16,
+    "Meta": 8,
     "Motorola": 6,
-    "Sony": 5,
-    "Huawei": 4,
+    "Sony": 4,
     "Bose": 3,
-    "Volkswagen": 2,
-    "Meta": 2,
-    "Xiaomi": 2,
+    "Huawei": 2,
     "IKEA": 2,
-    "HKMC": 1,
+    "Eufy/Anker": 1,
+    "Toyota": 1,
+    "Xiaomi": 1,
     "GM": 1,
-    "Tesla": 1,
     "Philips Hue": 1,
     "Arlo": 1,
-    "Toyota": 1,
-    "LG": 1,
-    "Stellantis": 1
+    "Tesla": 1,
+    "Volkswagen": 1
   },
   "github_pulse": [
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1679,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+        },
+        {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        },
+        {
+          "tag": "v6.0.3",
+          "name": "ESP-IDF Release v6.0.3",
+          "published_at": "2026-09-02T11:55:49Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
+        }
+      ],
+      "stars": 19063,
+      "pushed_at": "2026-09-20T18:28:16Z"
+    },
     {
       "name": "BlueZ",
       "owner": "bluez",
@@ -517,7 +543,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 113,
+      "issues_open": 110,
       "prs_open": 0,
       "releases": [
         {
@@ -540,43 +566,7 @@
         }
       ],
       "stars": 1148,
-      "pushed_at": "2026-09-19T00:28:54Z"
-    },
-    {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1677,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
-        },
-        {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
-        },
-        {
-          "tag": "v6.0.3",
-          "name": "ESP-IDF Release v6.0.3",
-          "published_at": "2026-09-02T11:55:49Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
-        }
-      ],
-      "stars": 19052,
-      "pushed_at": "2026-09-18T18:17:28Z"
+      "pushed_at": "2026-09-20T21:50:38Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -587,7 +577,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3922,
+      "issues_open": 3987,
       "prs_open": 0,
       "releases": [
         {
@@ -609,8 +599,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16560,
-      "pushed_at": "2026-09-19T08:40:29Z"
+      "stars": 16579,
+      "pushed_at": "2026-09-21T12:28:16Z"
     },
     {
       "name": "Linux mac80211",
@@ -624,8 +614,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 249491,
-      "pushed_at": "2026-09-18T23:46:01Z"
+      "stars": 249676,
+      "pushed_at": "2026-09-20T20:50:04Z"
     },
     {
       "name": "Matter SDK",
@@ -636,7 +626,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2850,
+      "issues_open": 2872,
       "prs_open": 0,
       "releases": [
         {
@@ -658,8 +648,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8950,
-      "pushed_at": "2026-09-19T12:13:17Z"
+      "stars": 8951,
+      "pushed_at": "2026-09-21T13:01:42Z"
     },
     {
       "name": "OpenThread",
@@ -669,8 +659,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 71,
-      "issues_open": 157,
+      "commits_30d": 65,
+      "issues_open": 160,
       "prs_open": 0,
       "releases": [
         {
@@ -692,8 +682,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4033,
-      "pushed_at": "2026-09-18T20:22:40Z"
+      "stars": 4035,
+      "pushed_at": "2026-09-21T09:33:23Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -703,7 +693,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 24,
+      "commits_30d": 23,
       "issues_open": 455,
       "prs_open": 0,
       "releases": [
@@ -726,8 +716,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15650,
-      "pushed_at": "2026-09-18T19:20:29Z"
+      "stars": 15655,
+      "pushed_at": "2026-09-19T20:47:45Z"
     },
     {
       "name": "NimBLE",
@@ -901,20 +891,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089397/tm2621905d1_8k.htm"
-    },
-    {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
-    },
-    {
       "vendor": "Onsemi",
       "ticker": "ON",
       "form": "10-Q",
@@ -927,6 +903,20 @@
       "form": "8-K",
       "date": "2026-08-03",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089397/tm2621905d1_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -3432,9 +3422,9 @@
           "url": "https://worldbusinessoutlook.com/renesas-launches-64-bit-rz-g3l-and-rz-g3se-mpus-for-advanced-hmi/"
         },
         {
-          "title": "Renesas Resumes Production at Nishiki Factory to Pre-Earthquake Capacity",
-          "date": "Aug 2026",
-          "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N43Y01R:0-renesas-production-resumed-at-nishiki-factory-specifying-factory-in-phases-beginning-on-evening-of-july-29-and-returned-to-pre-earthquake-production-capacity-friday-morning/"
+          "title": "Eggtronic Introduces High-Efficiency 140W USB-C Power Delivery Reference Design Powered by Renesas\u2019 GaN Transistors",
+          "date": "Sep 2026",
+          "url": "https://www.einnews.com/pr_news/941531142/eggtronic-introduces-high-efficiency-140w-usb-c-power-delivery-reference-design-powered-by-renesas-gan-transistors"
         }
       ],
       "events": [
@@ -3877,14 +3867,14 @@
           "url": "https://www.taiwan-panorama.com/en/Articles/Details?Guid=3279855b-6911-47e7-8d32-6d5727cf2037&CatId=9&postname=Engineering%20Taiwan%E2%80%99s%20Silicon%20Island%20Realtek-Realtek%20and%20the%20Power%20of%20a%20Collaborative%20Semiconductor%20Ecosystem"
         },
         {
-          "title": "Realtek Reports Q2 and H1 2026 Financial Results",
-          "date": "Aug 2026",
-          "url": "https://www.marketscreener.com/news/realtek-semiconductor-corp-reports-earnings-results-for-the-second-quarter-and-six-months-ended-jun-ce7859d8d88ff323"
+          "title": "Realtek RTL8773J Series: First Bluetooth 7-Ready Microcontroller Family Launched",
+          "date": "Sep 2026",
+          "url": "https://www.cnx-software.com/2026/09/21/realtek-rtl8773j-a-bluetooth-7-ready-cortex-m55-m33-microcontroller-with-hdt-support/"
         },
         {
-          "title": "Realtek Semiconductor Corp. Reports Earnings Results for the Second Quarter and Six Months Ended June 30, 2026",
-          "date": "Aug 2026",
-          "url": "https://www.marketscreener.com/news/realtek-semiconductor-corp-reports-earnings-results-for-the-second-quarter-and-six-months-ended-jun-ce7859d8d88ff323"
+          "title": "Realtek Semiconductor Expects Double-Digit Sales Growth in Q3",
+          "date": "Sep 2026",
+          "url": "https://www.digitimes.com/tag/realtek/034659.html"
         }
       ]
     },
@@ -4576,6 +4566,11 @@
           "url": "https://www.allaboutcircuits.com/news/onsemi-unveils-platform-that-turns-silicon-wafers-into-power-packages/"
         },
         {
+          "title": "onsemi Introduces the Embedded Power Platform, a Breakthrough Architecture for the AI Era",
+          "date": "Sep 2026",
+          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-introduces-the-embedded-power-platform-a-breakthrough-architecture-for-the-ai-era"
+        },
+        {
           "title": "onsemi Reports Strong Second Quarter 2026 Financial Results",
           "date": "Aug 2026",
           "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-second-quarter-2026-results/"
@@ -4594,11 +4589,6 @@
           "title": "Onsemi Prioritizes AI Demand Over Automotive Market",
           "date": "Aug 2026",
           "url": "https://www.benzinga.com/markets/tech/26/08/60915388/quick-spark-on-semi-reveals-the-first-losers-in-the-ai-chip-race"
-        },
-        {
-          "title": "Vadzo Imaging Launches Falcon-2020MRS Camera Featuring Onsemi AR2020 Sensor",
-          "date": "Aug 2026",
-          "url": "https://www.newswire.com/news/vadzo-imaging-launches-falcon-2020mrs-a-20mp-monochrome-usb-camera-22839880"
         }
       ]
     },
