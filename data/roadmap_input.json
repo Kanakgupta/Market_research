@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T13:10:05Z",
+  "generated_at": "2026-09-22T13:15:34Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3416,6 +3416,11 @@
           "url": "https://www.01net.it/atmosic-unveils-atm53-series-a-new-era-in-physical-ai-driven-asset-tracking/"
         },
         {
+          "title": "Atmosic Unveils ATM53 Series for AI-Driven Asset Tracking",
+          "date": "Sep 2026",
+          "url": "https://www.01net.it/atmosic-unveils-atm53-series-a-new-era-in-physical-ai-driven-asset-tracking/"
+        },
+        {
           "title": "Atmosic ATM34/e SoC Now Available Through Mouser for Ultra-Low Power IoT Applications",
           "date": "Jun 2026",
           "url": "https://www.electronicsmedia.info/2026/06/10/atmosic-atm34-e-soc/"
@@ -3447,11 +3452,6 @@
         },
         {
           "title": "Targus Wins CES 2024 Innovation Award with ErgoFlip EcoSmart Mouse Featuring Atmosic ATM2 Bluetooth LE SoC",
-          "date": "Dec 2023",
-          "url": ""
-        },
-        {
-          "title": "Targus Wins CES 2024 Innovation Award using Atmosic ATM2 based Bluetooth LE SoC for its ErgoFlip EcoSmart Mouse",
           "date": "Dec 2023",
           "url": ""
         }
@@ -3515,6 +3515,11 @@
           "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-introduces-the-embedded-power-platform-a-breakthrough-architecture-for-the-ai-era"
         },
         {
+          "title": "onsemi Introduces the Embedded Power Platform for the AI Era",
+          "date": "Sep 2026",
+          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-introduces-the-embedded-power-platform-a-breakthrough-architecture-for-the-ai-era"
+        },
+        {
           "title": "onsemi Reports Strong Second Quarter 2026 Financial Results",
           "date": "Aug 2026",
           "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-second-quarter-2026-results/"
@@ -3528,11 +3533,6 @@
           "title": "Onsemi Completes AI Power Stack with GaN Technology",
           "date": "Aug 2026",
           "url": "https://www.techtimes.com/articles/322917/20260804/onsemi-completes-ai-power-stack-gan-data-center-revenue-set-double.htm"
-        },
-        {
-          "title": "Onsemi Prioritizes AI Demand Over Automotive Market",
-          "date": "Aug 2026",
-          "url": "https://www.benzinga.com/markets/tech/26/08/60915388/quick-spark-on-semi-reveals-the-first-losers-in-the-ai-chip-race"
         }
       ]
     },
@@ -3769,27 +3769,25 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 111,
-    "MediaTek": 70,
-    "NXP": 32,
-    "Marvell": 10,
-    "Silicon Labs": 9,
-    "TI": 7,
+    "Qualcomm": 124,
+    "MediaTek": 78,
+    "NXP": 29,
     "Espressif": 6,
-    "Nordic": 5,
-    "Broadcom": 5,
-    "Apple": 4,
-    "Renesas": 4,
-    "STMicro": 3,
+    "Nordic": 6,
+    "Silicon Labs": 6,
+    "Marvell": 4,
+    "TI": 4,
+    "Apple": 3,
+    "Broadcom": 2,
     "Realtek": 2,
     "Onsemi": 2,
-    "Infineon": 2,
-    "Skyworks": 2,
-    "Sequans": 1,
+    "Microchip": 1,
     "Atmosic": 1,
+    "Infineon": 1,
+    "Skyworks": 1,
     "Synaptics": 1,
-    "Quectel": 1,
-    "Qorvo": 1
+    "Qorvo": 1,
+    "Renesas": 1
   },
   "standards_in_flight": [
     {
@@ -3862,76 +3860,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1679,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
-        },
-        {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
-        },
-        {
-          "tag": "v6.0.3",
-          "name": "ESP-IDF Release v6.0.3",
-          "published_at": "2026-09-02T11:55:49Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
-        }
-      ],
-      "stars": 19063,
-      "pushed_at": "2026-09-20T18:28:16Z"
-    },
-    {
-      "name": "BlueZ",
-      "owner": "bluez",
-      "repo": "bluez",
-      "label": "Linux BT stack",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 110,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "5.87",
-          "name": "5.87",
-          "published_at": "2026-07-07T16:41:14Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
-        },
-        {
-          "tag": "5.86",
-          "name": "5.86",
-          "published_at": "2026-02-09T21:27:33Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
-        }
-      ],
-      "stars": 1148,
-      "pushed_at": "2026-09-20T21:50:38Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3940,7 +3868,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3987,
+      "issues_open": 4038,
       "prs_open": 0,
       "releases": [
         {
@@ -3962,23 +3890,78 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16579,
-      "pushed_at": "2026-09-21T12:28:16Z"
+      "stars": 16582,
+      "pushed_at": "2026-09-22T11:22:43Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
       "tech": [
-        "wifi"
+        "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3,
+      "issues_open": 113,
       "prs_open": 0,
-      "releases": [],
-      "stars": 249676,
-      "pushed_at": "2026-09-20T20:50:04Z"
+      "releases": [
+        {
+          "tag": "5.87",
+          "name": "5.87",
+          "published_at": "2026-07-07T16:41:14Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
+        },
+        {
+          "tag": "5.86",
+          "name": "5.86",
+          "published_at": "2026-02-09T21:27:33Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
+        },
+        {
+          "tag": "5.85",
+          "name": "5.85",
+          "published_at": "2025-11-26T16:00:07Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
+        }
+      ],
+      "stars": 1149,
+      "pushed_at": "2026-09-22T11:45:27Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1677,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+        },
+        {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        },
+        {
+          "tag": "v6.0.3",
+          "name": "ESP-IDF Release v6.0.3",
+          "published_at": "2026-09-02T11:55:49Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
+        }
+      ],
+      "stars": 19073,
+      "pushed_at": "2026-09-21T19:26:33Z"
     },
     {
       "name": "Matter SDK",
@@ -3989,7 +3972,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2872,
+      "issues_open": 2860,
       "prs_open": 0,
       "releases": [
         {
@@ -4012,7 +3995,22 @@
         }
       ],
       "stars": 8951,
-      "pushed_at": "2026-09-21T13:01:42Z"
+      "pushed_at": "2026-09-22T11:51:52Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 249782,
+      "pushed_at": "2026-09-21T18:27:28Z"
     },
     {
       "name": "OpenThread",
@@ -4022,7 +4020,7 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 65,
+      "commits_30d": 63,
       "issues_open": 160,
       "prs_open": 0,
       "releases": [
@@ -4045,8 +4043,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4035,
-      "pushed_at": "2026-09-21T09:33:23Z"
+      "stars": 4036,
+      "pushed_at": "2026-09-21T16:22:19Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4057,7 +4055,7 @@
         "ieee15_4"
       ],
       "commits_30d": 23,
-      "issues_open": 455,
+      "issues_open": 452,
       "prs_open": 0,
       "releases": [
         {
@@ -4079,7 +4077,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15655,
+      "stars": 15656,
       "pushed_at": "2026-09-19T20:47:45Z"
     },
     {
@@ -4091,7 +4089,7 @@
         "bluetooth"
       ],
       "commits_30d": 22,
-      "issues_open": 273,
+      "issues_open": 275,
       "prs_open": 0,
       "releases": [],
       "stars": 892,
