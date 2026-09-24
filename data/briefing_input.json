@@ -1,399 +1,333 @@
 {
-  "generated_at": "2026-09-22T13:15:34Z",
+  "generated_at": "2026-09-24T13:12:44Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Register reader hit with surprise bill after Microsoft portals disagreed",
-      "url": "https://www.theregister.com/saas/2026/09/22/register-reader-hit-with-surprise-bill-after-microsoft-portals-disagreed/5297799",
-      "source": "The Register",
-      "date": "2026-09-22",
+      "title": "Measure Distant Asteroids With a DIY Rig",
+      "url": "https://spectrum.ieee.org/asteroid-shadow",
+      "source": "IEEE Spectrum",
+      "date": "2026-09-24",
       "vendor": null,
-      "customer": "Microsoft",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "TOP STORIES\nAI\n-\nRegister reader hit with surprise bill after Microsoft portals disagreed\nDid Copilot write the synchronization code?\n-\nPerpetual underdog AMD nips at Nvidia's heels as it joins the $1T club\nFueled by the AI boom, the House of Zen's rise isn't just Instinct - Lisa Su is riding high o"
+      "customer": "Amazon",
+      "application": "Energy/Utility",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "I\u2019ve seen two total solar eclipses and have been duly impressed by what happens as the moon casts its shadow on Earth. But recently I\u2019ve become even more intrigued by a similar phenomenon that doesn\u2019t involve the sun or the moon\u2014something called an asteroid occultation.That\u2019s what happens when an as"
     },
     {
-      "title": "Mediatek seems ready to storm into Qualcomm's biggest fortress, and with a weapon that American chip make",
-      "url": "https://timesofindia.indiatimes.com/technology/tech-news/mediatek-seems-ready-to-storm-into-qualcomms-biggest-fortress-and-with-a-weapon-that-american-chip-maker-still-has-no-answer-to/articleshow/134412852.cms",
-      "source": "The Times of India",
-      "date": "2026-09-22",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
+      "title": "Google to critical infra orgs: Our AI scanners won't be evil, promise",
+      "url": "https://www.theregister.com/security/2026/09/24/google-to-critical-infra-orgs-our-ai-scanners-wont-be-evil-promise/5298685",
+      "source": "The Register",
+      "date": "2026-09-24",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart City",
       "buckets": [],
-      "summary": "MediaTek recently made a move Qualcomm currently has no answer for. Earlier this month, the Taiwanese chipmaker unveiled the Dimensity 9600 Pro, becoming the first company in the world to launch a flagship smartphone chip built on TSMC's cutting-edge 2nm manufacturing process \u2013 a milestone Qualcomm "
+      "summary": "Gemini 3.8 Flash Cyber and Wiz's Red Agent team up to protect hospitals, public transit, and tech"
     },
     {
-      "title": "Form 144 Qualcomm For: 22 September By Investing.com",
-      "url": "https://in.investing.com/news/stock-market-news/form-144-qualcomm-for-22-september-93CH-5601262",
-      "source": "Investing.com India",
-      "date": "2026-09-22",
+      "title": "New iPad mini coming soon with these major changes",
+      "url": "https://9to5mac.com/2026/09/24/new-ipad-mini-coming-soon-with-these-major-changes/",
+      "source": "9to5Mac",
+      "date": "2026-09-24",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple is about to release a new iPad mini. This will mark the first update to the device in two years, and it\u2019s expected to be a big one. Here\u2019s everything we know so far about the new iPad mini coming as soon as next month. more\u2026"
+    },
+    {
+      "title": "About that Apple-Qualcomm News: 8 Key Items Shaping the Stock Market Thursday",
+      "url": "https://realmoney.thestreet.com/portfolio/about-that-apple-qualcomm-news-8-key-items-shaping-the-stock-market-thursday",
+      "source": "TheStreet Pro",
+      "date": "2026-09-24",
       "vendor": "Qualcomm",
-      "customer": null,
+      "customer": "Apple",
       "application": null,
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "New Mac mini drops support for aftermarket storage upgrades",
-      "url": "https://9to5mac.com/2026/09/22/m6-mac-mini-upgrade-storage-change/",
-      "source": "9to5Mac",
-      "date": "2026-09-22",
-      "vendor": null,
+      "title": "Qualcomm and Apple extend global patent licensing agreement: What to know",
+      "url": "https://www.thenews.com.pk/latest/1417469-qualcomm-and-apple-extend-global-patent-licensing-agreement-what-to-know",
+      "source": "The News International",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
       "customer": "Apple",
-      "application": "Automotive",
+      "application": null,
       "buckets": [],
-      "summary": "When Apple released the M4 Mac mini two years ago, teardowns quickly revealed a pleasant surprise: the internal SSD was not soldered to the logic board. This allowed for aftermarket storage upgrades, and we even showed you how to do it. With the new M6 and M5 Pro Mac mini updates, however, it appear"
+      "summary": "Qualcomm and Apple extend global patent licensing agreement: What to know\nQualcomm secured a long-term deal with Apple alleviating revenue anxieties linked to a key client\nIn a significant move, Qualcomm announced on Thursday that it has extended its chip technology partnership with Apple effective "
     },
     {
-      "title": "Former Apple retail chief\u2019s new \u2018Shop Different\u2019 book now available",
-      "url": "https://9to5mac.com/2026/09/22/former-apple-retail-chiefs-new-shop-different-book-now-available/",
-      "source": "9to5Mac",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Ron Johnson, Apple\u2019s former senior vice president of retail operations, is out with a new book today called \u2018Shop Different: How Retail Revealed Apple\u2019s Genius.\u2019 In the book, Johnson tells the story of working alongside Steve Jobs to craft Apple\u2019s retail strategy. more\u2026"
-    },
-    {
-      "title": "Nscale\u2019s IPO will test Wall Street\u2019s appetite for concentrated AI bets once again",
-      "url": "https://techcrunch.com/2026/09/22/nscales-ipo-will-test-wall-streets-appetite-for-concentrated-ai-bets-once-again/",
-      "source": "TechCrunch",
-      "date": "2026-09-22",
-      "vendor": null,
+      "title": "Qualcomm Hops on the Linux Train as PC Users Have Another Way to Say \u2018Screw Windows\u2019",
+      "url": "https://gizmodo.com/qualcomm-hops-on-the-linux-train-as-pc-users-have-another-way-to-say-screw-windows-2000816240",
+      "source": "Gizmodo",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
       "customer": "Microsoft",
       "application": null,
       "buckets": [],
-      "summary": "The British AI data center developer depends on tech giants Microsoft and Anthropic for most of its revenue."
+      "summary": "Qualcomm is finally giving you the option to avoid Windows 11 on your next laptop. If you\u2019re thinking about getting a Snapdragon X2-based PC, you may soon be able to go for a full Linux build if you\u2019re trying to become yet another refugee from Microsoft\u2019s contentious operating system.\nQualcomm detai"
     },
     {
-      "title": "Canonical Announces a Long-Term 15-Year Support Version of the Zephyr RTOS",
-      "url": "https://www.hackster.io/news/canonical-announces-a-long-term-15-year-support-version-of-the-zephyr-rtos-b5bb927697ae",
-      "source": "Hackster.io",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Canonical Announces a Long-Term 15-Year Support Version of the Zephyr RTOS\nFurther releases will follow the Ubuntu Linux cadence, with interim versions every six months and new LTS versions every two years.\nCanonical, the company best known for its Ubuntu Linux distribution, has announced a long-ter"
-    },
-    {
-      "title": "MediaTek's new 3nm Googlebook chip challenges Intel and Qualcomm \u2014 but no device yet",
-      "url": "https://gagadget.com/en/727036-mediateks-new-3nm-googlebook-chip-challenges-intel-and-qualcomm-but-no-device-yet/",
-      "source": "Gagadget.com",
-      "date": "2026-09-22",
+      "title": "Qualcomm, Apple extend patent licensing agreement",
+      "url": "https://www.channelnewsasia.com/business/qualcomm-apple-extend-patent-licensing-agreement-6408351",
+      "source": "CNA",
+      "date": "2026-09-24",
       "vendor": "Qualcomm",
-      "customer": "Google",
+      "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "MediaTek's new 3nm Googlebook chip challenges Intel and Qualcomm \u2014 but no device yet\nMediaTek has announced the Dimensity CX C10 Max, a 3nm chip aimed at breaking Intel and Qualcomm's grip on the new Googlebook laptop category. Five manufacturers \u2014 Acer, ASUS, Lenovo, Dell, and HP \u2014 MediaTek Dimensi"
+      "summary": "Qualcomm, Apple extend patent licensing agreement\n(Corrects to show that companies are extending their patent licensing agreement, not an agreement for chips)\nSept 24 : Qualcomm said on Thursday it has extended its patent licensing agreement with Apple.\nSource: Reuters"
     },
     {
-      "title": "NXP Semiconductors stock steadies as Bernstein sticks with Hold and Q2 2026 figures support valuatio",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-stock-steadies-as-bernstein-sticks-with-hold-and-q2/70155346",
-      "source": "AD HOC NEWS",
-      "date": "2026-09-22",
+      "title": "Qualcomm, Apple Renew Global Patent License Agreement",
+      "url": "https://www.marketscreener.com/news/qualcomm-apple-renew-global-patent-license-agreement-ce785adede8aff26",
+      "source": "marketscreener.com",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "By Connor Hart\nQualcomm renewed its global patent license agreement with Apple, effective April 1, 2027.\nThe terms and duration of the pact weren't disclosed.\nThe partnership between Qualcomm and Apple was ?shaped by a 2019 settlement, which ended a long-brewing legal battle over how royalties are c"
+    },
+    {
+      "title": "Qualcomm Incorporated Announces Renewal of Global Patent License Agreement with Apple",
+      "url": "https://www.marketscreener.com/news/qualcomm-incorporated-announces-renewal-of-global-patent-license-agreement-with-apple-ce785adede8af023",
+      "source": "marketscreener.com",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Qualcomm Incorporated announced the renewal of its global patent license agreement with Apple, effective April 1, 2027."
+    },
+    {
+      "title": "Qualcomm Announces Renewal of Global Patent License Agreement with Apple",
+      "url": "https://www.qualcomm.com/news/releases/2026/09/qualcomm-announces-renewal-of-global-patent-license-agreement-wi",
+      "source": "Qualcomm",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "You need to enable JavaScript to run this app."
+    },
+    {
+      "title": "Qualcomm vs. Marvell: Which Underdog AI Chip Stock Has More Upside From Here?",
+      "url": "https://www.fool.com/investing/2026/09/24/qualcomm-vs-marvell-underdog-ai-chip-stock-upside/",
+      "source": "The Motley Fool",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Amazon",
+      "application": null,
+      "buckets": [],
+      "summary": "Between Qualcomm (QCOM -0.52%) and Marvell Technology (MRVL -0.56%), which of these underdog companies has more upside in selling artificial intelligence (AI) chips? I think Qualcomm is the winner, as it's in the midst of transitioning from a smartphone supplier into a long\u2011term partner for the bigg"
+    },
+    {
+      "title": "Amber Grid Signs EY Baltic for Hydrogen Corridor Financial Study - News and Statistics",
+      "url": "https://www.indexbox.io/blog/amber-grid-taps-ernst-young-baltic-for-nordic-baltic-hydrogen-corridor-analysis/",
+      "source": "IndexBox",
+      "date": "2026-09-24",
+      "vendor": null,
+      "customer": null,
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "Amber Grid Taps Ernst & Young Baltic for Nordic-Baltic Hydrogen Corridor Analysis\nAmber Grid, the gas transmission system operator of Lithuania, has entered into an agreement with Ernst & Young Baltic covering economic and financial analysis work for the Lithuanian portion of the Nordic-Baltic Hydro"
+    },
+    {
+      "title": "Snapdragon 8 Elite Extreme Gen 6 vs MediaTek Dimensity 9600 Pro Comparison",
+      "url": "https://www.androidheadlines.com/snapdragon-8-elite-extreme-gen-6-vs-mediatek-dimensity-9600-pro-comparison",
+      "source": "Android Headlines",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Both Qualcomm and MediaTek have now announced their new flagship processors that will be used by the end of 2026 and throughout 2027. Below you\u2019ll find a spec comparison between those two chips, as there\u2019s plenty to go through. This is a spec-heavy article, so prepare yourself for that.\nQualcomm has"
+    },
+    {
+      "title": "Interview | Hitesh Garg, Vice President & India Managing Director, NXP Semiconductors",
+      "url": "https://www.eletimes.ai/interview-hitesh-garg-vice-president-india-managing-director-nxp-semiconductors",
+      "source": "ELE Times",
+      "date": "2026-09-24",
       "vendor": "NXP",
       "customer": null,
-      "application": "Embedded / Electronics",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "NXP Semiconductors stock steadies as Bernstein sticks with Hold and Q2 2026 figures support valuation\nPublished on 09/22/2026 at 14:07 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSNXP Semiconductors N.V. stock (ISIN NL0009538779) closed at USD 227.75 on the Nasdaq on Septemb"
+      "summary": "\u201cIndia presents a significant opportunity to develop globally competitive solutions that shape the future of intelligent transportation.\u201d\nThe automotive industry is making a seamless transition to Software Defined Vehicle (SDV) architectures and technology providers are gearing up for exciting times"
     },
     {
-      "title": "Motorola confirms September 22 reveal for the Signature 27 smartphone",
-      "url": "https://inews.zoombangla.com/motorola-signature-27-september-22-reveal-snapdragon/",
-      "source": "iNews Zoombangla",
-      "date": "2026-09-22",
+      "title": "Apple Extended Qualcomm\u2019s Patent Deal, Even As It Tries To Move On",
+      "url": "https://finimize.com/content/apple-extended-qualcomms-patent-deal-even-as-it-tries-to-move-on",
+      "source": "Finimize",
+      "date": "2026-09-24",
       "vendor": "Qualcomm",
-      "customer": "Motorola",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Motorola has confirmed that it will reveal the Signature 27 smartphone on September 22. The company\u2019s teaser campaign shows close-up views of different materials and uses the line \u201cA new perspective is coming.\u201d A second post connects the phone with Snapdragon, but Motorola has not yet published the "
-    },
-    {
-      "title": "NuRAN Wireless to Pilot Starlink LEO Satellite Backhaul for Rural 4G Expansion and Edge AI Enablement",
-      "url": "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/nuran-wireless-to-pilot-starlink-leo-satellite-backhaul-for-rural-1225166",
-      "source": "ACCESS Newswire",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "NuRAN Wireless to Pilot Starlink LEO Satellite Backhaul for Rural 4G Expansion and Edge AI Enablement\nTuesday, 22 September 2026 08:00 AM\nCompany Update\nLandmark Nigeria pilot with Infratel positions high-capacity LEO connectivity as a growth engine for NuRAN's rural infrastructure platform - target"
-    },
-    {
-      "title": "ASUS Ascent QN10 Brings Snapdragon X2 Elite Power and Advanced AI to an Ultra-Compact Desktop",
-      "url": "https://androidguys.com/news/asus-ascent-qn10-debuts-as-first-agentic-ai-mini-pc-with-an-80-tops-npu/",
-      "source": "AndroidGuys",
-      "date": "2026-09-22",
-      "vendor": "Qualcomm",
-      "customer": "Microsoft",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "ASUS has introduced the Ascent QN10, a compact desktop computer designed to bring next-generation agentic artificial intelligence to everyday computing. Equipped with an 80 TOPS neural processing unit (NPU) and powered by Qualcomm\u2019s Snapdragon X2 Elite platform, the mini PC combines advanced on-devi"
-    },
-    {
-      "title": "One of the most powerful weather apps for iPhone just came to CarPlay",
-      "url": "https://9to5mac.com/2026/09/22/one-of-the-most-powerful-weather-apps-for-iphone-just-came-to-carplay/",
-      "source": "9to5Mac",
-      "date": "2026-09-22",
-      "vendor": null,
       "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "One of the best things about Apple\u2019s CarPlay platform is the robust availability of third-party apps from iPhone. This week, RadarScope, the popular and powerful iPhone weather app, was updated with support for CarPlay. more\u2026"
-    },
-    {
-      "title": "Meta patches Muse exploit that let attackers control the AI agent",
-      "url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
-      "source": "The Verge",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Meta",
-      "application": null,
-      "buckets": [],
-      "summary": "Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers running local code t"
-    },
-    {
-      "title": "Google adds Gemini memory for misplaced items in September Android Drop",
-      "url": "https://inews.zoombangla.com/google-gemini-remember-items-find-hub-android/",
-      "source": "iNews Zoombangla",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Google\u2019s September Android Drop adds a practical Gemini feature for people who lose track of small but important items. In a September 1 announcement, Google said users will be able to ask Gemini to remember where they put objects such as a passport or spare key, then find that information through G"
-    },
-    {
-      "title": "Automotive Semiconductors Global Market Size, Share & Trends Analysis 2026-2036",
-      "url": "https://www.globenewswire.com/news-release/2026/09/22/3366213/28124/en/automotive-semiconductors-global-market-size-share-trends-analysis-2026-2036.html",
-      "source": "GlobeNewswire",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Dublin, Sept. 22, 2026 (GLOBE NEWSWIRE) -- \"Automotive Semiconductor Market Size, Share & Trends Analysis - Global Opportunity Analysis & Industry Forecast (2026-2036)\" has been added to ResearchAndMarkets.com's offering.\nThe global Automotive Semiconductor Market is estimated to be valued at USD 72"
-    },
-    {
-      "title": "Qualcomm stock gains 9.3 percent ahead of Snapdragon Summit",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qualcomm-stock-gains-9-3-percent-ahead-of-snapdragon-summit/70154905",
-      "source": "AD HOC NEWS",
-      "date": "2026-09-22",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Qualcomm stock gains 9.3 percent ahead of Snapdragon Summit\nPublished on 09/22/2026 at 13:30 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSQualcomm stock (ISIN US7475251036) closed at USD 194.23 on Nasdaq on September 21, 2026, after gaining 9.3 percent in the session. The mo"
-    },
-    {
-      "title": "India on track to build homegrown Qualcomm, Intel",
-      "url": "https://www.communicationstoday.co.in/india-on-track-to-build-homegrown-qualcomm-intel/",
-      "source": "Communications Today",
-      "date": "2026-09-22",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Headlines of the Day\nIndia on track to build homegrown Qualcomm, Intel\nIndia\u2019s semiconductor push gains momentum as global investments grow and the government targets startups, skilled talent and a stronger domestic chip ecosystem.\nWith five semiconductor units in commercial production and global co"
-    },
-    {
-      "title": "Avel eCare Celebrates Telehealth Awareness Week With Theme \"Expert Care. Human Connection\"",
-      "url": "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/avel-ecare-celebrates-telehealth-awareness-week-with-theme-%22expert-1225122",
-      "source": "ACCESS Newswire",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": null,
-      "application": "Healthcare",
-      "buckets": [],
-      "summary": "Avel eCare Celebrates Telehealth Awareness Week With Theme \"Expert Care. Human Connection\"\nTuesday, 22 September 2026 07:22 AM\nCompany Update\nSIOUX FALLS, SD / ACCESS Newswire / September 22, 2026 / Technology has changed. Healthcare has changed. And the ways clinicians connect with patients and one"
-    },
-    {
-      "title": "Qualcomm powers 6G Chinese dreams with China Mobile",
-      "url": "https://www.sdxcentral.com/news/qualcomm-powers-6g-chinese-dreams-with-china-mobile/",
-      "source": "SDxCentral",
-      "date": "2026-09-22",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Qualcomm expanded its Chinese telecom footprint in a 6G demo with China Mobile.\nClaimed to be a world-first operator\u2013chipmaker validation, Qualcomm China worked with the operator on a 6G prototype base station and terminal using the upper 6 GHz (U6G) band (6425\u20137125 MHz) with 3GPP-defined wide-bandw"
-    },
-    {
-      "title": "Qualcomm and Google Launch Googlebook Laptops With Snapdragon X Elite and Gemini AI",
-      "url": "https://fossbytes.com/qualcomm-and-google-launch-googlebook-laptops-with-snapdragon-x-elite-and-gemini-ai/",
-      "source": "Fossbytes",
-      "date": "2026-09-22",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Qualcomm and Google Launch Googlebook Laptops With Snapdragon X Elite and Gemini AI\nAfter dominating the student laptop market with Chromebooks, Qualcomm and Google have announced a new category of premium laptops called Googlebook, bringing the Snapdragon X Elite platform together with Google\u2019s Gem"
-    },
-    {
-      "title": "Qualcomm to pay dividends this week; Here\u2019s how much 100 QCOM shares will earn",
-      "url": "https://finbold.com/qualcomm-to-pay-dividends-this-week-heres-how-much-100-qcom-shares-will-earn/",
-      "source": "Finbold",
-      "date": "2026-09-22",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "Ever since August started and halted the downturn, Qualcomm (NASDAQ: QCOM) shareholders have had a lot to be pleased about, and later this week, they can expect another boon from the company in the form of its stock dividend payment.\nIndeed, on Thursday, September 24, the communications and computin"
-    },
-    {
-      "title": "Apple\u2019s Mac Studio M5 Ultra arrives with local AI power",
-      "url": "https://inews.zoombangla.com/apple-mac-studio-m5-ultra-local-ai/",
-      "source": "iNews Zoombangla",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "Apple\u2019s new Mac Studio is arriving with the M5 Max and M5 Ultra chips, giving the company a desktop aimed at professional video, software development and local artificial intelligence work. Apple says the computers begin reaching customers and stores on September 22. MacRumors has also listed the la"
-    },
-    {
-      "title": "MediaTek Dimensity CX C10 Max debuts with 8-core Arm CPU and 11-core GPU, designed for Googlebook laptops",
-      "url": "https://videocardz.com/newz/mediatek-dimensity-cx-c10-max-debuts-with-8-core-arm-cpu-and-11-core-gpu-designed-for-googlebook-laptops",
-      "source": "VideoCardz.com",
-      "date": "2026-09-22",
-      "vendor": "MediaTek",
-      "customer": null,
       "application": null,
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "Meta deal will help plastics recycling startup MacroCycle build its first factory",
-      "url": "https://techcrunch.com/2026/09/22/meta-deal-will-help-plastics-recycling-startup-macrocycle-build-its-first-factory/",
-      "source": "TechCrunch",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Meta",
-      "application": "Industrial",
-      "buckets": [],
-      "summary": "Meta is giving plastic recycling a boost in a new deal with startup MacroCycle, which is building its first commercial plant."
-    },
-    {
-      "title": "SmartThings Hub Update 0.62.7 Fixes Offline App Status Sync",
-      "url": "https://www.geeky-gadgets.com/smartthings-hub-firmware-0-62-7/",
-      "source": "Geeky Gadgets",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Samsung",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "SmartThings has rolled out firmware update 0.62.7, bringing a series of enhancements to its V2 Hub (2015), V3 Hub (2018), Aeotec Smart Home Hub and Things One Hub. As explained by Bud\u2019s Smart Home, one standout improvement is the enhanced device state synchronization. This update ensures that the Sm"
-    },
-    {
-      "title": "Vivo S2 FE Leaks on Geekbench With MediaTek Chip, 6GB RAM",
-      "url": "https://memeburn.com/vivo-s2-fe-geekbench-specs/",
-      "source": "Memeburn",
-      "date": "2026-09-22",
-      "vendor": "MediaTek",
+      "title": "Qualcomm Stock Price Forecast: Surges Over 20% in a Month as $200 Level Faces Make-or-Break Battle",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262184958-stock-qualcomm-qcom-price-prediction-200-amzn-tradingkey",
+      "source": "TradingKey",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
       "customer": "Apple",
-      "application": "Retail",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "TL;DR\n- Vivo S2 FE surfaced on Geekbench under model number V2640, revealing 6GB RAM and a MediaTek chipset before any official announcement.\n- Benchmark scores of 868 single-core and 2,887 multi-core place the phone squarely in competitive mid-range territory for everyday performance.\n- The listed "
+      "summary": "Qualcomm Stock Price Forecast: Surges Over 20% in a Month as $200 Level Faces Make-or-Break Battle\nQualcomm stock surged 23% over the past 30 days to approach the critical $200 resistance level, driven by an AWS custom chip partnership, strategic business transformation, and chip price hikes. On Sep"
     },
     {
-      "title": "MediaTek stock gains 6.37 percent as AI shares rally",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-stock-gains-6-37-percent-as-ai-shares-rally/70154345",
-      "source": "AD HOC NEWS",
-      "date": "2026-09-22",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": null,
+      "title": "Qualcomm secures extension to global chip licensing pact with Apple",
+      "url": "https://www.aol.com/articles/qualcomm-apple-extend-licensing-agreement-113348000.html",
+      "source": "AOL.com",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "MediaTek stock gains 6.37 percent as AI shares rally\nPublished on 09/22/2026 at 12:40 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSMediaTek Inc. (ISIN TW0002454006) closed at TWD 5,010 on the Taiwan Stock Exchange on September 21, 2026, gaining 6.37 percent. The move followe"
+      "summary": "Qualcomm secures extension to global patent licensing pact with Apple\n(Corrects headline to say \"patent licensing\" agreement, not \"chip licensing;\" The error also appeared in a previous version of the story)\nSept 24 (Reuters) - Qualcomm said on Thursday Apple has extended its patent-licensing agreem"
     },
     {
-      "title": "Qualcomm 30B AI Chip vs Apple A20 Pro: 2026 Race",
-      "url": "https://shattered.io/qualcomm-30b-ai-chip-vs-apple-a20-pro-2026/",
-      "source": "shattered.io",
-      "date": "2026-09-22",
+      "title": "Qualcomm, Apple extend licensing agreement for chips By Reuters",
+      "url": "https://www.investing.com/news/stock-market-news/qualcomm-apple-extend-licensing-agreement-for-chips-4915186",
+      "source": "Investing.com",
+      "date": "2026-09-24",
       "vendor": "Qualcomm",
       "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "Apple spent the summer proving that a 27-billion-parameter language model could run entirely on a phone. Qualcomm is about to answer with a chip built to run one nearly twice that size. The two companies are converging on the same goal, an AI assistant that never has to phone home to a data center, "
+      "summary": ""
     },
     {
-      "title": "MediaTek introduces Dimensity CX C10 Max SoC",
-      "url": "https://www.engineering.com/mediatek-introduces-dimensity-cx-c10-max-soc/",
-      "source": "Engineering.com",
-      "date": "2026-09-22",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Built on a 3nm process, the platform features an 11-core GPU, 55-TOPS NPU, Wi-Fi 7, and support for 32MP cameras.\nMediaTek introduced the MediaTek Dimensity CX C10 Max, the inaugural SoC for the company\u2019s new Dimensity Compute Experiences (CX) family. As the flagship of the lineup, Dimensity CX C10 "
-    },
-    {
-      "title": "Can you forget how you feel about Meta?",
-      "url": "https://www.theverge.com/cs/features/991659/meta-mark-zuckerberg-future-glasses-ai-instagram",
-      "source": "The Verge",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Meta",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "In 2021, as a whistleblower emerged with dramatic allegations that Facebook was harming children, CEO Mark Zuckerberg posted a rebuttal on Facebook. \u201cWe care deeply about issues like safety, well-being and mental health. It&#8217;s difficult to see coverage that misrepresents our work and our motive"
-    },
-    {
-      "title": "Apple @ Work Podcast: Phishing simulations for the AI era",
-      "url": "https://9to5mac.com/2026/09/22/phishing-simulations-for-the-ai-era/",
-      "source": "9to5Mac",
-      "date": "2026-09-22",
-      "vendor": null,
+      "title": "Qualcomm secures long-term Apple patent deal, easing revenue fears",
+      "url": "https://www.investing.com/news/stock-market-news/qualcomm-secures-longterm-apple-patent-deal-easing-revenue-fears-4915175",
+      "source": "Investing.com",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
       "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Apple @ Work is exclusively brought to you by Mosyle, the only Apple Unified Platform. Mosyle is the only solution that integrates in a single professional-grade platform all the solutions necessary to seamlessly and automatically deploy, manage &amp; protect Apple devices at work. Over 45,000 organ"
-    },
-    {
-      "title": "MediaTek intros Googlebook-targeted Dimensity chip",
-      "url": "https://www.telecompaper.com/news/mediatek-intros-googlebook-targeted-dimensity-chip--1583401",
-      "source": "Telecompaper",
-      "date": "2026-09-22",
-      "vendor": "MediaTek",
-      "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "Complete profile\nBefore downloading the whitepaper, we would like to ask you to complete your profile with company and position. After confirming you will receive the white paper.\nComplete profile\nBefore downloading the whitepaper, we would like to ask you to complete your profile with company and p"
+      "summary": ""
     },
     {
-      "title": "MediaTek launches new Dimensity CX C10 Max 3nm chipset for Googlebooks",
-      "url": "https://www.91mobiles.com/hub/mediatek-dimensity-cx-c10-max-chipset-launched/",
-      "source": "91mobiles.com",
-      "date": "2026-09-22",
-      "vendor": "MediaTek",
-      "customer": "Google",
-      "application": "Embedded / Electronics",
+      "title": "Qualcomm renews patent license deal with Apple",
+      "url": "https://breakingthenews.net/Article/Qualcomm-renews-patent-license-deal-with-Apple/67169569",
+      "source": "Breakingthenews.net",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
       "buckets": [],
-      "summary": "Googlebook is getting another hardware partner, with MediaTek confirming that its new Dimensity CX C10 Max chip will power an upcoming Lenovo device running Googlebook OS. The processor joins Intel and Qualcomm as another platform for Google\u2019s new laptop ecosystem. Here\u2019s what you need to know.\nTabl"
+      "summary": ""
     },
     {
-      "title": "Apple\u2019s Siri-powered hub could finally be in your home soon",
-      "url": "https://www.the-ambient.com/news/apples-siri-powered-hub-could-finally-be-in-your-home-soon/",
-      "source": "The Ambient",
-      "date": "2026-09-22",
-      "vendor": null,
+      "title": "Build a Discreet Apple Home Sensor with a 7-Year Battery Life",
+      "url": "https://www.geeky-gadgets.com/sleeper-ikea-smart-home-sensor/",
+      "source": "Geeky Gadgets",
+      "date": "2026-09-24",
+      "vendor": "Nordic",
       "customer": "Apple",
       "application": "Smart Home",
       "buckets": [],
-      "summary": "Apple has begun testing a Siri-powered smart home hub, internally known as J490, inside employees\u2019 homes.\nThat internal testing follows years of speculation about an Apple smart display, a category Amazon\u2019s Echo Show and Google\u2019s Nest Hub have dominated since Apple first showed interest in 2022, acc"
+      "summary": "Microamp Home developed a smart home sensor that combines functionality with subtle design by embedding a temperature and humidity sensor into an IKEA photo frame. The project achieved a battery life of up to 7 years while maintaining compatibility with Apple Home and making sure accurate readings t"
     },
     {
-      "title": "- google.com",
+      "title": "Qualcomm\u2019s Snapdragon Sound Elite Gen 2 Arrives for AI Audio Wearables",
+      "url": "https://sammyguru.com/qualcomm-snapdragon-sound-elite-gen-2-ai-audio-wearables/",
+      "source": "SammyGuru",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Wearable",
+      "buckets": [],
+      "summary": "SammyGuru is reader-supported. We have affiliate and sponsored partnerships, so we may earn a commission when you buy through links on our site \u2014 at no extra cost to you. Learn more.\nQualcomm has unveiled the Snapdragon Sound Elite Gen 2 platform, its next-gen premium chip for AI-powered audio weara"
+    },
+    {
+      "title": "Qualcomm, Apple extend licensing agreement for chips",
+      "url": "https://www.reuters.com/technology/qualcomm-apple-extend-licensing-agreement-chips-2026-09-24/",
+      "source": "Reuters",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Qualcomm rises as it renews patent license agreement with Apple (QCOM:NASDAQ)",
+      "url": "https://seekingalpha.com/news/4646542-qualcomm-rises-as-it-renews-patent-license-agreement-with-apple",
+      "source": "Seeking Alpha",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Qualcomm (QCOM) shares rose 1% in premarket trading on Thursday after the San Diego-based semiconductor company announced it has renewed its patent license agreement with Apple (AAPL).\n\"We are pleased to extend the Apple license agreement,\" said Qualcomm executive John Han\nTo ensure this doesn\u2019t hap"
+    },
+    {
+      "title": "Qualcomm Renews Global Licensing Pact with Apple Starting 2027",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-24/qualcomm-renews-global-licensing-pact-with-apple-starting-2027",
+      "source": "Bloomberg",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Qualcomm Incorporated (QCOM) Renews Apple Patent License Effective Apr 1, 2027",
+      "url": "https://www.tradingview.com/news/tradingview:d57002399fa56:0-qualcomm-incorporated-qcom-renews-apple-patent-license-effective-apr-1-2027/",
+      "source": "TradingView",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "Qualcomm Incorporated (QCOM) Renews Apple Patent License Effective Apr 1, 2027\nLess than 1 min read\nQualcomm announced renewal of its global patent license agreement with Apple, effective April 1, 2027.\nMaterial Details\nContext by AI Analyst\nThis is a late confirmation of ongoing licensing ties betw"
+    },
+    {
+      "title": "Meta ads steered Polish Android users into a premium-rate billing trap",
+      "url": "https://www.theregister.com/cyber-crime/2026/09/24/meta-ads-steered-polish-android-users-into-a-premium-rate-billing-trap/5298790",
+      "source": "The Register",
+      "date": "2026-09-24",
+      "vendor": null,
+      "customer": "Google",
+      "application": null,
+      "buckets": [],
+      "summary": "CERT Polska linked 852 promotions to 17 Google Play apps capable of sending costly texts or starting recurring subscriptions"
+    },
+    {
+      "title": "Qualcomm's Snapdragon Sound Elite Is A New AI Chip For Audio Wearables",
+      "url": "https://www.engadget.com/2267407/qualcomm-snapdragon-sound-elite-ai-for-audio-wearables/",
+      "source": "Engadget",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Apple",
+      "application": "AR / VR / XR",
+      "buckets": [],
+      "summary": "Qualcomm's Snapdragon Sound Elite is a new AI chip for audio wearables\nThe company says it will enable on-device AI.\nQualcomm has launched the Snapdragon Sound Elite Gen 2 chip for the next generation of audio devices with AI features. This model will enable more powerful on-device AI capabilities f"
+    },
+    {
+      "title": "iOS 27.0.1 update likely coming soon for iPhone",
+      "url": "https://9to5mac.com/2026/09/24/ios-27-0-1-update-likely-coming-soon-for-iphone-users/",
+      "source": "9to5Mac",
+      "date": "2026-09-24",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Apple is testing iOS 27.0.1 for iPhone, according to web traffic analytics for 9to5Mac. The update will likely focus on bug fixes and performance improvements. more\u2026"
+    },
+    {
+      "title": "- Google",
       "url": "https://www.google.com/m/storepages?q=amazon.in&c=IN&hl=en-IN",
-      "source": "google.com",
-      "date": "2026-09-22",
+      "source": "Google",
+      "date": "2026-09-24",
       "vendor": null,
       "customer": "Google",
       "application": null,
@@ -401,127 +335,155 @@
       "summary": "About this page\nStore ratings are based on customer reviews and other data from Google and/or its partners.\nGoogle's Top Quality Store badge is earned by merchants that provide a great shopping experience.\nInformation on delivery, returns and support is based on customer reviews and surveys, and som"
     },
     {
-      "title": "Gearotons M17 \u2013 A low-cost NEMA-17 4-in-1 servomotor with driver, motion controller, and encoder",
-      "url": "https://www.cnx-software.com/2026/09/22/gearotons-m17-a-low-cost-nema-17-4-in-1-servomotor-with-driver-motion-controller-and-encoder/",
-      "source": "CNX Software",
-      "date": "2026-09-22",
-      "vendor": "Espressif",
-      "customer": "Amazon",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Gearotons M17 open-source hardware servomotor integrates the four parts of a motion axis into one standard NEMA-17 body with no protrusions: the motor, the driver, the motion controller, and the encoder. This level of integration enables it to be low-cost ($20 and up) and easier to use. The user has"
-    },
-    {
-      "title": "Apple&#8217;s first live music venue is opening beneath its UK headquarters",
-      "url": "https://www.theverge.com/tech/998581/apple-music-hall-london-venue-battersea",
-      "source": "The Verge",
-      "date": "2026-09-22",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Audio / Speaker",
-      "buckets": [],
-      "summary": "Apple is preparing to open a new \"state-of-the-art\" live music venue in the UK, a 600-capacity space for hosting performances, recording sessions, and video broadcasts. The venue, called Apple Music Hall, is located underneath Apple's European headquarters in London's iconic Battersea Power Station,"
-    },
-    {
-      "title": "Qualcomm Shares Slip 0.93% In Premarket - Qualcomm (NASDAQ:QCOM)",
-      "url": "https://www.benzinga.com/markets/equities/26/09/61912812/qualcomm-shares-rise-after-hours-google-partnership",
-      "source": "Benzinga",
-      "date": "2026-09-22",
+      "title": "New AI Chips Might Change The Case For Investing In Qualcomm Stock",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-qcom/qualcomm/news/new-ai-chips-might-change-the-case-for-investing-in-qualcomm",
+      "source": "simplywall.st",
+      "date": "2026-09-24",
       "vendor": "Qualcomm",
-      "customer": "Google",
+      "customer": "Xiaomi",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:QCOM\nNew AI Chips Might Change The Case For Investing In Qualcomm Stock\n- Qualcomm recently introduced new 2 nm Snapdragon 8 Elite Gen 6 and 8 Elite Extreme Gen 6 processors, featuring advanced on device AI for premium Android phones and early desi"
+    },
+    {
+      "title": "Qualcomm's new chip for wireless earbuds and smart glasses has more AI power",
+      "url": "https://www.sammobile.com/news/qualcomm-snapdragon-sound-elite-gen-2-chip-wireless-earbuds-smart-glasses-ai-power/",
+      "source": "SamMobile",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Smart Glasses",
+      "buckets": [],
+      "summary": "Last updated: September 24th, 2026 at 13:07 UTC+02:00\nSamMobile has affiliate and sponsored partnerships, we may earn a commission.\nSamsung could use it in future Galaxy Buds or Glasses.\nReading time: 2 minutes\nAbhijeet Mishra / SamMobile\nBesides two new high-end Snapdragon chips for smartphones, Qu"
+    },
+    {
+      "title": "Qualcomm's New Snapdragon Sound Elite Gen 2 Chip Wants to Make Your Earbuds Smarter",
+      "url": "https://www.androidheadlines.com/2026/09/qualcomms-new-snapdragon-sound-elite-gen-2-chip-wants-to-make-your-earbuds-smarter.html",
+      "source": "Android Headlines",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "Qualcomm Inc. (NASDAQ:QCOM) shares are trending on Tuesday.\nShares of the California-based chipmaker, known for its Snapdragon chipsets, is edging 0.93% lower to hover around $192.43 in pre-market session Tuesday, following an announcement of a partnership with Alphabet Inc.\u2018s (NASDAQ:GOOG) (NASDAQ:"
+      "summary": "Qualcomm has announced the Snapdragon Sound Elite Gen 2, its first \u201cplatform purpose-built to combine premium audio and voice technologies with the on-device intelligence and connectivity required for agent-powered experiences.\u201d\nThe Snapdragon Sound Elite Gen 2 combines premium Snapdragon Sound tech"
     },
     {
-      "title": "Dimensity CX C10 Max is MediaTek\u2019s new chipset for tablets and laptops",
-      "url": "https://htxt.co.za/2026/09/dimensity-cx-c10-max-is-mediateks-new-chipset-for-tablets-and-laptops/",
-      "source": "htxt.co.za",
-      "date": "2026-09-22",
-      "vendor": "MediaTek",
+      "title": "Qualcomm to acquire PickNik to advance open robotics ecosystem",
+      "url": "https://evertiq.com/news/2026-09-24-qualcomm-to-acquire-picknik-to-advance-open-robotics-ecosystem",
+      "source": "Evertiq",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Qualcomm to acquire PickNik to advance open robotics ecosystem\nThe acquisition is intended to foster an open robotics ecosystem, providing developers with the tools, software and frameworks needed to move more efficiently from research and experimentation to prototyping, deployment and production at"
+    },
+    {
+      "title": "Review: Apple's hyper-pricey M5 Ultra Mac Studio made me into a vibe coder",
+      "url": "https://arstechnica.com/gadgets/2026/09/review-apples-hyper-pricey-m5-ultra-mac-studio-made-me-into-a-vibe-coder/",
+      "source": "Ars Technica",
+      "date": "2026-09-24",
+      "vendor": "Apple",
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "This spring, Apple made it official: The Mac Pro is dead.\nWhen Apple was using Intel processors and AMD GPUs, the idea of an expandable and upgradeable tower made sense. But Apple Silicon chips bring the CPU, GPU, and memory interface all under one roof in a way that makes that sort of upgradeabilit"
+    },
+    {
+      "title": "HSBC decides Samsung Secure Folder and Android's Private Space are no place for a banking app",
+      "url": "https://www.theregister.com/applications/2026/09/24/hsbc-decides-samsung-secure-folder-and-androids-private-space-are-no-place-for-a-banking-app/5298542",
+      "source": "The Register",
+      "date": "2026-09-24",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Customers say the unannounced change also cut off web access that relied on mobile authentication"
+    },
+    {
+      "title": "NXP Semiconductors stock reports 19.5 percent revenue growth",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-stock-reports-19-5-percent-revenue-growth/70176962",
+      "source": "AD HOC NEWS",
+      "date": "2026-09-24",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NXP Semiconductors stock reports 19.5 percent revenue growth\nPublished on 09/24/2026 at 12:22 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSNXP Semiconductors stock (NASDAQ: NXPI) was trading at USD 235.44 on Nasdaq on September 23, 2026, down 0.90 percent from the prior clos"
+    },
+    {
+      "title": "Qualcomm buys PickNik",
+      "url": "https://www.electronicsweekly.com/news/business/qualcomm-buys-picknick-2026-09/",
+      "source": "Electronics Weekly",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Qualcomm has bought PickNik, a software company specialising in robotics.\nThe move is seen as Qualcomm moving further into physical AI after its Arduino and Modular acquisitions.\n\u201cRobotics is one of the most exciting frontiers of physical AI, and software is the connective tissue that turns great ha"
+    },
+    {
+      "title": "Meet Qualcomm\u2019s Next-Gen Snapdragon Chips Behind 2027\u2019s Biggest Android Phones",
+      "url": "https://fossbytes.com/snapdragon-8-elite-extreme-gen-6-details/",
+      "source": "Fossbytes",
+      "date": "2026-09-24",
+      "vendor": "Qualcomm",
       "customer": "Google",
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "The first batch of Googlebook laptops have now been revealed, but what about the second wave? When these devices are revealed, the likes of MediaTek will play a part in powering them, as the silicon maker was debuted its latest processor \u2013 the Dimensity CX C10 Max.\nWhile we don\u2019t a timeframe of when"
+      "summary": "Meet Qualcomm\u2019s Next-Gen Snapdragon Chips Behind 2027\u2019s Biggest Android Phones\nQualcomm has launched two new flagship mobile chipset solutions for smartphones: the Snapdragon 8 Elite Extreme Gen 6 and the Snapdragon 8 Elite Gen 6. These chips use the 2nm manufacturing process and will power upcoming"
+    },
+    {
+      "title": "Sequans Completes Bitcoin Treasury Exit and Emerges with a Solid Financial Foundation",
+      "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Newsfile/4772803/sequans-completes-bitcoin-treasury-exit-and-emerges-with-a-solid-financial-foundation/",
+      "source": "The Globe and Mail",
+      "date": "2026-09-24",
+      "vendor": "Sequans",
+      "customer": null,
+      "application": "Asset Tracking",
+      "buckets": [],
+      "summary": "Sequans Completes Bitcoin Treasury Exit and Emerges with a Solid Financial Foundation\nPositioned to accelerate its semiconductor growth strategy through expanding product revenue, licensing opportunities and next-generation technologies\nParis, France--(Newsfile Corp. - September 24, 2026) - Sequans "
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 124,
-    "MediaTek": 78,
-    "NXP": 29,
-    "Espressif": 6,
+    "Qualcomm": 194,
+    "MediaTek": 63,
+    "NXP": 32,
+    "Espressif": 9,
+    "Silicon Labs": 8,
+    "TI": 8,
     "Nordic": 6,
-    "Silicon Labs": 6,
-    "Marvell": 4,
-    "TI": 4,
-    "Apple": 3,
-    "Broadcom": 2,
-    "Realtek": 2,
-    "Onsemi": 2,
+    "Quectel": 5,
+    "Skyworks": 3,
+    "Realtek": 3,
+    "Infineon": 2,
+    "Atmosic": 2,
+    "Qorvo": 2,
+    "UNISOC": 2,
+    "Synaptics": 2,
+    "Apple": 1,
+    "Sequans": 1,
     "Microchip": 1,
-    "Atmosic": 1,
-    "Infineon": 1,
-    "Skyworks": 1,
-    "Synaptics": 1,
-    "Qorvo": 1,
-    "Renesas": 1
+    "Broadcom": 1,
+    "Onsemi": 1
   },
   "customer_news_30d": {
-    "Apple": 190,
-    "Google": 97,
-    "Amazon": 28,
-    "Samsung": 17,
-    "Microsoft": 15,
-    "Meta": 8,
-    "Motorola": 5,
+    "Apple": 191,
+    "Google": 90,
+    "Amazon": 23,
+    "Microsoft": 20,
+    "Samsung": 19,
+    "Meta": 17,
+    "Xiaomi": 7,
+    "Motorola": 6,
     "Sony": 5,
     "Bose": 4,
-    "Eufy/Anker": 2,
-    "IKEA": 2,
+    "Stellantis": 1,
     "Huawei": 1,
-    "Oura": 1,
-    "BMW": 1,
-    "Toyota": 1,
-    "HKMC": 1,
-    "Philips Hue": 1,
-    "Tesla": 1,
-    "Aqara": 1
+    "Bang & Olufsen": 1,
+    "Philips Hue": 1
   },
   "github_pulse": [
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 4038,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16582,
-      "pushed_at": "2026-09-22T11:22:43Z"
-    },
     {
       "name": "BlueZ",
       "owner": "bluez",
@@ -531,7 +493,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 113,
+      "issues_open": 116,
       "prs_open": 0,
       "releases": [
         {
@@ -554,7 +516,7 @@
         }
       ],
       "stars": 1149,
-      "pushed_at": "2026-09-22T11:45:27Z"
+      "pushed_at": "2026-09-23T21:50:43Z"
     },
     {
       "name": "ESP-IDF",
@@ -567,7 +529,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1677,
+      "issues_open": 1692,
       "prs_open": 0,
       "releases": [
         {
@@ -589,8 +551,57 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19073,
-      "pushed_at": "2026-09-21T19:26:33Z"
+      "stars": 19083,
+      "pushed_at": "2026-09-23T21:17:06Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 4002,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+        },
+        {
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+        },
+        {
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+        }
+      ],
+      "stars": 16604,
+      "pushed_at": "2026-09-24T11:48:20Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 249983,
+      "pushed_at": "2026-09-23T22:30:27Z"
     },
     {
       "name": "Matter SDK",
@@ -601,7 +612,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2860,
+      "issues_open": 2861,
       "prs_open": 0,
       "releases": [
         {
@@ -623,23 +634,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8951,
-      "pushed_at": "2026-09-22T11:51:52Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 249782,
-      "pushed_at": "2026-09-21T18:27:28Z"
+      "stars": 8950,
+      "pushed_at": "2026-09-24T12:31:04Z"
     },
     {
       "name": "OpenThread",
@@ -649,8 +645,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 63,
-      "issues_open": 160,
+      "commits_30d": 66,
+      "issues_open": 159,
       "prs_open": 0,
       "releases": [
         {
@@ -672,8 +668,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4036,
-      "pushed_at": "2026-09-21T16:22:19Z"
+      "stars": 4037,
+      "pushed_at": "2026-09-24T06:01:54Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -684,7 +680,7 @@
         "ieee15_4"
       ],
       "commits_30d": 23,
-      "issues_open": 452,
+      "issues_open": 456,
       "prs_open": 0,
       "releases": [
         {
@@ -706,8 +702,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15656,
-      "pushed_at": "2026-09-19T20:47:45Z"
+      "stars": 15662,
+      "pushed_at": "2026-09-23T15:24:08Z"
     },
     {
       "name": "NimBLE",
@@ -846,18 +842,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526342367/ter-20260807.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-08-10",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926093355/tm2622643d1_8k.htm"
-    },
-    {
       "vendor": "Synaptics",
       "ticker": "SYNA",
       "form": "10-K",
       "date": "2026-08-10",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000055/syna-20260627.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-10",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926093355/tm2622643d1_8k.htm"
     },
     {
       "vendor": "Microchip",
@@ -972,20 +968,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom-20260729.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "10-Q",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1005,6 +987,20 @@
       "form": "8-K",
       "date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000045/swks-20260728.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "10-Q",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
     },
     {
       "vendor": "Microchip",
@@ -1040,34 +1036,6 @@
       "form": "DEF 14A",
       "date": "2026-06-26",
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000119312526285512/d22973ddef14a.htm"
-    },
-    {
-      "vendor": "Marvell",
-      "ticker": "MRVL",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/1835632/000162828026045564/mrvl-20260625.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126026395/ef20076747_8k.htm"
-    },
-    {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-06-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126026434/ef20076748_8k.htm"
-    },
-    {
-      "vendor": "Qualcomm",
-      "ticker": "QCOM",
-      "form": "8-K",
-      "date": "2026-06-24",
-      "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926077071/tm2618522d1_8k.htm"
     }
   ],
   "tracked_competitors": [
@@ -3625,6 +3593,11 @@
           "url": "https://www.marketscreener.com/news/synaptics-brings-tactile-sensing-and-edge-ai-to-nvidia-isaac-sim-and-holoscan-ce785bdddd8dfe2c"
         },
         {
+          "title": "Synaptics and onsemi Pitch AI-Focused Merger",
+          "date": "Sep 2026",
+          "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
+        },
+        {
           "title": "Synaptics to Announce Fourth Quarter Fiscal Year 2026 Financial Results on August 6th",
           "date": "Aug 2026",
           "url": "https://www.marketbeat.com/instant-alerts/synaptics-syna-expected-to-post-quarterly-earnings-on-thursday-2026-07-30/"
@@ -3663,11 +3636,6 @@
           "title": "Synaptics (SYNA) Beats On Revenue And Margins, Is It Still Cheap?",
           "date": "Aug 2026",
           "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-syna/synaptics/news/synaptics-syna-beats-on-revenue-and-margins-is-it-still-chea/amp"
-        },
-        {
-          "title": "Onsemi Acquires Synaptics for $7 Billion",
-          "date": "Aug 2026",
-          "url": "https://tech-insider.org/ca/onsemi-synaptics-acquisition-2026/"
         }
       ],
       "events": [
@@ -4063,6 +4031,11 @@
       ],
       "press_releases": [
         {
+          "title": "Microchip Technology Completes Acquisition of Hailo",
+          "date": "Sep 2026",
+          "url": "https://ir.microchip.com/news-events/press-releases/detail/1415/microchip-technology-completes-acquisition-of-hailo"
+        },
+        {
           "title": "Microchip Technology Demonstrates PCIe Gen 6 Storage Architecture with Micron",
           "date": "Aug 2026",
           "url": "https://www.globenewswire.com/news-release/2026/08/04/3338174/0/en/microchip-technology-in-collaboration-with-micron-technology-demonstrates-high-performance-pcie-gen-6-storage-architecture-for-ai-and-data-center-infrastructure.html"
@@ -4106,11 +4079,6 @@
           "title": "Micron (MU) Teams Up With Liqid And Microchip On AI Memory And Storage",
           "date": "Aug 2026",
           "url": "https://finance.yahoo.com/technology/ai/articles/micron-mu-teams-liqid-microchip-081210293.html"
-        },
-        {
-          "title": "Microchip Technology Announces Financial Results for First Quarter of Fiscal Year 2027",
-          "date": "Aug 2026",
-          "url": "https://ir.microchip.com/news-events/press-releases/detail/1409/microchip-technology-announces-financial-results-for-first-quarter-of-fiscal-year-2027"
         }
       ]
     },
@@ -4467,6 +4435,11 @@
           "url": "https://www.01net.it/atmosic-unveils-atm53-series-a-new-era-in-physical-ai-driven-asset-tracking/"
         },
         {
+          "title": "ATM53 - Atmosic Technologies | Wireless Chipset",
+          "date": "Sep 2026",
+          "url": "https://www.everythingrf.com/products/wireless-soc-s/atmosic-technologies/787-1764-atm53"
+        },
+        {
           "title": "Atmosic ATM34/e SoC Now Available Through Mouser for Ultra-Low Power IoT Applications",
           "date": "Jun 2026",
           "url": "https://www.electronicsmedia.info/2026/06/10/atmosic-atm34-e-soc/"
@@ -4493,11 +4466,6 @@
         },
         {
           "title": "Targus Wins CES 2024 Innovation Award with Atmosic ATM2-Powered ErgoFlip EcoSmart Mouse",
-          "date": "Dec 2023",
-          "url": ""
-        },
-        {
-          "title": "Targus Wins CES 2024 Innovation Award with ErgoFlip EcoSmart Mouse Featuring Atmosic ATM2 Bluetooth LE SoC",
           "date": "Dec 2023",
           "url": ""
         }

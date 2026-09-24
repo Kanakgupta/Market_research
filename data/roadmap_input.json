@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T13:15:34Z",
+  "generated_at": "2026-09-24T13:12:44Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2579,6 +2579,11 @@
           "url": "https://www.marketscreener.com/news/synaptics-brings-tactile-sensing-and-edge-ai-to-nvidia-isaac-sim-and-holoscan-ce785bdddd8dfe2c"
         },
         {
+          "title": "Synaptics and onsemi Pitch AI-Focused Merger",
+          "date": "Sep 2026",
+          "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
+        },
+        {
           "title": "Synaptics to Announce Fourth Quarter Fiscal Year 2026 Financial Results on August 6th",
           "date": "Aug 2026",
           "url": "https://www.marketbeat.com/instant-alerts/synaptics-syna-expected-to-post-quarterly-earnings-on-thursday-2026-07-30/"
@@ -2617,11 +2622,6 @@
           "title": "Synaptics (SYNA) Beats On Revenue And Margins, Is It Still Cheap?",
           "date": "Aug 2026",
           "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-syna/synaptics/news/synaptics-syna-beats-on-revenue-and-margins-is-it-still-chea/amp"
-        },
-        {
-          "title": "Onsemi Acquires Synaptics for $7 Billion",
-          "date": "Aug 2026",
-          "url": "https://tech-insider.org/ca/onsemi-synaptics-acquisition-2026/"
         }
       ],
       "events": [
@@ -3017,6 +3017,11 @@
       ],
       "press_releases": [
         {
+          "title": "Microchip Technology Completes Acquisition of Hailo",
+          "date": "Sep 2026",
+          "url": "https://ir.microchip.com/news-events/press-releases/detail/1415/microchip-technology-completes-acquisition-of-hailo"
+        },
+        {
           "title": "Microchip Technology Demonstrates PCIe Gen 6 Storage Architecture with Micron",
           "date": "Aug 2026",
           "url": "https://www.globenewswire.com/news-release/2026/08/04/3338174/0/en/microchip-technology-in-collaboration-with-micron-technology-demonstrates-high-performance-pcie-gen-6-storage-architecture-for-ai-and-data-center-infrastructure.html"
@@ -3060,11 +3065,6 @@
           "title": "Micron (MU) Teams Up With Liqid And Microchip On AI Memory And Storage",
           "date": "Aug 2026",
           "url": "https://finance.yahoo.com/technology/ai/articles/micron-mu-teams-liqid-microchip-081210293.html"
-        },
-        {
-          "title": "Microchip Technology Announces Financial Results for First Quarter of Fiscal Year 2027",
-          "date": "Aug 2026",
-          "url": "https://ir.microchip.com/news-events/press-releases/detail/1409/microchip-technology-announces-financial-results-for-first-quarter-of-fiscal-year-2027"
         }
       ]
     },
@@ -3421,6 +3421,11 @@
           "url": "https://www.01net.it/atmosic-unveils-atm53-series-a-new-era-in-physical-ai-driven-asset-tracking/"
         },
         {
+          "title": "ATM53 - Atmosic Technologies | Wireless Chipset",
+          "date": "Sep 2026",
+          "url": "https://www.everythingrf.com/products/wireless-soc-s/atmosic-technologies/787-1764-atm53"
+        },
+        {
           "title": "Atmosic ATM34/e SoC Now Available Through Mouser for Ultra-Low Power IoT Applications",
           "date": "Jun 2026",
           "url": "https://www.electronicsmedia.info/2026/06/10/atmosic-atm34-e-soc/"
@@ -3447,11 +3452,6 @@
         },
         {
           "title": "Targus Wins CES 2024 Innovation Award with Atmosic ATM2-Powered ErgoFlip EcoSmart Mouse",
-          "date": "Dec 2023",
-          "url": ""
-        },
-        {
-          "title": "Targus Wins CES 2024 Innovation Award with ErgoFlip EcoSmart Mouse Featuring Atmosic ATM2 Bluetooth LE SoC",
           "date": "Dec 2023",
           "url": ""
         }
@@ -3769,25 +3769,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 124,
-    "MediaTek": 78,
-    "NXP": 29,
-    "Espressif": 6,
+    "Qualcomm": 194,
+    "MediaTek": 63,
+    "NXP": 32,
+    "Espressif": 9,
+    "Silicon Labs": 8,
+    "TI": 8,
     "Nordic": 6,
-    "Silicon Labs": 6,
-    "Marvell": 4,
-    "TI": 4,
-    "Apple": 3,
-    "Broadcom": 2,
-    "Realtek": 2,
-    "Onsemi": 2,
+    "Quectel": 5,
+    "Skyworks": 3,
+    "Realtek": 3,
+    "Infineon": 2,
+    "Atmosic": 2,
+    "Qorvo": 2,
+    "UNISOC": 2,
+    "Synaptics": 2,
+    "Apple": 1,
+    "Sequans": 1,
     "Microchip": 1,
-    "Atmosic": 1,
-    "Infineon": 1,
-    "Skyworks": 1,
-    "Synaptics": 1,
-    "Qorvo": 1,
-    "Renesas": 1
+    "Broadcom": 1,
+    "Onsemi": 1
   },
   "standards_in_flight": [
     {
@@ -3860,40 +3861,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 4038,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16582,
-      "pushed_at": "2026-09-22T11:22:43Z"
-    },
-    {
       "name": "BlueZ",
       "owner": "bluez",
       "repo": "bluez",
@@ -3902,7 +3869,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 113,
+      "issues_open": 116,
       "prs_open": 0,
       "releases": [
         {
@@ -3925,7 +3892,7 @@
         }
       ],
       "stars": 1149,
-      "pushed_at": "2026-09-22T11:45:27Z"
+      "pushed_at": "2026-09-23T21:50:43Z"
     },
     {
       "name": "ESP-IDF",
@@ -3938,7 +3905,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1677,
+      "issues_open": 1692,
       "prs_open": 0,
       "releases": [
         {
@@ -3960,8 +3927,57 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19073,
-      "pushed_at": "2026-09-21T19:26:33Z"
+      "stars": 19083,
+      "pushed_at": "2026-09-23T21:17:06Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 4002,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+        },
+        {
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+        },
+        {
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+        }
+      ],
+      "stars": 16604,
+      "pushed_at": "2026-09-24T11:48:20Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 249983,
+      "pushed_at": "2026-09-23T22:30:27Z"
     },
     {
       "name": "Matter SDK",
@@ -3972,7 +3988,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2860,
+      "issues_open": 2861,
       "prs_open": 0,
       "releases": [
         {
@@ -3994,23 +4010,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
         }
       ],
-      "stars": 8951,
-      "pushed_at": "2026-09-22T11:51:52Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 249782,
-      "pushed_at": "2026-09-21T18:27:28Z"
+      "stars": 8950,
+      "pushed_at": "2026-09-24T12:31:04Z"
     },
     {
       "name": "OpenThread",
@@ -4020,8 +4021,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 63,
-      "issues_open": 160,
+      "commits_30d": 66,
+      "issues_open": 159,
       "prs_open": 0,
       "releases": [
         {
@@ -4043,8 +4044,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4036,
-      "pushed_at": "2026-09-21T16:22:19Z"
+      "stars": 4037,
+      "pushed_at": "2026-09-24T06:01:54Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4055,7 +4056,7 @@
         "ieee15_4"
       ],
       "commits_30d": 23,
-      "issues_open": 452,
+      "issues_open": 456,
       "prs_open": 0,
       "releases": [
         {
@@ -4077,8 +4078,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15656,
-      "pushed_at": "2026-09-19T20:47:45Z"
+      "stars": 15662,
+      "pushed_at": "2026-09-23T15:24:08Z"
     },
     {
       "name": "NimBLE",
