@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T13:12:44Z",
+  "generated_at": "2026-09-25T13:12:06Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2086,14 +2086,14 @@
           "url": "https://www.cnx-software.com/2026/09/12/neoeyes-ne302-a-tiny-usb-c-powered-wifi-6-edge-ai-vision-camera-based-on-stm32n6-mcu/"
         },
         {
+          "title": "8devices 8Sight T100 Camera Integrates STMicroelectronics STM32N6 MCU with Lynred Thermal Sensor",
+          "date": "Sep 2026",
+          "url": "https://www.cnx-software.com/2026/09/25/compact-long-wave-infrared-camera-pairs-stm32n6-mcu-with-lynred-ati320-thermal-sensor/"
+        },
+        {
           "title": "STMicroelectronics Holds 19.6M Treasury Shares After Buyback",
           "date": "Aug 2026",
           "url": "https://www.stocktitan.net/news/STM/st-microelectronics-announces-status-of-common-share-repurchase-jmzrq5wuwxam.html"
-        },
-        {
-          "title": "STMicroelectronics Launches ST54M Chip for Hardware-Based Post-Quantum Cryptography",
-          "date": "Aug 2026",
-          "url": "https://www.eetimes.com/stmicroelectronics-bets-on-hardware-based-post-quantum-cryptography-with-st54m/"
         }
       ],
       "events": [
@@ -3246,6 +3246,11 @@
       ],
       "press_releases": [
         {
+          "title": "Airoha Technology Surges 22% This Week to Record High as Optical Communications Break Into Major CSP Supply Chains",
+          "date": "Sep 2026",
+          "url": "https://finance.biggo.com/news/9e246f23-fcec-4c8b-afa4-683ed5e68dba"
+        },
+        {
           "title": "Airoha Announces Doubled Optical Communications Revenue",
           "date": "Aug 2026",
           "url": "https://www.digitimes.com/news/a20260805PD215/airoha-broadband-wireless-revenue-growth.html"
@@ -3289,11 +3294,6 @@
           "title": "Airoha and IC+ Launch New Switch Solution",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Airoha+and+IC%2B+Launch+New+Switch+Solution+Airoha"
-        },
-        {
-          "title": "Airoha and Fraunhofer IIS Showcase High Data Rate Multichannel Spatial Audio at MWC 2026",
-          "date": "Mar 2026",
-          "url": "https://www.google.com/search?q=Airoha+and+Fraunhofer+IIS+Showcase+High+Data+Rate+Multichannel+Spatial+Audio+at+MWC+2026+Airoha"
         }
       ]
     },
@@ -3426,6 +3426,11 @@
           "url": "https://www.everythingrf.com/products/wireless-soc-s/atmosic-technologies/787-1764-atm53"
         },
         {
+          "title": "Atmosic Unveils ATM53 Series for Physical AI-Driven Asset Tracking",
+          "date": "Sep 2026",
+          "url": "https://www.01net.it/atmosic-unveils-atm53-series-a-new-era-in-physical-ai-driven-asset-tracking/"
+        },
+        {
           "title": "Atmosic ATM34/e SoC Now Available Through Mouser for Ultra-Low Power IoT Applications",
           "date": "Jun 2026",
           "url": "https://www.electronicsmedia.info/2026/06/10/atmosic-atm34-e-soc/"
@@ -3448,11 +3453,6 @@
         {
           "title": "Atmosic Brings Multimode Support to Tracking Assets",
           "date": "Jan 2025",
-          "url": ""
-        },
-        {
-          "title": "Targus Wins CES 2024 Innovation Award with Atmosic ATM2-Powered ErgoFlip EcoSmart Mouse",
-          "date": "Dec 2023",
           "url": ""
         }
       ]
@@ -3769,26 +3769,30 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 194,
-    "MediaTek": 63,
-    "NXP": 32,
-    "Espressif": 9,
-    "Silicon Labs": 8,
-    "TI": 8,
-    "Nordic": 6,
-    "Quectel": 5,
-    "Skyworks": 3,
+    "Qualcomm": 210,
+    "MediaTek": 51,
+    "NXP": 29,
+    "Silicon Labs": 9,
+    "TI": 9,
+    "Espressif": 7,
+    "Nordic": 4,
     "Realtek": 3,
+    "Apple": 2,
+    "Murata": 2,
     "Infineon": 2,
+    "Quectel": 2,
     "Atmosic": 2,
-    "Qorvo": 2,
-    "UNISOC": 2,
-    "Synaptics": 2,
-    "Apple": 1,
+    "Onsemi": 2,
+    "Skyworks": 2,
+    "Airoha": 1,
+    "STMicro": 1,
     "Sequans": 1,
+    "Qorvo": 1,
+    "Marvell": 1,
     "Microchip": 1,
     "Broadcom": 1,
-    "Onsemi": 1
+    "UNISOC": 1,
+    "Synaptics": 1
   },
   "standards_in_flight": [
     {
@@ -3869,7 +3873,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 116,
+      "issues_open": 121,
       "prs_open": 0,
       "releases": [
         {
@@ -3891,8 +3895,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1149,
-      "pushed_at": "2026-09-23T21:50:43Z"
+      "stars": 1150,
+      "pushed_at": "2026-09-25T00:04:08Z"
     },
     {
       "name": "ESP-IDF",
@@ -3905,7 +3909,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1692,
+      "issues_open": 1691,
       "prs_open": 0,
       "releases": [
         {
@@ -3927,8 +3931,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19083,
-      "pushed_at": "2026-09-23T21:17:06Z"
+      "stars": 19088,
+      "pushed_at": "2026-09-24T18:23:50Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3939,7 +3943,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4002,
+      "issues_open": 3979,
       "prs_open": 0,
       "releases": [
         {
@@ -3961,8 +3965,42 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16604,
-      "pushed_at": "2026-09-24T11:48:20Z"
+      "stars": 16610,
+      "pushed_at": "2026-09-25T11:39:11Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2865,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.6.1.0",
+          "name": "v1.6.1.0 Release",
+          "published_at": "2026-09-25T12:38:51Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.1.0"
+        },
+        {
+          "tag": "v1.6.0.0",
+          "name": "v1.6.0.0 Release",
+          "published_at": "2026-08-20T15:23:47Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+        },
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        }
+      ],
+      "stars": 8951,
+      "pushed_at": "2026-09-25T12:57:34Z"
     },
     {
       "name": "Linux mac80211",
@@ -3976,42 +4014,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 249983,
-      "pushed_at": "2026-09-23T22:30:27Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2861,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.6.0.0",
-          "name": "v1.6.0.0 Release",
-          "published_at": "2026-08-20T15:23:47Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
-        },
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        },
-        {
-          "tag": "v1.5.0.1",
-          "name": "v1.5.0.1 Release",
-          "published_at": "2025-12-02T14:31:09Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.0.1"
-        }
-      ],
-      "stars": 8950,
-      "pushed_at": "2026-09-24T12:31:04Z"
+      "stars": 250119,
+      "pushed_at": "2026-09-25T00:11:44Z"
     },
     {
       "name": "OpenThread",
@@ -4021,8 +4025,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 66,
-      "issues_open": 159,
+      "commits_30d": 60,
+      "issues_open": 161,
       "prs_open": 0,
       "releases": [
         {
@@ -4045,7 +4049,22 @@
         }
       ],
       "stars": 4037,
-      "pushed_at": "2026-09-24T06:01:54Z"
+      "pushed_at": "2026-09-24T18:37:16Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 22,
+      "issues_open": 275,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 892,
+      "pushed_at": "2026-09-18T21:44:42Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4055,7 +4074,7 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 23,
+      "commits_30d": 19,
       "issues_open": 456,
       "prs_open": 0,
       "releases": [
@@ -4078,23 +4097,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15662,
+      "stars": 15666,
       "pushed_at": "2026-09-23T15:24:08Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 22,
-      "issues_open": 275,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 892,
-      "pushed_at": "2026-09-18T21:44:42Z"
     },
     {
       "name": "hostap",
