@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T13:12:06Z",
+  "generated_at": "2026-09-26T13:11:22Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2091,9 +2091,9 @@
           "url": "https://www.cnx-software.com/2026/09/25/compact-long-wave-infrared-camera-pairs-stm32n6-mcu-with-lynred-ati320-thermal-sensor/"
         },
         {
-          "title": "STMicroelectronics Holds 19.6M Treasury Shares After Buyback",
-          "date": "Aug 2026",
-          "url": "https://www.stocktitan.net/news/STM/st-microelectronics-announces-status-of-common-share-repurchase-jmzrq5wuwxam.html"
+          "title": "8devices Integrates STMicro STM32N6 MCU into New 8Sight T100 Thermal Camera",
+          "date": "Sep 2026",
+          "url": "https://www.cnx-software.com/2026/09/25/compact-long-wave-infrared-camera-pairs-stm32n6-mcu-with-lynred-ati320-thermal-sensor/"
         }
       ],
       "events": [
@@ -2584,6 +2584,11 @@
           "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
         },
         {
+          "title": "Synaptics and onsemi Propose AI-Focused Merger",
+          "date": "Sep 2026",
+          "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
+        },
+        {
           "title": "Synaptics to Announce Fourth Quarter Fiscal Year 2026 Financial Results on August 6th",
           "date": "Aug 2026",
           "url": "https://www.marketbeat.com/instant-alerts/synaptics-syna-expected-to-post-quarterly-earnings-on-thursday-2026-07-30/"
@@ -2617,11 +2622,6 @@
           "title": "Synaptics (NASDAQ:SYNA) Posts Earnings Results, Beats Estimates By $0.02 EPS",
           "date": "Aug 2026",
           "url": "https://www.marketbeat.com/instant-alerts/synaptics-nasdaqsyna-posts-earnings-results-beats-estimates-by-002-eps-2026-08-07/"
-        },
-        {
-          "title": "Synaptics (SYNA) Beats On Revenue And Margins, Is It Still Cheap?",
-          "date": "Aug 2026",
-          "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-syna/synaptics/news/synaptics-syna-beats-on-revenue-and-margins-is-it-still-chea/amp"
         }
       ],
       "events": [
@@ -3520,19 +3520,19 @@
           "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-introduces-the-embedded-power-platform-a-breakthrough-architecture-for-the-ai-era"
         },
         {
+          "title": "Onsemi AR1335 13MP OIS MIPI Camera Validated by Vadzo Imaging",
+          "date": "Sep 2026",
+          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/vadzo-imaging-validates-bolt-1335cro-onsemi-ar1335-13mp-ois-mipi-camera-1225853"
+        },
+        {
+          "title": "Onsemi and Synaptics Pitch AI-Focused Merger",
+          "date": "Sep 2026",
+          "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
+        },
+        {
           "title": "onsemi Reports Strong Second Quarter 2026 Financial Results",
           "date": "Aug 2026",
           "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-second-quarter-2026-results/"
-        },
-        {
-          "title": "Onsemi Reports Strong Q2 2026 Financial Results, Including 9% Revenue Growth, Quadrupled Free Cash Flow, and Doubled AI Data Center Outlook",
-          "date": "Aug 2026",
-          "url": "https://qz.com/on-semiconductor-earnings-ai-data-center-080426"
-        },
-        {
-          "title": "Onsemi Completes AI Power Stack with GaN Technology",
-          "date": "Aug 2026",
-          "url": "https://www.techtimes.com/articles/322917/20260804/onsemi-completes-ai-power-stack-gan-data-center-revenue-set-double.htm"
         }
       ]
     },
@@ -3769,29 +3769,27 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 210,
-    "MediaTek": 51,
-    "NXP": 29,
-    "Silicon Labs": 9,
-    "TI": 9,
-    "Espressif": 7,
-    "Nordic": 4,
+    "Qualcomm": 221,
+    "MediaTek": 44,
+    "NXP": 31,
+    "TI": 10,
+    "Espressif": 9,
+    "Silicon Labs": 6,
+    "Nordic": 5,
+    "Sequans": 4,
+    "Quectel": 4,
+    "Marvell": 3,
     "Realtek": 3,
     "Apple": 2,
-    "Murata": 2,
-    "Infineon": 2,
-    "Quectel": 2,
     "Atmosic": 2,
-    "Onsemi": 2,
-    "Skyworks": 2,
-    "Airoha": 1,
+    "HiSilicon": 1,
     "STMicro": 1,
-    "Sequans": 1,
+    "Infineon": 1,
+    "Onsemi": 1,
     "Qorvo": 1,
-    "Marvell": 1,
     "Microchip": 1,
+    "Skyworks": 1,
     "Broadcom": 1,
-    "UNISOC": 1,
     "Synaptics": 1
   },
   "standards_in_flight": [
@@ -3865,6 +3863,40 @@
   ],
   "github_stack_activity": [
     {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3894,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+        },
+        {
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+        },
+        {
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+        }
+      ],
+      "stars": 16613,
+      "pushed_at": "2026-09-26T06:40:56Z"
+    },
+    {
       "name": "BlueZ",
       "owner": "bluez",
       "repo": "bluez",
@@ -3873,7 +3905,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 121,
+      "issues_open": 130,
       "prs_open": 0,
       "releases": [
         {
@@ -3896,7 +3928,7 @@
         }
       ],
       "stars": 1150,
-      "pushed_at": "2026-09-25T00:04:08Z"
+      "pushed_at": "2026-09-26T00:38:19Z"
     },
     {
       "name": "ESP-IDF",
@@ -3909,7 +3941,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1691,
+      "issues_open": 1694,
       "prs_open": 0,
       "releases": [
         {
@@ -3931,42 +3963,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19088,
-      "pushed_at": "2026-09-24T18:23:50Z"
-    },
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3979,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16610,
-      "pushed_at": "2026-09-25T11:39:11Z"
+      "stars": 19094,
+      "pushed_at": "2026-09-25T17:46:20Z"
     },
     {
       "name": "Matter SDK",
@@ -3977,7 +3975,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2865,
+      "issues_open": 2863,
       "prs_open": 0,
       "releases": [
         {
@@ -3999,8 +3997,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8951,
-      "pushed_at": "2026-09-25T12:57:34Z"
+      "stars": 8952,
+      "pushed_at": "2026-09-26T05:43:00Z"
     },
     {
       "name": "Linux mac80211",
@@ -4014,8 +4012,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 250119,
-      "pushed_at": "2026-09-25T00:11:44Z"
+      "stars": 250241,
+      "pushed_at": "2026-09-25T23:06:23Z"
     },
     {
       "name": "OpenThread",
@@ -4025,8 +4023,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 60,
-      "issues_open": 161,
+      "commits_30d": 61,
+      "issues_open": 159,
       "prs_open": 0,
       "releases": [
         {
@@ -4048,8 +4046,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4037,
-      "pushed_at": "2026-09-24T18:37:16Z"
+      "stars": 4036,
+      "pushed_at": "2026-09-25T20:51:36Z"
     },
     {
       "name": "NimBLE",
@@ -4075,7 +4073,7 @@
         "ieee15_4"
       ],
       "commits_30d": 19,
-      "issues_open": 456,
+      "issues_open": 458,
       "prs_open": 0,
       "releases": [
         {
@@ -4097,7 +4095,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15666,
+      "stars": 15669,
       "pushed_at": "2026-09-23T15:24:08Z"
     },
     {
