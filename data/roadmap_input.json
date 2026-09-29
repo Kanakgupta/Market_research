@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T13:11:05Z",
+  "generated_at": "2026-09-29T13:09:42Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3027,6 +3027,11 @@
           "url": "https://timestech.in/mouser-adds-microchip-avr-la-microcontrollers-for-diverse-applications/"
         },
         {
+          "title": "Microchip's New AVR LA Microcontrollers Now Available Through Mouser",
+          "date": "Sep 2026",
+          "url": "https://timestech.in/mouser-adds-microchip-avr-la-microcontrollers-for-diverse-applications/"
+        },
+        {
           "title": "Microchip Technology Demonstrates PCIe Gen 6 Storage Architecture with Micron",
           "date": "Aug 2026",
           "url": "https://www.globenewswire.com/news-release/2026/08/04/3338174/0/en/microchip-technology-in-collaboration-with-micron-technology-demonstrates-high-performance-pcie-gen-6-storage-architecture-for-ai-and-data-center-infrastructure.html"
@@ -3060,11 +3065,6 @@
           "title": "Microchip and Micron Demonstrate PCIe 6.0 Storage System at FMS 2026",
           "date": "Aug 2026",
           "url": "https://www.thelec.net/news/articleView.html?idxno=12859"
-        },
-        {
-          "title": "Microchip Technology Inc. Demonstrates High-Performance PCIe Gen 6 Storage Architecture With Switchtec PCIe Switches And Micron 9650 NVMe SSDs",
-          "date": "Aug 2026",
-          "url": "https://www.marketscreener.com/news/microchip-technology-inc-demonstrates-high-performance-pcie-gen-6-storage-architecture-with-switcht-ce7f50dede81fe26"
         }
       ]
     },
@@ -3436,6 +3436,11 @@
           "url": "https://www.everythingrf.com/products/wireless-soc-s/atmosic-technologies/787-1764-atm53"
         },
         {
+          "title": "Atmosic Launches ATM53 Wireless Chipset",
+          "date": "Sep 2026",
+          "url": "https://www.everythingrf.com/products/wireless-soc-s/atmosic-technologies/787-1764-atm53"
+        },
+        {
           "title": "Atmosic ATM34/e SoC Now Available Through Mouser for Ultra-Low Power IoT Applications",
           "date": "Jun 2026",
           "url": "https://www.electronicsmedia.info/2026/06/10/atmosic-atm34-e-soc/"
@@ -3447,11 +3452,6 @@
         },
         {
           "title": "Atmosic Announces Multimode Support for Asset Tracking Solutions",
-          "date": "Jan 2025",
-          "url": ""
-        },
-        {
-          "title": "Atmosic Introduces Multimode Support for Asset Tracking Solutions",
           "date": "Jan 2025",
           "url": ""
         }
@@ -3530,9 +3530,9 @@
           "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
         },
         {
-          "title": "onsemi Reports Strong Second Quarter 2026 Financial Results",
-          "date": "Aug 2026",
-          "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-second-quarter-2026-results/"
+          "title": "Onsemi AR1335 13MP OIS MIPI Camera Sensor Validated in Vadzo Imaging's Bolt-1335CRO Camera",
+          "date": "Sep 2026",
+          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/vadzo-imaging-validates-bolt-1335cro-onsemi-ar1335-13mp-ois-mipi-camera-1225853"
         }
       ]
     },
@@ -3769,27 +3769,30 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 199,
-    "MediaTek": 34,
-    "NXP": 27,
+    "Qualcomm": 185,
+    "NXP": 26,
+    "MediaTek": 23,
     "TI": 8,
-    "Espressif": 6,
-    "Apple": 5,
+    "Espressif": 5,
+    "Nordic": 4,
+    "Broadcom": 4,
+    "Apple": 4,
+    "Murata": 4,
+    "Realtek": 4,
     "Sequans": 4,
     "Silicon Labs": 4,
     "Quectel": 4,
-    "Microchip": 3,
-    "Marvell": 3,
-    "Realtek": 3,
-    "Broadcom": 2,
-    "Nordic": 2,
-    "Murata": 2,
-    "HiSilicon": 1,
-    "STMicro": 1,
+    "HiSilicon": 2,
+    "Microchip": 2,
+    "Renesas": 1,
+    "u-blox": 1,
     "Infineon": 1,
+    "Skyworks": 1,
+    "STMicro": 1,
     "Atmosic": 1,
     "Onsemi": 1,
-    "Qorvo": 1
+    "Qorvo": 1,
+    "Marvell": 1
   },
   "standards_in_flight": [
     {
@@ -3862,42 +3865,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1699,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
-        },
-        {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
-        },
-        {
-          "tag": "v6.0.3",
-          "name": "ESP-IDF Release v6.0.3",
-          "published_at": "2026-09-02T11:55:49Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
-        }
-      ],
-      "stars": 19108,
-      "pushed_at": "2026-09-25T17:46:20Z"
-    },
-    {
       "name": "BlueZ",
       "owner": "bluez",
       "repo": "bluez",
@@ -3906,7 +3873,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 134,
+      "issues_open": 132,
       "prs_open": 0,
       "releases": [
         {
@@ -3928,8 +3895,44 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1151,
-      "pushed_at": "2026-09-27T20:10:46Z"
+      "stars": 1152,
+      "pushed_at": "2026-09-29T06:58:18Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1700,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+        },
+        {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        },
+        {
+          "tag": "v6.0.3",
+          "name": "ESP-IDF Release v6.0.3",
+          "published_at": "2026-09-02T11:55:49Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
+        }
+      ],
+      "stars": 19120,
+      "pushed_at": "2026-09-28T17:22:40Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3940,7 +3943,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3900,
+      "issues_open": 3922,
       "prs_open": 0,
       "releases": [
         {
@@ -3962,8 +3965,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16636,
-      "pushed_at": "2026-09-28T11:38:59Z"
+      "stars": 16644,
+      "pushed_at": "2026-09-29T11:36:43Z"
     },
     {
       "name": "Matter SDK",
@@ -3974,7 +3977,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2872,
+      "issues_open": 2899,
       "prs_open": 0,
       "releases": [
         {
@@ -3997,7 +4000,7 @@
         }
       ],
       "stars": 8952,
-      "pushed_at": "2026-09-28T13:10:18Z"
+      "pushed_at": "2026-09-29T13:01:48Z"
     },
     {
       "name": "Linux mac80211",
@@ -4011,7 +4014,7 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 250430,
+      "stars": 250558,
       "pushed_at": "2026-09-27T20:56:06Z"
     },
     {
@@ -4022,8 +4025,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 57,
-      "issues_open": 163,
+      "commits_30d": 63,
+      "issues_open": 159,
       "prs_open": 0,
       "releases": [
         {
@@ -4045,8 +4048,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.07.0"
         }
       ],
-      "stars": 4037,
-      "pushed_at": "2026-09-28T09:36:05Z"
+      "stars": 4038,
+      "pushed_at": "2026-09-28T22:18:35Z"
     },
     {
       "name": "NimBLE",
@@ -4057,11 +4060,11 @@
         "bluetooth"
       ],
       "commits_30d": 22,
-      "issues_open": 275,
+      "issues_open": 276,
       "prs_open": 0,
       "releases": [],
       "stars": 892,
-      "pushed_at": "2026-09-18T21:44:42Z"
+      "pushed_at": "2026-09-28T21:46:19Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4071,8 +4074,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 15,
-      "issues_open": 442,
+      "commits_30d": 14,
+      "issues_open": 446,
       "prs_open": 0,
       "releases": [
         {
@@ -4094,7 +4097,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.13.0"
         }
       ],
-      "stars": 15672,
+      "stars": 15675,
       "pushed_at": "2026-09-27T20:40:27Z"
     },
     {
