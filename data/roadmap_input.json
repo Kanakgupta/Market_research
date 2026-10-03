@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T13:11:13Z",
+  "generated_at": "2026-10-03T13:11:55Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -128,6 +128,11 @@
       ],
       "press_releases": [
         {
+          "title": "Nordic Semiconductor Rolls Out New Multiprotocol SoC for IoT",
+          "date": "Oct 2026",
+          "url": "https://www.allaboutcircuits.com/news/nordic-rolls-out-new-multiprotocol-soc-for-size-and-cost-effective-iot/"
+        },
+        {
           "title": "Nordic's Skylo-Certified nRF9151 Modem Extends Satellite IoT Reach with LooUQ",
           "date": "Sep 2026",
           "url": "https://www.eetindia.co.in/nordic-loouq-extend-satellite-iot-reach-with-skylo-certified-nrf9151-modem/"
@@ -171,11 +176,6 @@
           "title": "Saldo Bank Partners with finperks to Launch Embedded Rewards and 10% Cashback for Nordic Customers",
           "date": "Sep 2026",
           "url": "https://ffnews.com/news/following-your-saldo-coverage-the-bank-is-now-adding-prepaid-powered-rewards-75be6ee9"
-        },
-        {
-          "title": "Nordic Semiconductor expands nRF54L series with compact multiprotocol IoT SoC",
-          "date": "Sep 2026",
-          "url": "https://www.newelectronics.co.uk/content/product-launches/nordic-semiconductor-expands-nrf54l-series-with-compact-multiprotocol-iot-soc"
         }
       ],
       "events": [
@@ -705,29 +705,29 @@
           "url": "https://www.indexbox.io/blog/qualcomm-expands-flagship-smartphone-portfolio-at-snapdragon-summit/"
         },
         {
+          "title": "Qualcomm Announces Apple Patent Deal Renewal",
+          "date": "Oct 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qualcomm-announces-apple-patent-deal-renewal-qualcomm-stock-trades-at-eur/70220896"
+        },
+        {
+          "title": "Qualcomm Acquires Robotics Software Company PickNik",
+          "date": "Oct 2026",
+          "url": "https://legaldesire.com/sidley-represents-qualcomm-in-its-acquisition-of-picknik/"
+        },
+        {
+          "title": "Qualcomm Introduces New Snapdragon 8 Elite Gen 6 SoCs for Smartphones",
+          "date": "Oct 2026",
+          "url": "https://www.eetimes.com/qualcomm-doubles-down-on-agentic-ai-at-snapdragon-summit-2026/"
+        },
+        {
+          "title": "TIM Brasil and Qualcomm Begin Wi-Fi 8 Lab Trials in Brazil",
+          "date": "Oct 2026",
+          "url": "https://www.telecompaper.com/news/tim-brasil-and-qualcomm-begin-wi-fi-8-lab-trials-in-brazil--1584395"
+        },
+        {
           "title": "Qualcomm Unveils Dragonwing Q-2390 and IQ-2390 Processors for Consumer IoT and Industrial Edge",
           "date": "Sep 2026",
           "url": "https://www.techpowerup.com/352218/qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors-for-consumer-iot-and-industrial-edge"
-        },
-        {
-          "title": "Qualcomm Introduces Dragonwing Q-2390 and IQ-2390 Processors, Expanding Access to Intelligent Connected Devices",
-          "date": "Sep 2026",
-          "url": "https://www.qualcomm.com/news/releases/2026/09/-qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors--e"
-        },
-        {
-          "title": "Qualcomm Introduces Dragonwing Q-2390 and IQ-2390 Chips to Power Local AI on Smart Devices",
-          "date": "Sep 2026",
-          "url": "https://www.androidheadlines.com/2026/09/qualcomm-unveils-dragonwing-q-2390-iq-2390-chips.html"
-        },
-        {
-          "title": "Qualcomm Unveils Dragonwing Q-2390 and IQ-2390 Processors Announced for Commercial and Consumer Devices",
-          "date": "Sep 2026",
-          "url": "https://www.gadgets360.com/smart-home/news/qualcomm-dragonwing-q-iq-2390-processors-launch-features-specifications-11990599"
-        },
-        {
-          "title": "Qualcomm Unveils Dragonwing Q-2390, IQ-2390 Processors",
-          "date": "Sep 2026",
-          "url": "https://www.thelec.net/news/articleView.html?idxno=13559"
         }
       ],
       "events": [
@@ -1505,6 +1505,21 @@
       ],
       "press_releases": [
         {
+          "title": "MediaTek Dimensity 9600 Pro: Moving to 2nm with a Focus on Performance and Efficiency",
+          "date": "Oct 2026",
+          "url": "https://counterpointresearch.com/en/insights/mediatek-dimensity-9600-pro"
+        },
+        {
+          "title": "MediaTek announces Dimensity 9600 Pro: what it means for MediaTek stock",
+          "date": "Oct 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-announces-dimensity-9600-pro-what-it-means-for-mediatek-stock/70219995"
+        },
+        {
+          "title": "MediaTek unveils 2nm chip: what it means for MediaTek stock",
+          "date": "Oct 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-unveils-2nm-chip-what-it-means-for-mediatek-stock/70215856"
+        },
+        {
           "title": "Anritsu and MediaTek validate 5G Release 17 coverage enhancement tests",
           "date": "Sep 2026",
           "url": "https://www.telecompaper.com/news/anritsu-and-mediatek-validate-5g-release-17-coverage-enhancement-tests--1581268"
@@ -1538,21 +1553,6 @@
           "title": "Nvidia Invests $3.5 Billion in MediaTek Convertible Bonds",
           "date": "Sep 2026",
           "url": "https://english.cw.com.tw/article/article.action?id=4976"
-        },
-        {
-          "title": "MediaTek Dimensity 9600 Pro Launch Date Announced",
-          "date": "Sep 2026",
-          "url": "https://www.yugatech.com/news/mediatek-dimensity-9600-pro-launching-on-september-15/"
-        },
-        {
-          "title": "MediaTek Dimensity 9600 Pro SoC Official Launch Date Revealed",
-          "date": "Sep 2026",
-          "url": "https://www.gsmarena.com/mediateks_dimensity_9600_pro_soc_now_has_an_official_launch_date-news-74521.php"
-        },
-        {
-          "title": "MediaTek Helio G99+ Chipset Launched for Budget 4G Phones",
-          "date": "Sep 2026",
-          "url": "https://www.androidheadlines.com/2026/09/mediatek-helio-g99-arrives-with-faster-ram-for-budget-4g-phones.html"
         }
       ],
       "events": [
@@ -1773,6 +1773,16 @@
           "url": "https://www.eenewseurope.com/en/build-smart-projects-with-the-xiao-esp32-c3-board-using-micropython/"
         },
         {
+          "title": "LakeShark firmware turns LilyGO T-Display P4 into a handheld ESP32-P4 SDR scanner",
+          "date": "Oct 2026",
+          "url": "https://www.cnx-software.com/2026/10/01/lakeshark-firmware-turns-lilygo-t-display-p4-into-a-handheld-esp32-p4-sdr-scanner/"
+        },
+        {
+          "title": "ESP32-C5 devkit features 3.5-inch touch LCD, optional camera and battery",
+          "date": "Oct 2026",
+          "url": "https://www.cnx-software.com/2026/09/30/esp32-c5-devkit-features-3-5-inch-touch-lcd-optional-camera-and-battery/"
+        },
+        {
           "title": "Espressif Systems Launches ESP32-P4 System-on-Chip (SoC)",
           "date": "Sep 2026",
           "url": "https://www.electronicdesign.com/directory/digital/soc/product/55402296/mouser-espressif-systems-esp32-p4-system-on-chip-soc"
@@ -1806,16 +1816,6 @@
           "title": "ESP32-C5 Pico Board Adds 5GHz Wi-Fi For 8.99 Dollars",
           "date": "Sep 2026",
           "url": "https://www.electronicsforu.com/news/esp32-c5-pico-board-adds-5ghz-wi-fi-for-8-99-dollars"
-        },
-        {
-          "title": "DIY ESP32-P4 weather station & air quality monitor connects to LoRa and ESP-NOW sensors, various weather APIs",
-          "date": "Sep 2026",
-          "url": "https://www.cnx-software.com/2026/09/03/diy-esp32-p4-weather-station-air-quality-monitor-connects-to-lora-and-esp-now-sensors-various-weather-apis/"
-        },
-        {
-          "title": "TickrCast \u2013 An ESP32-S3 HUB75 LED ticker display with server-side rendering and OTA (Crowdfunding)",
-          "date": "Sep 2026",
-          "url": "https://www.cnx-software.com/2026/09/03/tickrcast-esp32-s3-hub75-led-ticker-display-with-server-side-rendering-and-ota/"
         }
       ],
       "events": [
@@ -3485,6 +3485,11 @@
       ],
       "press_releases": [
         {
+          "title": "onsemi and Synaptics Announce Revised Merger Agreement",
+          "date": "Oct 2026",
+          "url": "https://www.onsemi.com/company/newsroom/news-and-insights/onsemi-and-synaptics-announce-revised-merger-agreement"
+        },
+        {
           "title": "Vadzo Imaging Validates Onsemi AR0234 Monochrome GigE Camera for High Frame Streaming",
           "date": "Sep 2026",
           "url": "https://finance.yahoo.com/technology/articles/vadzo-imaging-validates-high-frame-190000712.html"
@@ -3528,11 +3533,6 @@
           "title": "Onsemi and Synaptics Pitch AI-Focused Merger",
           "date": "Sep 2026",
           "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
-        },
-        {
-          "title": "Onsemi AR1335 13MP OIS MIPI Camera Sensor Validated in Vadzo Imaging's Bolt-1335CRO Camera",
-          "date": "Sep 2026",
-          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/vadzo-imaging-validates-bolt-1335cro-onsemi-ar1335-13mp-ois-mipi-camera-1225853"
         }
       ]
     },
@@ -3769,31 +3769,30 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 152,
-    "NXP": 28,
-    "MediaTek": 25,
-    "TI": 12,
+    "Qualcomm": 135,
+    "NXP": 37,
+    "MediaTek": 20,
+    "TI": 17,
+    "Espressif": 15,
     "Broadcom": 10,
-    "Espressif": 9,
-    "Murata": 7,
-    "Silicon Labs": 5,
+    "Silicon Labs": 6,
+    "Murata": 6,
     "Infineon": 4,
-    "Quectel": 4,
-    "Onsemi": 3,
     "Synaptics": 3,
     "HiSilicon": 3,
-    "Atmosic": 3,
-    "Skyworks": 3,
     "Apple": 2,
+    "Onsemi": 2,
+    "Renesas": 2,
+    "Atmosic": 2,
+    "Skyworks": 2,
     "Nordic": 2,
+    "STMicro": 2,
     "Sequans": 2,
     "UNISOC": 1,
     "Lattice": 1,
-    "Renesas": 1,
-    "u-blox": 1,
-    "Microchip": 1,
     "Marvell": 1,
-    "STMicro": 1
+    "u-blox": 1,
+    "Quectel": 1
   },
   "standards_in_flight": [
     {
@@ -3876,7 +3875,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1711,
+      "issues_open": 1715,
       "prs_open": 0,
       "releases": [
         {
@@ -3898,7 +3897,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19139,
+      "stars": 19141,
       "pushed_at": "2026-09-30T19:13:53Z"
     },
     {
@@ -3932,8 +3931,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1153,
-      "pushed_at": "2026-10-02T11:20:18Z"
+      "stars": 1154,
+      "pushed_at": "2026-10-02T21:02:03Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3944,7 +3943,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4055,
+      "issues_open": 4018,
       "prs_open": 0,
       "releases": [
         {
@@ -3966,8 +3965,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16671,
-      "pushed_at": "2026-10-02T12:56:44Z"
+      "stars": 16679,
+      "pushed_at": "2026-10-03T08:05:54Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 250909,
+      "pushed_at": "2026-10-03T03:46:09Z"
     },
     {
       "name": "Matter SDK",
@@ -3978,7 +3992,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2919,
+      "issues_open": 2914,
       "prs_open": 0,
       "releases": [
         {
@@ -4000,23 +4014,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8957,
-      "pushed_at": "2026-10-02T07:20:07Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 250813,
-      "pushed_at": "2026-10-01T21:36:38Z"
+      "stars": 8959,
+      "pushed_at": "2026-10-03T12:51:43Z"
     },
     {
       "name": "OpenThread",
@@ -4027,7 +4026,7 @@
         "thread"
       ],
       "commits_30d": 57,
-      "issues_open": 160,
+      "issues_open": 161,
       "prs_open": 0,
       "releases": [
         {
@@ -4049,8 +4048,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4040,
-      "pushed_at": "2026-10-01T17:51:20Z"
+      "stars": 4041,
+      "pushed_at": "2026-10-03T00:08:50Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4060,8 +4059,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 39,
-      "issues_open": 444,
+      "commits_30d": 36,
+      "issues_open": 447,
       "prs_open": 0,
       "releases": [
         {
@@ -4083,8 +4082,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15686,
-      "pushed_at": "2026-10-02T06:16:59Z"
+      "stars": 15685,
+      "pushed_at": "2026-10-02T19:47:01Z"
     },
     {
       "name": "NimBLE",
@@ -4095,7 +4094,7 @@
         "bluetooth"
       ],
       "commits_30d": 22,
-      "issues_open": 278,
+      "issues_open": 279,
       "prs_open": 0,
       "releases": [],
       "stars": 892,
