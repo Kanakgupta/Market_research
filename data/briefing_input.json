@@ -1,168 +1,78 @@
 {
-  "generated_at": "2026-10-09T13:15:37Z",
+  "generated_at": "2026-10-10T13:11:45Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "US Navy bets another $150M on fighter drone that skips the runway",
-      "url": "https://www.theregister.com/offbeat/2026/10/09/us-navy-bets-another-150m-on-fighter-drone-that-skips-the-runway/5302237",
-      "source": "The Register",
-      "date": "2026-10-09",
+      "title": "HomeKit vs Home Assistant: Why Apple Users Combine Both Platforms",
+      "url": "https://www.macobserver.com/tips/round-ups/homekit-vs-home-assistant-why-apple-users-combine-both/",
+      "source": "The Mac Observer",
+      "date": "2026-10-10",
       "vendor": null,
-      "customer": "Microsoft",
-      "application": "Robotics",
+      "customer": "Apple",
+      "application": "Smart Home",
       "buckets": [],
-      "summary": "Shield AI matches the funding as autonomous X-BAT heads toward flight testing later this year"
+      "summary": "HomeKit and Home Assistant solve different parts of the smart home problem, which is why many Apple users run them together instead of choosing only one. Apple Home provides the familiar Home app, Siri control, and straightforward sharing, while Home Assistant offers deeper automation and support fo"
     },
     {
-      "title": "Report: Apple cuts iPhone 18 Pro production due to \u2018soft demand\u2019",
-      "url": "https://9to5mac.com/2026/10/09/report-apple-cuts-iphone-18-pro-production-due-to-soft-demand/",
+      "title": "Apple Home Hub: Five Questions Before Apple\u2019s October 13 Event",
+      "url": "https://www.macobserver.com/tips/round-ups/apple-home-hub-five-questions-october-13-event/",
+      "source": "The Mac Observer",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Apple\u2019s October 13 event is expected to put the company\u2019s long-rumored Home Hub at the center of a wider smart home push. The date is close, but the most important details remain unanswered, including what Apple will call the device, what it will cost, and how much it can do without another Apple pr"
+    },
+    {
+      "title": "Apple weekend deals:\u00a0AirPods, up to $200 off new Macs, Apple Watch, more from $41",
+      "url": "https://9to5mac.com/2026/10/10/apple-weekend-deals-mac-mini/",
       "source": "9to5Mac",
-      "date": "2026-10-09",
+      "date": "2026-10-10",
       "vendor": null,
       "customer": "Apple",
-      "application": "Automotive",
+      "application": "Audio / Speaker",
       "buckets": [],
-      "summary": "Apple has reportedly cut orders for the iPhone 18 Pro and iPhone 18 Pro Max due to \u201csoft demand.\u201d A new report from Nikkei Asia says Apple has told select suppliers to cut component production for the device, as price increases allegedly \u201cdampened consumer demand.\u201d more\u2026"
+      "summary": "Hot off fall Prime Day 2026, we are still up to $150 off the new M6 Mac mini and a $200 price drop on the new Mac Studio joined by the best prices in months on M5 MacBook Air at $200 off. While AirPods Pro 3 have jumped up a touch, they are still carrying a notable deal price alongside AirPods Max 2"
     },
     {
-      "title": "IMC 2026: Motorola Signature 27, iQOO 16 to feature Snapdragon 8 Elite Extreme Gen 6 chipset",
-      "url": "https://www.firstpost.com/tech/imc-2026-motorola-signature-27-iqoo-16-to-feature-snapdragon-8-elite-extreme-gen-6-chipset-14051759.html",
-      "source": "Firstpost",
-      "date": "2026-10-09",
-      "vendor": "Qualcomm",
-      "customer": "Motorola",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Open-source ESP32-C3 DNS ad blocker supports up to over 500,000 domains without PSRAM",
-      "url": "https://www.cnx-software.com/2026/10/09/open-source-esp32-c3-dns-ad-blocker-supports-up-to-over-500000-domains-without-psram/",
-      "source": "CNX Software",
-      "date": "2026-10-09",
-      "vendor": "Espressif",
-      "customer": "Amazon",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Developed by Zed (M-Abozaid), the esp32-c3-adblock is an open-source, Pi-hole-style DNS ad blocker that runs on a $2 ESP32-C3 microcontroller board/module without requiring PSRAM. It blocks ads and tracking domains across devices on a home or small office network by filtering DNS requests. Instead o"
-    },
-    {
-      "title": "Qualcomm bets on smaller AI models as memory costs push up phone prices",
-      "url": "https://www.business-standard.com/technology/tech-news/qualcomm-smaller-ai-models-memory-costs-smartphone-prices-126100900930_1.html",
-      "source": "Business Standard",
-      "date": "2026-10-09",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Bernie\u2019s Dugout Open Thread: 10/9-10/15",
-      "url": "https://sports.yahoo.com/articles/bernie-dugout-open-thread-10-110000197.html",
-      "source": "Yahoo Sports",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Greetings, Brew Crew Ball community. The Brewers are back in the National League Championship Series for the second consecutive season and the third time in the last nine years, and they'll face the Dodgers once again \u2014 the third time facing L.A. in the NLCS, and their fourth time facing them in the"
-    },
-    {
-      "title": "DBS Bank Starts MediaTek at Buy with NT$6,200 Price Target",
-      "url": "https://www.marketscreener.com/news/dbs-bank-starts-mediatek-at-buy-with-nt-6-200-price-target-ce785ddfd08bf325",
-      "source": "www.marketscreener.com",
-      "date": "2026-10-09",
-      "vendor": "MediaTek",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "DBS Bank Starts MediaTek at Buy with NT$6,200 Price Target Published on 10/09/2026 at 06:47 am EDT MT Newswires This article is reserved for our members.Log in to continueLog inCreate an account Continue with Google Continue with Apple Continue with LinkedIn or by emailContinue with an email. Create"
-    },
-    {
-      "title": "Volkswagen's replacement for the ID.4 crossover is here",
-      "url": "https://arstechnica.com/cars/2026/10/volkswagens-replacement-for-the-id-4-crossover-is-here/",
-      "source": "Ars Technica",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Volkswagen",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Volkswagen\u2019s ID.4 is no more. The midsize crossover debuted in 2021, one of VW\u2019s first new electric vehicles designed in the wake of dieselgate. A year later, the company began local production in Chattanooga, Tennessee, and a couple of years ago facelifted the model, adding a much-improved rear dri"
-    },
-    {
-      "title": "Qualcomm vs Arm (Day 4)",
-      "url": "https://www.electronicsweekly.com/news/business/qualcomm-vs-arm-day-4-2026-10/",
-      "source": "Electronics Weekly",
-      "date": "2026-10-09",
+      "title": "Qualcomm Waits on a Jury: Arm Has a $443 Million Customer on the Line",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-waits-jury-arm-443-114215008.html",
+      "source": "Yahoo Finance",
+      "date": "2026-10-10",
       "vendor": "Qualcomm",
       "customer": "Meta",
       "application": null,
       "buckets": [],
-      "summary": "Today, the Arm vs Qualcomm legal case in Delaware concludes and the judge and jury should give their rulings.\nYesterday, Day 4 of the case, started with testimony from Manju Varma, who works on CPU product planning at Qualcomm.\nVarma explained why Qualcomm\u2019s lack of new TLA licensing proposals for t"
+      "summary": "Qualcomm (QCOM:NASDAQ) will have to wait until at least Tuesday, October 13, to learn whether a jury agrees that Arm Holdings (ARM:NASDAQ) broke their licensing agreements. Jurors in Wilmington, Delaware, deliberated for about four hours on Friday, October 9, without reaching a verdict, Reuters repo"
     },
     {
-      "title": "Citi cuts target for NXP Semiconductors stock to USD 260.00",
-      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/citi-cuts-target-for-nxp-semiconductors-stock-to-usd-260-00/70275793",
-      "source": "AD HOC NEWS",
-      "date": "2026-10-09",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Citi cuts target for NXP Semiconductors stock to USD 260.00\nPublished on 10/09/2026 at 11:53 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSKey points in brief\n- Citi cut its NXP Semiconductors price target from USD 370.00 to USD 260.00 and changed its rating to Neutral on Oct"
-    },
-    {
-      "title": "Microsoft and Anthropic play invoice tennis with startup's $17,600 Claude bill",
-      "url": "https://www.theregister.com/paas-and-iaas/2026/10/09/microsoft-and-anthropic-play-invoice-tennis-with-startups-17600-claude-bill/5302041",
-      "source": "The Register",
-      "date": "2026-10-09",
+      "title": "Compare the 7 Best Smart Bulbs for Alexa, Google and Apple Home",
+      "url": "https://www.geeky-gadgets.com/best-smart-bulb-2026/",
+      "source": "Geeky Gadgets",
+      "date": "2026-10-10",
       "vendor": null,
-      "customer": "Microsoft",
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Smart bulbs have become a cornerstone of modern smart homes, offering features that go beyond simple illumination. From vibrant color options to advanced automation, these devices integrate seamlessly with platforms like Alexa, Google Home and Apple Home to create personalized lighting experiences. "
+    },
+    {
+      "title": "Massive Battery and Redesigned Cameras: The Galaxy S27 Ultra Shift Is Real",
+      "url": "https://www.geeky-gadgets.com/samsung-s27-series-lineup-2/",
+      "source": "Geeky Gadgets",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Samsung",
       "application": null,
       "buckets": [],
-      "summary": "Vegalabs says $21,168 in unused Azure credits expired as separate Marketplace charges piled up"
-    },
-    {
-      "title": "HDR Support Coming For Qualcomm MSM Driver To Benefit Snapdragon X Laptops On Linux",
-      "url": "https://www.phoronix.com/news/Qualcomm-MSM-DRM-HDR",
-      "source": "Phoronix",
-      "date": "2026-10-09",
-      "vendor": "Qualcomm",
-      "customer": "Motorola",
-      "application": null,
-      "buckets": [],
-      "summary": "HDR Support Coming For Qualcomm MSM Driver To Benefit Snapdragon X Laptops On Linux\nFor those making use of Qualcomm Snapdragon X laptops on Linux, one of the features coming to the MSM DRM kernel driver is static HDR support for DisplayPort outputs and eDP panels.\nJoining with other open-source Lin"
-    },
-    {
-      "title": "Tejas Networks and Qualcomm jointly demonstrate 6G Integrated Sensing and Communications (ISAC) technology at India Mobile Congress 2026",
-      "url": "https://finance.yahoo.com/technology/articles/tejas-networks-qualcomm-jointly-demonstrate-092700196.html",
-      "source": "Yahoo Finance",
-      "date": "2026-10-09",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "BENGALURU, India, Oct. 9, 2026 /PRNewswire/ -- Tejas Networks (BSE: 540595) (NSE: TEJASNET) in collaboration with Qualcomm Technologies is demonstrating Integrated Sensing and Communication (ISAC) at the India Mobile Congress (IMC) 2026.\nAs the industry looks beyond 5G and towards 6G, new technologi"
-    },
-    {
-      "title": "Most Read \u2013 Robotaxi growth, Arm Qualcomm battle",
-      "url": "https://www.electronicsweekly.com/blogs/electro-ramblings/latest-news/most-read-robotaxi-growth-sk-hynix-arm-qualcomm-battle-2026-10/",
-      "source": "Electronics Weekly",
-      "date": "2026-10-09",
-      "vendor": "Qualcomm",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Looking at only the news stories written within the last week, the most popular articles on the site cover an obituary for Professor Cyril Hilsum, a report predicting market growth for the robotaxi, and the chairman of Hynix selling shares worth $700m.\nAnd there\u2019s also Qualcomm and Arm resuming thei"
+      "summary": "Samsung is poised to redefine the smartphone landscape with the highly anticipated Galaxy S27 series, scheduled for release in early 2024. This flagship lineup will consist of four distinct models: the Galaxy S27, S27 Plus, S27 Pro, and S27 Ultra. Each device is designed to cater to a wide range of "
     },
     {
       "title": "- Google",
       "url": "https://www.google.com/m/storepages?q=amazon.in&c=IN&hl=en-IN",
       "source": "Google",
-      "date": "2026-10-09",
+      "date": "2026-10-10",
       "vendor": null,
       "customer": "Google",
       "application": null,
@@ -170,249 +80,298 @@
       "summary": "About this page\nStore ratings are based on customer reviews and other data from Google and/or its partners.\nGoogle's Top Quality Store badge is earned by merchants that provide a great shopping experience.\nInformation on delivery, returns and support is based on customer reviews and surveys, and som"
     },
     {
-      "title": "Mn Services Vermogensbeheer B.V. Purchases 73,546 Shares of NXP Semiconductors N.V. $NXPI",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-mn-services-vermogensbeheer-bv-purchases-73546-shares-of-nxp-semiconductors-nv-nxpi-2026-10-09/",
-      "source": "MarketBeat",
-      "date": "2026-10-09",
+      "title": "QUALCOMM (QCOM) Heads Back To Jury Trial In $440 Million Patent Case",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-qcom/qualcomm/news/qualcomm-qcom-heads-back-to-jury-trial-in-440-million-patent",
+      "source": "Simply Wall Street",
+      "date": "2026-10-10",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:QCOM\nQUALCOMM (QCOM) Heads Back To Jury Trial In $440 Million Patent Case\n- QUALCOMM (NasdaqGS:QCOM) now faces a revived patent case from ParkerVision over transmitter technologies, with US$440 million in claimed damages.\n- A US appeals court has s"
+    },
+    {
+      "title": "NXP Semiconductors stock sits EUR 14.50 below its weekly high as results date is set",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-stock-sits-eur-14-50-below-its-weekly-high-as-results/70287225",
+      "source": "AD HOC NEWS",
+      "date": "2026-10-10",
       "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "NXP Semiconductors stock sits EUR 14.50 below its weekly high as results date is set\nPublished on 10/10/2026 at 10:36 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSKey points in brief\n- NXP scheduled its third-quarter 2026 results for October 27.\n- The weekend quote was EUR 2"
+    },
+    {
+      "title": "NXP Semiconductors N.V. $NXPI Shares Newly Acquired by Jacobs & Co. CA",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-nxp-semiconductors-nv-nxpi-shares-newly-acquired-by-jacobs-co-ca-2026-10-10/",
+      "source": "MarketBeat",
+      "date": "2026-10-10",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Jacobs & Co. CA purchased a new position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the 3rd quarter, according to the company in its most recent 13F filing with the SEC. The firm purchased 25,113 shares of the semiconductor provider's stock, valued at approximately $5,965,00"
+    },
+    {
+      "title": "NXP & Forlinx: Empowering Industrial Edge AI with i.MX 95 and Ara240 M.2 AI Accelerator",
+      "url": "https://timestech.in/nxp-forlinx-empowering-industrial-edge-ai-with-i-mx-95-and-ara240-m-2-ai-accelerator/",
+      "source": "TimesTech",
+      "date": "2026-10-10",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Forlinx, an NXP Gold Partner, is bringing higher AI performance to industrial edge applications with the FAI-ARA240-M, an M.2 AI accelerator based on the Ara240 discrete NPU. With decades of experience in ARM architecture and deep integration within NXP\u2019s ecosystem, Forlinx and NXP are helping advan"
+    },
+    {
+      "title": "Ring\u2019s new smart lock has a manual fallback that can\u2019t lock you out \u2013 how it works",
+      "url": "https://www.zdnet.com/uncategorized/ring-smart-lock-manual-power-dial/",
+      "source": "ZDNet",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Amazon",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "The brand just announced a smart lock with a manual \u2018power dial\u2019 that charges the device in case it dies."
+    },
+    {
+      "title": "Qualcomm announces Huawei patent agreement: what it means for Qualcomm stock",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qualcomm-announces-huawei-patent-agreement-what-it-means-for-qualcomm/70286465",
+      "source": "AD HOC NEWS",
+      "date": "2026-10-10",
+      "vendor": "Qualcomm",
+      "customer": "Huawei",
+      "application": null,
+      "buckets": [],
+      "summary": "Qualcomm announces Huawei patent agreement: what it means for Qualcomm stock\nPublished on 10/10/2026 at 10:02 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSKey points in brief\n- Qualcomm announced a multi-year patent license agreement with Huawei on October 5, 2026.\n- The agr"
+    },
+    {
+      "title": "Jury still out in Qualcomm vs Arm case",
+      "url": "https://www.electronicsweekly.com/news/business/jury-still-out-in-qualcomm-vs-arm-case-2026-10/",
+      "source": "Electronics Weekly",
+      "date": "2026-10-10",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "After four hours deliberation yesterday the jury failed to come to a conclusion in the Qualcomm versus Arm law case. It will reassemble to continue is deliberations on Tuesday.\nThe judge did not rule on the issue of whether Qualcomm could stop paying royalties to Arm for five years.\nThe other issues"
+    },
+    {
+      "title": "Microsoft leans on open weight model from Chinese AI lab to challenge Jev",
+      "url": "https://www.theregister.com/ai-and-ml/2026/10/10/microsoft-leans-on-open-weight-model-from-chinese-ai-lab-to-challenge-jev/5302473",
+      "source": "The Register",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": "The first version of Microsoft-Decision-1 is based on Qwen3.5-9B, but the next will sport homegrown tech, Redmond reassures"
+    },
+    {
+      "title": "Why the Next Apple TV 4K Upgrade is a Massive Leap for Your Living Room",
+      "url": "https://www.geeky-gadgets.com/apple-tv-4k-4th-gen/",
+      "source": "Geeky Gadgets",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Apple has introduced the Apple TV 4K 4th generation, marking a significant advancement in smart home technology. Announced during the October 13 \u201cWelcome Home\u201d event, this latest release underscores Apple\u2019s dedication to creating a seamlessly connected home ecosystem. Alongside the Apple TV, the eve"
+    },
+    {
+      "title": "M5Stack ToughC5 weatherproof ESP32-C5 IoT controller offers dual-band Wi-Fi 6, BLE 5, and Zigbee/Thread",
+      "url": "https://www.cnx-software.com/2026/10/10/m5stack-toughc5-weatherproof-esp32-c5-iot-controller-offers-dual-band-wi-fi-6-ble-5-and-zigbee-thread/",
+      "source": "CNX Software",
+      "date": "2026-10-10",
+      "vendor": "Espressif",
+      "customer": "Amazon",
+      "application": "Audio / Speaker",
+      "buckets": [
+        "ieee15_4",
+        "bluetooth",
+        "wifi"
+      ],
+      "summary": "M5Stack has just introduced the ToughC5, a rugged, weatherproof outdoor IoT controller built around the ESP32-C5. The device features a bright 2.0-inch capacitive touch IPS display and RS485 connectivity. The ToughC5 is an upgrade to the ESP32-base3d M5Stack TOUGH introduced in 2021, with the upgrad"
+    },
+    {
+      "title": "OPPO Find X10 Pro Max to Debut Globally with MediaTek's 2nm Flagship Dimensity 9600 Pro",
+      "url": "https://indovizka.com/news/detail/23213/oppo-find-x10-pro-max-to-debut-globally-with-mediateks-2nm-flagship-dimensity-9600-pro",
+      "source": "AAD Today",
+      "date": "2026-10-10",
+      "vendor": "MediaTek",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Pilihan\nOPPO Find X10 Pro Max to Debut Globally with MediaTek's 2nm Flagship Dimensity 9600 Pro\nSHENZHEN, CHINA - Media OutReach Newswire - 9 October 2026 - OPPO, a leading global smart device brand, today announced that the upcoming Find X10 Pro Max will be among the first smartphones to feature th"
+    },
+    {
+      "title": "Apple Event Confirmed for October 13: New Smart Display, Apple TV 4K, and More",
+      "url": "https://www.geeky-gadgets.com/apple-october-event-announcements/",
+      "source": "Geeky Gadgets",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Apple has officially confirmed its October 13 event, and we are expecting a range of new products and updates aimed at enhancing smart home technology and strengthening its ecosystem. The event will introduce the HomePad smart home hub, a collaboration with LG on smart accessories, an upgraded Apple"
+    },
+    {
+      "title": "Apple Prepares Handy Dynamic Island Controls for New Home Accessories",
+      "url": "https://www.macobserver.com/news/apple-prepares-handy-dynamic-island-controls-for-new-home-accessories/",
+      "source": "The Mac Observer",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Recent leaks reveal that Apple is working with LG to launch a fresh lineup of smart home devices. These upcoming second party gadgets will include a special trick specifically designed for people who own an iPhone. This new functionality allows your phone to interact with the hardware just by gettin"
+    },
+    {
+      "title": "These car gadgets will upgrade your daily commute \u2013 and they\u2019re cheap",
+      "url": "https://www.zdnet.com/article/best-car-gadget-amazon-prime-day-deals-2026/",
+      "source": "ZDNET",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Amazon\u2019s October Prime Day is a good time to score practical purchases that will make your life easier. And if you\u2019ve got a road trip planned soon, it\u2019s also a great time to consider outfitting your car with new gadgets to enhance your driving experience.\nOur Picks\nBottom Line\nBottom Line\nPros & Con"
+    },
+    {
+      "title": "Qualcomm and Arm set for jury verdict in contract breach feud",
+      "url": "https://electronics.economictimes.indiatimes.com/news/semiconductors/qualcomm-and-arm-set-for-jury-verdict-in-contract-breach-feud/134846342?utm_source=top_news&utm_medium=homepage",
+      "source": "electronics.economictimes.indiatimes.com",
+      "date": "2026-10-10",
+      "vendor": "Qualcomm",
+      "customer": "Meta",
+      "application": null,
+      "buckets": [],
+      "summary": "WILMINGTON, Delaware: A lawsuit by chipmaker Qualcomm against chip technology supplier Arm Holdings will head on Friday to a jury charged with determining if Arm breached licensing agreements and intentionally sabotaged some of Qualcomm's dealings with Meta Platforms.The five-day trial is the second"
+    },
+    {
+      "title": "Apple Welcome Home Event: 5 Smart Home Products Rumored",
+      "url": "https://marketingtrending.asoworld.com/en/discover/welcome-home-5-apple-smart-home-products-expected-on-october-13-including-a-camera-that-never-records-video/",
+      "source": "ASO World",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [],
+      "summary": "Apple has officially confirmed its next big product launch, and for the first time in years, the spotlight is on the home. The \"Welcome Home\" event, scheduled for Tuesday, October 13, is expected to deliver the company's most aggressive smart home push to date \u2014 a long-delayed smart display hub, ref"
+    },
+    {
+      "title": "Free Gemini users now on\u00a0\u2018Auto\u2019 models as app adds thinking levels",
+      "url": "https://9to5google.com/2026/10/09/gemini-auto-free-users/",
+      "source": "9to5Google",
+      "date": "2026-10-10",
+      "vendor": null,
       "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Mn Services Vermogensbeheer B.V. purchased a new position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 3rd quarter, according to its most recent Form 13F filing with the SEC. The fund purchased 73,546 shares of the semiconductor provider's stock, valued at approximatel"
+      "summary": "As announced last week, Google is rolling out a big change to the Gemini app experience for users on the free plan. Additionally, everyone is getting access to thinking or \u201ceffort\u201d levels. more\u2026"
     },
     {
-      "title": "Vivo Y600s Pro Launched With 10,200mAh Battery, MediaTek Dimensity 7300e SoC: Price, Features",
-      "url": "https://www.gadgets360.com/mobiles/news/vivo-y600s-pro-price-launch-availability-specifications-features-12160641",
-      "source": "Gadgets 360",
-      "date": "2026-10-09",
-      "vendor": "MediaTek",
+      "title": "Best Apple deal: Save $10 on the Apple AirTag",
+      "url": "https://mashable.com/tech/oct-1-early-prime-day-apple-airtag-bluetooth-tracker-deal",
+      "source": "Mashable",
+      "date": "2026-10-10",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Asset Tracking",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "The Apple AirTag 4-pack is $10 off before Prime Day \u2014 we like this $89 bundle deal\nSAVE $10: As of Oct. 1, the Apple AirTag (2nd Gen) 4-Pack is available for $89 at Amazon. That's a $10 saving on the regular list price of $99.\nIt's easy to get lost in all the deals during major sale events like Octo"
+    },
+    {
+      "title": "Qualcomm and Arm jury to return next week after deliberations in contract dispute case By Reuters",
+      "url": "https://www.investing.com/news/stock-market-news/qualcomm-and-arm-set-for-jury-verdict-in-contract-breach-feud-4941018",
+      "source": "Investing.com",
+      "date": "2026-10-10",
+      "vendor": "Qualcomm",
       "customer": null,
-      "application": "Embedded / Electronics",
+      "application": null,
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "STMicroelectronics Q3 2026 Earnings to Be Released on October 29",
-      "url": "https://www.electronicsmedia.info/2026/10/09/stmicroelectronics-q3-2026/",
-      "source": "Electronics Media",
-      "date": "2026-10-09",
-      "vendor": "STMicro",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "STMicroelectronics (NYSE: STM), a global semiconductor leader serving customers across the spectrum of electronics applications, announced that it will release third quarter 2026 earnings before the opening of trading on the European Stock Exchanges on October 29, 2026.\nThe press release will be ava"
-    },
-    {
-      "title": "Microsoft 365 Family subscribers will finally be able to share AI benefits",
-      "url": "https://www.theverge.com/news/1008581/microsoft-365-family-premium-shared-ai-features-storage-changes",
-      "source": "The Verge",
-      "date": "2026-10-09",
+      "title": "Samsung SmartThings Update: More Convenient or Invasive?",
+      "url": "https://www.techbarrista.com/samsung-smartthings-update-2026/",
+      "source": "TechBarrista",
+      "date": "2026-10-10",
       "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Microsoft bundled its AI-powered Office features into Microsoft 365 Personal and Family subscriptions last year, but it only allowed the primary account holder to access the AI benefits. Now, Microsoft is about to let Microsoft 365 Family and Premium subscribers share Copilot and AI usage features, "
-    },
-    {
-      "title": "Why Apple Is Teaming Up With LG for Its Biggest Smart Home Push Yet",
-      "url": "https://www.geeky-gadgets.com/apple-smart-home-devices-lg/",
-      "source": "Geeky Gadgets",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Apple",
+      "customer": "Samsung",
       "application": "Smart Home",
       "buckets": [
         "matter"
       ],
-      "summary": "Apple has made a significant move into the smart home market, unveiling a suite of devices and accessories designed to compete with established players like Amazon Ring and Google Nest. By emphasizing privacy, seamless integration, and user-friendly design, Apple is using its technological expertise"
+      "summary": "Samsung has given SmartThings a major update centred on prediction and personalised home controls. SmartThings Now can surface actions before you actively search for them. That convenience depends increasingly on understanding your routines and household activity.\nThe update also introduces stronger"
     },
     {
-      "title": "Malware reportedly Preinstalled on Android Devices powered by MediaTek Processors",
-      "url": "https://www.cybersecurity-insiders.com/malware-reportedly-preinstalled-on-android-devices-powered-by-mediatek-processors/",
-      "source": "Cybersecurity Insiders",
-      "date": "2026-10-09",
-      "vendor": "MediaTek",
-      "customer": "Apple",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Malware infections are commonly associated with browsing suspicious websites, visiting gaming and movie-streaming platforms, or downloading applications from unofficial app stores. However, a recent report by cybersecurity researchers at Bitdefender has highlighted a more concerning threat: malware "
-    },
-    {
-      "title": "Grandstream Introduces Tri-Band Wi-Fi 7 Router",
-      "url": "https://www.newswiretoday.com/news/187042/Grandstream-Introduces-Tri-Band-Wi-Fi-7-Router/",
-      "source": "NewswireToday",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "NewswireTODAY - /newswire/ - Boston, MA, United States, 2026/10/09 - The new high-performance router delivers tri-band Wi-Fi 7, multi-gigabit connectivity, intelligent mesh networking, advanced security, and flexible management for smart homes and small-to-medium businesses - Grandstream.com.\nGrands"
-    },
-    {
-      "title": "Apple Confirms \u2018Welcome Home\u2019 Event for 13 October",
-      "url": "https://homekitnews.com/2026/10/09/apple-confirms-welcome-home-event-for-13-october/",
-      "source": "Homekit News and Reviews",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "Apple Confirms \u2018Welcome Home\u2019 Event for 13 October\nApple has sent invitations to a special event taking place on Tuesday 13 October, with the \u201cWelcome home\u201d theme providing the clearest indication yet that the company is preparing a major expansion of its smart home range.\nGreg Joswiak, Apple\u2019s seni"
-    },
-    {
-      "title": "STM32 System-on-Module (SoM): 3 Tips for Faster Embedded System Development",
-      "url": "https://www.electronicsmedia.info/2026/10/09/stm32-system-on-module-som/",
-      "source": "Electronics Media",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Meta",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "What can a System-on-Module do for engineers? We sat down with PHYTEC, an ST Authorized Partner, to understand this question through the lens of its STM32MPx SoMs. It is one of the first questions engineers ask, and the answer often shapes a project in significant ways. Since a system-on-module incl"
-    },
-    {
-      "title": "MediaTek's Sales Drop 14% in September",
-      "url": "https://www.marketscreener.com/news/mediatek-s-sales-drop-14-in-september-ce785ddfdf8cff20",
-      "source": "marketscreener.com",
-      "date": "2026-10-09",
-      "vendor": "MediaTek",
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "MediaTek's Sales Drop 14% in September Published on 10/09/2026 at 12:21 am EDT MT Newswires This article is reserved for our members.Log in to continueLog inCreate an account Continue with Google Continue with Apple Continue with LinkedIn or by emailContinue with an email. Create an account with Goo"
-    },
-    {
-      "title": "Future Electronics Showcases Nordic Semiconductor nRF54L15 Tag Prototyping Platform for Bluetooth Tracking and Edge AI Development",
-      "url": "https://www.sweetwaterreporter.com/online_features/press_releases/future-electronics-showcases-nordic-semiconductor-nrf54l15-tag-prototyping-platform-for-bluetooth-tracking-and-edge-ai/article_27f6b46d-e6bb-5d80-832e-0dcf34ffc518.html",
-      "source": "Sweetwater Reporter",
-      "date": "2026-10-09",
-      "vendor": "Nordic",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Future Electronics, a global leading distributor of electronic components, is highlighting the Nordic Semiconductor nRF54L15 Tag, a compact prototyping platform designed to accelerate the development of Bluetooth\u00ae trackers, asset tags, wearables, remote controls, and connected sensing devices.\nMontr"
-    },
-    {
-      "title": "India\u2019s tech giants shrug off changes to USA\u2019s skilled visa program",
-      "url": "https://www.theregister.com/legal/2026/10/09/indias-tech-giants-shrug-off-changes-to-usas-skilled-visa-program/5302154",
-      "source": "The Register",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "TOP STORIES\nAI\n-\nNvidia found $1B under the couch to help secure American scientific computing dominance\nCommitment comes as GPUzilla prepares to fortify Uncle Sam's arsenal with at least seven AI-optimized supers\n-\nTSMC taps GlobalFoundries to bolster US silicon interposer production in $2B deal\nAd"
-    },
-    {
-      "title": "MediaTek 3Q26 revenue beats forecast, maintains peak-season momentum",
-      "url": "https://www.digitimes.com/news/a20261008PD255/mediatek-revenue-forecast-2026-growth.html",
-      "source": "digitimes",
-      "date": "2026-10-09",
-      "vendor": "MediaTek",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "MediaTek reported its September and third-quarter 2026 revenue results, with September revenue of NT$55.40 billion (approx. US$1.74 billion), down 13.69% from the previous month and up 1.97% from a year earlier...\nThe article requires paid subscription.\nSubscribe Now"
-    },
-    {
-      "title": "Apple\u2019s smart home plan sounds bigger and bolder than you might think",
-      "url": "https://www.cultofmac.com/news/apples-smart-home-plan-sounds-bigger-and-bolder-than-you-might-think",
-      "source": "Cult of Mac",
-      "date": "2026-10-09",
-      "vendor": "NXP",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "The new smart home products produced by LG Electronics in partnership with Apple will feature a \u201ctap to set up without power\u201d feature, according to a leaker who spotted the reference in iOS 27.\nAlso, LG Electronics apparently won\u2019t be the only second-party manufacturer Apple works with to create new"
-    },
-    {
-      "title": "OLED MacBook Pro to help boost premium display shipments, per report",
-      "url": "https://9to5mac.com/2026/10/08/oled-macbook-pro-to-help-boost-premium-display-shipments-per-report/",
-      "source": "9to5Mac",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "A new Counterpoint Research report says Apple\u2019s next-generation MacBook Pro will help drive a 50% increase in OLED notebook display shipments in 2026 alone. Here are the details. more\u2026"
-    },
-    {
-      "title": "Apple rolls out AT&T carrier update for iPhone 18 Pro Max on iOS 27.2 beta",
-      "url": "https://9to5mac.com/2026/10/08/apple-rolls-out-att-carrier-update-for-iphone-18-pro-max-on-ios-27-2-beta/",
-      "source": "9to5Mac",
+      "title": "Should Qualcomm Stock Holders Look At First Solar Instead?",
+      "url": "https://www.trefis.com/stock/qcom/articles/618142/should-qualcomm-stock-holders-look-at-first-solar-instead/2026-10-09",
+      "source": "Trefis",
       "date": "2026-10-09",
       "vendor": "Qualcomm",
       "customer": "Apple",
+      "application": "Energy/Utility",
+      "buckets": [],
+      "summary": "Should Qualcomm Stock Holders Look At First Solar Instead?\nQualcomm (QCOM) and First Solar (FSLR) are both filed under semiconductors, and each holds patents that competitors want to use. On October 5, 2026, Huawei announced it had agreed to a multi-year patent licensing deal with Qualcomm. Meanwhil"
+    },
+    {
+      "title": "Google Health 5.10 rolling out for Android, iOS",
+      "url": "https://9to5google.com/2026/10/09/google-health-5-10-release-notes/",
+      "source": "9to5Google",
+      "date": "2026-10-09",
+      "vendor": null,
+      "customer": "Google",
       "application": "Automotive",
       "buckets": [],
-      "summary": "After releasing a carrier settings update last week to address cellular issues affecting some iPhone 18 Pro Max users on AT&amp;T, Apple is now rolling out a different carrier bundle update for devices running the iOS 27.2 beta. Here are the details. more\u2026"
+      "summary": "Google Health 5.10 is rolling out as a smaller update this week with a trio of new features across the app. more\u2026"
     },
     {
-      "title": "ASUS ROG Rapture GT-BN98: First Wi-Fi 8 Gaming Router Costs 961 Euros",
-      "url": "https://basic-tutorials.com/news/asus-rog-rapture-gt-bn98-first-wi-fi-8-gaming-router-costs-961-euros/",
-      "source": "Basic Tutorials",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Retail",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "The ROG Rapture GT-BN98 is now available in Germany, Austria, and Switzerland, making it, according to ASUS, the first Wi-Fi 8 router in the gaming segment for the DACH market. The quad-band router offers a theoretical total bandwidth of 25,000 Mbit/s, features two 10G ports, and has a suggested ret"
-    },
-    {
-      "title": "The 5 Best Wi-Fi 7 Routers of 2026",
-      "url": "https://www.rtings.com/router/reviews/best/wi-fi-7",
-      "source": "RTINGS.com",
-      "date": "2026-10-09",
-      "vendor": "MediaTek",
-      "customer": "Amazon",
-      "application": null,
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "Best\nWi-Fi Routers\nMesh Wi-Fi Systems\nGaming\nCable Modem-Router Combos\nWi-Fi 7\nVPN Routers\nSpectrum\nFiber Internet\nLarge Homes\nTravel\nXfinity\nBudget And Cheap\nLong-Range\nASUS\nWi-Fi 6\nNETGEAR\nVerizon Fios\nTP-Link\nParental Controls\nStreaming\nTools\nCompare\nResults Table Tool\nReview List\nReview Index\nGr"
-    },
-    {
-      "title": "IKEA\u2019s $60 Bluetooth Speaker Doubles as a Dimmable Lamp",
-      "url": "https://the-gadgeteer.com/2026/10/08/ikea-blomprakt-bluetooth-speaker-lamp/",
-      "source": "The Gadgeteer",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "IKEA",
-      "application": "Audio / Speaker",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "A bedside table, kitchen counter, or shelf can get crowded quickly. You may want softer evening light and a speaker for music or podcasts, but adding both means more cables, more objects, and less usable space. IKEA\u2019s BLOMPRAKT combines a Bluetooth speaker and dimmable lamp in one compact design.\nIk"
-    },
-    {
-      "title": "\u2018Matchbox The Movie\u2019 starring John Cena premieres on Apple TV",
-      "url": "https://9to5mac.com/2026/10/08/matchbox-the-movie-starring-john-cena-premieres-on-apple-tv/",
+      "title": "iPhone Duo buyers to get a special surprise at U.S. Apple Stores, Gurman says",
+      "url": "https://9to5mac.com/2026/10/09/iphone-duo-buyers-to-get-a-special-surprise-at-u-s-apple-stores-gurman-says/",
       "source": "9to5Mac",
       "date": "2026-10-09",
       "vendor": null,
       "customer": "Apple",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Apple TV subscribers can now watch Apple TV\u2019s \u201cMatchbox The Movie,\u201d the platform\u2019s new action-packed comedy inspired by the iconic Mattel toys. Watch the trailer below. more\u2026"
+      "summary": "According to Bloomberg\u2019s Mark Gurman, iPhone Duo buyers who purchase their device at an Apple Store in the US will be treated to a nice little surprise when they turn it on for the first time. Here are the details. more\u2026"
     },
     {
-      "title": "The day Qualcomm paid Huawei marks the fork in the road for two distinct development paths of Chinese chips.",
-      "url": "https://eu.36kr.com/en/p/4017254467817345",
-      "source": "eu.36kr.com",
+      "title": "Ukraine\u2019s drones knock out AI data center belonging to \"Russia\u2019s Google\"",
+      "url": "https://arstechnica.com/gadgets/2026/10/ukraines-drones-knock-out-ai-data-center-belonging-to-russias-google/",
+      "source": "Ars Technica",
+      "date": "2026-10-09",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Ukrainian drone strikes have knocked out two of five data centers belonging to the Russian tech giant Yandex. The damage has left Yandex, known as \u201cRussia\u2019s Google\u201d because it operates the country\u2019s most popular search engine, struggling to maintain its AI chatbot and other online services.\nThe Ukra"
+    },
+    {
+      "title": "Qualcomm-Huawei deal lands as U.S. tightens China tech rules",
+      "url": "https://www.thestreet.com/investing/qualcomm-huawei-deal-lands-as-us-tightens-china-tech-rules",
+      "source": "TheStreet",
       "date": "2026-10-09",
       "vendor": "Qualcomm",
       "customer": "Huawei",
-      "application": "Embedded / Electronics",
+      "application": null,
       "buckets": [],
-      "summary": "The day Qualcomm paid Huawei marks the fork in the road for two distinct development paths of Chinese chips.\nOn October 5, Qualcomm's pre-market share price once rose by more than 4%. The reason for this rise is somewhat counterintuitive: this US chip giant that has collected \"toll fees\" for 30 year"
+      "summary": ""
+    },
+    {
+      "title": "Qualcomm and Arm jury to return next week after deliberations in contract dispute case",
+      "url": "https://www.reuters.com/business/media-telecom/qualcomm-arm-set-jury-verdict-contract-breach-feud-2026-10-09/",
+      "source": "Reuters",
+      "date": "2026-10-09",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
     },
     {
       "title": "Everything We Expect From Apple\u2019s Surprise Smart Home Event Next Week",
@@ -426,9 +385,44 @@
       "summary": "We finally have confirmation of Apple\u2019s massive smart home event, which is happening on Tuesday. So many things are expected to be announced, centering on Apple and Siri entering the home tech space in all-new ways. The tech giant\u2019s smart home devices will face serious competition from Amazon, Googl"
     },
     {
-      "title": "Buccaneers at Cowboys Open Thread!",
-      "url": "https://sports.yahoo.com/articles/buccaneers-cowboys-open-thread-001100678.html",
-      "source": "Yahoo Sports",
+      "title": "Bring stylish three-layer ambiance home with Govee's Matter Pendant Light down at a $100 low (Reg. $150)",
+      "url": "https://9to5toys.com/2026/10/09/govees-matter-pendant-light/",
+      "source": "9to5Toys",
+      "date": "2026-10-09",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Smart Home",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Continuing to ride the Prime Day savings post-event at Amazon, you can still score the Govee Matter Pendant Light down at $99.99 shipped right now. It fell from its $150 full price tag to this rate at the start of Prime Day a few days ago, and though the event has ended, you\u2019re getting a prolonged o"
+    },
+    {
+      "title": "NXP Semiconductors (NXPI) Stock Sinks As Market Gains: What You Should Know",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nxp-semiconductors-nxpi-stock-sinks-211504125.html",
+      "source": "Yahoo Finance",
+      "date": "2026-10-09",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "NXP Semiconductors (NXPI) closed the most recent trading day at $227.52, moving -1.54% from the previous trading session. This move lagged the S&P 500's daily gain of 0.6%. At the same time, the Dow added 0.83%, and the tech-heavy Nasdaq gained 0.64%.\nThe chipmaker's shares have seen an increase of "
+    },
+    {
+      "title": "Pixelated 120: The definitive Pixel tier list",
+      "url": "https://9to5google.com/2026/10/09/pixelated-120-the-definitive-pixel-tier-list/",
+      "source": "9to5Google",
+      "date": "2026-10-09",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Welcome to Pixelated episode 120. This week, Abner, Damien, and Will celebrate 10 years of Pixel by ranking all of Google\u2019s smartphones released over the past decade. Also, we finally make the jump over to video! Enjoy the show? You can listen to our weekly members-only Pixelated Pro bonus episode b"
+    },
+    {
+      "title": "Weekly open thread",
+      "url": "https://www.the-downballot.com/p/weekly-open-thread-59f",
+      "source": "The Downballot",
       "date": "2026-10-09",
       "vendor": null,
       "customer": null,
@@ -436,110 +430,109 @@
       "buckets": [
         "thread"
       ],
-      "summary": "Yes, it's back like it never left! An open thread to discuss the Thursday Night Football game tailored specifically for our Windy City Gridiron members!\nThe NFL Feed still has its own discussion post if you want to chop it up with fans of the other 31 teams, but if you only want to talk with your fe"
+      "summary": "Want to join the conversation? Paid subscribers get full access to the comments and help keep this space thriving.\nDiscussion about this post\nKansas Sen. It\u2019s really in play. Really!\nThe Senate Majority PAC \"is launching a $5 million statewide television ad blitz starting Saturday through Election D"
     },
     {
-      "title": "Ukrainian drone attack takes out Russian datacenter",
-      "url": "https://www.theregister.com/off-prem/2026/10/09/ukrainian-drone-attack-takes-out-russian-datacenter/5302137",
-      "source": "The Register",
-      "date": "2026-10-09",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": "Robotics",
-      "buckets": [],
-      "summary": "TOP STORIES\nAI\n-\nNvidia found $1B under the couch to help secure American scientific computing dominance\nCommitment comes as GPUzilla prepares to fortify Uncle Sam's arsenal with at least seven AI-optimized supers\n-\nTSMC taps GlobalFoundries to bolster US silicon interposer production in $2B deal\nAd"
-    },
-    {
-      "title": "86,100 Shares of NXP Semiconductors N.V. $NXPI Purchased by Zevenbergen Capital Investments LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-86100-shares-of-nxp-semiconductors-nv-nxpi-purchased-by-zevenbergen-capital-investments-llc-2026-10-08/",
+      "title": "Nordic Semiconductor ASA Earnings Date and Estimates",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-10-22-nordic-semiconductor-asa-stock/",
       "source": "MarketBeat",
-      "date": "2026-10-08",
-      "vendor": "NXP",
+      "date": "2026-10-09",
+      "vendor": "Nordic",
       "customer": "Google",
-      "application": "Automotive",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "Zevenbergen Capital Investments LLC bought a new stake in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the third quarter, according to the company in its most recent Form 13F filing with the Securities and Exchange Commission (SEC). The fund bought 86,100 shares of the semiconductor pr"
+      "summary": "OTCMKTS:NDCVF Nordic Semiconductor ASA Earnings Date & Estimates $18.28 -0.39 (-2.11%) As of 10/9/2026 03:56 PM Eastern Nordic Semiconductor ASA is expected to report earnings on Thursday, October 22, 2026, before market opens. Research:ProfileForecast Upcoming Earnings Announcement Announcement Dat"
+    },
+    {
+      "title": "NXP Semiconductors N.V. stock underperforms Friday when compared to competitors",
+      "url": "https://www.marketwatch.com/data-news/nxp-semiconductors-n-v-stock-underperforms-friday-when-compared-to-competitors-aff15b45-b10712ee57fe?mod=mw_quote_news",
+      "source": "MarketWatch",
+      "date": "2026-10-09",
+      "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 113,
-    "NXP": 47,
-    "MediaTek": 38,
-    "Espressif": 13,
+    "Qualcomm": 114,
+    "NXP": 56,
+    "MediaTek": 35,
+    "Espressif": 11,
     "Silicon Labs": 11,
     "TI": 7,
-    "Infineon": 5,
+    "Microchip": 4,
     "Broadcom": 4,
+    "Infineon": 3,
+    "Marvell": 3,
     "STMicro": 3,
-    "Apple": 3,
-    "Murata": 3,
     "Qorvo": 3,
     "Nordic": 2,
-    "Rohm": 2,
-    "Renesas": 2,
     "Skyworks": 2,
-    "Microchip": 1,
-    "Marvell": 1,
-    "Realtek": 1,
-    "Quectel": 1,
-    "Synaptics": 1,
-    "UNISOC": 1
+    "Apple": 2,
+    "Murata": 2,
+    "Rohm": 1,
+    "UNISOC": 1,
+    "Synaptics": 1
   },
   "customer_news_30d": {
-    "Apple": 207,
-    "Google": 90,
-    "Huawei": 42,
-    "Samsung": 41,
-    "Amazon": 37,
-    "Microsoft": 30,
-    "Meta": 14,
-    "Motorola": 4,
-    "Sony": 4,
-    "IKEA": 2,
+    "Apple": 221,
+    "Google": 100,
+    "Samsung": 39,
+    "Amazon": 34,
+    "Huawei": 29,
+    "Microsoft": 25,
+    "Meta": 15,
+    "Sony": 5,
+    "Motorola": 3,
+    "Tesla": 2,
+    "Garmin": 2,
+    "Sennheiser": 1,
     "Volkswagen": 1,
     "BMW": 1,
     "Stellantis": 1,
-    "Xiaomi": 1,
-    "Garmin": 1,
-    "Tesla": 1,
     "Sonos": 1,
+    "Bose": 1,
     "Eufy/Anker": 1,
-    "HKMC": 1
+    "Toyota": 1
   },
   "github_pulse": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
       "tech": [
-        "bluetooth"
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 4237,
+      "issues_open": 1719,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
         },
         {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         },
         {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+          "tag": "v6.0.3",
+          "name": "ESP-IDF Release v6.0.3",
+          "published_at": "2026-09-02T11:55:49Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 16728,
-      "pushed_at": "2026-10-09T06:37:53Z"
+      "stars": 19197,
+      "pushed_at": "2026-10-10T09:25:29Z"
     },
     {
       "name": "BlueZ",
@@ -550,7 +543,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 127,
+      "issues_open": 135,
       "prs_open": 0,
       "releases": [
         {
@@ -573,58 +566,41 @@
         }
       ],
       "stars": 1156,
-      "pushed_at": "2026-10-09T01:29:30Z"
+      "pushed_at": "2026-10-10T09:07:21Z"
     },
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
       "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
+        "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 1729,
+      "issues_open": 4226,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
         },
         {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
         },
         {
-          "tag": "v6.0.3",
-          "name": "ESP-IDF Release v6.0.3",
-          "published_at": "2026-09-02T11:55:49Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 19188,
-      "pushed_at": "2026-10-08T18:09:17Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 251353,
-      "pushed_at": "2026-10-09T04:46:28Z"
+      "stars": 16744,
+      "pushed_at": "2026-10-10T11:00:58Z"
     },
     {
       "name": "Matter SDK",
@@ -635,7 +611,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2929,
+      "issues_open": 2936,
       "prs_open": 0,
       "releases": [
         {
@@ -658,7 +634,22 @@
         }
       ],
       "stars": 8960,
-      "pushed_at": "2026-10-09T01:05:13Z"
+      "pushed_at": "2026-10-10T01:02:47Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 251425,
+      "pushed_at": "2026-10-09T23:31:23Z"
     },
     {
       "name": "OpenThread",
@@ -668,8 +659,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 68,
-      "issues_open": 164,
+      "commits_30d": 72,
+      "issues_open": 162,
       "prs_open": 0,
       "releases": [
         {
@@ -691,8 +682,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4042,
-      "pushed_at": "2026-10-08T18:32:03Z"
+      "stars": 4041,
+      "pushed_at": "2026-10-10T07:22:37Z"
     },
     {
       "name": "NimBLE",
@@ -702,12 +693,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 33,
-      "issues_open": 277,
+      "commits_30d": 28,
+      "issues_open": 278,
       "prs_open": 0,
       "releases": [],
       "stars": 893,
-      "pushed_at": "2026-10-09T13:03:51Z"
+      "pushed_at": "2026-10-09T13:59:43Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -718,7 +709,7 @@
         "ieee15_4"
       ],
       "commits_30d": 24,
-      "issues_open": 454,
+      "issues_open": 460,
       "prs_open": 0,
       "releases": [
         {
@@ -740,8 +731,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15704,
-      "pushed_at": "2026-10-09T10:58:22Z"
+      "stars": 15706,
+      "pushed_at": "2026-10-10T12:38:11Z"
     },
     {
       "name": "hostap",
@@ -767,13 +758,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926114359/tm2626934d2_8k.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-10-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326015180/dp254466_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
@@ -781,11 +765,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926113538/tm2626934d1_8k.htm"
     },
     {
-      "vendor": "Onsemi",
-      "ticker": "ON",
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
       "form": "8-K",
-      "date": "2026-10-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126038294/ef20083030_8k.htm"
+      "date": "2026-10-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326015180/dp254466_8k.htm"
     },
     {
       "vendor": "Synaptics",
@@ -793,6 +777,13 @@
       "form": "8-K",
       "date": "2026-10-01",
       "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126038301/ef20083029_8k.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-10-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126038294/ef20083030_8k.htm"
     },
     {
       "vendor": "Skyworks",
@@ -928,6 +919,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926093355/tm2622643d1_8k.htm"
     },
     {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-08-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
+    },
+    {
       "vendor": "Microchip",
       "ticker": "MCHP",
       "form": "10-Q",
@@ -940,27 +938,6 @@
       "form": "8-K",
       "date": "2026-08-06",
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/mchp-20260806.htm"
-    },
-    {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-08-06",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "10-Q",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000109786426000017/on-20260703.htm"
-    },
-    {
-      "vendor": "Onsemi",
-      "ticker": "ON",
-      "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
       "vendor": "Skyworks",
@@ -977,11 +954,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
+      "vendor": "Onsemi",
+      "ticker": "ON",
       "form": "10-Q",
-      "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000109786426000017/on-20260703.htm"
+    },
+    {
+      "vendor": "Onsemi",
+      "ticker": "ON",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
       "vendor": "Qualcomm",
@@ -989,6 +973,13 @@
       "form": "8-K",
       "date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
+    },
+    {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "10-Q",
+      "date": "2026-07-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
     },
     {
       "vendor": "Apple",
@@ -1019,13 +1010,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
-      "form": "8-K",
-      "date": "2026-07-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
-    },
-    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1040,18 +1024,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom-20260729.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "10-Q",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
+      "vendor": "TI",
+      "ticker": "TXN",
       "form": "8-K",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
+      "date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
     },
     {
       "vendor": "Skyworks",
@@ -1073,6 +1050,20 @@
       "form": "8-K",
       "date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000045/swks-20260728.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "10-Q",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
     },
     {
       "vendor": "Microchip",
@@ -1221,17 +1212,17 @@
           "url": "https://www.allaboutcircuits.com/news/nordic-rolls-out-new-multiprotocol-soc-for-size-and-cost-effective-iot/"
         },
         {
+          "title": "Nordic Semiconductor ASA to Report Q3 2026 Earnings",
+          "date": "Oct 2026",
+          "url": "https://www.marketbeat.com/earnings/reports/2026-10-22-nordic-semiconductor-asa-stock/"
+        },
+        {
+          "title": "Nordic Semiconductor nRF54L15 Tag Prototyping Platform Highlighted for Bluetooth Tracking and Edge AI",
+          "date": "Oct 2026",
+          "url": "https://www.sweetwaterreporter.com/online_features/press_releases/future-electronics-showcases-nordic-semiconductor-nrf54l15-tag-prototyping-platform-for-bluetooth-tracking-and-edge-ai/article_27f6b46d-e6bb-5d80-832e-0dcf34ffc518.html"
+        },
+        {
           "title": "Nordic's Skylo-Certified nRF9151 Modem Extends Satellite IoT Reach with LooUQ",
-          "date": "Sep 2026",
-          "url": "https://www.eetindia.co.in/nordic-loouq-extend-satellite-iot-reach-with-skylo-certified-nrf9151-modem/"
-        },
-        {
-          "title": "Mouser Electronics Stocks New Nordic Semiconductor Multiprotocol Wireless Connectivity Solutions",
-          "date": "Sep 2026",
-          "url": "https://www.everythingrf.com/news/details/22595-mouser-electronics-stocks-new-multiprotocol-wireless-connectivity-solutions-from-nordic-semiconductor"
-        },
-        {
-          "title": "Nordic, LooUQ Extend Satellite IoT Reach with Skylo-Certified nRF9151 Modem",
           "date": "Sep 2026",
           "url": "https://www.eetindia.co.in/nordic-loouq-extend-satellite-iot-reach-with-skylo-certified-nrf9151-modem/"
         }
@@ -1496,24 +1487,24 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-reports-vsmc-fab-opening-nxp-semiconductors-stock-sits-at-eur-216-53/70226569"
         },
         {
+          "title": "NXP Semiconductors Sets Date for Third Quarter 2026 Financial Results Announcement",
+          "date": "Oct 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-stock-sits-eur-14-50-below-its-weekly-high-as-results/70287225"
+        },
+        {
+          "title": "NXP and Forlinx Partner to Empower Industrial Edge AI with i.MX 95 and Ara240 M.2 AI Accelerator",
+          "date": "Oct 2026",
+          "url": "https://timestech.in/nxp-forlinx-empowering-industrial-edge-ai-with-i-mx-95-and-ara240-m-2-ai-accelerator/"
+        },
+        {
+          "title": "NXP-backed VSMC Opens New Fab in Singapore",
+          "date": "Oct 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-backed-vsmc-opens-singapore-fab-what-it-means-for-nxp-semiconductors-stock/70219935"
+        },
+        {
           "title": "MIT Bengaluru Students Win NXP Cup Regional Final",
           "date": "Sep 2026",
           "url": "https://cxotoday.com/media-coverage/mit-bengaluru-students-win-nxp-cup-regional-final-with-autonomous-medical-response-robot-advance-to-nationals/"
-        },
-        {
-          "title": "NXP Secures $250 Million Loan for Chip Plant Expansion",
-          "date": "Sep 2026",
-          "url": "https://www.stocktitan.net/sec-filings/NXPI/8-k-nxp-semiconductors-n-v-reports-material-event-6f676fbeb040.html"
-        },
-        {
-          "title": "NXP Semiconductors Secures $250 Million Unsecured Senior Loan from European Investment Bank",
-          "date": "Sep 2026",
-          "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN44U16B:0-nxp-semiconductors-unit-enters-250-million-unsecured-senior-loan-facility-with-eib-on-sept-1-2026-sec-filing/"
-        },
-        {
-          "title": "NXP Launches MCX A5 MCUs with 10BASE-T1S Ethernet for Industrial Edge Nodes",
-          "date": "Sep 2026",
-          "url": "https://www.embedded.com/nxp-mcx-a5-mcus-bring-10base-t1s-ethernet-to-industrial-edge-nodes/"
         }
       ],
       "events": [
@@ -2047,14 +2038,14 @@
           "url": "https://www.eetimes.com/silicon-labs-adds-iot-developer-platform-tools/"
         },
         {
+          "title": "Silicon Labs unveils AI development tools to accelerate Edge IoT innovation",
+          "date": "Oct 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/silicon-labs-unveils-ai-development-tools-to-accelerate-edge-iot-innovation"
+        },
+        {
           "title": "Navigating Matter Certification: What\u2019s Changed and How to Succeed",
           "date": "Sep 2026",
           "url": "https://www.silabs.com/support/training/navigating-matter-certification"
-        },
-        {
-          "title": "Silicon Labs Releases BG2B Bluetooth 6 SoC for Battery-Powered IoT Devices",
-          "date": "Sep 2026",
-          "url": "https://www.5gtechnologyworld.com/bluetooth-6-soc-adds-can-fd-and-channel-sounding/"
         }
       ],
       "events": [
@@ -2856,24 +2847,24 @@
           "url": "https://www.i-programmer.info/news/91-hardware/19197-the-esp32-s31-runs-linux.html"
         },
         {
+          "title": "Espressif's ESP32-S31 Can Now Run Linux",
+          "date": "Oct 2026",
+          "url": "https://www.i-programmer.info/news/91-hardware/19197-the-esp32-s31-runs-linux.html"
+        },
+        {
+          "title": "Waveshare Launches ESP32-C5 Board with Wi-Fi 6, Thread, and Zigbee Support",
+          "date": "Oct 2026",
+          "url": "https://inews.zoombangla.com/waveshare-esp32-c5-board-wifi-6-thread-zigbee/"
+        },
+        {
+          "title": "ESP-SDR Firmware Transforms ESP32 into a 2.4/5 GHz Software-Defined Radio",
+          "date": "Oct 2026",
+          "url": "https://www.cnx-software.com/2026/10/04/esp-sdr-firmware-turns-esp32-into-a-2-4-5-ghz-software-defined-radio-sdr/"
+        },
+        {
           "title": "Espressif Systems Launches ESP32-P4 System-on-Chip (SoC)",
           "date": "Sep 2026",
           "url": "https://www.electronicdesign.com/directory/digital/soc/product/55402296/mouser-espressif-systems-esp32-p4-system-on-chip-soc"
-        },
-        {
-          "title": "Espressif Systems ESP32-P4 System-on-Chip (SoC)",
-          "date": "Sep 2026",
-          "url": ""
-        },
-        {
-          "title": "Espressif Launches ESP32 S31 Devkit Featuring New RISC-V Chip with Wi-Fi 6",
-          "date": "Sep 2026",
-          "url": "https://www.geeky-gadgets.com/esp32-s31-devkit-review/"
-        },
-        {
-          "title": "Espressif ESP32-S31 DevKit Brings Wi-Fi 6 and Thread to a 320MHz RISC-V Board",
-          "date": "Sep 2026",
-          "url": "https://inews.zoombangla.com/esp32-s31-devkit-wifi-6-thread-risc-v-developers/"
         }
       ],
       "events": [
@@ -3114,6 +3105,16 @@
           "url": "https://www.electronicsmedia.info/2026/10/09/stmicroelectronics-q3-2026/"
         },
         {
+          "title": "STMicroelectronics to Announce Q3 2026 Earnings",
+          "date": "Oct 2026",
+          "url": "https://www.electronicsmedia.info/2026/10/09/stmicroelectronics-q3-2026/"
+        },
+        {
+          "title": "RFOXiA Selects STMicroelectronics' STM32 for Long-Range, Mesh-Capable Bluetooth LE Module",
+          "date": "Oct 2026",
+          "url": "https://www.hackster.io/news/rfoxia-picks-stmicroelectronics-stm32-to-build-a-long-range-mesh-capable-bluetooth-le-module-16dfff47e78f"
+        },
+        {
           "title": "STMicroelectronics at Citi\u2019s 2026 Global TMT Conference: margin lift ahead",
           "date": "Sep 2026",
           "url": "https://ca.investing.com/news/stock-market-news/stmicroelectronics-at-citis-2026-global-tmt-conference-margin-lift-ahead-93CH-4833517"
@@ -3142,16 +3143,6 @@
           "title": "New Car Camera Sensor is Nearly 60% More Sensitive to Infrared",
           "date": "Sep 2026",
           "url": "https://www.stocktitan.net/news/STM/st-microelectronics-introduces-automotive-image-sensor-to-help-scale-17775ngnvro3.html"
-        },
-        {
-          "title": "NeoEyes NE302 Camera Features STM32N6 MCU for Edge AI Vision",
-          "date": "Sep 2026",
-          "url": "https://www.cnx-software.com/2026/09/12/neoeyes-ne302-a-tiny-usb-c-powered-wifi-6-edge-ai-vision-camera-based-on-stm32n6-mcu/"
-        },
-        {
-          "title": "NeoEyes Launches Tiny USB-C Powered WiFi 6 Edge AI Vision Camera Based on STM32N6 MCU",
-          "date": "Sep 2026",
-          "url": "https://www.cnx-software.com/2026/09/12/neoeyes-ne302-a-tiny-usb-c-powered-wifi-6-edge-ai-vision-camera-based-on-stm32n6-mcu/"
         }
       ],
       "events": [
@@ -4085,6 +4076,11 @@
           "url": "https://www.newelectronics.co.uk/content/news/microchip-and-navitas-introduce-800v-to-6v-power-reference-design-for-ai-data-centres"
         },
         {
+          "title": "Microchip Technology Acquires VORAGO Technologies",
+          "date": "Oct 2026",
+          "url": "https://ir.microchip.com/news-events/press-releases/detail/1419/microchip-technology-acquires-vorago-technologies"
+        },
+        {
           "title": "Microchip Technology Completes Acquisition of Hailo",
           "date": "Sep 2026",
           "url": "https://ir.microchip.com/news-events/press-releases/detail/1415/microchip-technology-completes-acquisition-of-hailo"
@@ -4118,11 +4114,6 @@
           "title": "Microchip Launches Industrial Midspan for PoE in Legacy Networks",
           "date": "Aug 2026",
           "url": "https://www.allaboutcircuits.com/news/microchips-industrial-midspan-unlocks-poe-for-legacy-networks/"
-        },
-        {
-          "title": "Microchip Secures \u00a31.5M Contract with European Satellite Manufacturer",
-          "date": "Aug 2026",
-          "url": "https://www.insidermedia.com/news/south-east/microchip-maker-secures-1.5m-contract-with-european-satellite-manufacturer"
         }
       ]
     },
@@ -4396,6 +4387,16 @@
           "url": "https://www.azosensors.com/news.aspx?newsID=16969"
         },
         {
+          "title": "Murata Brings Intelligence to Life at Electronica 2026 with New Technology and Immersive Demonstrations",
+          "date": "Oct 2026",
+          "url": "https://www.azosensors.com/news.aspx?newsID=16969"
+        },
+        {
+          "title": "Murata starts mass production of ultra-compact three-terminal MLCCs",
+          "date": "Oct 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/murata-starts-mass-production-of-ultra-compact-three-terminal-mlccs"
+        },
+        {
           "title": "Murata to Showcase \u2019Scaling the Future from India with Murata\u2019 at electronica India 2026",
           "date": "Sep 2026",
           "url": "https://www.murata.com/en-global/news/event/other/2026/0901"
@@ -4424,16 +4425,6 @@
           "title": "Murata Launches Common Mode Choke Coils for Automotive CAN FD",
           "date": "Sep 2026",
           "url": "https://www.murata.com/en-global/news/emc/emifil/2026/0910"
-        },
-        {
-          "title": "Murata Expands Power Inductor Line-up for Car Electronics",
-          "date": "Sep 2026",
-          "url": "https://www.electronicsforu.com/news/power-inductors-for-car-electronics"
-        },
-        {
-          "title": "Murata Introduces 2NR Bluetooth LE 6.0 Module",
-          "date": "Sep 2026",
-          "url": "https://www.electronicdesign.com/directory/communication/wireless/product/55399288/mouser-murata-2nr-bluetooth-le-60-module"
         }
       ]
     },
