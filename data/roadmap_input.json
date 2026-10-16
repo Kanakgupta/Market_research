@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T13:12:29Z",
+  "generated_at": "2026-10-16T13:11:48Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3363,6 +3363,11 @@
           "url": "https://www.azosensors.com/news.aspx?newsID=16969"
         },
         {
+          "title": "Murata develops 135 GHz antenna module for 6G systems",
+          "date": "Oct 2026",
+          "url": "https://www.globalsources.com/sourcing-digest/murata-develops-135-ghz-antenna-module-for-6g-systems/"
+        },
+        {
           "title": "Murata to Showcase \u2019Scaling the Future from India with Murata\u2019 at electronica India 2026",
           "date": "Sep 2026",
           "url": "https://www.murata.com/en-global/news/event/other/2026/0901"
@@ -3371,11 +3376,6 @@
           "title": "Murata Expands Automotive-Grade Metal Power Inductors Line-up",
           "date": "Sep 2026",
           "url": "https://www.murata.com/en-global/news/inductor/power/2026/0907"
-        },
-        {
-          "title": "Murata to Showcase at electronica India 2026",
-          "date": "Sep 2026",
-          "url": "https://www.murata.com/en-global/news/event/other/2026/0901"
         }
       ]
     },
@@ -3505,6 +3505,11 @@
           "url": "https://www.stocktitan.net/news/ON/onsemi-and-sungrow-advance-utility-scale-energy-storage-performance-vhcj0z6ym81d.html"
         },
         {
+          "title": "Onsemi and Sungrow Partner to Advance Utility-Scale Energy Storage with SiC Hybrid Technology",
+          "date": "Oct 2026",
+          "url": "https://www.marketscreener.com/news/onsemi-and-sungrow-advance-utility-scale-energy-storage-performance-with-sic-hybrid-technology-ce785dd2dd8df52d"
+        },
+        {
           "title": "Vadzo Imaging Validates Onsemi AR0234 Monochrome GigE Camera for High Frame Streaming",
           "date": "Sep 2026",
           "url": "https://finance.yahoo.com/technology/articles/vadzo-imaging-validates-high-frame-190000712.html"
@@ -3528,11 +3533,6 @@
           "title": "Onsemi Unveils Platform That Turns Silicon Wafers Into Power Packages",
           "date": "Sep 2026",
           "url": "https://www.allaboutcircuits.com/news/onsemi-unveils-platform-that-turns-silicon-wafers-into-power-packages/"
-        },
-        {
-          "title": "onsemi Introduces the Embedded Power Platform, a Breakthrough Architecture for the AI Era",
-          "date": "Sep 2026",
-          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-introduces-the-embedded-power-platform-a-breakthrough-architecture-for-the-ai-era"
         }
       ]
     },
@@ -3769,25 +3769,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 113,
-    "NXP": 42,
-    "MediaTek": 41,
-    "Espressif": 15,
-    "Broadcom": 13,
-    "Silicon Labs": 12,
-    "TI": 8,
-    "Nordic": 8,
-    "Microchip": 6,
-    "Apple": 5,
+    "Qualcomm": 108,
+    "MediaTek": 43,
+    "NXP": 40,
+    "Espressif": 14,
+    "Silicon Labs": 13,
+    "TI": 9,
+    "Nordic": 9,
+    "Apple": 6,
+    "Microchip": 5,
     "HiSilicon": 5,
     "Renesas": 4,
-    "STMicro": 3,
-    "Marvell": 3,
-    "Onsemi": 2,
-    "Murata": 2,
-    "Infineon": 1,
-    "Rohm": 1,
-    "Qorvo": 1
+    "Broadcom": 3,
+    "Murata": 3,
+    "Infineon": 2,
+    "STMicro": 2,
+    "Marvell": 2,
+    "u-blox": 1,
+    "Skyworks": 1,
+    "Onsemi": 1,
+    "Lattice": 1
   },
   "standards_in_flight": [
     {
@@ -3870,7 +3871,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1743,
+      "issues_open": 1739,
       "prs_open": 0,
       "releases": [
         {
@@ -3892,8 +3893,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v6.0.3"
         }
       ],
-      "stars": 19251,
-      "pushed_at": "2026-10-12T19:49:19Z"
+      "stars": 19259,
+      "pushed_at": "2026-10-16T12:20:42Z"
     },
     {
       "name": "BlueZ",
@@ -3904,7 +3905,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 139,
+      "issues_open": 134,
       "prs_open": 0,
       "releases": [
         {
@@ -3927,7 +3928,7 @@
         }
       ],
       "stars": 1161,
-      "pushed_at": "2026-10-15T12:08:12Z"
+      "pushed_at": "2026-10-16T10:33:03Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3938,7 +3939,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4406,
+      "issues_open": 4398,
       "prs_open": 0,
       "releases": [
         {
@@ -3960,8 +3961,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16800,
-      "pushed_at": "2026-10-15T12:32:29Z"
+      "stars": 16807,
+      "pushed_at": "2026-10-16T12:53:32Z"
     },
     {
       "name": "Matter SDK",
@@ -3972,7 +3973,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2949,
+      "issues_open": 2928,
       "prs_open": 0,
       "releases": [
         {
@@ -3995,7 +3996,7 @@
         }
       ],
       "stars": 8969,
-      "pushed_at": "2026-10-15T08:50:54Z"
+      "pushed_at": "2026-10-16T13:10:38Z"
     },
     {
       "name": "Linux mac80211",
@@ -4009,8 +4010,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 251919,
-      "pushed_at": "2026-10-14T15:27:34Z"
+      "stars": 252117,
+      "pushed_at": "2026-10-16T11:49:14Z"
     },
     {
       "name": "OpenThread",
@@ -4020,8 +4021,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 71,
-      "issues_open": 172,
+      "commits_30d": 73,
+      "issues_open": 174,
       "prs_open": 0,
       "releases": [
         {
@@ -4044,7 +4045,7 @@
         }
       ],
       "stars": 4045,
-      "pushed_at": "2026-10-15T03:32:10Z"
+      "pushed_at": "2026-10-16T03:30:31Z"
     },
     {
       "name": "NimBLE",
@@ -4054,12 +4055,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 30,
-      "issues_open": 285,
+      "commits_30d": 36,
+      "issues_open": 286,
       "prs_open": 0,
       "releases": [],
       "stars": 895,
-      "pushed_at": "2026-10-15T08:43:27Z"
+      "pushed_at": "2026-10-16T10:16:38Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4069,8 +4070,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 19,
-      "issues_open": 471,
+      "commits_30d": 18,
+      "issues_open": 469,
       "prs_open": 0,
       "releases": [
         {
@@ -4092,8 +4093,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15726,
-      "pushed_at": "2026-10-14T20:57:43Z"
+      "stars": 15729,
+      "pushed_at": "2026-10-15T20:13:12Z"
     },
     {
       "name": "hostap",
