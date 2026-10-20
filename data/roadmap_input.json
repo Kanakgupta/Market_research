@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T13:11:17Z",
+  "generated_at": "2026-10-20T13:14:01Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2086,14 +2086,14 @@
           "url": "https://www.hackster.io/news/rfoxia-picks-stmicroelectronics-stm32-to-build-a-long-range-bluetooth-le-module-16dfff47e78f"
         },
         {
+          "title": "STMicroelectronics Launches High-Accuracy Two-in-One Altitude and Underwater Depth Sensor",
+          "date": "Oct 2026",
+          "url": "https://www.eejournal.com/industry_news/stmicroelectronics-reveals-high-accuracy-two-in-one-altitude-and-underwater-depth-sensor-for-wearables-and-sports-cameras/"
+        },
+        {
           "title": "STMicroelectronics at Citi\u2019s 2026 Global TMT Conference: margin lift ahead",
           "date": "Sep 2026",
           "url": "https://ca.investing.com/news/stock-market-news/stmicroelectronics-at-citis-2026-global-tmt-conference-margin-lift-ahead-93CH-4833517"
-        },
-        {
-          "title": "NeoEyes NE302 \u2013 A tiny USB-C-powered WiFi 6 Edge AI Vision camera based on STM32N6 MCU",
-          "date": "Sep 2026",
-          "url": "https://www.cnx-software.com/2026/09/12/neoeyes-ne302-a-tiny-usb-c-powered-wifi-6-edge-ai-vision-camera-based-on-stm32n6-mcu/"
         }
       ],
       "events": [
@@ -2604,6 +2604,16 @@
           "url": "https://shattered.io/google-synaptics-edge-ai-chip-40-percent-power-2026/"
         },
         {
+          "title": "Synaptics and Google Preview New Edge AI Microcontroller for Power-Constrained Devices",
+          "date": "Oct 2026",
+          "url": "https://www.rdworldonline.com/google-teases-synaptics-edge-ai-chip-ahead-of-oct-20-launch/"
+        },
+        {
+          "title": "Synaptics' Coralboard Edge AI Development Board Now Available Exclusively Through DigiKey",
+          "date": "Oct 2026",
+          "url": "https://www.electronicsmedia.info/2026/10/20/coralboard-edge-ai-development-board/"
+        },
+        {
           "title": "Synaptics Brings Tactile Sensing and Edge AI to NVIDIA Isaac Sim and Holoscan",
           "date": "Sep 2026",
           "url": "https://www.marketscreener.com/news/synaptics-brings-tactile-sensing-and-edge-ai-to-nvidia-isaac-sim-and-holoscan-ce785bdddd8dfe2c"
@@ -2612,16 +2622,6 @@
           "title": "Synaptics and onsemi Pitch AI-Focused Merger",
           "date": "Sep 2026",
           "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
-        },
-        {
-          "title": "Synaptics and onsemi Propose AI-Focused Merger",
-          "date": "Sep 2026",
-          "url": "https://www.stocktitan.net/sec-filings/SYNA/425-synaptics-inc-business-combination-communication-61823cadeab9.html"
-        },
-        {
-          "title": "Synaptics Announces Integration with NVIDIA Isaac Sim",
-          "date": "Sep 2026",
-          "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-syna/synaptics/news/synaptics-syna-could-be-29%25-undervalued-after-nvidia-isaac-si"
         }
       ],
       "events": [
@@ -3769,23 +3769,27 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 102,
-    "NXP": 37,
-    "MediaTek": 37,
-    "Espressif": 15,
-    "Nordic": 14,
+    "Qualcomm": 106,
+    "NXP": 40,
+    "MediaTek": 32,
+    "Espressif": 13,
+    "Nordic": 12,
     "Silicon Labs": 10,
-    "TI": 9,
-    "Apple": 6,
-    "Broadcom": 5,
-    "HiSilicon": 5,
-    "Murata": 3,
-    "Microchip": 3,
-    "Realtek": 2,
-    "Synaptics": 1,
+    "Broadcom": 8,
+    "TI": 7,
+    "Murata": 4,
+    "Apple": 4,
+    "Microchip": 4,
+    "Synaptics": 2,
+    "Infineon": 2,
+    "HiSilicon": 2,
+    "Goodix": 1,
+    "Skyworks": 1,
+    "Realtek": 1,
     "STMicro": 1,
+    "Onsemi": 1,
     "Renesas": 1,
-    "Infineon": 1
+    "Marvell": 1
   },
   "standards_in_flight": [
     {
@@ -3858,40 +3862,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 4475,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16832,
-      "pushed_at": "2026-10-19T11:49:02Z"
-    },
-    {
       "name": "ESP-IDF",
       "owner": "espressif",
       "repo": "esp-idf",
@@ -3902,7 +3872,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1755,
+      "issues_open": 1759,
       "prs_open": 0,
       "releases": [
         {
@@ -3924,8 +3894,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19282,
-      "pushed_at": "2026-10-19T11:44:17Z"
+      "stars": 19292,
+      "pushed_at": "2026-10-20T07:49:12Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 4565,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+        },
+        {
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+        },
+        {
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+        }
+      ],
+      "stars": 16843,
+      "pushed_at": "2026-10-19T19:47:59Z"
     },
     {
       "name": "BlueZ",
@@ -3959,7 +3963,7 @@
         }
       ],
       "stars": 1163,
-      "pushed_at": "2026-10-19T07:06:26Z"
+      "pushed_at": "2026-10-20T07:30:05Z"
     },
     {
       "name": "Matter SDK",
@@ -3970,7 +3974,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2925,
+      "issues_open": 2927,
       "prs_open": 0,
       "releases": [
         {
@@ -3992,8 +3996,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8973,
-      "pushed_at": "2026-10-19T00:57:54Z"
+      "stars": 8975,
+      "pushed_at": "2026-10-20T10:42:45Z"
     },
     {
       "name": "Linux mac80211",
@@ -4007,8 +4011,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 252559,
-      "pushed_at": "2026-10-18T23:21:18Z"
+      "stars": 252774,
+      "pushed_at": "2026-10-20T07:10:36Z"
     },
     {
       "name": "OpenThread",
@@ -4018,8 +4022,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 70,
-      "issues_open": 195,
+      "commits_30d": 76,
+      "issues_open": 181,
       "prs_open": 0,
       "releases": [
         {
@@ -4041,8 +4045,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4048,
-      "pushed_at": "2026-10-19T09:37:39Z"
+      "stars": 4051,
+      "pushed_at": "2026-10-20T04:42:21Z"
     },
     {
       "name": "NimBLE",
@@ -4052,12 +4056,12 @@
       "tech": [
         "bluetooth"
       ],
-      "commits_30d": 64,
-      "issues_open": 281,
+      "commits_30d": 69,
+      "issues_open": 285,
       "prs_open": 0,
       "releases": [],
       "stars": 895,
-      "pushed_at": "2026-10-19T13:05:36Z"
+      "pushed_at": "2026-10-19T22:15:36Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4067,8 +4071,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 13,
-      "issues_open": 475,
+      "commits_30d": 12,
+      "issues_open": 480,
       "prs_open": 0,
       "releases": [
         {
@@ -4090,7 +4094,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15742,
+      "stars": 15748,
       "pushed_at": "2026-10-19T05:54:53Z"
     },
     {
