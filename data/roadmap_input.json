@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T13:10:24Z",
+  "generated_at": "2026-10-22T13:14:26Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2796,6 +2796,11 @@
           "url": "https://www.digitimes.com/news/a20261012PD217/drone-wireless-communications-realtek-security.html"
         },
         {
+          "title": "Realtek Announces Wi-Fi 8 Chipset",
+          "date": "Oct 2026",
+          "url": "https://wifinowglobal.com/news-blog/roundup-apples-uwb-realteks-wi-fi-8-extreme-networks-wins-award-brazils-6-ghz-dispute-continues-japans-wi2-extends-openroaming/"
+        },
+        {
           "title": "Realtek Enters SSD Controller Market Amid Surging AI Server Demand",
           "date": "Sep 2026",
           "url": "https://www.taiwan-panorama.com/en/Articles/Details?Guid=3279855b-6911-47e7-8d32-6d5727cf2037&CatId=9&postname=Engineering%20Taiwan%E2%80%99s%20Silicon%20Island%20Realtek-Realtek%20and%20the%20Power%20of%20a%20Collaborative%20Semiconductor%20Ecosystem%20"
@@ -2814,11 +2819,6 @@
           "title": "Realtek RTL8127atf and RTL8116af Networking Chips Gain Support in Upcoming Linux 7.4 Kernel",
           "date": "Sep 2026",
           "url": "https://www.phoronix.com/news/Linux-7.4-RTL8127atf-RTL8116af"
-        },
-        {
-          "title": "Realtek Announces Strategic Expansion into Wi-Fi 8, Optical Communications, and ASICs",
-          "date": "Sep 2026",
-          "url": "https://www.digitimes.com/news/a20260907PD219/itri-realtek-wi-fi-communications-nvidia.html"
         }
       ]
     },
@@ -3769,28 +3769,31 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 114,
-    "NXP": 45,
-    "MediaTek": 28,
-    "Espressif": 15,
-    "TI": 10,
-    "Silicon Labs": 8,
-    "Broadcom": 7,
-    "Synaptics": 6,
-    "Nordic": 6,
-    "Infineon": 4,
-    "Apple": 4,
-    "Microchip": 4,
-    "HiSilicon": 3,
-    "Renesas": 2,
+    "Qualcomm": 105,
+    "NXP": 38,
+    "TI": 36,
+    "MediaTek": 23,
+    "Nordic": 15,
+    "Espressif": 14,
+    "Infineon": 9,
+    "Synaptics": 8,
+    "Broadcom": 6,
+    "HiSilicon": 5,
+    "Silicon Labs": 4,
+    "STMicro": 3,
+    "Marvell": 3,
     "Skyworks": 2,
-    "STMicro": 2,
-    "Realtek": 2,
+    "Apple": 2,
     "Murata": 2,
-    "Airoha": 1,
+    "Microchip": 2,
     "Qorvo": 1,
+    "Airoha": 1,
     "Sequans": 1,
-    "Goodix": 1
+    "Goodix": 1,
+    "Realtek": 1,
+    "Atmosic": 1,
+    "Onsemi": 1,
+    "Renesas": 1
   },
   "standards_in_flight": [
     {
@@ -3863,76 +3866,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1762,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.6",
-          "name": "ESP-IDF Release v5.5.6",
-          "published_at": "2026-10-16T14:32:14Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
-        },
-        {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
-        },
-        {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
-        }
-      ],
-      "stars": 19299,
-      "pushed_at": "2026-10-20T19:28:04Z"
-    },
-    {
-      "name": "BlueZ",
-      "owner": "bluez",
-      "repo": "bluez",
-      "label": "Linux BT stack",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 133,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "5.87",
-          "name": "5.87",
-          "published_at": "2026-07-07T16:41:14Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
-        },
-        {
-          "tag": "5.86",
-          "name": "5.86",
-          "published_at": "2026-02-09T21:27:33Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
-        }
-      ],
-      "stars": 1164,
-      "pushed_at": "2026-10-21T07:25:07Z"
-    },
-    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3941,7 +3874,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4546,
+      "issues_open": 4651,
       "prs_open": 0,
       "releases": [
         {
@@ -3963,8 +3896,59 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16849,
-      "pushed_at": "2026-10-21T13:04:52Z"
+      "stars": 16863,
+      "pushed_at": "2026-10-22T10:30:15Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1768,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.6",
+          "name": "ESP-IDF Release v5.5.6",
+          "published_at": "2026-10-16T14:32:14Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
+        },
+        {
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+        },
+        {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        }
+      ],
+      "stars": 19311,
+      "pushed_at": "2026-10-20T19:28:04Z"
+    },
+    {
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 133,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 1164,
+      "pushed_at": "2026-10-21T07:25:07Z"
     },
     {
       "name": "Matter SDK",
@@ -3975,7 +3959,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2920,
+      "issues_open": 2917,
       "prs_open": 0,
       "releases": [
         {
@@ -3997,8 +3981,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8975,
-      "pushed_at": "2026-10-21T13:09:49Z"
+      "stars": 8976,
+      "pushed_at": "2026-10-22T12:22:52Z"
     },
     {
       "name": "Linux mac80211",
@@ -4012,8 +3996,23 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 252972,
-      "pushed_at": "2026-10-21T06:28:19Z"
+      "stars": 253113,
+      "pushed_at": "2026-10-22T06:31:47Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 96,
+      "issues_open": 279,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 895,
+      "pushed_at": "2026-10-22T08:30:11Z"
     },
     {
       "name": "OpenThread",
@@ -4023,8 +4022,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 79,
-      "issues_open": 177,
+      "commits_30d": 84,
+      "issues_open": 179,
       "prs_open": 0,
       "releases": [
         {
@@ -4047,22 +4046,7 @@
         }
       ],
       "stars": 4051,
-      "pushed_at": "2026-10-21T00:50:10Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 75,
-      "issues_open": 282,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 895,
-      "pushed_at": "2026-10-21T13:01:32Z"
+      "pushed_at": "2026-10-22T06:25:05Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4073,7 +4057,7 @@
         "ieee15_4"
       ],
       "commits_30d": 12,
-      "issues_open": 474,
+      "issues_open": 486,
       "prs_open": 0,
       "releases": [
         {
@@ -4095,8 +4079,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15749,
-      "pushed_at": "2026-10-20T16:34:37Z"
+      "stars": 15752,
+      "pushed_at": "2026-10-21T15:24:10Z"
     },
     {
       "name": "hostap",

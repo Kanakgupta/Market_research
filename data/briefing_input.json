@@ -1,338 +1,267 @@
 {
-  "generated_at": "2026-10-21T13:10:24Z",
+  "generated_at": "2026-10-22T13:14:26Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "Apple blocks web certificates that could be used by scammers, but Mac vulnerability remains",
-      "url": "https://9to5mac.com/2026/10/21/apple-blocks-web-certificates-that-could-be-used-by-scammers-but-mac-vulnerability-remains/",
+      "title": "Just because Tesla\u2019s Optimus is in production doesn\u2019t mean it\u2019s actually ready",
+      "url": "https://www.theverge.com/tech/1016492/tesla-optimus-robots-production-musk-q3-earnings",
+      "source": "The Verge",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": "Tesla",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "On Tesla's earnings call Wednesday, CEO Elon Musk announced that the company had begun early production of its humanoid robot on its high-volume line in Fremont, California. Then he laid out what still needs work: the robot's hands, its safety, reliability, and durability, and the artificial intelli"
+    },
+    {
+      "title": "Texas Instruments beat earnings expectations on broad-based chip demand",
+      "url": "https://qz.com/texas-instruments-earnings-beat-broad-chip-demand-102226",
+      "source": "Quartz",
+      "date": "2026-10-22",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Texas Instruments $TXN reported third-quarter earnings of $2.62 a share on Wednesday, up from $1.48 in the same quarter a year ago, as revenue rose 28% to $6.06 billion. Revenue increased 11% from the prior quarter, the company said.\nRevenue rose 28% from a year ago to $6.06 billion, and the chipmak"
+    },
+    {
+      "title": "Apple says developers are showing \u2018incredible\u2019 support for the iPhone Duo",
+      "url": "https://9to5mac.com/2026/10/22/apple-says-developers-are-showing-incredible-support-for-the-iphone-duo/",
       "source": "9to5Mac",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "vendor": null,
       "customer": "Apple",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Apple has blocked eight web security certificates that could have been used by scammers to impersonate legitimate websites. However, one cryptography engineer has warned that Macs may continue to trust the compromised certificates because macOS does not check for revocation \u2026 more\u2026"
+      "summary": "One of the major issues raised by early reviews of the iPhone Duo is limited support by third-party apps. As we noted in our own review, there are three tiers of support currently, the worst of which sees an iPhone app stranded in the center of a mostly black area of the display. The good news is th"
     },
     {
-      "title": "I reviewed the iPhone Duo, ask me anything",
-      "url": "https://www.theverge.com/tech/1014316/iphone-duo-review-ama",
-      "source": "The Verge",
-      "date": "2026-10-21",
-      "vendor": null,
+      "title": "Hackintosh was supposed to be dead. Then someone put macOS on Snapdragon.",
+      "url": "https://www.windowscentral.com/hardware/qualcomm/the-man-who-put-macos-on-a-snapdragon-x2-elite-says-hackintosh-on-arm-is-absolutely-possible",
+      "source": "Windows Central",
+      "date": "2026-10-22",
+      "vendor": "Qualcomm",
       "customer": "Apple",
       "application": null,
       "buckets": [],
-      "summary": "I'm The Verge's senior smartphone reviewer and I've been using the iPhone Duo for the past week. I've unfolded it, flipped it, and folded it more times than I could count as I've been working on the review alongside our editor-in-chief Nilay Patel, and I'm ready to answer your questions about it. Th"
+      "summary": "The man who put macOS on a Snapdragon X2 Elite says \"Hackintosh on ARM is absolutely possible\"\nAn experimental project called Snapintosh has macOS 27 running on Snapdragon hardware years after Hackintosh was considered all but dead.\nAn engineer is working on a way to get macOS to run on computers po"
     },
     {
-      "title": "Qualcomm Is Cutting Jobs as Its AI Pivot Accelerates",
-      "url": "https://www.gurufocus.com/news/9132516/qualcomm-is-cutting-jobs-as-its-ai-pivot-accelerates",
-      "source": "GuruFocus",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "iPhone Duo review: The future is foldable",
-      "url": "https://9to5mac.com/2026/10/21/iphone-duo-review/",
-      "source": "9to5Mac",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "The iPhone Duo is the biggest change to the iPhone\u2019s form factor in its nearly 20-year history. It combines a compact, notebook-style design with an iPad-like inner display. It might look a little awkward, but that\u2019s for good reason. I\u2019ve spent the last week using the iPhone Duo. Here\u2019s everything y"
-    },
-    {
-      "title": "Spotify is busting free of CarPlay with the launch of its first native car app",
-      "url": "https://www.theverge.com/entertainment/1014261/spotify-native-car-app-audi-android-automotive-carplay",
-      "source": "The Verge",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Spotify announced Wednesday the launch of its next-generation, fully native in-car app, built directly on Google's Android Automotive operating system. The standalone app, which is launching today in select Audi models, runs directly on the vehicle's infotainment hardware - eliminating the need for "
-    },
-    {
-      "title": "I can\u2019t get enough of the iPhone Duo\u2019s matte inner display",
-      "url": "https://www.theverge.com/tech/1014709/iphone-duo-inner-screen-nano-texture-matte",
-      "source": "The Verge",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "The iPhone Duo has all the messiness of a first-gen product. And while I'm not sure I love all of the decisions Apple made around its design, it got one thing right: the matte finish on the inner screen. I've been using it for the past week to watch movies on a plane, peruse my [&#8230;]"
-    },
-    {
-      "title": "The iPhone Duo is a messy, expensive, good time",
-      "url": "https://www.theverge.com/tech/1015028/iphone-duo-review",
-      "source": "The Verge",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": "Apple",
-      "application": null,
-      "buckets": [],
-      "summary": "The iPhone Duo is the riskiest Apple product in years. It's a huge rethink of what an iPhone is and could be, and it contains the seeds of many fascinating ideas that might be great in the future. But that future is yet to come. The iPhone Duo is also one of Apple's messiest first-generation [&#8230"
-    },
-    {
-      "title": "SwitchBot\u2019s first-ever outdoor smart lights are here with 16 million colour options \u2013 and with Matter support - T3",
-      "url": "https://www.t3.com/home-living/smart-home/switchbots-first-ever-outdoor-smart-lights-are-here-with-16-million-colour-options-and-with-matter-support",
-      "source": "T3",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": "SwitchBot",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "SwitchBot\u2019s first-ever outdoor smart lights are here with 16 million colour options \u2013 and with Matter support\nSwitchBot just upgraded the outside of your home with its new outdoor lights\nQUICK SUMMARY\nSwitchBot has launched its new Permanent Outdoor Lights, just in time for Halloween and Christmas.\n"
-    },
-    {
-      "title": "Lava Aura Curve 5G Launched at \u20b923,999 With Rear Mini Display, 6,000mAh Battery and MediaTek Dimensity 7100",
-      "url": "https://www.mymobileindia.com/lava-aura-curve-5g-launched-at-%E2%82%B923999-with-rear-mini-display-6000mah-battery-and-mediatek-dimensity-7100/",
-      "source": "My Mobile India",
-      "date": "2026-10-21",
-      "vendor": "MediaTek",
-      "customer": "Sony",
-      "application": "Retail",
-      "buckets": [],
-      "summary": "Highlights\n- Lava Aura Curve 5G has been launched in India with a 6.67-inch FHD+ 3D curved AMOLED display, a 120Hz refresh rate and a 6,000mAh battery.\n- The Lava Aura Curve 5G is priced at Rs 23,999 for the 6GB RAM + 128GB storage variant.\n- The latest Lava\u2019s smartphone features a 50MP Sony IMX752 "
-    },
-    {
-      "title": "Infineon Launches AI Assistant for Modus Toolbox Embedded",
-      "url": "https://www.bisinfotech.com/infineon-modustoolbox-ai-assistant-accelerates-hardware-aware-coding-for-psoc-microcontrollers/",
-      "source": "Bisinfotech",
-      "date": "2026-10-21",
-      "vendor": "Infineon",
-      "customer": "Microsoft",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Infineon\u2019s ModusToolbox AI Assistant accelerates hardware-aware coding for PSOC microcontrollers\nInfineon Technologies AG is expanding its ModusToolbox\u2122 software ecosystem with the ModusToolbox AI Assistant for Microsoft Visual Studio Code (VS Code). The extension supplies AI coding agents with hard"
-    },
-    {
-      "title": "Qualcomm Incorporated $QCOM Shares Sold by Axecap Investments LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-sold-by-axecap-investments-llc-2026-10-21/",
-      "source": "MarketBeat",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Axecap Investments LLC lessened its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 69.8% during the third quarter, according to the company in its most recent Form 13F filing with the Securities & Exchange Commission. The fund owned 6,027 shares of the wireless technology company's"
-    },
-    {
-      "title": "Qualcomm Showcases Results of AI Startup Support Program",
-      "url": "https://www.thelec.net/news/articleView.html?idxno=14804",
-      "source": "THE ELEC, Korea Electronics Industry Media",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Qualcomm said on Oct. 21 that it showcased the results of its support for South Korean artificial intelligence (AI) startups at Industrial AI Expo 2026, being held at KINTEX in Ilsan through Oct. 23.\nQualcomm established a dedicated exhibition area called the QAIPI Pavilion for companies participati"
-    },
-    {
-      "title": "Qualcomm Expands V2X Support to Japan's 760MHz Standard",
-      "url": "https://www.thelec.net/news/articleView.html?idxno=14784",
-      "source": "www.thelec.net",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": "Toyota",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Qualcomm said on Oct. 20 local time that it is expanding the communication standards supported by its vehicle-to-everything (V2X) platform.\nThe company will integrate support for the 760MHz ARIB-T109 standard, established by Japan's Association of Radio Industries and Businesses (ARIB), into its V2X"
-    },
-    {
-      "title": "Google and Synaptics launch xMCUs",
-      "url": "https://www.electronicsweekly.com/news/business/google-and-synaptics-launch-xmcus-2026-10/",
-      "source": "Electronics Weekly",
-      "date": "2026-10-21",
-      "vendor": "Synaptics",
-      "customer": "Google",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "Synaptics and Google have introduced the xMCU \u2013 an MCU that combines heterogeneous, AI-native compute and acceleration with integrated high-bandwidth custom DRAM scalable to hundreds of megabytes, enabling larger AI models and richer multimodal workloads to run entirely on-device.\nThe Astra SR200 Se"
-    },
-    {
-      "title": "Mobileye downgraded as Nvidia, Qualcomm processors threaten driver-assistance biz",
-      "url": "https://www.tradingview.com/news/seekingalpha:a3117c7ea094b:0-mobileye-downgraded-as-nvidia-qualcomm-processors-threaten-driver-assistance-biz/",
-      "source": "TradingView",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": "Volkswagen",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Mobileye downgraded as Nvidia, Qualcomm processors threaten driver-assistance biz\nRBC Capital Markets downgraded Mobileye Global to underperform from sector perform, citing risks to its driver-assistance business and dependence on Volkswagen Group. The brokerage cut its price target to $5 from $7.\nM"
-    },
-    {
-      "title": "ETFs Bought $121.4 Million of Qualcomm (QCOM) on Oct. 19",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-121-4-million-110148269.html",
-      "source": "Yahoo Finance",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "This article first appeared on GuruFocus.\nETF flows into Qualcomm extended to a second straight day of net buying on Monday, when funds purchased $121.4 million of the stock. Thirty-one ETFs were buyers against 21 sellers, while 165 funds held their positions. The two-day streak follows a mixed stre"
-    },
-    {
-      "title": "MSI Vector RTX 5070 Ti, 7 255HX gaming laptop with 32GB of DDR5 and 2TB SSD sighted at a record-low price on Amazon",
-      "url": "https://www.pcguide.com/deals/msi-vector-rtx-5070-ti-7-255hx-gaming-laptop-with-32gb-of-ddr5-and-2tb-ssd-sighted-at-a-record-low-price-on-amazon/",
-      "source": "PC Guide",
-      "date": "2026-10-21",
+      "title": "Hackers pile on PHP2Shell as AWS reveals attacks began before disclosure",
+      "url": "https://www.theregister.com/cyber-crime/2026/10/22/hackers-pile-on-php2shell-as-aws-reveals-attacks-began-before-disclosure/5304749",
+      "source": "The Register",
+      "date": "2026-10-22",
       "vendor": null,
       "customer": "Amazon",
-      "application": null,
+      "application": "Robotics",
       "buckets": [],
-      "summary": "MSI Vector RTX 5070 Ti, 7 255HX gaming laptop with 32GB of DDR5 and 2TB SSD sighted at a record-low price on Amazon\nTable of Contents\nThis MSI Vector 16 AI gaming laptop is sitting at its best price right now on Amazon through PCOnline US, and is currently going for $2,099.00 with a decent $200 disc"
+      "summary": "Cloudflare reports millions of exploit attempts, while Amazon spotted attackers trying their luck four days before patches landed"
     },
     {
-      "title": "Samsung is rolling out Android 17 updates for some of its most popular Galaxy phones",
-      "url": "https://9to5google.com/2026/10/21/samsung-android-17-update-galaxy-a-s23-more/",
-      "source": "9to5Google",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": "Samsung",
+      "title": "Texas Instruments Just Guided Above Wall Street as AI Demand Spills Into Analog",
+      "url": "https://247wallst.com/investing/2026/10/22/texas-instruments-just-guided-above-wall-street-as-ai-demand-spills-into-analog/",
+      "source": "24/7 Wall St.",
+      "date": "2026-10-22",
+      "vendor": "TI",
+      "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "Samsung continues its One UI 9 rollout, bringing Android 17 updates to a flurry of Galaxy devices including some of its most popular mid-rangers and last-gen flagships including Galaxy S23, Galaxy A36, and many more. more\u2026"
+      "summary": "Texas Instruments Just Guided Above Wall Street as AI Demand Spills Into Analog\nTexas Instruments just guided above what Wall Street expected, and the reason involves a corner of AI spending most investors overlook entirely. Whether the stock can hold its premium valuation depends on one market that"
     },
     {
-      "title": "Video shows French Apple store being emptied by looters",
-      "url": "https://9to5mac.com/2026/10/21/video-shows-french-apple-store-being-emptied-by-looters/",
+      "title": "iPhone Duo reviews: The absolute best foldable phone, but not without compromise",
+      "url": "https://9to5mac.com/2026/10/22/iphone-duo-reviews-the-absolute-best-foldable-phone-but-not-without-compromise/",
       "source": "9to5Mac",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": "Apple",
+      "application": null,
+      "buckets": [],
+      "summary": "We posted our own review of the iPhone Duo yesterday, and Chance Miller was left convinced that \u201cthis form factor represents the future of the iPhone,\u201d while acknowledging that the first-gen iPhone Duo comes with trade-offs. I think what surprised me most is the degree of consensus found across the "
+    },
+    {
+      "title": "Texas Instruments Sees $500 to $1,000 in Chips per Humanoid Robot",
+      "url": "https://www.tokenpost.com/news/business/37784",
+      "source": "www.tokenpost.com",
+      "date": "2026-10-22",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Texas Instruments Sees $500 to $1,000 in Chips per Humanoid Robot\nCEO Haviv Ilan expects robotics activity to ramp in 2027, but TI has not estimated how many humanoid robots will be built.\nTexas Instruments sees $500 to $1,000 worth of its chips in each humanoid robot, CEO Haviv Ilan said Oct. 21, g"
+    },
+    {
+      "title": "Texas Instruments in focus as Wall Street weighs in on results, guidance",
+      "url": "https://www.tradingview.com/news/seekingalpha:a18a7e01e094b:0-texas-instruments-in-focus-as-wall-street-weighs-in-on-results-guidance/",
+      "source": "TradingView",
+      "date": "2026-10-22",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Texas Instruments in focus as Wall Street weighs in on results, guidance\nTexas Instruments TXN was in the spotlight on Thursday as Wall Street weighed in on the analog semiconductor company's results and guidance, which were better-than expected.\nShares fell 0.5% in premarket trading, erasing earlie"
+    },
+    {
+      "title": "Microsoft says ConnectWise breach let Chinese spies loose on 2,250 cloud tenants",
+      "url": "https://www.theregister.com/security/2026/10/22/microsoft-says-connectwise-breach-let-chinese-spies-loose-on-2250-cloud-tenants/5304687",
+      "source": "The Register",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": "Microsoft",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "AI agents did the dirty work, with hackers gaining privileged access in some environments in under three hours"
+    },
+    {
+      "title": "Texas Instruments posts best quarter in years as analog chips roar back",
+      "url": "https://startupfortune.com/texas-instruments-posts-best-quarter-in-years-as-analog-chips-roar-back/",
+      "source": "Startup Fortune",
+      "date": "2026-10-22",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "While Nvidia and the AI chip trade got hammered this month, Texas Instruments just delivered the kind of quarter that makes boring look good again.\nTexas Instruments reported third-quarter revenue of $6.06 billion on October 21, up 28% from a year ago and 11% from the prior quarter. Net income came "
+    },
+    {
+      "title": "Eiliko maker says it&#8217;s hiring an \u2018independent security firm\u2019 after Verge report on its insecure robots",
+      "url": "https://www.theverge.com/news/1015824/eiliko-energize-lab-statement-on-robot-hack-breach",
+      "source": "The Verge",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": null,
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Eiliko, a cute robot charm you can hang on your bag with built-in AI conversations, turned out to be a security nightmare. It told owners that \"your secrets are safe with me,\" but hackers could easily read complete transcripts of everything we told the toy, and that was just the beginning. The Verge"
+    },
+    {
+      "title": "Android has always been chaotic in the best ways possible",
+      "url": "https://9to5google.com/2026/10/22/android-has-always-been-chaotic-in-the-best-ways-possible/",
+      "source": "9to5Google",
+      "date": "2026-10-22",
       "vendor": null,
       "customer": "Apple",
       "application": "Automotive",
       "buckets": [],
-      "summary": "Video captured during the protests in France show an Apple store being almost completely emptied by looters amid chaotic scenes that include cars being set alight. Reports say that looters broke into Apple stores in Bordeaux and Lille as public unrest continues in what began as protests against over"
+      "summary": "Good morning. Today I\u2019m mourning the end of BioWare, running my Google TV setup through Claude to remove all the bloatware, watching all the iPhone Duo reviews without spending $2,000, and attempting to understand everything I can about PHP in light of two massive vulnerabilities that AI helped unco"
     },
     {
-      "title": "ETFs Sold $18.0 Million of Silicon Labs (SLAB) on Monday",
-      "url": "https://www.gurufocus.com/news/9133573/etfs-sold-180-million-of-silicon-labs-slab-on-monday",
-      "source": "GuruFocus",
-      "date": "2026-10-21",
-      "vendor": "Silicon Labs",
+      "title": "Morning Open Thread, Thursday",
+      "url": "https://www.dailykos.com/stories/2026/10/22/800115949/community/morning-open-thread-thursday/",
+      "source": "Daily Kos",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "thread"
+      ],
+      "summary": "I think eeff may have overslept.\nhere is a stub to start the day\nRandom\nThis content is not subject to review by Daily Kos staff prior to publication.\nI think eeff may have overslept.\nhere is a stub to start the day\nRandom\nA foreign influence operation tried to use Daily Kos to spread propaganda, bu"
+    },
+    {
+      "title": "Citi sets TWD 6,800 target for MediaTek stock",
+      "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/citi-sets-twd-6-800-target-for-mediatek-stock/70393082",
+      "source": "AD HOC NEWS",
+      "date": "2026-10-22",
+      "vendor": "MediaTek",
+      "customer": "Samsung",
+      "application": null,
+      "buckets": [],
+      "summary": "Citi sets TWD 6,800 target for MediaTek stock\nPublished on 10/22/2026 at 12:15 | Editorial responsibility: Rafael M\u00fcller, Editor-in-Chief AD HOC NEWSAI revenue and reporting dates\n- Citi set a TWD 6,800 target for MediaTek on October 22, 2026.\n- Third-quarter revenue reached TWD 168.057 billion, up "
+    },
+    {
+      "title": "Gurman: iPhone Duo 2 prototypes with Face ID are already being tested inside Apple",
+      "url": "https://9to5mac.com/2026/10/22/gurman-iphone-duo-2-face-id/",
+      "source": "9to5Mac",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "The iPhone Duo comes out tomorrow but, given the strong pre-order demand, it is already looking to be a smash hit. And we are all expecting Apple to follow up with a second-generation model next fall, which means the company has to be already working on the next-gen hardware. On his Power On podcast"
+    },
+    {
+      "title": "Nordic Semi Q3 core earnings more than double as revenue rises on chip demand",
+      "url": "https://www.investing.com/news/earnings/nordic-semi-q3-core-earnings-more-than-double-as-revenue-rises-on-chip-demand-4964649",
+      "source": "Investing.com",
+      "date": "2026-10-22",
+      "vendor": "Nordic",
       "customer": null,
       "application": null,
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "Lava Aura Curve 5G launched in India with MediaTek Dimensity 7100, 6,000mAh battery: Check price",
-      "url": "https://www.indiatoday.in/technology/news/story/lava-aura-curve-5g-launched-in-india-with-mediatek-dimensity-7100-6000mah-battery-check-price-3021936-2026-10-21",
-      "source": "India Today",
-      "date": "2026-10-21",
-      "vendor": "MediaTek",
-      "customer": "Sony",
+      "title": "Texas Instruments: Broader Recovery And Lower Capex Support Further Upside (NASDAQ:TXN)",
+      "url": "https://seekingalpha.com/article/4956228-texas-instruments-broader-recovery-and-lower-capex-support-further-upside",
+      "source": "Seeking Alpha",
+      "date": "2026-10-22",
+      "vendor": "TI",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Texas Instruments Earnings Pass the Test",
+      "url": "https://www.barrons.com/articles/texas-instruments-earnings-stock-price-7067ca44",
+      "source": "Barron's",
+      "date": "2026-10-22",
+      "vendor": "TI",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Samsung\u2019s HBM Base Die Development Is Benefitting Its 2nm 5G Modem Advancements, And Could Be The Catalyst For Qualcomm Finding A Foundry Alternative To TSMC",
+      "url": "https://wccftech.com/samsung-hbm-base-die-2nm-5g-modem-qualcomm-tsmc-alternative/",
+      "source": "Wccftech",
+      "date": "2026-10-22",
+      "vendor": "Qualcomm",
+      "customer": "Samsung",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "- 0-20%: Unlikely - Lacks credible sources\n- 21-40%: Questionable - Some concerns remain\n- 41-60%: Plausible - Reasonable evidence\n- 61-80%: Probable - Strong evidence\n- 81-100%: Highly Likely - Multiple reliable sources\n55%\nPlausible\nThe M2800 5G modem is moving away from Samsung\u2019s 4nm process to i"
+    },
+    {
+      "title": "Redmi Note 15 Pro+ 5G Price in Bangladesh 2026",
+      "url": "https://shattered.io/redmi-note-15-pro-plus-5g-price-bangladesh-2026/",
+      "source": "shattered.io",
+      "date": "2026-10-22",
+      "vendor": "Qualcomm",
+      "customer": "Xiaomi",
       "application": "Retail",
       "buckets": [],
-      "summary": "Lava Aura Curve 5G launched in India with MediaTek Dimensity 7100, 6,000mAh battery: Check price\nLava has launched the Aura Curve 5G in India, targeting buyers who prefer shopping at offline stores. The smartphone features a 120Hz curved AMOLED display, a secondary rear screen and a MediaTek Dimensi"
+      "summary": "Xiaomi has put an official price tag on its newest mid-range contender in South Asia. The Redmi Note 15 Pro+ 5G is now listed in Bangladesh at BDT 46,999 for the 8GB+256GB configuration and BDT 59,999 for the 12GB+512GB model, according to the Bangladesh-market announcement and local retail listings"
     },
     {
-      "title": "DIY Zigbee sensors still beat Thread and Matter, but nobody talks about why - How-To Geek",
-      "url": "https://www.howtogeek.com/diy-zigbee-sensors-beat-thread-matter-why/",
-      "source": "How-To Geek",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "ieee15_4",
-        "matter"
-      ],
-      "summary": "Zigbee is still the only mesh network protocol I use in my smart home. Though I know a switch to Matter over Thread is inevitable when I run out of IKEA\u2019s color-changing bulbs, I\u2019m still very much of the opinion that \u201cif it ain\u2019t broke, don\u2019t fix it.\u201d\nThat\u2019s why if I were to buy or build a sensor to"
-    },
-    {
-      "title": "Qualcomm to add Japanese V2X frequency to Snapdragon auto chips",
-      "url": "https://www.telecompaper.com/news/qualcomm-to-add-japanese-v2x-frequency-to-snapdragon-auto-chips--1586369",
-      "source": "Telecompaper",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
+      "title": "368,381 Shares of NXP Semiconductors N.V. $NXPI Purchased by Robeco Institutional Asset Management B.V.",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-368381-shares-of-nxp-semiconductors-nv-nxpi-purchased-by-robeco-institutional-asset-management-bv-2026-10-22/",
+      "source": "MarketBeat",
+      "date": "2026-10-22",
+      "vendor": "NXP",
       "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "Complete profile\nBefore downloading the whitepaper, we would like to ask you to complete your profile with company and position. After confirming you will receive the white paper.\nComplete profile\nBefore downloading the whitepaper, we would like to ask you to complete your profile with company and p"
+      "summary": "Robeco Institutional Asset Management B.V. purchased a new position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 3rd quarter, according to the company in its most recent Form 13F filing with the Securities & Exchange Commission. The institutional investor purchased 368"
     },
     {
-      "title": "Wells Fargo Sticks to Its Hold Rating for NXP Semiconductors (NXPI)",
-      "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/8267476/wells-fargo-sticks-to-its-hold-rating-for-nxp-semiconductors-nxpi/",
-      "source": "The Globe and Mail",
-      "date": "2026-10-21",
-      "vendor": "NXP",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Wells Fargo Sticks to Its Hold Rating for NXP Semiconductors (NXPI)\nWells Fargo analyst Joseph Quatrochi maintained a Hold rating on NXP Semiconductors yesterday and set a price target of $235.00. The company\u2019s shares closed yesterday at $230.19.\nAccording to TipRanks, Quatrochi is a 5-star analyst "
-    },
-    {
-      "title": "Qualcomm Incorporated $QCOM Stock Bought by Robinson Value Management Ltd.",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-stock-bought-by-robinson-value-management-ltd-2026-10-21/",
+      "title": "26,706 Qualcomm Incorporated $QCOM Shares Purchased by Robeco Institutional Asset Management B.V.",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-26706-qualcomm-incorporated-qcom-shares-purchased-by-robeco-institutional-asset-management-bv-2026-10-22/",
       "source": "MarketBeat",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Robinson Value Management Ltd. raised its holdings in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 40.5% in the third quarter, according to its most recent Form 13F filing with the SEC. The institutional investor owned 34,184 shares of the wireless technology company's stock after "
-    },
-    {
-      "title": "Qualcomm Wants to Make the Invisible Visible | Quantum Marketing",
-      "url": "https://www.modernghana.com/videonews/others/2/738761",
-      "source": "Modern Ghana",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": "|\nTrust in Ghana\u2019s Judiciary: Which recent case most influenced your view?\nStarted: 01-09-2026 | Ends: 30-11-2026\nTrust in Ghana\u2019s Judiciary: Which recent case most influenced your view?\nStarted: 01-09-2026 | Ends: 30-11-2026"
-    },
-    {
-      "title": "Qualcomm Plans Global Job Cuts, Notifications From November",
-      "url": "https://www.bwpeople.in/article/qualcomm-plans-global-job-cuts-notifications-from-november-629660",
-      "source": "BW People",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": null,
-      "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Extreme Edge AI Efficiency with RISC-V",
-      "url": "https://www.eetimes.com/podcasts/extreme-edge-ai-efficiency-with-risc-v/",
-      "source": "EE Times",
-      "date": "2026-10-21",
-      "vendor": null,
       "customer": null,
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": ""
-    },
-    {
-      "title": "Ellevio signs SEK 1 billion loan with the Nordic Investment Bank to strengthen Stockholm\u2019s regional grid",
-      "url": "https://bebeez.eu/2026/10/21/ellevio-signs-sek-1-billion-loan-with-the-nordic-investment-bank-to-strengthen-stockholms-regional-grid/",
-      "source": "BeBeez International",
-      "date": "2026-10-21",
-      "vendor": null,
-      "customer": null,
-      "application": "Energy/Utility",
-      "buckets": [],
-      "summary": "STOCKHOLM, Oct. 21, 2026 /PRNewswire/ \u2014 Ellevio AB (publ) has signed a SEK 1 billion loan agreement with the Nordic Investment Bank (NIB) to co-finance the modernisation and expansion of the Beckomberga substation in Stockholm\u2019s regional electricity network. The project will significantly strengthen"
+      "summary": "Robeco Institutional Asset Management B.V. lifted its position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 5.7% in the 3rd quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission (SEC). The institutional investor owned 497,227 shares of"
     },
     {
       "title": "- Google",
       "url": "https://www.google.com/m/storepages?q=amazon.in&c=IN&hl=en-IN",
       "source": "Google",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "vendor": null,
       "customer": "Google",
       "application": null,
@@ -340,235 +269,236 @@
       "summary": "About this page\nStore ratings are based on customer reviews and other data from Google and/or its partners.\nGoogle's Top Quality Store badge is earned by merchants that provide a great shopping experience.\nInformation on delivery, returns and support is based on customer reviews and surveys, and som"
     },
     {
-      "title": "Synaptics Announces Astra SR200 Multimodal Edge AI Processors with Google Coral NPU",
-      "url": "https://www.techpowerup.com/forums/threads/synaptics-announces-astra-sr200-multimodal-edge-ai-processors-with-google-coral-npu.353957/",
-      "source": "TechPowerUp",
-      "date": "2026-10-21",
-      "vendor": "Synaptics",
-      "customer": "Google",
-      "application": "Embedded / Electronics",
+      "title": "Samsung Gets $2.8B Chip Bet From Tesla, Nvidia [2026]",
+      "url": "https://shattered.io/samsung-electro-mechanics-tesla-nvidia-2-8-billion-2026/",
+      "source": "shattered.io",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": "Samsung",
+      "application": "Energy/Utility",
       "buckets": [],
-      "summary": "Automated bot check in progress\nThis should only take a few seconds. If you have issues, please do contact us, we want to learn about any problems.\nThis should only take a few seconds. If you have issues, please do contact us, we want to learn about any problems."
+      "summary": "Samsung Electro-Mechanics is set to receive roughly $2.8 billion from Tesla and Nvidia to build new chip-substrate production lines in South Korea, according to a report from Maeil Business Newspaper that Reuters, the Economic Times, and Channel News Asia all picked up on October 22, 2026. The money"
     },
     {
-      "title": "Here\u2019s Your Complete Guide to Preordering Apple\u2019s New HomeView and Smart Home Products",
-      "url": "https://www.cnet.com/deals/apple-smart-home-preorder-deals/",
-      "source": "CNET",
-      "date": "2026-10-21",
+      "title": "GL.iNet Mango 2 mini travel router features AC1300 WiFi 5 and dual Gigabit Ethernet",
+      "url": "https://www.cnx-software.com/2026/10/22/gl-inet-mango-2-mini-travel-router-features-ac1300-wifi-5-and-dual-gigabit-ethernet/",
+      "source": "CNX Software",
+      "date": "2026-10-22",
+      "vendor": "MediaTek",
+      "customer": "Amazon",
+      "application": "Embedded / Electronics",
+      "buckets": [
+        "wifi"
+      ],
+      "summary": "GL.iNet Mango 2 (GL-MG1300) mini dual-band WiFi 5 travel router is built around the MediaTek MT7621A dual-core processor. It is designed to share hotel WiFi, wired Ethernet, or mobile internet connections with multiple devices. The router measures just 89 x 63 x 15mm and weighs 100 grams. It support"
+    },
+    {
+      "title": "Security Bite Podcast: Who is your AI agent really working for?",
+      "url": "https://9to5mac.com/2026/10/22/security-bite-podcast-who-is-your-ai-agent-really-working-for/",
+      "source": "9to5Mac",
+      "date": "2026-10-22",
       "vendor": null,
       "customer": "Apple",
-      "application": "Smart Home",
+      "application": "Automotive",
       "buckets": [],
-      "summary": "Apple just unveiled one of its biggest hardware launches of the year, introducing everything from a brand-new smart home ecosystem to updated entertainment devices. While some products won\u2019t begin shipping until later this year or early 2027, nearly everything announced today is already available to"
+      "summary": "9to5Mac Security Bite is exclusively brought to you by Mosyle, the only Apple Unified Platform. Making Apple devices work-ready and enterprise-safe is all we do. Our unique integrated approach to management and security combines state-of-the-art Apple-specific security solutions for fully automated "
     },
     {
-      "title": "NXP Semiconductors N.V. (NASDAQ:NXPI) Stock Has Consensus Target Price of $302.30 According to Analysts",
-      "url": "https://www.marketbeat.com/instant-alerts/consensus-nxp-semiconductors-nv-nasdaq-nxpi-stock-has-consensus-target-price-of-30230-according-to-analysts-2026-10-21/",
+      "title": "34,953 Shares of NXP Semiconductors N.V. $NXPI Acquired by Sumitomo Mitsui DS Asset Management Company Ltd",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-34953-shares-of-nxp-semiconductors-nv-nxpi-acquired-by-sumitomo-mitsui-ds-asset-management-company-ltd-2026-10-22/",
       "source": "MarketBeat",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "vendor": "NXP",
       "customer": null,
       "application": "Automotive",
       "buckets": [],
-      "summary": "NXP Semiconductors N.V. (NASDAQ:NXPI - Get Free Report) has been given an average rating of \"Moderate Buy\" by the twenty-six research firms that are currently covering the firm, MarketBeat Ratings reports. One research analyst has rated the stock with a sell rating, nine have issued a hold rating an"
+      "summary": "Sumitomo Mitsui DS Asset Management Company Ltd purchased a new stake in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the 3rd quarter, according to the company in its most recent disclosure with the Securities & Exchange Commission. The fund purchased 34,953 shares of the semicon"
     },
     {
-      "title": "Qualcomm Incorporated $QCOM Shares Sold by Nisa Investment Advisors LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-sold-by-nisa-investment-advisors-llc-2026-10-21/",
-      "source": "MarketBeat",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Nisa Investment Advisors LLC trimmed its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 2.5% in the third quarter, according to its most recent disclosure with the Securities & Exchange Commission. The fund owned 275,465 shares of the wireless technology company's stock after selli"
-    },
-    {
-      "title": "Qualcomm Incorporated $QCOM Shares Bought by Diversify Advisory Services LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-bought-by-diversify-advisory-services-llc-2026-10-21/",
-      "source": "MarketBeat",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Diversify Advisory Services LLC raised its holdings in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 20.4% during the third quarter, according to its most recent filing with the SEC. The firm owned 90,259 shares of the wireless technology company's stock after purchasing an addition"
-    },
-    {
-      "title": "Which ESP32 Should You Choose? Variants and Features 2026 Guide",
-      "url": "https://www.geeky-gadgets.com/esp32-microcontroller-guide/",
-      "source": "Geeky Gadgets",
-      "date": "2026-10-21",
-      "vendor": "Espressif",
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "The ESP32 family of microcontrollers has become a go-to choice for developers working on IoT, multimedia and smart home projects, thanks to its versatility and robust wireless capabilities. In this guide, DroneBot Workshop explores the key features and applications of ESP32 boards, highlighting thei"
-    },
-    {
-      "title": "Wyze Adds Full-Body Analysis to Smart Scale ...",
-      "url": "https://www.eenewseurope.com/en/wyze-adds-full-body-analysis-to-smart-scale/",
-      "source": "eeNews Europe",
-      "date": "2026-10-21",
+      "title": "Zombies Cat B23 Review: Open-Ear Earclips and 30H Battery",
+      "url": "https://www.igeekphone.com/zombies-cat-b23-review-open-ear-clip-on-earbuds-with-bluetooth-6-0-and-30-hour-battery-life/",
+      "source": "www.igeekphone.com",
+      "date": "2026-10-22",
       "vendor": null,
-      "customer": "Wyze",
-      "application": null,
-      "buckets": [],
-      "summary": "Wyze Adds Full-Body Analysis to Smart Scale\nMost smart scales measure body composition using electrodes beneath the feet. Wyze takes a different approach with its new Scale Ultra BodyScan Plus. The device uses eight electrodes to analyze muscle and fat distribution across the arms, legs, and torso. "
+      "customer": null,
+      "application": "Audio / Speaker",
+      "buckets": [
+        "bluetooth"
+      ],
+      "summary": "Not everyone likes the sealed feeling of traditional in-ear earbuds. For listeners who prefer a lighter, more open fit, clip-on headphones offer another way to enjoy music, podcasts and calls throughout the day. The Zombies Cat B23 TWS Earclips take this approach, combining an ear-clip design with 1"
     },
     {
-      "title": "Qualcomm layoffs: CEO Cristiano Amon signals performance-based job cuts in November",
-      "url": "https://twaslnews1.twaslnews.com/6335857/",
-      "source": "\u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
-      "date": "2026-10-21",
+      "title": "Cardinal Capital Management Makes New Investment in NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-cardinal-capital-management-makes-new-investment-in-nxp-semiconductors-nv-nxpi-2026-10-22/",
+      "source": "MarketBeat",
+      "date": "2026-10-22",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Cardinal Capital Management bought a new position in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the third quarter, according to the company in its most recent disclosure with the SEC. The institutional investor bought 8,994 shares of the semiconductor provider's stock, valued at approxim"
+    },
+    {
+      "title": "Xiaomi 17T - Full phone specifications",
+      "url": "https://www.gsmarena.com/xiaomi_17t_5g-14652.php",
+      "source": "GSMArena.com",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": "Xiaomi",
+      "application": null,
+      "buckets": [],
+      "summary": "Login\nDisclaimer. We can not guarantee that the information on this page is 100% correct. Read more\nTraditionally, Xiaomi tends to \"expand\" on its main number series of smartphones a few months after the primary release with a \"T\" family of devices with the same name. This year is no exception,...\nD"
+    },
+    {
+      "title": "NXP Semiconductors N.V. $NXPI Shares Sold by Cooke & Bieler LP",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-nxp-semiconductors-nv-nxpi-shares-sold-by-cooke-bieler-lp-2026-10-22/",
+      "source": "MarketBeat",
+      "date": "2026-10-22",
+      "vendor": "NXP",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Cooke & Bieler LP lessened its holdings in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) by 50.6% in the 3rd quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission. The fund owned 118,611 shares of the semiconductor provider's stock after se"
+    },
+    {
+      "title": "Qualcomm Incorporated $QCOM Shares Sold by Crossmark Global Holdings Inc.",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-shares-sold-by-crossmark-global-holdings-inc-2026-10-22/",
+      "source": "MarketBeat",
+      "date": "2026-10-22",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Crossmark Global Holdings Inc. cut its stake in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 22.6% during the 3rd quarter, according to its most recent Form 13F filing with the Securities and Exchange Commission (SEC). The firm owned 290,970 shares of the wireless technology company's stock "
+    },
+    {
+      "title": "Qualcomm Incorporated $QCOM Stock: Foster Victor Wealth Advisors LLC Grows Stake",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-stock-foster-victor-wealth-advisors-llc-grows-stake-2026-10-22/",
+      "source": "MarketBeat",
+      "date": "2026-10-22",
       "vendor": "Qualcomm",
       "customer": null,
       "application": null,
       "buckets": [],
-      "summary": "Qualcomm is reportedly preparing to cut jobs worldwide following its annual employee reviews, with notifications expected to begin in November. According to Reuters, CEO Cristiano Amon informed employees of the plan in an internal memo, describing it as a \u201cperformance-focused reduction\u201d aimed at str"
+      "summary": "Foster Victor Wealth Advisors LLC lifted its position in shares of Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 12.3% during the third quarter, according to its most recent disclosure with the Securities & Exchange Commission. The firm owned 119,891 shares of the wireless technology company'"
     },
     {
-      "title": "Watch Qualcomm\u2019s Effort to Market the Invisible",
-      "url": "https://www.bloomberg.com/news/videos/2026-10-21/qualcomm-s-effort-to-market-the-invisible-video",
-      "source": "Bloomberg.com",
-      "date": "2026-10-21",
-      "vendor": "Qualcomm",
+      "title": "HiSilicon Maleoon 935B",
+      "url": "https://www.notebookcheck.net/HiSilicon-Maleoon-935B-Benchmarks-and-Specs.1431025.0.html",
+      "source": "Notebookcheck",
+      "date": "2026-10-22",
+      "vendor": "HiSilicon",
+      "customer": "Huawei",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "HiSilicon Maleoon 935B\nThe HiSilicon Maleoon 935B is an iGPU integrated into the HiSilicon Kirin T93C SoC. Unfortunately, Huawei does not provide detailed information. The iGPU features five of the six CUs (Compute Units) and is clocked at 624 to 933 MHz in the Kirin T93C. According to Android, the "
+    },
+    {
+      "title": "Nordic Semiconductor Q3 2026 slides: record revenue, 30% market share By Investing.com",
+      "url": "https://au.investing.com/news/stock-market-news/nordic-semiconductor-q3-2026-slides-record-revenue-30-market-share-93CH-4706667",
+      "source": "Investing.com Australia",
+      "date": "2026-10-22",
+      "vendor": "Nordic",
       "customer": null,
-      "application": null,
+      "application": "Embedded / Electronics",
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "CWA Asset Management Group LLC Acquires 18,413 Shares of NXP Semiconductors N.V. $NXPI",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-cwa-asset-management-group-llc-acquires-18413-shares-of-nxp-semiconductors-nv-nxpi-2026-10-21/",
-      "source": "MarketBeat",
-      "date": "2026-10-21",
-      "vendor": "NXP",
+      "title": "Nordic Semiconductor ASA (NDCVF) Reports Widening Q3 Loss Amid R",
+      "url": "https://www.gurufocus.com/news/9135973/nordic-semiconductor-asa-ndcvf-reports-widening-q3-loss-amid-revenue-decline",
+      "source": "GuruFocus",
+      "date": "2026-10-22",
+      "vendor": "Nordic",
       "customer": null,
-      "application": "Automotive",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "CWA Asset Management Group LLC acquired a new stake in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 3rd quarter, according to its most recent disclosure with the SEC. The fund acquired 18,413 shares of the semiconductor provider's stock, valued at approximately $4,374,000.\nOther in"
+      "summary": ""
+    },
+    {
+      "title": "Earnings call transcript: Nordic Semiconductor posts record Q3 2026 growth By Investing.com",
+      "url": "https://in.investing.com/news/stock-market-news/earnings-call-transcript-nordic-semiconductor-posts-record-q3-2026-growth-93CH-5647041",
+      "source": "Investing.com India",
+      "date": "2026-10-22",
+      "vendor": "Nordic",
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "HiSilicon Kirin T93C Processor - Benchmarks and Specs",
+      "url": "https://www.notebookcheck.net/HiSilicon-Kirin-T93C-Processor-Benchmarks-and-Specs.1431009.0.html",
+      "source": "Notebookcheck",
+      "date": "2026-10-22",
+      "vendor": "HiSilicon",
+      "customer": "Samsung",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "HiSilicon Kirin T93C\nThe HiSilicon Kirin T92C is an SoC for Android-based smartphones and tablets, first used in the Huawei MatePad Air (2026). It is based on a binned version of the Kirin 9030 Pro, with no prime core, four performance cores with SMT (8 threads) running at up to 2.27 GHz, and four e"
+    },
+    {
+      "title": "Ti West's Remnants is the first immersive horror film on Apple Vision Pro",
+      "url": "https://mixed-news.com/en/ti-west-remnants-apple-vision-pro-first-immersive-horror-film/",
+      "source": "MIXED Reality News",
+      "date": "2026-10-22",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "AR / VR / XR",
+      "buckets": [],
+      "summary": "Ti West's Remnants is the first immersive horror film on Apple Vision Pro\nApple Vision Pro now has its first immersive horror film. Remnants is a ghost story written and directed by Ti West, and it plays only on Apple's headset.\nApple TV calls it \"the first immersive horror film on Apple Vision Pro\""
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 114,
-    "NXP": 45,
-    "MediaTek": 28,
-    "Espressif": 15,
-    "TI": 10,
-    "Silicon Labs": 8,
-    "Broadcom": 7,
-    "Synaptics": 6,
-    "Nordic": 6,
-    "Infineon": 4,
-    "Apple": 4,
-    "Microchip": 4,
-    "HiSilicon": 3,
-    "Renesas": 2,
+    "Qualcomm": 105,
+    "NXP": 38,
+    "TI": 36,
+    "MediaTek": 23,
+    "Nordic": 15,
+    "Espressif": 14,
+    "Infineon": 9,
+    "Synaptics": 8,
+    "Broadcom": 6,
+    "HiSilicon": 5,
+    "Silicon Labs": 4,
+    "STMicro": 3,
+    "Marvell": 3,
     "Skyworks": 2,
-    "STMicro": 2,
-    "Realtek": 2,
+    "Apple": 2,
     "Murata": 2,
-    "Airoha": 1,
+    "Microchip": 2,
     "Qorvo": 1,
+    "Airoha": 1,
     "Sequans": 1,
-    "Goodix": 1
+    "Goodix": 1,
+    "Realtek": 1,
+    "Atmosic": 1,
+    "Onsemi": 1,
+    "Renesas": 1
   },
   "customer_news_30d": {
-    "Apple": 230,
-    "Google": 89,
+    "Apple": 218,
+    "Google": 90,
     "Samsung": 26,
-    "Amazon": 20,
-    "Meta": 18,
-    "Microsoft": 17,
+    "Microsoft": 25,
+    "Amazon": 19,
+    "Meta": 19,
+    "Tesla": 9,
     "Huawei": 8,
-    "Sony": 6,
-    "Tesla": 5,
-    "Bose": 3,
+    "Xiaomi": 5,
+    "Sony": 3,
+    "Wyze": 3,
+    "Motorola": 3,
     "Toyota": 2,
-    "Volkswagen": 2,
-    "Wyze": 2,
-    "Xiaomi": 2,
+    "Bose": 2,
+    "BMW": 1,
     "SwitchBot": 1,
-    "Philips Hue": 1,
+    "Volkswagen": 1,
     "Garmin": 1,
     "Oura": 1,
-    "Aqara": 1,
-    "LG": 1,
-    "Motorola": 1,
-    "GoPro": 1
+    "LG": 1
   },
   "github_pulse": [
-    {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1762,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.6",
-          "name": "ESP-IDF Release v5.5.6",
-          "published_at": "2026-10-16T14:32:14Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
-        },
-        {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
-        },
-        {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
-        }
-      ],
-      "stars": 19299,
-      "pushed_at": "2026-10-20T19:28:04Z"
-    },
-    {
-      "name": "BlueZ",
-      "owner": "bluez",
-      "repo": "bluez",
-      "label": "Linux BT stack",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 133,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "5.87",
-          "name": "5.87",
-          "published_at": "2026-07-07T16:41:14Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
-        },
-        {
-          "tag": "5.86",
-          "name": "5.86",
-          "published_at": "2026-02-09T21:27:33Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
-        }
-      ],
-      "stars": 1164,
-      "pushed_at": "2026-10-21T07:25:07Z"
-    },
     {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
@@ -578,7 +508,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4546,
+      "issues_open": 4651,
       "prs_open": 0,
       "releases": [
         {
@@ -600,8 +530,59 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16849,
-      "pushed_at": "2026-10-21T13:04:52Z"
+      "stars": 16863,
+      "pushed_at": "2026-10-22T10:30:15Z"
+    },
+    {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1768,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.6",
+          "name": "ESP-IDF Release v5.5.6",
+          "published_at": "2026-10-16T14:32:14Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
+        },
+        {
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+        },
+        {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        }
+      ],
+      "stars": 19311,
+      "pushed_at": "2026-10-20T19:28:04Z"
+    },
+    {
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 133,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 1164,
+      "pushed_at": "2026-10-21T07:25:07Z"
     },
     {
       "name": "Matter SDK",
@@ -612,7 +593,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2920,
+      "issues_open": 2917,
       "prs_open": 0,
       "releases": [
         {
@@ -634,8 +615,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8975,
-      "pushed_at": "2026-10-21T13:09:49Z"
+      "stars": 8976,
+      "pushed_at": "2026-10-22T12:22:52Z"
     },
     {
       "name": "Linux mac80211",
@@ -649,8 +630,23 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 252972,
-      "pushed_at": "2026-10-21T06:28:19Z"
+      "stars": 253113,
+      "pushed_at": "2026-10-22T06:31:47Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 96,
+      "issues_open": 279,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 895,
+      "pushed_at": "2026-10-22T08:30:11Z"
     },
     {
       "name": "OpenThread",
@@ -660,8 +656,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 79,
-      "issues_open": 177,
+      "commits_30d": 84,
+      "issues_open": 179,
       "prs_open": 0,
       "releases": [
         {
@@ -684,22 +680,7 @@
         }
       ],
       "stars": 4051,
-      "pushed_at": "2026-10-21T00:50:10Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 75,
-      "issues_open": 282,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 895,
-      "pushed_at": "2026-10-21T13:01:32Z"
+      "pushed_at": "2026-10-22T06:25:05Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -710,7 +691,7 @@
         "ieee15_4"
       ],
       "commits_30d": 12,
-      "issues_open": 474,
+      "issues_open": 486,
       "prs_open": 0,
       "releases": [
         {
@@ -732,8 +713,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15749,
-      "pushed_at": "2026-10-20T16:34:37Z"
+      "stars": 15752,
+      "pushed_at": "2026-10-21T15:24:10Z"
     },
     {
       "name": "hostap",
@@ -766,18 +747,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926114359/tm2626934d2_8k.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-10-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326015180/dp254466_8k.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
       "date": "2026-10-05",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926113538/tm2626934d1_8k.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-10-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326015180/dp254466_8k.htm"
     },
     {
       "vendor": "Synaptics",
@@ -1039,20 +1020,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
     },
     {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "10-Q",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "10-Q",
@@ -1072,6 +1039,20 @@
       "form": "8-K",
       "date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000045/swks-20260728.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "10-Q",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "8-K",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
     },
     {
       "vendor": "Microchip",
@@ -3853,6 +3834,11 @@
           "url": "https://www.digitimes.com/news/a20261012PD217/drone-wireless-communications-realtek-security.html"
         },
         {
+          "title": "Realtek Announces Wi-Fi 8 Chipset",
+          "date": "Oct 2026",
+          "url": "https://wifinowglobal.com/news-blog/roundup-apples-uwb-realteks-wi-fi-8-extreme-networks-wins-award-brazils-6-ghz-dispute-continues-japans-wi2-extends-openroaming/"
+        },
+        {
           "title": "Realtek Enters SSD Controller Market Amid Surging AI Server Demand",
           "date": "Sep 2026",
           "url": "https://www.taiwan-panorama.com/en/Articles/Details?Guid=3279855b-6911-47e7-8d32-6d5727cf2037&CatId=9&postname=Engineering%20Taiwan%E2%80%99s%20Silicon%20Island%20Realtek-Realtek%20and%20the%20Power%20of%20a%20Collaborative%20Semiconductor%20Ecosystem%20"
@@ -3871,11 +3857,6 @@
           "title": "Realtek RTL8127atf and RTL8116af Networking Chips Gain Support in Upcoming Linux 7.4 Kernel",
           "date": "Sep 2026",
           "url": "https://www.phoronix.com/news/Linux-7.4-RTL8127atf-RTL8116af"
-        },
-        {
-          "title": "Realtek Announces Strategic Expansion into Wi-Fi 8, Optical Communications, and ASICs",
-          "date": "Sep 2026",
-          "url": "https://www.digitimes.com/news/a20260907PD219/itri-realtek-wi-fi-communications-nvidia.html"
         }
       ]
     },
