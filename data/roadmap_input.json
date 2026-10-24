@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T13:24:26Z",
+  "generated_at": "2026-10-24T13:12:29Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2870,6 +2870,11 @@
           "url": "https://cybernews.com/security/broadcom-wifi-flaw-millions-routers-no-password/"
         },
         {
+          "title": "Broadcom Wi-Fi Flaw Affects Millions of Routers, Allowing Remote Code Execution",
+          "date": "Oct 2026",
+          "url": "https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html"
+        },
+        {
           "title": "Broadcom Inc. Announces Third Quarter Fiscal Year 2026 Financial Results and Quarterly Dividend",
           "date": "Sep 2026",
           "url": "https://www.prnewswire.com/news-releases/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial-results-and-quarterly-dividend-302868129.html"
@@ -2888,11 +2893,6 @@
           "title": "Broadcom Reports Tripled AI Semiconductor Revenue to $16.7 Billion in Fiscal Third Quarter",
           "date": "Sep 2026",
           "url": "https://www.techtimes.com/articles/326472/20260903/broadcom-ai-revenue-tripled-167b-demand-outstrips-its-own-230b-roadmap.htm"
-        },
-        {
-          "title": "Broadcom Introduces NVMe Memory Tiering Solution to Address AI Server DRAM Crisis",
-          "date": "Sep 2026",
-          "url": "https://www.techtimes.com/articles/326208/20260901/vmware-explore-2026-broadcom-solves-ai-server-dram-crisis-nvme-memory-tiering.htm"
         }
       ]
     },
@@ -3510,6 +3510,11 @@
           "url": "https://www.marketscreener.com/news/onsemi-and-sungrow-advance-utility-scale-energy-storage-performance-with-sic-hybrid-technology-ce785dd2dd8df52d"
         },
         {
+          "title": "onsemi and Sungrow Advance Utility-Scale Energy Storage Performance with SiC Hybrid Technology",
+          "date": "Oct 2026",
+          "url": "https://finance.biggo.com/news/ir_ON_20261014_993ed8132e08"
+        },
+        {
           "title": "Vadzo Imaging Validates Onsemi AR0234 Monochrome GigE Camera for High Frame Streaming",
           "date": "Sep 2026",
           "url": "https://finance.yahoo.com/technology/articles/vadzo-imaging-validates-high-frame-190000712.html"
@@ -3528,11 +3533,6 @@
           "title": "Vadzo Imaging Validates Product Featuring Onsemi AR1335 Camera",
           "date": "Sep 2026",
           "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/vadzo-imaging-validates-bolt-1335mrs-onsemi-ar1335-13mp-mipi-csi-2-came-1220159"
-        },
-        {
-          "title": "Onsemi Unveils Platform That Turns Silicon Wafers Into Power Packages",
-          "date": "Sep 2026",
-          "url": "https://www.allaboutcircuits.com/news/onsemi-unveils-platform-that-turns-silicon-wafers-into-power-packages/"
         }
       ]
     },
@@ -3769,30 +3769,30 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 106,
-    "NXP": 42,
-    "TI": 40,
-    "Nordic": 23,
-    "MediaTek": 21,
-    "Espressif": 14,
-    "Synaptics": 8,
-    "Infineon": 6,
-    "Broadcom": 5,
-    "Silicon Labs": 4,
-    "Renesas": 3,
+    "Qualcomm": 98,
+    "NXP": 44,
+    "TI": 39,
+    "Nordic": 28,
+    "MediaTek": 19,
+    "Espressif": 12,
+    "Synaptics": 9,
+    "Infineon": 7,
+    "Broadcom": 6,
+    "Silicon Labs": 3,
+    "Microchip": 3,
+    "Onsemi": 3,
     "HiSilicon": 2,
-    "Microchip": 2,
-    "Qorvo": 2,
     "STMicro": 2,
+    "Renesas": 1,
+    "Sony Semi": 1,
+    "Qorvo": 1,
     "Skyworks": 1,
     "Airoha": 1,
     "Sequans": 1,
     "Goodix": 1,
     "Realtek": 1,
-    "Atmosic": 1,
-    "Onsemi": 1,
-    "Quectel": 1,
-    "Murata": 1
+    "LG Innotek": 1,
+    "Atmosic": 1
   },
   "standards_in_flight": [
     {
@@ -3865,40 +3865,6 @@
   ],
   "github_stack_activity": [
     {
-      "name": "BlueZ",
-      "owner": "bluez",
-      "repo": "bluez",
-      "label": "Linux BT stack",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 136,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "5.87",
-          "name": "5.87",
-          "published_at": "2026-07-07T16:41:14Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
-        },
-        {
-          "tag": "5.86",
-          "name": "5.86",
-          "published_at": "2026-02-09T21:27:33Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
-        }
-      ],
-      "stars": 1166,
-      "pushed_at": "2026-10-22T18:52:00Z"
-    },
-    {
       "name": "NimBLE",
       "owner": "apache",
       "repo": "mynewt-nimble",
@@ -3907,7 +3873,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 279,
+      "issues_open": 281,
       "prs_open": 0,
       "releases": [],
       "stars": 895,
@@ -3924,7 +3890,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1771,
+      "issues_open": 1770,
       "prs_open": 0,
       "releases": [
         {
@@ -3946,8 +3912,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19323,
-      "pushed_at": "2026-10-20T19:28:04Z"
+      "stars": 19332,
+      "pushed_at": "2026-10-24T09:19:29Z"
+    },
+    {
+      "name": "BlueZ",
+      "owner": "bluez",
+      "repo": "bluez",
+      "label": "Linux BT stack",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 134,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "5.87",
+          "name": "5.87",
+          "published_at": "2026-07-07T16:41:14Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.87"
+        },
+        {
+          "tag": "5.86",
+          "name": "5.86",
+          "published_at": "2026-02-09T21:27:33Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.86"
+        },
+        {
+          "tag": "5.85",
+          "name": "5.85",
+          "published_at": "2025-11-26T16:00:07Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
+        }
+      ],
+      "stars": 1167,
+      "pushed_at": "2026-10-24T05:00:35Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3958,7 +3958,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4664,
+      "issues_open": 4780,
       "prs_open": 0,
       "releases": [
         {
@@ -3980,8 +3980,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16874,
-      "pushed_at": "2026-10-23T12:33:06Z"
+      "stars": 16885,
+      "pushed_at": "2026-10-24T13:00:06Z"
     },
     {
       "name": "Matter SDK",
@@ -3992,7 +3992,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2919,
+      "issues_open": 2906,
       "prs_open": 0,
       "releases": [
         {
@@ -4015,7 +4015,7 @@
         }
       ],
       "stars": 8974,
-      "pushed_at": "2026-10-23T13:16:10Z"
+      "pushed_at": "2026-10-24T12:49:53Z"
     },
     {
       "name": "Linux mac80211",
@@ -4029,8 +4029,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 253263,
-      "pushed_at": "2026-10-23T04:27:07Z"
+      "stars": 253338,
+      "pushed_at": "2026-10-24T05:23:59Z"
     },
     {
       "name": "OpenThread",
@@ -4040,8 +4040,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 95,
-      "issues_open": 166,
+      "commits_30d": 98,
+      "issues_open": 163,
       "prs_open": 0,
       "releases": [
         {
@@ -4063,8 +4063,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4051,
-      "pushed_at": "2026-10-23T03:09:29Z"
+      "stars": 4050,
+      "pushed_at": "2026-10-23T23:35:58Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4075,7 +4075,7 @@
         "ieee15_4"
       ],
       "commits_30d": 11,
-      "issues_open": 491,
+      "issues_open": 490,
       "prs_open": 0,
       "releases": [
         {
@@ -4097,8 +4097,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15754,
-      "pushed_at": "2026-10-21T15:24:10Z"
+      "stars": 15755,
+      "pushed_at": "2026-10-24T11:10:48Z"
     },
     {
       "name": "hostap",
