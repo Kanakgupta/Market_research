@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T13:12:29Z",
+  "generated_at": "2026-10-25T13:11:32Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2806,6 +2806,11 @@
           "url": "https://wifinowglobal.com/news-blog/roundup-apples-uwb-realteks-wi-fi-8-extreme-networks-wins-award-brazils-6-ghz-dispute-continues-japans-wi2-extends-openroaming/"
         },
         {
+          "title": "Realtek rtl8723bs Driver Graduates Out Of Staging Area In Linux 7.4",
+          "date": "Oct 2026",
+          "url": "https://www.phoronix.com/news/Linux-7.4-Staging"
+        },
+        {
           "title": "Realtek Enters SSD Controller Market Amid Surging AI Server Demand",
           "date": "Sep 2026",
           "url": "https://www.taiwan-panorama.com/en/Articles/Details?Guid=3279855b-6911-47e7-8d32-6d5727cf2037&CatId=9&postname=Engineering%20Taiwan%E2%80%99s%20Silicon%20Island%20Realtek-Realtek%20and%20the%20Power%20of%20a%20Collaborative%20Semiconductor%20Ecosystem%20"
@@ -2814,11 +2819,6 @@
           "title": "Realtek Enters SSD Controller Market, Aims to Build the 'Nervous System of the Digital World'",
           "date": "Sep 2026",
           "url": "https://www.taiwan-panorama.com/en/Articles/Details?Guid=3279855b-6911-47e7-8d32-6d5727cf2037&CatId=9&postname=Engineering%20Taiwan%E2%80%99s%20Silicon%20Island%20Realtek-Realtek%20and%20the%20Power%20of%20a%20Collaborative%20Semiconductor%20Ecosystem%20"
-        },
-        {
-          "title": "ASUS Announces Wi-Fi 8 Router Availability in Canada Ahead of Worldwide October Release",
-          "date": "Sep 2026",
-          "url": "https://www.techpowerup.com/352365/asus-announces-wi-fi-8-router-availability-in-canada-ahead-of-worldwide-october-release"
         }
       ]
     },
@@ -3373,9 +3373,9 @@
           "url": "https://collaboration.murata.com/en-global/projects/biosensing-digitalhealth/"
         },
         {
-          "title": "Murata to Showcase \u2019Scaling the Future from India with Murata\u2019 at electronica India 2026",
-          "date": "Sep 2026",
-          "url": "https://www.murata.com/en-global/news/event/other/2026/0901"
+          "title": "Murata Unveils 135 GHz Antenna Module for 6G Systems",
+          "date": "Oct 2026",
+          "url": "https://www.globalsources.com/sourcing-digest/murata-develops-135-ghz-antenna-module-for-6g-systems/"
         }
       ]
     },
@@ -3769,30 +3769,31 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 98,
-    "NXP": 44,
-    "TI": 39,
-    "Nordic": 28,
-    "MediaTek": 19,
-    "Espressif": 12,
-    "Synaptics": 9,
-    "Infineon": 7,
+    "Qualcomm": 90,
+    "TI": 44,
+    "NXP": 42,
+    "Nordic": 24,
+    "Espressif": 13,
+    "MediaTek": 13,
+    "Synaptics": 10,
     "Broadcom": 6,
+    "Infineon": 5,
     "Silicon Labs": 3,
-    "Microchip": 3,
-    "Onsemi": 3,
+    "Realtek": 2,
+    "Microchip": 2,
     "HiSilicon": 2,
-    "STMicro": 2,
+    "Onsemi": 2,
+    "Apple": 1,
     "Renesas": 1,
-    "Sony Semi": 1,
     "Qorvo": 1,
     "Skyworks": 1,
     "Airoha": 1,
+    "Marvell": 1,
     "Sequans": 1,
+    "STMicro": 1,
     "Goodix": 1,
-    "Realtek": 1,
     "LG Innotek": 1,
-    "Atmosic": 1
+    "Murata": 1
   },
   "standards_in_flight": [
     {
@@ -3877,7 +3878,7 @@
       "prs_open": 0,
       "releases": [],
       "stars": 895,
-      "pushed_at": "2026-10-23T11:28:32Z"
+      "pushed_at": "2026-10-24T21:45:32Z"
     },
     {
       "name": "ESP-IDF",
@@ -3890,7 +3891,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1770,
+      "issues_open": 1773,
       "prs_open": 0,
       "releases": [
         {
@@ -3912,7 +3913,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19332,
+      "stars": 19339,
       "pushed_at": "2026-10-24T09:19:29Z"
     },
     {
@@ -3924,7 +3925,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 134,
+      "issues_open": 135,
       "prs_open": 0,
       "releases": [
         {
@@ -3947,7 +3948,7 @@
         }
       ],
       "stars": 1167,
-      "pushed_at": "2026-10-24T05:00:35Z"
+      "pushed_at": "2026-10-25T12:13:36Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3958,7 +3959,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4780,
+      "issues_open": 4793,
       "prs_open": 0,
       "releases": [
         {
@@ -3980,8 +3981,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16885,
-      "pushed_at": "2026-10-24T13:00:06Z"
+      "stars": 16899,
+      "pushed_at": "2026-10-25T10:24:56Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 253417,
+      "pushed_at": "2026-10-25T06:15:09Z"
     },
     {
       "name": "Matter SDK",
@@ -3992,7 +4008,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2906,
+      "issues_open": 2902,
       "prs_open": 0,
       "releases": [
         {
@@ -4014,23 +4030,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8974,
-      "pushed_at": "2026-10-24T12:49:53Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 253338,
-      "pushed_at": "2026-10-24T05:23:59Z"
+      "stars": 8975,
+      "pushed_at": "2026-10-25T01:22:10Z"
     },
     {
       "name": "OpenThread",
@@ -4041,7 +4042,7 @@
         "thread"
       ],
       "commits_30d": 98,
-      "issues_open": 163,
+      "issues_open": 167,
       "prs_open": 0,
       "releases": [
         {
@@ -4064,7 +4065,7 @@
         }
       ],
       "stars": 4050,
-      "pushed_at": "2026-10-23T23:35:58Z"
+      "pushed_at": "2026-10-24T20:01:54Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4075,7 +4076,7 @@
         "ieee15_4"
       ],
       "commits_30d": 11,
-      "issues_open": 490,
+      "issues_open": 486,
       "prs_open": 0,
       "releases": [
         {
@@ -4097,8 +4098,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15755,
-      "pushed_at": "2026-10-24T11:10:48Z"
+      "stars": 15756,
+      "pushed_at": "2026-10-25T07:14:41Z"
     },
     {
       "name": "hostap",
