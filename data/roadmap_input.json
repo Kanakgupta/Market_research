@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T13:11:32Z",
+  "generated_at": "2026-10-26T13:12:16Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3098,6 +3098,11 @@
       ],
       "press_releases": [
         {
+          "title": "Telink's HDT Technology Enables Mass Production of 8K High Report Rate Wireless Gaming Peripherals",
+          "date": "Oct 2026",
+          "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
+        },
+        {
           "title": "Telink Launches TL3225 Family of Wireless SoCs for Automotive",
           "date": "Aug 2026",
           "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
@@ -3141,11 +3146,6 @@
           "title": "Telink Launches TL3228 Low-Power, Low-Latency Dual-Core RISC-V Wireless MCU",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Telink+Launches+TL3228+Low-Power%2C+Low-Latency+Dual-Core+RISC-V+Wireless+MCU+Telink"
-        },
-        {
-          "title": "Telink Introduces TL3228 Low-Power, Low-Latency Dual-Core RISC-V Wireless MCU",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=Telink+Introduces+TL3228+Low-Power%2C+Low-Latency+Dual-Core+RISC-V+Wireless+MCU+Telink"
         }
       ]
     },
@@ -3769,31 +3769,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 90,
-    "TI": 44,
-    "NXP": 42,
-    "Nordic": 24,
-    "Espressif": 13,
+    "Qualcomm": 88,
+    "NXP": 63,
+    "TI": 39,
+    "Nordic": 27,
+    "Espressif": 14,
     "MediaTek": 13,
-    "Synaptics": 10,
+    "Synaptics": 7,
     "Broadcom": 6,
-    "Infineon": 5,
+    "Infineon": 6,
+    "Renesas": 3,
     "Silicon Labs": 3,
+    "STMicro": 2,
     "Realtek": 2,
-    "Microchip": 2,
     "HiSilicon": 2,
-    "Onsemi": 2,
-    "Apple": 1,
-    "Renesas": 1,
+    "Telink": 1,
+    "Microchip": 1,
+    "LG Innotek": 1,
     "Qorvo": 1,
-    "Skyworks": 1,
     "Airoha": 1,
     "Marvell": 1,
     "Sequans": 1,
-    "STMicro": 1,
-    "Goodix": 1,
-    "LG Innotek": 1,
-    "Murata": 1
+    "Goodix": 1
   },
   "standards_in_flight": [
     {
@@ -3874,7 +3871,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 281,
+      "issues_open": 282,
       "prs_open": 0,
       "releases": [],
       "stars": 895,
@@ -3891,7 +3888,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1773,
+      "issues_open": 1772,
       "prs_open": 0,
       "releases": [
         {
@@ -3913,8 +3910,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19339,
-      "pushed_at": "2026-10-24T09:19:29Z"
+      "stars": 19347,
+      "pushed_at": "2026-10-26T12:14:28Z"
     },
     {
       "name": "BlueZ",
@@ -3947,8 +3944,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1167,
-      "pushed_at": "2026-10-25T12:13:36Z"
+      "stars": 1168,
+      "pushed_at": "2026-10-26T07:00:31Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3959,7 +3956,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4793,
+      "issues_open": 4877,
       "prs_open": 0,
       "releases": [
         {
@@ -3981,23 +3978,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16899,
-      "pushed_at": "2026-10-25T10:24:56Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 253417,
-      "pushed_at": "2026-10-25T06:15:09Z"
+      "stars": 16907,
+      "pushed_at": "2026-10-26T13:00:08Z"
     },
     {
       "name": "Matter SDK",
@@ -4008,7 +3990,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2902,
+      "issues_open": 2908,
       "prs_open": 0,
       "releases": [
         {
@@ -4031,7 +4013,22 @@
         }
       ],
       "stars": 8975,
-      "pushed_at": "2026-10-25T01:22:10Z"
+      "pushed_at": "2026-10-26T01:21:03Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 253526,
+      "pushed_at": "2026-10-26T04:05:09Z"
     },
     {
       "name": "OpenThread",
@@ -4041,8 +4038,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 98,
-      "issues_open": 167,
+      "commits_30d": 97,
+      "issues_open": 169,
       "prs_open": 0,
       "releases": [
         {
@@ -4064,8 +4061,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4050,
-      "pushed_at": "2026-10-24T20:01:54Z"
+      "stars": 4051,
+      "pushed_at": "2026-10-26T09:53:50Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4076,7 +4073,7 @@
         "ieee15_4"
       ],
       "commits_30d": 11,
-      "issues_open": 486,
+      "issues_open": 491,
       "prs_open": 0,
       "releases": [
         {
@@ -4098,8 +4095,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15756,
-      "pushed_at": "2026-10-25T07:14:41Z"
+      "stars": 15758,
+      "pushed_at": "2026-10-26T08:20:33Z"
     },
     {
       "name": "hostap",

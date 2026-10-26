@@ -1,36 +1,335 @@
 {
-  "generated_at": "2026-10-25T13:11:32Z",
+  "generated_at": "2026-10-26T13:12:16Z",
   "instructions_for_llm": "You are a market analyst tracking the IoT wireless chip space for an Infineon AIROC product manager. Read the inputs below and produce a JSON object with these keys: themes (list of {title, narrative, sources:[urls]}), competitor_moves (list of {vendor, action, implication, sources:[urls]}), customer_signals (list of {customer, signal, implication}), what_changed_vs_last_week (string), watch_list (list of {topic, why}). Be concise, factual, cite urls from the inputs. Save the result to data/briefing_output.json.",
   "headlines_last_7d": [
     {
-      "title": "A busy week: News from NCTA, FiRA, Zyxel Networks, Extreme, TP-Link, HPE, Cisco, Synaptics, Nordic Semiconductor, & Peraso - Wi-Fi NOW Global",
-      "url": "https://wifinowglobal.com/news-blog/roundup-from-a-buys-week-news-from-ncta-fira-zyxel-networks-extreme-tp-link-hpe-cisco-synaptics-nordic-semiconductor-peraso/",
-      "source": "Wi-Fi NOW Global",
-      "date": "2026-10-25",
-      "vendor": "Synaptics",
-      "customer": "Google",
-      "application": "Embedded / Electronics",
-      "buckets": [
-        "wifi"
-      ],
-      "summary": "By Claus Hetting, WiFi NOW CEO & Chairman\nNCTA: New data from 13 million APs shows heavy US 6 GHz Wi-Fi usage\nNCTA \u2013 the US cable and broadband industry association \u2013 has published new data based on 2026 usage across more than 13 million Wi-Fi access points operated by five major U.S. providers. Acc"
+      "title": "Ditto and Qualcomm Technologies Demonstrate Resilient Tactical-Edge Data at AUSA 2026",
+      "url": "https://www.businesswire.com/news/home/20261026039050/en/Ditto-and-Qualcomm-Technologies-Demonstrate-Resilient-Tactical-Edge-Data-at-AUSA-2026",
+      "source": "Business Wire",
+      "date": "2026-10-26",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
     },
     {
-      "title": "Google\u2019s AI search changes upended online publishing",
-      "url": "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
-      "source": "The Verge",
-      "date": "2026-10-25",
+      "title": "Tesla turns to Turo to boost adoption of Full Self-Driving (Supervised)",
+      "url": "https://techcrunch.com/2026/10/26/tesla-turns-to-turo-to-boost-adoption-of-full-self-driving-supervised/",
+      "source": "TechCrunch",
+      "date": "2026-10-26",
       "vendor": null,
+      "customer": "Tesla",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Eligible Turo hosts will also get a one-month free trial of Tesla's FSD software."
+    },
+    {
+      "title": "Some 27 years later, the iTunes Store is making an unlikely come-back",
+      "url": "https://9to5mac.com/2026/10/26/some-27-years-later-the-itunes-store-is-making-an-unlikely-come-back/",
+      "source": "9to5Mac",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Please accept my apologies if the headline made you feel old, but yes, Apple retired the iTunes desktop app way back in 2019. However, a new report says that the iTunes Store is currently experiencing an unlikely seeming revival. This is thanks to a tactic being used by artists like Taylor Swift, Ar"
+    },
+    {
+      "title": "ST introduces Matter credential provisioning service for smart-home devices",
+      "url": "https://www.newelectronics.co.uk/content/news/st-introduces-matter-credential-provisioning-service-for-smart-home-devices",
+      "source": "New Electronics",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": null,
+      "application": null,
+      "buckets": [
+        "matter"
+      ],
+      "summary": ""
+    },
+    {
+      "title": "Cantor Fitzgerald reiterates NXP Semiconductors stock Overweight rating By Investing.com",
+      "url": "https://uk.investing.com/news/stock-market-news/cantor-fitzgerald-reiterates-nxp-semiconductors-stock-overweight-rating-93CH-4931315",
+      "source": "Investing.com UK",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Watch the iPhone Duo run a Shortcuts automation when it is opened or closed [Video]",
+      "url": "https://9to5mac.com/2026/10/26/watch-the-iphone-duo-run-a-shortcuts-automation-when-it-is-opened-or-closed-video/",
+      "source": "9to5Mac",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "A new video demo shows that you can use the Shortcuts app to trigger automations on opening or closing the iPhone Duo. One potential use for this is to configure the iPhone Duo to automatically lock when you fold it \u2026 more\u2026"
+    },
+    {
+      "title": "Texas Instruments Raised Its Dividend Again. Can Analog Chips Keep Funding It?",
+      "url": "https://247wallst.com/investing/2026/10/26/texas-instruments-raised-its-dividend-again-can-analog-chips-keep-funding-it/",
+      "source": "24/7 Wall St.",
+      "date": "2026-10-26",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Texas Instruments Raised Its Dividend Again. Can Analog Chips Keep Funding It?\nTexas Instruments just hiked its dividend for the 23rd straight year, but the cash funding that raise comes with some strings attached that every income investor needs to understand before celebrating.\nShareholders of Tex"
+    },
+    {
+      "title": "iFixit dismantles Apple's Duo: 'You'd better baby that screen'",
+      "url": "https://www.theregister.com/personal-tech/2026/10/26/ifixit-dismantles-apples-duo-youd-better-baby-that-screen/5305296",
+      "source": "The Register",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Robotics",
+      "buckets": [],
+      "summary": "Battery replacement gets the thumbs up, but it all hinges on dust. A conventional phone might be better bet for home repairers"
+    },
+    {
+      "title": "Volkswagen Group partners NXP for SDV architecture, zonal control",
+      "url": "http://electronics.economictimes.indiatimes.com/news/semiconductors/volkswagen-group-partners-nxp-for-sdv-architecture-zonal-control/135210917",
+      "source": "electronics.economictimes.indiatimes.com",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NEW DELHI: NXP Semiconductors has partnered with the Volkswagen Group to supply the NXP S32K5 family of microcontrollers (MCUs) to the automaker's future software-defined vehicle (SDV) architecture, supporting zonal control across all brands and vehicle segments. The first vehicle featuring this new"
+    },
+    {
+      "title": "Volkswagen Group partners with NXP for next-generation vehicle technology, first model due in 2027",
+      "url": "https://www.aninews.in/news/business/volkswagen-group-partners-with-nxp-for-next-generation-vehicle-technology-first-model-due-in-202720261026170932",
+      "source": "ANI News",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Volkswagen Group partners with NXP to standardise semiconductor technology for future vehicles",
+      "url": "https://www.expresscomputer.in/amp/news/volkswagen-group-partners-with-nxp-to-standardise-semiconductor-technology-for-future-vehicles/140448/",
+      "source": "Express Computer",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Volkswagen Group has entered into a strategic partnership with NXP Semiconductors to develop a common semiconductor foundation for its future software-defined vehicles (SDVs), with NXP\u2019s S32K5 family of microcontrollers (MCUs) set to support zonal vehicle architecture across the Group\u2019s brands and v"
+    },
+    {
+      "title": "Texas Instruments (NASDAQ:TXN) Posts Strong Quarter as Chip Demand Rebounds",
+      "url": "https://kalkinemedia.com/us/stocks/technology/texas-instruments-nasdaqtxn-posts-strong-quarter-as-chip-demand-rebounds",
+      "source": "Kalkine Media",
+      "date": "2026-10-26",
+      "vendor": "TI",
+      "customer": null,
+      "application": "Industrial",
+      "buckets": [],
+      "summary": "Highlights\n- Texas Instruments reported quarterly revenue above expectations as industrial chip demand recovered.\n- Guidance for the quarter ahead came in above typical seasonal patterns.\n- Momentum in data-center and automotive silicon featured prominently in the report.\nTexas Instruments (NASDAQ:T"
+    },
+    {
+      "title": "Microsoft quietly removed TPM from Pluton on new AMD, Intel & Qualcomm without saying why",
+      "url": "https://www.neowin.net/news/microsoft-quietly-removed-tpm-from-pluton-on-new-amd-intel--qualcomm-without-saying-why/",
+      "source": "Neowin",
+      "date": "2026-10-26",
+      "vendor": "Qualcomm",
+      "customer": "Microsoft",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "iPhone Duo tested to destruction, including removing nanotexture layer",
+      "url": "https://9to5mac.com/2026/10/26/iphone-duo-tested-to-destruction-including-removing-nanotexture-layer/",
+      "source": "9to5Mac",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "It\u2019s kind of wild that there\u2019s an entire YouTube niche in which people buy the latest expensive gadgets and then find creative ways to destroy them. JerryRigEverything is one of the bigger names, and he didn\u2019t hold back when it came to a destruction test of the iPhone Duo. In addition to subjecting "
+    },
+    {
+      "title": "Qualcomm (NASDAQ:QCOM) Stands Out as a Quality Investing Candidate",
+      "url": "https://www.chartmill.com/news/QCOM/Chartmill-56791-Qualcomm-NASDAQQCOM-Stands-Out-as-a-Quality-Investing-Candidate",
+      "source": "ChartMill",
+      "date": "2026-10-26",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": null,
+      "buckets": [],
+      "summary": "Please enable JavaScript to continue using this application."
+    },
+    {
+      "title": "Qualcomm Technology Explained | EduSeries",
+      "url": "https://www.technewsworld.com/eduseries/qualcomm",
+      "source": "TechNewsWorld",
+      "date": "2026-10-26",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "- Welcome Guest\n- Sign In\nSmartTech Research analysts examine Qualcomm\u2019s technologies, platforms, and expanding role across AI, computing, connectivity, automotive, and intelligent edge devices.\nEduSeries puts the technology and strategy into perspective \u2014 explaining what matters, why it matters, an"
+    },
+    {
+      "title": "Volkswagen Group Partners With NXP Semiconductors For Next-Generation Software-Defined Vehicles",
+      "url": "https://bwautoworld.com/article/volkswagen-group-partners-with-nxp-semiconductors-for-next-generation-software-defined-vehicles-630496",
+      "source": "BW Auto World",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": null,
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "From impulse purchase to pocket studio: The M-Vave FM-1",
+      "url": "https://arstechnica.com/gadgets/2026/10/from-impulse-purchase-to-pocket-studio-the-m-vave-fm-1/",
+      "source": "Ars Technica",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": null,
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "M-Vave's cheap FM-1 pocket synth has exploded as a community firmware playground."
+    },
+    {
+      "title": "Nvidia RTX 20, 30, and 40-series GPUs hacked to remove a half-speed AI throttle \u2014 firmware exploit doubles RTX 4090's peak tensor rate, lifts RTX 3090 Ti matrix math up to 80%",
+      "url": "https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-20-30-and-40-series-gpus-hacked-to-remove-a-half-speed-ai-throttle-firmware-exploit-doubles-rtx-4090s-peak-tensor-rate-lifts-rtx-3090-ti-matrix-math-up-to-80-percent",
+      "source": "Tom's Hardware",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": "Google",
+      "application": "Embedded / Electronics",
+      "buckets": [],
+      "summary": "Nvidia RTX 20, 30, and 40-series GPUs hacked to remove a half-speed AI throttle \u2014 firmware exploit doubles RTX 4090's peak tensor rate, lifts RTX 3090 Ti matrix math up to 80%\nReal workloads gain less than peak tensor rates, and chatbot token speeds stay about the same.\nModders have discovered a way"
+    },
+    {
+      "title": "Loring Wolcott & Coolidge Fiduciary Advisors LLP MA Sells 120,746 Shares of Qualcomm Incorporated $QCOM",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-loring-wolcott-coolidge-fiduciary-advisors-llp-ma-sells-120746-shares-of-qualcomm-incorporated-qcom-2026-10-26/",
+      "source": "MarketBeat",
+      "date": "2026-10-26",
+      "vendor": "Qualcomm",
+      "customer": null,
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Loring Wolcott & Coolidge Fiduciary Advisors LLP MA decreased its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 21.3% during the third quarter, according to the company in its most recent disclosure with the Securities & Exchange Commission. The firm owned 447,344 shares of the wi"
+    },
+    {
+      "title": "Loring Wolcott & Coolidge Fiduciary Advisors LLP MA Buys 966,564 Shares of NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-loring-wolcott-coolidge-fiduciary-advisors-llp-ma-buys-966564-shares-of-nxp-semiconductors-nv-nxpi-2026-10-26/",
+      "source": "MarketBeat",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Loring Wolcott & Coolidge Fiduciary Advisors LLP MA bought a new position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the 3rd quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The institutional investor bought 966,564 shares o"
+    },
+    {
+      "title": "Volkswagen, NXP Partner on Chips for Future Vehicle Architecture",
+      "url": "https://www.tokenpost.com/news/business/40921",
+      "source": "www.tokenpost.com",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Volkswagen, NXP Partner on Chips for Future Vehicle Architecture\nRivian and Volkswagen Group Technologies, LLC, the joint venture between Volkswagen Group and Rivian, is developing the architecture. NXP\u2019s S32K5 microcontrollers are intended for its zonal control system.\nVolkswagen Group and NXP Semi"
+    },
+    {
+      "title": "Double Check Your Smart Home Devices To See If They Meet This Industry Standard",
+      "url": "https://www.bgr.com/2292409/do-smart-home-devices-meet-matter-standard/",
+      "source": "BGR",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": "Apple",
+      "application": "Smart Home",
+      "buckets": [
+        "matter"
+      ],
+      "summary": "Double Check Your Smart Home Devices To See If They Meet This Industry Standard\nYou have countless options when buying smart home devices, so choosing one can be challenging. A standout feature to look for is Matter. If a smart device has Matter support, you're signing up a simpler, unified smart ho"
+    },
+    {
+      "title": "Earnings to watch: NXP Semiconductors (NXPI) reports Q3 results tomorrow",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/earnings-watch-nxp-semiconductors-nxpi-101447928.html",
+      "source": "Yahoo Finance",
+      "date": "2026-10-26",
+      "vendor": "NXP",
       "customer": "Google",
       "application": null,
       "buckets": [],
-      "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more about AI's impact on the web, follow Emma Roth. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started The digital publishing industry"
+      "summary": "Chip manufacturer NXP Semiconductors (NASDAQ: NXPI) will be announcing earnings results this Tuesday after market hours. Here's what to look for.\nNXP Semiconductors beat analysts' revenue expectations last quarter, reporting revenues of $3.50 billion, up 19.5% year on year. It was a strong quarter f"
+    },
+    {
+      "title": "Volkswagen Group Partners With NXP For Future SDV Architecture",
+      "url": "https://www.autocarpro.in/news/volkswagen-group-partners-with-nxp-for-future-sdv-architecture-135464",
+      "source": "Autocar Professional",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Volkswagen Group Partners With NXP For Future SDV Architecture\nVolkswagen Group partners with NXP to integrate S32K5 microcontrollers into its future zonal vehicle architecture, with the first vehicle planned for 2027.\nVolkswagen Group and NXP Semiconductors have entered a strategic partnership to d"
+    },
+    {
+      "title": "NXP to Provide Microcontrollers for Volkswagen's Future Zonal Software-Defined Vehicle Architecture",
+      "url": "https://www.marketscreener.com/news/nxp-to-provide-microcontrollers-for-volkswagen-s-future-zonal-software-defined-vehicle-architecture-ce785cdcd88ffe27",
+      "source": "marketscreener.com",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "NXP to Provide Microcontrollers for Volkswagen's Future Zonal Software-Defined Vehicle ArchitectureNXP Semiconductors and Volkswagen entered into a strategic partnership for NXP to supply its S32K5 microcontrollers as a common building block for a future zonal software-defined vehicle..."
+    },
+    {
+      "title": "Vector launches Rust-based IEEE 11073 SDC stack for medical device connectivity",
+      "url": "https://www.newelectronics.co.uk/content/news/vector-launches-rust-based-ieee-11073-sdc-stack-for-medical-device-connectivity",
+      "source": "New Electronics",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": null,
+      "application": "Healthcare",
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "Yousif Capital Management LLC Makes New $5.96 Million Investment in NXP Semiconductors N.V. $NXPI",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-yousif-capital-management-llc-makes-new-596-million-investment-in-nxp-semiconductors-nv-nxpi-2026-10-26/",
+      "source": "MarketBeat",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Google",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": "Yousif Capital Management LLC bought a new position in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the third quarter, according to its most recent 13F filing with the SEC. The fund bought 25,077 shares of the semiconductor provider's stock, valued at approximately $5,956,000.\nA number"
+    },
+    {
+      "title": "Volkswagen Partners With NXP Semiconductors",
+      "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L6N46C0LS:0-volkswagen-partners-with-nxp-semiconductors/",
+      "source": "TradingView",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": null,
+      "buckets": [],
+      "summary": "News/Reuters/Volkswagen Partners With NXP Semiconductors Volkswagen Partners With NXP Semiconductors Read the full articleGet unlimited access to articles from Reuters and every other news source on TradingView.Keep reading"
     },
     {
       "title": "- Google",
       "url": "https://www.google.com/m/storepages?q=amazon.in&c=IN&hl=en-IN",
       "source": "Google",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "vendor": null,
       "customer": "Google",
       "application": null,
@@ -38,472 +337,162 @@
       "summary": "About this page\nStore ratings are based on customer reviews and other data from Google and/or its partners.\nGoogle's Top Quality Store badge is earned by merchants that provide a great shopping experience.\nInformation on delivery, returns and support is based on customer reviews and surveys, and som"
     },
     {
-      "title": "Some iPhone Duo displays are cracking, seemingly all in the same way",
-      "url": "https://9to5mac.com/2026/10/25/iphone-duo-displays-cracking/",
-      "source": "9to5Mac",
-      "date": "2026-10-25",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Following the iPhone Duo launch on Friday, a number of owners are reporting that their inner screens have cracked and broken on their own (top image via scary_duck23 on Reddit). The affected units all seem to break in the same way. The screen cracks down the center line of the hinge, and a horizonta"
-    },
-    {
-      "title": "101,215 Shares in NXP Semiconductors N.V. $NXPI Bought by Robeco Schweiz AG",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-101215-shares-in-nxp-semiconductors-nv-nxpi-bought-by-robeco-schweiz-ag-2026-10-25/",
-      "source": "MarketBeat",
-      "date": "2026-10-25",
+      "title": "Volkswagen partners with NXP for vehicle chip technology",
+      "url": "https://www.investing.com/news/company-news/volkswagen-partners-with-nxp-for-vehicle-chip-technology-93CH-4971678",
+      "source": "Investing.com",
+      "date": "2026-10-26",
       "vendor": "NXP",
-      "customer": "Google",
+      "customer": "Volkswagen",
       "application": "Automotive",
-      "buckets": [],
-      "summary": "Robeco Schweiz AG acquired a new position in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the third quarter, according to its most recent Form 13F filing with the Securities & Exchange Commission. The institutional investor acquired 101,215 shares of the semiconductor provider's stock, val"
-    },
-    {
-      "title": "Realtek rtl8723bs Driver Graduates Out Of Staging Area In Linux 7.4",
-      "url": "https://www.phoronix.com/news/Linux-7.4-Staging",
-      "source": "Phoronix",
-      "date": "2026-10-25",
-      "vendor": "Realtek",
-      "customer": null,
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Realtek rtl8723bs Driver Deleted From Staging Area In Linux 7.4\nAfter nearly a decade in the Linux kernel's staging area and being worked on by many different kernel developer newcomers, the Realtek rtl8723bs was deleted from the staging area. This comes as Realtek rtl8723bs was added onto the more "
-    },
-    {
-      "title": "Qualcomm Incorporated $QCOM Stock Bought by Robeco Schweiz AG",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-qualcomm-incorporated-qcom-stock-bought-by-robeco-schweiz-ag-2026-10-25/",
-      "source": "MarketBeat",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Robeco Schweiz AG lifted its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 11.6% during the 3rd quarter, according to its most recent disclosure with the SEC. The institutional investor owned 156,569 shares of the wireless technology company's stock after acquiring an additional 1"
-    },
-    {
-      "title": "I switched my earbuds to LE Audio on Android, and they lasted 2 hours longer",
-      "url": "https://www.makeuseof.com/i-switched-my-earbuds-to-le-audio-on-android-and-they-lasted-longer/",
-      "source": "MakeUseOf",
-      "date": "2026-10-25",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [
-        "bluetooth"
-      ],
-      "summary": "Did you know that your earbuds might have a hidden battery boost, and unfortunately, your phone probably isn't using it? LE Audio is a newer Bluetooth standard built for lower power use and lower latency, and it's often switched off by default on phones that support it. You just need to turn it on a"
-    },
-    {
-      "title": "One UI 9 could have caught up to Google, but Samsung is still missing one thing",
-      "url": "https://www.androidauthority.com/one-ui-9-ai-vs-google-software-3725715/",
-      "source": "Android Authority",
-      "date": "2026-10-25",
-      "vendor": null,
-      "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Affiliate links on Android Authority may earn us a commission. Learn more.\nOne UI 9 could have caught up to Google, but Samsung is still missing one thing\nOct 25, 2026 \u2014 5:00 AM ET\nI remember the pain of firing up Samsung\u2019s TouchWiz on my Galaxy phones. The software was laggy, unintuitive, and rarel"
-    },
-    {
-      "title": "13,682 Shares in NXP Semiconductors N.V. $NXPI Purchased by Nisa Investment Advisors LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-13682-shares-in-nxp-semiconductors-nv-nxpi-purchased-by-nisa-investment-advisors-llc-2026-10-25/",
-      "source": "MarketBeat",
-      "date": "2026-10-25",
-      "vendor": "NXP",
-      "customer": "Google",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Nisa Investment Advisors LLC bought a new stake in NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) during the third quarter, according to the company in its most recent Form 13F filing with the Securities & Exchange Commission. The fund bought 13,682 shares of the semiconductor provider's stock,"
-    },
-    {
-      "title": "A unique combination of PS5 Pro and RTX 5070 Ti laptop for running Ghost of Y\u014dtei at 60 FPS",
-      "url": "https://en.gamegpu.com/news/igry/neobychnyj-svyazka-ps5-pro-i-noutbuka-s-rtx-5070-ti-dlya-zapuska-ghost-of-yotei-v-60-fps",
-      "source": "GameGPU",
-      "date": "2026-10-25",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
       "buckets": [],
       "summary": ""
     },
     {
-      "title": "Citizens Financial Group Inc. RI Sells 9,188 Shares of Qualcomm Incorporated $QCOM",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-citizens-financial-group-inc-ri-sells-9188-shares-of-qualcomm-incorporated-qcom-2026-10-25/",
-      "source": "MarketBeat",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
+      "title": "NASA Plans Final Solar Array Upgrades for ISS ...",
+      "url": "https://www.eenewseurope.com/en/nasa-plans-final-solar-array-upgrades-for-iss/",
+      "source": "eeNews Europe",
+      "date": "2026-10-26",
+      "vendor": null,
       "customer": null,
-      "application": "Automotive",
+      "application": "Energy/Utility",
       "buckets": [],
-      "summary": "Citizens Financial Group Inc. RI decreased its holdings in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) by 15.3% during the 3rd quarter, according to its most recent disclosure with the Securities & Exchange Commission. The firm owned 50,730 shares of the wireless technology company's stock aft"
+      "summary": "NASA Plans Final Solar Array Upgrades for ISS\nNASA is preparing two spacewalks to complete the International Space Station\u2019s solar power upgrades. Scheduled for October 29 and November 5, the operations will add the final two roll-out solar arrays, increasing the station\u2019s available electrical power"
     },
     {
-      "title": "11,556 Shares of NXP Semiconductors N.V. $NXPI Bought by BG Investment Services LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-11556-shares-of-nxp-semiconductors-nv-nxpi-bought-by-bg-investment-services-llc-2026-10-25/",
-      "source": "MarketBeat",
-      "date": "2026-10-25",
+      "title": "Volkswagen partners with NXP to use microcontro...",
+      "url": "https://pluang.com/en/news-feed/volkswagen-perkuat-ekosistem-semikonduktor-mitra-nxp",
+      "source": "Pluang",
+      "date": "2026-10-26",
       "vendor": "NXP",
-      "customer": "Google",
+      "customer": "Volkswagen",
       "application": "Automotive",
       "buckets": [],
-      "summary": "BG Investment Services LLC purchased a new position in shares of NXP Semiconductors N.V. (NASDAQ:NXPI - Free Report) in the third quarter, according to its most recent disclosure with the SEC. The firm purchased 11,556 shares of the semiconductor provider's stock, valued at approximately $2,745,000."
+      "summary": "Volkswagen Group has formed a strategic partnership with NXP Semiconductors to use NXP's S32K5 microcontrollers as a core component in its upcoming software-defined vehicle (SDV) architecture, starting with a model planned for 2027. This collaboration aims to simplify vehicle electronics by consolid"
     },
     {
-      "title": "Exynos 2700 Internal Tests Show Qualcomm\u2019s 2nm And New Snapdragon 8 Elite Extreme Gen 6 Packaging Bet Failed; Samsung\u2019s Flagship SoC 20% Faster In CPU, GPU Workloads",
-      "url": "https://wccftech.com/exynos-2700-outpaces-snapdragon-8-elite-extreme-gen-6-internal-tests/",
-      "source": "Wccftech",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
+      "title": "Volkswagen Group Partners with NXP Semiconductors on Strategic MCU Technology for Future Software-Defined Vehicles",
+      "url": "https://www.quiverquant.com/news/Volkswagen+Group+Partners+with+NXP+Semiconductors+on+Strategic+MCU+Technology+for+Future+Software-Defined+Vehicles",
+      "source": "Quiver Quantitative",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
       "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "- 0-20%: Unlikely - Lacks credible sources\n- 21-40%: Questionable - Some concerns remain\n- 41-60%: Plausible - Reasonable evidence\n- 61-80%: Probable - Strong evidence\n- 81-100%: Highly Likely - Multiple reliable sources\n40%\nQuestionable\nNew details surrounding the Exynos 2700 talk about the chipset"
+      "summary": "Volkswagen Group and NXP Semiconductors expand their partnership for automotive semiconductor technology to enhance future software-defined vehicles.\nQuiver AI Summary\nVolkswagen Group has announced a strategic partnership with NXP Semiconductors to enhance their automotive semiconductor technologie"
     },
     {
-      "title": "7,433 Shares of Qualcomm Incorporated $QCOM Acquired by BG Investment Services LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-7433-shares-of-qualcomm-incorporated-qcom-acquired-by-bg-investment-services-llc-2026-10-25/",
-      "source": "MarketBeat",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": null,
-      "application": "Automotive",
+      "title": "Volkswagen Group picks NXP as semiconductor partner for SDV architecture",
+      "url": "https://www.streetinsider.com/Corporate+News/Volkswagen+Group+picks+NXP+as+semiconductor+partner+for+SDV+architecture/27229790.html",
+      "source": "StreetInsider",
+      "date": "2026-10-26",
+      "vendor": "NXP",
+      "customer": "Volkswagen",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "BG Investment Services LLC acquired a new position in Qualcomm Incorporated (NASDAQ:QCOM - Free Report) during the 3rd quarter, according to its most recent 13F filing with the Securities & Exchange Commission. The institutional investor acquired 7,433 shares of the wireless technology company's sto"
+      "summary": ""
     },
     {
-      "title": "1,601 Alphabet Inc. $GOOGL Shares Bought by Boyd Wealth Management LLC",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-1601-alphabet-inc-googl-shares-bought-by-boyd-wealth-management-llc-2026-10-25/",
-      "source": "MarketBeat",
-      "date": "2026-10-25",
-      "vendor": null,
+      "title": "Adafruit Metro ESP32-P4 Hydra \u2013 An Arduino UNO-shaped ESP32-P4 + ESP32-C6 board with WiFi 6, MIPI interfaces",
+      "url": "https://www.cnx-software.com/2026/10/26/adafruit-metro-esp32-p4-hydra-an-arduino-uno-shaped-esp32-p4-esp32-c6-board-with-wifi-6-mipi-interfaces/",
+      "source": "CNX Software",
+      "date": "2026-10-26",
+      "vendor": "Espressif",
       "customer": "Google",
-      "application": null,
-      "buckets": [],
-      "summary": "Boyd Wealth Management LLC boosted its holdings in Alphabet Inc. (NASDAQ:GOOGL - Free Report) by 87.8% during the third quarter, according to its most recent Form 13F filing with the SEC. The fund owned 3,425 shares of the information services provider's stock after acquiring an additional 1,601 sha"
-    },
-    {
-      "title": "Samsung's Exynos 2700 Outperforms Qualcomm's Flagship Chip in Internal Tests",
-      "url": "https://www.kucoin.com/news/flash/samsung-s-exynos-2700-outperforms-qualcomm-s-flagship-chip-in-internal-tests",
-      "source": "KuCoin",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "IT Home, October 25: Samsung Electronics plans to launch the Galaxy S27 series flagship smartphones in early next year, expected to be powered by its in-house Exynos 2700 processor. According to South Korean media Financial News this morning (the 25th), the chip outperformed Qualcomm\u2019s latest flagsh"
-    },
-    {
-      "title": "Samsung Exynos 2700 reportedly beats flagship Snapdragon by up to 20% in new tests",
-      "url": "https://www.notebookcheck.net/Samsung-Exynos-2700-reportedly-beats-flagship-Snapdragon-by-up-to-20-in-new-tests.1433421.0.html",
-      "source": "Notebookcheck",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": null,
-      "buckets": [],
-      "summary": "Samsung Exynos 2700 reportedly beats flagship Snapdragon by up to 20% in new tests\nSamsung\u2019s upcoming Exynos 2700 could give Qualcomm\u2019s latest flagship processor a run for its money. Fresh reports from South Korea claim that the next-generation Exynos chip outperforms the Snapdragon 8 Elite Extreme "
-    },
-    {
-      "title": "Three part, Tri-Band, Wi-Fi 6E mesh router system is 20% cheaper in Amazon deal",
-      "url": "https://www.pcguide.com/deals/three-part-tri-band-wi-fi-6e-mesh-router-system-is-20-cheaper-in-amazon-deal/",
-      "source": "PC Guide",
-      "date": "2026-10-25",
-      "vendor": null,
-      "customer": "Amazon",
-      "application": "Automotive",
+      "application": "Embedded / Electronics",
       "buckets": [
+        "ieee15_4",
+        "bluetooth",
         "wifi"
       ],
-      "summary": "Three part, Tri-Band, Wi-Fi 6E mesh router system is 20% cheaper in Amazon deal\nTable of Contents\nIf you\u2019re looking for an affordable way to set up a wide span WiFi network in your office or home with no blindspots, this three part router set is ideal. The TP-Link Deco XE75 is a well-rounded Wi-Fi 6"
+      "summary": "Adafruit has launched the Metro ESP32-P4 Hydra, an Arduino UNO-shaped development board with ESP32-P4, 16MB PSRAM, and 16MB NOR flash, and an ESP32-C6 for WiFi 6, Bluetooth 5.3 LE, Thread, and Zigbee connectivity. Other features include Raspberry Pi-compatible MIPI DSI and CSI interfaces, a USB 2.0 "
     },
     {
-      "title": "Deki Engine \u2013 ESP32 gets an open source Unity-style editor and C++ 2D game engine",
-      "url": "https://www.cnx-software.com/2026/10/25/deki-engine-esp32-gets-an-open-source-unity-style-editor-and-c-2d-game-engine/",
-      "source": "CNX Software",
-      "date": "2026-10-25",
-      "vendor": "Espressif",
-      "customer": "Amazon",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Deki Engine is an open-source modular C++ engine with a Unity-style visual editor for embedded devices, currently optimized for ESP32 platforms such as LilyGO T-Deck Plus, T-Display S3 AMOLED, and soon Elecrow CrowPanel Advanced 7&#8243; ESP32-P4. The editor is available for Windows and Linux with a"
-    },
-    {
-      "title": "PWB Peeps Caturday Open Thread: Random Cats",
-      "url": "https://www.dailykos.com/stories/2026/10/24/800115114/community/pwb-peeps-caturday-open-thread-random-cats/",
-      "source": "Daily Kos",
-      "date": "2026-10-25",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Comments didn't load?\nIt could be because of network issues or a problem with our commenting provider, or your browser or an extension may be blocking them. This can happen with Firefox Strict mode, uBlock Origin, Brave, or ad blockers. Try reloading the page, disabling your ad blocker for this site"
-    },
-    {
-      "title": "Samsung's Exynos 2700 Beats Qualcomm's Top-Tier Chip by 20% in Internal Benchmarks",
-      "url": "https://finance.biggo.com/news/150ff466-0cdd-4abe-949f-265e9f970e05",
-      "source": "BigGo Finance",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Samsung's Exynos 2700 Beats Qualcomm's Top-Tier Chip by 20% in Internal Benchmarks\nSouth Korea's Samsung Electronics appears to have edged past Qualcomm's latest top-tier chip in internal performance evaluations with the \"Exynos 2700,\" the mobile application processor (AP) expected to power its flag"
-    },
-    {
-      "title": "Samsung's Exynos 2700 outscores Qualcomm's top chip by nearly 20%",
-      "url": "https://www.koreaherald.com/article/10913791",
-      "source": "The Korea Herald",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": "Samsung",
-      "application": "Embedded / Electronics",
-      "buckets": [],
-      "summary": "Samsung Electronics' next-generation Exynos 2700 mobile processor scored nearly 20 percent higher than Qualcomm's top-end Snapdragon chip in an internal multicore CPU test, ahead of its expected debut in the Galaxy S27 series early next year.\nThe results came from recent in-house benchmark tests com"
-    },
-    {
-      "title": "How Investors May Respond To Qualcomm Stock Earnings Outlook Concerns",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-qualcomm-stock-011117867.html",
-      "source": "Yahoo Finance",
-      "date": "2026-10-25",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "-\nQUALCOMM affirmed a quarterly cash dividend of US$0.92 per share for December 2026 while reporting a 16.67% year on year decline in diluted EPS, a 20.00 P/E ratio and a 2.03% dividend yield, alongside weaker operating margins.\n-\nThe business is cutting its global workforce and facing pressure in s"
-    },
-    {
-      "title": "Will Strong Earnings Expectations Change The Bull Case For NXP Stock (NXPI)?",
-      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-nxpi/nxp-semiconductors/news/will-strong-earnings-expectations-change-the-bull-case-for-n",
-      "source": "Simply Wall Street",
-      "date": "2026-10-25",
+      "title": "Volkswagen Group strengthens its strategic semiconductor ecosystem through partnership with NXP",
+      "url": "https://www.globenewswire.com/news-release/2026/10/26/3387862/0/en/volkswagen-group-strengthens-its-strategic-semiconductor-ecosystem-through-partnership-with-nxp.html",
+      "source": "GlobeNewswire",
+      "date": "2026-10-26",
       "vendor": "NXP",
-      "customer": "Amazon",
-      "application": "Industrial",
+      "customer": "Volkswagen",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "- United States\n- /\n- Semiconductors\n- /\n- NasdaqGS:NXPI\nWill Strong Earnings Expectations Change The Bull Case For NXP Stock (NXPI)?\nSI\nReviewed by Sasha Jovanovic\nWeekly Picks\nCE\nCeazar on Buffalo Potash \u00b7\nUnder the radar: This $78M stock controls a $1.5B project and it\u2019ll start producing in a few"
+      "summary": ""
     },
     {
-      "title": "World Series Game 2, Rays at Brewers: Lineups, broadcast info, and open thread, 10/24/26",
-      "url": "https://sports.yahoo.com/articles/world-series-game-2-rays-002924279.html",
-      "source": "Yahoo Sports",
-      "date": "2026-10-25",
+      "title": "Volkswagen's first vehicle with more functions on fewer computers is planned for 2027.",
+      "url": "https://www.stocktitan.net/news/NXPI/volkswagen-group-strengthens-its-strategic-semiconductor-ecosystem-sw9623is5mhu.html",
+      "source": "Stock Titan",
+      "date": "2026-10-26",
+      "vendor": null,
+      "customer": "Volkswagen",
+      "application": "Automotive",
+      "buckets": [],
+      "summary": ""
+    },
+    {
+      "title": "State Grid Changzhou Power Supply Company Helps Accelerate Power Supply Supporting Facilities for CATL New Energy Project Again",
+      "url": "https://www.prnewswire.com/apac/news-releases/state-grid-changzhou-power-supply-company-helps-accelerate-power-supply-supporting-facilities-for-catl-new-energy-project-again-302919171.html",
+      "source": "PR Newswire",
+      "date": "2026-10-26",
       "vendor": null,
       "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Rays Lineup\nYandy Diaz \u2013 DH\nJonathan Aranda \u2013 1B\nChandler Simpson \u2013 LF\nJunior Caminero \u2013 3B\nLiam Hicks \u2013 C\nRichie Palacios \u2013 2B\nJonny DeLuca \u2013 CF\nVictor Mesa \u2013 RF\nTaylor Walls \u2013 SS\nSP: Drew Rasmussen \u2013 RHP\nBrewers Lineup\nJackson Chourio \u2013 LF\nJake Bauers \u2013 1B\nChristian Yelich \u2013 DH\nWilliam Contreras \u2013"
-    },
-    {
-      "title": "World Series Game 2 Open Thread",
-      "url": "https://sports.yahoo.com/articles/world-series-game-2-open-000000406.html",
-      "source": "Yahoo Sports",
-      "date": "2026-10-25",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "The opening game of this series was a good one! The Brewers won 3-2, but the Rays had the go-ahead runner on base, and came pretty close to stealing it. Instead, they are down 1-0 with their ace on the mound and an expectation of tying things up tonight.\nThis is a game where both teams will feel lik"
-    },
-    {
-      "title": "\ud83c\uddfa\ud83c\uddf8Trump: \"Why can't we take people from Norway and Sweden and Denmark?\" Because Nordic nations consistently rank at the top for global happiness, healthcare, education and quality of life. Nobody from those countries is looking to leave that for...this. Wr - X",
-      "url": "https://x.com/MarioNawfal/status/2114142041860898875/video/1",
-      "source": "X",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": null,
-      "application": "Healthcare",
+      "application": "Energy/Utility",
       "buckets": [],
-      "summary": "\ud83c\uddfa\ud83c\uddf8Trump: \"Why can't we take people from Norway and Sweden and Denmark?\"\nBecause Nordic nations consistently rank at the top for global happiness, healthcare, education and quality of life.\nNobody from those countries is looking to leave that for...this.\nWriter: Bri\nx.com/atrupar/status\u2026\n00:00\nAaron "
+      "summary": "State Grid Changzhou Power Supply Company Helps Accelerate Power Supply Supporting Facilities for CATL New Energy Project Again\nCHANGZHOU, China, Oct. 26, 2026 /PRNewswire/ -- Recently, the N10 to N11 section of the 220 kV line project from Ganxi to Shidai Xinke carried out work crossing the Nanjing"
     },
     {
-      "title": "Game #13: New York Rangers vs. Ottawa Senators Open Thread",
-      "url": "https://www.blueshirtbanter.com/game-13-new-york-rangers-vs-ottawa-senators-open-thread/",
-      "source": "Blueshirt Banter",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": null,
-      "application": null,
-      "buckets": [
-        "thread"
-      ],
-      "summary": "Game #13: New York Rangers vs. Ottawa Senators Open Thread\nJoin the in-game conversation with the Blueshirt Banter community by becoming a member today!\nThe New York Rangers remain in Canada after their loss to the Toronto Maple Leafs and are heading north to take on the Ottawa Senators. The Senator"
-    },
-    {
-      "title": "NVIDIA Stock Holds $215 Gap Support as MediaTek Deal Expands AI Reach",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262143818-nvidia-stock-mediatek-ai-ecosystem-nvda-gap-support-215-tradingkey",
-      "source": "TradingKey",
-      "date": "2026-10-24",
-      "vendor": "MediaTek",
-      "customer": "Google",
-      "application": "Automotive",
+      "title": "Embedded Security Market Advances as Fraunhofer Validates 22 nm RISC-V Secure Element for Next-Generation Connected Devices",
+      "url": "https://www.design-reuse.com/news/202531326-embedded-security-market-advances-as-fraunhofer-validates-22-nm-risc-v-secure-element-for-next-generation-connected-devices/",
+      "source": "Design And Reuse",
+      "date": "2026-10-26",
+      "vendor": "TI",
+      "customer": "Samsung",
+      "application": "Embedded / Electronics",
       "buckets": [],
-      "summary": "NVIDIA Stock Holds $215 Gap Support as MediaTek Deal Expands AI Reach\nNVIDIA reported record fiscal Q2 2027 revenue of $96.22 billion, driven by robust data center demand and full production of Vera Rubin. The company expanded its market reach through a $3.5 billion investment in MediaTek and partne"
-    },
-    {
-      "title": "Hands-on: Belkin\u2019s new semi solid state batteries make for a much lighter carry",
-      "url": "https://9to5mac.com/2026/10/24/belkin-new-semi-solid-state-battery-options-for-iphone/",
-      "source": "9to5Mac",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Belkin is now offering two new semi solid state batteries for your iPhone. There\u2019s one 10,000mAh offering with a USB-C port for charging. The second is a 5,000mAh MagSafe offering, which offers 15W Qi2 charging. Both come in much lighter than you\u2019d expect, and both offer premium aluminum builds that"
-    },
-    {
-      "title": "Xbox Loses Its First Chief Operating Officer Mid-Reset",
-      "url": "https://www.techpowerup.com/354105/xbox-loses-its-first-chief-operating-officer-mid-reset",
-      "source": "TechPowerUp",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Microsoft",
-      "application": null,
-      "buckets": [],
-      "summary": "Saturday, October 24th 2026\nXbox Loses Its First Chief Operating Officer Mid-Reset\nHelen Chiang, Xbox's first-ever chief operating officer, has left Microsoft just three months after taking on the role. The news comes from a short internal memo by Microsoft Gaming CEO Asha Sharma, obtained by The Ve"
-    },
-    {
-      "title": "Indie App Spotlight: \u2018Flipcorder\u2019 lets you shoot retro footage on your iPhone Duo",
-      "url": "https://9to5mac.com/2026/10/24/indie-app-spotlight-flipcorder-lets-you-shoot-retro-footage-on-your-iphone-duo/",
-      "source": "9to5Mac",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Welcome to Indie App Spotlight. This is a weekly 9to5Mac series where we showcase the latest apps in the indie app world. If you\u2019re a developer and would like your app featured, get in contact. If you want more of a nostalgic video feel from your iPhone footage, Flipcorder is a great app to check ou"
-    },
-    {
-      "title": "Jailbroken PS5 Consoles Can Now Run Windows Steam Games Locally",
-      "url": "https://www.techpowerup.com/354104/jailbroken-ps5-consoles-can-now-run-windows-steam-games-locally",
-      "source": "TechPowerUp",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Sony",
-      "application": null,
-      "buckets": [],
-      "summary": "Saturday, October 24th 2026\nJailbroken PS5 Consoles Can Now Run Windows Steam Games Locally\nThe PS5 jailbreaking scene keeps making progress almost on a weekly basis. A jailbroken PS5 can now download Windows games from a Steam library and run them locally on the console, with no PC streaming involv"
-    },
-    {
-      "title": "Waymo Wins the Airport Curb, Tesla Hits 75% FSD Take-Up: Grayson Brulte's Robotaxi Field Notes",
-      "url": "https://finance.biggo.com/news/1a72d3ccbde592c0",
-      "source": "BigGo Finance",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Tesla",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Waymo Wins the Airport Curb, Tesla Hits 75% FSD Take-Up: Grayson Brulte's Robotaxi Field Notes\nWaymo has secured the outside lane at Nashville International Airport \u2014 \"the pole position,\" as Grayson Brulte put it \u2014 with four dedicated curbside spots, while Uber's robotaxi partners are still hunting "
-    },
-    {
-      "title": "The AI graveyard: a running list of projects and startups that didn\u2019t make it",
-      "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
-      "source": "TechCrunch",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Wearable",
-      "buckets": [],
-      "summary": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations."
-    },
-    {
-      "title": "iPhone Duo one day later: Here\u2019s why its quirks don\u2019t make it any less incredible",
-      "url": "https://9to5mac.com/2026/10/24/thoughts-on-iphone-duo-24-hours-later/",
-      "source": "9to5Mac",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "Yesterday, I picked up my iPhone Duo at Apple Fifth Avenue, and it\u2019s been a wonder to use. Of course, the phone isn\u2019t perfect, but after my first day of usage, I\u2019m looking forward to daily driving it \u2013 even if it has a couple quirks. more\u2026"
-    },
-    {
-      "title": "QUALCOMM\u2019s Quarterly Earnings Preview: What You Need to Know",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-quarterly-earnings-preview-know-162124087.html",
-      "source": "Yahoo Finance",
-      "date": "2026-10-24",
-      "vendor": "Qualcomm",
-      "customer": "Apple",
-      "application": "Automotive",
-      "buckets": [],
-      "summary": "QUALCOMM Incorporated (QCOM) is a leading semiconductor and wireless technology company headquartered in San Diego. The company is best known for designing Snapdragon processors and modem chips used in smartphones, PCs, automotive systems, and connected devices worldwide. Qualcomm has increasingly e"
-    },
-    {
-      "title": "Apple's Master Plan for the Smart Home: Smart Display, Apple TV, & HomePod mini 2!",
-      "url": "https://appleinsider.com/videos/2126/appleaeurs-master-plan-for-the-smart-home-smart-display-apple-tv-homepod-mini-2",
-      "source": "AppleInsider",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [
-        "matter"
-      ],
-      "summary": "Apple is about to revolutionize the smart home, and it all starts in 2025! In this video, we're diving into Apple's game-changing plans, including new products, groundbreaking updates, and the role of technologies like Matter and Thread.\nDiscover how Apple is building a seamless ecosystem with innov"
-    },
-    {
-      "title": "Make Your Home Smarter with Aqara & Apple HomeKit!",
-      "url": "https://appleinsider.com/videos/1963/make-your-home-smarter-with-aqara-apple-homekit",
-      "source": "AppleInsider",
-      "date": "2026-10-24",
-      "vendor": null,
-      "customer": "Apple",
-      "application": "Smart Home",
-      "buckets": [],
-      "summary": "Aqara's ever-expanding line of smart home accessories work great with Apple HomeKit to help you automate everyday tasks, provide extra security, and make your life easier. I walk you through three of its newer products \u2014 the U100 smart door lock that supports Apple Home Key, the FP2 Presence sensor,"
+      "summary": "October 26, 2026 -\nThe embedded security market is gaining momentum as semiconductor developers strengthen hardware-level protection for connected devices. On September 28, 2026, Fraunhofer announced the successful functional validation of its RISC-V secure element and made the OpenTitan-based secur"
     }
   ],
   "vendor_news_30d": {
-    "Qualcomm": 90,
-    "TI": 44,
-    "NXP": 42,
-    "Nordic": 24,
-    "Espressif": 13,
+    "Qualcomm": 88,
+    "NXP": 63,
+    "TI": 39,
+    "Nordic": 27,
+    "Espressif": 14,
     "MediaTek": 13,
-    "Synaptics": 10,
+    "Synaptics": 7,
     "Broadcom": 6,
-    "Infineon": 5,
+    "Infineon": 6,
+    "Renesas": 3,
     "Silicon Labs": 3,
+    "STMicro": 2,
     "Realtek": 2,
-    "Microchip": 2,
     "HiSilicon": 2,
-    "Onsemi": 2,
-    "Apple": 1,
-    "Renesas": 1,
+    "Telink": 1,
+    "Microchip": 1,
+    "LG Innotek": 1,
     "Qorvo": 1,
-    "Skyworks": 1,
     "Airoha": 1,
     "Marvell": 1,
     "Sequans": 1,
-    "STMicro": 1,
-    "Goodix": 1,
-    "LG Innotek": 1,
-    "Murata": 1
+    "Goodix": 1
   },
   "customer_news_30d": {
-    "Apple": 164,
+    "Apple": 154,
     "Google": 87,
-    "Samsung": 30,
-    "Amazon": 20,
-    "Microsoft": 19,
+    "Samsung": 25,
+    "Amazon": 21,
+    "Volkswagen": 14,
+    "Microsoft": 12,
     "Meta": 8,
-    "Tesla": 7,
-    "Huawei": 6,
-    "Sony": 4,
-    "Xiaomi": 4,
+    "Tesla": 4,
+    "Xiaomi": 3,
+    "Huawei": 3,
     "Wyze": 3,
-    "Bose": 2,
-    "HKMC": 2,
+    "Sony": 2,
+    "IKEA": 1,
     "Marshall": 1,
     "Philips Hue": 1,
     "Motorola": 1,
-    "BMW": 1,
+    "SwitchBot": 1,
     "Garmin": 1,
     "Toyota": 1
   },
@@ -517,7 +506,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 281,
+      "issues_open": 282,
       "prs_open": 0,
       "releases": [],
       "stars": 895,
@@ -534,7 +523,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1773,
+      "issues_open": 1772,
       "prs_open": 0,
       "releases": [
         {
@@ -556,8 +545,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19339,
-      "pushed_at": "2026-10-24T09:19:29Z"
+      "stars": 19347,
+      "pushed_at": "2026-10-26T12:14:28Z"
     },
     {
       "name": "BlueZ",
@@ -590,8 +579,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1167,
-      "pushed_at": "2026-10-25T12:13:36Z"
+      "stars": 1168,
+      "pushed_at": "2026-10-26T07:00:31Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -602,7 +591,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4793,
+      "issues_open": 4877,
       "prs_open": 0,
       "releases": [
         {
@@ -624,23 +613,8 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 16899,
-      "pushed_at": "2026-10-25T10:24:56Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 253417,
-      "pushed_at": "2026-10-25T06:15:09Z"
+      "stars": 16907,
+      "pushed_at": "2026-10-26T13:00:08Z"
     },
     {
       "name": "Matter SDK",
@@ -651,7 +625,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2902,
+      "issues_open": 2908,
       "prs_open": 0,
       "releases": [
         {
@@ -674,7 +648,22 @@
         }
       ],
       "stars": 8975,
-      "pushed_at": "2026-10-25T01:22:10Z"
+      "pushed_at": "2026-10-26T01:21:03Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 253526,
+      "pushed_at": "2026-10-26T04:05:09Z"
     },
     {
       "name": "OpenThread",
@@ -684,8 +673,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 98,
-      "issues_open": 167,
+      "commits_30d": 97,
+      "issues_open": 169,
       "prs_open": 0,
       "releases": [
         {
@@ -707,8 +696,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4050,
-      "pushed_at": "2026-10-24T20:01:54Z"
+      "stars": 4051,
+      "pushed_at": "2026-10-26T09:53:50Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -719,7 +708,7 @@
         "ieee15_4"
       ],
       "commits_30d": 11,
-      "issues_open": 486,
+      "issues_open": 491,
       "prs_open": 0,
       "releases": [
         {
@@ -741,8 +730,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15756,
-      "pushed_at": "2026-10-25T07:14:41Z"
+      "stars": 15758,
+      "pushed_at": "2026-10-26T08:20:33Z"
     },
     {
       "name": "hostap",
@@ -782,13 +771,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926114359/tm2626934d2_8k.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-10-05",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926113538/tm2626934d1_8k.htm"
-    },
-    {
       "vendor": "Qorvo",
       "ticker": "QRVO",
       "form": "8-K",
@@ -796,11 +778,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1604778/000095010326015180/dp254466_8k.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
       "form": "8-K",
-      "date": "2026-10-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126038301/ef20083029_8k.htm"
+      "date": "2026-10-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926113538/tm2626934d1_8k.htm"
     },
     {
       "vendor": "Onsemi",
@@ -808,6 +790,13 @@
       "form": "8-K",
       "date": "2026-10-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126038294/ef20083030_8k.htm"
+    },
+    {
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
+      "form": "8-K",
+      "date": "2026-10-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000114036126038301/ef20083029_8k.htm"
     },
     {
       "vendor": "Skyworks",
@@ -929,13 +918,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526342367/ter-20260807.htm"
     },
     {
-      "vendor": "Synaptics",
-      "ticker": "SYNA",
-      "form": "10-K",
-      "date": "2026-08-10",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000055/syna-20260627.htm"
-    },
-    {
       "vendor": "Skyworks",
       "ticker": "SWKS",
       "form": "8-K",
@@ -945,9 +927,9 @@
     {
       "vendor": "Synaptics",
       "ticker": "SYNA",
-      "form": "8-K",
-      "date": "2026-08-06",
-      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
+      "form": "10-K",
+      "date": "2026-08-10",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000055/syna-20260627.htm"
     },
     {
       "vendor": "Microchip",
@@ -964,18 +946,11 @@
       "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/mchp-20260806.htm"
     },
     {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
+      "vendor": "Synaptics",
+      "ticker": "SYNA",
       "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089397/tm2621905d1_8k.htm"
-    },
-    {
-      "vendor": "Skyworks",
-      "ticker": "SWKS",
-      "form": "8-K",
-      "date": "2026-08-03",
-      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
+      "date": "2026-08-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/817720/000081772026000049/syna-20260806.htm"
     },
     {
       "vendor": "Onsemi",
@@ -992,11 +967,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1097864/000114036126030989/ef20079200_8k.htm"
     },
     {
-      "vendor": "Qualcomm",
-      "ticker": "QCOM",
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
       "form": "8-K",
-      "date": "2026-07-31",
-      "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089397/tm2621905d1_8k.htm"
+    },
+    {
+      "vendor": "Skyworks",
+      "ticker": "SWKS",
+      "form": "8-K",
+      "date": "2026-08-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/4127/000110465926089381/tm2620808d3_8k.htm"
     },
     {
       "vendor": "TI",
@@ -1004,6 +986,13 @@
       "form": "10-Q",
       "date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526327715/ter-20260628.htm"
+    },
+    {
+      "vendor": "Qualcomm",
+      "ticker": "QCOM",
+      "form": "8-K",
+      "date": "2026-07-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926089234/tm2621612d2_8k.htm"
     },
     {
       "vendor": "Apple",
@@ -1034,6 +1023,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
     },
     {
+      "vendor": "TI",
+      "ticker": "TXN",
+      "form": "8-K",
+      "date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
+    },
+    {
       "vendor": "Qualcomm",
       "ticker": "QCOM",
       "form": "10-Q",
@@ -1048,11 +1044,18 @@
       "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom-20260729.htm"
     },
     {
-      "vendor": "TI",
-      "ticker": "TXN",
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
+      "form": "10-Q",
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
+    },
+    {
+      "vendor": "Qorvo",
+      "ticker": "QRVO",
       "form": "8-K",
-      "date": "2026-07-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-20260728.htm"
+      "date": "2026-07-28",
+      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
     },
     {
       "vendor": "Skyworks",
@@ -1074,20 +1077,6 @@
       "form": "8-K",
       "date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/4127/000000412726000045/swks-20260728.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "10-Q",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050166/rfmd-20260627.htm"
-    },
-    {
-      "vendor": "Qorvo",
-      "ticker": "QRVO",
-      "form": "8-K",
-      "date": "2026-07-28",
-      "url": "https://www.sec.gov/Archives/edgar/data/1604778/000162828026050149/rfmd-20260728.htm"
     }
   ],
   "tracked_competitors": [
@@ -4164,6 +4153,11 @@
       ],
       "press_releases": [
         {
+          "title": "Telink's HDT Technology Enables Mass Production of 8K High Report Rate Wireless Gaming Peripherals",
+          "date": "Oct 2026",
+          "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
+        },
+        {
           "title": "Telink Launches TL3225 Family of Wireless SoCs for Automotive",
           "date": "Aug 2026",
           "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
@@ -4207,11 +4201,6 @@
           "title": "Telink Launches TL3228 Low-Power, Low-Latency Dual-Core RISC-V Wireless MCU",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Telink+Launches+TL3228+Low-Power%2C+Low-Latency+Dual-Core+RISC-V+Wireless+MCU+Telink"
-        },
-        {
-          "title": "Telink Introduces TL3228 Low-Power, Low-Latency Dual-Core RISC-V Wireless MCU",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=Telink+Introduces+TL3228+Low-Power%2C+Low-Latency+Dual-Core+RISC-V+Wireless+MCU+Telink"
         }
       ]
     },
