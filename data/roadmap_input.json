@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T13:12:16Z",
+  "generated_at": "2026-10-27T13:14:28Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3103,6 +3103,11 @@
           "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
         },
         {
+          "title": "Telink Unveils HDT Technology Enabling 8K High Report Rate for Wireless Gaming Peripherals",
+          "date": "Oct 2026",
+          "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
+        },
+        {
           "title": "Telink Launches TL3225 Family of Wireless SoCs for Automotive",
           "date": "Aug 2026",
           "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
@@ -3141,11 +3146,6 @@
           "title": "Telink Launches TL3228 Dual-Core RISC-V Wireless MCU with Bluetooth 6.0 Support",
           "date": "Apr 2026",
           "url": "https://www.google.com/search?q=Telink+Launches+TL3228+Dual-Core+RISC-V+Wireless+MCU+with+Bluetooth+6.0+Support+Telink"
-        },
-        {
-          "title": "Telink Launches TL3228 Low-Power, Low-Latency Dual-Core RISC-V Wireless MCU",
-          "date": "Apr 2026",
-          "url": "https://www.google.com/search?q=Telink+Launches+TL3228+Low-Power%2C+Low-Latency+Dual-Core+RISC-V+Wireless+MCU+Telink"
         }
       ]
     },
@@ -3769,28 +3769,30 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 88,
-    "NXP": 63,
-    "TI": 39,
-    "Nordic": 27,
-    "Espressif": 14,
-    "MediaTek": 13,
-    "Synaptics": 7,
-    "Broadcom": 6,
-    "Infineon": 6,
-    "Renesas": 3,
-    "Silicon Labs": 3,
-    "STMicro": 2,
-    "Realtek": 2,
+    "NXP": 76,
+    "Qualcomm": 74,
+    "TI": 32,
+    "Nordic": 22,
+    "MediaTek": 21,
+    "Espressif": 18,
+    "Infineon": 10,
+    "Synaptics": 9,
+    "Broadcom": 5,
+    "Silicon Labs": 4,
+    "Renesas": 4,
     "HiSilicon": 2,
+    "Microchip": 2,
+    "Apple": 2,
+    "STMicro": 1,
     "Telink": 1,
-    "Microchip": 1,
+    "Realtek": 1,
+    "Marvell": 1,
     "LG Innotek": 1,
     "Qorvo": 1,
     "Airoha": 1,
-    "Marvell": 1,
     "Sequans": 1,
-    "Goodix": 1
+    "Goodix": 1,
+    "Murata": 1
   },
   "standards_in_flight": [
     {
@@ -3871,47 +3873,45 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 282,
+      "issues_open": 280,
       "prs_open": 0,
       "releases": [],
-      "stars": 895,
-      "pushed_at": "2026-10-24T21:45:32Z"
+      "stars": 896,
+      "pushed_at": "2026-10-27T11:49:31Z"
     },
     {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
       "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
+        "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 1772,
+      "issues_open": 4955,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v5.5.6",
-          "name": "ESP-IDF Release v5.5.6",
-          "published_at": "2026-10-16T14:32:14Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
         },
         {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
         },
         {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+          "tag": "v4.4.2-rc1",
+          "name": "Zephyr v4.4.2-rc1",
+          "published_at": "2026-07-29T20:54:38Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
         }
       ],
-      "stars": 19347,
-      "pushed_at": "2026-10-26T12:14:28Z"
+      "stars": 16919,
+      "pushed_at": "2026-10-27T07:14:13Z"
     },
     {
       "name": "BlueZ",
@@ -3922,7 +3922,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 135,
+      "issues_open": 133,
       "prs_open": 0,
       "releases": [
         {
@@ -3945,90 +3945,43 @@
         }
       ],
       "stars": 1168,
-      "pushed_at": "2026-10-26T07:00:31Z"
+      "pushed_at": "2026-10-27T08:05:32Z"
     },
     {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
       "tech": [
-        "bluetooth"
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 4877,
+      "issues_open": 1774,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
+          "tag": "v5.5.6",
+          "name": "ESP-IDF Release v5.5.6",
+          "published_at": "2026-10-16T14:32:14Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
         },
         {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
         },
         {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 16907,
-      "pushed_at": "2026-10-26T13:00:08Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2908,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v1.6.1.0",
-          "name": "v1.6.1.0 Release",
-          "published_at": "2026-09-25T12:38:51Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.1.0"
-        },
-        {
-          "tag": "v1.6.0.0",
-          "name": "v1.6.0.0 Release",
-          "published_at": "2026-08-20T15:23:47Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
-        },
-        {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
-        }
-      ],
-      "stars": 8975,
-      "pushed_at": "2026-10-26T01:21:03Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 253526,
-      "pushed_at": "2026-10-26T04:05:09Z"
+      "stars": 19360,
+      "pushed_at": "2026-10-27T05:16:55Z"
     },
     {
       "name": "OpenThread",
@@ -4038,8 +3991,8 @@
       "tech": [
         "thread"
       ],
-      "commits_30d": 97,
-      "issues_open": 169,
+      "commits_30d": 100,
+      "issues_open": 158,
       "prs_open": 0,
       "releases": [
         {
@@ -4062,7 +4015,56 @@
         }
       ],
       "stars": 4051,
-      "pushed_at": "2026-10-26T09:53:50Z"
+      "pushed_at": "2026-10-27T13:12:46Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2921,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.6.1.0",
+          "name": "v1.6.1.0 Release",
+          "published_at": "2026-09-25T12:38:51Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.1.0"
+        },
+        {
+          "tag": "v1.6.0.0",
+          "name": "v1.6.0.0 Release",
+          "published_at": "2026-08-20T15:23:47Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+        },
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        }
+      ],
+      "stars": 8975,
+      "pushed_at": "2026-10-27T09:09:12Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 253661,
+      "pushed_at": "2026-10-26T19:18:49Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4073,7 +4075,7 @@
         "ieee15_4"
       ],
       "commits_30d": 11,
-      "issues_open": 491,
+      "issues_open": 492,
       "prs_open": 0,
       "releases": [
         {
@@ -4095,7 +4097,7 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15758,
+      "stars": 15760,
       "pushed_at": "2026-10-26T08:20:33Z"
     },
     {
