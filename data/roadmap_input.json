@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T13:12:48Z",
+  "generated_at": "2026-10-29T13:17:01Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3769,31 +3769,31 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "NXP": 121,
-    "Qualcomm": 97,
-    "TI": 20,
-    "Espressif": 16,
-    "MediaTek": 15,
-    "Apple": 8,
-    "Nordic": 7,
-    "Broadcom": 7,
-    "Synaptics": 6,
-    "Renesas": 4,
-    "Infineon": 4,
-    "Silicon Labs": 4,
+    "NXP": 134,
+    "Qualcomm": 117,
+    "MediaTek": 20,
+    "Nordic": 20,
+    "TI": 17,
+    "Espressif": 15,
+    "Infineon": 9,
+    "Synaptics": 7,
+    "STMicro": 6,
+    "Renesas": 5,
+    "Apple": 4,
+    "Onsemi": 4,
+    "Broadcom": 4,
+    "Skyworks": 3,
     "Marvell": 3,
-    "Sony Semi": 2,
-    "Microchip": 2,
+    "Silicon Labs": 3,
+    "Murata": 2,
+    "Realtek": 2,
+    "HiSilicon": 2,
     "Qorvo": 2,
-    "Onsemi": 1,
-    "u-blox": 1,
-    "STMicro": 1,
     "Telink": 1,
-    "Realtek": 1,
-    "UNISOC": 1,
-    "HiSilicon": 1,
-    "LG Innotek": 1,
-    "Airoha": 1
+    "Microchip": 1,
+    "Airoha": 1,
+    "Sequans": 1,
+    "Goodix": 1
   },
   "standards_in_flight": [
     {
@@ -3876,7 +3876,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1771,
+      "issues_open": 1772,
       "prs_open": 0,
       "releases": [
         {
@@ -3898,57 +3898,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19367,
-      "pushed_at": "2026-10-27T21:27:21Z"
-    },
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 4993,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
-        },
-        {
-          "tag": "v4.4.2-rc1",
-          "name": "Zephyr v4.4.2-rc1",
-          "published_at": "2026-07-29T20:54:38Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2-rc1"
-        }
-      ],
-      "stars": 16931,
-      "pushed_at": "2026-10-28T11:39:39Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 278,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 896,
-      "pushed_at": "2026-10-27T21:45:02Z"
+      "stars": 19374,
+      "pushed_at": "2026-10-29T11:59:41Z"
     },
     {
       "name": "BlueZ",
@@ -3959,7 +3910,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 127,
+      "issues_open": 121,
       "prs_open": 0,
       "releases": [
         {
@@ -3981,57 +3932,57 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1169,
-      "pushed_at": "2026-10-28T08:27:34Z"
+      "stars": 1170,
+      "pushed_at": "2026-10-29T05:42:05Z"
     },
     {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
       "tech": [
-        "matter"
+        "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 2899,
+      "issues_open": 277,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 896,
+      "pushed_at": "2026-10-29T12:49:39Z"
+    },
+    {
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 4731,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v1.6.1.0",
-          "name": "v1.6.1.0 Release",
-          "published_at": "2026-09-25T12:38:51Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.1.0"
+          "tag": "v4.5.0",
+          "name": "Zephyr 4.5.0",
+          "published_at": "2026-10-28T22:23:36Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.5.0"
         },
         {
-          "tag": "v1.6.0.0",
-          "name": "v1.6.0.0 Release",
-          "published_at": "2026-08-20T15:23:47Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
         },
         {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+          "tag": "v3.7.3-rc1",
+          "name": "Zephyr LTS v3.7.3-rc1",
+          "published_at": "2026-08-06T00:38:42Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
         }
       ],
-      "stars": 8975,
-      "pushed_at": "2026-10-28T10:07:56Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 253728,
-      "pushed_at": "2026-10-28T01:10:20Z"
+      "stars": 16942,
+      "pushed_at": "2026-10-29T11:52:46Z"
     },
     {
       "name": "OpenThread",
@@ -4042,7 +3993,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 151,
+      "issues_open": 157,
       "prs_open": 0,
       "releases": [
         {
@@ -4064,8 +4015,57 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4052,
-      "pushed_at": "2026-10-28T09:43:50Z"
+      "stars": 4054,
+      "pushed_at": "2026-10-29T00:04:12Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2906,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.6.1.0",
+          "name": "v1.6.1.0 Release",
+          "published_at": "2026-09-25T12:38:51Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.1.0"
+        },
+        {
+          "tag": "v1.6.0.0",
+          "name": "v1.6.0.0 Release",
+          "published_at": "2026-08-20T15:23:47Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+        },
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        }
+      ],
+      "stars": 8976,
+      "pushed_at": "2026-10-29T12:57:47Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 253834,
+      "pushed_at": "2026-10-28T18:09:17Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4076,7 +4076,7 @@
         "ieee15_4"
       ],
       "commits_30d": 8,
-      "issues_open": 483,
+      "issues_open": 482,
       "prs_open": 0,
       "releases": [
         {
@@ -4098,8 +4098,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15762,
-      "pushed_at": "2026-10-27T18:13:16Z"
+      "stars": 15764,
+      "pushed_at": "2026-10-28T15:24:53Z"
     },
     {
       "name": "hostap",
