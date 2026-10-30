@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T13:17:01Z",
+  "generated_at": "2026-10-30T13:21:39Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -2942,6 +2942,11 @@
           "url": "https://embeddedcomputing.com/application/industrial/industrial-computing/u-blox-to-debut-new-product-line-at-electronica-2026"
         },
         {
+          "title": "u-blox Launches ZED-X20T All-Band High Accuracy Timing Module",
+          "date": "Oct 2026",
+          "url": "https://www.u-blox.com/en/product/zed-x20t-module"
+        },
+        {
           "title": "u-blox NORA-W40 Wi-Fi 6 Modules Now Available at Mouser",
           "date": "Aug 2026",
           "url": "https://www.electronicdesign.com/directory/radio/modules/press-release/55395816/mouser-u-blox-nora-w40-wi-fi-6-modules-now-at-mouser-offer-advanced-network-efficiency-range-and-low-power-consumption"
@@ -2975,11 +2980,6 @@
           "title": "u-blox Announces Strategic Decision to Focus on Locate Business and Phase Out Cellular",
           "date": "Aug 2026",
           "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861738ecb9b"
-        },
-        {
-          "title": "u-blox Announces Strategic Shift: Focus on Locate Business, Phase Out Cellular, and Impairment",
-          "date": "Aug 2026",
-          "url": "https://www.u-blox.com/en/ir-news/u-blox-announces-strategic-decision-to-increase-focus-on-locate-business-and-phase-out-cellular-as-well-as-an-impairment?_sp=c31df117-0327-4b48-a90e-4861378ecb9b"
         }
       ]
     },
@@ -3113,6 +3113,11 @@
           "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
         },
         {
+          "title": "Telink Showcases 8K Wireless Gaming Mouse & Keyboard Solutions",
+          "date": "Oct 2026",
+          "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
+        },
+        {
           "title": "Telink Launches TL3225 Family of Wireless SoCs for Automotive",
           "date": "Aug 2026",
           "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
@@ -3141,11 +3146,6 @@
           "title": "Telink Unleashes Sub-Millisecond HID Performance with Bluetooth ULL SCI",
           "date": "May 2026",
           "url": "https://www.google.com/search?q=Telink+Unleashes+Sub-Millisecond+HID+Performance+with+Bluetooth+ULL+SCI+Telink"
-        },
-        {
-          "title": "Telink Achieves Sub-Millisecond HID Performance with Bluetooth ULL SCI",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Telink+Achieves+Sub-Millisecond+HID+Performance+with+Bluetooth+ULL+SCI+Telink"
         }
       ]
     },
@@ -3769,31 +3769,27 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "NXP": 134,
-    "Qualcomm": 117,
-    "MediaTek": 20,
-    "Nordic": 20,
-    "TI": 17,
-    "Espressif": 15,
+    "NXP": 131,
+    "Qualcomm": 120,
+    "MediaTek": 34,
+    "TI": 26,
+    "Nordic": 25,
+    "Espressif": 17,
     "Infineon": 9,
-    "Synaptics": 7,
-    "STMicro": 6,
-    "Renesas": 5,
-    "Apple": 4,
-    "Onsemi": 4,
+    "Renesas": 7,
+    "Marvell": 5,
+    "Synaptics": 5,
+    "STMicro": 4,
     "Broadcom": 4,
-    "Skyworks": 3,
-    "Marvell": 3,
-    "Silicon Labs": 3,
+    "HiSilicon": 3,
+    "u-blox": 2,
     "Murata": 2,
     "Realtek": 2,
-    "HiSilicon": 2,
-    "Qorvo": 2,
+    "Microchip": 2,
+    "Atmosic": 1,
+    "Apple": 1,
     "Telink": 1,
-    "Microchip": 1,
-    "Airoha": 1,
-    "Sequans": 1,
-    "Goodix": 1
+    "Qorvo": 1
   },
   "standards_in_flight": [
     {
@@ -3876,7 +3872,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1772,
+      "issues_open": 1779,
       "prs_open": 0,
       "releases": [
         {
@@ -3898,8 +3894,8 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19374,
-      "pushed_at": "2026-10-29T11:59:41Z"
+      "stars": 19388,
+      "pushed_at": "2026-10-29T21:47:33Z"
     },
     {
       "name": "BlueZ",
@@ -3933,22 +3929,7 @@
         }
       ],
       "stars": 1170,
-      "pushed_at": "2026-10-29T05:42:05Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 277,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 896,
-      "pushed_at": "2026-10-29T12:49:39Z"
+      "pushed_at": "2026-10-29T21:59:28Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3959,7 +3940,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4731,
+      "issues_open": 4727,
       "prs_open": 0,
       "releases": [
         {
@@ -3981,8 +3962,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
         }
       ],
-      "stars": 16942,
-      "pushed_at": "2026-10-29T11:52:46Z"
+      "stars": 16958,
+      "pushed_at": "2026-10-30T13:18:48Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 278,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 896,
+      "pushed_at": "2026-10-30T08:44:36Z"
     },
     {
       "name": "OpenThread",
@@ -3993,7 +3989,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 157,
+      "issues_open": 156,
       "prs_open": 0,
       "releases": [
         {
@@ -4015,8 +4011,23 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4054,
-      "pushed_at": "2026-10-29T00:04:12Z"
+      "stars": 4055,
+      "pushed_at": "2026-10-29T14:43:32Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 253826,
+      "pushed_at": "2026-10-30T00:07:06Z"
     },
     {
       "name": "Matter SDK",
@@ -4027,7 +4038,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2906,
+      "issues_open": 2900,
       "prs_open": 0,
       "releases": [
         {
@@ -4049,23 +4060,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8976,
-      "pushed_at": "2026-10-29T12:57:47Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 253834,
-      "pushed_at": "2026-10-28T18:09:17Z"
+      "stars": 8977,
+      "pushed_at": "2026-10-30T12:45:45Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4075,8 +4071,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 8,
-      "issues_open": 482,
+      "commits_30d": 6,
+      "issues_open": 484,
       "prs_open": 0,
       "releases": [
         {
