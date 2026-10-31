@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:21:39Z",
+  "generated_at": "2026-10-31T13:15:08Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -3520,17 +3520,17 @@
           "url": "https://finance.yahoo.com/technology/articles/vadzo-imaging-introduces-innowave-2020crs-160000584.html"
         },
         {
+          "title": "Onsemi Acquires Codasip's Low-End RISC-V Business for $14.5 Million",
+          "date": "Oct 2026",
+          "url": "https://www.design-reuse.com/news/202531357-onsemi-picks-up-codasip-s-low-end-risc-v-business-for-14-5-million/"
+        },
+        {
           "title": "Vadzo Imaging Validates Onsemi AR0234 Monochrome GigE Camera for High Frame Streaming",
           "date": "Sep 2026",
           "url": "https://finance.yahoo.com/technology/articles/vadzo-imaging-validates-high-frame-190000712.html"
         },
         {
           "title": "Onsemi Tapes Out Commercial Chip Designs Incorporating Weebit ReRAM",
-          "date": "Sep 2026",
-          "url": "https://kalkine.com.au/news/technology/weebit-nano-asxwbt-enters-fy27-with-texas-instruments-onsemi-and-growing-reram-commercialisation"
-        },
-        {
-          "title": "Weebit Nano Enters FY27 With Texas Instruments, onsemi and Growing ReRAM Commercialisation",
           "date": "Sep 2026",
           "url": "https://kalkine.com.au/news/technology/weebit-nano-asxwbt-enters-fy27-with-texas-instruments-onsemi-and-growing-reram-commercialisation"
         }
@@ -3769,25 +3769,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "NXP": 131,
-    "Qualcomm": 120,
-    "MediaTek": 34,
-    "TI": 26,
-    "Nordic": 25,
-    "Espressif": 17,
-    "Infineon": 9,
+    "Qualcomm": 126,
+    "NXP": 116,
+    "MediaTek": 40,
+    "Nordic": 27,
+    "TI": 24,
+    "Espressif": 14,
+    "Infineon": 8,
     "Renesas": 7,
-    "Marvell": 5,
-    "Synaptics": 5,
-    "STMicro": 4,
-    "Broadcom": 4,
+    "Synaptics": 4,
+    "Silicon Labs": 3,
+    "STMicro": 3,
+    "Realtek": 3,
+    "Marvell": 3,
     "HiSilicon": 3,
-    "u-blox": 2,
-    "Murata": 2,
-    "Realtek": 2,
+    "Skyworks": 2,
+    "Apple": 2,
+    "Broadcom": 2,
     "Microchip": 2,
-    "Atmosic": 1,
-    "Apple": 1,
+    "Goodix": 1,
+    "Onsemi": 1,
+    "Murata": 1,
+    "u-blox": 1,
     "Telink": 1,
     "Qorvo": 1
   },
@@ -3872,7 +3875,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1779,
+      "issues_open": 1781,
       "prs_open": 0,
       "releases": [
         {
@@ -3894,8 +3897,23 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19388,
-      "pushed_at": "2026-10-29T21:47:33Z"
+      "stars": 19392,
+      "pushed_at": "2026-10-30T18:25:42Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 280,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 896,
+      "pushed_at": "2026-10-30T21:43:16Z"
     },
     {
       "name": "BlueZ",
@@ -3906,7 +3924,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 121,
+      "issues_open": 125,
       "prs_open": 0,
       "releases": [
         {
@@ -3929,7 +3947,7 @@
         }
       ],
       "stars": 1170,
-      "pushed_at": "2026-10-29T21:59:28Z"
+      "pushed_at": "2026-10-30T23:16:18Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3940,9 +3958,15 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4727,
+      "issues_open": 4720,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "v4.3.2",
+          "name": "Zephyr 4.3.2",
+          "published_at": "2026-10-30T20:17:12Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.2"
+        },
         {
           "tag": "v4.5.0",
           "name": "Zephyr 4.5.0",
@@ -3954,31 +3978,10 @@
           "name": "Zephyr 4.4.2",
           "published_at": "2026-08-07T15:36:32Z",
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        },
-        {
-          "tag": "v3.7.3-rc1",
-          "name": "Zephyr LTS v3.7.3-rc1",
-          "published_at": "2026-08-06T00:38:42Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.7.3-rc1"
         }
       ],
-      "stars": 16958,
-      "pushed_at": "2026-10-30T13:18:48Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 278,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 896,
-      "pushed_at": "2026-10-30T08:44:36Z"
+      "stars": 16965,
+      "pushed_at": "2026-10-30T22:17:51Z"
     },
     {
       "name": "OpenThread",
@@ -3989,7 +3992,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 156,
+      "issues_open": 155,
       "prs_open": 0,
       "releases": [
         {
@@ -4011,23 +4014,8 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4055,
-      "pushed_at": "2026-10-29T14:43:32Z"
-    },
-    {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
-      "tech": [
-        "wifi"
-      ],
-      "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 253826,
-      "pushed_at": "2026-10-30T00:07:06Z"
+      "stars": 4057,
+      "pushed_at": "2026-10-31T00:53:10Z"
     },
     {
       "name": "Matter SDK",
@@ -4038,7 +4026,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2900,
+      "issues_open": 2897,
       "prs_open": 0,
       "releases": [
         {
@@ -4060,8 +4048,23 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8977,
-      "pushed_at": "2026-10-30T12:45:45Z"
+      "stars": 8978,
+      "pushed_at": "2026-10-31T07:55:30Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 253935,
+      "pushed_at": "2026-10-31T05:20:24Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4071,8 +4074,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 6,
-      "issues_open": 484,
+      "commits_30d": 3,
+      "issues_open": 489,
       "prs_open": 0,
       "releases": [
         {
@@ -4094,8 +4097,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15764,
-      "pushed_at": "2026-10-28T15:24:53Z"
+      "stars": 15766,
+      "pushed_at": "2026-10-30T14:35:21Z"
     },
     {
       "name": "hostap",
