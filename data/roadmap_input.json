@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T13:15:08Z",
+  "generated_at": "2026-11-01T14:15:59Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -1505,6 +1505,21 @@
       ],
       "press_releases": [
         {
+          "title": "MediaTek leads smartphone chip shipments with 31% market share in Q2 2026",
+          "date": "Nov 2026",
+          "url": "https://memeburn.com/smartphone-chipset-market-share-statistics-2026/"
+        },
+        {
+          "title": "MediaTek Q3 2026 revenue surges 18% driven by AI push",
+          "date": "Nov 2026",
+          "url": "https://www.investing.com/news/company-news/mediatek-q3-2026-slides-revenue-surges-18-ai-push-evident-93CH-4989448"
+        },
+        {
+          "title": "MediaTek tops Q3 2026 estimates",
+          "date": "Nov 2026",
+          "url": "https://in.investing.com/news/stock-market-news/earnings-call-transcript-mediatek-tops-q3-2026-estimates-as-stock-falls-93CH-5669780"
+        },
+        {
           "title": "MediaTek Dimensity 9600 Pro: Moving to 2nm with a Focus on Performance and Efficiency",
           "date": "Oct 2026",
           "url": "https://counterpointresearch.com/en/insights/mediatek-dimensity-9600-pro"
@@ -1538,21 +1553,6 @@
           "title": "MediaTek Reports TWD 152.18 Billion Q2 Revenue",
           "date": "Oct 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-stock-enters-october-with-twd-152-18-billion-q2-revenue/70225273"
-        },
-        {
-          "title": "MediaTek Releases MT7921 Wi-Fi Module IoT Yocto Documentation",
-          "date": "Oct 2026",
-          "url": "https://genio.mediatek.com/doc/iot-yocto/release/v25.1/sw/yocto/app-dev/Wi-Fi/Wi-Fi-Module-MT7921.html"
-        },
-        {
-          "title": "MediaTek Launches Flagship Dimensity 9600 Pro and 9600M 2nm SoCs in India",
-          "date": "Oct 2026",
-          "url": "https://www.gizbot.com/mobile/news/mediatek-dimensity-9600-pro-with-2nm-process-agentic-ai-announced-india-128971.html"
-        },
-        {
-          "title": "MediaTek Showcases Global Wi-Fi 8 Leadership with Filogic 8800 at Network X 2026",
-          "date": "Oct 2026",
-          "url": "https://www.prnewswire.com/news-releases/mediatek-showcases-global-wi-fi-8-leadership-with-filogic-8800-at-network-x-2026-302899495.html"
         }
       ],
       "events": [
@@ -3118,6 +3118,11 @@
           "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
         },
         {
+          "title": "Telink Announces Support for 8K Wireless Mouse and Keyboard Applications",
+          "date": "Oct 2026",
+          "url": "https://www.telink-semi.com/applications/wireless-gaming/wireless-gaming-mouse-keyboard"
+        },
+        {
           "title": "Telink Launches TL3225 Family of Wireless SoCs for Automotive",
           "date": "Aug 2026",
           "url": "https://www.electronicsforu.com/news/wireless-soc-for-comprehensive-in-vehicle-connectivity"
@@ -3141,11 +3146,6 @@
           "title": "Telink Joins Connectivity Standards Alliance Board",
           "date": "Jun 2026",
           "url": "https://csa-iot.org/newsroom/connectivity-standards-alliance-kicks-off-unify/"
-        },
-        {
-          "title": "Telink Unleashes Sub-Millisecond HID Performance with Bluetooth ULL SCI",
-          "date": "May 2026",
-          "url": "https://www.google.com/search?q=Telink+Unleashes+Sub-Millisecond+HID+Performance+with+Bluetooth+ULL+SCI+Telink"
         }
       ]
     },
@@ -3769,30 +3769,28 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 126,
+    "Qualcomm": 132,
     "NXP": 116,
-    "MediaTek": 40,
-    "Nordic": 27,
-    "TI": 24,
-    "Espressif": 14,
-    "Infineon": 8,
-    "Renesas": 7,
-    "Synaptics": 4,
-    "Silicon Labs": 3,
-    "STMicro": 3,
-    "Realtek": 3,
-    "Marvell": 3,
+    "MediaTek": 36,
+    "Nordic": 18,
+    "TI": 17,
+    "Espressif": 9,
+    "Infineon": 5,
+    "Renesas": 5,
     "HiSilicon": 3,
-    "Skyworks": 2,
+    "Broadcom": 3,
     "Apple": 2,
-    "Broadcom": 2,
-    "Microchip": 2,
-    "Goodix": 1,
+    "Silicon Labs": 2,
+    "Marvell": 2,
+    "STMicro": 2,
+    "Realtek": 2,
     "Onsemi": 1,
     "Murata": 1,
     "u-blox": 1,
+    "Skyworks": 1,
     "Telink": 1,
-    "Qorvo": 1
+    "Synaptics": 1,
+    "Microchip": 1
   },
   "standards_in_flight": [
     {
@@ -3875,7 +3873,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1781,
+      "issues_open": 1787,
       "prs_open": 0,
       "releases": [
         {
@@ -3897,7 +3895,7 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19392,
+      "stars": 19399,
       "pushed_at": "2026-10-30T18:25:42Z"
     },
     {
@@ -3909,11 +3907,11 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 280,
+      "issues_open": 276,
       "prs_open": 0,
       "releases": [],
       "stars": 896,
-      "pushed_at": "2026-10-30T21:43:16Z"
+      "pushed_at": "2026-10-31T23:52:05Z"
     },
     {
       "name": "BlueZ",
@@ -3924,7 +3922,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 125,
+      "issues_open": 126,
       "prs_open": 0,
       "releases": [
         {
@@ -3947,7 +3945,7 @@
         }
       ],
       "stars": 1170,
-      "pushed_at": "2026-10-30T23:16:18Z"
+      "pushed_at": "2026-10-31T21:59:23Z"
     },
     {
       "name": "Zephyr Bluetooth",
@@ -3958,7 +3956,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4720,
+      "issues_open": 4740,
       "prs_open": 0,
       "releases": [
         {
@@ -3980,7 +3978,7 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
         }
       ],
-      "stars": 16965,
+      "stars": 16973,
       "pushed_at": "2026-10-30T22:17:51Z"
     },
     {
@@ -3992,9 +3990,15 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 155,
+      "issues_open": 154,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "v2026.11.0",
+          "name": "OpenThread v2026.11.0",
+          "published_at": "2026-11-01T00:26:24Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.11.0"
+        },
         {
           "tag": "v2026.10.0",
           "name": "OpenThread v2026.10.0",
@@ -4006,16 +4010,10 @@
           "name": "OpenThread v2026.09.0",
           "published_at": "2026-09-01T00:41:55Z",
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.09.0"
-        },
-        {
-          "tag": "v2026.08.0",
-          "name": "OpenThread v2026.08.0",
-          "published_at": "2026-08-01T00:40:26Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.08.0"
         }
       ],
-      "stars": 4057,
-      "pushed_at": "2026-10-31T00:53:10Z"
+      "stars": 4058,
+      "pushed_at": "2026-11-01T00:26:24Z"
     },
     {
       "name": "Matter SDK",
@@ -4026,7 +4024,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2897,
+      "issues_open": 2901,
       "prs_open": 0,
       "releases": [
         {
@@ -4048,8 +4046,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8978,
-      "pushed_at": "2026-10-31T07:55:30Z"
+      "stars": 8980,
+      "pushed_at": "2026-11-01T11:13:05Z"
     },
     {
       "name": "Linux mac80211",
@@ -4063,8 +4061,8 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 253935,
-      "pushed_at": "2026-10-31T05:20:24Z"
+      "stars": 254032,
+      "pushed_at": "2026-10-31T22:11:18Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4074,10 +4072,16 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 3,
-      "issues_open": 489,
+      "commits_30d": 40,
+      "issues_open": 494,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "2.14.3",
+          "name": "2.14.3",
+          "published_at": "2026-11-01T06:40:40Z",
+          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.3"
+        },
         {
           "tag": "2.14.2",
           "name": "2.14.2",
@@ -4089,16 +4093,10 @@
           "name": "2.14.1",
           "published_at": "2026-09-03T19:03:02Z",
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.1"
-        },
-        {
-          "tag": "2.14.0",
-          "name": "2.14.0",
-          "published_at": "2026-09-01T18:00:36Z",
-          "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.0"
         }
       ],
-      "stars": 15766,
-      "pushed_at": "2026-10-30T14:35:21Z"
+      "stars": 15775,
+      "pushed_at": "2026-11-01T06:55:55Z"
     },
     {
       "name": "hostap",
