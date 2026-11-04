@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T14:14:48Z",
+  "generated_at": "2026-11-04T14:12:46Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -148,6 +148,11 @@
           "url": "https://www.everythingrf.com/news/details/22959-nordic-semiconductor-demonstrates-bluetooth-high-data-throughput-in-silicon-enabling-nearly-4x-faster-data-transfers"
         },
         {
+          "title": "Nordic Brings Edge AI to Battery-Powered Wi-Fi Devices with New nRF71 Series",
+          "date": "Nov 2026",
+          "url": "https://www.prnewswire.com/news-releases/nordic-brings-edge-ai-to-battery-powered-wi-fi-devices-achieving-twenty-times-lower-standby-power-with-new-nrf71-series-302926856.html"
+        },
+        {
           "title": "Nordic Semiconductor Rolls Out New Multiprotocol SoC for IoT",
           "date": "Oct 2026",
           "url": "https://www.allaboutcircuits.com/news/nordic-rolls-out-new-multiprotocol-soc-for-size-and-cost-effective-iot/"
@@ -171,11 +176,6 @@
           "title": "Nordic Semiconductor nRF54L15 Tag Prototyping Platform Available for Bluetooth Tracking and Edge AI",
           "date": "Oct 2026",
           "url": "https://www.sweetwaterreporter.com/online_features/press_releases/future-electronics-showcases-nordic-semiconductor-nrf54l15-tag-prototyping-platform-for-bluetooth-tracking-and-edge-ai/article_27f6b46d-e6bb-5d80-832e-0dcf34ffc518.html"
-        },
-        {
-          "title": "Minew Adopts Nordic nRF54L15 SoC for New Wearable Emergency Devices",
-          "date": "Oct 2026",
-          "url": "https://www.everythingrf.com/news/details/22823-minew-s-new-wearable-button-and-badge-uses-nordic-bluetooth-le-soc-for-reliable-emergency-response"
         }
       ],
       "events": [
@@ -715,19 +715,19 @@
           "url": "https://today.ucsd.edu/story/uc-san-diego-launches-ai-driven-chip-design-research-initiative-supported-by-qualcomm-technologies"
         },
         {
-          "title": "Qualcomm Renews Global Patent License Agreement with Apple, Effective April 2027",
-          "date": "Oct 2026",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-renewed-global-patent-150917138.html"
+          "title": "SpaceX Partners With Qualcomm to Accelerate Wireless Ambitions",
+          "date": "Nov 2026",
+          "url": "https://www.moomoo.com/news/post/1003505497/spacex-partners-with-qualcomm-to-accelerate-wireless-ambitions"
         },
         {
-          "title": "ASUS Announces New Ascent QN10 Mini PC Powered by Qualcomm Snapdragon X2 Elite",
-          "date": "Oct 2026",
-          "url": "https://www.tech-critter.com/asus-ascent-qn10-ai-mini-pc-launch/"
+          "title": "SpaceX Selects Qualcomm to Accelerate Starlink Mobile\u2019s Nationwide 5G Network",
+          "date": "Nov 2026",
+          "url": "https://www.qualcomm.com/news/releases/2026/11/spacex-selects-qualcomm-to-accelerate-starlink-mobile-s-nationwi"
         },
         {
-          "title": "Qualcomm Targets $5 Billion Data Centre Revenue in FY28",
-          "date": "Oct 2026",
-          "url": "https://www.cnbctv18.com/business/qualcomm-data-centre-revenue-target-5-billion-apple-revenue-decline-20003262.htm"
+          "title": "SpaceX picks Qualcomm chips for Starlink's U.S. 5G ground network",
+          "date": "Nov 2026",
+          "url": "https://www.streetinsider.com/Corporate+News/SpaceX+picks+Qualcomm+chips+for+Starlinks+U.S.+5G+ground+network/27286691.html"
         }
       ],
       "events": [
@@ -949,6 +949,11 @@
       ],
       "press_releases": [
         {
+          "title": "Silicon Labs Aliro Version 2.0.1 Release Notes",
+          "date": "Nov 2026",
+          "url": "https://docs.silabs.com/aliro/2.0.1/sisdk-aliro-release-notes/"
+        },
+        {
           "title": "Silicon Labs Unveils Simplicity AI SDK Beta, Expands AI Developer Platform, and Partners with Databricks for Edge AI",
           "date": "Oct 2026",
           "url": "https://www.prnewswire.com/news-releases/silicon-labs-expands-ai-developer-platform-to-simplify-iot-development-and-scale-edge-intelligence-302900358.html"
@@ -992,11 +997,6 @@
           "title": "Silicon Labs unveils AI development tools to accelerate Edge IoT innovation",
           "date": "Oct 2026",
           "url": "https://www.newelectronics.co.uk/content/news/silicon-labs-unveils-ai-development-tools-to-accelerate-edge-iot-innovation"
-        },
-        {
-          "title": "MediaTek, Sagemcom, HPE, Silicon Labs and Apple advance wireless and smart home technologies",
-          "date": "Oct 2026",
-          "url": "https://www.globalsources.com/sourcing-digest/mediatek-sagemcom-hpe-silicon-labs-and-apple-advance-wireless-and-smart-home-technologies/"
         }
       ],
       "events": [
@@ -1265,24 +1265,24 @@
           "url": "https://www.eqs-news.com/news/corporate/nordic-brings-edge-ai-to-battery-powered-wi-fi-devices-achieving-twenty-times-lower-standby-power-with-new-nrf71-series/8d59cf7a-f710-46d9-816a-4ac897eadbbe_en"
         },
         {
-          "title": "TI expands Zephyr RTOS support to its broad embedded portfolio",
-          "date": "Oct 2026",
-          "url": "https://www.electronicsmedia.info/2026/10/02/ti-zephyr-rtos-support/"
+          "title": "SpaceX Selects Qualcomm to Accelerate Starlink Mobile\u2019s Nationwide 5G Network",
+          "date": "Nov 2026",
+          "url": "https://www.qualcomm.com/news/releases/2026/11/spacex-selects-qualcomm-to-accelerate-starlink-mobile-s-nationwi"
         },
         {
-          "title": "TI Integrates Open-Source RTOS Zephyr Across Entire Embedded Portfolio",
-          "date": "Oct 2026",
-          "url": "https://finance.biggo.com/news/a2d96336-20de-4b22-aa85-b69a37b4117b"
+          "title": "Nordic Semiconductor Promises Ultra-Low-Power, Multi-Protocol Edge Smarts with the New nRF71 Series",
+          "date": "Nov 2026",
+          "url": "https://www.hackster.io/news/nordic-semiconductor-promises-ultra-low-power-multi-protocol-edge-smarts-with-the-new-nrf71-series-6661e460e668"
         },
         {
-          "title": "TI expands Zephyr support to unify embedded development across chips",
-          "date": "Oct 2026",
-          "url": "https://biz.chosun.com/en/en-it/2026/10/02/SM4NPHXWDJAH3FPGJLJ72UV2XY/"
+          "title": "Qualcomm, MediaTek step up edge AI push as computing needs grow",
+          "date": "Nov 2026",
+          "url": "https://www.taiwannews.com.tw/en/news/6471862"
         },
         {
-          "title": "Texas Instruments to webcast Q3 2026 earnings conference call",
-          "date": "Oct 2026",
-          "url": "https://investingnews.com/texas-instruments-to-webcast-q3-2026-earnings-conference-call/"
+          "title": "STMicroelectronics sharpens agentic-AI coding with new STM32 tools",
+          "date": "Nov 2026",
+          "url": "https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-sharpens-agentic-ai-coding-with-new-stm32-tools-n4799.html"
         }
       ],
       "events": [
@@ -1773,6 +1773,11 @@
           "url": "https://linuxgizmos.com/risc-v-compute-module-brings-esp32-p4-to-raspberry-pi-cm4-cm5-carriers/"
         },
         {
+          "title": "$21 ESP32-P4X and ESP32-C61 full-featured board offers Ethernet, WiFi 6, RS485 CAN Bus, MIPI CSI/DSI, and more",
+          "date": "Nov 2026",
+          "url": "https://www.cnx-software.com/2026/11/04/21-esp32-p4x-and-esp32-c61-full-featured-board-offers-ethernet-wifi-6-rs485-can-bus-mipi-csi-dsi-and-more/"
+        },
+        {
           "title": "Build Smart Projects with the XIAO ESP32-C3 Board Using MicroPython",
           "date": "Oct 2026",
           "url": "https://www.eenewseurope.com/en/build-smart-projects-with-the-xiao-esp32-c3-board-using-micropython/"
@@ -1811,11 +1816,6 @@
           "title": "Waveshare Launches ESP32-C5 Board with Wi-Fi 6, Thread, and Zigbee Support",
           "date": "Oct 2026",
           "url": "https://inews.zoombangla.com/waveshare-esp32-c5-board-wifi-6-thread-zigbee/"
-        },
-        {
-          "title": "ESP-SDR Firmware Transforms ESP32 into a 2.4/5 GHz Software-Defined Radio",
-          "date": "Oct 2026",
-          "url": "https://www.cnx-software.com/2026/10/04/esp-sdr-firmware-turns-esp32-into-a-2-4-5-ghz-software-defined-radio-sdr/"
         }
       ],
       "events": [
@@ -2046,6 +2046,21 @@
       ],
       "press_releases": [
         {
+          "title": "STMicroelectronics Unveils STM32A, Edge AI Chips for Automotive and Robotics",
+          "date": "Nov 2026",
+          "url": "https://www.tradingview.com/news/marketbeat:727da0e02094b:0-stmicroelectronics-unveils-stm32a-edge-ai-chips-for-automotive-and-robotics/"
+        },
+        {
+          "title": "STMicroelectronics sharpens agentic-AI coding with new STM32 tools",
+          "date": "Nov 2026",
+          "url": "https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-sharpens-agentic-ai-coding-with-new-stm32-tools-n4799.html"
+        },
+        {
+          "title": "STMicroelectronics reveals advanced microcontrollers for real-time power control in AI datacenters and robotics",
+          "date": "Nov 2026",
+          "url": "https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-reveals-advanced-microcontrollers-for-real-time-power-control-in-ai-datacenters-and-robotics-p4797.html"
+        },
+        {
           "title": "RFOXiA Selects STMicroelectronics' STM32 for New Long-Range Bluetooth LE Module",
           "date": "Oct 2026",
           "url": "https://www.hackster.io/news/rfoxia-picks-stmicroelectronics-stm32-to-build-a-long-range-mesh-capable-bluetooth-le-module-16dfff47e78f"
@@ -2079,21 +2094,6 @@
           "title": "STMicroelectronics to Propose the Reappointment of Jean-Marc Chery as President & CEO",
           "date": "Oct 2026",
           "url": "https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-to-propose-the-reappointment-of-jean-marc-chery-as-president-ceo-c3416.html"
-        },
-        {
-          "title": "RFOXiA Picks STMicroelectronics' STM32 to Build a Long-Range Bluetooth LE Module",
-          "date": "Oct 2026",
-          "url": "https://www.hackster.io/news/rfoxia-picks-stmicroelectronics-stm32-to-build-a-long-range-bluetooth-le-module-16dfff47e78f"
-        },
-        {
-          "title": "STMicroelectronics Launches High-Accuracy Two-in-One Altitude and Underwater Depth Sensor",
-          "date": "Oct 2026",
-          "url": "https://www.eejournal.com/industry_news/stmicroelectronics-reveals-high-accuracy-two-in-one-altitude-and-underwater-depth-sensor-for-wearables-and-sports-cameras/"
-        },
-        {
-          "title": "STMicroelectronics Simplifies Authentication of Matter Smart-Home Devices with ST MatterConnect Personalization Service",
-          "date": "Oct 2026",
-          "url": "https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-simplifies-authentication-of-matter-smart-home-devices-with-st-matterconnect-personalization-service-n4795.html"
         }
       ],
       "events": [
@@ -2321,6 +2321,11 @@
       ],
       "press_releases": [
         {
+          "title": "Renesas Debuts Flagship RX MCUs on 22 nm Process With Embedded MRAM",
+          "date": "Nov 2026",
+          "url": "https://www.allaboutcircuits.com/news/renesas-debuts-flagship-rx-mcus-on-22-nm-process-with-embedded-mram/"
+        },
+        {
           "title": "Renesas Unveils 650V GaN Package for AI Data Centers",
           "date": "Oct 2026",
           "url": "https://timestech.in/renesas-unveils-650v-gan-package-for-ai-data-centers/"
@@ -2364,11 +2369,6 @@
           "title": "Renesas Introduces RZ/N2L-RSK, a Renesas Starter Kit+ for RZ/N2L",
           "date": "Oct 2026",
           "url": "https://www.renesas.com/en/design-resources/boards-kits/rz-n2l-rsk?stPage=1&tab=documentation&page=2&type%5B0%5D=Tool%20News"
-        },
-        {
-          "title": "Renesas Releases DA14531MOD, a SmartBond TINY Bluetooth Low Energy Module",
-          "date": "Oct 2026",
-          "url": "https://www.renesas.com/en/products/da14531mod?stPage=3&tab=documentation&page=4&type%5B0%5D=Application%20Notes%20%26%20White%20Papers&type%5B1%5D=Release%20Note"
         }
       ],
       "events": [
@@ -2845,6 +2845,11 @@
       ],
       "press_releases": [
         {
+          "title": "Marvell to Buy Lumentum for $115 Billion, Taking On Broadcom in Optical Networking",
+          "date": "Nov 2026",
+          "url": "https://finance.biggo.com/news/fa26673e-6eac-4fc6-b34d-07c461eca9f5"
+        },
+        {
           "title": "Broadcom: Rapid Revenue Acceleration",
           "date": "Oct 2026",
           "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-vs-qualcomm-rapid-growth-172002013.html"
@@ -2888,11 +2893,6 @@
           "title": "VMware Explore 2026: Broadcom Solves AI Server DRAM Crisis With NVMe Memory Tiering",
           "date": "Sep 2026",
           "url": "https://www.techtimes.com/articles/326208/20260901/vmware-explore-2026-broadcom-solves-ai-server-dram-crisis-nvme-memory-tiering.htm"
-        },
-        {
-          "title": "VMware Explore 2026: Broadcom Announces VMware AI Factory, Enabling Faster Time to Production AI and Greater Control Over AI Tokenomics",
-          "date": "Sep 2026",
-          "url": "https://www.storagenewsletter.com/2026/09/01/vmware-explore-2026-broadcom-announces-vmware-ai-factory-enabling-faster-time-to-production-ai-and-greater-control-over-ai-tokenomics/"
         }
       ]
     },
@@ -2952,6 +2952,21 @@
           "url": "https://www.everythingrf.com/news/details/22953-u-blox-introduces-its-latest-flagship-gnss-timing-module-with-advanced-security-multi-band-support"
         },
         {
+          "title": "u-blox Introduces Compact Wi-Fi 6/6E Module Series for Ultra-Low-Power IoT Applications",
+          "date": "Nov 2026",
+          "url": "https://www.everythingrf.com/news/details/22976-u-blox-introduces-compact-wi-fi-6-6e-module-series-for-ultra-low-power-iot-applications"
+        },
+        {
+          "title": "u-blox Launches ALMA-W1 Ultra-Low-Power Wi-Fi 6/6E Module Series for IoT",
+          "date": "Nov 2026",
+          "url": "https://www.citybuzz.co/2026/11/03/u-blox-launches-alma-w1-ultra-low-power-wi-fi-66e-module-series-for-iot/"
+        },
+        {
+          "title": "u-blox Introduces the ALMA-W1, a Compact Ultra-Low Power Wi-Fi 6/6E Module Series for IoT Devices",
+          "date": "Nov 2026",
+          "url": "https://www.tradingview.com/news/eqs:dd54360f1094b:0-u-blox-introduces-the-alma-w1-a-compact-ultra-low-power-wi-fi-6-6e-module-series-for-iot-devices/"
+        },
+        {
           "title": "u-blox to Debut New Product Line at electronica 2026",
           "date": "Oct 2026",
           "url": "https://embeddedcomputing.com/application/industrial/industrial-computing/u-blox-to-debut-new-product-line-at-electronica-2026"
@@ -2965,21 +2980,6 @@
           "title": "u-blox NORA-W40 Wi-Fi 6 Modules Now Available at Mouser",
           "date": "Aug 2026",
           "url": "https://www.electronicdesign.com/directory/radio/modules/press-release/55395816/mouser-u-blox-nora-w40-wi-fi-6-modules-now-at-mouser-offer-advanced-network-efficiency-range-and-low-power-consumption"
-        },
-        {
-          "title": "u-blox Launches Tri-radio Module for IoT Implementations",
-          "date": "Aug 2026",
-          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-launches-tri-radio-module-that-delivers-the-latest-wireless-technologies-for-iot-implementation-941502"
-        },
-        {
-          "title": "u-blox Launches Tri-radio Module for IoT",
-          "date": "Aug 2026",
-          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-launches-tri-radio-module-that-delivers-the-latest-wireless-technologies-for-iot-implementation-941502"
-        },
-        {
-          "title": "u-blox Secures Significant Project Wins in the Robotic Lawnmower Market With its High-Precision Positioning Technology",
-          "date": "Aug 2026",
-          "url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/u-blox-secures-significant-project-wins-in-the-robotic-lawnmower-market-with-its-high-precision-positi-856456"
         }
       ]
     },
@@ -3256,6 +3256,16 @@
           "url": "https://finance.biggo.com/news/TW_6526.TW_2026-11-03"
         },
         {
+          "title": "Airoha Teams Up with BE Epitaxy to Expand Optical Communications Business",
+          "date": "Nov 2026",
+          "url": "https://finance.biggo.com/news/bdc03f4b-3a73-471e-b8ef-c554f0683c66"
+        },
+        {
+          "title": "Airoha Reports Record High Q3 FY2026 Revenue of NT$6.94 Billion, EPS NT$6.15",
+          "date": "Nov 2026",
+          "url": "https://finance.biggo.com/news/TW_6526.TW_2026-11-03"
+        },
+        {
           "title": "MediaTek and Airoha Partner to Accelerate Global Network Infrastructure Upgrades for AI Era",
           "date": "Oct 2026",
           "url": "https://www.prnewswire.com/news-releases/mediatek-and-airoha-accelerate-global-network-infrastructure-upgrades-for-the-ai-era-302898111.html"
@@ -3284,16 +3294,6 @@
           "title": "MediaTek and Airoha Announce Strategic Partnership to Advance AI-Era Network Infrastructure",
           "date": "Oct 2026",
           "url": "https://www.airoha.com/news/p/FQBbN9aMgQKWEreL"
-        },
-        {
-          "title": "Airoha Technology Corp. Showcases Wi-Fi, 5G CPE and PON Platforms at Network X 2026",
-          "date": "Oct 2026",
-          "url": "https://www.airoha.com/group-news/WzTfPxLCiCSBrdJ4"
-        },
-        {
-          "title": "MediaTek and Airoha Partner to Accelerate Global Network Infrastructure Upgrades for the AI Era",
-          "date": "Oct 2026",
-          "url": "https://www.airoha.com/group-news/WzTfPxLCiCSBrdJ4"
         }
       ]
     },
@@ -3500,6 +3500,16 @@
           "url": "https://www.newelectronics.co.uk/content/news/onsemi-completes-purchase-of-codasip-s-entry-level-risc-v-processor-business"
         },
         {
+          "title": "onsemi to Acquire Ferric, Establishing Leadership in Power Delivery for Next-Generation AI Processors",
+          "date": "Nov 2026",
+          "url": "https://www.onsemi.com/company/news-media/press-announcements/en/onsemi-to-acquire-ferric-establishing-leadership-in-power-delivery-for-next-generation-ai-processors"
+        },
+        {
+          "title": "onsemi Reports Third Quarter 2026 Results",
+          "date": "Nov 2026",
+          "url": "https://investor.onsemi.com/news-releases/news-release-details/onsemi-reports-third-quarter-2026-results/"
+        },
+        {
           "title": "onsemi and Synaptics Announce Revised Merger Agreement",
           "date": "Oct 2026",
           "url": "https://www.onsemi.com/company/newsroom/news-and-insights/onsemi-and-synaptics-announce-revised-merger-agreement"
@@ -3523,16 +3533,6 @@
           "title": "Onsemi and Sungrow Partner to Advance Utility-Scale Energy Storage with SiC Hybrid Technology",
           "date": "Oct 2026",
           "url": "https://www.marketscreener.com/news/onsemi-and-sungrow-advance-utility-scale-energy-storage-performance-with-sic-hybrid-technology-ce785dd2dd8df52d"
-        },
-        {
-          "title": "onsemi and Sungrow Advance Utility-Scale Energy Storage Performance with SiC Hybrid Technology",
-          "date": "Oct 2026",
-          "url": "https://finance.biggo.com/news/ir_ON_20261014_993ed8132e08"
-        },
-        {
-          "title": "Onsemi AR2020 Powers Vadzo Imaging's New Innowave-2020CRS Camera",
-          "date": "Oct 2026",
-          "url": "https://finance.yahoo.com/technology/articles/vadzo-imaging-introduces-innowave-2020crs-160000584.html"
         }
       ]
     },
@@ -3769,31 +3769,26 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 128,
-    "NXP": 114,
-    "MediaTek": 48,
-    "Marvell": 17,
-    "Nordic": 15,
-    "TI": 15,
-    "Broadcom": 13,
-    "Espressif": 11,
-    "Onsemi": 6,
-    "HiSilicon": 4,
+    "Qualcomm": 122,
+    "NXP": 90,
+    "MediaTek": 51,
+    "Nordic": 18,
+    "Marvell": 18,
+    "TI": 12,
+    "Espressif": 10,
+    "u-blox": 7,
+    "Silicon Labs": 6,
+    "STMicro": 5,
+    "Onsemi": 5,
     "Infineon": 4,
+    "Renesas": 3,
     "Airoha": 3,
-    "u-blox": 3,
-    "Silicon Labs": 3,
-    "STMicro": 3,
-    "Lattice": 2,
     "Skyworks": 2,
-    "Murata": 2,
-    "Renesas": 2,
-    "Synaptics": 2,
-    "Sequans": 1,
-    "Quectel": 1,
-    "Apple": 1,
-    "Realtek": 1,
-    "Telink": 1
+    "Broadcom": 2,
+    "Quectel": 2,
+    "Apple": 2,
+    "Murata": 1,
+    "HiSilicon": 1
   },
   "standards_in_flight": [
     {
@@ -3866,6 +3861,42 @@
   ],
   "github_stack_activity": [
     {
+      "name": "ESP-IDF",
+      "owner": "espressif",
+      "repo": "esp-idf",
+      "label": "Espressif Wi-Fi/BT/Thread SDK",
+      "tech": [
+        "wifi",
+        "bluetooth",
+        "ieee15_4"
+      ],
+      "commits_30d": 100,
+      "issues_open": 1785,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v5.5.6",
+          "name": "ESP-IDF Release v5.5.6",
+          "published_at": "2026-10-16T14:32:14Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
+        },
+        {
+          "tag": "v5.3.6",
+          "name": "ESP-IDF Release v5.3.6",
+          "published_at": "2026-09-15T12:37:29Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
+        },
+        {
+          "tag": "v5.2.8",
+          "name": "ESP-IDF Release v5.2.8",
+          "published_at": "2026-09-11T10:45:34Z",
+          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
+        }
+      ],
+      "stars": 19423,
+      "pushed_at": "2026-11-04T11:27:42Z"
+    },
+    {
       "name": "Zephyr Bluetooth",
       "owner": "zephyrproject-rtos",
       "repo": "zephyr",
@@ -3874,7 +3905,7 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 4764,
+      "issues_open": 4765,
       "prs_open": 0,
       "releases": [
         {
@@ -3896,8 +3927,23 @@
           "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
         }
       ],
-      "stars": 16984,
-      "pushed_at": "2026-11-03T11:29:01Z"
+      "stars": 16989,
+      "pushed_at": "2026-11-04T12:59:12Z"
+    },
+    {
+      "name": "NimBLE",
+      "owner": "apache",
+      "repo": "mynewt-nimble",
+      "label": "Apache NimBLE BT host/ctlr",
+      "tech": [
+        "bluetooth"
+      ],
+      "commits_30d": 100,
+      "issues_open": 276,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 896,
+      "pushed_at": "2026-11-04T14:01:12Z"
     },
     {
       "name": "BlueZ",
@@ -3930,93 +3976,8 @@
           "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1171,
-      "pushed_at": "2026-11-03T07:58:40Z"
-    },
-    {
-      "name": "ESP-IDF",
-      "owner": "espressif",
-      "repo": "esp-idf",
-      "label": "Espressif Wi-Fi/BT/Thread SDK",
-      "tech": [
-        "wifi",
-        "bluetooth",
-        "ieee15_4"
-      ],
-      "commits_30d": 100,
-      "issues_open": 1782,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v5.5.6",
-          "name": "ESP-IDF Release v5.5.6",
-          "published_at": "2026-10-16T14:32:14Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.5.6"
-        },
-        {
-          "tag": "v5.3.6",
-          "name": "ESP-IDF Release v5.3.6",
-          "published_at": "2026-09-15T12:37:29Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.3.6"
-        },
-        {
-          "tag": "v5.2.8",
-          "name": "ESP-IDF Release v5.2.8",
-          "published_at": "2026-09-11T10:45:34Z",
-          "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
-        }
-      ],
-      "stars": 19413,
-      "pushed_at": "2026-11-03T04:18:19Z"
-    },
-    {
-      "name": "NimBLE",
-      "owner": "apache",
-      "repo": "mynewt-nimble",
-      "label": "Apache NimBLE BT host/ctlr",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 271,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 896,
-      "pushed_at": "2026-11-02T23:17:53Z"
-    },
-    {
-      "name": "OpenThread",
-      "owner": "openthread",
-      "repo": "openthread",
-      "label": "Google Thread implementation",
-      "tech": [
-        "thread"
-      ],
-      "commits_30d": 100,
-      "issues_open": 163,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v2026.11.0",
-          "name": "OpenThread v2026.11.0",
-          "published_at": "2026-11-01T00:26:24Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.11.0"
-        },
-        {
-          "tag": "v2026.10.0",
-          "name": "OpenThread v2026.10.0",
-          "published_at": "2026-10-01T00:43:38Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.10.0"
-        },
-        {
-          "tag": "v2026.09.0",
-          "name": "OpenThread v2026.09.0",
-          "published_at": "2026-09-01T00:41:55Z",
-          "url": "https://github.com/openthread/openthread/releases/tag/v2026.09.0"
-        }
-      ],
-      "stars": 4058,
-      "pushed_at": "2026-11-03T04:55:27Z"
+      "stars": 1175,
+      "pushed_at": "2026-11-04T08:00:57Z"
     },
     {
       "name": "Matter SDK",
@@ -4027,7 +3988,7 @@
         "matter"
       ],
       "commits_30d": 100,
-      "issues_open": 2902,
+      "issues_open": 2901,
       "prs_open": 0,
       "releases": [
         {
@@ -4049,8 +4010,8 @@
           "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
         }
       ],
-      "stars": 8981,
-      "pushed_at": "2026-11-03T14:00:27Z"
+      "stars": 8982,
+      "pushed_at": "2026-11-04T14:07:50Z"
     },
     {
       "name": "Linux mac80211",
@@ -4064,8 +4025,42 @@
       "issues_open": 3,
       "prs_open": 0,
       "releases": [],
-      "stars": 254244,
-      "pushed_at": "2026-11-01T22:34:12Z"
+      "stars": 254362,
+      "pushed_at": "2026-11-03T16:50:49Z"
+    },
+    {
+      "name": "OpenThread",
+      "owner": "openthread",
+      "repo": "openthread",
+      "label": "Google Thread implementation",
+      "tech": [
+        "thread"
+      ],
+      "commits_30d": 100,
+      "issues_open": 146,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v2026.11.0",
+          "name": "OpenThread v2026.11.0",
+          "published_at": "2026-11-01T00:26:24Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.11.0"
+        },
+        {
+          "tag": "v2026.10.0",
+          "name": "OpenThread v2026.10.0",
+          "published_at": "2026-10-01T00:43:38Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.10.0"
+        },
+        {
+          "tag": "v2026.09.0",
+          "name": "OpenThread v2026.09.0",
+          "published_at": "2026-09-01T00:41:55Z",
+          "url": "https://github.com/openthread/openthread/releases/tag/v2026.09.0"
+        }
+      ],
+      "stars": 4059,
+      "pushed_at": "2026-11-04T00:38:36Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4076,7 +4071,7 @@
         "ieee15_4"
       ],
       "commits_30d": 38,
-      "issues_open": 509,
+      "issues_open": 494,
       "prs_open": 0,
       "releases": [
         {
@@ -4098,8 +4093,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.1"
         }
       ],
-      "stars": 15785,
-      "pushed_at": "2026-11-01T06:55:55Z"
+      "stars": 15787,
+      "pushed_at": "2026-11-03T22:36:10Z"
     },
     {
       "name": "hostap",
