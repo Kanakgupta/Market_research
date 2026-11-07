@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T14:15:44Z",
+  "generated_at": "2026-11-07T14:16:12Z",
   "instructions_for_llm": "You are a chip product strategist for Infineon AIROC. Given the current AIROC SKUs, the competitor matrix (strengths/weaknesses vs AIROC), in-flight standards, customer roadmap signals, recent news momentum, and GitHub stack activity, produce a JSON with: feature_gaps (list of {gap, evidence:[urls/notes], priority: 'high|med|low', target_horizon}), sku_recommendations (list of {sku_concept, target_apps, key_features, competitive_response_to:[vendors]}), software_priorities (list of {area, justification, target_horizon}), partnership_targets (list of {partner, rationale}), risks (list of {risk, mitigation}). Be concrete and tie each item to evidence. Save result to data/roadmap_output.json.",
   "airoc_anchor": {
     "vendor": "Infineon",
@@ -158,6 +158,16 @@
           "url": "https://www.prnewswire.com/news-releases/nordic-brings-edge-ai-to-battery-powered-wi-fi-devices-achieving-twenty-times-lower-standby-power-with-new-nrf71-series-302926856.html"
         },
         {
+          "title": "Nordic Semiconductor Launches nRF71 Series SoCs for Low-Power Wi-Fi and Edge AI",
+          "date": "Nov 2026",
+          "url": "https://www.embedded.com/nordic-launches-nrf71-socs-for-low-power-wi-fi-and-edge-ai/"
+        },
+        {
+          "title": "Nordic Semiconductor Combines Wi-Fi and Edge AI in nRF71 Chips",
+          "date": "Nov 2026",
+          "url": "https://www.unite.ai/nordic-semiconductor-combines-wi-fi-and-edge-ai-in-nrf71-chips/"
+        },
+        {
           "title": "Nordic Semiconductor Rolls Out New Multiprotocol SoC for IoT",
           "date": "Oct 2026",
           "url": "https://www.allaboutcircuits.com/news/nordic-rolls-out-new-multiprotocol-soc-for-size-and-cost-effective-iot/"
@@ -166,16 +176,6 @@
           "title": "Nordic Semiconductor Launches New Multiprotocol SoC for IoT",
           "date": "Oct 2026",
           "url": "https://www.allaboutcircuits.com/news/nordic-rolls-out-new-multiprotocol-soc-for-size-and-cost-effective-iot/"
-        },
-        {
-          "title": "Nordic Rolls Out New Multiprotocol SoC for Size- and Cost-Effective IoT",
-          "date": "Oct 2026",
-          "url": "https://www.allaboutcircuits.com/news/nordic-rolls-out-new-multiprotocol-soc-for-size-and-cost-effective-iot/"
-        },
-        {
-          "title": "Nordic Expands nRF54L Series with Multiprotocol Chip for IoT Devices",
-          "date": "Oct 2026",
-          "url": "https://www.eetindia.co.in/nordic-expands-nrf54l-series-with-multiprotocol-chip-for-iot-devices/"
         }
       ],
       "events": [
@@ -428,6 +428,26 @@
           "url": "https://www.eejournal.com/chalk_talks/why-mcx-c15-c16-will-impact-your-next-project-nxp-and-mouser-electronics/"
         },
         {
+          "title": "NXP FRDM-MCXW72 Development Board Now Shipping from Mouser",
+          "date": "Nov 2026",
+          "url": "https://www.electronicdesign.com/directory/communication/wireless/press-release/55416919/nxp-semiconductors-frdm-mcxw72-development-board-now-shipping-from-mouser-accelerates-development-of-secure-multiprotocol-wireless-applications"
+        },
+        {
+          "title": "NXP MCX W70 and KW43 Wireless MCUs Support Bluetooth Channel Sounding",
+          "date": "Nov 2026",
+          "url": "https://www.cnx-software.com/2026/11/05/nxp-mcx-w70-and-kw43-wireless-mcus-support-bluetooth-channel-sounding-for-iot-and-automotive-applications/"
+        },
+        {
+          "title": "NXP Expands Embedded Vision Portfolio with i.MX 952",
+          "date": "Nov 2026",
+          "url": "https://www.techinsights.com/blog/nxp-expands-embedded-vision-portfolio-imx-952"
+        },
+        {
+          "title": "NXP Introduces MCX-C15/C16 Microcontrollers",
+          "date": "Nov 2026",
+          "url": "https://www.eejournal.com/chalk_talks/why-mcx-c15-c16-will-impact-your-next-project-nxp-and-mouser-electronics/"
+        },
+        {
           "title": "NXP Brings the i.MX RT1186 \"Crossover MCU\" to Its FRDM Platform for Easy Industrial Automation",
           "date": "Oct 2026",
           "url": "https://www.hackster.io/news/nxp-brings-the-i-mx-rt1186-crossover-mcu-to-its-frdm-platform-for-easy-industrial-automation-6bfe87a2c761"
@@ -436,26 +456,6 @@
           "title": "NXP-backed VSMC opens Singapore fab",
           "date": "Oct 2026",
           "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-backed-vsmc-opens-singapore-fab-what-it-means-for-nxp-semiconductors-stock/70219935"
-        },
-        {
-          "title": "NXP Brings i.MX RT1186 Crossover MCU to FRDM Platform for Industrial Automation",
-          "date": "Oct 2026",
-          "url": "https://www.hackster.io/news/nxp-brings-the-i-mx-rt1186-crossover-mcu-to-its-frdm-platform-for-easy-industrial-automation-6bfe87a2c761"
-        },
-        {
-          "title": "NXP Semiconductors Announces Conference Call to Review Third Quarter 2026 Financial Results",
-          "date": "Oct 2026",
-          "url": "https://www.manilatimes.net/2026/10/06/tmt-newswire/globenewswire/nxp-semiconductors-announces-conference-call-to-review-third-quarter-2026-financial-results/2439943"
-        },
-        {
-          "title": "Mouser Now Shipping New NXP Semiconductors Ara240 Discrete Neural Processing Unit for AI, Edge, Industrial, and Robotics Applications",
-          "date": "Oct 2026",
-          "url": "https://www.electronicdesign.com/directory/digital/ai-ml-accelerators/press-release/55409825/mouser-now-shipping-new-nxp-semiconductors-ara240-discrete-neural-processing-unit-for-ai-edge-industrial-and-robotics-applications"
-        },
-        {
-          "title": "NXP Semiconductors reports VSMC fab opening",
-          "date": "Oct 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/nxp-semiconductors-reports-vsmc-fab-opening-nxp-semiconductors-stock-sits-at-eur-216-53/70226569"
         }
       ],
       "events": [
@@ -1525,34 +1525,34 @@
           "url": "https://telecomlead.com/smart-phone/mediatek-q3-2026-revenue-rises-18-3-to-nt168-billion-ai-chip-sales-target-16-billion-in-2027-128491"
         },
         {
+          "title": "MediaTek and Ericsson Achieve World\u2019s First Successful Multi-vendor Pre-6G Joint Field Trial with T-Mobile US",
+          "date": "Nov 2026",
+          "url": "https://www.mediatek.com/press-room/mediatek-and-ericsson-achieve-worlds-first-successful-multi-vendor-pre-6g-joint-field-trial-with-t-mobile-us"
+        },
+        {
+          "title": "MediaTek Confirms Second Custom AI-Chip Customer, Expands Into Rack Solutions",
+          "date": "Nov 2026",
+          "url": "https://www.morningstar.com/company-reports/1507354-mediatek-confirms-second-custom-ai-chip-customer-expands-into-rack-solutions"
+        },
+        {
+          "title": "MediaTek Expects $2.5B of AI Accelerator Revenue in Q4",
+          "date": "Nov 2026",
+          "url": "https://fourweekmba.com/ai-mediatek-expects-2-5b-of-ai-accelerator-revenue-in-q4/"
+        },
+        {
+          "title": "MediaTek Forecasts $2.5 Billion in Q4 AI Accelerator Revenue",
+          "date": "Nov 2026",
+          "url": "https://www.marketscreener.com/news/mediatek-forecasts-2-5-billion-in-q4-ai-accelerator-revenue-ce785fd8dd80f120"
+        },
+        {
+          "title": "MediaTek reports strong Q3 growth, confirms second AI ASIC customer",
+          "date": "Nov 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/mediatek-reports-strong-q3-growth-confirms-second-ai-asic-customer"
+        },
+        {
           "title": "MediaTek Dimensity 9600 Pro: Moving to 2nm with a Focus on Performance and Efficiency",
           "date": "Oct 2026",
           "url": "https://counterpointresearch.com/en/insights/mediatek-dimensity-9600-pro"
-        },
-        {
-          "title": "MediaTek announces Dimensity 9600 Pro: what it means for MediaTek stock",
-          "date": "Oct 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-announces-dimensity-9600-pro-what-it-means-for-mediatek-stock/70219995"
-        },
-        {
-          "title": "MediaTek unveils 2nm chip: what it means for MediaTek stock",
-          "date": "Oct 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-unveils-2nm-chip-what-it-means-for-mediatek-stock/70215856"
-        },
-        {
-          "title": "MediaTek Announces Dimensity 9600 Pro",
-          "date": "Oct 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-announces-dimensity-9600-pro-what-it-means-for-mediatek-stock/70219995"
-        },
-        {
-          "title": "MediaTek stock enters October with TWD 152.18 billion Q2 revenue",
-          "date": "Oct 2026",
-          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/mediatek-stock-enters-october-with-twd-152-18-billion-q2-revenue/70225273"
-        },
-        {
-          "title": "MediaTek and Airoha Partner to Accelerate Global Network Infrastructure Upgrades for the AI Era",
-          "date": "Oct 2026",
-          "url": "https://www.prnewswire.com/news-releases/mediatek-and-airoha-accelerate-global-network-infrastructure-upgrades-for-the-ai-era-302898111.html"
         }
       ],
       "events": [
@@ -1783,6 +1783,31 @@
           "url": "https://www.cnx-software.com/2026/11/04/21-esp32-p4x-and-esp32-c61-full-featured-board-offers-ethernet-wifi-6-rs485-can-bus-mipi-csi-dsi-and-more/"
         },
         {
+          "title": "ESP32-P4 development boards combine RISC-V with Wi-Fi 6 or PoE",
+          "date": "Nov 2026",
+          "url": "https://linuxgizmos.com/esp32-p4-development-boards-combine-risc-v-with-wi-fi-6-or-poe/"
+        },
+        {
+          "title": "Waveshare ESP32-S31-Zero \u2013 A tiny ESP32-S31 board with up to 32MB PSRAM, 32MB SPI flash",
+          "date": "Nov 2026",
+          "url": "https://www.cnx-software.com/2026/11/07/waveshare-esp32-s31-zero-a-tiny-esp32-s31-board-with-up-to-32mb-psram-32mb-spi-flash/"
+        },
+        {
+          "title": "Olimex UEXT-CH390 SPI to Ethernet module targets Raspberry Pi and ESP32 MCU boards running ESPHome",
+          "date": "Nov 2026",
+          "url": "https://www.cnx-software.com/2026/11/06/olimex-uext-ch390-spi-to-ethernet-module-targets-raspberry-pi-and-esp32-mcu-boards-running-esphome/"
+        },
+        {
+          "title": "Olimex's UEXT-CH390 Brings Wired Ethernet to Raspberry Pi RP2040, RP2350, and Espressif ESP32 Boards",
+          "date": "Nov 2026",
+          "url": "https://www.hackster.io/news/olimex-s-uext-ch390-brings-wired-ethernet-to-raspberry-pi-rp2040-rp2350-and-espressif-esp32-boards-c56db23260c0"
+        },
+        {
+          "title": "P4 Launcher offers a PC-like and retro gaming experience on ESP32-P4 boards",
+          "date": "Nov 2026",
+          "url": "https://www.cnx-software.com/2026/11/05/p4-launcher-offers-a-pc-like-and-retro-gaming-experience-on-esp32-p4-boards/"
+        },
+        {
           "title": "Build Smart Projects with the XIAO ESP32-C3 Board Using MicroPython",
           "date": "Oct 2026",
           "url": "https://www.eenewseurope.com/en/build-smart-projects-with-the-xiao-esp32-c3-board-using-micropython/"
@@ -1791,31 +1816,6 @@
           "title": "LakeShark firmware turns LilyGO T-Display P4 into a handheld ESP32-P4 SDR scanner",
           "date": "Oct 2026",
           "url": "https://www.cnx-software.com/2026/10/01/lakeshark-firmware-turns-lilygo-t-display-p4-into-a-handheld-esp32-p4-sdr-scanner/"
-        },
-        {
-          "title": "ESP32-C5 devkit features 3.5-inch touch LCD, optional camera and battery",
-          "date": "Oct 2026",
-          "url": "https://www.cnx-software.com/2026/09/30/esp32-c5-devkit-features-3-5-inch-touch-lcd-optional-camera-and-battery/"
-        },
-        {
-          "title": "Waveshare ESP32-C5 board pairs Wi-Fi 6 with Thread and Zigbee",
-          "date": "Oct 2026",
-          "url": "https://inews.zoombangla.com/waveshare-esp32-c5-board-wifi-6-thread-zigbee/"
-        },
-        {
-          "title": "ESP-SDR firmware turns ESP32 into a 2.4/5 GHz Software-Defined Radio (SDR)",
-          "date": "Oct 2026",
-          "url": "https://www.cnx-software.com/2026/10/04/esp-sdr-firmware-turns-esp32-into-a-2-4-5-ghz-software-defined-radio-sdr/"
-        },
-        {
-          "title": "The ESP32 S31 Runs Linux",
-          "date": "Oct 2026",
-          "url": "https://www.i-programmer.info/news/91-hardware/19197-the-esp32-s31-runs-linux.html"
-        },
-        {
-          "title": "Espressif's ESP32-S31 Can Now Run Linux",
-          "date": "Oct 2026",
-          "url": "https://www.i-programmer.info/news/91-hardware/19197-the-esp32-s31-runs-linux.html"
         }
       ],
       "events": [
@@ -2081,19 +2081,19 @@
           "url": "https://newsroom.st.com/media-center/press-item.html/stmicroelectronics-streamlines-ai-model-development-for-stm32-developers-n4800.html"
         },
         {
-          "title": "RFOXiA Selects STMicroelectronics' STM32 for New Long-Range Bluetooth LE Module",
-          "date": "Oct 2026",
-          "url": "https://www.hackster.io/news/rfoxia-picks-stmicroelectronics-stm32-to-build-a-long-range-mesh-capable-bluetooth-le-module-16dfff47e78f"
+          "title": "STMicroelectronics Introduces New STM32H7P MCUs with Advanced DSP and Edge AI Capabilities",
+          "date": "Nov 2026",
+          "url": "https://www.cnx-software.com/2026/11/06/520-mhz-stm32h7p4-stm32h7p5-arm-cortex-m7-mcus-feature-hardware-signal-processor-hsp-optional-neural-art-npu/"
         },
         {
-          "title": "STMicroelectronics to Announce Q3 2026 Earnings on October 29",
-          "date": "Oct 2026",
-          "url": "https://www.electronicsmedia.info/2026/10/09/stmicroelectronics-q3-2026/"
+          "title": "STMicroelectronics Launches Edge AI Suite and New Development Tools for STM32 Users",
+          "date": "Nov 2026",
+          "url": "https://www.newelectronics.co.uk/content/news/stmicroelectronics-introduces-edge-ai-suite-with-new-development-tools-for-stm32-users"
         },
         {
-          "title": "STMicroelectronics to Announce Q3 2026 Earnings",
-          "date": "Oct 2026",
-          "url": "https://www.electronicsmedia.info/2026/10/09/stmicroelectronics-q3-2026/"
+          "title": "STMicroelectronics Expands STM32 Roadmap for Cloud AI and Physical AI Applications",
+          "date": "Nov 2026",
+          "url": "https://www.eetimes.com/stmicroelectronics-expands-stm32-roadmap-for-cloud-ai-and-physical-ai/"
         }
       ],
       "events": [
@@ -2336,6 +2336,11 @@
           "url": "https://www.renesas.com/en/about/newsroom/renesas-announces-leadership-changes-strengthen-foundation-growth"
         },
         {
+          "title": "Renesas RZ/T2N MPU Combines Motor Control and Industrial Ethernet",
+          "date": "Nov 2026",
+          "url": "https://www.electronicsmedia.info/2026/11/06/renesas-rz-t2n-mpu/"
+        },
+        {
           "title": "Renesas Unveils 650V GaN Package for AI Data Centers",
           "date": "Oct 2026",
           "url": "https://timestech.in/renesas-unveils-650v-gan-package-for-ai-data-centers/"
@@ -2364,11 +2369,6 @@
           "title": "Renesas Launches 100V GaN Transistors for AI Data Centers",
           "date": "Oct 2026",
           "url": "https://jp.ibtimes.com/renesas-launches-100v-gan-transistors-ai-data-centers-104667"
-        },
-        {
-          "title": "Renesas Launches RZ/N2L-RSK Starter Kit+",
-          "date": "Oct 2026",
-          "url": "https://www.renesas.com/en/design-resources/boards-kits/rz-n2l-rsk?stPage=1&tab=documentation&page=2&type%5B0%5D=Tool%20News"
         }
       ],
       "events": [
@@ -2574,6 +2574,11 @@
       ],
       "press_releases": [
         {
+          "title": "Synaptics Reports First Quarter Fiscal 2027 Results",
+          "date": "Nov 2026",
+          "url": "https://www.globenewswire.com/news-release/2026/11/05/3397069/35894/en/synaptics-reports-first-quarter-fiscal-2027-results.html"
+        },
+        {
           "title": "onsemi and Synaptics Announce Revised Merger Agreement",
           "date": "Oct 2026",
           "url": "https://www.onsemi.com/company/newsroom/news-and-insights/onsemi-and-synaptics-announce-revised-merger-agreement"
@@ -2617,11 +2622,6 @@
           "title": "Synaptics Launches the xMCU\u2122 Era with the Astra\u00ae SR200 Series of Multimodal Edge AI Processors",
           "date": "Oct 2026",
           "url": "https://www.synaptics.com/company/news/synaptics-astra-sr200-series-multimodal-edge-ai-processors"
-        },
-        {
-          "title": "Synaptics Announces Astra SR200 Multimodal Edge AI Processors with Google Coral NPU",
-          "date": "Oct 2026",
-          "url": "https://www.techpowerup.com/forums/threads/synaptics-announces-astra-sr200-multimodal-edge-ai-processors-with-google-coral-npu.353957/"
         }
       ],
       "events": [
@@ -2865,6 +2865,11 @@
           "url": "https://www.digitimes.com/news/a20261103PD211/2028-mediatek-market-asic-broadcom.html"
         },
         {
+          "title": "Broadcom, MediaTek, Marvell Battle for ASIC Supply Through 2028",
+          "date": "Nov 2026",
+          "url": "https://www.digitimes.com/news/a20261103PD211/2028-mediatek-market-asic-broadcom.html"
+        },
+        {
           "title": "Broadcom: Rapid Revenue Acceleration",
           "date": "Oct 2026",
           "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-vs-qualcomm-rapid-growth-172002013.html"
@@ -2888,11 +2893,6 @@
           "title": "Broadcom Wi-Fi Flaw Allows Nearby Hackers to Take Over Millions of Routers",
           "date": "Oct 2026",
           "url": "https://cybernews.com/security/broadcom-wifi-flaw-millions-routers-no-password/"
-        },
-        {
-          "title": "Broadcom Wi-Fi Flaw Affects Millions of Routers, Allowing Remote Code Execution",
-          "date": "Oct 2026",
-          "url": "https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html"
         }
       ]
     },
@@ -2972,14 +2972,14 @@
           "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/u-blox-sets-a-new-size-benchmark-for-antenna-integrated-gnss-with-the-sam-m11n/70461983"
         },
         {
-          "title": "u-blox to Debut New Product Line at electronica 2026",
-          "date": "Oct 2026",
-          "url": "https://embeddedcomputing.com/application/industrial/industrial-computing/u-blox-to-debut-new-product-line-at-electronica-2026"
+          "title": "u-blox Introduces Ultra-Compact Antenna-Integrated GNSS Module for Low-Power Positioning",
+          "date": "Nov 2026",
+          "url": "https://www.everythingrf.com/news/details/22990-u-blox-introduces-an-ultra-compact-antenna-integrated-gnss-module-for-low-power-positioning-applications"
         },
         {
-          "title": "u-blox Launches ZED-X20T All-Band High Accuracy Timing Module",
-          "date": "Oct 2026",
-          "url": "https://www.u-blox.com/en/product/zed-x20t-module"
+          "title": "u-blox Sets New Size Benchmark with SAM-M11N Antenna-Integrated GNSS Module",
+          "date": "Nov 2026",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/u-blox-sets-a-new-size-benchmark-for-antenna-integrated-gnss-with-the-sam-m11n/70461983"
         }
       ]
     },
@@ -3022,6 +3022,11 @@
           "url": "https://www.newelectronics.co.uk/content/news/microchip-expands-polarfire-fpga-platform-with-ethercat-and-tsn-networking-support"
         },
         {
+          "title": "Microchip Technology Announces Financial Results for Second Quarter of Fiscal Year 2027",
+          "date": "Nov 2026",
+          "url": "https://ir.microchip.com/news-events/press-releases/detail/1426/microchip-technology-announces-financial-results-for-second-quarter-of-fiscal-year-2027"
+        },
+        {
           "title": "Navitas and Microchip Unveil 800V DC Power Reference Design",
           "date": "Oct 2026",
           "url": "https://ca.investing.com/news/stock-market-news/navitas-and-microchip-unveil-800v-dc-power-reference-design-93CH-4865935"
@@ -3060,11 +3065,6 @@
           "title": "Microchip and Quintauris Partner to Advance RISC-V Adoption",
           "date": "Oct 2026",
           "url": "https://www.design-reuse.com/news/202531278-quintauris-and-microchip-technology-join-forces-to-grow-risc-v-adoption/"
-        },
-        {
-          "title": "Microchip Launches MTCH3380P and MTCH3240P Capacitive Touch Controllers",
-          "date": "Oct 2026",
-          "url": "https://www.cnx-software.com/2026/10/13/microchip-mtch3380p-and-mtch3240p-capacitive-touch-controllers-support-up-to-64-buttons-with-parallel-sensing/"
         }
       ]
     },
@@ -3271,6 +3271,11 @@
           "url": "https://www.digitimes.com/news/a20261104PD224/airoha-growth-business-communications-mediatek.html"
         },
         {
+          "title": "Airoha Targets Multibillion Growth as 100G Ramps, 200G Tapes Out",
+          "date": "Nov 2026",
+          "url": "https://www.digitimes.com/news/a20261104PD224/airoha-growth-business-communications-mediatek.html"
+        },
+        {
           "title": "MediaTek and Airoha Partner to Accelerate Global Network Infrastructure Upgrades for AI Era",
           "date": "Oct 2026",
           "url": "https://www.prnewswire.com/news-releases/mediatek-and-airoha-accelerate-global-network-infrastructure-upgrades-for-the-ai-era-302898111.html"
@@ -3289,11 +3294,6 @@
           "title": "Airoha Technology to present 50G-PON gateway chipset at Network X",
           "date": "Oct 2026",
           "url": "https://www.telecompaper.com/news/airoha-technology-to-present-50g-pon-gateway-chipset-at-network-x--1585102"
-        },
-        {
-          "title": "MediaTek and Airoha Accelerate Global Network Infrastructure Upgrades for the AI Era",
-          "date": "Oct 2026",
-          "url": "https://www.airoha.com/news/p/FQBbN9aMgQKWEreL"
         }
       ]
     },
@@ -3769,29 +3769,29 @@
     }
   ],
   "vendor_news_momentum_30d": {
-    "Qualcomm": 194,
-    "NXP": 66,
+    "Qualcomm": 210,
     "MediaTek": 48,
-    "Nordic": 20,
+    "NXP": 41,
+    "Nordic": 14,
     "TI": 12,
-    "STMicro": 11,
-    "Marvell": 9,
-    "Espressif": 5,
-    "u-blox": 5,
+    "Infineon": 12,
+    "STMicro": 10,
+    "Espressif": 7,
+    "u-blox": 7,
+    "Marvell": 6,
     "Renesas": 4,
-    "Infineon": 3,
-    "Broadcom": 3,
+    "Microchip": 3,
     "Silicon Labs": 3,
-    "Telink": 2,
-    "Realtek": 2,
     "Apple": 2,
+    "Telink": 2,
+    "Broadcom": 2,
     "Skyworks": 2,
-    "Sequans": 2,
-    "Onsemi": 2,
+    "UNISOC": 1,
+    "Synaptics": 1,
+    "Onsemi": 1,
     "Bosch": 1,
     "Airoha": 1,
-    "Atmosic": 1,
-    "Microchip": 1,
+    "Quectel": 1,
     "Murata": 1
   },
   "standards_in_flight": [
@@ -3876,42 +3876,8 @@
       "issues_open": 271,
       "prs_open": 0,
       "releases": [],
-      "stars": 896,
-      "pushed_at": "2026-11-05T12:44:16Z"
-    },
-    {
-      "name": "Zephyr Bluetooth",
-      "owner": "zephyrproject-rtos",
-      "repo": "zephyr",
-      "label": "BLE host + controller (RTOS)",
-      "tech": [
-        "bluetooth"
-      ],
-      "commits_30d": 100,
-      "issues_open": 4841,
-      "prs_open": 0,
-      "releases": [
-        {
-          "tag": "v4.3.2",
-          "name": "Zephyr 4.3.2",
-          "published_at": "2026-10-30T20:17:12Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.2"
-        },
-        {
-          "tag": "v4.5.0",
-          "name": "Zephyr 4.5.0",
-          "published_at": "2026-10-28T22:23:36Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.5.0"
-        },
-        {
-          "tag": "v4.4.2",
-          "name": "Zephyr 4.4.2",
-          "published_at": "2026-08-07T15:36:32Z",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
-        }
-      ],
-      "stars": 17005,
-      "pushed_at": "2026-11-05T14:02:52Z"
+      "stars": 897,
+      "pushed_at": "2026-11-07T09:50:56Z"
     },
     {
       "name": "BlueZ",
@@ -3922,9 +3888,15 @@
         "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 129,
+      "issues_open": 130,
       "prs_open": 0,
       "releases": [
+        {
+          "tag": "5.88",
+          "name": "5.88",
+          "published_at": "2026-11-05T22:29:24Z",
+          "url": "https://github.com/bluez/bluez/releases/tag/5.88"
+        },
         {
           "tag": "5.87",
           "name": "5.87",
@@ -3936,16 +3908,10 @@
           "name": "5.86",
           "published_at": "2026-02-09T21:27:33Z",
           "url": "https://github.com/bluez/bluez/releases/tag/5.86"
-        },
-        {
-          "tag": "5.85",
-          "name": "5.85",
-          "published_at": "2025-11-26T16:00:07Z",
-          "url": "https://github.com/bluez/bluez/releases/tag/5.85"
         }
       ],
-      "stars": 1176,
-      "pushed_at": "2026-11-05T01:54:03Z"
+      "stars": 1177,
+      "pushed_at": "2026-11-07T07:55:09Z"
     },
     {
       "name": "ESP-IDF",
@@ -3958,7 +3924,7 @@
         "ieee15_4"
       ],
       "commits_30d": 100,
-      "issues_open": 1794,
+      "issues_open": 1810,
       "prs_open": 0,
       "releases": [
         {
@@ -3980,57 +3946,42 @@
           "url": "https://github.com/espressif/esp-idf/releases/tag/v5.2.8"
         }
       ],
-      "stars": 19435,
-      "pushed_at": "2026-11-05T09:53:35Z"
+      "stars": 19455,
+      "pushed_at": "2026-11-06T16:40:49Z"
     },
     {
-      "name": "Linux mac80211",
-      "owner": "torvalds",
-      "repo": "linux",
-      "label": "Linux Wi-Fi (kernel)",
+      "name": "Zephyr Bluetooth",
+      "owner": "zephyrproject-rtos",
+      "repo": "zephyr",
+      "label": "BLE host + controller (RTOS)",
       "tech": [
-        "wifi"
+        "bluetooth"
       ],
       "commits_30d": 100,
-      "issues_open": 3,
-      "prs_open": 0,
-      "releases": [],
-      "stars": 254458,
-      "pushed_at": "2026-11-03T16:50:49Z"
-    },
-    {
-      "name": "Matter SDK",
-      "owner": "project-chip",
-      "repo": "connectedhomeip",
-      "label": "Matter (connectedhomeip)",
-      "tech": [
-        "matter"
-      ],
-      "commits_30d": 100,
-      "issues_open": 2897,
+      "issues_open": 4824,
       "prs_open": 0,
       "releases": [
         {
-          "tag": "v1.6.1.0",
-          "name": "v1.6.1.0 Release",
-          "published_at": "2026-09-25T12:38:51Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.1.0"
+          "tag": "v4.3.2",
+          "name": "Zephyr 4.3.2",
+          "published_at": "2026-10-30T20:17:12Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.3.2"
         },
         {
-          "tag": "v1.6.0.0",
-          "name": "v1.6.0.0 Release",
-          "published_at": "2026-08-20T15:23:47Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+          "tag": "v4.5.0",
+          "name": "Zephyr 4.5.0",
+          "published_at": "2026-10-28T22:23:36Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.5.0"
         },
         {
-          "tag": "v1.5.1.0",
-          "name": "v1.5.1.0 Release",
-          "published_at": "2026-04-13T16:32:24Z",
-          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+          "tag": "v4.4.2",
+          "name": "Zephyr 4.4.2",
+          "published_at": "2026-08-07T15:36:32Z",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/releases/tag/v4.4.2"
         }
       ],
-      "stars": 8983,
-      "pushed_at": "2026-11-05T14:13:25Z"
+      "stars": 17028,
+      "pushed_at": "2026-11-07T10:53:28Z"
     },
     {
       "name": "OpenThread",
@@ -4041,7 +3992,7 @@
         "thread"
       ],
       "commits_30d": 100,
-      "issues_open": 127,
+      "issues_open": 113,
       "prs_open": 0,
       "releases": [
         {
@@ -4063,8 +4014,57 @@
           "url": "https://github.com/openthread/openthread/releases/tag/v2026.09.0"
         }
       ],
-      "stars": 4059,
-      "pushed_at": "2026-11-04T22:20:55Z"
+      "stars": 4061,
+      "pushed_at": "2026-11-07T03:32:05Z"
+    },
+    {
+      "name": "Matter SDK",
+      "owner": "project-chip",
+      "repo": "connectedhomeip",
+      "label": "Matter (connectedhomeip)",
+      "tech": [
+        "matter"
+      ],
+      "commits_30d": 100,
+      "issues_open": 2880,
+      "prs_open": 0,
+      "releases": [
+        {
+          "tag": "v1.6.1.0",
+          "name": "v1.6.1.0 Release",
+          "published_at": "2026-09-25T12:38:51Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.1.0"
+        },
+        {
+          "tag": "v1.6.0.0",
+          "name": "v1.6.0.0 Release",
+          "published_at": "2026-08-20T15:23:47Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.6.0.0"
+        },
+        {
+          "tag": "v1.5.1.0",
+          "name": "v1.5.1.0 Release",
+          "published_at": "2026-04-13T16:32:24Z",
+          "url": "https://github.com/project-chip/connectedhomeip/releases/tag/v1.5.1.0"
+        }
+      ],
+      "stars": 8981,
+      "pushed_at": "2026-11-07T13:41:46Z"
+    },
+    {
+      "name": "Linux mac80211",
+      "owner": "torvalds",
+      "repo": "linux",
+      "label": "Linux Wi-Fi (kernel)",
+      "tech": [
+        "wifi"
+      ],
+      "commits_30d": 100,
+      "issues_open": 3,
+      "prs_open": 0,
+      "releases": [],
+      "stars": 254730,
+      "pushed_at": "2026-11-06T21:46:38Z"
     },
     {
       "name": "Zigbee2MQTT",
@@ -4074,8 +4074,8 @@
       "tech": [
         "ieee15_4"
       ],
-      "commits_30d": 36,
-      "issues_open": 499,
+      "commits_30d": 34,
+      "issues_open": 495,
       "prs_open": 0,
       "releases": [
         {
@@ -4097,8 +4097,8 @@
           "url": "https://github.com/Koenkk/zigbee2mqtt/releases/tag/2.14.1"
         }
       ],
-      "stars": 15789,
-      "pushed_at": "2026-11-04T20:11:50Z"
+      "stars": 15795,
+      "pushed_at": "2026-11-06T16:41:50Z"
     },
     {
       "name": "hostap",
